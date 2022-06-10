@@ -184,11 +184,6 @@ module.exports = {
         },
       ],
     },
-    prism: {
-      theme: { plain: {}, styles: [] },
-      // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-      additionalLanguages: ['shell-session', 'http'],
-    },
     algolia: {
       appId: 'O9QSL985BS',
       apiKey: 'ceb5366064b8fbf70959827cf9f69227',
@@ -218,10 +213,7 @@ module.exports = {
           if (locale != 'en') {
             return '/';
           }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/StardustCollective/docshub/tree/main/docs/api/${match[1]}.md`;
-          }
-          return `https://github.com/StardustCollective/docshub/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         exclude: ['README.md'],
         lastVersion: 'current',
@@ -244,10 +236,7 @@ module.exports = {
           if (locale != 'en') {
             return '/';
           }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/StardustCollective/docshub/tree/main/docs/api/${match[1]}.md`;
-          }
-          return `https://github.com/StardustCollective/docshub/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
         },
       },
     ],
@@ -262,10 +251,7 @@ module.exports = {
           if (locale != 'en') {
             return '/';
           }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/StardustCollective/docshub/tree/main/docs/api/${match[1]}.md`;
-          }
-          return `https://github.com/StardustCollective/docshub/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
         },
       },
     ],
@@ -280,10 +266,7 @@ module.exports = {
           if (locale != 'en') {
             return '/';
           }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/StardustCollective/docshub/tree/main/docs/api/${match[1]}.md`;
-          }
-          return `https://github.com/StardustCollective/docshub/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
         },
       },
     ],
@@ -298,10 +281,7 @@ module.exports = {
           if (locale != 'en') {
             return '/';
           }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/StardustCollective/docshub/tree/main/docs/api/${match[1]}.md`;
-          }
-          return `https://github.com/StardustCollective/docshub/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         lastVersion: 'current',
         versions: {
@@ -323,10 +303,7 @@ module.exports = {
           if (locale != 'en') {
             return '/';
           }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/StardustCollective/docshub/tree/main/docs/api/${match[1]}.md`;
-          }
-          return `https://github.com/StardustCollective/docshub/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
         },
       },
     ],
@@ -341,10 +318,7 @@ module.exports = {
           if (locale != 'en') {
             return '/';
           }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/StardustCollective/docshub/tree/main/docs/api/${match[1]}.md`;
-          }
-          return `https://github.com/StardustCollective/docshub/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
         },
       },
     ],
@@ -359,10 +333,7 @@ module.exports = {
           if (locale != 'en') {
             return '/';
           }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/StardustCollective/docshub/tree/main/docs/api/${match[1]}.md`;
-          }
-          return `https://github.com/StardustCollective/docshub/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
         },
       },
     ],
