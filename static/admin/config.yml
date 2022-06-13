@@ -1,0 +1,18 @@
+backend:
+  name: github
+  branch: main 
+  repo: Constellation-Labs/documentation-hub
+
+# These lines should *not* be indented
+media_folder: "static/img" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/img/" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+- name: 'learn' # Used in routes, ie.: /admin/collections/:slug/edit
+  label: 'Learn' # Used in the UI
+  folder: 'learn'
+  create: true # Allow users to create new documents in this collection
+  fields: # The fields each document in this collection have
+    - { label: 'Title', name: 'title', widget: 'string' }
+    - { label: 'Slug', name: 'slug', widget: 'string' }
+    - { label: 'Content', name: 'body', widget: 'markdown' }

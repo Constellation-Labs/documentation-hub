@@ -80,18 +80,6 @@ module.exports = {
           text: 'Buy DAG',
           href: `https://constellationnetwork.io/buy/`,
         },
-        /*
-        {
-          type: 'docsVersionDropdown',
-          position: 'right',
-          dropdownItemsAfter: [
-            { to: 'https://constellationnetwork.io', label: 'v0.5', target: '_blank' },
-            //{ to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
-          ],
-          // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-          dropdownActiveClassDisabled: true,
-        },
-        */
         {
           type: 'search',
           position: 'right',
@@ -156,22 +144,6 @@ module.exports = {
           type: 'separator',
           position: 'right',
         },
-        /*
-        {
-          type: 'localeDropdown',
-          position: 'right',
-          dropdownItemsBefore: [],
-          dropdownItemsAfter: [
-            {
-              href: 'https://ionicframework.com/translate',
-              label: 'Translate',
-              target: '_blank',
-              rel: null,
-            },
-          ],
-          className: 'icon-link language navbar__item',
-        },
-        */
         {
           type: 'iconLink',
           position: 'right',
