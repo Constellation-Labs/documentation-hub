@@ -2,11 +2,11 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'Markdown Examples',
       collapsed: false,
       items: [
-        'index', 
-        'markdown',
+        'markdown/tabs',
+        'markdown/code-blocks',
       ],
     },
     {

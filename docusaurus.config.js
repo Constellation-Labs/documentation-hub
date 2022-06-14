@@ -156,6 +156,11 @@ module.exports = {
         },
       ],
     },
+    prism: {
+      theme: { plain: {}, styles: [] },
+      // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
+      additionalLanguages: ['shell-session', 'http'],
+    },
     algolia: {
       appId: 'O9QSL985BS',
       apiKey: 'ceb5366064b8fbf70959827cf9f69227',
