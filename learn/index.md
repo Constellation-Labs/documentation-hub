@@ -40,6 +40,10 @@ import DocsCards from '@components/global/DocsCards';
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
   </DocsCard>
 
+  <DocsCard header="Markdown Examples" href="learn/markdown/tabs" img="/icons/img04.png">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </DocsCard>
+
   <DocsCard header="Reference" href="learn/reference/glossary" img="/icons/img04.png">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </DocsCard>

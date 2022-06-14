@@ -7,6 +7,10 @@ module.exports = {
       items: [
         'markdown/tabs',
         'markdown/code-blocks',
+        'markdown/admonitions',
+        'markdown/toc',
+        'markdown/assets',
+        'markdown/links',
       ],
     },
     {

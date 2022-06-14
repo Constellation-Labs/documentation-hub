@@ -1,4 +1,6 @@
 const path = require('path');
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 module.exports = {
   title: 'Constellation Documentation',
@@ -144,7 +146,7 @@ module.exports = {
           icon: {
             alt: 'github logo',
             src: `/logos/github.svg`,
-            href: 'https://github.com/StardustCollective',
+            href: 'https://github.com/Constellation-Labs',
             target: '_blank',
           },
         },
@@ -203,6 +205,8 @@ module.exports = {
         path: 'learn',
         routeBasePath: 'learn',
         sidebarPath: require.resolve('./sidebarsLearn.js'),
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
           if (locale != 'en') {
             return '/';
