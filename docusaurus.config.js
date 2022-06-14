@@ -64,12 +64,6 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'design',
-          label: 'Design',
-          position: 'left',
-        },
-        {
-          type: 'doc',
           docId: 'api',
           label: 'API',
           position: 'left',
