@@ -1,6 +1,5 @@
 module.exports = {
   docs: [
-    'intro',
     {
       type: 'category',
       label: 'Getting Started',
@@ -22,7 +21,6 @@ module.exports = {
       label: 'Testnet Nodes',
       collapsed: false,
       items: [
-        'testnet/intro',
         'testnet/install',
         'testnet/providers',
       ],

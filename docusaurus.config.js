@@ -285,21 +285,6 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'design',
-        path: 'design',
-        routeBasePath: 'design',
-        sidebarPath: require.resolve('./sidebarsDesign.js'),
-        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-          if (locale != 'en') {
-            return '/';
-          }
-          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
-        },
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'api',
         path: 'api',
         routeBasePath: 'api',
