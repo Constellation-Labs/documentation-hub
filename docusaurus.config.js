@@ -270,10 +270,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'build',
-        path: 'build',
-        routeBasePath: 'build',
-        sidebarPath: require.resolve('./sidebarsBuild.js'),
+        id: 'apps',
+        path: 'apps',
+        routeBasePath: 'apps',
+        sidebarPath: require.resolve('./sidebarsApps.js'),
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
           if (locale != 'en') {
             return '/';

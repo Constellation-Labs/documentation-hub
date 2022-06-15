@@ -43,7 +43,7 @@ import DocsCards from '@components/global/DocsCards';
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 </DocsCard>
 
-<DocsCard header="Build an App" href="/build" img="/icons/img02.png">
+<DocsCard header="Build an App" href="/apps" img="/icons/img02.png">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 </DocsCard>
 
