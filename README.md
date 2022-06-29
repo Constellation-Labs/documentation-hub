@@ -13,4 +13,4 @@ $ yarn install
 $ yarn start
 ```
 
-> **Note**: recent versions of npm (5+) and Node.js (10+) are required to run certain scripts.
+> **Note**: As some docusaurus modules run only on node versions +14 or +16 this project will use node ^16.14.2 by default.

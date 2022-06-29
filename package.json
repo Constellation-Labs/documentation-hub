@@ -2,6 +2,9 @@
   "name": "constellation-docs",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "^16.14.2"
+  },
   "scripts": {
     "build": "docusaurus build",
     "build:preview": "docusaurus build --locale en",
