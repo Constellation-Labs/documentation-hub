@@ -11,7 +11,7 @@ import DocsCards from '@components/global/DocsCards';
 <head>
   <meta
     name="description"
-    content="Lorem ipsum"
+    content="Welcome to the Stargazer API documentation. Stargazer is a multichain wallet with support for Constellation and Ethereum networks. The following documentation will guide you through integrating the Stargazer wallet into a Web3 site or app. "
   />
   <style>{`
     :root {
@@ -22,11 +22,11 @@ import DocsCards from '@components/global/DocsCards';
 
 <intro-end />
 
-Welcome to the Stargazer API documentation. Stargazer is the official constellation wallet, but as well integrates as a multichain wallet with the ethereum ecosystem. Over the next pages you will find several guides and references about different aspects about the wallet.
+Welcome to the Stargazer API documentation. Stargazer is a multichain wallet with support for Constellation and Ethereum networks. The following documentation will guide you through integrating the Stargazer wallet into a Web3 site or app. 
 
 ### Web3 and Dapps
 
-Next sections will assume a preliminar layer of knowledge about the Web3 concept and Dapps. If all this sounds quite new to you, we recommend some articles to get started right away.
+The next sections assume some preliminary knowledge of how Web3 works and decentralized app (dApp) functionality. If all this sounds quite new to you, here are some articles to get started:
 
 - [What Is Web 3.0 & Why It Matters](https://medium.com/fabric-ventures/what-is-web-3-0-why-it-matters-934eb07f3d2b)
 - [Web 3.0 Explained](https://medium.com/dare-to-be-better/web-3-0-explained-8f4032ee39d4)

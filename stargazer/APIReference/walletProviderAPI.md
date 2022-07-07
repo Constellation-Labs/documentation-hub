@@ -2,7 +2,7 @@
 title: Wallet Provider API
 sidebar_label: Wallet Provider API
 sidebar_position: 1
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -28,10 +28,6 @@ The `WalletProvider` permits access to different chain providers. Each provider 
 The `WalletProvider` is injected on page load under `window.stargazer`.
 
 ## Properties
-
-<TOCInline toc={toc} minHeadingLevel={3} maxHeadingLevel={3} />
-
-## Detailed Documentation
 
 ### `version`
 

@@ -2,7 +2,7 @@
 title: Chain Provider API
 sidebar_label: Chain Provider API
 sidebar_position: 2
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -26,10 +26,6 @@ import TOCInline from '@theme/TOCInline';
 The `ChainProvider` handles access to the chain RPC methods and underlying events. It complies with the [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) standard. Besides methods from the standard it adds a couple of utility methods related to [provider activation](../Guide/providerActivation.md).
 
 ## Properties
-
-<TOCInline toc={toc} minHeadingLevel={3} maxHeadingLevel={3} />
-
-## Detailed Documentation
 
 ### `version`
 

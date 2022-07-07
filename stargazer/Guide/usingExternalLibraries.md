@@ -10,7 +10,7 @@ import DocsCards from '@components/global/DocsCards';
 <head>
   <meta
     name="description"
-    content="Lorem ipsum"
+    content="Sending raw RPC requests can be error-prone and sometimes overwhelming, this guide will list some common external libraries for the ethereum ecosystem which are compatible with the stargazer ChainProvider."
   />
   <style>{`
     :root {
@@ -21,17 +21,4 @@ import DocsCards from '@components/global/DocsCards';
 
 <intro-end />
 
-<DocsCards>
-  <DocsCard header="Featured Doc A" href="/" img="/icons/img02.png">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-  </DocsCard>
-
-  <DocsCard header="Featured Doc B" href="/" img="/icons/img03.png">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-  </DocsCard>
-
-  <DocsCard header="Featured Doc C" href="/" img="/icons/img04.png">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </DocsCard>
-
-</DocsCards>
+Sending raw RPC requests can be error-prone and sometimes overwhelming, this guide will list some common external libraries for the ethereum ecosystem which are compatible with the stargazer ChainProvider.
