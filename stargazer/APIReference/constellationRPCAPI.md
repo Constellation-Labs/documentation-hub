@@ -23,7 +23,7 @@ import TOCInline from '@theme/TOCInline';
 
 <intro-end />
 
-This page describes the different RPC methods available for the user. Some of this methods trigger a popup for the user to accept like [`dag_signMessage`](#personalsign).
+This page describes the different RPC methods available for the user. Some of this methods trigger a popup for the user to accept like [`dag_signMessage`](#dag_signmessage).
 
 ## RPC Methods and Events
 
@@ -107,6 +107,8 @@ type JSONEncoded = string;
 ```typescript title="JSONScalarValue"
 type JSONScalarValue = null | string | number | boolean;
 ```
+
+<div id="tst-signaturerequest"></div>
 
 ```typescript title="SignatureRequest"
 type SignatureRequest = {

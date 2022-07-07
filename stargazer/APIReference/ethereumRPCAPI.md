@@ -23,7 +23,7 @@ import TOCInline from '@theme/TOCInline';
 
 <intro-end />
 
-This page describes the different RPC methods available for the user. Some of this methods trigger a popup for the user to accept like [`personal_sign`](#personalsign) or [`eth_sendTransaction`](#ethsendtransaction).
+This page describes the different RPC methods available for the user. Some of this methods trigger a popup for the user to accept like [`personal_sign`](#personal_sign) or [`eth_sendTransaction`](#ethsendtransaction).
 
 ## RPC Methods and Events
 
