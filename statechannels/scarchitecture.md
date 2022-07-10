@@ -1,5 +1,5 @@
 ---
-title: Constellation Network: Architectural Overview
+title: Constellation Network Architectural Overview
 hide_table_of_contents: false
 ---
 
@@ -11,8 +11,6 @@ hide_table_of_contents: false
       content="Lorem ipsum"
   />
     </head>
-
-# Constellation Network: Architectural Overview
 
 Constellation Network can be viewed as a decentralized network that is
 capable of conducting consensus on the state of any device or network
