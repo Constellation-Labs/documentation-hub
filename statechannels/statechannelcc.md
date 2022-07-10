@@ -12,9 +12,6 @@ hide_table_of_contents: false
   />
     </head>
 
-
-# Introduction to State Channels
-
 ![](https://github.com/Constellation-Labs/documentation-hub/blob/main/static/img/coreconcepts/1-%20existing%20apps.jpeg)
 
 Constellation Network's Hypergraph Transfer Protocol, or HGTP, is a
