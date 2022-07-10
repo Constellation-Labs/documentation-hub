@@ -1,3 +1,17 @@
+---
+title: State Channel Design Considerations
+hide_table_of_contents: false
+---
+
+<head>
+    <title> State Channel Design Considerations
+</title>
+    <meta
+        name="description"
+        content="Lorem ipsum"
+  />
+    </head>
+
 # State Channel Design Considerations
 
 A state channel is free to be implemented by developers in the way that
@@ -17,13 +31,13 @@ fluctuations. Meats for example, can tolerate a 7°F increase in
 temperature for a maximum of 30 minutes while Milk can only tolerate 5°F
 increase for 15 minutes. Currently, the temperatures are checked at the
 shipping origin and destination and only provide an indication of the
-highest temperature, lowest temperature, and average temperature of the
+highest temperature, the lowest temperature, and average temperature of the
 container during its journey. This could lead to an incorrect conclusion
 that the meat and milk are safe to consume because of the low fidelity
 of the data which doesn't include duration of time for each degree in
 temperature change.
 
-The business wants to be able know if, when, and for how long the
+The business wants to be able to know if, when, and for how long the
 temperatures in the container exceeded the tolerance ranges for each
 product type. The business decides to create a Constellation Network
 state channel which will granularly track temperature during shipment by
@@ -51,7 +65,7 @@ If the objective is to validate and notarize data from a fleet of IoT
 devices, as is the case in this scenario, a state channel network would
 be capable of fulfilling the complex validation logic and scalability
 requirements that the use case calls for. In this implementation, the
-IoT sensors would send data to a State Channel network that is comprised
+IoT sensors would send data to a State Channel network that is composed
 of one or more validator node clusters (3 nodes) which would process the data according to
 the logic defined within it. For example, the state channel can organize
 the incoming sensor data according to the specific data structure being
@@ -67,29 +81,27 @@ Continuing from the example outlined previously, Option 2 discusses
 implementing a State Channel Network to process and validate data being
 received from a network of IoT sensors. It is entirely up to the
 developers of this network to decide on the degree of decentralization
-that is required to meet their business objectives. Specifically, the number of validator nodes that are involved in processing and validating data can be as little as one, which effectively means there is no decentralized consensus occurring. If one were to take this approach,
-the state channel would essentially be self-signing the data, notarizing
-it on a local directed acyclic graph which isn't distributed, and then
-submitting the snapshot into the Global L0 to be validated and notarized
-within the global Hypergraph. While this configuration may be the
-simplest to implement, it does not take advantage of the benefits of the
-horizontal scaling properties of the distributed computing paradigm nor
-the cryptographic and game theoretic principles underlying decentralized
-consensus which is the key to unlocking trustless data validation.
+that is required to meet their business objectives. There is no hard requirement for
+a state channel to implement a consensus process at all, meaning, a cluster of nodes
+is optional. If one were to take this approach, decentralized consensus would not occur
+and the state channel would simply be self-signing and attesting to the validity
+of the data that is submitted as a snapshot into the Global L0. This state data is then
+validated and notarized by the global consensus algorithm, becoming immutable within
+the Hypergraph. While this configuration may be the simplest to implement,
+it does not take advantage of the benefits of the horizontal scaling properties of the
+distributed computing paradigm nor the cryptographic and game theoretic principles
+underlying decentralized consensus which is the key to unlocking trust-less data validation.
 
 Now with that said, there is nothing preventing a State Channel from
-starting with one validator node and then slowly growing into a multi-cluster network
-of nodes as it needs to scale up its
-computational availability and capacity. However, to start with, it is
-recommended to begin with a minimum of three nodes (1 cluster) so that there is an
-opportunity early on in the design phase of the state channel network to
-configure, test, and tune the consensus algorithm. Three nodes will
-enable the state channel to adapt to workload fluctuations and provides
-the availability, partition tolerance, and consistency that a performant
-and secure stateful peer to peer network requires. This, of course, is
-only one dimension to what typically constitutes as "decentralized". The
-other consideration is whether these validator nodes are permissioned or
-permissionless in regard to who owns and operates them.
+starting out this way and then slowly growing into a multi-cluster network
+of nodes as it needs to scale out various microservices and trust-less security profile.
+To start with, it is recommended to begin with a minimum of three nodes (1 cluster)
+so that there is an opportunity early on in the design phase of the state channel network to
+configure, test, and tune the consensus algorithm. Three nodes will enable the state channel 
+to adapt to workload fluctuations and provides the availability, partition tolerance, and 
+consistency that a performant and secure stateful peer to peer network requires. This, of course,
+is only one dimension to what typically constitutes as "decentralized". The other consideration
+is whether these validator nodes are permissioned or permissionless in regard to who can own and operates them.
 
 The decision to create a private state channel network versus a public
 one will really depend on the business case which can evolve over time
