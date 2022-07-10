@@ -161,6 +161,7 @@ for the L_0 Cell.
 > [L0TokenDef.scala](https://github.com/Constellation-Labs/tessellation/blob/develop/examples/l0-token/src/main/scala/org/example/L0TokenDef.scala)
 > &
 > [types.scala](https://github.com/Constellation-Labs/tessellation/blob/develop/examples/l0-token/src/main/scala/org/example/types.scala).
+
 ```scala
  object L0TokenDef extends StateChannelDef[L0TokenStep, Ω, L0TokenStep]{
  
@@ -173,6 +174,7 @@ Map(
   classOf[CreateStateChannelSnapshot] -> 1002
 )
 ```
+
 ```scala
 object L0TokenDef extends StateChannelDef[L0TokenStep, Ω, L0TokenStep]
 ```
