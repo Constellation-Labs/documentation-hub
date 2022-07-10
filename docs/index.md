@@ -36,7 +36,7 @@ import DocsCards from '@components/global/DocsCards';
   </DocsCard>
 
 <DocsCard header="Run a Validator Node" href="/nodes" img="/icons/img04.png">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <p>Build, Configure, and Deploy a Validator Node on the HyperGraph.</p>
 </DocsCard>
 
 <DocsCard header="Integrate Stargazer Wallet" href="/stargazer" img="/icons/img02.png">
