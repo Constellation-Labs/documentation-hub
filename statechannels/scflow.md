@@ -12,8 +12,6 @@ hide_table_of_contents: false
   />
     </head>
 
-## State Channel L_0 Data Flow
-
 
 ![](https://github.com/Constellation-Labs/documentation-hub/blob/main/static/img/coreconcepts/6%20-%20state%20channel%20data%20flow.jpg)
 
@@ -258,6 +256,7 @@ case") .asLeft[Ω]))
     **Algebra** is a fold operation which reduces the ending type to the
     output terminal object. This is considered the Catamorphism
     operation of the Hylomorphic recursion scheme.
+
 ```scala
       CoalgebraM[F, StackF, Ω] { input =>
         val logger = Slf4jLogger.getLogger[F]
