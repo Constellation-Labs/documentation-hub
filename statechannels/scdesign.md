@@ -12,8 +12,6 @@ hide_table_of_contents: false
   />
     </head>
 
-# State Channel Design Considerations
-
 A state channel is free to be implemented by developers in the way that
 makes the most sense for its use case. Ultimately, a state channel's business
 requirements will determine its technological requirements and
