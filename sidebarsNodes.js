@@ -21,8 +21,16 @@ module.exports = {
       label: 'Testnet Nodes',
       collapsed: false,
       items: [
-        'testnet/install',
-        'testnet/providers',
+        'testnet/intro',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Validator Nodes',
+      collapsed: false,
+      items: [
+        'validator/install',
+        'validator/providers',
       ],
     },
   ],
