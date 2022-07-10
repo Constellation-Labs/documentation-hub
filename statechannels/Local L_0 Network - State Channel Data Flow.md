@@ -1,14 +1,29 @@
-## Local L_0 Network: State Channel Data Flow
+---
+title: State Channel L_0 Data Flow
+hide_table_of_contents: false
+---
+
+<head>
+    <title> State Channel L_0 Data Flow
+</title>
+    <meta 
+      name="description"
+      content="Lorem ipsum"
+  />
+    </head>
+
+## State Channel L_0 Data Flow
 
 
 ![](https://github.com/Constellation-Labs/documentation-hub/blob/main/static/img/coreconcepts/6%20-%20state%20channel%20data%20flow.jpg)
 
-### STEP 1: Define State Channel Snapshot Schema
+### STEP 1: Define State Channel Snapshot Schema 
 
-In order for your state channel to submit data into the hypergraph for
-validation you must first define the data types that you want to
-transmit to the network. This "State Channel Snapshot Schema" allows the
-global layer 0 network to understand what inputs to accept and which DAG
+In order for the state channel to submit data into the Hypergraph for
+validation it must first define the data types that it requires to
+transmit to the network. This is what is referred to as state channel's
+Application Chain Interface (ACI). Defining a "State Channel Snapshot Schema" allows the
+Global Layer 0 network to understand what inputs to accept and which DAG
 address to associate the state channel with so that the network is aware
 of the balance of DAG held within this state channel address for
 throughput allotment. Once this state channel snapshot schema is defined
