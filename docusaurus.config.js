@@ -61,7 +61,7 @@ module.exports = {
         {
           type: 'doc',
           docId: 'nodes',
-          label: 'Validate',
+          label: 'Validator Nodes',
           position: 'left',
         },
         {
