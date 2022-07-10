@@ -243,7 +243,7 @@ case") .asLeft[Ω]))
     **Algebra** is a fold operation which reduces the ending type to the
     output terminal object. This is considered the Catamorphism
     operation of the Hylomorphic recursion scheme.
-```
+```scala
       CoalgebraM[F, StackF, Ω] { input =>
         val logger = Slf4jLogger.getLogger[F]
 
