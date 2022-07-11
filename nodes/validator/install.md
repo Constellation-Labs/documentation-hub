@@ -1,23 +1,27 @@
 ---
-title: Installation
+title: Installation Introduction
 hide_table_of_contents: false
 ---
 
 <head>
-  <title>Installation</title>
+  <title>Installation Overview</title>
   <meta
     name="description"
-    content="Lorem ipsum"
+    content="Brief intro into the documentation process for Validator Nodes"
   />
 </head>
 
-Node Garage and Constellation Network are glad you are here. Through step-by-step web-based instructions, instructional videos for those that are more visual learners, and guidance through our Discord channel, we attempt to cover all the bases.
+Through step-by-step written documentation from this guide's instructions, instructional videos for those that are more visual learners, to guidance through our Discord channel, we attempt to cover all the bases.
 
 ## Steps in the Process
 
-- Choose and build a server where you will create our Node.
-- Setup your server
-- Turn your server into a Node
-- Configure your Node
-- Join TestNet 2.0
-- Follow instructions in the Discord channel to assist the Developers mature the L0 network.
+  - Decide on how you will run your Validator Node
+    - Service Provider
+    - Bare Metal
+    - Hosted
+  - Setup your server
+  - Turn your server into a Node
+  - Configure your Node
+  - Join TestNet 2.0
+  - Join MainNet 2.0
+  - Join a State Channel

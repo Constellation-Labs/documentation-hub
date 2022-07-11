@@ -27,10 +27,28 @@ module.exports = {
     {
       type: 'category',
       label: 'Validator Nodes',
-      collapsed: false,
+      collapsed: true,
       items: [
         'validator/install',
         'validator/providers',
+        {
+          type: 'category',
+          label: 'SSH Keys',
+          items: [
+            'validator/sshkeys/explain',
+            'validator/sshkeys/creationMac',
+            'validator/sshkeys/creationWin',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Digital Ocean (DO)',
+          items: [
+            'validator/do/account',
+            'validator/do/createDroplet',
+            'validator/do/applySSHDroplet',
+          ],
+        },
       ],
     },
   ],

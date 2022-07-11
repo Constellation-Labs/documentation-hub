@@ -7,10 +7,10 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>Providers</title>
+  <title>Cloud Providers</title>
   <meta
     name="description"
-    content="Lorem ipsum"
+    content="Introduction to the various possible cloud providers"
   />
   <style>{`
     :root {
@@ -20,7 +20,7 @@ import DocsCards from '@components/global/DocsCards';
   </style>
 </head>
 
-In order to run our Constellation Node, we will need to find a location for our node to live and work. The three most common ways to accomplish this are through a cloud provider, a hosting provider, or utilizing Bare Metal.
+In order to run our **Constellation Validator Node**, we will need to find a location for our Node to live and work. The three most common ways to accomplish this are through a cloud provider, a hosting provider, or utilizing Bare Metal.
 
 <DocsCards>
   <DocsCard header="Cloud Provider" href="/" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
@@ -32,31 +32,49 @@ In order to run our Constellation Node, we will need to find a location for our 
   </DocsCard>
 
   <DocsCard header="Bare Metal" href="/" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+    <p>Build and maintain your own hardware on-premise of your specific location or remotely at a service provider or other.</p>
   </DocsCard>
 </DocsCards>
 
 ## Cloud Providers
 
-The next steps of these tutorials concentrate on Cloud Providers only. You can skip to the Constellation TestNet configuration section if you are advanced and already have an instance in place. Configuring your Node is completely independent of where it lives (cloud, hosted, or bare metal).
+Constellation Network's documentation will concentrate on the erecting a virtual private server `VPS` (to turn into a Node) through various Cloud Providers.  
 
-## Digital Ocean
+:::note
 
-Creating your account on Digital Ocean is a simple process similar to all other SaaS model services. At the current time, we will leave this process up to you.
-In order to run our Constellation Node, you will need to make your first financial and sweat-equity investments.
+Due to the highly competitive Cloud Service Provider marketplace, we will concentrate on only a few Cloud Service Providers in our documentation.
 
-### Create SSH Keys
-
-We need a way to access our Node. Popular opinion strongly suggests it is a bad idea to use the password authentication method. So, we will setup access via an SSH Key.
-
-:::caution
-It is highly recommended that you do not use existing SSH keys that you may have already created for other servers you may administer.
 :::
 
-The SSH keys should be unique keys for this future Node and this Node alone. Also, when you are setting up your passphrase, you should use a complex passphrase.
+Cloud Providers mentioned in the documentation:
+  - Amazon Web Services
+  - Digital Ocean
+  - Google Cloud Platform
 
-You are dealing with cryptocurrency. This puts the onerous of security on you. It is a good idea to protect your investment(s).
+:::info
 
-If you are a visual learner, you can watch the YouTube series. You may also follow step by step instructions using the tutorial below for Apple/Linux or Windows. It is highly recommended to watch the entire series0.
+You are **not** obligated in any way to use the providers mentioned.  You can pick any methodology to build your future Node and utilize any of the cloud providers above to translate to your provider of choice.
 
-<iframe width="100%" height="380" src="https://www.youtube.com/embed/LMxmJ7h0RQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+:::
+
+### List of Providers 
+There are many others *besides* what is listed below
+
+- Amazon Web Service (AWS)
+- Digital Ocean
+- Google Cloud Platform
+- Vultr
+- Linode
+- IBM Cloud Services
+- Adobe Creative Cloud
+- Kamatera
+- VMware
+- Rackspace
+- Red Hat
+- Salesforce
+- Oracle Cloud
+- SAP
+- Verizon Cloud
+- Navisite
+- Dropbox
+
