@@ -1,5 +1,5 @@
 ---
-title: Create DO Account
+title: Create AWS Account
 hide_table_of_contents: true
 ---
 
@@ -10,7 +10,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>Digital Ocean</title>
   <meta
     name="description"
-    content="Building a Validator Node on Digital Ocean's platform."
+    content="Building a Validator Node on AWS's platform."
   />
   <style>{`
     :root {
@@ -20,14 +20,14 @@ import DocsCards from '@components/global/DocsCards';
   </style>
 </head>
 
-## Digital Ocean
+## Amazon Web Services - AWS
 
-Creating your account on Digital Ocean is a simple process similar to all other SaaS model services. At the current time, we will leave this process up to you.
+Creating your account on AWS is a simple process similar to all other SaaS model services. At the current time, we will leave this process up to you.
 
-![](/img/validator_nodes/node-do-account.png)
+![](/img/validator_nodes/node-aws-account.png)
 
 In order to run our Constellation Node, you will need to make your *first* **financial** and **sweat-equity** investments.
 
 ## Sign Up
 
-[Digital Ocean Sign Up Page](https://www.digitalocean.com/)
+[AWS Sign Up Page](https://aws.amazon.com/)

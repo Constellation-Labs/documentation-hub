@@ -51,6 +51,14 @@ module.exports = {
             'validator/do/sgDroplet',
           ],
         },
+        {
+          type: 'category',
+          label: 'Amazon Web Services (AWS)',
+          items: [
+            'validator/aws/account',
+            'validator/aws/applySSHec2',
+          ],
+        },
       ],
     },
   ],
