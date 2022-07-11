@@ -47,6 +47,8 @@ module.exports = {
             'validator/do/account',
             'validator/do/createDroplet',
             'validator/do/applySSHDroplet',
+            'validator/do/launchDroplet',
+            'validator/do/sgDroplet',
           ],
         },
       ],
