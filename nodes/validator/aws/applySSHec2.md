@@ -1,5 +1,5 @@
 ---
-title: Apply SSH Keys to our Droplet
+title: Apply SSH Keys to our EC2 Instance
 hide_table_of_contents: true
 ---
 
@@ -7,10 +7,10 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>Digital Ocean Apply SSH Keys</title>
+  <title>DAWS Apply SSH Keys</title>
   <meta
     name="description"
-    content="Uploading our Public key to Digital Ocean Droplet"
+    content="Uploading our Public key to AWS EC2 Instance"
   />
   <style>{`
     :root {
@@ -20,44 +20,33 @@ import DocsCards from '@components/global/DocsCards';
   </style>
 </head>
 
-## Digital Ocean - Creation Continued
+## AWS - Creation Continued
 
-A virtual private machine (VPS) inside Digital Ocean's cloud service is called a **droplet**.
+A virtual private machine (VPS) inside Amazon Web Service's cloud service is called an **EC2** instance.  This stands for *elastic compute cloud*.
 
-You may access our YouTube video titled **Create Digital Ocean Droplet**, for a detailed visual learning experience. 
+You may access our YouTube video titled **Create AWS EC2**, for a detailed visual learning experience. 
 
 You may also follow *step by step* instructions using the tutorial below for Apple/Linux or Windows. 
 
 :::note
 If you choose the YouTube Series, it is highly recommended to watch the entire series, from the beginning.
 :::
-SSH Key Generation Series - **Video 4a** by NetMet.
+SSH Key Generation Series - **Video 4b** by NetMet.
 
 Please like and subscribe to support NetMet's work and to be alerted to new content specifically applied to **Constellation Network** and **Node Garage**, in the future.
 
-<iframe width="100%" height="380" src="https://www.youtube.com/embed/Vs_g-e99qTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="380" src="https://www.youtube.com/embed/0plYuXJwfOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
-We need a way to access our Droplet (VPS). 
+We need a way to access our EC2 Instance (VPS). 
 
-:::caution
-Popular opinion strongly suggests it is a bad idea to use the password authentication method. So, we will setup access via an SSH Key.
+Please refer to the [SSH](../sshkeys/explain.md) section to create your SSH key pair.  
+
+:::danger
+You also have the ability to create a less secure SSH key pair directly from AWS's **EC2** creation wizard.  This is **not** recommended because it does not offer the ability to supply a **passphrase** with your SSH key.
+
+![](/img/validator_nodes/node-aws-autosshkey.png)
 :::
 
-Continuing where we left off from the [Create a Droplet](createDroplet.md) section:
-
-  1. Choose **SSH Keys**
-  2. Choose **New SSH Key**
-
-![](/img/validator_nodes/node-do-sshkey1.png)
-
-  1. Paste the public **SSH Key** contents saved in previous steps into this box
-  2. Provide a **name** for your public key on Digital Ocean.  This will be a name that Digital Ocean will recognize to offer you access to your key in the future.
-  3. Click the **Add SSH Key** button
-
-![](/img/validator_nodes/node-do-sshkey2.png)
-
-#### Next steps
-
-Staying on the Digital Ocean web console page, inside the Create Droplet process, continue to the final steps to launch your Droplet in the Digital Ocean cloud.
+Once you have your **SSH Key Pair** created, you can continue to the next section to launch your future Node **EC2** instance via the AWS Web Console. 
