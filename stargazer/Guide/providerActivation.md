@@ -19,9 +19,9 @@ import DocsCards from '@components/global/DocsCards';
   `}</style>
 </head>
 
-Interaction with any of the networks is available using a chain provider, this guide will show you how to get one and an overview of the activation process.
-
 <intro-end />
+
+Interaction with any of the networks is available using a chain provider, this guide will show you how to get one and an overview of the activation process.
 
 ## Detect Stargazer `WalletProvider`
 

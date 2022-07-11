@@ -12,7 +12,7 @@ import TOCInline from '@theme/TOCInline';
 <head>
   <meta
     name="description"
-    content="The WalletProvider provides access to different chain providers. Each provider instance is created once per network, thus 2 chain providers from the same network share the same underlying reference."
+    content="The WalletProvider permits access to different chain providers. The WalletProvider is injected on every page you visit under window.stargazer."
   />
   <style>{`
     :root {
@@ -23,9 +23,7 @@ import TOCInline from '@theme/TOCInline';
 
 <intro-end />
 
-The `WalletProvider` permits access to different chain providers. Each provider instance is created once per network, thus 2 chain providers from the same network share the same underlying reference.
-
-The `WalletProvider` is injected on page load under `window.stargazer`.
+The `WalletProvider` permits access to different chain providers. The `WalletProvider` is injected on every page you visit under `window.stargazer`.
 
 ## Properties
 
@@ -85,7 +83,7 @@ window.stargazer.errorTypes;
 Returns a chain provider for the selected chain.
 
 :::info Info
-Each provider instance is created once per network, thus 2 chain providers from the same network share the same underlying reference.
+Each provider instance is created once per network, thus 2 chain providers from the same network on the same page share the same underlying reference.
 :::
 
 ##### Parameters
