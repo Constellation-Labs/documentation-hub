@@ -57,6 +57,7 @@ module.exports = {
           items: [
             'validator/aws/account',
             'validator/aws/applySSHec2',
+            'validator/aws/createEC2',
           ],
         },
       ],
