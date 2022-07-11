@@ -82,7 +82,7 @@ await dagProvider.request({
 The returned signature corresponds to the SHA512 hash of the encoded signature request and the private key of the user.
 `ECDSA.sign(privateKey, sha512(signatureRequestEnconded))`.
 
-_Read more about siganture verification [here](#constellation-signature-verification)_
+_Read more about [constellation signature verification](#constellation-signature-verification)_
 
 ### Get the account public key
 
@@ -126,7 +126,7 @@ await dagProvider.request({
 The returned signature corresponds to the keccak256 hash of the prefix + message string and the private key of the user.
 `ECDSA.sign(privateKey, keccak256("\x19Ethereum Signed Message:\n" + len(message) + message))`.
 
-_Read more about siganture verification [here](#ethereum-signature-verification)_
+_Read more about [ethereum signature verification](#ethereum-signature-verification)_
 
 ## Constellation Signature Verification
 
@@ -148,10 +148,6 @@ const valid: boolean = dag4.keyStore.verify(
 const publicKeyAddress = dag4.keyStore.getDagAddressFromPublicKey(publicKey);
 ```
 
-:::note Important
-The `dag4.keyStore.verify()` method can raise errors while verifying.
-:::
-
 ## Ethereum Signature Verification
 
 For signature verification we will be using the [ethers](http://www.npmjs.com/package/ethers) package. The following snippet illustrates how you can verify message signature.
@@ -170,7 +166,3 @@ if (recoveredAddress !== accountWhichSigned) {
   throw new Error("Signature is not valid");
 }
 ```
-
-:::note Important
-The `ethers.utils.recoverAddress()` method can raise errors while verifying.
-:::

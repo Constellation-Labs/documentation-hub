@@ -12,7 +12,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>Guide - Overview</title>
   <meta
     name="description"
-    content="This guide will walk you throught various features your dapp may use, will provide a general explanation, a code example, and in some cases a demo for you to test."
+    content="This guide will walk you through various features your app may use, will provide general explanation, code examples, and demos for you to use to get started."
   />
   <style>{`
     :root {
@@ -23,4 +23,4 @@ import DocsCards from '@components/global/DocsCards';
 
 <intro-end />
 
-This guide will walk you throught various features your dapp may use, will provide a general explanation, a code example, and in some cases a demo for you to test.
+This guide will walk you through various features your app may use, will provide general explanation, code examples, and demos for you to use to get started.

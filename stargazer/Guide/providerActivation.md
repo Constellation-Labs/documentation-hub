@@ -28,20 +28,22 @@ Interaction with any of the networks is available using a chain provider, this g
 The stargazer browser extension injects a [`WalletProvider`](../APIReference//walletProviderAPI.md) instance under `window.stargazer` each time a page loads. You can check the existence of this property using the following snippet.
 
 ```typescript title="TypeScript"
-if (typeof window.stargazer?.version === "string") {
-  console.log("Stargazer is installed");
+if (window.stargazer) {
+  console.log("Stargazer version " + window.stargazer.version + " detected");
+} else {
+  console.log("Stargazer not detected");
 }
 ```
 
 ## Obtain a `ChainProvider`
 
-Once you verified your dapp has access to a [`WalletProvider`](../APIReference//walletProviderAPI.md) instance you can obtain a [`ChainProvider`](../APIReference/chainProviderAPI.md) to interact with a network of your choice (constellation or ethereum).
+Once you verified your app has access to a [`WalletProvider`](../APIReference//walletProviderAPI.md) instance you can obtain a [`ChainProvider`](../APIReference/chainProviderAPI.md) to interact with a network of your choice (constellation or ethereum).
 
 ```typescript title="TypeScript"
 const provider = window.stargazer.getProvider("constellation");
 ```
 
-_Read more about the WalletProvider API and the ChainProvider API, [here](../APIReference//walletProviderAPI.m) and [here](../APIReference/chainProviderAPI.md)._
+_Read more about the [WalletProvider API](../APIReference//walletProviderAPI.md) and the [ChainProvider API](../APIReference/chainProviderAPI.md)._
 
 ## Activate your provider
 
@@ -52,12 +54,12 @@ For the provider to work you have to activate it via one of the following method
 You can send an activation request to the user using the provider's [`activate()`](../APIReference/chainProviderAPI.md#async-activatetitle-boolean) method. Once the user accepts the request you'll be able to use the provider's RPC interface and methods for the selected chain.
 
 ```typescript title="TypeScript"
-const activated = await provider.activate("A Cool Dapp Name");
+const activated = await provider.activate("A Cool App Name");
 ```
 
-_Read more about the different RPC methods available both for Constellation and Ethereum, [here](../APIReference//constellationRPCAPI.md) and [here](../APIReference/ethereumRPCAPI.md)._
+_Read more about the different RPC methods available both for [Constellation](../APIReference//constellationRPCAPI.md) and [Ethereum](../APIReference/ethereumRPCAPI.md)._
 
-### Calling any other RPC related method
+### Calling other RPC methods
 
 You can as well call any RPC related method like [`request()`](../APIReference/chainProviderAPI.md#async-requestrequest-any) or [`on()`](../APIReference/chainProviderAPI.md#oneventname-listener-void) to activate the provider. It will internally send an activation request to the user to accept. If the user accepts the request the RPC related method is executed, if not it will throw an error.
 

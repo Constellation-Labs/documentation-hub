@@ -80,7 +80,7 @@ Sends an [activation](../Guide/providerActivation.md) request for the user to ac
 
 | Name   | Type     | Description |
 | ------ | -------- | ----------- |
-| title? | `String` | Dapp name.  |
+| title? | `String` | App name.  |
 
 ##### Return Type
 
