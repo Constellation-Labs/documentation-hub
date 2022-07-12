@@ -67,6 +67,7 @@ module.exports = {
           label: 'Google Cloud Platform (GCP)',
           items: [
             'validator/gcp/account',
+            'validator/gcp/project',
           ],
         },
       ],
