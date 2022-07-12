@@ -88,5 +88,3 @@ After a few moments, our **VM** will complete the spin up process and be ready f
 You should see your VM spin up.
 
 ![](/img/validator_nodes/node-gcp-instance19.png)
-
-We are ready to setup our Firewall (SG) ...
