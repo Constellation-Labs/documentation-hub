@@ -16,7 +16,7 @@ Constellation Network views Web 3.0 as both an extension and an evolution of the
 Web 2.0 model. Web 3.0 does not necessarily replace existing information technology infrastructure, rather, it builds
 upon it by proposing a new decentralized protocol to add to its existing suite of protocols. No DLT or Blockchain
 technology to date has proven to be scalable, durable, and flexible enough to be considered eligible for entry
-into the existing TCP/IP stack as standardized decentralized protocol for transferring and validating data. There
+into the existing TCP/IP stack as a standardized decentralized protocol for transferring and validating data. There
 are many outstanding challenges that need to be overcome before a standard will emerge. The challenges that
 Constellation Network seeks to solve are as follows:
 
