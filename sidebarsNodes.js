@@ -68,6 +68,7 @@ module.exports = {
           items: [
             'validator/gcp/account',
             'validator/gcp/project',
+            'validator/gcp/createInstancePart1',
           ],
         },
       ],
