@@ -73,6 +73,28 @@ module.exports = {
             'validator/gcp/sg',
           ],
         },
+        'validator/password',
+        'validator/accessMac',
+        'validator/accessWin',
+        {
+          type: 'category',
+          label: 'nodectl',
+          items: [
+            'validator/nodectl/install',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'manual Node build',
+          items: [
+            'validator/manualInstall/nonRootUser',
+            'validator/manualInstall/dependencies',
+            'validator/manualInstall/binaries',
+            'validator/manualInstall/p12',
+            'validator/manualInstall/service',
+            'validator/manualInstall/join',
+          ],
+        },
       ],
     },
   ],
