@@ -59,6 +59,7 @@ module.exports = {
             'validator/aws/applySSHec2',
             'validator/aws/createEC2',
             'validator/aws/eip',
+            'validator/aws/sg',
           ],
         },
       ],
