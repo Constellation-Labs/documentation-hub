@@ -69,6 +69,7 @@ module.exports = {
             'validator/gcp/account',
             'validator/gcp/project',
             'validator/gcp/createInstancePart1',
+            'validator/gcp/createInstancePart2',
           ],
         },
       ],
