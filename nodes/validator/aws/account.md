@@ -7,7 +7,7 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>Digital Ocean</title>
+  <title>Amazon Web Services</title>
   <meta
     name="description"
     content="Building a Validator Node on AWS's platform."

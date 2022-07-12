@@ -62,6 +62,13 @@ module.exports = {
             'validator/aws/sg',
           ],
         },
+        {
+          type: 'category',
+          label: 'Google Cloud Platform (GCP)',
+          items: [
+            'validator/gcp/account',
+          ],
+        },
       ],
     },
   ],
