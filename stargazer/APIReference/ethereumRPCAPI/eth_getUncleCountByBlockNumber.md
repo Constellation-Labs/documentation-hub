@@ -5,30 +5,30 @@ hide_table_of_contents: true
 <head>
   <meta
     name="description"
-    content="Returns the keccak-256 _(not the standarized sha3-256)_ of the given data."
+    content="Returns the number of uncles in a block by number."
   />
 </head>
 
 <intro-end />
 
-Returns the keccak-256 _(not the standarized sha3-256)_ of the given data.
+Returns the number of uncles in a block by number.
 
 ##### Parameters
 
-| Name | Type        | Description                      |
-| ---- | ----------- | -------------------------------- |
-| Data | `HexString` | Data to calculate the hash from. |
+| Name        | Type                                                            | Description                                                                |
+| ----------- | --------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| BlockNumber | `HexString<Number>`\| `"latest"` \| `"earliest"` \| `"pending"` | Hexadecimal block number, or the string "latest", "earliest" or "pending". |
 
 ##### Return Type
 
-`HexString` - The keccak-256 digest of the given data.
+`HexString<Number>` | `null` - Number of uncles in the block or null if not found.
 
 ##### Example
 
 ```typescript title="TypeScript"
 await provider.request({
-  method: "web3_sha3",
-  params: ["0x68656c6c6f20776f726c64"],
+  method: "eth_getUncleCountByBlockNumber",
+  params: ["0x5bad55"],
 });
-// "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+// "0x1"
 ```

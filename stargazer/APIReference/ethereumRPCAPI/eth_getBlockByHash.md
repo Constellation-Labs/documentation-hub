@@ -97,7 +97,6 @@ await provider.request({
   logsBloom:
     "0x4848112002a2020aaa081218004584...",
   miner: "0x5a0b54d5dc17e0aadc383d2db43b0a0d3e029c4c",
-  mixHash: "0x3d1fdd16f15aeab72e7db1013b9f034ee33641d92f71c0736beab4e67d34c7a7",
   nonce: "0x4db7a1c01d8a8072",
   number: "0x5bad55",
   parentHash:
