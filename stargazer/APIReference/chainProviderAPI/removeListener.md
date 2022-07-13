@@ -27,10 +27,10 @@ This method will always return, even if there are errors while removing the list
 
 ##### Parameters
 
-| Name      | Type      | Description                                                                                                                                                |
-| --------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name      | Type      | Description                                                                                                                                              |
+| --------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | eventName | `String`  | Event listened. Depeding on the provider chain one of [Constellation RPC event](../constellationRPCAPI/) or an [Ethereum RPC event](../ethereumRPCAPI/). |
-| listener  | `()=>any` | Callback function.                                                                                                                                         |
+| listener  | `()=>any` | Callback function.                                                                                                                                       |
 
 ##### Return Type
 

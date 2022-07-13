@@ -75,7 +75,7 @@ Sends an [activation](../Guide/providerActivation.md) request for the user to ac
 
 | Name   | Type     | Description |
 | ------ | -------- | ----------- |
-| title? | `String` | App name.  |
+| title? | `String` | App name.   |
 
 ##### Return Type
 

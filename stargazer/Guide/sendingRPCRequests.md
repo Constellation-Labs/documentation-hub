@@ -60,7 +60,7 @@ You can think about an ABI as any other programming interface, where you have de
 In the next example we will use the `greet` method from the [StargazerGreeter](https://ropsten.etherscan.io/address/0x1dbf94d57ceb7b59de0b5efd1e85776aa97cbdb4#code) contract. It reads a greet string saved in the network state. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](https://www.npmjs.com/package/ethers) package will call [`eth_call`](../APIReference/ethereumRPCAPI/eth_call.md) for us.
 
 ```typescript title="TypeScript"
-import * as ethers from 'ethers';
+import * as ethers from "ethers";
 
 const ethersProvider = new ethers.providers.Web3Provider(ethProvider);
 
@@ -86,7 +86,7 @@ Write calls need to be confirmed by the user. Read more [here](#send-transaction
 :::
 
 ```typescript title="TypeScript"
-import * as ethers from 'ethers';
+import * as ethers from "ethers";
 
 const ethersProvider = new ethers.providers.Web3Provider(ethProvider);
 
@@ -128,7 +128,7 @@ The special ERC20 method `approve` has a different approval screen for the user 
 You can send ERC20 tokens using the `transfer` method from any ERC20 contract. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](https://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI/eth_sendTransaction.md) for us.
 
 ```typescript title="TypeScript"
-import * as ethers from 'ethers';
+import * as ethers from "ethers";
 
 const ethersProvider = new ethers.providers.Web3Provider(ethProvider);
 
@@ -162,7 +162,7 @@ console.log(trxReceipt.blockNumber);
 You can approve spend of ERC20 tokens to external contracts using the `approve` method from any ERC20 contract. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](https://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI/eth_sendTransaction.md) for us.
 
 ```typescript title="TypeScript"
-import * as ethers from 'ethers';
+import * as ethers from "ethers";
 
 const ethersProvider = new ethers.providers.Web3Provider(ethProvider);
 
@@ -196,7 +196,7 @@ console.log(trxReceipt.blockNumber);
 You can send ETH (The ethereum's native currency) sending a simple transaction to the network. For interacting with the network we will create an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider) and an ethers [`Signer`](https://docs.ethers.io/v5/api/signer/#Signer). In the background the [ethers](https://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI/eth_sendTransaction.md) for us.
 
 ```typescript title="TypeScript"
-import * as ethers from 'ethers';
+import * as ethers from "ethers";
 
 const ethersProvider = new ethers.providers.Web3Provider(ethProvider);
 
