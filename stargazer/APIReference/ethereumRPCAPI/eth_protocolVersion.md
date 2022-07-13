@@ -5,30 +5,28 @@ hide_table_of_contents: true
 <head>
   <meta
     name="description"
-    content="Returns the keccak-256 _(not the standarized sha3-256)_ of the given data."
+    content="Returns the current ethereum protocol version."
   />
 </head>
 
 <intro-end />
 
-Returns the keccak-256 _(not the standarized sha3-256)_ of the given data.
+Returns the current ethereum protocol version.
 
 ##### Parameters
 
-| Name | Type        | Description                      |
-| ---- | ----------- | -------------------------------- |
-| Data | `HexString` | Data to calculate the hash from. |
+None
 
 ##### Return Type
 
-`HexString` - The keccak-256 digest of the given data.
+`HexString` - The current ethereum protocol version.
 
 ##### Example
 
 ```typescript title="TypeScript"
 await provider.request({
-  method: "web3_sha3",
-  params: ["0x68656c6c6f20776f726c64"],
+  method: "eth_protocolVersion",
+  params: [],
 });
-// "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+// "0x3f"
 ```

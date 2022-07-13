@@ -5,30 +5,30 @@ hide_table_of_contents: true
 <head>
   <meta
     name="description"
-    content="Returns the keccak-256 _(not the standarized sha3-256)_ of the given data."
+    content="Uninstalls a filter with given ID. Should always be called when watching is no longer needed. Additionally filters time out when they aren't requested with eth_getFilterChanges for a period of time."
   />
 </head>
 
 <intro-end />
 
-Returns the keccak-256 _(not the standarized sha3-256)_ of the given data.
+Uninstalls a filter with given ID. Should always be called when watching is no longer needed. Additionally filters time out when they aren't requested with [`eth_getFilterChanges`](./eth_getFilterChanges.md) for a period of time.
 
 ##### Parameters
 
-| Name | Type        | Description                      |
-| ---- | ----------- | -------------------------------- |
-| Data | `HexString` | Data to calculate the hash from. |
+| Name     | Type        | Description                |
+| -------- | ----------- | -------------------------- |
+| FilterId | `HexString` | Filter to uninstall by id. |
 
 ##### Return Type
 
-`HexString` - The keccak-256 digest of the given data.
+`Boolean` - True if the filter was uninstalled successfully.
 
 ##### Example
 
 ```typescript title="TypeScript"
 await provider.request({
-  method: "web3_sha3",
-  params: ["0x68656c6c6f20776f726c64"],
+  method: "eth_uninstallFilter",
+  params: ["0x10ff0bfba9472c87932c56632eef8f5cc70910e8e71d"],
 });
-// "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+// true
 ```
