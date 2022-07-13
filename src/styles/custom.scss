@@ -7,22 +7,22 @@
 
 /* You can override the default Infima variables here. */
 
-@use './components/admonition';
-@use './components/back-to-top-button';
-@use './components/code';
-@use './components/doc-item';
-@use './components/doc-page';
-@use './components/doc-sidebar';
-@use './components/edit-this-page';
-@use './components/markdown';
-@use './components/navbar';
-@use './components/navbar-sidebar';
-@use './components/pagination';
-@use './components/search';
-@use './components/table';
-@use './components/tabs';
-@use './components/theme-toggle';
-@use './components/toc';
+@use "./components/admonition";
+@use "./components/back-to-top-button";
+@use "./components/code";
+@use "./components/doc-item";
+@use "./components/doc-page";
+@use "./components/doc-sidebar";
+@use "./components/edit-this-page";
+@use "./components/markdown";
+@use "./components/navbar";
+@use "./components/navbar-sidebar";
+@use "./components/pagination";
+@use "./components/search";
+@use "./components/table";
+@use "./components/tabs";
+@use "./components/theme-toggle";
+@use "./components/toc";
 
 :root {
   --ifm-background-color: var(--token-primary-bg-c);
@@ -31,11 +31,12 @@
   --ifm-navbar-padding-vertical: 0;
   --ifm-navbar-item-padding-vertical: 0;
 
-  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, Inter, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI emoji';
-  --ifm-font-family-monospace: 'SFMono-Regular', 'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, Inter, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI emoji";
+  --ifm-font-family-monospace: "SFMono-Regular", "Roboto Mono", Consolas,
+    "Liberation Mono", Menlo, Courier, monospace;
 
-  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04Ljk5OTg4IDVMNC45OTk4OCAxTDAuOTk5ODc4IDUiIHN0cm9rZT0iIzAzMDYwQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K');
+  --ifm-menu-link-sublist-icon: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04Ljk5OTg4IDVMNC45OTk4OCAxTDAuOTk5ODc4IDUiIHN0cm9rZT0iIzAzMDYwQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
 
   //#region ----------- Z Indices ------------
   --z-sidebar: 2000;
@@ -43,7 +44,7 @@
   //#endregion
 }
 
-html[data-theme='light'] {
+html[data-theme="light"] {
   --token-primary-bg-c: #fff;
   --token-secondary-bg-c: #fff;
 
@@ -61,7 +62,7 @@ html[data-theme='light'] {
   --ifm-font-color-base: var(--c-carbon-90);
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --token-primary-bg-c: #03060b;
   --token-secondary-bg-c: #13171c;
 
@@ -177,8 +178,8 @@ iframe {
   margin: 1rem 0 0;
 }
 
-.spacer { 
-  flex-basis: 0 !important; 
+.spacer {
+  flex-basis: 0 !important;
 }
 
 .theme-doc-sidebar-item-link-level-1 {
@@ -190,4 +191,11 @@ iframe {
   font-weight: 600 !important;
   color: var(--sidebar-category-c);
   margin-bottom: 20px;
+}
+
+#__docusaurus .pagination-nav .pagination-nav__label {
+  &::before,
+  &::after {
+    display: none;
+  }
 }

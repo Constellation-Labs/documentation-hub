@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+<head>
+  <meta
+    name="description"
+    content="Returns the number of transactions included in a block by number."
+  />
+</head>
+
+<intro-end />
+
+Returns the number of transactions included in a block by number.
+
+##### Parameters
+
+| Name        | Type                                                            | Description                                                                |
+| ----------- | --------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| BlockNumber | `HexString<Number>`\| `"latest"` \| `"earliest"` \| `"pending"` | Hexadecimal block number, or the string "latest", "earliest" or "pending". |
+
+##### Return Type
+
+`HexString<Number>` | `null` - Number of transactions included in the block or null if not found.
+
+##### Example
+
+```typescript title="TypeScript"
+await provider.request({
+  method: "eth_getBlockTransactionCountByNumber",
+  params: ["0x5bad55"],
+});
+// "0x50"
+```
