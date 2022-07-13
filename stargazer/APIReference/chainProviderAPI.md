@@ -14,11 +14,6 @@ import TOCInline from '@theme/TOCInline';
     name="description"
     content="Lorem ipsum"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}</style>
 </head>
 
 <intro-end />

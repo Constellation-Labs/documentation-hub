@@ -12,11 +12,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Communication with the wallet is sent via RPC requests. This guide will show you how to send a RPC request and how to interpret responses."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}</style>
 </head>
 
 <intro-end />

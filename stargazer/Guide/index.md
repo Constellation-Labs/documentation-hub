@@ -13,11 +13,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Welcome to the Stargazer API documentation. Stargazer is a multichain wallet with support for Constellation and Ethereum networks. The following documentation will guide you through integrating the Stargazer wallet into a Web3 site or app. "
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}</style>
 </head>
 
 <intro-end />

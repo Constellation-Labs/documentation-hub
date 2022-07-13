@@ -12,11 +12,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Sending raw RPC requests can be error-prone and sometimes overwhelming, this guide will list some common external libraries for the ethereum ecosystem which are compatible with the stargazer ChainProvider."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}</style>
 </head>
 
 <intro-end />

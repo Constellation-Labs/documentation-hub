@@ -14,11 +14,6 @@ import TOCInline from '@theme/TOCInline';
     name="description"
     content="The WalletProvider permits access to different chain providers. The WalletProvider is injected on every page you visit under window.stargazer."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}</style>
 </head>
 
 <intro-end />
