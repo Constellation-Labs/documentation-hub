@@ -10,17 +10,17 @@ import DocsCards from '@components/global/DocsCards';
 <head>
   <meta
     name="description"
-    content="Signing arbitrary data enables you to verify an user's possession of an account, this guide will walk you through the signing process and verification."
+    content="Signing arbitrary data enables you to verify the user's possession of an account. This guide will walk you through the signing process and verification."
   />
 </head>
 
 <intro-end />
 
-Signing arbitrary data enables you to verify an user's possession of an account, this guide will walk you through the signing process and verification.
+Signing arbitrary data enables you to verify the user's possession of an account. This guide will walk you through the signing process and verification.
 
 :::info Obtain a chain provider
 
-With the steps mentioned in _[Provider Activation](./providerActivation.md#obtain-a-chainprovider)_ get a chain provider for the networks you want to interact with. In the following examples we will use both ethereum and constellation providers.
+As covered in [Provider Activation](./providerActivation.md#obtain-a-chainprovider), obtain a chain provider for the networks you want to interact with. In the following examples, we will use both Ethereum and Constellation providers.
 
 ```typescript title="TypeScript"
 const dagProvider = window.stargazer.getProvider("constellation");
@@ -47,7 +47,7 @@ const signatureRequest: SignatureRequest = {
 
 ### Encode the signature request
 
-Requests need to be encoded as a `Base64 < JSON` encoded string to sign. The wallet will then generate the signature from the same characters that compose this encoded request.
+Requests need to be a `Base64 < JSON` encoded string to sign. The wallet will then generate the signature from the same characters that compose this encoded request.
 
 ```typescript title="TypeScript"
 // Encode the signature request - Base64 < JSON < Request
@@ -56,10 +56,10 @@ const signatureRequestEnconded = window.btoa(JSON.stringify(signatureRequest));
 
 ### Send the signature request
 
-Once built and encoded you can send the encoded signature request using the [`dag_signMessage`](../APIReference/constellationRPCAPI.md#dagsignmessage) RPC method.
+Once built and encoded, you can send the encoded signature request using the [`dag_signMessage`](../APIReference/constellationRPCAPI.md#dagsignmessage) RPC method.
 
 :::note Important
-When sent the wallet will verify the signature request complies with the schema of the [signature request object](../APIReference/constellationRPCAPI.md#tst-signaturerequest), if it does not comply the wallet will return an error.
+When the signature request is sent, the wallet will verify compliance with the schema of the [signature request object](../APIReference/constellationRPCAPI.md#tst-signaturerequest). If it does not comply, the wallet will throw an error.
 :::
 
 ```typescript title="TypeScript"
@@ -77,11 +77,11 @@ await dagProvider.request({
 The returned signature corresponds to the SHA512 hash of the encoded signature request and the private key of the user.
 `ECDSA.sign(privateKey, sha512(signatureRequestEnconded))`.
 
-_Read more about [constellation signature verification](#constellation-signature-verification)_
+_Read more about [Constellation signature verification](#constellation-signature-verification)_
 
 ### Get the account public key
 
-After you generate a signature from your encoded request you need to retrieve the signer's account public key for later verification, this due to the fact that constellation signatures are not recoverable (a.k.a do not contain the `v` parameter like in ethereum).
+After you generate a signature from your encoded request, you need to retrieve the public key from the signer's account for future verification. This is due to the fact that Constellation signatures are not recoverable (i.e. do not contain the `v` parameter like in Ethereum).
 
 ```typescript title="TypeScript"
 // Send the request and wait for the signature
@@ -94,7 +94,7 @@ await dagProvider.request({
 
 ## Ethereum Message Signing
 
-The ethereum RPC API provided reveals the [`personal_sign`](../APIReference/ethereumRPCAPI.md#personal_sign) RPC method for message signing. In this case the message signed is an arbitrary hex string prefixed by the `"\x19Ethereum Signed Message:\n"` string and the length of the message in bytes from [EIP-191](https://eips.ethereum.org/EIPS/eip-191#specification).
+The Ethereum RPC API provided reveals the [`personal_sign`](../APIReference/ethereumRPCAPI.md#personal_sign) RPC method for message signing. In this case, the message signed is an arbitrary hex string prefixed by the `"\x19Ethereum Signed Message:\n"` string and the length of the message in bytes from [EIP-191](https://eips.ethereum.org/EIPS/eip-191#specification).
 
 ```typescript title="TypeScript"
 // Send the request and wait for the signature
@@ -121,11 +121,11 @@ await dagProvider.request({
 The returned signature corresponds to the keccak256 hash of the prefix + message string and the private key of the user.
 `ECDSA.sign(privateKey, keccak256("\x19Ethereum Signed Message:\n" + len(message) + message))`.
 
-_Read more about [ethereum signature verification](#ethereum-signature-verification)_
+_Read more about [Ethereum signature verification](#ethereum-signature-verification)_
 
 ## Constellation Signature Verification
 
-For signature verification we will be using the [@stardust-collective/dag4](https://www.npmjs.com/package/@stardust-collective/dag4) package. The following snippet illustrates how you can verify an encoded request signature.
+For signature verification, we will be using the [@stardust-collective/dag4](https://www.npmjs.com/package/@stardust-collective/dag4) package. The following snippet illustrates how you can verify an encoded request signature.
 
 ```typescript title="TypeScript"
 import { dag4 } from "@stardust-collective/dag4";
@@ -145,7 +145,7 @@ const publicKeyAddress = dag4.keyStore.getDagAddressFromPublicKey(publicKey);
 
 ## Ethereum Signature Verification
 
-For signature verification we will be using the [ethers](http://www.npmjs.com/package/ethers) package. The following snippet illustrates how you can verify message signature.
+For signature verification, we will be using the [ethers](http://www.npmjs.com/package/ethers) package. The following snippet illustrates how you can verify message signature.
 
 ```typescript title="TypeScript"
 import * as ethers from "ethers";

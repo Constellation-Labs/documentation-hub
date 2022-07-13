@@ -1,5 +1,5 @@
 ---
-title: API Reference - Overview
+title: API Reference Overview
 sidebar_label: Overview
 sidebar_position: 0
 slug: ./
@@ -12,10 +12,10 @@ import DocsCards from '@components/global/DocsCards';
 <head>
   <meta
     name="description"
-    content="Lorem ipsum"
+    content="The following pages will cover various classes and interfaces found while using the Stargazer Wallet API in the browser."
   />
 </head>
 
 <intro-end />
 
-The next pages will describe the different classes and interfaces found while using the Stargazer Wallet API in the browser.
+The following pages will cover various classes and interfaces found while using the Stargazer Wallet API in the browser.

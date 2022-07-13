@@ -12,13 +12,13 @@ import TOCInline from '@theme/TOCInline';
 <head>
   <meta
     name="description"
-    content="The WalletProvider permits access to different chain providers. The WalletProvider is injected on every page you visit under window.stargazer."
+    content="The Wallet Provider allows access to different chain providers. The Wallet Provider is injected into every page you visit under window.stargazer."
   />
 </head>
 
 <intro-end />
 
-The `WalletProvider` permits access to different chain providers. The `WalletProvider` is injected on every page you visit under `window.stargazer`.
+The `WalletProvider` allows access to different chain providers. The `WalletProvider` is injected into every page you visit under `window.stargazer`.
 
 ## Properties
 
