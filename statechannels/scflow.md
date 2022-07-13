@@ -1,14 +1,27 @@
-## Local L_0 Network: State Channel Data Flow
+---
+title: State Channel L_0 Data Flow
+hide_table_of_contents: false
+---
+
+<head>
+    <title> State Channel L_0 Data Flow
+</title>
+    <meta 
+      name="description"
+      content="Lorem ipsum"
+  />
+    </head>
 
 
 ![](https://github.com/Constellation-Labs/documentation-hub/blob/main/static/img/coreconcepts/6%20-%20state%20channel%20data%20flow.jpg)
 
-### STEP 1: Define State Channel Snapshot Schema
+### STEP 1: Define State Channel Snapshot Schema 
 
-In order for your state channel to submit data into the hypergraph for
-validation you must first define the data types that you want to
-transmit to the network. This "State Channel Snapshot Schema" allows the
-global layer 0 network to understand what inputs to accept and which DAG
+In order for the state channel to submit data into the Hypergraph for
+validation it must first define the data types that it requires to
+transmit to the network. This is what is referred to as state channel's
+Application Chain Interface (ACI). Defining a "State Channel Snapshot Schema" allows the
+Global Layer 0 network to understand what inputs to accept and which DAG
 address to associate the state channel with so that the network is aware
 of the balance of DAG held within this state channel address for
 throughput allotment. Once this state channel snapshot schema is defined
@@ -148,6 +161,7 @@ for the L_0 Cell.
 > [L0TokenDef.scala](https://github.com/Constellation-Labs/tessellation/blob/develop/examples/l0-token/src/main/scala/org/example/L0TokenDef.scala)
 > &
 > [types.scala](https://github.com/Constellation-Labs/tessellation/blob/develop/examples/l0-token/src/main/scala/org/example/types.scala).
+
 ```scala
  object L0TokenDef extends StateChannelDef[L0TokenStep, Ω, L0TokenStep]{
  
@@ -160,6 +174,7 @@ Map(
   classOf[CreateStateChannelSnapshot] -> 1002
 )
 ```
+
 ```scala
 object L0TokenDef extends StateChannelDef[L0TokenStep, Ω, L0TokenStep]
 ```
@@ -243,6 +258,7 @@ case") .asLeft[Ω]))
     **Algebra** is a fold operation which reduces the ending type to the
     output terminal object. This is considered the Catamorphism
     operation of the Hylomorphic recursion scheme.
+    
 ```scala
       CoalgebraM[F, StackF, Ω] { input =>
         val logger = Slf4jLogger.getLogger[F]
