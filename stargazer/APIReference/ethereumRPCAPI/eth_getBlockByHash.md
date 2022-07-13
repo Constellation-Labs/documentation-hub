@@ -54,16 +54,75 @@ type Block = {
 };
 ```
 
-```typescript title="Block"
-type Transaction = {};
+```typescript title="Transaction"
+type Transaction = {
+  hash: HexString<Hash>; // Hash of the transaction.
+  from: Address; // Address of the sender.
+  to: Address | null; // Address of the receiver or null for contract creations.
+  value: HexString<Number>; // Value sent in WEI.
+
+  blockHash: HexString<Hash> | null; // Block hash of transaction or null if transaction is pending.
+  blockNumber: HexString<Number> | null; // Block number of transaction or null if transaction is pending.
+  nonce: HexString<Number>; // Number of transactions made by the sender before.
+
+  gas: HexString<Number>; // Gas units provider by the sender.
+  gasPrice: HexString<Number>; // Gas price provider by the sender in WEI.
+  maxFeePerGas?: HexString<Number>; // Maximum fee in WEI per gas unit. EIP-1559.
+  maxPriorityFeePerGas?: HexString<Number>; // Maximum fee in WEI per gas unit above the base fee. EIP-1559.
+
+  input: HexString; // Data sent with the transaction.
+
+  r: HexString; // ECDSA signature r.
+  s: HexString; // ECDSA signature s.
+  v: HexString; // ECDSA recovery ID.
+
+  transactionIndex: HexString<Number> | null; // Transaction index in block or null if transaction is pending.
+  type: HexString<Number>; // Transaction type
+};
 ```
 
 ##### Example
 
 ```typescript title="TypeScript"
 await provider.request({
-  method: "web3_sha3",
-  params: ["0x68656c6c6f20776f726c64"],
+  method: "eth_getBlockByHash",
+  params: ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35"],
 });
-// "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+/* {
+  difficulty: "0xbfabcdbd93dda",
+  extraData: "0x737061726b706f6f6c2d636e2d6e6f64652d3132",
+  gasLimit: "0x79f39e",
+  gasUsed: "0x79ccd3",
+  hash: "0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35",
+  logsBloom:
+    "0x4848112002a2020aaa081218004584...",
+  miner: "0x5a0b54d5dc17e0aadc383d2db43b0a0d3e029c4c",
+  mixHash: "0x3d1fdd16f15aeab72e7db1013b9f034ee33641d92f71c0736beab4e67d34c7a7",
+  nonce: "0x4db7a1c01d8a8072",
+  number: "0x5bad55",
+  parentHash:
+    "0x61a8ad530a8a43e3583f8ec163f773ad370329b2375d66433eb82f005e1d6202",
+  receiptsRoot:
+    "0x5eced534b3d84d3d732ddbc714f5fd51d98a941b28182b6efe6df3a0fe90004b",
+  sha3Uncles:
+    "0x8a562e7634774d3e3a36698ac4915e37fc84a2cd0044cb84fa5d80263d2af4f6",
+  size: "0x41c7",
+  stateRoot:
+    "0xf5208fffa2ba5a3f3a2f64ebd5ca3d098978bedd75f335f56b705d8715ee2305",
+  timestamp: "0x5b541449",
+  totalDifficulty: "0x12ac11391a2f3872fcd",
+  transactions: [
+    "0x8784d99762bccd03b2086eabccee0d77f14d05463281e121a62abfebcf0d2d5f",
+    "0x311be6a9b58748717ac0f70eb801d29973661aaf1365960d159e4ec4f4aa2d7f",
+    "0xe42b0256058b7cad8a14b136a0364acda0b4c36f5b02dea7e69bfd82cef252a2",
+    "0x4eb05376055c6456ed883fc843bc43df1dcf739c321ba431d518aecd7f98ca11",
+    "0x994dd9e72b212b7dc5fd0466ab75adf7d391cf4f206a65b7ad2a1fd032bb06d7",
+    ...
+  ],
+  transactionsRoot:
+    "0xf98631e290e88f58a46b7032f025969039aa9b5696498efc76baf436fa69b262",
+  uncles: [
+    "0x824cce7c7c2ec6874b9fa9a9a898eb5f27cbaf3991dfa81084c3af60d1db618c",
+  ],
+} */
 ```
