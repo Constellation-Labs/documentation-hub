@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 <intro-end />
 
-Sends an [activation](../Guide/providerActivation.md) request for the user to accept. If the user has already given authorization for the current [origin](https://datatracker.ietf.org/doc/html/rfc6454) this method just configures the underlying communication channel.
+Sends an [activation](../../Guide/providerActivation.md) request for the user to accept. If the user has already given authorization for the current [origin](https://datatracker.ietf.org/doc/html/rfc6454) this method just configures the underlying communication channel.
 
 ##### Type
 

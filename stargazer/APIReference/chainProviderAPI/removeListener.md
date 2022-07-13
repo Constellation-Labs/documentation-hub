@@ -18,7 +18,7 @@ sidebar_position: 3
 Removes the listener function as callback of the selected RPC event.
 
 :::caution Warning
-This method will always return, even if there are errors while removing the listener, for controlling errors generated during the deregistration process use [async removeListenerAsync(eventName, listener)](#async-removelistenerasynceventname-listener-void).
+This method will always return, even if there are errors while removing the listener, for controlling errors generated during the deregistration process use [async removeListenerAsync(eventName, listener)](./removeListenerAsync.md).
 :::
 
 ##### Type
@@ -29,7 +29,7 @@ This method will always return, even if there are errors while removing the list
 
 | Name      | Type      | Description                                                                                                                                                |
 | --------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventName | `String`  | Event listened. Depeding on the provider chain one of [Constellation RPC event](./constellationRPCAPI.md) or an [Ethereum RPC event](./ethereumRPCAPI.md). |
+| eventName | `String`  | Event listened. Depeding on the provider chain one of [Constellation RPC event](../constellationRPCAPI/) or an [Ethereum RPC event](../ethereumRPCAPI/). |
 | listener  | `()=>any` | Callback function.                                                                                                                                         |
 
 ##### Return Type

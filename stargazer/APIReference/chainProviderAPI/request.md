@@ -14,7 +14,7 @@ hide_table_of_contents: true
 
 **[EIP-1193 request()](https://eips.ethereum.org/EIPS/eip-1193#request)**
 
-Invokes the selected RPC method. Depeding on the provider chain it will invoke a [Constellation RPC method](./constellationRPCAPI.md) or an [Ethereum RPC method](./ethereumRPCAPI.md).
+Invokes the selected RPC method. Depeding on the provider chain it will invoke a [Constellation RPC method](../constellationRPCAPI/) or an [Ethereum RPC method](../ethereumRPCAPI/).
 
 ##### Type
 

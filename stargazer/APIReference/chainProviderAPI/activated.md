@@ -12,7 +12,7 @@ sidebar_position: 2
 
 <intro-end />
 
-Contains the status of [activation](../Guide/providerActivation.md).
+Contains the status of [activation](../../Guide/providerActivation.md).
 
 ##### Type
 

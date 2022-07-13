@@ -20,7 +20,7 @@ A chain provider allows you to interact with any available network. In this guid
 
 ## Detect Stargazer
 
-The stargazer browser extension injects a [`WalletProvider`](../APIReference//walletProviderAPI.md) instance under `window.stargazer` each time a page loads. You can check the existence of this property using the following snippet.
+The stargazer browser extension injects a [`WalletProvider`](../APIReference/walletProviderAPI/) instance under `window.stargazer` each time a page loads. You can check the existence of this property using the following snippet.
 
 ```typescript title="TypeScript"
 if (window.stargazer) {
@@ -32,13 +32,13 @@ if (window.stargazer) {
 
 ## Obtain a ChainProvider
 
-Once you verified your app has access to a [`WalletProvider`](../APIReference//walletProviderAPI.md) instance you can obtain a [`ChainProvider`](../APIReference/chainProviderAPI.md) to interact with a network of your choice (constellation or ethereum).
+Once you verified your app has access to a [`WalletProvider`](../APIReference/walletProviderAPI/) instance you can obtain a [`ChainProvider`](../APIReference/chainProviderAPI/) to interact with a network of your choice (constellation or ethereum).
 
 ```typescript title="TypeScript"
 const provider = window.stargazer.getProvider("constellation");
 ```
 
-_Read more about the [WalletProvider API](../APIReference//walletProviderAPI.md) and the [ChainProvider API](../APIReference/chainProviderAPI.md)._
+_Read more about the [WalletProvider API](../APIReference/walletProviderAPI/) and the [ChainProvider API](../APIReference/chainProviderAPI/)._
 
 ## Activate your provider
 
@@ -46,17 +46,17 @@ For the provider to work you have to activate it via one of the following method
 
 ### Activate method
 
-You can send an activation request to the user using the provider's [`activate()`](../APIReference/chainProviderAPI.md#async-activatetitle-boolean) method. Once the user accepts the request you'll be able to use the provider's RPC interface and methods for the selected chain.
+You can send an activation request to the user using the provider's [`activate()`](../APIReference/chainProviderAPI/activate.md) method. Once the user accepts the request you'll be able to use the provider's RPC interface and methods for the selected chain.
 
 ```typescript title="TypeScript"
 const activated = await provider.activate("A Cool App Name");
 ```
 
-_Read more about the different RPC methods available both for [Constellation](../APIReference//constellationRPCAPI.md) and [Ethereum](../APIReference/ethereumRPCAPI.md)._
+_Read more about the different RPC methods available both for [Constellation](../APIReference/constellationRPCAPI/) and [Ethereum](../APIReference/ethereumRPCAPI/)._
 
 ### Other RPC methods
 
-You can as well call any RPC related method such as [`request()`](../APIReference/chainProviderAPI.md#async-requestrequest-any) or [`on()`](../APIReference/chainProviderAPI.md#oneventname-listener-void) to activate the provider. It will send an internal activation request for the user to accept. If the user accepts the request, the RPC-related method is executed; if not, it will throw an error.
+You can as well call any RPC related method such as [`request()`](../APIReference/chainProviderAPI/request.md) or [`on()`](../APIReference/chainProviderAPI/on.md) to activate the provider. It will send an internal activation request for the user to accept. If the user accepts the request, the RPC-related method is executed; if not, it will throw an error.
 
 :::caution Warning
 If the user denies the provider activation, next calls to any RPC related method will immediately throw an error. No activation request will be sent.

@@ -27,4 +27,4 @@ Stargazer is currently available in the following platforms:
 - [Stargazer App (iOS).](https://apps.apple.com/us/app/stargazer-wallet/id1612326452)
 - [Stargazer App (Android).](https://play.google.com/store/apps/details?id=com.stargazer)
 
-You can interact with the [Stargazer Extension](https://chrome.google.com/webstore/detail/stargazer-wallet/pgiaagfkgcbnmiiolekcfmljdagdhlcm) via [injected javascript API](../Guide/providerActivation.md#detect-stargazer-walletprovider). Mobile interactions are not supported at the moment.
+You can interact with the [Stargazer Extension](https://chrome.google.com/webstore/detail/stargazer-wallet/pgiaagfkgcbnmiiolekcfmljdagdhlcm) via [injected javascript API](./providerActivation.md#detect-stargazer). Mobile interactions are not supported at the moment.

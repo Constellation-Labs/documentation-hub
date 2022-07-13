@@ -33,7 +33,7 @@ const ethProvider = window.stargazer.getProvider("ethereum");
 
 ### Build a signature request
 
-Constellation signatures for messages are done through a [signature request object](../APIReference/constellationRPCAPI.md#tst-signaturerequest). The request object is sent to the user to accept, on approval a signature of the whole object is returned.
+Constellation signatures for messages are done through a [signature request object](../APIReference/constellationRPCAPI/dag_signMessage.md#tst-signaturerequest). The request object is sent to the user to accept, on approval a signature of the whole object is returned.
 
 ```typescript title="TypeScript"
 // Build the signature request
@@ -56,10 +56,10 @@ const signatureRequestEnconded = window.btoa(JSON.stringify(signatureRequest));
 
 ### Send the signature request
 
-Once built and encoded, you can send the encoded signature request using the [`dag_signMessage`](../APIReference/constellationRPCAPI.md#dagsignmessage) RPC method.
+Once built and encoded, you can send the encoded signature request using the [`dag_signMessage`](../APIReference/constellationRPCAPI/dag_signMessage.md) RPC method.
 
 :::note Important
-When the signature request is sent, the wallet will verify compliance with the schema of the [signature request object](../APIReference/constellationRPCAPI.md#tst-signaturerequest). If it does not comply, the wallet will throw an error.
+When the signature request is sent, the wallet will verify compliance with the schema of the [signature request object](../APIReference/constellationRPCAPI/dag_signMessage.md#tst-signaturerequest). If it does not comply, the wallet will throw an error.
 :::
 
 ```typescript title="TypeScript"
@@ -94,7 +94,7 @@ await dagProvider.request({
 
 ## Ethereum Message Signing
 
-The Ethereum RPC API provided reveals the [`personal_sign`](../APIReference/ethereumRPCAPI.md#personal_sign) RPC method for message signing. In this case, the message signed is an arbitrary hex string prefixed by the `"\x19Ethereum Signed Message:\n"` string and the length of the message in bytes from [EIP-191](https://eips.ethereum.org/EIPS/eip-191#specification).
+The Ethereum RPC API provided reveals the [`personal_sign`](../APIReference/ethereumRPCAPI/personal_sign.md) RPC method for message signing. In this case, the message signed is an arbitrary hex string prefixed by the `"\x19Ethereum Signed Message:\n"` string and the length of the message in bytes from [EIP-191](https://eips.ethereum.org/EIPS/eip-191#specification).
 
 ```typescript title="TypeScript"
 // Send the request and wait for the signature
@@ -145,7 +145,7 @@ const publicKeyAddress = dag4.keyStore.getDagAddressFromPublicKey(publicKey);
 
 ## Ethereum Signature Verification
 
-For signature verification, we will be using the [ethers](http://www.npmjs.com/package/ethers) package. The following snippet illustrates how you can verify message signature.
+For signature verification, we will be using the [ethers](https://www.npmjs.com/package/ethers) package. The following snippet illustrates how you can verify message signature.
 
 ```typescript title="TypeScript"
 import * as ethers from "ethers";

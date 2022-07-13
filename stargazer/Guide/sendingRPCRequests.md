@@ -31,7 +31,7 @@ const ethProvider = window.stargazer.getProvider("ethereum");
 
 ## List available accounts
 
-For listing available accounts in the wallet (and in some cases activating the providers) you can send the following calls to [`dag_accounts`](../APIReference/constellationRPCAPI.md#dagaccounts) RPC method and [`eth_accounts`](../APIReference/ethereumRPCAPI.md#ethaccounts) RPC method.
+For listing available accounts in the wallet (and in some cases activating the providers) you can send the following calls to [`dag_accounts`](../APIReference/constellationRPCAPI/dag_accounts.md) RPC method and [`eth_accounts`](../APIReference/ethereumRPCAPI/eth_accounts.md) RPC method.
 
 ```typescript title="TypeScript"
 const dagAccounts = await dagProvider.request({ method: "dag_accounts" });
@@ -43,11 +43,11 @@ console.log(eth_accounts);
 // ["0x567d0382442c5178105fC03bd52b8Db6Afb4fE40", "0xAab2C30c02016585EB36b7a0d5608Db787c1e44E"]
 ```
 
-_Read more about [`dag_accounts` RPC method](../APIReference//constellationRPCAPI.md#dag_accounts) and [`eth_accounts` RPC method](../APIReference/ethereumRPCAPI.md#eth_accounts)._
+_Read more about [`dag_accounts` RPC method](../APIReference/constellationRPCAPI/dag_accounts.md) and [`eth_accounts` RPC method](../APIReference/ethereumRPCAPI/eth_accounts.md)._
 
 ## Send a contract call
 
-For interaction with ethereum smart contracts you can use [`eth_call`](../APIReference/ethereumRPCAPI.md#eth_call) RPC method and [`eth_sendTransaction`](../APIReference/ethereumRPCAPI.md#eth_sendtransaction) RPC method, respectively for read and write operations. In the following example we will be using the [ethers](http://www.npmjs.com/package/ethers) package, and a [demo conract](https://ropsten.etherscan.io/address/0x1dbf94d57ceb7b59de0b5efd1e85776aa97cbdb4#code) from the [Stargazer Demos](https://github.com/StardustCollective/stargazer-wallet-demos). The [ethers](http://www.npmjs.com/package/ethers) package will help us encode method parameters based on the contract's ABI, it is encouraged to use external libraries to encode contract call parameters.
+For interaction with ethereum smart contracts you can use [`eth_call`](../APIReference/ethereumRPCAPI/eth_call.md) RPC method and [`eth_sendTransaction`](../APIReference/ethereumRPCAPI/eth_sendTransaction.md) RPC method, respectively for read and write operations. In the following example we will be using the [ethers](https://www.npmjs.com/package/ethers) package, and a [demo conract](https://ropsten.etherscan.io/address/0x1dbf94d57ceb7b59de0b5efd1e85776aa97cbdb4#code) from the [Stargazer Demos](https://github.com/StardustCollective/stargazer-wallet-demos). The [ethers](https://www.npmjs.com/package/ethers) package will help us encode method parameters based on the contract's ABI, it is encouraged to use external libraries to encode contract call parameters.
 
 :::info Important
 Interaction with smart contracts is done through an ABI (Application Binary Interface), you can read more about it in the [Contract ABI Specification](https://docs.soliditylang.org/en/v0.6.0/abi-spec.html) article from the [solidity docs](https://docs.soliditylang.org/en/v0.6.0/index.html).
@@ -57,7 +57,7 @@ You can think about an ABI as any other programming interface, where you have de
 
 ### Read call
 
-In the next example we will use the `greet` method from the [StargazerGreeter](https://ropsten.etherscan.io/address/0x1dbf94d57ceb7b59de0b5efd1e85776aa97cbdb4#code) contract. It reads a greet string saved in the network state. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](http://www.npmjs.com/package/ethers) package will call [`eth_call`](../APIReference/ethereumRPCAPI.md#eth_call) for us.
+In the next example we will use the `greet` method from the [StargazerGreeter](https://ropsten.etherscan.io/address/0x1dbf94d57ceb7b59de0b5efd1e85776aa97cbdb4#code) contract. It reads a greet string saved in the network state. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](https://www.npmjs.com/package/ethers) package will call [`eth_call`](../APIReference/ethereumRPCAPI/eth_call.md) for us.
 
 ```typescript title="TypeScript"
 import * as ethers from 'ethers';
@@ -79,7 +79,7 @@ await contract.greet();
 
 ### Write call
 
-In the next example we will use the `setGreeting` method from the [StargazerGreeter](https://ropsten.etherscan.io/address/0x1dbf94d57ceb7b59de0b5efd1e85776aa97cbdb4#code) contract. It sets a greet string in the network state. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](http://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI.md#eth_sendtransaction) for us.
+In the next example we will use the `setGreeting` method from the [StargazerGreeter](https://ropsten.etherscan.io/address/0x1dbf94d57ceb7b59de0b5efd1e85776aa97cbdb4#code) contract. It sets a greet string in the network state. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](https://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI/eth_sendTransaction.md) for us.
 
 :::note Important
 Write calls need to be confirmed by the user. Read more [here](#send-transactions).
@@ -115,7 +115,7 @@ console.log(trxReceipt.blockNumber);
 
 ## Send Transactions
 
-As the ethereum chain reveals the [`eth_sendTransaction`](../APIReference/ethereumRPCAPI.md#eth_sendtransaction) RPC method you can send any kind of transaction you need (Token Transfer, Contract Interaction, ETH Transfers, etc.).
+As the ethereum chain reveals the [`eth_sendTransaction`](../APIReference/ethereumRPCAPI/eth_sendTransaction.md) RPC method you can send any kind of transaction you need (Token Transfer, Contract Interaction, ETH Transfers, etc.).
 
 :::note Important
 Any **write** call sent from the wallet will ask the user for confirmation.
@@ -125,7 +125,7 @@ The special ERC20 method `approve` has a different approval screen for the user 
 
 ### Send ERC20 Tokens
 
-You can send ERC20 tokens using the `transfer` method from any ERC20 contract. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](http://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI.md#eth_sendtransaction) for us.
+You can send ERC20 tokens using the `transfer` method from any ERC20 contract. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](https://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI/eth_sendTransaction.md) for us.
 
 ```typescript title="TypeScript"
 import * as ethers from 'ethers';
@@ -159,7 +159,7 @@ console.log(trxReceipt.blockNumber);
 
 ### Approve ERC20 Spend
 
-You can approve spend of ERC20 tokens to external contracts using the `approve` method from any ERC20 contract. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](http://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI.md#eth_sendtransaction) for us.
+You can approve spend of ERC20 tokens to external contracts using the `approve` method from any ERC20 contract. For interacting with the contract we will create an ethers [`Contract`](https://docs.ethers.io/v5/api/contract/contract/#Contract--creating) instance, and therefore an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider). In the background the [ethers](https://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI/eth_sendTransaction.md) for us.
 
 ```typescript title="TypeScript"
 import * as ethers from 'ethers';
@@ -193,7 +193,7 @@ console.log(trxReceipt.blockNumber);
 
 ### Send ETH
 
-You can send ETH (The ethereum's native currency) sending a simple transaction to the network. For interacting with the network we will create an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider) and an ethers [`Signer`](https://docs.ethers.io/v5/api/signer/#Signer). In the background the [ethers](http://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI.md#eth_sendtransaction) for us.
+You can send ETH (The ethereum's native currency) sending a simple transaction to the network. For interacting with the network we will create an ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider) and an ethers [`Signer`](https://docs.ethers.io/v5/api/signer/#Signer). In the background the [ethers](https://www.npmjs.com/package/ethers) package will call [`eth_sendTransaction`](../APIReference/ethereumRPCAPI/eth_sendTransaction.md) for us.
 
 ```typescript title="TypeScript"
 import * as ethers from 'ethers';

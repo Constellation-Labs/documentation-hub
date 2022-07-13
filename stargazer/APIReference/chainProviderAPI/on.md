@@ -18,7 +18,7 @@ sidebar_position: 3
 Registers the listener function as callback of the selected RPC event.
 
 :::caution Warning
-This method will always return, even if there are errors while adding the listener, for controlling errors generated during the registration process use [async onAsync(eventName, listener)](#async-onasynceventname-listener-void).
+This method will always return, even if there are errors while adding the listener, for controlling errors generated during the registration process use [async onAsync(eventName, listener)](./onAsync.md).
 :::
 
 ##### Type
@@ -29,7 +29,7 @@ This method will always return, even if there are errors while adding the listen
 
 | Name      | Type      | Description                                                                                                                                                 |
 | --------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventName | `String`  | Event to listen. Depeding on the provider chain one of [Constellation RPC event](./constellationRPCAPI.md) or an [Ethereum RPC event](./ethereumRPCAPI.md). |
+| eventName | `String`  | Event to listen. Depeding on the provider chain one of [Constellation RPC event](../constellationRPCAPI/) or an [Ethereum RPC event](../ethereumRPCAPI/). |
 | listener  | `()=>any` | Callback function.                                                                                                                                          |
 
 ##### Return Type
