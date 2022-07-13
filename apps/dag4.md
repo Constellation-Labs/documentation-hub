@@ -74,7 +74,7 @@ Or provide custom values for the three network API endpoints
 ```js
 dag4.account.connect({
   networkVersion: '2.0',
-  beUrl: 'http://lb-mainnet.constellationnetwork.io',
+  beUrl: 'https://be-mainnet.constellationnetwork.io/',
   l0Url: 'http://13.52.246.74:9000',
   l1Url: 'http://13.52.246.74:9010'
 });
