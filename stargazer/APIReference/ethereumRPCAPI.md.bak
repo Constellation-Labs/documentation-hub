@@ -14,11 +14,6 @@ import TOCInline from '@theme/TOCInline';
     name="description"
     content="This page describes the different RPC methods available for the user. Some of this methods trigger a popup for the user to accept like personal_sign or eth_sendTransaction."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}</style>
 </head>
 
 <intro-end />
@@ -361,7 +356,7 @@ await provider.request({
 // "0x2fe84e3113d7b"
 ```
 
-# `eth_getBlockByHash`
+### `eth_getBlockByHash`
 
 Returns information about a block by hash.
 
@@ -374,7 +369,41 @@ Returns information about a block by hash.
 
 ##### Return Type
 
-`HexString` - The keccak-256 digest of the given data.
+`Block` | `null` - The block data or null if not found.
+
+```typescript title="Block"
+type Block = {
+  number: HexString<Number> | null; // Block number or null if block is pending.
+  hash: HexString<Hash> | null; // Block hash or null if block is pending.
+  parentHash: HexString<Hash>; // Hash of the parent block.
+  nonce: HexString<Hash> | null; // Hash of the proof-of-work or null if block is pending.
+
+  sha3Uncles: HexString<Hash>; // SHA3 hash of the uncles data in the block.
+  logsBloom: HexString<Filter> | null; // Bloom filter of the logs in the block or null if block is pending.
+  transactionsRoot: HexString<Hash>; // Root hash of the transaction trie of the block.
+  stateRoot: HexString<Hash>; // Root hash of the final state trie of the block.
+  receiptsRoot: HexString<Hash>; // Root hash of the receipts trie of the block.
+
+  miner: Address; // Miner's address for rewards.
+  difficulty: HexString<Number>; // Difficulty for this block.
+  totalDifficulty: HexString<Number>; // Total difficulty for the chain until this block.
+
+  extraData: HexString; // 32-byte long space to preserve for the ethernity :]
+  gasLimit: HexString<Number>; // Maximum gas allowed for this block.
+  gasUsed: HexString<Number>; // Total gas used for all transactions in this block.
+
+  size: HexString<Number>; // Size of this block in bytes.
+  timestamp: HexString<Number>; // The unix timestamp for when the block was collated.
+
+  transactions: Transaction[] | HexString<Hash>[]; // Array of transaction objects or transaction hashes.
+
+  uncles: HexString<Hash>[]; // Array of uncle hashes.
+};
+```
+
+```typescript title="Block"
+type Transaction = {};
+```
 
 ##### Example
 
