@@ -7,6 +7,7 @@ module.exports = {
       items: [
         'index',
         'intro',
+        'simple'
       ],
     },
 
