@@ -81,7 +81,7 @@ to weave immutable state data originating from entirely different networks and s
 can be used to compose complex decentralized application logic, such as multi-network API calls and cross-network exchange of tokenized assets. 
 
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/core-concepts-docs/static/img/coreconcepts/graph%20vs%20hypergraph.jpeg) 
+![](https://github.com/Constellation-Labs/documentation-hub/blob/core-concepts-docs/static/img/coreconcepts/graphvshypergraph.jpeg) 
 
 
 ### Layer 0 State Channels
@@ -90,15 +90,28 @@ Layer 0 State channels are the foundation upon which a decentralized immutable H
 They are independent networks which are capable of validating any complex data structure that
 is required of them. This enables developers to model the exact inner state of an application or system and create
 a statically typed data schema with customize consensus logic to validate the data from point of origin
-to destination. This native ability to "Oraclize" data is rooted in the use of the **functional programming** language,
-Scala, in the design of the network. This coupled with the ability to encode complex data into geometric representations,
+to destination. This native ability to "Oraclize" data is rooted in the application of **functional programming** principles in the design of the network, coupled with the ability to encode complex data into geometric representations,
 referred to as "Cell Complexes". These Cell Complexes serve to normalize the state data topologically, 
 which enables composability of heterogeneous state data, including the ability to validate the state of other 
 blockchain and DLT networks. 
 
-Cell Complexes, referred to as simply "Cells", are also responsible for an entirely new form of database scaling,
-referred to as "**Database Cellularization**". It circumvents the limitations inherent with linear database sharding techniques
-by enabling a true microservices architecture which to date has not been possible with decentralized protocols. This
+**What are the implications of this from a practical perspective?**
+
+Lets say your company wanted to develop a decentralized application that can solve the systemic problem of online video game cheating. If the developers
+decided to build this capability with existing blockchains or DLTs, what they would have to do is figure out a way to accomplish this while conforming
+to the data structure token standards which have been decided for them by the network. This would prevent them from validating and notarizing the actual data structures that are being generated from the video game itself, which could potentially be composed of multiple different complex data types. Instead, the developers would be forced to notarize simple messages that describe the game's state as a form of "validation". Most decentralized protocol have to limit the types of data that can be processed by the network due to scalability, interoperability, and composability limitations inherent to their architectures.
+
+To use a specific type of video game as an example; 
+
+First Person Shooters (FPS) games are subject to various types of hacks, with most infamous being the "AimBot" hack. When a user is cheating using this type of hack, he will be able to track where his enemies are in the game and automatically be able to shoot them with 100% accuracy, everytime. This obviously degrades the user experience of the video game and undermines the fair competition that people seek as gamers. What this hack is doing on the backend is basically hi-jacking the local video game application and abusing the inputs and outputs that it receives from the video game's web servers to inform where to aim the player's weapon. In order to prove that a player was cheating in this way, the developers would need the flexibility to encode the inner state of the video game into a complex data structure, notarize it onto the blockchain, and then introduce some validation logic that can detect
+the anomolous behavior. For this to be truly effective, you would need this entire consensus process to occur in near real-time so that the cheater is automatically identified and kicked from the game as to not disript the experience of other players. 
+
+This means not only do you need your decentralized protocol to be flexible enough to model unique data generated out of the video game, but you also want to customize the validation logic and consensus process of the decentralized protocol to enable the data to be processed in a specific way for effective analysis as part of your detection system. Finally, the protocol needs to be able to react to this data in a matter of seconds to deliver some sort of meaningful recourse, while also notarizing the response itself. This is what you can call a Big Data usecase that requires a decentralized protocol with a capacity for processing asynchronous data streams at very high rates. Constellation Network State Channels enable these types of use cases to be realized as opposed to existing DLTs and Blockchains which would only be able to address very basic cheating attempts, such as checking whether someone hacked the video game's leader board to validate if scores were manipulated at the end of a match, a simple binary check that does not provide high fidelity insights into the video game's inner state.
+
+**Database Cellularization**
+Cell Complexes, referred to as simply "Cells", equip Constellation Network's State Channels with an entirely new form of database scaling,
+which can be described as "**Database Cellularization**". It circumvents the limitations inherent with linear database sharding techniques
+by enabling a true microservices architecture, which to date, has not been possible with decentralized protocols. This
 enables State Channels to selectively scale out different aspects of their business logic while also enabling a complex
 cross-cell logic to be possible. State channels are free to implement different networks of nodes which are each responsible
 for unique execution contexts. All of this state data can then be surfaced up into Constellation Networks' Global
