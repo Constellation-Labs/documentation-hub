@@ -32,7 +32,7 @@ type Block = {
   nonce: HexString<Hash> | null; // Hash of the proof-of-work or null if block is pending.
 
   sha3Uncles: HexString<Hash>; // SHA3 hash of the uncles data in the block.
-  logsBloom: HexString<Filter> | null; // Bloom filter of the logs in the block or null if block is pending.
+  logsBloom: HexString<FilterBloom> | null; // Bloom filter of the logs in the block or null if block is pending.
   transactionsRoot: HexString<Hash>; // Root hash of the transaction trie of the block.
   stateRoot: HexString<Hash>; // Root hash of the final state trie of the block.
   receiptsRoot: HexString<Hash>; // Root hash of the receipts trie of the block.
