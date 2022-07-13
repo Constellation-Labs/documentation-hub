@@ -11,3 +11,184 @@ hide_table_of_contents: false
   />
 </head>
 
+At this point in the documentation, you should have successfully accessed your **new** VPS (Virtual Private Server) in the cloud of your choice.
+
+:::info
+If you are utilizing **GCP** (Google Cloud Platform) this section can be skipped, and you can proceed directly to the next section [installing depenencies](dependencies)
+:::
+
+Best practice is **not** to be **`root`** or a `generic commonly used and known username` like the **ubuntu** user that AWS uses on their default AMI instances.
+
+This can give **bad actors** an easy ability to gues at options to gain access to your instance, for nefarious activities.
+
+The **root** user has privileges that are too expansive and has unrestricted access to do things that; whether nefarious or not, can still cause trouble.
+
+:::note
+You can review the section on passwords for a quick reference to differences between passwords and passphrases [here](../password)
+:::
+
+Our goal is to create a user that does not have **root** access. This will add an extra layer of security around our instance. Once this user is created, we will request to become a **super user** every time we want to issue a request against our instance to do something as if we were the **root administrator**.
+
+These are assumptions made during the step-by-step below, you will need to change these to match your configuration, if you decide to change anything we suggest in this documentation.
+
+| Variable |	Value |
+| -------- | ------ |
+| Cloud instance hostname |	**node-garage**. Your instance will **not** have the same hostname. Substitute `node-garage` with whatever your instance has been called during setup |
+| User we will work with or add |	**nodeadmin** |
+| [...] | When you see this in our examples, it will mean that there may be extra output from a command issued. The output is not important for our purposes, so it is redacted. The symbol will be shown above the code that is important or below the code that is important. |
+
+
+From your local system, log into your cloud instance's terminal, as **nodeadmin**. 
+
+:::tip 
+You can review the **[Accessing your Node YouTube video](https://www.youtube.com/embed/7lhiuFtrOzU)** to remind yourself how to gain access to your node; alternatively, you may return to the previous section [mac](../accessMac) or [windows](../accessWin) for details.
+:::
+
+Use your **Apple terminal**, **Window's PuTTY**, or your terminal application of choice.
+
+:::danger
+It is discouraged to use the Google Cloud Platform's console application on their website. Their console web application access should only be used in **emergency** situations.
+:::
+
+From our root user account we will add a new user.
+```
+adduser nodeadmin
+```
+The output will look similar to this:
+```
+Adding user `nodeadmin' ...
+Adding new group `nodeadmin' (1001) ...
+Adding new user `nodeadmin' (1001) with group `nodeadmin' ...
+Creating home directory `/home/nodeadmin' ...
+Copying files from `/etc/skel' ...
+New password:
+```
+
+Enter in a **complex** [password](../password), verify it, and **copy it into a safe location** so you don't forget.
+
+```
+New password:
+Retype new password:
+passwd: password updated successfully
+```
+
+You will be prompted to enter in various information about this new user. You can either enter in the information that you deem necessary, or just hit **⏎** through each question. You will have to confirm the information with a **Y** at the end of the input section.
+
+```
+Changing the user information for nodeadmin
+Enter the new value, or press ENTER for the default
+Full Name[]: nodeadmin
+Room Number[]:
+Work Phone[]:
+Home Phone[]:
+Other[]:
+Is the information correct?[Y/n]Y
+```
+
+Let's make **nodeadmin** a member of the super users **sudo** group.
+
+```
+usermod -aG sudo nodeadmin
+```
+
+We need to make sure our new user can properly **`ssh`** into our node. First we will copy our **`authorized_keys`** file to our **nodeadmin's** home directory.
+
+```
+cp /root/.ssh/authorized_keys /home/nodeadmin
+```
+
+We need the change the ownership of the file from **root** to **nodeadmin**.
+
+```
+chown nodeadmin:nodeadmin /home/nodeadmin/authorized_keys
+```
+
+Let's change to our new **nodeadmin** user.
+
+```
+su - nodeadmin
+```
+
+:::tip
+To run a command as administrator (user "root"), use `sudo <command>`.
+
+See "man sudo_root" for details.
+:::
+
+Create a hidden directory called **`.ssh`** do not forget the `.` (period) in front of the **ssh**.
+
+```
+cd ~
+mkdir .ssh
+```
+
+Move our **`authorized_keys`** into our new directory. We will do this with some checks along the way:
+
+```
+cd .ssh/
+mv ../authorized_keys .
+```
+*The 2 **l** are the letter **l** (L) not the number 1 (ls -la)*
+```
+ls -la
+```
+Output will look **similar** to this:
+
+:::note
+Dates and File Sizes may be different
+:::
+
+```
+total 12
+drwxrwxr-x 2 nodeadmin nodeadmin 4096 Oct 29 02:05 .
+drwxr-xr-x 3 nodeadmin nodeadmin 4096 Oct 29 02:04 ..
+-rw------- 1 nodeadmin nodeadmin 742 Oct 29 02:05 authorized_keys
+nodeadmin@node-garage:~/.ssh$
+```
+
+---
+We are done and can *logout* of our **nodeadmin** session.
+
+```
+logout
+```
+
+Prompt should change back to your root user.
+
+###### root@node-garage:~$
+
+We will exit out of our instance.
+
+```
+exit
+```
+
+We should now be completely out of our Node. 
+
+Your Terminal should return to your local system's prompt (Apple/Linux) or, if you are using an application like PuTTy, you may see the window *completely exit* and *disappear*. **This is expected behavior**.
+
+:::tip
+**WINDOWS USERS**
+
+It is now time to go back into your PuTTy session and update the username from **root** to **nodeadmin**.
+
+You will do this within the configuration sections of PuTTy.
+
+If you do not remember how to do this access this link [Access your cloud instance](../accessWin) to refresh your memory.
+:::
+
+:::tip
+**APPLE and LINUX USERS**
+
+You will change the **root@** to **nodeadmin@** in your ssh access expression from your Apple/Linux local terminal session.
+
+If you do not remember how to do this access this link select [Access your cloud instance](../accessMac) to refresh your memory.
+:::
+
+Our user is setup! 
+
+Moving forward connect as **nodeadmin** to work on our instance. The **root** user should **no longer** be used.
+
+:::note
+It is recommended to disable the root user's SSH access; however, we will take care of this during the installation of our Node on our instance.
+:::
