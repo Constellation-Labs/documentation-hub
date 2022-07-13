@@ -33,7 +33,7 @@ module.exports = {
       label: 'Consensus Algorithms',
       collapsed: true,
       items: [
-        'consensus/placeholder',
+        'consensus/dag-layer-1',
       ],
     },
     {
