@@ -15,6 +15,7 @@ module.exports = {
       items: [
         'core/honestdata',
         'core/problems',
+        'core/different'
       ],
     },
     {

@@ -13,7 +13,7 @@ hide_table_of_contents: false
     </head>
 
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/main/static/img/coreconcepts/6%20-%20state%20channel%20data%20flow.jpg)
+![State Channel Data Flow](/img/coreconcepts/sc-data-flow.jpg)
 
 ### STEP 1: Define State Channel Snapshot Schema 
 

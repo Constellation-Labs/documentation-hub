@@ -32,4 +32,4 @@ Snapshots by Constellation Network's global validator nodes, creating a Global S
 decentralized directed acyclic Hypergraph of immutable state data. State Channels can query the Hypergraph to retrieve 
 specific state data to incorporate into the logic defined within its Cells, assuming it has the ability to deserialize it.
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/main/static/img/coreconcepts/4%20-%20architecture.jpeg) 
+![](/img/coreconcepts/architecture.jpeg) 

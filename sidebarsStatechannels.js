@@ -10,7 +10,6 @@ module.exports = {
         'scarchitecture',
         'scdesign',
         'scflow',
-        'intro',
         'simple'
       ],
     },

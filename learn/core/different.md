@@ -18,7 +18,7 @@ consensus is reached, the data is tamper-proof. This allows the devices, otherwi
 to transact, i.e. send tokens to each other. Tokens are the unit representation of the value created by the network,
 and fuels a shared economy in a secure digital network.
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/core-concepts-docs/static/img/coreconcepts/blockchainnetwork.png)
+![Blockchain Network](/img/coreconcepts/blockchainnetwork.png)
 
 The technology behind Blockchain is ingenious. The transactions sent among the nodes are bundled together into Blocks
 of data. These blocks are chained in a fashion that the cryptographic hash of a previous block is included in the next
@@ -31,7 +31,7 @@ The Bitcoin network famously mandates each node to solve a cryptographically cha
 proof of honesty — tuned in a way that it does not make sense for a node to both burn enough electricity to solve
 the hard puzzle and act maliciously.
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/core-concepts-docs/static/img/coreconcepts/bottleneck.png)
+![Bottleneck](/img/coreconcepts/bottleneck.png)
 
 Unfortunately, this sequential process is very inefficient and far too slow to be suited for mass adoption. Users are accustomed to Internet 
 applications that are massively distributed with hundreds of thousands of concurrent users — transactions need to be 
@@ -60,7 +60,7 @@ unnecessary burden of checking against the entire global ledger state which is c
 vertices/nodes become the ‘miners’, enabling fee-less transactions to be feasible. 
 
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/core-concepts-docs/static/img/coreconcepts/dagstructure.png) 
+![DAG Structure](/img/coreconcepts/dagstructure.png) 
 
 
 
@@ -81,7 +81,7 @@ to weave immutable state data originating from entirely different networks and s
 can be used to compose complex decentralized application logic, such as multi-network API calls and cross-network exchange of tokenized assets. 
 
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/core-concepts-docs/static/img/coreconcepts/graphvshypergraph.jpeg) 
+![Graph vs Hypergraph](/img/coreconcepts/graphvshypergraph.jpeg) 
 
 
 ### Layer 0 State Channels
@@ -121,7 +121,7 @@ process of state validation:
 
 
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/core-concepts-docs/static/img/coreconcepts/hypergraph1.jpeg)
+![Hypergraph](/img/coreconcepts/hypergraph.jpeg)
 
 
 

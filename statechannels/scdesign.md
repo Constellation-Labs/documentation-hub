@@ -133,7 +133,7 @@ these examples the IoT sensor company is the one consuming the data to
 enhance their product. It would make sense for it to deploy a private or
 possibly a permissioned network in this instance.
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/main/static/img/coreconcepts/5-%20organization%20data%20.jpeg)
+![Organization Data](/img/coreconcepts/organization-data.jpeg)
 
 Now, let's say the company decides to incorporate "Web 3.0" business
 logic into their enterprise by tokenizing the sensor data that they are

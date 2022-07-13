@@ -12,7 +12,7 @@ hide_table_of_contents: false
   />
     </head>
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/main/static/img/coreconcepts/1-%20existing%20apps.jpeg)
+![Existing Apps](/img/coreconcepts/existing-apps.jpeg)
 
 Constellation Network's Hypergraph Transfer Protocol, or HGTP, is a
 decentralized Directed Acyclic Graph (DAG) network which is capable of
@@ -87,7 +87,7 @@ of Constellation Network's Global Layer 0 Hypergraph ledger, removing the burden
 fees which are typically encountered with "Layer 1" blockchain networks such as Ethereum.
 
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/main/static/img/coreconcepts/2%20-%20SDK.jpeg)
+![SDK](/img/coreconcepts/sdk.jpeg)
 
 
 These unique properties allow for a technologically and economically
@@ -124,7 +124,7 @@ atomically, forming a global liquidity pool.
 
 ## Scala/JVM SDK
 
-![](https://github.com/Constellation-Labs/documentation-hub/blob/main/static/img/coreconcepts/3%20-%20Pipeline.jpeg)
+![Pipeline](/img/coreconcepts/pipeline.jpeg)
 
 Constellation is a JVM (Java Virtual Machine) powered
 microservice framework that enables effortless plug-and-play

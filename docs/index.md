@@ -27,7 +27,7 @@ import DocsCards from '@components/global/DocsCards';
 ![Constellation Docs](/logos/header.png)
 
 <DocsCards>
-  <DocsCard header="Core Concepts" href="/learn/core/blockchain" img="/icons/img02.png">
+  <DocsCard header="Core Concepts" href="/learn" img="/icons/img02.png">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
   </DocsCard>
 
