@@ -11,7 +11,7 @@ hide_table_of_contents: true
   />
 </head>
 
-![](/img/coreconcepts/nodes.png)
+![Nodes within the network](/img/coreconcepts/nodes.png)
 
 Constellation Network is a permissionless decentralized protocol that consists of independently owned 
 and operated validator nodes. Validator nodes provide computational resources that are used
@@ -24,7 +24,7 @@ Proof-of-Reputable Observation (PRO) and is an autonomous machine learning algor
 reputation models of each node to proactively identify bad behaving and poor performing nodes. A PRO score
 is assigned to each node within a range between 0 - 1.0, with a PRO score of 1.0 being optimal. 
 
-![](/img/coreconcepts/nodeswaiting.png)
+![Nodes waiting to participate](/img/coreconcepts/nodeswaiting.png)
 
 Nodes with a higher PRO score receive relatively more of the fees distributed to the network per finality window since 
 they are contributing to the health and security of the network. The opportunity for nodes to participate in
