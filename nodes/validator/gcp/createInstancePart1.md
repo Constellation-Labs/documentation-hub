@@ -39,11 +39,15 @@ Choose a **`Name`** to identify your **VM**. This is internal to **us** only, no
 
 ![](/img/validator_nodes/node-gcp-instance3.png)
 
-Choose a **`Region`** to bring your **VM** up within. Since we are working with **decentralization**, it does not matter where your VM is located.
+Choose a **`Region`** to bring your **VM** up within. 
+
+:::info SIDE NOTE
+Since we are working with **decentralization**, it does not matter where your VM is located.
+:::
 
 However, when you are administering the VM, you may want it as close to your physical location as possible. This may improve your access times and performance during manual maintenance, etc.
 
-##### CHOOSE A MACHINE
+#### CHOOSE A MACHINE
 
 ![](/img/validator_nodes/node-gcp-instance4.png)
 
@@ -51,7 +55,7 @@ We can use the **`GENERAL-PURPOSE`** machine family.
 
 We want to choose an **N1** VM.
 
-##### UPDATE RESOURCES 
+#### UPDATE RESOURCES 
 
 ![](/img/validator_nodes/node-gcp-instance5.png)
 
@@ -61,7 +65,7 @@ We want to choose an **N1** VM.
 
 ![](/img/validator_nodes/node-gcp-instance6.png)
 
-##### UPDATE DISTRIBUTION
+#### UPDATE DISTRIBUTION
 
 Click on the **`CHANGE`** button. We need to modify our boot disk.
 
@@ -71,7 +75,7 @@ Click on the **`CHANGE`** button. We need to modify our boot disk.
 **Constellation Network** recommends our virtual machine be a `Debian` distro.
 :::
 
-##### OS AND DISK 
+#### OS AND DISK 
 
 Change our Operating System to **`Ubuntu`**.
 
@@ -81,7 +85,7 @@ You can use any (Debian) distribution that makes you comfortable. The instructio
 
 Modify our Ubuntu Version to `20.4`. 
 
-:::note
+:::info
 Again, you are free to use whatever (Debian) distribution you are comfortable with.
 :::
 
