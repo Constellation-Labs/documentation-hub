@@ -36,7 +36,11 @@ Select a **`new`** project.
 
 ![](/img/validator_nodes/node-gcp-project2.png)
 
-We will work on our TestNet via a GCP Project setup. This will help us organize our GCP projects, whether it is multiple Constellation State Channels in the future, or other projects unrelated.
+We will work on our **HyperGraph** or **State Channel** `Validator Node` via a GCP `Project`. This will help us organize our GCP projects, whether it is multiple Constellation State Channels in the future, or other projects unrelated.
+
+:::info
+We will use the `TestNet` in our examples
+:::
 
 ##### NEW PROJECT
 
