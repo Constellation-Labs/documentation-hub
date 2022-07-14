@@ -44,29 +44,34 @@ Your screen will not react and your password will not show as you type.
 [...]
 ```
 
-:::danger
+We are ready to download the **Tessellation** binaries (packages) that will be executed on your VPS to turn it into a **Node**.
+
+:::danger VERY IMPORTANT
+When downloading **Tessellation**...
+
 MAKE SURE YOU USE THE **CORRECT** VERSION!  
 Installing an older or incorrect version could lead to unexpected results.
 :::
 
-:::info 
+:::info INFORMATION 
 As you might expect, this documentation may get outdated quickly; however, we will do our best to keep our documentation up with the releases.
 :::
 
 We can now pull down the latest release `v0.10.0` from Constellation Network's repository.
+
 :::note
-The `sudo` will ask for a password on the first attempt.
+The `sudo` verb in front of the command will force the OS to ask for a `password` on the first attempt.
 :::
 
-Download the **cl-keytool.jar**.
+Download the **cl-keytool.jar** JAR file.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-keytool.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-keytool.jar
 ```
-Download the **cl-node.jar**.
+Download the **cl-node.jar** JAR file.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-node.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-node.jar
 ```
-Download the **cl-wallet.jar**.
+Download the **cl-wallet.jar** JAR file.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-wallet.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-wallet.jar
 ```
@@ -85,9 +90,9 @@ Output should look similar (*but not exactly*) to the 👇 .
 
 ```
 total 140568
--rwxr-xr-x 1 root root 52517826 Feb 28 13:19 cl-keytool.jar
--rwxr-xr-x 1 root root 91422359 Feb 28 13:19 cl-node.jar
--rwxr-xr-x 1 root root 75646006 Feb 28 16:24 cl-wallet.jar
+-rwxr-xr-x 1 root root 52517826 Jul 10 13:19 cl-keytool.jar
+-rwxr-xr-x 1 root root 91422359 Jul 10 13:19 cl-node.jar
+-rwxr-xr-x 1 root root 75646006 Jul 10 16:24 cl-wallet.jar
 ```
 That is all we need.
 
