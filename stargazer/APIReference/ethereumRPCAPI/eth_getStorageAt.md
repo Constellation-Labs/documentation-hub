@@ -5,30 +5,36 @@ hide_table_of_contents: true
 <head>
   <meta
     name="description"
-    content="Returns the keccak-256 _(not the standarized sha3-256)_ of the given data."
+    content="Returns the value from a storage slot position at a given address."
   />
 </head>
 
 <intro-end />
 
-Returns the keccak-256 _(not the standarized sha3-256)_ of the given data.
+Returns the value from a storage slot position at a given address.
 
 ##### Parameters
 
-| Name | Type        | Description                      |
-| ---- | ----------- | -------------------------------- |
-| Data | `HexString` | Data to calculate the hash from. |
+| Name        | Type                                                            | Description                                                                |
+| ----------- | --------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Address     | `Address`                                                       | Address to retrieve data from.                                             |
+| Position    | `HexString`                                                     | Hex code of the position in storage.                                       |
+| BlockNumber | `HexString<Number>`\| `"latest"` \| `"earliest"` \| `"pending"` | Hexadecimal block number, or the string "latest", "earliest" or "pending". |
 
 ##### Return Type
 
-`HexString` - The keccak-256 digest of the given data.
+`HexString` - Hex code of the integer indicating the value of the storage position at the provided address.
 
 ##### Example
 
 ```typescript title="TypeScript"
 await provider.request({
-  method: "web3_sha3",
-  params: ["0x68656c6c6f20776f726c64"],
+  method: "eth_getStorageAt",
+  params: [
+    "0x295a70b2de5e3953354a6a8344e616ed314d7251",
+    "0x6661e9d6d8b923d5bbaab1b96e1dd51ff6ea2a93520fdc9eb75d059238b8c5e9",
+    "0x65a8db",
+  ],
 });
-// "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+// "0x0000000000000000000000000000000000000000000000000000000000000000"
 ```
