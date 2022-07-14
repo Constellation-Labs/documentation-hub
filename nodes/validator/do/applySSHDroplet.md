@@ -35,14 +35,16 @@ SSH Key Generation Series - **Video 4a** by NetMet.
 
 Please like and subscribe to support NetMet's work and to be alerted to new content specifically applied to **Constellation Network** and **Node Garage**, in the future.
 
-<iframe width="50%" height="380" src="https://www.youtube.com/embed/Vs_g-e99qTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="70%" height="380" src="https://www.youtube.com/embed/Vs_g-e99qTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
-We need a way to access our Droplet (VPS). 
+We need a way to access our **Droplet** (VPS). 
 
-:::caution
-Popular opinion strongly suggests it is a bad idea to use the password authentication method. So, we will setup access via an SSH Key.
+:::danger CAUTION
+Popular opinion (`and Constelaltion Network's / Node Garage's`) **strongly** suggests that it is a **bad** idea to use the `password authentication` method. 
+
+We will setup access to our Droplet, via an **SSH Key pair**, created here [mac](../sshkeys/creationMac) or here [windows](../sshkeys/creationWin).
 :::
 
 Continuing where we left off from the [Create a Droplet](createDroplet.md) section:
@@ -53,7 +55,7 @@ Continuing where we left off from the [Create a Droplet](createDroplet.md) secti
 ![](/img/validator_nodes/node-do-sshkey1.png)
 
   1. Paste the public **SSH Key** contents saved in previous steps into this box
-  2. Provide a **name** for your public key on Digital Ocean.  This will be a name that Digital Ocean will recognize to offer you access to your key in the future.
+  2. Provide a **name** for your public key on Digital Ocean.  This will be a name that Digital Ocean will recognize to offer you access to your key in the future. (`tag`)
   3. Click the **Add SSH Key** button
 
 ![](/img/validator_nodes/node-do-sshkey2.png)
