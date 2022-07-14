@@ -30,7 +30,7 @@ const ethProvider = window.stargazer.getProvider("ethereum");
 
 ### Build a signature request
 
-Constellation signatures for messages are done through a [signature request object](../APIReference/constellationRPCAPI/dag_signMessage.md#tst-signaturerequest). The request object is sent to the user to accept, on approval a signature of the whole object is returned.
+Constellation signatures for messages are done through a [signature request object](../APIReference/constellationRPCAPI/dag_signMessage.md#tst-signaturerequest). The signature request object is sent for the user to accept. Uppon approval, a signature of the whole object is returned.
 
 ```typescript title="TypeScript"
 // Build the signature request

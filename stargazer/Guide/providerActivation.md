@@ -15,6 +15,10 @@ hide_table_of_contents: false
 
 A chain provider allows you to interact with any available network. In this guide, you will learn how to obtain a chain provider and activate it.
 
+:::info Tip
+With the Stargazer Extension installed you can test the following examples in the browser console ([devtools](https://developer.chrome.com/docs/devtools/console/)).
+:::
+
 ## Detect Stargazer
 
 The stargazer browser extension injects a [`WalletProvider`](../APIReference/walletProviderAPI/) instance under `window.stargazer` each time a page loads. You can check the existence of this property using the following snippet.
