@@ -53,7 +53,7 @@ Lets use the **SSH** command to connect to our VPS. Issue the `ssh` command, inc
 
 We will **not** be using a standard password to access our VPS; rather, a `SSH key pair` with a `passphrase`. We created this key pair in the previous sections ([macintosh](./sshkeys/creationMac) or [windows](./sshkeys/creationWin)).
 
-Issue these commands from your **Local System** to `connect to` the `IP address` of your **Remote System**.
+Issue these commands from your **Local System** to connect to the `IP address` of your **Remote System**.
 
 :::info INFO
 You may need to remove the ~/.ssh/ from the command if you did not save your SSH keys to the .ssh hidden directory.
@@ -70,7 +70,10 @@ ssh -i ~/.ssh/cn-node-id root@111.111.111.111
 Enter your `SSH key passphrase` to access your remote node.
 
 :::note
-When you are entering in your password, the key strokes will **NOT** be shown. It may seem like you are not entering in anything. This is a security measure. Do not look at the screen as you are typing, this may help you to not make a mistake.
+When you are entering in your password, the key strokes will **NOT** be shown. It may seem like you are not entering in anything. This is a security measure. 
+:::
+:::info Hint
+Do not look at the screen as you are typing, this may help you to not make a mistake.
 :::
 
 Output will look like below
@@ -120,8 +123,8 @@ From the instance output above above.  `root@nodegarage` : the `nodegarage` woul
 :::
 
 :::info 
-You should not have used `NodeGarage` as your `hostname`. However, it should not make a difference in performance or functionality.
+You should **not** use `NodeGarage` as your `hostname`. However, it should not make a difference in performance or functionality.
 :::
 
-Excellent you are accessing on your remote system through your local system.
-
+##### Excellent!
+You are accessing on your remote system through your local system.
