@@ -4,9 +4,6 @@ sidebar_label: Sending RPC Requests
 hide_table_of_contents: false
 ---
 
-import DocsCard from '@components/global/DocsCard';
-import DocsCards from '@components/global/DocsCards';
-
 <head>
   <meta
     name="description"

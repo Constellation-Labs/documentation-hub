@@ -4,9 +4,6 @@ sidebar_label: Using External Libraries
 hide_table_of_contents: true
 ---
 
-import DocsCard from '@components/global/DocsCard';
-import DocsCards from '@components/global/DocsCards';
-
 <head>
   <meta
     name="description"
