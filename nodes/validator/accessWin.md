@@ -30,7 +30,7 @@ various Cloud Provider settings.   Please **like** and **subscribe** so you are 
 | --------- | ----- |
 | SSH Key File | cn_node_id
 | Remote IP address of our VPS | `111.111.111.111` |
-| SSH Key Pair File Location | `Users/.ssh/home/netmet` |
+| SSH Key Pair File Location | `Users/.ssh/home/netmet`|
 | Local System | The system used to access our remote VPS |
 | Remote System | The system (VPS) we created in the prior documentation (DO, AWS, or GCP) that we are connecting to |
 | [...] | Indicates redacted text and/or information |
@@ -38,7 +38,7 @@ various Cloud Provider settings.   Please **like** and **subscribe** so you are 
 ---
 
 :::danger
-We are `pretending` our remote location (VPS) has an external IP address of `111.111.111.111` ⬅️ do **not** use this!
+We are `pretending` our remote location (VPS) has an external IP address of `111.111.111.111` and our user name is `netmet` ⬅️ do **not** use this!
 :::
 
 :::info
