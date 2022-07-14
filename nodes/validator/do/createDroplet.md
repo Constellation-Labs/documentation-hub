@@ -64,7 +64,7 @@ We are ready to choose an **image** that will be our base operating system. This
 **Ubuntu 20.04** is a currently supported version that should work well for us.
 
 :::tip
-You can run any distribution you would like; however, it is **highly** recommended to use a `Debian` distribution. )
+You can run any distribution you would like; however, it is **highly** recommended to use a `Debian` distribution.
 :::
 
 ##### CHOOSE OUR OS!
