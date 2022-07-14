@@ -15,13 +15,24 @@ Through step-by-step written documentation from this guide's instructions, instr
 
 ## Steps in the Process
 
+:::tip Initialization
   - Decide on how you will run your Validator Node
     - Service Provider
     - Bare Metal
     - Hosted
+:::
+
+:::tip Setup
   - Setup your server
   - Turn your server into a Node
+:::
+
+:::tip Your Node
   - Configure your Node
-  - Join TestNet 2.0
-  - Join MainNet 2.0
-  - Join a State Channel
+    - Setup Services
+    - Setup Configuration
+    - Define Security
+    - Join TestNet 2.0
+    - Join MainNet 2.0
+    - Join a State Channel
+:::
