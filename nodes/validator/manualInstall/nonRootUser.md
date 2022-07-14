@@ -13,15 +13,15 @@ hide_table_of_contents: false
 
 At this point in the documentation, you should have successfully accessed your **new** VPS (Virtual Private Server) in the cloud of your choice.
 
-:::info
+:::info GCP USERS
 If you are utilizing **GCP** (Google Cloud Platform) this section can be skipped, and you can proceed directly to the next section [installing depenencies](dependencies)
 :::
 
-Best practice is **not** to be **`root`** or a `generic commonly used and known username` like the **ubuntu** user that AWS uses on their default AMI instances.
+Best practice is **not** to be logged in as the **`root`** user, or a `generic commonly used and known username` such as the **ubuntu** user that AWS uses on their default AMI (Amazon Machine Image) instances.
 
-This can give **bad actors** an easy ability to gues at options to gain access to your instance, for nefarious activities.
+This can give **bad actors** an easier avenue and the ability to guess at `well known` options to gain access to your instance, for nefarious activities.
 
-The **root** user has privileges that are too expansive and has unrestricted access to do things that; whether nefarious or not, can still cause trouble.
+The **root** user has privileges that are too expansive and it has unrestricted access to do things that; whether nefarious or not, can still cause trouble.
 
 :::note
 You can review the section on passwords for a quick reference to differences between passwords and passphrases [here](../password)
@@ -38,7 +38,7 @@ These are assumptions made during the step-by-step below, you will need to chang
 | [...] | When you see this in our examples, it will mean that there may be extra output from a command issued. The output is not important for our purposes, so it is redacted. The symbol will be shown above the code that is important or below the code that is important. |
 
 
-From your local system, log into your cloud instance's terminal, as **nodeadmin**. 
+From your local system, log into (**create an SSH session**) your cloud instance's terminal, as **root**. 
 
 :::tip 
 You can review the **[Accessing your Node YouTube video](https://www.youtube.com/embed/7lhiuFtrOzU)** to remind yourself how to gain access to your node; alternatively, you may return to the previous section [mac](../accessMac) or [windows](../accessWin) for details.
@@ -91,7 +91,7 @@ Let's make **nodeadmin** a member of the super users **sudo** group.
 usermod -aG sudo nodeadmin
 ```
 
-We need to make sure our new user can properly **`ssh`** into our node. First we will copy our **`authorized_keys`** file to our **nodeadmin's** home directory.
+We need to make sure our new user can properly **`ssh`** into our node. First we will copy our **`authorized_keys`** file to our new **nodeadmin's** home directory.
 
 ```
 cp /root/.ssh/authorized_keys /home/nodeadmin
@@ -122,7 +122,7 @@ cd ~
 mkdir .ssh
 ```
 
-Move our **`authorized_keys`** into our new directory. We will do this with some checks along the way:
+Move our **`authorized_keys`** into our new directory. We will do this with some checks along the way.  Do **not** forget the `.` (period) at the end of the command.
 
 ```
 cd .ssh/
@@ -140,9 +140,9 @@ Dates and File Sizes may be different
 
 ```
 total 12
-drwxrwxr-x 2 nodeadmin nodeadmin 4096 Oct 29 02:05 .
-drwxr-xr-x 3 nodeadmin nodeadmin 4096 Oct 29 02:04 ..
--rw------- 1 nodeadmin nodeadmin 742 Oct 29 02:05 authorized_keys
+drwxrwxr-x 2 nodeadmin nodeadmin 4096 Jul 10 02:05 .
+drwxr-xr-x 3 nodeadmin nodeadmin 4096 Jul 10 02:04 ..
+-rw------- 1 nodeadmin nodeadmin 742 Jul 10 02:05 authorized_keys
 nodeadmin@node-garage:~/.ssh$
 ```
 
@@ -165,7 +165,7 @@ exit
 
 We should now be completely out of our Node. 
 
-Your Terminal should return to your local system's prompt (Apple/Linux) or, if you are using an application like PuTTy, you may see the window *completely exit* and *disappear*. **This is expected behavior**.
+Your Terminal should return to your local system's prompt (Apple/Linux) or, if you are using an application like PuTTy, you will see the window *completely exit* and *disappear*. **This is expected behavior**.
 
 :::tip
 **WINDOWS USERS**
@@ -174,7 +174,9 @@ It is now time to go back into your PuTTy session and update the username from *
 
 You will do this within the configuration sections of PuTTy.
 
-If you do not remember how to do this access this link [Access your cloud instance](../accessWin) to refresh your memory.
+If you do not remember how to do this access this link [Access your cloud instance](../accessWin) to refresh your memory.  
+
+While going through the steps again, substitute `nodeadmin` where ever you see `root`.
 :::
 
 :::tip
@@ -183,6 +185,8 @@ If you do not remember how to do this access this link [Access your cloud instan
 You will change the **root@** to **nodeadmin@** in your ssh access expression from your Apple/Linux local terminal session.
 
 If you do not remember how to do this access this link select [Access your cloud instance](../accessMac) to refresh your memory.
+
+While going through the steps again, substitute `nodeadmin` where ever you see `root`.
 :::
 
 Our user is setup! 
