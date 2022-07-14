@@ -37,7 +37,7 @@ various Cloud Provider settings.   Please **like** and **subscribe** so you are 
 
 ---
 
-:::danger
+:::danger REMINDER
 We are `pretending` our remote location (VPS) has an external IP address of `111.111.111.111` and our user name is `netmet` ⬅️ do **not** use this!
 :::
 

@@ -37,7 +37,7 @@ various Cloud Provider settings.   Please **like** and **subscribe** so you are 
 
 ---
 
-:::danger
+:::danger REMINDER
 We are `pretending` our remote location (VPS) has an external IP address of `111.111.111.111` and our user name is `netmet` ⬅️ do **not** use this!
 :::
 
@@ -52,14 +52,16 @@ Time to connect to our newly created instance!
 Start up **Putty.exe** and in the `Host Name (or IP address)` place the IP address of your VPS instance.
 
 :::danger
-111.111.111.111 is a fake IP address: Do not use.
+`111.111.111.111` is a fake IP address: Do not use.
 :::
 
 ![](/img/validator_nodes/nodeAccessWin1.png)
 Set the **port** (if not already there) to **22**
 
 ![](/img/validator_nodes/nodeAccessWin2.png)
-We will be able to save our work for use later, by saving this as a session. Give it a **name** that suits your needs and describes this session properly.
+We will `save` our work for use later, by saving this as a **session**. 
+
+Give it a **name** that suits your needs and describes this session properly.
 
 ![](/img/validator_nodes/nodeAccessWin3.png)
 Click on the **data** element from the menu `(under Connection)`.
@@ -67,7 +69,7 @@ Click on the **data** element from the menu `(under Connection)`.
 ![](/img/validator_nodes/nodeAccessWin4.png)
 Enter **root** in the auto-login option. We will be changing this later.
 
-:::danger
+:::danger IMPORTANT
 Different cloud providers use different default users to access your VPS for the first time.  **GCP** and **DO** use `root` while **AWS** uses `ubuntu`.   We will use `root` in our examples...  make sure to change this to `ubuntu` if you are using **AWS**, or review the documentation for the provider of your choice to determine their default username.
 :::
 
@@ -88,10 +90,10 @@ Click **Session** section (top of menu) and click on the **Save** button. This w
 Click **Open**.
 
 ![](/img/validator_nodes/nodeAccessWin10.png)
-A new box should open, it will connect into an SSH session with the parameters we specified. The SSH Session should challenge you for a **passphrase** for the **Key File** that your VPS was setup with, during the installation.
+A **new** window should open, it will attempt to connect into an `SSH session` with the parameters we specified. The `SSH Session` should challenge you for a **passphrase** for the **Key Pair** file that your VPS was setup with, during the installation.
 
 ![](/img/validator_nodes/nodeAccessWin11.png)
-After successfully entering in that password, you should be connected and have a prompt!
+After successfully entering in that password, you should be `connected` and have a prompt!
 
 ![](/img/validator_nodes/nodeAccessWin12.png)
 
