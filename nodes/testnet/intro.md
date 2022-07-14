@@ -4,7 +4,7 @@ hide_table_of_contents: false
 ---
 
 <head>
-  <title>Introduction to MainNet 2.0</title>
+  <title>Introduction to TestNet 2.0</title>
   <meta
     name="TestNet 2.0 Description"
     content="TestNet 2.0 Description"

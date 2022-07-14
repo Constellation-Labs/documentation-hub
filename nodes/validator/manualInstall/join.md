@@ -63,7 +63,19 @@ We will send a request to the Source node to join the cluster, through a **`curl
 The current example will help us to join the **Constellation Network Tessellation TestNet** if you are going to join a different State Channel or HyperGraph network, you will need to obtain the proper **node id** and **ip** address, and substitute them into the commands below
 :::
 
-Our command to **join** is:
+#### SUPPLY OUR P12 PASSPHRASE
+
+:::danger IMPORTANT
+We do **not** want to have our p12 **passphrase** added to a static plain text file.  Our **p12** file is our private key file that stores valuable information.  If the passphrase is exposed, you can have access to the MainNet, State Channel, TestNet, etc. compromised, including access to wallets.  This is a **bad** idea.
+:::
+
+Instead, we will create a *temporary* environment variable prior to joining the network.  The export we do below will only survive the current working session, and it will be lost after we log out.  
+
+```
+export CL_PASSWORD="place_your_passphrase_here"
+```
+
+Next our command to **join** is:
 ```
 curl -X POST http://127.0.0.1:9002/cluster/join -H 'Content-type: application/json' -d '{ "id": "e2f4496e5872682d7a55aa06e507a58e96b5d48a5286bfdff7ed780fa464d9e789b2760ecd840f4cb3ee6e1c1d81b2ee844c88dbebf149b1084b7313eb680714", "ip": "13.52.246.74", "p2pPort": 9001 }'
 ```

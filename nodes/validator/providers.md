@@ -23,20 +23,20 @@ import DocsCards from '@components/global/DocsCards';
 In order to run our **Constellation Validator Node**, we will need to find a location for our Node to live and work. The three most common ways to accomplish this are through a cloud provider, a hosting provider, or utilizing Bare Metal.
 
 <DocsCards>
-  <DocsCard header="Cloud Provider" href="/" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
+  <DocsCard header="Cloud Provider" href="#cloud_providers" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
     <p>Run on a virtual machine in the cloud called an instance.</p>
   </DocsCard>
 
-  <DocsCard header="Hosting Provider" href="/" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
+  <DocsCard header="Hosting Provider" href="#hosting-providers" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
     <p>Rent or lease a server in a Colo (co-location) on dedicated hardware.</p>
   </DocsCard>
 
-  <DocsCard header="Bare Metal" href="/" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
+  <DocsCard header="Bare Metal" href="#bare-metal" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
     <p>Build and maintain your own hardware on-premise of your specific location or remotely at a service provider or other.</p>
   </DocsCard>
 </DocsCards>
 
-## Cloud Providers
+## Cloud Providers {#cloud-providers}
 
 Constellation Network's documentation will concentrate on the erecting a virtual private server `VPS` (to turn into a Node) through various Cloud Providers.  
 
@@ -78,3 +78,8 @@ There are many others *besides* what is listed below
 - Navisite
 - Dropbox
 
+## Hosting Providers {#hosting-providers}
+A hosting provider is similar to the cloud provider because they are both Internet based services; however, with a cloud provider you will be given access to build and deploy a server to handle on your own.  With a hosting provider, they offer more services such as maintaining, patching, updating, etc. your instance in the cloud.
+
+## Bare Metal {#bare-metal}
+In this situation, you are intending on building your Node on a physical dedicated system.  This can either be done through a Cloud Provider, Hosting Provider, out of your Office, or out of your home.  You are in full control of everything from the metal case, to the hardware pieces, to the operating system.  **Bare Metal** should be reserved for serious heavy highly technical operations that need such resources, fully in their control.

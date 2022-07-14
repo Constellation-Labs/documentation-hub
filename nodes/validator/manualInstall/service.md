@@ -51,10 +51,18 @@ We are going to modify our **`cn-node`** Bash script file first.
 
 Once again we will using **Nano** editor.
 
-:::info
+:::info NANO INSTRUCTIONS
 How to use the `nano` text editor is out of scope of this document; however, you can read up on how to create, edit and save a document at this link:  [How to Use Nano, the Linux Command Line Text Editor](https://linuxize.com/post/how-to-use-nano-text-editor/)
 :::
 You can use whatever editor you want.
+
+:::note Nano Quick Notes
+ - `sudo nano cn-cnode` will start the program
+ - use your keyboard arrows to navigate (not your mouse)
+ - ctrl-o command-o (letter o) will save the contents of the file
+ - give the file a name (`cn-node`)
+ - ctrl-x command-x to exit the editor
+:::
 
 ```
 sudo nano /usr/local/bin/cn-node
@@ -65,14 +73,6 @@ You will be adding the following line to the **end** of the script. Make sure to
 ```
 /usr/bin/java -jar '-Xms1024M' '-Xmx7G' '-Xss256K' /var/tessellation/cl-node.jar run-validator --collateral 0 & 
 ```
-
-- Save control-o (command-o)
-- Confirm (you will hit the enter key)
-- Exit out control-x (command-x)
-
-:::info
-The control or command-o is the letter **`o`** not a zero
-:::
 
 ##### The above commands will:
 - Add our environment variables
@@ -103,11 +103,7 @@ ExecStart=/usr/local/bin/cn-node
 WantedBy=multi-user.target
 ```
 
-Our service file is created, and we can exit Nano.
-
-- Save control-o (command-0)
-- Confirm (you will hit the enter key)
-- Exit out control-x (command-x)
+Our service file is created, and we can exit Nano. (see quick ref above 👆)
 
 We want to **`enable`** our service.
 

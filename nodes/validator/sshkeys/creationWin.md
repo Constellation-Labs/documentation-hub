@@ -40,7 +40,7 @@ Open up `PuTTyGen.exe` by clicking on the `.exe` file.
 
 Change the bit size to `4096` (at the bottom right of the screen) and click on Generate Button. 
 
-You will be asked to move the mouse around randomly and rapidly until the progress indicator completes and the screen changes.
+You will be asked to move the mouse around randomly and rapidly (`inside the box`) until the progress indicator completes and the screen changes.
 
 ![](/img/validator_nodes/node-putty3.png)
 
@@ -60,15 +60,22 @@ Save the **public** and **private** keys to a safe place.
 
 :::info
 The file for the private key should be saved with the **.ppk** extension if you are using Putty and Windows.
+
+**ppk** = `puTTy private key`
 :::
 
 ![](/img/validator_nodes/node-putty6.png)
 
 | File Name | Description |
 | --- | --- |
-| **cn_node_id** | This file is the `private` key of our key pair. |
+| **cn_node_id.ppk** | This file is the `private` key of our key pair. |
 **cn_node_id.pub** | This file is the `public` key of our key pair. |
 
 Now that the public and private keys are saved on your system.  **Remember** where you saved your keys.  Generally, you can save these keys on a **USB** stick (or other cold storage mechanism) and save in a safe secure place.
+
+| Type | Description |
+| --- | --- |
+| **hot** | This file is located on a device that has Internet access and is vulnerable to accessibility through security holes, etc. |
+**cold** | The file is located on a device with **no** Internet access. |
 
 Thank you-

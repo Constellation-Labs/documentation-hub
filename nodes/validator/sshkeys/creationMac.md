@@ -18,7 +18,7 @@ various Cloud Provider settings.   Please **like** and **subscribe** so you are 
 
 <iframe width="100%" height="380" src="https://www.youtube.com/embed/LMxmJ7h0RQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### CREATE SSH KEYS ON USING A WINDOWS 10
+### CREATE SSH KEYS ON USING A MACINTOSH
 
 On your local machine, open up a new Apple/Mac terminal. We will use the `ssh-keygen` command with a byte of `4096`
 
@@ -37,7 +37,7 @@ We can issue a `pwd` at the command prompt to `print working directory` and view
 
 #### Generate our `ssh key pair`.
 
-On your local machine, open up a new Apple/Mac terminal. We will use the **`ssh-keygen`** command with a byte size of **`4096`**
+On your local machine from our Apple/Mac terminal. We will use the **`ssh-keygen`** command with a byte size of **`4096`**
 
 ```
 ssh-keygen -b 4096
@@ -49,7 +49,7 @@ The built-in `ssh-keygen` utility will begin and prompt with something similar t
 In this example, the `/Users/netmet/.ssh/id_rsa` is a default location and name for the SSH key pair that will be generated. Simply hitting enter at this prompt, will use the name `id_rsa` and place the file in a hidden `.ssh` directory of the root of your home directory.
 :::
 
-The prompt is asking you if you want to save the key files that will be generated in this directory. It is recommended that you place the key files in a hidden `.ssh` directory. 
+The prompt is asking you if you want to save the key pair (files) that will be generated in this directory. It is recommended that you place the key files in a hidden `.ssh` directory. 
 
 
 ![](/img/validator_nodes/node-mac-sshkey1.png)
@@ -71,7 +71,11 @@ mechanism, application, tool, or other.
 Enter passphrase (empty for no passphrase):
 ```
 
-After you enter and confirm the passphrase, the key files Public and Private will get generated. NOTE the output may not match exactly, this is OK.
+After you enter and confirm the passphrase, the key pair (files) **`Public`** and **`Private`** will get generated. 
+
+:::note
+The output may not match exactly, this is OK.
+:::
 
 ```
 Enter passphrase (empty for no passphrase):

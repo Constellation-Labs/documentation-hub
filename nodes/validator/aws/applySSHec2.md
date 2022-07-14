@@ -35,15 +35,15 @@ SSH Key Generation Series - **Video 4b** by NetMet.
 
 Please like and subscribe to support NetMet's work and to be alerted to new content specifically applied to **Constellation Network** and **Node Garage**, in the future.
 
-<iframe width="100%" height="380" src="https://www.youtube.com/embed/0plYuXJwfOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="80%" height="380" src="https://www.youtube.com/embed/0plYuXJwfOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
-We need a way to access our EC2 Instance (VPS). 
+We **need** a way to **access** our `EC2 Instance` (VPS). 
 
 Please refer to the [SSH](../sshkeys/explain.md) section to create your SSH key pair.  
 
-:::danger
+:::danger WARNING
 You also have the ability to create a less secure SSH key pair directly from AWS's **EC2** creation wizard.  This is **not** recommended because it does not offer the ability to supply a **passphrase** with your SSH key.
 
 ![](/img/validator_nodes/node-aws-autosshkey.png)

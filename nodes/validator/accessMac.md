@@ -37,8 +37,8 @@ various Cloud Provider settings.   Please **like** and **subscribe** so you are 
 
 ---
 
-:::danger
-We are `pretending` our remote location (VPS) has an external IP address of `111.111.111.111` ⬅️ do **not** use this!
+:::danger REMINDER
+We are `pretending` our remote location (VPS) has an external IP address of `111.111.111.111` and our user name is `netmet` ⬅️ do **not** use this!
 :::
 
 #### Open up a new terminal session
@@ -51,15 +51,15 @@ We are `pretending` our remote location (VPS) has an external IP address of `111
 
 Lets use the **SSH** command to connect to our VPS. Issue the `ssh` command, including the `-i` option to tell SSH to use our specific `identity file` (ssh key file).
 
-We will **not** be using a standard password to access our VPS; rather, a `SSH key pair` with a `passphrase`. We created this key pair in the previous sections.
+We will **not** be using a standard password to access our VPS; rather, a `SSH key pair` with a `passphrase`. We created this key pair in the previous sections ([macintosh](./sshkeys/creationMac) or [windows](./sshkeys/creationWin)).
 
-Issue these commands from your Local System to connect to the IP address of your Remote System.
+Issue these commands from your **Local System** to connect to the `IP address` of your **Remote System**.
 
-:::info
+:::info INFO
 You may need to remove the ~/.ssh/ from the command if you did not save your SSH keys to the .ssh hidden directory.
 :::
 
-:::danger
+:::danger IMPORTANT INFORMATION
 Different cloud providers use different default users to access your VPS for the first time.  **GCP** and **DO** use `root` while **AWS** uses `ubuntu`.   We will use `root` in our examples...  make sure to change this to `ubuntu` if you are using **AWS**, or review the documentation for the provider of your choice to determine their default username.
 :::
 
@@ -67,10 +67,13 @@ Different cloud providers use different default users to access your VPS for the
 ssh -i ~/.ssh/cn-node-id root@111.111.111.111
 ```
 
-Enter your SSH key passphrase to access your remote node.
+Enter your `SSH key passphrase` to access your remote node.
 
 :::note
-When you are entering in your password, the key strokes will **NOT** be shown. It may seem like you are not entering in anything. This is a security measure. Do not look at the screen as you are typing, this may help you to not make a mistake.
+When you are entering in your password, the key strokes will **NOT** be shown. It may seem like you are not entering in anything. This is a security measure. 
+:::
+:::info Hint
+Do not look at the screen as you are typing, this may help you to not make a mistake.
 :::
 
 Output will look like below
@@ -120,8 +123,8 @@ From the instance output above above.  `root@nodegarage` : the `nodegarage` woul
 :::
 
 :::info 
-You should not have used `NodeGarage` as your `hostname`. However, it should not make a difference in performance or functionality.
+You should **not** use `NodeGarage` as your `hostname`. However, it should not make a difference in performance or functionality.
 :::
 
-Excellent you are accessing on your remote system through your local system.
-
+##### Excellent!
+You are accessing on your remote system through your local system.
