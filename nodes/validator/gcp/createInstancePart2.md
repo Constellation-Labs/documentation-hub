@@ -28,13 +28,13 @@ We still have some configuration to do to instantiate our VM, let's keep going.
 
 ---
 
-##### NETWORKING 
+#### NETWORKING 
 
 Scroll Down to **`Networking`** and expand the panel so we can add some customization.
 
 ![](/img/validator_nodes/node-gcp-instance9.png)
 
-###### IP Forwarding 
+##### IP Forwarding 
 It is important that we enable `IP forwarding` to allow traffic to flow ingress/egress.
 
 ![](/img/validator_nodes/node-gcp-instance10.png)
@@ -70,7 +70,7 @@ Select **`CREATE IP ADDRESS`**
 
 Return to the VM instance creation main panel.
 
-##### READY TO LAUNCH 
+#### READY TO LAUNCH 
 
 Click on **`DONE`**
 
@@ -84,7 +84,7 @@ Click on **`CREATE`**
 
 After a few moments, our **VM** will complete the spin up process and be ready for us to access.
 
-##### VERIFY
+#### VERIFY
 You should see your VM spin up.
 
 ![](/img/validator_nodes/node-gcp-instance19.png)
