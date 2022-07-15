@@ -19,7 +19,7 @@ hide_table_of_contents: false
 Our example will join the **testnet 2.0** network.
 :::
 
-These are assumptions made during the step-by-step below, you will need to change these to match your configuration, if you decide to **change** anything we that suggested in this documentation.
+The below 👇 definitions table shows the assumptions that are made in order to follow along with the `step-by-step` documentation in this repository.  If you had decided to **change** anything during the course of your build, you will need to substitute those changes as necessary. made during the step-by-step below, you will need to change these to match your configuration, if you decide to **change** anything we that suggested in this documentation.
 
 | Variable |	Value |
 | -------- | ------ |
