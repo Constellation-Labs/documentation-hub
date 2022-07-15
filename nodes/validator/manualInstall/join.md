@@ -41,11 +41,13 @@ Bring our Node up to date
 sudo apt -y update && sudo apt -y upgrade
 ```
 
-You will be prompted for your nodeadmin password.
+You will be prompted for your **`nodeadmin`** password.
+
 :::warning
 Your screen will not react and your password will not show as you type.  
 **Reminder**: `[...]` in the output command examples means that there is a bunch of output that has been redacted to eliminate confusion. 
 :::
+
 ```
 [sudo] password for nodeadmin:
 [...]
@@ -67,6 +69,10 @@ The current example will help us to join the **Constellation Network Tessellatio
 
 :::danger IMPORTANT
 We do **not** want to have our p12 **passphrase** added to a static plain text file.  Our **p12** file is our private key file that stores valuable information.  If the passphrase is exposed, you can have access to the MainNet, State Channel, TestNet, etc. compromised, including access to wallets.  This is a **bad** idea.
+:::
+
+:::note NOTE
+In previous steps, we started our **node service**.  This service will **not** properly start without your **p12 passphrase**.  The command below may **not** be necessary; however, we will enter it again to be thorough 
 :::
 
 Instead, we will create a *temporary* environment variable prior to joining the network.  The export we do below will only survive the current working session, and it will be lost after we log out.  

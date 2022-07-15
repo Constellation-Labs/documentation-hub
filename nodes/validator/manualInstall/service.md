@@ -105,13 +105,27 @@ WantedBy=multi-user.target
 
 Our service file is created, and we can exit Nano. (see quick ref above 👆)
 
-We want to **`enable`** our service.
-
+:::tip QUICK UNDERSTANDING
+Normally, we would want to `enable` the `node.service` to start automatically on boot.  This would be done with the following command:
 ```
 sudo systemctl enable node
 ```
+**HOWEVER** this introduces a security vulnerability concerning our `Validator Node`.
 
-We want to **`start`** our service.
+In order to start the `service` properly, you will need to supply your `p12` passphrase.  Unless you have an automated process in place to fetch the passphrase securely via security focused external tool sets (out of scope of this document), your other alternative is to supply the `passphrase` in clear text.  This is **HIGHLY** undesirable method.  Your `p12` passphrase is a gateway into our Crypto wallets, finances, your `PRO Score`, etc.
+
+As an **alternative** we will **not** automatically start the service on system boot.  We will add to our list of `to-dos` to manually start the process and supply the `passphrase` on each restart.
+
+**Constellation Network Node Garage** [nodectl](../nodectl/install) `command line utility` will ease this process as a **better** solution.
+:::
+
+
+We will create a *temporary* environment variable prior to joining the network.  The export we do below will only survive the current working session, and it will be lost after we log out.  
+
+```
+export CL_PASSWORD="place_your_passphrase_here"
+```
+We can now **`start`** our **Node** service.
 ```
 sudo systemctl start node
 ```
