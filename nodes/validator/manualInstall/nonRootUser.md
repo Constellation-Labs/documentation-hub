@@ -29,7 +29,7 @@ You can review the section on passwords for a quick reference to differences bet
 
 Our goal is to create a user that does not have **root** access. This will add an extra layer of security around our instance. Once this user is created, we will request to become a **super user** every time we want to issue a request against our instance to do something as if we were the **root administrator**.
 
-These are assumptions made during the step-by-step below, you will need to change these to match your configuration, if you decide to change anything we suggest in this documentation.
+The below 👇 definitions table shows the assumptions that are made in order to follow along with the `step-by-step` documentation in this repository.  If you had decided to **change** anything during the course of your build, you will need to substitute those changes as necessary. made during the step-by-step below, you will need to change these to match your configuration, if you decide to change anything we suggest in this documentation.
 
 | Variable |	Value |
 | -------- | ------ |
