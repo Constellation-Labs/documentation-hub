@@ -4,19 +4,19 @@
 
     - Honest Data for a Connected Future
 
-- Existing Barriers to Adoption
+    - Existing Barriers to Adoption
 
-    -   Approach
+        -   Approach
 
-    -   Interoperability
+        -   Interoperability
 
-    -   Programmability
+        -   Programmability
 
-    -   Scalability
+        -   Scalability
 
-    -   Incentive Structures
+        -   Incentive Structures
 
-    -   Economic Models
+        -   Economic Models
 
 -   Overview of Decentralized Ledgers
 
