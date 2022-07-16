@@ -7,7 +7,11 @@ hide_table_of_contents: false
 
 ### Send a single transaction (online)
 ```js
-dag4.account.transferDag('DAGabc123...', 25.551, 0);
+const toAddress = 'DAGabc123...';
+const amount = 25.551;
+const fee = 0;
+
+dag4.account.transferDag(toAddress, amount, fee);
 ```
 
 ### Send a transaction (offline signed)
