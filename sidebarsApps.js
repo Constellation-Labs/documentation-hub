@@ -2,7 +2,7 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Build an App',
+      label: 'Getting Started',
       collapsed: false,
       items: [
         'index', 
@@ -13,7 +13,12 @@ module.exports = {
       label: 'Javascript API',
       collapsed: false,
       items: [ 
-        'dag4'
+        'js-api/dag4',
+        'js-api/wallets',
+        'js-api/connecting',
+        'js-api/transactions',
+        'js-api/message-signing',
+        'js-api/examples'
       ],
     },
 

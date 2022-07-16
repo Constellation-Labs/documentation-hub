@@ -12,7 +12,7 @@ Interaction with Constellation Network version 2.0 is possible using three indep
 - **Block Explorer API**: An off-network API offering indexed and searchable transactions, snapshots, and block information.
 
 ## Block Explorer API
-
+[OAS3 Spec](http://apidoc-dev.constellationnetwork.io.s3-website.us-west-1.amazonaws.com/block-explorer/)
 
 ## L0 API
 
