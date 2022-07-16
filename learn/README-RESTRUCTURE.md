@@ -2,9 +2,7 @@
 
 - Web 3.0
 
-- Honest Data for a Connected Future
-
-    - The Vision
+    - Honest Data for a Connected Future
 
 - Existing Barriers to Adoption
 
