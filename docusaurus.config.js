@@ -61,7 +61,7 @@ module.exports = {
         {
           type: 'doc',
           docId: 'nodes',
-          label: 'Validate',
+          label: 'Validator Nodes',
           position: 'left',
         },
         {
@@ -155,7 +155,7 @@ module.exports = {
     prism: {
       theme: { plain: {}, styles: [] },
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-      additionalLanguages: ['shell-session', 'http'],
+      additionalLanguages: ['shell-session', 'http', 'clike', 'java', 'scala'],
     },
     algolia: {
       appId: 'O9QSL985BS',

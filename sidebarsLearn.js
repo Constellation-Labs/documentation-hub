@@ -13,11 +13,10 @@ module.exports = {
       label: 'Core Concepts',
       collapsed: false,
       items: [
-        'core/blockchain',
-        'core/layer0',
-        'core/chain',
-        'core/scaling',
-        'core/infrastructure',
+        'core/honestdata',
+        'core/problems',
+        'core/different',
+        'core/nodes',
       ],
     },
     {

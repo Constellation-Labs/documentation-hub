@@ -27,28 +27,24 @@ import DocsCards from '@components/global/DocsCards';
 ![Constellation Docs](/logos/header.png)
 
 <DocsCards>
-  <DocsCard header="Core Concepts" href="/learn/core/blockchain" img="/icons/img02.png">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+  <DocsCard header="Core Concepts" href="/learn" img="/icons/img02.png">
+    <p>Learn how the HyperGraph functions and gain understanding of the fundamental building blocks of the network.</p>
   </DocsCard>
 
   <DocsCard header="Build a State Channel" href="/statechannels" img="/icons/img03.png">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    <p>Leverage the power of the HyperGraph to build custom applications with your business logic.</p>
   </DocsCard>
 
 <DocsCard header="Run a Validator Node" href="/nodes" img="/icons/img04.png">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <p>Build, Configure, and Deploy a Validator Node on the HyperGraph.</p>
 </DocsCard>
 
 <DocsCard header="Integrate Stargazer Wallet" href="/stargazer" img="/icons/img02.png">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+  <p>Connect Stargazer Wallet to your Web3 app to access Constellation and Ethereum chains.</p>
 </DocsCard>
 
-<DocsCard header="Build an App" href="/apps" img="/icons/img02.png">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-</DocsCard>
-
-<DocsCard header="Markdown Examples" href="/markdown" img="/icons/img02.png">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+<DocsCard header="Apps and Integrations" href="/apps" img="/icons/img02.png">
+  <p>Integrate your app, wallet, or exchange with the HyperGraph.</p>
 </DocsCard>
 
 </DocsCards>

@@ -23,8 +23,8 @@ function DocsCard(props: Props): JSX.Element {
   const hoverIcon = props.hoverIcon || props.icon;
 
   const content = (
-    <>
-      {props.img && <img src={useBaseUrl(props.img)} className="Card-image" />}
+    <> 
+      {props.img && <div className="Card-image-wrap"><img src={useBaseUrl(props.img)} className="Card-image" /></div>}
       <div className="Card-container">
         {(props.icon || hoverIcon) && (
           <div className="Card-icon-row">

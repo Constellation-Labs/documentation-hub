@@ -6,7 +6,10 @@ module.exports = {
       collapsed: false,
       items: [
         'index',
-        'intro',
+        'statechannelcc',
+        'scarchitecture',
+        'scdesign',
+        'scflow',
         'simple'
       ],
     },
