@@ -1,5 +1,5 @@
 ---
-title: Big Data Use Cases: An Example
+title: "Big Data Use Cases: An Example"
 hide_table_of_contents: false
 ---
 
