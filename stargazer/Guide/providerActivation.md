@@ -4,9 +4,6 @@ sidebar_label: Provider Activation
 hide_table_of_contents: false
 ---
 
-import DocsCard from '@components/global/DocsCard';
-import DocsCards from '@components/global/DocsCards';
-
 <head>
   <meta
     name="description"
@@ -17,6 +14,10 @@ import DocsCards from '@components/global/DocsCards';
 <intro-end />
 
 A chain provider allows you to interact with any available network. In this guide, you will learn how to obtain a chain provider and activate it.
+
+:::info Tip
+With the Stargazer Extension installed you can test the following examples in the browser console ([devtools](https://developer.chrome.com/docs/devtools/console/)).
+:::
 
 ## Detect Stargazer
 

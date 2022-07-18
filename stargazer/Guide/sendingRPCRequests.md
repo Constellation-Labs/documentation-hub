@@ -4,9 +4,6 @@ sidebar_label: Sending RPC Requests
 hide_table_of_contents: false
 ---
 
-import DocsCard from '@components/global/DocsCard';
-import DocsCards from '@components/global/DocsCards';
-
 <head>
   <meta
     name="description"
@@ -32,6 +29,10 @@ const ethProvider = window.stargazer.getProvider("ethereum");
 ## List available accounts
 
 For listing available accounts in the wallet (and in some cases activating the providers) you can send the following calls to [`dag_accounts`](../APIReference/constellationRPCAPI/dag_accounts.md) RPC method and [`eth_accounts`](../APIReference/ethereumRPCAPI/eth_accounts.md) RPC method.
+
+:::info Important
+The account at index 0 will always be the active account in Stargazer. Both for Constellation and Ethereum providers.
+:::
 
 ```typescript title="TypeScript"
 const dagAccounts = await dagProvider.request({ method: "dag_accounts" });
@@ -116,12 +117,6 @@ console.log(trxReceipt.blockNumber);
 ## Send Transactions
 
 As the ethereum chain reveals the [`eth_sendTransaction`](../APIReference/ethereumRPCAPI/eth_sendTransaction.md) RPC method you can send any kind of transaction you need (Token Transfer, Contract Interaction, ETH Transfers, etc.).
-
-:::note Important
-Any **write** call sent from the wallet will ask the user for confirmation.
-
-The special ERC20 method `approve` has a different approval screen for the user to confirm approval to the designated contract address.
-:::
 
 ### Send ERC20 Tokens
 

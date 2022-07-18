@@ -21,6 +21,10 @@ None
 
 `DAGAddress[]` - User accounts available.
 
+:::info Important
+The account at index 0 will always be the active account in Stargazer.
+:::
+
 ##### Example
 
 ```typescript title="TypeScript"

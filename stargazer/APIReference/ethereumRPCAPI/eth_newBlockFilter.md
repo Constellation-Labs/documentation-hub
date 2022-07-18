@@ -5,30 +5,28 @@ hide_table_of_contents: true
 <head>
   <meta
     name="description"
-    content="Returns the keccak-256 _(not the standarized sha3-256)_ of the given data."
+    content="Creates a new filter in the node. Used to notify when a new block arrived. To check for state changes call eth_getFilterChanges."
   />
 </head>
 
 <intro-end />
 
-Returns the keccak-256 _(not the standarized sha3-256)_ of the given data.
+Creates a new filter in the node. Used to notify when a new block arrived. To check for state changes call [`eth_getFilterChanges`](./eth_getFilterChanges.md).
 
 ##### Parameters
 
-| Name | Type        | Description                      |
-| ---- | ----------- | -------------------------------- |
-| Data | `HexString` | Data to calculate the hash from. |
+None
 
 ##### Return Type
 
-`HexString` - The keccak-256 digest of the given data.
+`HexString<FilterId>` - The new associated filter id.
 
 ##### Example
 
 ```typescript title="TypeScript"
 await provider.request({
-  method: "web3_sha3",
-  params: ["0x68656c6c6f20776f726c64"],
+  method: "eth_newBlockFilter",
+  params: [],
 });
-// "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+// "0x81440bfbd6138ec9fe6d6ec4398b0b4879fb182f3cd8"
 ```
