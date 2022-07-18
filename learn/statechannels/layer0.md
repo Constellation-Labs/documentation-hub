@@ -1,5 +1,5 @@
 ---
-title: Layer 0 Overview: Global vs Local
+title: "Layer 0 Overview: Global vs Local"
 hide_table_of_contents: false
 ---
 
