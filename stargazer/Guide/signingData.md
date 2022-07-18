@@ -91,7 +91,11 @@ await dagProvider.request({
 
 ## Ethereum Message Signing
 
-The Ethereum RPC API provided reveals the [`personal_sign`](../APIReference/ethereumRPCAPI/personal_sign.md) RPC method for message signing. In this case, the message signed is an arbitrary hex string prefixed by the `"\x19Ethereum Signed Message:\n"` string and the length of the message in bytes from [EIP-191](https://eips.ethereum.org/EIPS/eip-191#specification).
+The Stargazer Ethereum RPC API implements both [EIP-191](https://eips.ethereum.org/EIPS/eip-191) ([`personal_sign`](../APIReference/ethereumRPCAPI/personal_sign.md)) and [EIP-712](https://eips.ethereum.org/EIPS/eip-712) ([`eth_signTypedData`](../APIReference/ethereumRPCAPI/eth_signTypedData.md)) as arbitrary message signing methods.
+
+### personal_sign method
+
+The RPC API provided reveals the [`personal_sign`](../APIReference/ethereumRPCAPI/personal_sign.md) RPC method for message signing. In this case, the message signed is an arbitrary hex string prefixed by the `"\x19Ethereum Signed Message:\n"` string and the length of the message in bytes from [EIP-191](https://eips.ethereum.org/EIPS/eip-191#specification).
 
 ```typescript title="TypeScript"
 // Send the request and wait for the signature
@@ -120,6 +124,84 @@ The returned signature corresponds to the keccak256 hash of the prefix + message
 
 _Read more about [Ethereum signature verification](#ethereum-signature-verification)_
 
+### eth_signTypedData method
+
+The RPC API provided reveals the [`eth_signTypedData`](../APIReference/ethereumRPCAPI/eth_signTypedData.md) RPC method for typed message signing. In this case, the message signed is the hash of the typed data according to [EIP-712](https://eips.ethereum.org/EIPS/eip-712#specification) prefixed by the `"\x19\x01"` string according to [EIP-191](https://eips.ethereum.org/EIPS/eip-191#specification).
+
+```typescript title="TypeScript"
+await provider.request({
+  method: "eth_signTypedData",
+  params: [
+    "0x567d0382442c5178105fC03bd52b8Db6Afb4fE40",
+    {
+      types: {
+        DeviceControl: [
+          {
+            name: "principal",
+            type: "AuthorizedEntity",
+          },
+          {
+            name: "emergency",
+            type: "AuthorizedEntity",
+          },
+        ],
+        AuthorizedEntity: [
+          {
+            name: "address",
+            type: "address",
+          },
+          {
+            name: "validUntil",
+            type: "uint256",
+          },
+        ],
+        EIP712Domain: [
+          {
+            name: "name",
+            type: "string",
+          },
+          {
+            name: "version",
+            type: "string",
+          },
+          {
+            name: "chainId",
+            type: "uint256",
+          },
+          {
+            name: "verifyingContract",
+            type: "address",
+          },
+        ],
+      },
+      domain: {
+        name: "Stargazer Demo",
+        version: "1.0.0",
+        chainId: "3",
+        verifyingContract: "0xeb14c9bb6c2dec2ecb9b278c9fa1ec763b04d545",
+      },
+      primaryType: "DeviceControl",
+      message: {
+        principal: {
+          address: "0xeb14c9bb6c2dec2ecb9b278c9fa1ec763b04d545",
+          validUntil: "1657823568",
+        },
+        emergency: {
+          address: "0xcac3da343670abb46bc6e8e6d375b66217519093",
+          validUntil: "1752517998",
+        },
+      },
+    },
+  ],
+});
+// "0xa3f20717a250c2b0b729b7e5becbff67fdaef7e0699da4de7ca5895b02a170a12d887fd3b17bfdce3481f10bea41f45ba9f709d39ce8325427b57afcfc994cee1b"
+```
+
+The returned signature corresponds to the keccak256 hash of the domainSeparator + hashStruct(message) and the private key of the user.
+`ECDSA.sign(privateKey, keccak256("\x19\x01" + domainSeparator + hashStruct(message))`.
+
+_Read more about [Ethereum signature verification](#ethereum-signature-verification)_
+
 ## Constellation Signature Verification
 
 For signature verification, we will be using the [@stardust-collective/dag4](https://www.npmjs.com/package/@stardust-collective/dag4) package. The following snippet illustrates how you can verify an encoded request signature.
@@ -142,9 +224,9 @@ const publicKeyAddress = dag4.keyStore.getDagAddressFromPublicKey(publicKey);
 
 ## Ethereum Signature Verification
 
-For signature verification, we will be using the [ethers](https://www.npmjs.com/package/ethers) package. The following snippet illustrates how you can verify message signature.
+For signature verification, we will be using the [ethers](https://www.npmjs.com/package/ethers) package. The following snippets illustrate how you can verify different message signatures.
 
-```typescript title="TypeScript"
+```typescript title="eth_personalSign"
 import * as ethers from "ethers";
 
 const accountWhichSigned = "0x9b2055d370f73ec7d8a03e965129118dc8f5bf83";
@@ -152,6 +234,55 @@ const messageSigned = "some-message-the-user-signed";
 const signatureHex = "some-hex-encoded-signature";
 
 const messageHash = ethers.utils.hashMessage(messageSigned);
+const recoveredAddress = ethers.utils.recoverAddress(messageHash, signatureHex);
+
+if (recoveredAddress !== accountWhichSigned) {
+  throw new Error("Signature is not valid");
+}
+```
+
+```typescript title="eth_signTypedData"
+import * as ethers from "ethers";
+
+const accountWhichSigned = "0x9b2055d370f73ec7d8a03e965129118dc8f5bf83";
+const messageSigned = {
+  // The EIP-712 domain signed
+  domain: {
+    name: "Stargazer Demo",
+    version: "1.0.0",
+    chainId: 3,
+    verifyingContract: "0xabcdefABCDEF1234567890abcdefABCDEF123456",
+  },
+  // The EIP-712 types signed
+  types: {
+    DeviceControl: [
+      { name: "principal", type: "AuthorizedEntity" },
+      { name: "emergency", type: "AuthorizedEntity" },
+    ],
+    AuthorizedEntity: [
+      { name: "address", type: "address" },
+      { name: "validUntil", type: "uint256" },
+    ],
+  },
+  // The EIP-712 message signed
+  value: {
+    principal: {
+      address: "0xEb14c9bb6C2DEc2eCb9B278C9fa1EC763B04d545",
+      validUntil: 1657823568,
+    },
+    emergency: {
+      address: "0xcAc3DA343670aBB46BC6E8e6d375B66217519093",
+      validUntil: 1752517998,
+    },
+  },
+};
+const signatureHex = "some-hex-encoded-signature";
+
+const messageHash = ethers.utils._TypedDataEncoder.hash(
+  messageSigned.domain,
+  messageSigned.types,
+  messageSigned.value
+);
 const recoveredAddress = ethers.utils.recoverAddress(messageHash, signatureHex);
 
 if (recoveredAddress !== accountWhichSigned) {
