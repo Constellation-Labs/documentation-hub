@@ -36,4 +36,4 @@ hide_table_of_contents: false
   which has the capacity to horizontally scale indefinitely.
 
 
-![Node Clusters](/img/coreconcepts/nodecluster.jpg)
+![Node Clusters](/img/coreconcepts/nodeclusters.jpg)
