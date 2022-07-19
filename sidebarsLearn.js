@@ -10,21 +10,47 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Core Concepts',
+      label: 'Existing Barriers to Adoption',
       collapsed: false,
       items: [
-        'core/honestdata',
-        'core/problems',
-        'core/different',
-        'core/nodes',
+        'web3/barriers/approach',
+        'web3/barriers/interoperability',
+        'web3/barriers/programmability',
+        'web3/barriers/scalability',
+        'web3/barriers/incentivestructures',
+        'web3/barriers/economicmodels'
       ],
     },
     {
       type: 'category',
-      label: 'Tokenomics',
-      collapsed: true,
+      label: 'Overview of Decentralized Ledgers',
+      collapsed: false,
       items: [
-        'tokenomics/placeholder',
+        'overviewledgers/blockchain',
+        'overviewledgers/dag',
+        'overviewledgers/hypergraph',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'State Channels',
+      collapsed: false,
+      items: [
+        'statechannels/layer0',
+        'statechannels/offchaindata',
+        'statechannels/bigdata',
+        'statechannels/horizontalscalability/horizontalpartitions',
+        'statechannels/horizontalscalability/microservices',
+        'statechannels/horizontalscalability/dynamicpartition'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Validator Nodes',
+      collapsed: false,
+      items: [
+        'validatornodes/constellationnodes',
+        'validatornodes/statechannelnodes',
       ],
     },
     {
@@ -34,22 +60,6 @@ module.exports = {
       items: [
         'consensus/dag-layer-1',
       ],
-    },
-    {
-      type: 'category',
-      label: 'Data Structures',
-      collapsed: true,
-      items: [
-        'data/placeholder',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Reference',
-      collapsed: true,
-      items: [
-        'reference/glossary',
-      ],
-    },
+    }
   ],
 };
