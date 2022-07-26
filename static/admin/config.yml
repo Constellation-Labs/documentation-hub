@@ -8,9 +8,9 @@ media_folder: "static/img" # Media files will be stored in the repo under static
 public_folder: "/img/" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-- name: 'learn' # Used in routes, ie.: /admin/collections/:slug/edit
-  label: 'Learn' # Used in the UI
-  folder: 'learn'
+- name: 'core-concepts' # Used in routes, ie.: /admin/collections/:slug/edit
+  label: 'Core Concepts' # Used in the UI
+  folder: 'core-concepts'
   create: true # Allow users to create new documents in this collection
   fields: # The fields each document in this collection have
     - { label: 'Title', name: 'title', widget: 'string' }

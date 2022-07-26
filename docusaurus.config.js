@@ -48,8 +48,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'learn',
-          label: 'Learn',
+          docId: 'core-concepts',
+          label: 'Core Concepts',
           position: 'left',
         },
         {
@@ -201,10 +201,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'learn',
-        path: 'learn',
-        routeBasePath: 'learn',
-        sidebarPath: require.resolve('./sidebarsLearn.js'),
+        id: 'core-concepts',
+        path: 'core-concepts',
+        routeBasePath: 'core-concepts',
+        sidebarPath: require.resolve('./sidebarsCoreConcepts.js'),
         remarkPlugins: [math],
         rehypePlugins: [katex],
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
