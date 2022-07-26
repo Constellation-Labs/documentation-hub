@@ -16,7 +16,7 @@ dag4.account.transferDag(toAddress, amount, fee);
 
 ### Send a transaction (offline signed)
 ```js
-// Get last ref (online)
+// Get last ref online, or else fetch from an offline data store
 const lastRef = await dag4.network.getAddressLastAcceptedTransactionRef('DAGWalletSendingAddress');
 
 // Get signed transaction (offline)
@@ -28,34 +28,20 @@ await dag4.network.postTransaction(txn);
 
 ### Generate bulk transactions offline and send
 ```js
-// Get last ref (online)
+// Get last ref online, or else fetch from an offline data store
 let lastRef = await dag4.network.getAddressLastAcceptedTransactionRef('DAGWalletSendingAddress');
 
 // Generate txns offline
 const txn_data = [
-  {to: 'DAGabc123...', amount: 10},
-  {to: 'DAGxyz987...', amount: 25.01},
-  {to: 'DAGzzz555...', amount: 1.01},
-  {to: 'DAGwww988...', amount: 0.00000001},
+  {to: 'DAGabc123...', amount: 10, fee: 0},
+  {to: 'DAGxyz987...', amount: 25.01, fee: 0},
+  {to: 'DAGzzz555...', amount: 1.01, fee: 0},
+  {to: 'DAGwww988...', amount: 0.00000001, fee: 0},
 ];
 
-let _ordinal = lastRef.ordinal,
-  _hash = lastRef.hash,
-  transactions = [];
-for (const item of txn_data) {
-  const { transaction, hash } = dag4.account.generateSignedTransactionWithHash(item.to, item.amount, 0.00000001, {ordinal: _ordinal, hash: _hash});
+const hashes = await dag4.account.transferDagBatch(txn_data, lastRef);
 
-  transactions.push(transaction);
-
-  // Increment the ordinal and use the returned hash for the next iteration of the loop
-  _hash = hash;
-  _ordinal++;
-}
-
-// Send txns (online)
-for (const txn of transactions) {
-  await dag4.network.postTransaction(txn);
-}
+// console.log(hashes)
 ```
 
 ### Check the status of a transaction

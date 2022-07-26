@@ -2,7 +2,7 @@
 title: Dag4.js Example Apps
 sidebar_label: Example Apps
 slug: /dag4-examples
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
