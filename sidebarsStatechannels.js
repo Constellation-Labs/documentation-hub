@@ -10,10 +10,16 @@ module.exports = {
         'scarchitecture',
         'scdesign',
         'scflow',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Examples',
+      collapsed: false,
+      items: [
         'simple'
       ],
     },
-
   ],
 
 };

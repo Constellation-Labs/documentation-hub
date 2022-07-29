@@ -47,34 +47,49 @@ module.exports = {
           },
         },
         {
-          type: 'doc',
-          docId: 'core-concepts',
-          label: 'Core Concepts',
+          label: 'Learn',
           position: 'left',
+          items: [
+            {
+              href: '/core-concepts/concepts',
+              label: 'Core Concepts',
+              rel: null,
+            },
+            {
+              href: '/core-concepts/network/index',
+              label: 'The Network',
+              rel: null,
+            },
+          ],
+          className: 'navbar__link--learn',
         },
         {
-          type: 'doc',
-          docId: 'build',
           label: 'Build',
           position: 'left',
+          items: [
+            {
+              href: '/statechannels',
+              label: 'State Channels',
+              rel: null,
+            },
+            {
+              href: '/stargazer',
+              label: 'Stargazer Wallet',
+              rel: null,
+            },
+            {
+              href: '/apps',
+              label: 'Apps and Integrations',
+              rel: null,
+            },
+          ],
+          className: 'navbar__link--build',
         },
         {
           type: 'doc',
           docId: 'nodes',
-          label: 'Validator Nodes',
+          label: 'Validate',
           position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'api',
-          label: 'API',
-          position: 'left',
-        },
-        {
-          type: 'cta',
-          position: 'left',
-          text: 'Buy DAG',
-          href: `https://constellationnetwork.io/buy/`,
         },
         {
           type: 'search',
