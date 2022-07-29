@@ -6,60 +6,29 @@ module.exports = {
       collapsed: false,
       items: [
         'index',
+        'concepts'
       ],
     },
     {
       type: 'category',
-      label: 'Existing Barriers to Adoption',
+      label: 'Network',
       collapsed: false,
       items: [
-        'web3/barriers/approach',
-        'web3/barriers/interoperability',
-        'web3/barriers/programmability',
-        'web3/barriers/scalability',
-        'web3/barriers/incentivestructures',
-        'web3/barriers/economicmodels'
-      ],
+        'network/index',
+        'network/architecture',
+        'network/state-channels',
+        'network/l0-tokens',
+        'network/validator-nodes'
+      ]
     },
     {
       type: 'category',
-      label: 'Overview of Decentralized Ledgers',
+      label: 'Tools',
       collapsed: false,
       items: [
-        'overviewledgers/blockchain',
-        'overviewledgers/dag',
-        'overviewledgers/hypergraph',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'State Channels',
-      collapsed: false,
-      items: [
-        'statechannels/layer0',
-        'statechannels/offchaindata',
-        'statechannels/bigdata',
-        'statechannels/horizontalscalability/horizontalpartitions',
-        'statechannels/horizontalscalability/microservices',
-        'statechannels/horizontalscalability/dynamicpartition'
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Validator Nodes',
-      collapsed: false,
-      items: [
-        'validatornodes/constellationnodes',
-        'validatornodes/statechannelnodes',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Consensus Algorithms',
-      collapsed: true,
-      items: [
-        'consensus/dag-layer-1',
-      ],
+        'tools/wallets',
+        'tools/dag-explorer'
+      ]
     }
   ],
 };

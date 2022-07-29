@@ -3,14 +3,6 @@ title: DAG Layer 1
 hide_table_of_contents: false
 ---
 
-<head>
-  <title>DAG Layer 1</title>
-  <meta
-    name="description"
-    content="Lorem ipsum"
-  />
-</head>
-
 DAG Layer 1 forms a network itself, similar to Global L0. However, the main
 process of the DAG Layer 1 is a consensus mechanism that ends up with a Block.
 
