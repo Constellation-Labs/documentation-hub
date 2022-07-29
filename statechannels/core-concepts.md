@@ -1,16 +1,6 @@
 ---
 title: State Channel Core Concepts
-hide_table_of_contents: false
 ---
-
-<head>
-    <title> State Channel Core Concepts
-</title>
-    <meta 
-      name="description"
-      content="Lorem ipsum"
-  />
-    </head>
 
 ![Existing Apps](/img/coreconcepts/existing-apps.jpeg)
 

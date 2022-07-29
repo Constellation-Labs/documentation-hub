@@ -7,11 +7,20 @@ hide_table_of_contents: false
 
 ### Send a single transaction (online)
 ```js
+const { dag4 } = require('@stardust-collective/dag4');
+
+dag4.account.connect({
+  networkVersion: '2.0',
+  testnet: true
+});
+
+dag4.account.loginPrivateKey('MY-PRIVATE-KEY');
+
 const toAddress = 'DAGabc123...';
 const amount = 25.551;
 const fee = 0;
 
-dag4.account.transferDag(toAddress, amount, fee);
+await dag4.account.transferDag(toAddress, amount, fee);
 ```
 
 ### Send a transaction (offline signed)
@@ -43,6 +52,10 @@ const hashes = await dag4.account.transferDagBatch(txn_data, lastRef);
 
 // console.log(hashes)
 ```
+
+:::info Choosing a Transaction Fee
+Transactions without a fee are processed at a maximum of one transaction per global snapshot, or roughly 1 transaction every 5 seconds. In practice this means that almost all transactions do not require a fee unless you need to send a large number of transactions in a short period of time. To send more transactions per snapshot, include a small fee of 0.00000001 DAG with each transaction. Up to 100 transactions per snapshot will be processed if a fee is included. 
+:::
 
 ### Check the status of a transaction
 When a transaction is sent to the network and is accepted, the response will return a hash that can be used to monitor the status of the transaction. 

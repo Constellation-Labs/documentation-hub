@@ -27,7 +27,7 @@ import DocsCards from '@components/global/DocsCards';
 ![Constellation Docs](/logos/header.png)
 
 <DocsCards>
-  <DocsCard header="Core Concepts" href="/learn" img="/icons/img02.png">
+  <DocsCard header="Core Concepts" href="/core-concepts" img="/icons/img02.png">
     <p>Learn how the HyperGraph functions and gain understanding of the fundamental building blocks of the network.</p>
   </DocsCard>
 
