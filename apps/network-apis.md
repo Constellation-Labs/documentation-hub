@@ -14,12 +14,9 @@ Interaction with Constellation Network version 2.0 is possible using three indep
 
 ### Block Explorer API
 [OAS3 Spec](http://apidoc-dev.constellationnetwork.io.s3-website.us-west-1.amazonaws.com/block-explorer/)
-[INSERT LINK]
 
 ### L0 API
 [OAS3 Spec](http://apidoc-dev.constellationnetwork.io.s3-website.us-west-1.amazonaws.com/node/#/)
-[INSERT LINK]
 
 ### L1 API
 [OAS3 Spec](http://apidoc-dev.constellationnetwork.io.s3-website.us-west-1.amazonaws.com/node/?url=http://apidoc-dev.constellationnetwork.io.s3-website.us-west-1.amazonaws.com/node/l1-public-v2.yml)
-[INSERT LINK]

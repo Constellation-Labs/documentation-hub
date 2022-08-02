@@ -17,5 +17,3 @@ The following urls can used to access testnet:
 - __Block Explorer API__: https://be-testnet.constellationnetwork.io
 - __L0 API__: http://lb-testnet.constellationnetwork.io:9000
 - __L1 API__: http://lb-testnet.constellationnetwork.io:9010
-
-
