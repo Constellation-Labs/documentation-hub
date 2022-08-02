@@ -96,21 +96,65 @@ a common **Application Chain Interface (ACI)**. This opens up entirely new uses 
 technologies, enabling the implicit orchestration and verification of untrusted code as a multi-network API call.
 
 ## Application Chain Interface (ACI)
-A State Channel can be understood in its most basic form as a "contract" with the outside world. The logic that governs
-how a state channel interfaces with other state channels through Constellation Network's HGTP is referred to as an
-Application Chain Interface (ACI) and is defined within its State Channel Snapshot Definition. This interface is a JSON object
-with configuration information and a public key associated to the channel itself. The reason a public key is associated
-with the state channel is to create a brokerage mechanism for state channel data. When a state channel is deployed, the
-developers configure how data routed from the Global L0 Hypergraph network are distributed amongst its nodes and operators.
-Because of this, state channels can act as their own arbitrating authority in defining financial policy. 
 
-For a decentralized network this translates from interest rate fluctuation and injection of capital into a particular 
-sector, into fluctuations of validator rewards and resources offered. Constellation's DAG token is a data structure that
-serves as a unit of exchange which enables different state channel economies to normalize values between each other. DAG
-mathematically verifies that no data or value is leaked or invented between ledgers as it is the medium that connects
-ledger states together through the Global L0 Hypergraph network of heterogeneous state data. This creates an arbitrage free
-network of interoperable economies where liquidity pools belonging to different state channel interfaces can be exchanged
-atomically, forming a global liquidity pool.
+Core to most distributed consensus protocols is the ability to apply consensus to the problem of secure remote code 
+execution. Secure remote code execution requires the validation of executible binary sent to a remote server to 
+perform an operation in such a way that the server does not become exposed to injection attacks, essentially taking 
+over the runtime of an application to expose data or permissions of the server. To do so in such a way that allows for 
+a globally converged state, each concensus participant needs to know the definitions of all contracts interfacing with 
+the global ledger. These contracts rely on what's typically known as an ABI or application binary interface to 
+register their API and state update methods. The binary is typically contained as a field of a json string or 
+compatible data type which can be rendered into a human readable interface to the api/contract of the stateful ledger. 
+Typically these have been described as a program defined within a limited execution environment (virtual machine) and 
+API that defines a stateful "contract" for iterative state updates. However, this model is not limited only by 
+execution environment and primitive data types, it limits state updates to serial convergence of the network: i.e. 
+it forces a distributed system to operate in serial or sequentially, potentially allowing one contract to bottleneck 
+others. How then could the problem of remote code execution be be mitigated in a truly parallel sense?
+
+A natural solution is to federate responsibility to parallel sub-networks and allow them to converge concurrently on 
+partitions of the total state. In order to do so, the runtime envoronment and executible logic of smart contracts 
+needs to be expanded. HGTP solves this with the ACI or Application Chain Interface and corresponding database. As 
+oppossed to the traditional smart contract ABI the ACI is configurable; each node operator registers the data and 
+execution logic they wish to validate or "mine". Because these contracts are for their own independent networks, 
+whos ledgers are "off chain" with respect to the global DAG L0 ledger, in HGTP they are reffered to as 
+"State Channels." 
+
+### General architecture
+
+Each node stores the ACI of the channels it wishes to validate in a service called the ACI Registry. The flow of 
+registration is described in the following diagram and [reference 
+implementation.](https://github.com/Constellation-Labs/tessellation/pull/12/files#diff-68dacc00f3c02aae7e41c491367cb8798d4728648e5218bb23b3cc7c94abad45R13)[![ACI 
+Registration Flow Diagram](https://mermaid.ink/img/pako:eNplkcGKgzAQhl9lyGEvW18gh4JoDr2UpdbDgrBMzahhNXGTsVBK330TtPTQXJLM__3hn8ldtE6TkCLQ30K2pdJg73FqLMQ1o2fTmhktQw0YoA7k3yWVJGX17IzldzlPcl4c4ES9Cexv70iZkBIZLxiosStQZ_v9p5JQeEImQAic9nZAa2lcGZWYXEKF10iMPV08AloNrdtuK3d00elNPzC4DqKhcNNsRoIPuJI33ZYpT8-VEg7HSp3OKfTP-ftLrWIZxSxaDzZOgUm_LJlaE-hXqKx-BtepH7ETE_kJjY6zviesETzQRI2Q8ajR_zaisY_ILbOOLqUNOy9kh2OgncCFXXWzrZDsF3pC22etxcc_Dd2Tzg)](https://mermaid-js.github.io/mermaid-live-editor/edit/#pako:eNplkcGKgzAQhl9lyGEvW18gh4JoDr2UpdbDgrBMzahhNXGTsVBK330TtPTQXJLM__3hn8ldtE6TkCLQ30K2pdJg73FqLMQ1o2fTmhktQw0YoA7k3yWVJGX17IzldzlPcl4c4ES9Cexv70iZkBIZLxiosStQZ_v9p5JQeEImQAic9nZAa2lcGZWYXEKF10iMPV08AloNrdtuK3d00elNPzC4DqKhcNNsRoIPuJI33ZYpT8-VEg7HSp3OKfTP-ftLrWIZxSxaDzZOgUm_LJlaE-hXqKx-BtepH7ETE_kJjY6zviesETzQRI2Q8ajR_zaisY_ILbOOLqUNOy9kh2OgncCFXXWzrZDsF3pC22etxcc_Dd2Tzg) 
+
+
+The entrypoint is the [ACI 
+Server](https://github.com/Constellation-Labs/tessellation/pull/12/files#diff-186c557b0716cd70729ae1210001fb4e35b61b2e033466c81d07d9b353b4af29R28)
+which access it the main resources via [ACI 
+Context.](https://github.com/Constellation-Labs/tessellation/pull/12/files#diff-62274e96c1476a6f059c4e9f3b3baef565c0aa011827a50e59e31a9e2a57779cR10)
+
+One resource contained within the ACI Context, the [Runtime 
+Loader,](https://github.com/Constellation-Labs/tessellation/pull/12/files#diff-7855e5955bc399df7508628b6ecb0da078358378b828818be753dec7f491b91eR14)
+instantiates the serializers necessary to dserialize state channel data (kryo registrar).
+
+### Local Multi-Chanel Validation (alpha)
+
+An example is provided in the [ACI 
+App](https://github.com/Constellation-Labs/tessellation/pull/12/files#diff-186c557b0716cd70729ae1210001fb4e35b61b2e033466c81d07d9b353b4af29R11)
+which loads the definition from the [Example 
+Manifest](https://github.com/Constellation-Labs/tessellation/pull/12/commits/e2c11cc832df8350eca456315d885d076c321703#diff-4be48c13f0a5881ec2c09831e20d34e05bd2e127a2105243cd5da9ce09e6b2a1R15)
+and can be run as a local jar file. This is extendable to impelment multi channel validation as described by 
+the following diagram. [![ACI 
+Deserialize Flow Diagram](https://mermaid.ink/img/pako:eNplkk1rwzAMhv-K8GFsrGV3Hwoh8cZgX7TNYRAYqq2mZomdOc6glP73ySQjG_VJSM_7SrJ9EtobElL09DWQ01RYrAO2lQM-HYZote3QRSgBeyh7CpcllUrKmc5bFy_LWSpn-SOsqbZ9DMdLpEhIgRF32FPlRqBcrla3SsI2oOtRR-sd3AEoU9MIqARkEh4oAjY74sEBnQHtsalpF3DEXnwkCLY-RPB7YJ4TYB1o1IfJKUtOhYSNelL5Fu7Xr89p4o_t-5saiYKJJWsn5_99wNDeOpsmnP0Yzn3b2eZPjyWvcz2JFrP-Zt6nlHxNmuw3mTmZZHkg5D00NQ1cQRgc5BxWTixES6FFa_gVT0lTiXigliohOTQYPitRuTNzQ2fYQhkbfRByj01PC4FD9Juj00LGMNAvNH2DMXn-AQ9grxg)](https://mermaid-js.github.io/mermaid-live-editor/edit/#pako:eNplkk1rwzAMhv-K8GFsrGV3Hwoh8cZgX7TNYRAYqq2mZomdOc6glP73ySQjG_VJSM_7SrJ9EtobElL09DWQ01RYrAO2lQM-HYZote3QRSgBeyh7CpcllUrKmc5bFy_LWSpn-SOsqbZ9DMdLpEhIgRF32FPlRqBcrla3SsI2oOtRR-sd3AEoU9MIqARkEh4oAjY74sEBnQHtsalpF3DEXnwkCLY-RPB7YJ4TYB1o1IfJKUtOhYSNelL5Fu7Xr89p4o_t-5saiYKJJWsn5_99wNDeOpsmnP0Yzn3b2eZPjyWvcz2JFrP-Zt6nlHxNmuw3mTmZZHkg5D00NQ1cQRgc5BxWTixES6FFa_gVT0lTiXigliohOTQYPitRuTNzQ2fYQhkbfRByj01PC4FD9Juj00LGMNAvNH2DMXn-AQ9grxg)
+Where we see that incoming data is then deserialized by the ACI and processed by the state channel's Cells 
+(algebra/coalgebra). Note that sandboxing and use of jvm secure classloader should be used in tandem for proper security.
+
+### DAG L0 validation
+
+Each state channel is meant to serve a specific use case and the DAG L0 is no different. The purpose of the DAG L0 is 
+to provide a meta consensus process that allows L1 ledgers to swap values. In order to maximize security scalability 
+and decentralization for this use case, its ACI contains definitions for performing hash based validation on ledger 
+state as each state channel's executible and contains fields necessary to define a state channel's "liquidity pool" 
+which is a configuration for handling transactions and noramalization across L1 ledgers.
 
 ## Scala/JVM SDK
 

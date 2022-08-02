@@ -1,6 +1,6 @@
 ---
 title: Wallets
-hide_table_of_contents: false
+hide_table_of_contents: true
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -18,13 +18,13 @@ Check out the [Apps and Integrations](/apps) section.
 Stargazer Wallet is a multichain wallet that supports Constellation and Ethereum chains. It's available as a Chrome extension and on mobile for iOS and Android.
 
 <DocsCards>
-  <DocsCard header="Chrome Store" href="https://chrome.google.com/webstore/detail/stargazer-wallet/pgiaagfkgcbnmiiolekcfmljdagdhlcm?hl=en-US" icon="/icons/icon-placeholder.png">
+  <DocsCard header="Chrome Store" href="https://chrome.google.com/webstore/detail/stargazer-wallet/pgiaagfkgcbnmiiolekcfmljdagdhlcm?hl=en-US" icon="/icons/icon_chrome.png">
     <p>Stargazer Wallet Chrome extension</p>
   </DocsCard>
-  <DocsCard header="App Store" href="https://apps.apple.com/us/app/stargazer-wallet/id1612326452" icon="/icons/icon-placeholder.png">
+  <DocsCard header="App Store" href="https://apps.apple.com/us/app/stargazer-wallet/id1612326452" icon="/icons/icon_appstore.png">
     <p>Stargazer Wallet for iOS</p>
   </DocsCard>
-  <DocsCard header="Play Store" href="https://play.google.com/store/apps/details?id=com.stargazer" icon="/icons/icon-placeholder.png">
+  <DocsCard header="Play Store" href="https://play.google.com/store/apps/details?id=com.stargazer" icon="/icons/icon_googleplay.png">
     <p>Stargazer Wallet for Android</p>
   </DocsCard>
 </DocsCards>
@@ -32,7 +32,7 @@ Stargazer Wallet is a multichain wallet that supports Constellation and Ethereum
 ## Bitfi
 Bitfi is a hardware wallet that supports multiple currencies including DAG. Bitfi integrates with the Stargazer Chrome extension to connect to Web3 sites in the browser. 
 <DocsCards>
-  <DocsCard header="Bitfi" href="https://bitfi.com/" icon="/icons/icon-placeholder.png">
+  <DocsCard header="Bitfi" href="https://bitfi.com/" icon="/icons/icon_bitfi.png">
     <p>Bitfi Hardware Wallet</p>
   </DocsCard>
 </DocsCards>
@@ -41,13 +41,13 @@ Bitfi is a hardware wallet that supports multiple currencies including DAG. Bitf
 Molly Wallet is a cross platform desktop app that supports $DAG. 
 
 <DocsCards>
-  <DocsCard header="Mac OS" href="https://github.com/StardustCollective/molly_wallet/releases" icon="/icons/icon-placeholder.png">
+  <DocsCard header="Mac OS" href="https://github.com/StardustCollective/molly_wallet/releases" icon="/icons/icon_apple.png">
     <p>Molly Wallet (Mac OS)</p>
   </DocsCard>
-  <DocsCard header="Windows" href="https://github.com/StardustCollective/molly_wallet/releases" icon="/icons/icon-placeholder.png">
+  <DocsCard header="Windows" href="https://github.com/StardustCollective/molly_wallet/releases" icon="/icons/icon_windows.png">
     <p>Molly Wallet (Windows)</p>
   </DocsCard>
-  <DocsCard header="Linux" href="https://github.com/StardustCollective/molly_wallet/releases" icon="/icons/icon-placeholder.png">
+  <DocsCard header="Linux" href="https://github.com/StardustCollective/molly_wallet/releases" icon="/icons/icon_linux.png">
     <p>Molly Wallet (Linux)</p>
   </DocsCard>
 </DocsCards>
