@@ -17,6 +17,6 @@ In order to remove the complexity around building out a **Constellation Network 
 
 #### Installation
 
-Prior to the release of the latest version of `nodectl`, we will update this document shortly.
+Prior to the release of the latest version of `nodectl`, we will update this document shortly.  Please proceed to the `manual` installation process to learn **exactly** how to build your Validator Node.
 
 **Thank you for your patience**
