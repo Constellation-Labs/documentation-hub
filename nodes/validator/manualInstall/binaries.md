@@ -81,6 +81,10 @@ Download the **cl-wallet.jar** JAR file.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-wallet.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-wallet.jar
 ```
+Download the **seed list file** that contains the Node IDs with permissions to JOIN the network.
+```
+sudo wget https://constellationlabs-dag.s3.us-west-1.amazonaws.com/testnet-seedlisting -O /var/tessellation/seed-list -o /dev/null
+```
 
 Let's verify that our files are in place. Depending on your terminal application, the files should appear in GREEN. Make sure they are executable:  `-rwxr-xr-x`
 
@@ -96,9 +100,11 @@ Output should look similar (*but not exactly*) to the 👇 .
 
 ```
 total 140568
+-rwxr-xr-x 1 root root 94321834 Jul 10 16:24 cl-dag-l1.jar
 -rwxr-xr-x 1 root root 52517826 Jul 10 13:19 cl-keytool.jar
 -rwxr-xr-x 1 root root 91422359 Jul 10 13:19 cl-node.jar
 -rwxr-xr-x 1 root root 75646006 Jul 10 16:24 cl-wallet.jar
+-rwxr-xr-x 1 root root    29928 Jul 10 16:24 seed-list
 ```
 That is all we need.
 

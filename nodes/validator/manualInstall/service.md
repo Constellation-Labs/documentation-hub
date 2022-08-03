@@ -11,7 +11,7 @@ hide_table_of_contents: false
   />
 </head>
 
-### Create or Transfer a P12 private key file
+### Create or Debian service file
 
 ##### We are now ready to create our Tessellation service!
 
@@ -71,13 +71,24 @@ sudo nano /usr/local/bin/cn-node
 You will be adding the following line to the **end** of the script. Make sure to either copy-n-paste or **very carefully** type in the command, you need it **exactly** as shown to work.
 
 ```
-/usr/bin/java -jar '-Xms1024M' '-Xmx7G' '-Xss256K' /var/tessellation/cl-node.jar run-validator --collateral 0 & 
+/usr/bin/java -jar '-Xms1024M' '-Xmx7G' '-Xss256K' /var/tessellation/cl-node.jar run-validator --collateral 0 --seedlist /var/tessellation/seed-list & 
 ```
 
 ##### The above commands will:
 - Add our environment variables
 - Execute the command to startup our Constellation process on the Node.
 - Run in the background
+
+:::note OPTIONAL
+The documentation creates `environment` variables to export for the tessellation process to read during the initialization process.  This can be helpful in different
+circumstances.  You may also apply these variables directly at the command line during execution.
+
+```
+--public-port
+--p2p-port
+--cli-port
+```
+:::
 
 #### We are ready to create our service!
 
