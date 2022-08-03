@@ -23,7 +23,7 @@ The below 👇 definitions table shows the assumptions that are made in order to
 
 | Variable |	Value |
 | -------- | ------ |
-| Cloud instance hostname |	**node-garage**. Your instance will **not** have the same hostname. Substitute `node-garage` with whatever your instance has been called during setup |
+| Cloud instance hostname |	**constellation-network**. Your instance will **not** have the same hostname. Substitute `constellation-network` with whatever your instance has been called during setup |
 | User we will work with or add |	**nodeadmin** |
 | [...] | When you see this in our examples, it will mean that there may be extra output from a command issued. The output is not important for our purposes, so it is redacted. The symbol will be shown above the code that is important or below the code that is important. |
 
@@ -126,3 +126,7 @@ You should see somewhere towards the end of the log file a line which contains:
 ```
 Received state=Ready{ }
 ```
+
+:::success MULTIPLE STATE CHANNELS
+In the event that you would like to participate in **multiple** state channels, you can issue the join separately for each state channel process you have running on the Node.
+:::

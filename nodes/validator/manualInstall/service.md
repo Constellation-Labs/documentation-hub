@@ -11,7 +11,7 @@ hide_table_of_contents: false
   />
 </head>
 
-### Create or Transfer a P12 private key file
+### Create or Debian service file
 
 ##### We are now ready to create our Tessellation service!
 
@@ -19,7 +19,7 @@ The below 👇 definitions table shows the assumptions that are made in order to
 
 | Variable |	Value |
 | -------- | ------ |
-| Cloud instance hostname |	**node-garage**. Your instance will **not** have the same hostname. Substitute `node-garage` with whatever your instance has been called during setup |
+| Cloud instance hostname |	**constellation-network**. Your instance will **not** have the same hostname. Substitute `constellation-network` with whatever your instance has been called during setup |
 | User we will work with or add |	**nodeadmin** |
 | [...] | When you see this in our examples, it will mean that there may be extra output from a command issued. The output is not important for our purposes, so it is redacted. The symbol will be shown above the code that is important or below the code that is important. |
 
@@ -71,13 +71,24 @@ sudo nano /usr/local/bin/cn-node
 You will be adding the following line to the **end** of the script. Make sure to either copy-n-paste or **very carefully** type in the command, you need it **exactly** as shown to work.
 
 ```
-/usr/bin/java -jar '-Xms1024M' '-Xmx7G' '-Xss256K' /var/tessellation/cl-node.jar run-validator --collateral 0 & 
+/usr/bin/java -jar '-Xms1024M' '-Xmx7G' '-Xss256K' /var/tessellation/cl-node.jar run-validator --collateral 0 --seedlist /var/tessellation/seed-list & 
 ```
 
 ##### The above commands will:
 - Add our environment variables
 - Execute the command to startup our Constellation process on the Node.
 - Run in the background
+
+:::note OPTIONAL
+The documentation creates `environment` variables to export for the tessellation process to read during the initialization process.  This can be helpful in different
+circumstances.  You may also apply these variables directly at the command line during execution.
+
+```
+--public-port
+--p2p-port
+--cli-port
+```
+:::
 
 #### We are ready to create our service!
 
@@ -116,7 +127,7 @@ In order to start the `service` properly, you will need to supply your `p12` pas
 
 As an **alternative** we will **not** automatically start the service on system boot.  We will add to our list of `to-dos` to manually start the process and supply the `passphrase` on each restart.
 
-**Constellation Network Node Garage** [nodectl](../nodectl/install) `command line utility` will ease this process as a **better** solution.
+**Constellation Network** [nodectl](../nodectl/install) `command line utility` will ease this process as a **better** solution.
 :::
 
 
@@ -144,3 +155,19 @@ active
 ### Our Node should be started.
 
 #### Our node should be ready to join the HyperGraph!
+
+:::success MULTIPLE STATE CHANNELS
+In the event that you would like to participate in **multiple** state channels, you can start a new java process separately for each state channel process you have running on the Node.
+
+You can also update the `service` file to include multiple commands to run on service start.
+:::
+
+:::danger MULTIPLE STATE CHANNELS
+Make sure you VPS (or bare metal server) is properly sized to handle multiple state channels
+:::
+
+#### SIZING
+The `vCPU`, `Memory`, and `HDD storage allocation` is **dependent** on each specific State Channel.  Consult with the State Channel operators/administrators for the specifications that 
+meet the requirements for their individual State Channels.
+
+This also pertains to the `TCP` ports each individual State Channels utilize.  Obtaining the proper `p2p-port` can be dynamically acquired via a `public-port` API call.
