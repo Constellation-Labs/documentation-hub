@@ -63,6 +63,8 @@ We can now pull down the latest release `v0.10.0` from Constellation Network's r
 The `sudo` verb in front of the command will force the OS to ask for a `password` on the first attempt.
 :::
 
+#### DOWNLOAD AND SET PERMISSIONS
+
 Download the **cl-keytool.jar** JAR file.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-keytool.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-keytool.jar
@@ -70,6 +72,10 @@ sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v
 Download the **cl-node.jar** JAR file.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-node.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-node.jar
+```
+Download the **cl-dag-l1.jar** JAR file.
+```
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-dag-l1.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-dag-l1.jar
 ```
 Download the **cl-wallet.jar** JAR file.
 ```
