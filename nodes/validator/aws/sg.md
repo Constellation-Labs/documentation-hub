@@ -30,7 +30,7 @@ Let's get right to it...
 
 If you are a visual learner, you can access and view a YouTube series dedicated to this process.  SSH Key Generation Series - **Video 4b** by NetMet.
 
-Please like and subscribe to support NetMet's work and to be alerted to new content specifically applied to **Constellation Network** and **Node Garage**, in the future.
+Please like and subscribe to support NetMet's work and to be alerted to new content specifically applied to **Constellation Network**, in the future.
 
 :::note
 If you choose the YouTube Series, it is highly recommended to watch the entire series, from the beginning.

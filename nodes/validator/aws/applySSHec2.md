@@ -7,7 +7,7 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>DAWS Apply SSH Keys</title>
+  <title>AWS Apply SSH Keys</title>
   <meta
     name="description"
     content="Uploading our Public key to AWS EC2 Instance"
@@ -33,7 +33,7 @@ If you choose the YouTube Series, it is highly recommended to watch the entire s
 :::
 SSH Key Generation Series - **Video 4b** by NetMet.
 
-Please like and subscribe to support NetMet's work and to be alerted to new content specifically applied to **Constellation Network** and **Node Garage**, in the future.
+Please like and subscribe to support NetMet's work and to be alerted to new content specifically applied to **Constellation Network**, in the future.
 
 <iframe width="80%" height="380" src="https://www.youtube.com/embed/0plYuXJwfOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
