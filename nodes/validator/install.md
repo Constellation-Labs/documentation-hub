@@ -13,8 +13,24 @@ hide_table_of_contents: false
 
 Through step-by-step written documentation from this guide's instructions, instructional videos for those that are more visual learners, to guidance through our Discord channel, we attempt to cover all the bases.
 
-## Steps in the Process
+## Before you begin
 
+:::note Seed List
+  **IMPORTANT**
+  Before you begin building your **VPS** to house your **Node**, you need to inquire with the State Channel Administrators
+  whether or not they have a **`seed list`** in place.
+:::
+
+A `seed list` is an access-list that will only allow specific `NodeId`s to join their particular State Channel.  
+
+The `Node ID` is derived from the `p12` private key file that is used to authenticate against the State Channel.  It is accessed
+at `least` twice during the start up your initialization with a State Channel.  
+  <ul>
+  <li>During the Tessellation process start up (unlock the p12 file)</li>
+  <li>During the Join procedure call via the API</li>
+  </ul>
+
+## Steps in the Process
 :::tip Initialization
   - Decide on how you will run your Validator Node
     - Service Provider
