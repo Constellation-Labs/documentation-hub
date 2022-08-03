@@ -30,6 +30,12 @@ at `least` twice during the start up your initialization with a State Channel.
   <li>During the Join procedure call via the API</li>
   </ul>
 
+Following, during the process start-up, if a `seed list` is in place, you will fail the authentication process.
+
+:::danger MAINNET and TESTNET
+MainNet 2.0 and TestNet 2.0 both currently have a `seed list` in place.
+:::
+
 ## Steps in the Process
 :::tip Initialization
   - Decide on how you will run your Validator Node
