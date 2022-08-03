@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-**Constellation Network** is proud and excited to be a part of your journey towards running
+**Constellation Network** is proud and excited to see you here and help you during your journey towards running
 a **Validator Node** on either a `State Channel` or the `Layer 0 State Channel`.
 
 > Project Code Name: **Tessellation**
