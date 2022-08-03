@@ -155,3 +155,19 @@ active
 ### Our Node should be started.
 
 #### Our node should be ready to join the HyperGraph!
+
+:::success MULTIPLE STATE CHANNELS
+In the event that you would like to participate in **multiple** state channels, you can start a new java process separately for each state channel process you have running on the Node.
+
+You can also update the `service` file to include multiple commands to run on service start.
+:::
+
+:::danger MULTIPLE STATE CHANNELS
+Make sure you VPS (or bare metal server) is properly sized to handle multiple state channels
+:::
+
+#### SIZING
+The `vCPU`, `Memory`, and `HDD storage allocation` is **dependent** on each specific State Channel.  Consult with the State Channel operators/administrators for the specifications that 
+meet the requirements for their individual State Channels.
+
+This also pertains to the `TCP` ports each individual State Channels utilize.  Obtaining the proper `p2p-port` can be dynamically acquired via a `public-port` API call.

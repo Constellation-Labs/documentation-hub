@@ -126,3 +126,7 @@ You should see somewhere towards the end of the log file a line which contains:
 ```
 Received state=Ready{ }
 ```
+
+:::success MULTIPLE STATE CHANNELS
+In the event that you would like to participate in **multiple** state channels, you can issue the join separately for each state channel process you have running on the Node.
+:::
