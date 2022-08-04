@@ -33,7 +33,7 @@ If you choose the YouTube Series, it is highly recommended to watch the entire s
 :::
 SSH Key Generation Series - **Video 4a** by NetMet.
 
-Please like and subscribe to support NetMet's work and to be alerted to new content specifically applied to **Constellation Network** and **Node Garage**, in the future.
+Please like and subscribe to support NetMet's work and to be alerted to new content specifically applied to **Constellation Network**, in the future.
 
 <iframe width="70%" height="380" src="https://www.youtube.com/embed/Vs_g-e99qTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -42,7 +42,7 @@ Please like and subscribe to support NetMet's work and to be alerted to new cont
 We need a way to access our **Droplet** (VPS). 
 
 :::danger CAUTION
-Popular opinion (`and Constelaltion Network's / Node Garage's`) **strongly** suggests that it is a **bad** idea to use the `password authentication` method. 
+Popular opinion (`and Constellation Network`) **strongly** suggests that it is a **bad** idea to use the `password authentication` method. 
 
 We will setup access to our Droplet, via an **SSH Key pair**, created here [mac](../sshkeys/creationMac) or here [windows](../sshkeys/creationWin).
 :::

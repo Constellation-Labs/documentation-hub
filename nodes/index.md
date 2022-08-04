@@ -16,8 +16,8 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-**Node Garage**, a direct division of **Constellation Network** is proud and excited to be a part of your journey towards running
-a **Validator Node** on either a `State Channel` or the `Layer-0 HyperGraph`!
+**Constellation Network** is proud and excited to see you here and help you during your journey towards running
+a **Validator Node** on either a `State Channel` or the `Layer 0 State Channel`.
 
 > Project Code Name: **Tessellation**
 

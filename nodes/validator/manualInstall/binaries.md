@@ -17,7 +17,7 @@ The below 👇 definitions table shows the assumptions that are made in order to
 
 | Variable |	Value |
 | -------- | ------ |
-| Cloud instance hostname |	**node-garage**. Your instance will **not** have the same hostname. Substitute `node-garage` with whatever your instance has been called during setup |
+| Cloud instance hostname |	**constellation-network**. Your instance will **not** have the same hostname. Substitute `constellation-network` with whatever your instance has been called during setup |
 | User we will work with or add |	**nodeadmin** |
 | [...] | When you see this in our examples, it will mean that there may be extra output from a command issued. The output is not important for our purposes, so it is redacted. The symbol will be shown above the code that is important or below the code that is important. |
 
@@ -63,6 +63,8 @@ We can now pull down the latest release `v0.10.0` from Constellation Network's r
 The `sudo` verb in front of the command will force the OS to ask for a `password` on the first attempt.
 :::
 
+#### DOWNLOAD AND SET PERMISSIONS
+
 Download the **cl-keytool.jar** JAR file.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-keytool.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-keytool.jar
@@ -71,9 +73,17 @@ Download the **cl-node.jar** JAR file.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-node.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-node.jar
 ```
+Download the **cl-dag-l1.jar** JAR file.
+```
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-dag-l1.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-dag-l1.jar
+```
 Download the **cl-wallet.jar** JAR file.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.10.0/cl-wallet.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-wallet.jar
+```
+Download the **seed list file** that contains the Node IDs with permissions to JOIN the network.
+```
+sudo wget https://constellationlabs-dag.s3.us-west-1.amazonaws.com/testnet-seedlisting -O /var/tessellation/seed-list -o /dev/null
 ```
 
 Let's verify that our files are in place. Depending on your terminal application, the files should appear in GREEN. Make sure they are executable:  `-rwxr-xr-x`
@@ -90,9 +100,11 @@ Output should look similar (*but not exactly*) to the 👇 .
 
 ```
 total 140568
+-rwxr-xr-x 1 root root 94321834 Jul 10 16:24 cl-dag-l1.jar
 -rwxr-xr-x 1 root root 52517826 Jul 10 13:19 cl-keytool.jar
 -rwxr-xr-x 1 root root 91422359 Jul 10 13:19 cl-node.jar
 -rwxr-xr-x 1 root root 75646006 Jul 10 16:24 cl-wallet.jar
+-rwxr-xr-x 1 root root    29928 Jul 10 16:24 seed-list
 ```
 That is all we need.
 
