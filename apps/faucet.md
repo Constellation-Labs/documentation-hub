@@ -3,5 +3,7 @@ Constellation hosts a testnet faucet to get test DAG for testing purposes. This 
 
 The faucet can be accessed at:
 ```
-GET https://faucet-testnet.constellationnetwork.io/faucet/<YOUR WALLET ADDRESS>
+GET https://faucet.constellationnetwork.io/testnet/faucet/<YOUR WALLET ADDRESS>
 ```
+
+

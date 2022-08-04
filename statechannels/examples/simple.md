@@ -3,19 +3,10 @@ title: Simple State Channel
 hide_table_of_contents: false
 ---
 
-<head>
-  <title>Simple State Channel implementation</title>
-  <meta
-    name="description"
-    content="Lorem ipsum"
-  />
-</head>
-
 Every state channel wants to persist some data in the Global L0. To achieve
-that, the state channel needs to put those data in binary format, which is called a
-State Channel Snapshot and later processed by the Global L0. State channel can be implemented in any language, but output/snapshot must be signed, which KryoSerializer is required for.
-For a simple state channel implementation, we decided to use the Scala language,
-which is used by the Core Protocol and native SDK.
+that, the state channel needs to submit that data in a binary format called a "State Channel Snapshot" which will be processed by the Global L0. This document will guide you through creating the most minimal state channel possible and submitting an example snapshot. 
+
+This example uses the Scala language which is used by the Core Protocol and native SDK. State channels can technically be created in any language able to serialize and sign a transaction but using the Tessellation SDK is highly recommended in order to make the best use of existing APIs and abstraction layers. 
 
 ## Prerequisites
 - [Getting started - follow tutorial for Scala2](https://docs.scala-lang.org/getting-started/index.html)
@@ -70,10 +61,7 @@ be referenced directly from the released jar file, as follows:
 
 ## Keypair of the State Channel
 
-One of the requirements for every state channel is to sign data before sending them to the Global L0
-network. The signing algorithm must be aligned with the one used in the Core Protocol
-to produce consistent hashes. [Here](./) you can find more about the
-keypair format.
+One of the requirements for every state channel is to sign data before sending them to the Global L0 network. The signing algorithm must be aligned with the one used in the Core Protocol to produce consistent hashes. Messages are signed using secp256k1 which generates a ECDSA signature. 
 
 ### Keypair creation using Tessellation `cl-keytool.jar`
 
@@ -94,7 +82,7 @@ Tessellation [release](https://github.com/Constellation-Labs/tessellation/releas
 10:00:00.000 [io-compute-0] INFO org.tesselation.keytool.Main - KeyPair has been created at: ./sc-key.p12
 ```
 
-P12 file should be created under the given path. Let's use it now in the code.
+The P12 file should be created under the given path. Let's use it now in the code.
 
 ### Loading Keypair in Scala
 
@@ -107,9 +95,8 @@ SecurityProvider.forAsync[IO].use { implicit securityProvider =>
 }
 ```
 
-The above example creates `Resource[IO, SecurityProvider[IO]]`. The Resource is a pattern allowing safe acquisition of some resource (keypair file in that case),
-perform an action and release the resource.
-[Here](https://typelevel.org/cats-effect/docs/std/resource) you can find how to use the Resource.
+The above example creates `Resource[IO, SecurityProvider[IO]]`. The [Resource](https://typelevel.org/cats-effect/docs/std/resource) is a pattern allowing safe acquisition of some resource (the keypair file in this case),
+performance of an action, and then release the resource.
 
 Assuming the same path and passwords, loading the keypair can look like this:
 
@@ -125,7 +112,7 @@ def readKeypair: IO[KeyPair] =
 
 ## State Channel Snapshot data
 
-State Channel Snapshot requirement is that data are binary encoded. Let's make a
+State Channel Snapshot data is required to be binary encoded. Let's make a
 simple example using `String -> Array[Byte]` conversion, like the following: `"hello world".getBytes`.
 
 ```scala
@@ -134,7 +121,7 @@ val stateChannelDataBinary = stateChannelData.getBytes
 val stateChannelSnapshot = StateChannelSnapshotBinary(lastSnapshotHash = Hash.empty, content = stateChannelDataBinary)
 ```
 
-Then, State Channel Snapshot should be signed using a previously created keypair:
+Then, the State Channel Snapshot should be signed using a previously created keypair:
 ```scala
 val signedStateChannelSnapshot: IO[Signed[StateChannelSnapshotBinary]] =
   Signed.forAsyncKryo[IO, StateChannelSnapshotBinary](stateChannelSnapshot, keypair)
@@ -152,7 +139,7 @@ Hash.empty =
 The hash of the State Channel is the hash of `StateChannelSnapshotBinary` class,
 before signing (see: [transaction malleability attack](https://en.bitcoin.it/wiki/Transaction_malleability)).
 
-Second Snapshot would have to reference the first one:
+A second Snapshot would have to reference the first one:
 
 ```scala
 for {
@@ -167,12 +154,12 @@ for {
 
 ## L0 State Channel endpoint
 
-Global L0 network expects State Channel Snapshots on the following endpoint.
+The global L0 network expects State Channel Snapshots on the following endpoint.
 ```
 POST /state-channels/{address}/snapshot
 ```
 
-Address parameter is the $DAG address derived from the public key (the one
+The address parameter is the $DAG address derived from the public key (the one
 derived from the private key used to sign the snapshot).
 
 ### Code example
