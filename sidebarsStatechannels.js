@@ -17,7 +17,11 @@ module.exports = {
       label: 'Examples',
       collapsed: false,
       items: [
-        'simple'
+        'examples/compile-tessellation',
+        'examples/l0-cluster-setup',
+        'examples/l1-cluster-setup',
+        'examples/simple',
+        'examples/data-transfer'
       ],
     },
   ],

@@ -5,15 +5,13 @@ module.exports = {
       label: 'Getting Started',
       collapsed: false,
       items: [
-        'index', 
-        'mainnet-overview',
-        'testnet-overview'
+        'index'
       ],
     },
     {
       type: 'category',
       label: 'Validator Nodes',
-      collapsed: true,
+      collapsed: false,
       items: [
         'validator/install',
         'validator/providers',
