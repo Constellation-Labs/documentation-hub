@@ -6,6 +6,6 @@ hide_table_of_contents: false
 ---
 <intro-end />
 
-Constellation’s Network, Hypergraph, and transportation protocol HGTP provide speed, security, and L_0 consensus with no base layer fees. Through the creation of state channels with advanced programmable business logic and a feeless peer-to-peer network, we provide a myriad of opportunities for anyone to develop a business that attracts value from the Constellation ecosystem — with economic incentives. Our aim is to attract the next blockchain entrepreneur to build a scalable business with confidence from multiple stakeholders that engage with the business.
+​​Constellation provides speed, security, and "layer-zero" consensus in its network (Hypergraph) and transportation protocol (HGTP) without explicitly required fees. Through the creation of state channels with advanced programmable business logic, extension of core consensus module to layer one network specific use cases, you'll have innumerable opportunities to develop peer-to-peer networks. You can also leverage our ecosystem to provide immediate value to users and derive mutual economic benefits. Our aim is to attract and support the next blockchain entrepreneur to rapidly build upon a scalable platform with confidence.
 
-This section of the documentation hub will give you an overview of the architecture of the network and the relevant concepts to building on the Hypergraph network. 
+This section goes through an overview of the architecture of our network. It also covers concepts relevant to building on the Hypergraph network.
