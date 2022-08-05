@@ -30,8 +30,7 @@ module.exports = {
         'consensus/layer1',
         'consensus/layer0',
         'consensus/complete',
-        'consensus/dag-l1',
-        'consensus/dag-l0',
+        'consensus/dag-l1'
       ],
     },
     {
@@ -52,7 +51,6 @@ module.exports = {
       label: 'Examples',
       collapsed: false,
       items: [
-        'examples/index',
         'examples/compile-tessellation',
         'examples/l0-cluster-setup',
         'examples/l1-cluster-setup',

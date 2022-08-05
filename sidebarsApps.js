@@ -6,7 +6,8 @@ module.exports = {
       collapsed: false,
       items: [
         'index', 
-        'testnet'
+        'testnet',
+        'faucet'
       ],
     },
     {
