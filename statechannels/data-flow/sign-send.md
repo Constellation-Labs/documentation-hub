@@ -6,10 +6,12 @@ hide_table_of_contents: false
 
 ![Define](/img/statechannels/dataflow.png)
 
-The state channel snapshots are posted to the Global L0 network according to the frequency in which you have defined and will only accept data that has been signed by the state channel. This is a simple POST request API with the following syntax: 
+<intro-end />
+
+State channel snapshots are posted to the Global L0 network by sending a POST request to the below endpoint. Snapshot data must be signed by the private key associated with the state channel wallet address. 
 
 ```scala
 POST /state-channel/{address}/snapshot
 ```
 
-The full Swagger UI API documentation
+Additional [API documentation](/apps/network-apis)

@@ -7,10 +7,10 @@ hide_table_of_contents: false
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-## SDK on Github
+## Tessellation State Channel SDK
 
 :::caution ⚠️ Not a stable release
-The state channel SDK is not yet a stable release; please keep this in mind if you intend on building with it. Updates coming soon.
+The state channel SDK is not yet a stable release; please keep this in mind if you intend on building with it. It will be packaged and distributed via Github Packages in a future release.
 :::
 
 <DocsCards>
@@ -34,12 +34,10 @@ The SDK abstracts away the complexity of having to understand the underlying sys
 
 ## Project Dependencies
 
-Project dependencies are typically contained within a build file, which combines all libraries, frameworks, and code that your application depends on. The [Tessellation Code Repository](https://github.com/Constellation-Labs/tessellation/) includes an SBT or Scala Build Tool file which is a build system that is common in the JVM ecosystem. 
-
-For SBT users, HGTP is added by downloading the dependency jar to your development environment (computer/server). When HGTP has been added to your build file, the next step is to compile and make sure there are no conflicts. This will provide pre-packaged interfaces which can be repurposed to design a custom state channel by simply adopting the existing consensus logic defined for Constellation Network's native DAG L_1 state channel. Developers can make the necessary modifications in order to create a completely new state channel that fulfills their technical requirements while being entirely compatible with every other state channel connected into the HGTP.
+The [Tessellation Code Repository](https://github.com/Constellation-Labs/tessellation/) includes an SBT or Scala Build Tool file which defines all project dependencies. 
 
 <DocsCards>
-  <DocsCard header="Scala Build Tool (SBT)" href="https://github.com/Constellation-Labs/tessellation/blob/ff1ef41b727730df5cb2f59edef1c017168e046d/build.sbt" icon="/icons/icon-placeholder.png">
+  <DocsCard header="Scala Build Tool (SBT)" href="https://www.scala-sbt.org/" icon="/icons/icon-placeholder.png">
     <p>Scala Build Tool (SBT)</p>
   </DocsCard>
   <DocsCard header="List of Dependencies" href="https://github.com/Constellation-Labs/tessellation/blob/ff1ef41b727730df5cb2f59edef1c017168e046d/build.sbt" icon="/icons/icon-placeholder.png">

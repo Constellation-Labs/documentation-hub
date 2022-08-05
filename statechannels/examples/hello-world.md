@@ -1,5 +1,5 @@
 ---
-title: Simple State Channel
+title: Hello World State Channel
 hide_table_of_contents: false
 ---
 
