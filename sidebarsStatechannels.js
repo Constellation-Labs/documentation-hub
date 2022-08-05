@@ -6,6 +6,7 @@ module.exports = {
       collapsed: false,
       items: [
         'index',
+        'background',
         'nodes',
       ],
     },
@@ -48,25 +49,14 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Best Practices',
-      collapsed: false,
-      items: [
-        'best-practices/overview',
-        'best-practices/sc-validation',
-        'best-practices/nodes',
-        'best-practices/private-public',
-        'best-practices/dag',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Examples',
       collapsed: false,
       items: [
+        'examples/index',
         'examples/compile-tessellation',
         'examples/l0-cluster-setup',
         'examples/l1-cluster-setup',
-        'examples/simple',
+        'examples/hello-world',
         'examples/data-transfer'
       ],
     },

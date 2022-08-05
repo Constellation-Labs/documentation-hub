@@ -6,6 +6,8 @@ hide_table_of_contents: false
 
 ![Define](/img/statechannels/dataflow.png)
 
+<intro-end />
+
 Now that we have established the baseline requirements for a state channel snapshot schema, we can examine Constellation’s implementation. This is the state channel that is responsible for: 
 
 - Organizing the network
@@ -130,7 +132,3 @@ In this example, it is utilizing `Slf4jLogger` to log the events which are trigg
 The `L0TokenStep` input type is a union type comprised of the `ProcessSnapshot` and `CreateStateChannelSnapshot` data types (defined in [`types.scala`](https://github.com/Constellation-Labs/tessellation/blob/develop/examples/l0-token/src/main/scala/org/example/types.scala)) which are denoted by the case statement that precedes them. When the State Channel receives either input type, the relevant application logic is triggered in response.
 
 If an input is received that doesn't match these two types `case _`  it will reject it and throw an error `Unhandled coalgebra case`.
-
-## Summary
-
-The takeaway here is that all of the different validation steps defined inside of the Cell are applied to the arbitrary data types required, which creates a cryptographic representation of the data that is flowing through the network so that the output of the Cell is the data structure which reflects each of these steps, backed by a cryptographic hash. This creates an abstract data type which you can then easily stitch together by applying combinatorial functions to other Cells that have been defined within the state channel or external state channels that are also interfaced with HGTP.

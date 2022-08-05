@@ -6,10 +6,6 @@ hide_table_of_contents: false
 
 This guide will walk you through basic state channel functionality including creating a snapshot, posting to the global L0, and implementing basic token functionality.
 
-:::warning Not an L0 Token example!
-While the following example displays basic token functionality like transferring test funds between wallet addresses, this IS NOT an example of implementing a token that conforms to the L0 Token Standard. L0 tokens have additional requirements and must conform to specific interfaces that are beyond the scope of this demo. Future examples will explain the process of minting an L0 token in detail.  
-:::
-
 ## What you'll learn
 1. Create a state channel snapshot comprised of L1 data transactions
 2. Post the state channel snapshot to the global L0
@@ -102,7 +98,7 @@ Looking for additional information on available L0 API endpoints? See the full [
 ```bash
 curl -i http://<l1-node-ip>:19000/demo/global-snapshots/{ordinal}
 ```
-Returns a strin
+Returns a string
 
 **10.** Retrieve L1 transactions persisted in the global L0 snapshot
 ```bash
@@ -122,6 +118,12 @@ curl -v -X POST http://localhost:19000/demo/state-channel-snapshot?lastSnapshotH
 
 
 `GlobalSnapshotInfo(TreeMap(DAG45MPJCa2RsStWfdv8RZshrMpsFHhnsiHN7kvX->` <mark>854693443ff34068f267428420e42cbcc79824bea7e004faffbca67fddad3f08</mark> `), TreeMap(),TreeMap(DAG3k3VihUWMjse9LE93jRqZLEuwGd6a5Ypk4zYS -> 2000))`
+
+
+
+:::danger Token functionality
+The remainder of this guide walks us through basic token functionality such as transferring test funds between wallet addresses and checking balances. This is provided for demostration purposes. This is not an example of implementing a token that conforms to the [_L0 Token Standard_](/core-concepts/network/l0-token-standard). L0 tokens have additional requirements and must conform to specific interfaces that are beyond the scope of this demo. Future examples will explain the process of minting an L0 token in detail.  
+:::
 
 **12.** The demo code has been initialized with 30,000 demo tokens distributed evenly among 3 wallets
 

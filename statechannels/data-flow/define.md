@@ -6,23 +6,25 @@ hide_table_of_contents: false
 
 ![Define](/img/statechannels/dataflow.png)
 
-Defining a "State Channel Snapshot Schema" allows the **Global Layer 0** network to know these three things:
+<intro-end />
+
+A state channel snapshot schema provides the following information about your state channel to the global L0 network:
 
 - What inputs to accept
 - The DAG address linked to the state channel
 - The balance of DAG held in the linked address for throughput allotment
 
-Once the snapshot schema is defined, it becomes immutable, creating a "L_0 cell". A cell is like consensus in a box. Cells can be nested, joined or chained together, in parallel or in sequence. This forms a data flow pipeline where the data types are validated. Finally, a function processes the input type into the output type.
+Once the snapshot schema is defined, it becomes immutable, creating a L0 cell. Cells can be nested, joined or chained together, in parallel or in sequence. This forms a data flow pipeline where the data types are validated. Finally, a function processes the input type into the output type.
 
 ## What type of inputs can the cell support?
 
-L0 inputs are an abstraction of data types that have been defined in the state channel snapshot schema. Inputs can accept any kind of data as long as it’s human readable (i.e. JSON). 
+L0 inputs are an abstraction of data types that have been defined in the state channel snapshot schema. Inputs can accept any kind of data as long as it can be parsed by the scala code (e.g. JSON). 
 
 A state channel is free to decide which data it wants to make public for other channels to deserialize if they want it to be verifiably correct. However, it could just be as simple as posting a hashtable/hashmap that reflects an updated state of a system. In this scenario, the data and logic could be kept within the state channel, ensuring the data is kept private from the public network. Ultimately, the requirements and approach will depend on each use case.
 
 ## What are the parameters of a snapshot schema?
 
-Below, you will find a Scala code snippet from the [Tessellation repo](https://www.notion.so/https-elk-finance-db740420371a47d89f4422e632f2bf31) which can be compiled using the Java Virtual Machine (JVM). We can reference `StateChannelDef.scala` as a template for understanding the requirements for creating a state channel snapshot schema. For context, we’ll go over the code line-by-line:
+Below, you will find a Scala code snippet from the [Tessellation repo](https://www.notion.so/https-elk-finance-db740420371a47d89f4422e632f2bf31). We can reference `StateChannelDef.scala` as a template for understanding the requirements for creating a state channel snapshot schema. For context, we’ll go over the code line-by-line:
 
 ```scala
 trait StateChannelDef[A \<: Ω, B <: Ω, S <: Ω] {
