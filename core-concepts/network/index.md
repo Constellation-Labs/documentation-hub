@@ -9,9 +9,6 @@ The underlying data structure that is used to construct Constellation's ledger i
 
 This forms a topological ordering that provides a temporal context for interpreting events and validating transactions by the referencing of previous transactions. When a transaction is registered with a node, it is bundled along with other data in a DAG structure and verifies prior references during validation. Those prior references are chosen according to an algorithm that will also check to ensure there is no conflict with previous transactions. This removes the unnecessary burden of checking against the entire global ledger state which is common in traditional blockchains. In this model, the vertices/nodes become the ‘miners’, enabling fee-less transactions to be feasible.
 
-
-![Hypergraph](/img/coreconcepts/dagstructure.png)
-
 Each node can have more than one parent root which enables significantly more transactions to be validated in parallel since the protocol doesn't have to wait for a transaction to complete before processing a new one. This structure begins to branch out as more and more vertices become interconnected. What is novel about Constellation's approach to DAG's is in the way it has implemented them within the broader network. Specifically, multiple independent DAG ledgers can exist within the network and converge their states into one global state. This increases the aggregate concurrency and throughput capacity of the network in a way that no other protocol has done before, constructing what is referred to as a Hypergraph.
 
 ![Hypergraph](/img/coreconcepts/graphvshypergraph.jpeg)

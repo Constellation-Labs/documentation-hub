@@ -47,43 +47,16 @@ module.exports = {
           },
         },
         {
+          type: 'doc',
+          docId: 'core-concepts',
           label: 'Learn',
           position: 'left',
-          items: [
-            {
-              href: '/core-concepts/concepts',
-              label: 'Core Concepts',
-              rel: null,
-            },
-            {
-              href: '/core-concepts/network/index',
-              label: 'The Network',
-              rel: null,
-            },
-          ],
-          className: 'navbar__link--learn',
         },
         {
+          type: 'doc',
+          docId: 'build',
           label: 'Build',
           position: 'left',
-          items: [
-            {
-              href: '/statechannels',
-              label: 'State Channels',
-              rel: null,
-            },
-            {
-              href: '/stargazer',
-              label: 'Stargazer Wallet',
-              rel: null,
-            },
-            {
-              href: '/apps',
-              label: 'Apps and Integrations',
-              rel: null,
-            },
-          ],
-          className: 'navbar__link--build',
         },
         {
           type: 'doc',
@@ -108,6 +81,12 @@ module.exports = {
             {
               href: 'https://t.me/StardustSupport',
               label: 'Support on Telegram',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://discord.gg/hPSExRH2wJ',
+              label: 'Devs on Discord',
               target: '_blank',
               rel: null,
             },
@@ -145,6 +124,12 @@ module.exports = {
             {
               href: 'https://medium.com/constellationlabs',
               label: 'Medium',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://discord.gg/dWHxqhjMct',
+              label: 'Discord',
               target: '_blank',
               rel: null,
             },
