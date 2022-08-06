@@ -1,6 +1,6 @@
 ---
 title: Validator Nodes
-sidebar_label: Overview
+sidebar_label: Introduction
 slug: /
 hide_table_of_contents: true
 ---
@@ -17,10 +17,11 @@ import DocsCards from '@components/global/DocsCards';
 </head>
 
 **Constellation Network** is proud and excited to see you here and help you during your journey towards running
-a **Validator Node** on either a `State Channel` or the `Global Layer 0`.
+a validator node on either a state channel or the Global Layer 0.
 
-We appreciate your commitment and hope that the following documentation will ease your entry into the ecosystem. 
+## Before you begin:
 
-:::info Seed List in place
-  Both Constellation MainNet and TestNet currently have a **`seed list`** in place that limits which validator nodes are able to join the network. This system provides an extra layer of security and stability as the ecosystem matures and will eventually be removed. In the meantime, you can join the [waitlist](/) [TODO INSERT LINK] to be added to the list as slots become available. 
+:::info Are you on the seedlist?
+Both **Mainnet 2.0** and **Testnet 2.0** currently have a seedlist in place that only allows specific `NodeIds` to join the network.
+This provides an extra layer of security and stability as the ecosystem matures, and will eventually be phased out for anyone to join. If you'd like to get your name on the list, please fill out [this form](https://cypress-metal-1d9.notion.site/Node-Validators-80876addcf914fcbb014d80ff738ded4) and we will process requests as network resources allow.
 :::

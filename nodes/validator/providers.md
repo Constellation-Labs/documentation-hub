@@ -7,7 +7,7 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>Cloud Providers</title>
+  <title>Providers</title>
   <meta
     name="description"
     content="Introduction to the various possible cloud providers"
@@ -20,66 +20,32 @@ import DocsCards from '@components/global/DocsCards';
   </style>
 </head>
 
-In order to run our **Constellation Validator Node**, we will need to find a location for our Node to live and work. The three most common ways to accomplish this are through a cloud provider, a hosting provider, or utilizing Bare Metal.
+In order to run a Constellation validator node, you'll need to find a suitable place for it to live and work. The three most common ways to accomplish this are through a cloud provider, hosting provider, or dedicated bare metal server.
 
-<DocsCards>
-  <DocsCard header="Cloud Provider" href="#cloud_providers" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
-    <p>Run on a virtual machine in the cloud called an instance.</p>
-  </DocsCard>
+## Virtual vs Dedicated
 
-  <DocsCard header="Hosting Provider" href="#hosting-providers" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
-    <p>Rent or lease a server in a Colo (co-location) on dedicated hardware.</p>
-  </DocsCard>
-
-  <DocsCard header="Bare Metal" href="#bare-metal" icon="/icons/icon-placeholder.png" hoverIcon="/icons/icon-placeholder.png">
-    <p>Build and maintain your own hardware on-premise of your specific location or remotely at a service provider or other.</p>
-  </DocsCard>
-</DocsCards>
+A VPS (Virtual Private Server) is a piece of software that runs a virtualized server on a physical machine and shares resources with other instances, making it a more economical choice when starting out. A collection of these VPS instances make up what is referred to as the "cloud." A dedicated bare metal server, on the other hand, is an physical computer that is used by only one consumer or tenant.
 
 ## Cloud Providers {#cloud-providers}
 
-Constellation Network's documentation will concentrate on the erecting a virtual private server `VPS` (to turn into a Node) through various Cloud Providers.  
+Our setup guides will walk you through deploying a VPS through the three most common cloud providers below.
 
-:::note
+<DocsCards>
+  <DocsCard header="Amazon Web Services" href="/nodes/setup-guides/aws/account" icon="/icons/icon_aws.png">
+    <p>Set up your EC2 VPS on AWS.</p>
+  </DocsCard>
 
-Due to the highly competitive Cloud Service Provider marketplace, we will concentrate on only a few Cloud Service Providers in our documentation.
+  <DocsCard header="Digital Ocean" href="/nodes/setup-guides/do/account" icon="/icons/icon_digitalocean.png">
+    <p>Set up your VPS droplet on Digital Ocean.</p>
+  </DocsCard>
 
-:::
-
-Cloud Providers mentioned in the documentation:
-  - Amazon Web Services
-  - Digital Ocean
-  - Google Cloud Platform
-
-:::info
-
-You are **not** obligated in any way to use the providers mentioned.  You can pick any methodology to build your future Node and utilize any of the cloud providers above to translate to your provider of choice.
-
-:::
-
-### List of Providers 
-There are many others *besides* what is listed below
-
-- Amazon Web Service (AWS)
-- Digital Ocean
-- Google Cloud Platform
-- Vultr
-- Linode
-- IBM Cloud Services
-- Adobe Creative Cloud
-- Kamatera
-- VMware
-- Rackspace
-- Red Hat
-- Salesforce
-- Oracle Cloud
-- SAP
-- Verizon Cloud
-- Navisite
-- Dropbox
+  <DocsCard header="Google Cloud Platform" href="/nodes/setup-guides/gcp/account" icon="/icons/icon-placeholder.png">
+    <p>Set up your VPS on GCP.</p>
+  </DocsCard>
+</DocsCards>
 
 ## Hosting Providers {#hosting-providers}
-A hosting provider is similar to the cloud provider because they are both Internet based services; however, with a cloud provider you will be given access to build and deploy a server to handle on your own.  With a hosting provider, they offer more services such as maintaining, patching, updating, etc. your instance in the cloud.
+A hosting provider is similar to a cloud provider because they are both web-based services, however, a cloud provider offers you more control over building, deploying and self-managing your node instance, while a hosting provider offers limited space and power.
 
 ## Bare Metal {#bare-metal}
-In this situation, you are intending on building your Node on a physical dedicated system.  This can either be done through a Cloud Provider, Hosting Provider, out of your Office, or out of your home.  You are in full control of everything from the metal case, to the hardware pieces, to the operating system.  **Bare Metal** should be reserved for serious heavy highly technical operations that need such resources, fully in their control.
+A bare metal server is a physical computer designed to run dedicated services by a single tenant. You can run this dedicated server in its own data center, colocation center, an office, or even out of your own home. Because you have full control over everything from hardware to software, this option should be reserved for advanced operators requiring even more customization and resources.

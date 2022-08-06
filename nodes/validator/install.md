@@ -1,60 +1,32 @@
 ---
-title: Installation Introduction
+title: Getting Started
+slug: getting-started
 hide_table_of_contents: false
 ---
 
-<head>
-  <title>Installation Overview</title>
-  <meta
-    name="description"
-    content="Brief intro into the documentation process for Validator Nodes"
-  />
-</head>
+## Before you begin:
 
-Through step-by-step written documentation from this guide's instructions, instructional videos for those that are more visual learners, to guidance through our Discord channel, we attempt to cover all the bases.
-
-## Before you begin
-
-:::note Seed List
-  **IMPORTANT**
-  Before you begin building your **VPS** to house your **Node**, you need to inquire with the State Channel Administrators
-  whether or not they have a **`seed list`** in place.
+:::danger Are you on the seedlist?
+Both **Mainnet 2.0** and **Testnet 2.0** currently have a seedlist in place that only allows specific `NodeIds` to join the network.
+This provides an extra layer of security and stability as the ecosystem matures, and will eventually be phased out for anyone to join. If you'd like to get your name on the list, please fill out [this form](https://cypress-metal-1d9.notion.site/Node-Validators-80876addcf914fcbb014d80ff738ded4) and we will process requests as network resources allow.
 :::
+## Initialize
 
-A `seed list` is an access-list that will only allow specific `NodeId`s to join their particular State Channel.  
+Decide on how you will run your validator.
 
-The `Node ID` is derived from the `p12` private key file that is used to authenticate against the State Channel.  It is accessed
-at `least` twice during the start up your initialization with a State Channel.  
-  <ul>
-  <li>During the Tessellation process start up (unlock the p12 file)</li>
-  <li>During the Join procedure call via the API</li>
-  </ul>
+- Cloud provider
+- Hosting provider
+- Dedicated server
 
-During the process start-up, if a `seed list` is in place, you will fail the authentication process.
+## Setup
 
-:::danger MAINNET and TESTNET
-MainNet 2.0 and TestNet 2.0 both currently have a `seed list` in place.
-:::
+- Setup your server
+- Turn your server into a node
 
-## Steps in the Process
-:::tip Initialization
-  - Decide on how you will run your Validator Node
-    - Service Provider
-    - Bare Metal
-    - Hosted
-:::
+## Configure
 
-:::tip Setup
-  - Setup your server
-  - Turn your server into a Node
-:::
-
-:::tip Your Node
-  - Configure your Node
-    - Setup Services
-    - Setup Configuration
-    - Define Security
-    - Join TestNet 2.0
-    - Join MainNet 2.0
-    - Join a State Channel
-:::
+- Setup services
+- Setup configuration
+- Define security
+- Join a network
+- Join a state channel
