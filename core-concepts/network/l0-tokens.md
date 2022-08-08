@@ -34,5 +34,5 @@ Existing L1 protocols can integrate with others by deploying an L0 Cell that imp
 
 ## Deploying to the global $DAG L0
 
-As above, a state channel definition must be deployed to the DAG L0 ACI (Application Chain Interface). Thiis interface follows the convention typically established by ABIs (application binary interfaces,) but in the context of partially shared executor validation contexts specific to microservices. In order to provide the security required for an open network to register untrusted state channel definitions in real time, validation functions are currently limited to hash based validation on ledger states of numeric type. 
+As above, a state channel definition must be deployed to the DAG L0 ACI (Application Chain Interface). This interface follows the convention typically established by ABIs (application binary interfaces,) but in the context of partially shared executor validation contexts specific to microservices. In order to provide the security required for an open network to register untrusted state channel definitions in real time, validation functions are currently limited to hash based validation on ledger states of numeric type. 
 
