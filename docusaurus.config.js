@@ -300,6 +300,13 @@ module.exports = {
     '@docusaurus/plugin-content-pages',
     '@docusaurus/plugin-debug',
     '@docusaurus/plugin-sitemap',
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-G-99MYFJ9YG5',
+        anonymizeIP: false,
+      },
+    ],
   ],
   themes: [
     [
