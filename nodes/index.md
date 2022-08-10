@@ -16,12 +16,10 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-**Constellation Network** is proud and excited to see you here and help you during your journey towards running
-a validator node on either a state channel or the Global Layer 0.
+In this tutorial, you'll learn how to set up and run a validator node in two parts: **Part 1** provides information on providers, how to generate SSH keys, and several common VPS setup guides. **Part 2** goes over how to install node dependencies and packages, and lastly, how to create a private key and node service to join a network.
 
 ## Before you begin:
 
 :::info Are you on the seedlist?
-Both **Mainnet 2.0** and **Testnet 2.0** currently have a seedlist in place that only allows specific `NodeIds` to join the network.
-This provides an extra layer of security and stability as the ecosystem matures, and will eventually be phased out for anyone to join. If you'd like to get your name on the list, please fill out [this form](https://airtable.com/shroR5bXszQXdh6dn) and we will process requests as network resources allow.
+Both Mainnet 2.0 and Testnet 2.0 currently have a seedlist in place that only allows specific `NodeIds` to join the network. This provides an extra layer of security and stability as the ecosystem matures, and will eventually be phased out for anyone to join. The seedlist is currently closed although we are accepting applications from state channel developers or integration partners that need access to develop on the network. Please fill out [this form](https://airtable.com/shroR5bXszQXdh6dn) if you fit into that category.
 :::
