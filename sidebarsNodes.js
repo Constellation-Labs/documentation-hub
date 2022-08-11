@@ -69,6 +69,7 @@ module.exports = {
         'manual/dependencies',
         'manual/binaries',
         'manual/p12',
+        'manual/p12backup',
         'manual/service',
         'manual/join',
       ],
