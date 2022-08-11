@@ -13,6 +13,10 @@ hide_table_of_contents: true
 
 Sends a new transaction to the network. If the transaction has no recipient and contains data, it creates a new contract. If the transaction has a recipient and data it executes a write contract call.
 
+:::caution Warning
+This method requires explicit user authorization.
+:::
+
 ##### Parameters
 
 | Name | Type                  | Description             |

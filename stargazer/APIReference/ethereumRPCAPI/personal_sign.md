@@ -14,6 +14,10 @@ hide_table_of_contents: true
 Calculates an ethereum signature of the given data from the selected account.
 
 :::caution Warning
+This method requires explicit user authorization.
+:::
+
+:::caution Warning
 This method adds the standard `"\x19Ethereum Signed Message:\n" + len(message)` prefix when calculating the signature hash.
 
 `ecdsa(keccak256("\x19Ethereum Signed Message:\n" + len(message) + message))`

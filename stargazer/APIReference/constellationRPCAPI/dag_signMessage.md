@@ -13,6 +13,10 @@ hide_table_of_contents: true
 
 Calculates a constellation signature of the given signature request from the selected account.
 
+:::caution Warning
+This method requires explicit user authorization.
+:::
+
 ##### Parameters
 
 | Name    | Type                                    | Description           |

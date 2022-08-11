@@ -13,6 +13,10 @@ hide_table_of_contents: true
 
 Calculates an ethereum signature of the given typed structured data from the selected account.
 
+:::caution Warning
+This method requires explicit user authorization.
+:::
+
 :::info Important
 This method complies with the latest specification of [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
 
