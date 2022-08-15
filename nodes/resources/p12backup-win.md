@@ -29,7 +29,9 @@ Log into your **local system** and open a new **Explorer** window.
 You can remind yourself how to access your local system and VPS here for [Macintosh](/nodes/resources/accessMac) or [Windows](/nodes/resources/accessWin).
 :::
 
-Create a `temporary` directory to store the `p12` file that you will backup from your **Node**.  In this example we created a folder called `constellation-backup` off the root of the user's home directory.  You can place your backup directory anywhere that is most comfortable to your preferences.
+Create a `temporary` directory to store the `p12` file that you will backup from your **Node**.  
+
+In this example 👇  we created a folder called `constellation-backup` off the root of the user's home directory.  You can place your backup directory anywhere that is most comfortable to your preferences.
 
 ![](/img/validator_nodes/back_restore_win7.png)
 
@@ -53,11 +55,15 @@ Click on the `Advanced` button.
 Select `Authentication` from the `left` side panel and then browse to the `SSH key File` that you use to connect to your Node.
 ![](/img/validator_nodes/back_restore_win4.png)
 
-Select `OK` and `Save` and then connect to your Node.  You should be prompted for your `passphrase` upon login. 
+Select `OK` and `Save` and then connect to your Node.  You should be prompted for your `passphrase` upon login.  
+
+You may also be prompted with a `security warning` about your SSH key being unknown or new.  Since we know that our `ssh key`
+is coming from us and is known, we can approve this access, and continue.
 
 Once you are logged in, you can navigate on the **`left`** panel to your backup directory 
 
 Navigate to your `/home/nodeadmin/tessellation` directory on the **right** panel.
+
 ![](/img/validator_nodes/back_restore_win5.png)
 
 Drag the `p12` file from the **right** panel to the **left** panel.
@@ -66,7 +72,8 @@ Drag the `p12` file from the **right** panel to the **left** panel.
 You have successfully downloaded your `p12` file.
 
 #### Finally 
-Move your `p12` file out of your `temporary` folder and onto a **cold storage** device, for safe keeping.
+- Move your `p12` file out of your `temporary` folder and onto a **cold storage** device, for safe keeping.
+- Delete your `p12` backup from your `temporary` directory.
 
 ## RESTORING YOUR P12 
 to your Node (Windows)
@@ -85,7 +92,7 @@ In order to restore your **p12** key file.
 :::danger IMPORTANT
 If you had followed the directions to restore a new or existing Node, you should have used `nodectl` to install
 `Tessellation` properly **USING THE SAME P12 FILE NAME**.  The directory listing will show your `p12` file with the 
-same name as that you are attempting to restore.  When you drag the file from the `local` system to your `VPS`, it will
+same name as the `p12 file` name you are attempting to restore.  When you drag the file from the `local` system to your `VPS`, it will
 automatically over-write the existing `p12` (*or is may ask you to confirm before continuing*).
 :::
 

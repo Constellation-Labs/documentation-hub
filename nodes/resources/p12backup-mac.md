@@ -64,7 +64,7 @@ there are several applications out in the Apple store to choose from (out of the
 can refer to the instructions below and alter as necessary to fit your usage requirements of your application.
 :::
 
-In this example we are going to **pretend** that our Node's (VPS) private information is the following in order to ease the ability to follow along with this documentation:
+In this example we are going to **pretend** that our Node's (VPS) private information is the following 👇 (see setup dictionary).  This will ease our ability to follow along with this documentation.
 
 ### Setup Dictionary 
 
@@ -76,15 +76,17 @@ In this example we are going to **pretend** that our Node's (VPS) private inform
 | External IP address	| **123.123.123.123**	| The external IP address of your Node.  You can use `sudo nodectl whoami` from your Node to obtain your External IP address.	| 
 | SSH Key Name	| **my-node-ssh-keyname**	| The name of your SSH key identify private key file used to access your Node from your local system.	| 
 | Password	| **abc123**	| `nodeadmin`'s password that is required to use super user `sudo` commands.	| 
-| P12passPhrase	| **123abc**	| Your `p12` file passphrase.	| 
+| P12 passphrase	| **123abc**	| Your `p12` file passphrase.	| 
 
 Change directories to our `constellation-backup` directory on our local Macintosh system.
 
 ```
 cd ~/constellation-backup
+```
+Reivew that we are in the correct directory
+```
 pwd
 ```
-
 <MacWindow>
 constellation@MacBook ~ % cd ~/constellation-backup<br />
 constellation@MacBook constellation-backup % pwd<br />
@@ -95,7 +97,7 @@ constellation@MacBook constellation-backup %<br />
 Open an `SFTP` session to your Node (VPS).  In relation to previous documentation regarding `ssh` connections, the `sftp` command is **exactly** the same as the `ssh` command used to  connect.  The only difference is the first word in the command.
 
 :::success Reminder
-You can remind yourself what your SSH identity key file name is by reviewing your `~/.ssh` directory.
+You can remind yourself what your SSH identity key file name is by reviewing your `~/.ssh` directory.  If the following 👇 command does not reveal your `ssh key identity files`, you may need to check your default home directory, or you will need to remember where you saved your `SSH key pair` when you originally created your Node.
 <MacWindow>
 constellation@MacBook ~ % ls -l ~/.ssh<br />
 total 64<br />
@@ -130,7 +132,7 @@ sftp> ls -l<br />
 sftp> <br />
 </MacWindow>
 
-We now have confirmed the location and existence of our `p12` file.  We can use the sftp CLI `get` command to get the file.
+We now have confirmed the location and existence of our `p12` file.  We can use the sftp CLI `get` command to get the file.  Since we connected to the `sftp` session from our local temporary backup directory, the file will automatically download to the proper location.
 
 ```
 get my-p12file.p12
@@ -147,7 +149,9 @@ You should see `100%` to indicate the file was 100% downloaded
 :::
 
 Exit out of the `sftp` utility.
-
+```
+exit
+```
 <MacWindow>
 sftp> exit<br />
 constellation@MacBook constellation-backup %<br />
@@ -165,8 +169,8 @@ constellation@MacBook constellation-backup %
 </MacWindow>
 
 #### Finally
-Transfer your newly downloaded **backup p12 file** to your **cold storage** device.  Remove
-the **p12** file from your temporary backup directory.
+- Transfer your newly downloaded **backup p12 file** to your **cold storage** device.  
+- Remove the **p12** file from your temporary backup directory.
 
 ---
 
@@ -193,6 +197,9 @@ cd ~/constellation-backup
 
 Do a directory listing to make sure you see your backed up file.
 
+:::note
+The `l` is the letter `L` not the number `1`.
+:::
 ```
 ls -l
 ```
@@ -208,7 +215,7 @@ constellation@MacBook constellation-backup %
 Open an `SFTP` session to your Node (VPS).  In relation to previous documentation regarding `ssh` connections, the `sftp` command is **exactly** the same as the `ssh` command used to  connect.  The only difference is the first word in the command.
 
 :::success Reminder
-You can remind yourself what your SSH identity key file name is by reviewing your `~/.ssh` directory.
+You can remind yourself what your SSH identity key file name is by reviewing your `~/.ssh` directory.  If the following 👇 command does not reveal your `ssh key identity files`, you may need to check your default home directory, or you will need to remember where you saved your `SSH key pair` when you originally created your Node.
 <MacWindow>
 constellation@MacBook ~ % ls -l ~/.ssh<br />
 total 64<br />
@@ -237,9 +244,9 @@ The `l` is the letter `L` not the number `1`.
 :::
 
 :::danger IMPORTANT
-If you had followed the directions to restore a new or existing Node, you should have used `nodectl` to install
+If you followed the directions to restore a new or existing Node, you should have used `nodectl` to install
 `Tessellation` properly **USING THE SAME P12 FILE NAME**.  The directory listing will show your `p12` file with the 
-same name as that you are attempting to restore.
+same name that you are attempting to restore.
 :::
 
 <MacWindow>
@@ -273,5 +280,5 @@ sftp> exit<br />
 constellation@MacBook constellation-backup %<br />
 </MacWindow>
 
-We are returned to our `local` Mac system with our `Mac` prompt.  
+We are returned to our `local` Mac system with our `Mac` prompt.  The restore process is complete.
 
