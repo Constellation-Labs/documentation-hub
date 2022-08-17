@@ -81,6 +81,8 @@ module.exports = {
         'resources/password',
         'resources/accessMac',
         'resources/accessWin',
+        'resources/p12backup-mac',
+        'resources/p12backup-win',        
       ],
     },
   ],
