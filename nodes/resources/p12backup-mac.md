@@ -1,5 +1,5 @@
 ---
-title: Backup|Restore P12 Mac
+title: Backup/Restore P12 on Mac
 hide_table_of_contents: false
 ---
 
@@ -14,102 +14,39 @@ import BrowserWindow from '@site/src/components/global/BrowserWindow';
   />
 </head>
 
----
+It is of _vital_ importance to keep a cold backup of your P12 file.  The term **cold** simply refers to storing your P12 file _offline_, thereby protecting your data from unauthorized access and vulnerabilities. Cold storage may include but are not limited to encrypted hardware wallets or USB keys.
 
-## BACKING UP YOUR P12 
-from your Node (Macintosh)
+## Backing up your P12
 
-It is of **vital** importance to keep a **cold** backup of your **p12** file.  The term **cold** simply refers to storing your **p12** file in a location that is air gapped (not connected to the internet).  These locations can include (but are not limited to) 
-- Encrypted Wallet Device
-- Encrypted USB Key (Device or Thumb-Drive)
-- UBS Key (Device or Thumb-Drive) stored in a safe when not in use
+Log into your **local system** and open a [terminal session](/nodes/resources/accessMac).
 
-#### Instructions
+### Create directory
 
-Log into your **local system** and open a **terminal** session.
+Change your currect directory to `/home`, then create a temporary directory to store the P12 file. In this example, we'll name our directory `constellation-backup`, but you are free to choose any custom location or directory name.
 
-:::note
-You can remind yourself how to access your local system and VPS here for [Macintosh](/nodes/resources/accessMac) or [Windows](/nodes/resources/accessWin).
-:::
-
-Create a `temporary` directory to store the `p12` file that you will backup from your **Node**.
-
-Change directories to your `/home` directory.
 ```
 cd ~
 ```
-<MacWindow>
-constellation@MacBook ~ % cd ~
-</MacWindow>
-
-:::note Your choice
-It is your choice on the location and names that you give your directory.  Our instructions only display suggestions.
-:::
-
-Create a new directory to house your `p12` file.
 
 ```
 mkdir constellation-backup
 ```
-<MacWindow>
-constellation@MacBook ~ % mkdir constellation-backup
-</MacWindow>
 
+### Change to temp directory
 
-##### ACCESS YOUR NODE VIA SFTP
-
-:::important 
-These instructions will show you the simplest way to retrieve your **p12** file, via a terminal session.  If you are more comfortable with a GUI application
-there are several applications out in the Apple store to choose from (out of the scope of this documentation).  If you choose to use a GUI application, you
-can refer to the instructions below and alter as necessary to fit your usage requirements of your application.
-:::
-
-In this example we are going to **pretend** that our Node's (VPS) private information is the following 👇 (see setup dictionary).  This will ease our ability to follow along with this documentation.
-
-### Setup Dictionary 
-
-| VARIABLE	| OUR PRETEND INFORMATION	| Description |
-| ----  | -----| ----- | 
-| Local System Prompt | constellation@MacBook % | |
-| VPS/Node Username	| **nodeadmin**	| The username that we will log into our Node with.	| 
-| VPS/Node P12 filename | **my-p12file.p12**	| The name of your `p12` file. | 
-| External IP address	| **123.123.123.123**	| The external IP address of your Node.  You can use `sudo nodectl whoami` from your Node to obtain your External IP address.	| 
-| SSH Key Name	| **my-node-ssh-keyname**	| The name of your SSH key identify private key file used to access your Node from your local system.	| 
-| Password	| **abc123**	| `nodeadmin`'s password that is required to use super user `sudo` commands.	| 
-| P12 passphrase	| **123abc**	| Your `p12` file passphrase.	| 
-
-Change directories to our `constellation-backup` directory on our local Macintosh system.
+Change directories to your newly created directory.
 
 ```
 cd ~/constellation-backup
 ```
-Reivew that we are in the correct directory
-```
-pwd
-```
-<MacWindow>
-constellation@MacBook ~ % cd ~/constellation-backup<br />
-constellation@MacBook constellation-backup % pwd<br />
-/Users/constellation/constellation-backup<br />
-constellation@MacBook constellation-backup %<br />
-</MacWindow>
 
-Open an `SFTP` session to your Node (VPS).  In relation to previous documentation regarding `ssh` connections, the `sftp` command is **exactly** the same as the `ssh` command used to  connect.  The only difference is the first word in the command.
+### Connect to your node
 
-:::success Reminder
-You can remind yourself what your SSH identity key file name is by reviewing your `~/.ssh` directory.  If the following 👇 command does not reveal your `ssh key identity files`, you may need to check your default home directory, or you will need to remember where you saved your `SSH key pair` when you originally created your Node.
-<MacWindow>
-constellation@MacBook ~ % ls -l ~/.ssh<br />
-total 64<br />
--rw-------  1 constellation  staff  3434 May 11 09:25 my-node-ssh-keyname<br />
--rw-r--r--  1 constellation  staff   743 May 11 09:25 my-node-ssh-keyname.pub<br />
-constellation@MacBook constellation-backup %<br />
-</MacWindow>
-:::
-
+Open an `sftp` session to your node and enter your passphrase to connect. (Remember to replace the examples below with your own info.)
 ```
 sftp -i ~/.ssh/my-node-ssh-keyname nodeadmin@123.123.123.123
 ```
+
 <MacWindow>
 constellation@MacBook constellation-backup % sftp -i ~/.ssh/my-node-ssh-keyname nodadmin@123.123.123.123<br />
 Enter passphrase for key '/Users/netmet/.ssh/const_node_rsa': <br />
@@ -117,12 +54,22 @@ Connected to 1123.123.123.123.<br />
 sftp><br />
 </MacWindow>
 
-From inside the `sftp` command line utility (CLI) enter the command to change directory to the `/home/nodeadmin/tessellation` directory *(or your custom location)* and list out *long format* the contents of the directory.
-:::note
-The `l` is the letter `L` not the number `1`.
+:::success What's my key pair name?
+Use the command below to review your `~/.ssh` directory. Alternatively, try looking in your default home directory or where you originally saved your key pair during setup.
+
+```
+ls -l ~/.ssh
+```
 :::
+
+### Locate P12 file
+
+In your sftp session, change directories to `/home/nodeadmin/tessellation` or your custom location, then list out the contents of the directory.
+
 ```
 cd /home/nodeadmin/tessellation
+```
+```
 ls -l
 ```
 <MacWindow>
@@ -132,11 +79,16 @@ sftp> ls -l<br />
 sftp> <br />
 </MacWindow>
 
-We now have confirmed the location and existence of our `p12` file.  We can use the sftp CLI `get` command to get the file.  Since we connected to the `sftp` session from our local temporary backup directory, the file will automatically download to the proper location.
+### Download P12 file
+
+You have now confirmed the location and existence of your `p12` file.  You can use the `get` command to get the file.  Since you're in your temp directory, the file will automatically download there.
 
 ```
 get my-p12file.p12
 ```
+
+If the file was downloaded correctly, you should see a `100%` status next to the filename.
+
 <MacWindow>
 sftp> get my-p12file.p12<br />
 Fetching /home/nodeadmin/tessellation/my-p12file.p12 to my-p12file.p12<br />
@@ -144,20 +96,16 @@ Fetching /home/nodeadmin/tessellation/my-p12file.p12 to my-p12file.p12<br />
 sftp> <br />
 </MacWindow>
 
-:::success
-You should see `100%` to indicate the file was 100% downloaded
-:::
+### End session
 
-Exit out of the `sftp` utility.
+Exit your sftp session with the `exit` command.
 ```
 exit
 ```
-<MacWindow>
-sftp> exit<br />
-constellation@MacBook constellation-backup %<br />
-</MacWindow>
 
-We are returned to our `local` Mac system with our `Mac` prompt.  Execute a long list `ls -l` from within the `constellation-backup` directory we created.  Verify that our `p12` key file is downloaded.
+### Verify download
+
+Back in your local command prompt, execute a long list `ls -l` inside the `constellation-backup` directory you created earlier. Verify that your p12 key file is downloaded.
 ```
 ls -l
 ```
@@ -168,28 +116,22 @@ total 8
 constellation@MacBook constellation-backup %
 </MacWindow>
 
-#### Finally
-- Transfer your newly downloaded **backup p12 file** to your **cold storage** device.  
-- Remove the **p12** file from your temporary backup directory.
+### Transfer to cold storage
+- Transfer your newly downloaded **p12 file** to your **cold storage** device.  
+- Remember to remove the p12 file and temp backup directory when you are done.
 
----
 
-## RESTORING YOUR P12 
-to your Node (Macintosh)
+## Restoring your P12
 
-:::danger IMPORTANT
-If you are restoring your `p12` file to Node that has been installed using `nodectl` (recommended): 
-1. Make sure you do the installation of `Tessellation` first using `nodectl` before you restore your `p12` key file.
-2. During the installation you will need to use the **same** `p12` file name as you did previously in order to make sure that the configuration `nodectl` builds matches.
-:::
+### Install Tessellation
 
-:::note NOTE
-We will use the same `pretend` variables as in the `backup` [section](#setup-dictionary). This restore process also
-assumes that you used the [Backup Procedure](#backing-up-your-p12) above.
-:::
+If you are restoring your p12 file to node that has been installed using `nodectl` (recommended): 
+1. Make sure you do the installation of `Tessellation` first using `nodectl` before you restore your p12 key file.
+2. During the installation you will need to use the **same** p12 file name as you did previously in order to make sure that the configuration `nodectl` builds matches.
 
-From your local **Macintosh** system, migrate your **backed up p12 key file** from your **cold storage** device to your `constellation-backup` temporary directory and make sure in your **terminal**
-session you are in the file location holding your `backed up` p12 key file.
+### Migrate P12 backup
+
+Migrate your p12 backup from cold storage to your temp `constellation-backup` directory. Make sure you are in the correct directory containing your p12 backup file.
 
 ```
 cd ~/constellation-backup
@@ -197,9 +139,6 @@ cd ~/constellation-backup
 
 Do a directory listing to make sure you see your backed up file.
 
-:::note
-The `l` is the letter `L` not the number `1`.
-:::
 ```
 ls -l
 ```
@@ -212,22 +151,10 @@ total 8
 constellation@MacBook constellation-backup %
 </MacWindow>
 
-Open an `SFTP` session to your Node (VPS).  In relation to previous documentation regarding `ssh` connections, the `sftp` command is **exactly** the same as the `ssh` command used to  connect.  The only difference is the first word in the command.
+### Connect to node
 
-:::success Reminder
-You can remind yourself what your SSH identity key file name is by reviewing your `~/.ssh` directory.  If the following 👇 command does not reveal your `ssh key identity files`, you may need to check your default home directory, or you will need to remember where you saved your `SSH key pair` when you originally created your Node.
-<MacWindow>
-constellation@MacBook ~ % ls -l ~/.ssh<br />
-total 64<br />
--rw-------  1 constellation  staff  3434 May 11 09:25 my-node-ssh-keyname<br />
--rw-r--r--  1 constellation  staff   743 May 11 09:25 my-node-ssh-keyname.pub<br />
-constellation@MacBook constellation-backup %<br />
-</MacWindow>
-:::
+Open an `sftp` session to your node and enter your passphrase to connect. (Remember to replace the examples below with your own info.)
 
-:::note Reminder
-Change the command to fit your Node's **IP**, **credentials**, and **file names**.
-:::
 ```
 sftp -i ~/.ssh/my-node-ssh-keyname nodeadmin@123.123.123.123
 ```
@@ -238,16 +165,16 @@ Connected to 1123.123.123.123.<br />
 sftp><br />
 </MacWindow>
 
-From inside the `sftp` command line utility (CLI) enter the command to change directory to the `/home/nodeadmin/tessellation` directory *(or your custom location)* and list out *long format* the contents of the directory.
-:::note
-The `l` is the letter `L` not the number `1`.
-:::
+### Locate P12 file
 
-:::danger IMPORTANT
-If you followed the directions to restore a new or existing Node, you should have used `nodectl` to install
-`Tessellation` properly **USING THE SAME P12 FILE NAME**.  The directory listing will show your `p12` file with the 
-same name that you are attempting to restore.
-:::
+In your sftp session, change directories to /home/nodeadmin/tessellation or your custom location, then list out the contents of the directory.
+
+```
+cd /home/nodeadmin/tessellation
+```
+```
+ls -l
+```
 
 <MacWindow>
 sftp> cd /home/nodeadmin/tessellation<br />
@@ -256,12 +183,23 @@ sftp> ls -l<br />
 sftp> <br />
 </MacWindow>
 
-We now have confirmed the location and existence of our temporary `p12` file.  **If you did not create a temporary place 
-holder `p12` file, this directory may be empty** (depending on your custom configuration).  We can use the sftp CLI `put` command to restore the p12 file.
+You have now confirmed the location and existence of your temporary `p12` file.
+
+:::danger IMPORTANT
+If you followed the directions to restore a new or existing node, you should have used `nodectl` to install
+`Tessellation` properly **using the same P12 filename**.  The directory listing will show your `p12` file with the 
+same name that you are attempting to restore.
+:::
+
+### Restore P12 file
+
+If you did not create a temporary p12 file, this directory may be empty depending on your custom configuration. Enter the `put` command to restore the p12 file.
 
 ```
 put my-p12file.p12
 ```
+If the file was downloaded correctly, you should see a `100%` status next to the filename.
+
 <MacWindow>
 sftp> put my-p12file.p12<br />
 Uploading my-p12file.p12 to /home/nodeadmin/tessellation/my-p12file.p12<br />
@@ -269,16 +207,10 @@ my-p12file.12   100%   31     0.6KB/s   00:00    <br />
 sftp> <br />
 </MacWindow>
 
-:::success
-You should see `100%` to indicate the file was 100% uploaded to your Node.
-:::
+### Exit session
 
-Exit out of the `sftp` utility.
+Exit your sftp session with the `exit` command. You have successfully completed the restore process.
 
-<MacWindow>
-sftp> exit<br />
-constellation@MacBook constellation-backup %<br />
-</MacWindow>
-
-We are returned to our `local` Mac system with our `Mac` prompt.  The restore process is complete.
-
+```
+exit
+```
