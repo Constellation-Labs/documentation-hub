@@ -53,19 +53,19 @@ Installing an older or incorrect version could lead to unexpected results.
 
 Download the **cl-keytool.jar** JAR file.
 ```
-sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.13.2/cl-keytool.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-keytool.jar
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.16.1/cl-keytool.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-keytool.jar
 ```
 Download the **cl-node.jar** JAR file.
 ```
-sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.13.2/cl-node.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-node.jar
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.16.1/cl-node.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-node.jar
 ```
 Download the **cl-dag-l1.jar** JAR file.
 ```
-sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.13.2/cl-dag-l1.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-dag-l1.jar
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.16.1/cl-dag-l1.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-dag-l1.jar
 ```
 Download the **cl-wallet.jar** JAR file.
 ```
-sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.13.2/cl-wallet.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-wallet.jar
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.16.1/cl-wallet.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-wallet.jar
 ```
 Download the **seed list file** that contains the Node IDs with permissions to JOIN the network.
 ```
