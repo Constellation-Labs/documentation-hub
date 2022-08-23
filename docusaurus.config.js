@@ -158,9 +158,9 @@ module.exports = {
       additionalLanguages: ['shell-session', 'http', 'clike', 'java', 'scala'],
     },
     algolia: {
-      appId: 'CBNHVZZD4E',
-      apiKey: '111f40072818a04ddf0d5f49ac024c00',
-      indexName: 'constellation_docs',
+      appId: 'R8U28ZQSJT',
+      apiKey: '7a385479ae20c37221d979e87bc0a2c0',
+      indexName: 'netlify_2face199-9edb-4448-a94e-2508c0624ec3_main_all',
       contextualSearch: true,
     },
   },
