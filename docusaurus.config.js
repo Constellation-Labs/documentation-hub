@@ -3,10 +3,10 @@ const math = require('remark-math');
 const katex = require('rehype-katex');
 
 module.exports = {
-  title: 'Constellation Documentation',
+  title: 'Constellation Docs',
   tagline:
-    'Lorem ipsum dolor sit amet',
-  url: 'https://constellationnetwork.io',
+    'Official developer docs of Constellation Network',
+  url: 'https://docs.constellationnetwork.io',
   baseUrl: "/",
   i18n: {
     defaultLocale: 'en',
@@ -158,9 +158,9 @@ module.exports = {
       additionalLanguages: ['shell-session', 'http', 'clike', 'java', 'scala'],
     },
     algolia: {
-      appId: 'O9QSL985BS',
-      apiKey: 'ceb5366064b8fbf70959827cf9f69227',
-      indexName: 'dev_constellation',
+      appId: 'CBNHVZZD4E',
+      apiKey: '111f40072818a04ddf0d5f49ac024c00',
+      indexName: 'constellation_docs',
       contextualSearch: true,
     },
   },
@@ -303,7 +303,7 @@ module.exports = {
     [
       '@docusaurus/plugin-google-gtag',
       {
-        trackingID: 'G-G-99MYFJ9YG5',
+        trackingID: 'G-700QKPV3G0',
         anonymizeIP: false,
       },
     ],
