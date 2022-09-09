@@ -3,7 +3,7 @@ title: Understanding Passwords
 hide_table_of_contents: false
 ---
 
-A **password** is a string of characters while a **passphrase** is a sentencelike string of words. Because a passphrase is longer and more complex, it's typically more secure than a password. You should not use easily guessable words or sentences in your passphrases.
+A **password** is a string of characters while a **passphrase** is a sentence-like string of words. Because a passphrase is longer and more complex, it's typically more secure than a password. You should not use easily guessable words or sentences in your passphrases.
 
 ## Roles and Permissions
 

@@ -22,7 +22,7 @@ Log into your **local system** and open a [terminal session](/nodes/resources/ac
 
 ### Create directory
 
-Change your currect directory to `/home`, then create a temporary directory to store the P12 file. In this example, we'll name our directory `constellation-backup`, but you are free to choose any custom location or directory name.
+Change your current directory to `/home`, then create a temporary directory to store the P12 file. In this example, we'll name our directory `constellation-backup`, but you are free to choose any custom location or directory name.
 
 ```
 cd ~
