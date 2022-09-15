@@ -40,6 +40,12 @@ Ports **8000-9999** may be reserved for state channels and Global Layer 0, there
 
 ## Configuration
 
+### Before you Begin
+
+Make sure you have your `p12` private key store backed up before you continue this procedure!
+
+See documentation to backup your `p12` for [Macintosh](/nodes/resources/p12backup-mac) or [Windows](/nodes/resources/p12backup-win).
+
 ### VPS Firewall Settings
 
 :::danger Reminder
@@ -108,6 +114,17 @@ Restart the SSH service:
 ```
 sudo service sshd restart
 ```
+
+### Before Testing and Confirming 
+
+:::danger IMPORTANT 
+Do **not** close your current terminal session!  In the event that something goes wrong, you will lose access to your VPS.  
+
+( *Again make sure you have our p12 file backed up before continuing* )
+
+Keeping the current session open will allow you **maintain your current connection**, until you verified you are up and running!
+
+:::
 
 ### On Windows: PuTTy config
 
