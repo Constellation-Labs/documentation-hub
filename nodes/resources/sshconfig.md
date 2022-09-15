@@ -18,7 +18,7 @@ This process will guide you through changing the default SSH port 22 to a custom
 
 **SSH** (Secure Shell Protocol) is the standard protocol used to gain remote access to computer systems (servers) for administration purposes. In our case, it's applicable mostly to **VPS** (Virtual Private Server) systems in the cloud.  
 
-Utilizing **TCP/IP** (Transfer Control Protocol/Internet Protocol), a default connection is made via the widely known port **22**. This encrypted connection is established between the computer and server operator, from the local end of the connection (via terminal or bastian host) to the remote server. **SSH Key Pairs** are used to authenticate and provide the encryption/decryption mechanisms.  
+Utilizing **TCP/IP** (Transfer Control Protocol/Internet Protocol), a default connection is made via the widely known port **22**. This encrypted connection is established between the computer and server operator, from the local end of the connection (via terminal or bastion host) to the remote server. **SSH Key Pairs** are used to authenticate and provide the encryption/decryption mechanisms.  
 
 ### Centralized
 In **centralized** infrastructure where there is a centralized security setup, it is easier to keep a well-known port in place. In order to gain access to the centralized network, you must traverse several layers of security before you are able to access these internal servers.
@@ -29,7 +29,7 @@ In **decentralized** scenarios such as Constellation's Hypergraph network, the s
 ### Guidelines
 
 :::danger Security
-The custom port is a preventative measure to add more abiguity to our VPS security, but offers no additional protection beyond that. It's important to keep a watchful eye over your validator node to ensure it is secure and running properly.
+The custom port is a preventative measure to add more ambiguity to our VPS security, but offers no additional protection beyond that. It's important to keep a watchful eye over your validator node to ensure it is secure and running properly.
 :::
 
 :::note Custom port selection
@@ -39,6 +39,12 @@ Ports **8000-9999** may be reserved for state channels and Global Layer 0, there
 :::
 
 ## Configuration
+
+### Before you Begin
+
+Make sure you have your `p12` private key store backed up before you continue this procedure!
+
+See documentation to backup your `p12` for [Macintosh](/nodes/resources/p12backup-mac) or [Windows](/nodes/resources/p12backup-win).
 
 ### VPS Firewall Settings
 
@@ -108,6 +114,17 @@ Restart the SSH service:
 ```
 sudo service sshd restart
 ```
+
+### Before Testing and Confirming 
+
+:::danger IMPORTANT 
+Do **not** close your current terminal session!  In the event that something goes wrong, you will lose access to your VPS.  
+
+( *Again make sure you have our p12 file backed up before continuing* )
+
+Keeping the current session open will allow you **maintain your current connection**, until you verified you are up and running!
+
+:::
 
 ### On Windows: PuTTy config
 
