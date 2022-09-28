@@ -36,6 +36,10 @@ Please like and subscribe to support NetMet's work and to be alerted to new cont
 If you choose the YouTube Series, it is highly recommended to watch the entire series, from the beginning.
 :::
 
+:::danger VERY IMPORTANT FOR MAINNET 2.0 LAUNCH
+These documents reference creating a single layer 0 or state channel.  For the launch of MainNet 2.0, you will installing a **DUAL** layer - `layer0` and `layer1` - validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  The YouTube Series does not cover these extra rules.
+:::
+
 <iframe width="75%" height="380" src="https://www.youtube.com/embed/0plYuXJwfOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
@@ -120,8 +124,28 @@ Our **inbound rules** will look something like this 👇
 Click on **`Save rules`**.
 
 :::info
-Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) **API** access.   Ports 9000 and 9001 are configurable and will be dependent on the HyperGraph or State Channel network you connect to.  Node Operators will need to learn what ports are opened for access to the State Channels, and update their firewall (change) accordingly
+Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) **API** access.   Ports 9000 and 9001 are configurable and can be independent (to your needs) on the HyperGraph Global Layer0 or State Channel network you connect to.  Node Operators will need to learn what ports are opened for access to the State Channels, and update their firewall (change) accordingly
 :::
+
+### MAINNET 2.0 LAUNCH REQUIREMENT
+It is **highly** recommended that you use `nodectl` to install and control/admin your Node.
+
+Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet 2.0 Validator Node's `Layer1` connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
+
+#### Final Firewall Table 
+
+| Type	| Protocol	| Port Range	| Sources |
+| ----  | -----| ----- | ---- |
+| Inbound	| TCP	| 22	| your local ip address /32 |
+| Inbound	| TCP	| 9000-9001	| All IPv4 IPv6
+| Inbound	| TCP	| 9010-9011	| All IPv4 IPv6
+
+| Type	| Protocol	| Port Range	| Sources |
+| ----  | -----| ----- | ---- |
+| Outbound	| ICMP	| All Ports	| All IPv4 IPv6 |
+| Outbound	| All TCP	| All Ports |	All IPv4 IPv6 |
+| Outbound	| All UDP	| All Ports	| All IPv4 IPv6 |
+
 
 ### WAY TO GO! You are done.
 We can now move on to access our Node!
