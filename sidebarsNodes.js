@@ -14,6 +14,7 @@ module.exports = {
       collapsed: false,
       items: [
         'validator/install',
+        'validator/specs',
         'validator/providers',
         'validator/explain',
         'validator/creationMac',
@@ -63,6 +64,14 @@ module.exports = {
     {
       type: 'category',
       label: 'Running a Node (Part 2)',
+      collapsed: false,
+      items: [
+        'automated/nodectl',
+      ],
+    },   
+    {
+      type: 'category',
+      label: 'Running a Node (Part 3)',
       collapsed: false,
       items: [
         'manual/nonRootUser',
