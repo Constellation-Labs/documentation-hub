@@ -59,16 +59,30 @@ https://github.com/netmet1/constellation_nodectl/releases
 ```
 Log into your VPS and download the latest release of **nodectl**.
 
+:::danger VERY IMPORTANT
+The links below show the latest version of `nodectl` at the time of this writing!  You **MUST** make sure that you download the most recent version of `nodectl` in order to create the best possible user experience.   Review the link below, compare it to the [repository version](https://github.com/netmet1/constellation_nodectl/releases), and if it there is a newer release, change the URL below to match.
+
+example 
+
+**JUST AN EXAMPLE**: If the latest version is `1.6.2` (made up example) but these instructions show `v1.6.0`.
+
+> **github.com/netmet1/constellation_nodectl/releases/download/*v1.6.0*/nodectl_x86_64**
+
+will become
+
+> **github.com/netmet1/constellation_nodectl/releases/download/*v1.6.3*/nodectl_x86_64**
+:::
+
 The following commands will download the latest version, set the file's permissions and move it to the proper directory on your Linux VPS.
 
 **x86_64** *(most common)*
 ```
-sudo wget https://github.com/netmet1/constellation_nodectl/releases/download/v1.5.2/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl
+sudo wget https://github.com/netmet1/constellation_nodectl/releases/download/v1.6.0/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl
 ```
 
 **arm_64**
 ```
-sudo wget https://github.com/netmet1/constellation_nodectl/releases/download/v1.5.2/nodectl_arm64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl
+sudo wget https://github.com/netmet1/constellation_nodectl/releases/download/v1.6.0/nodectl_arm64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl
 ```
 
 :::note NOTE
