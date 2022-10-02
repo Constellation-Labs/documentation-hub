@@ -53,23 +53,23 @@ Installing an older or incorrect version could lead to unexpected results.
 
 Download the **cl-keytool.jar** JAR file.
 ```
-sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.16.1/cl-keytool.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-keytool.jar
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v1.0.1/cl-keytool.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-keytool.jar
 ```
 Download the **cl-node.jar** JAR file.
 ```
-sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.16.1/cl-node.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-node.jar
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v1.0.1/cl-node.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-node.jar
 ```
 Download the **cl-dag-l1.jar** JAR file.
 ```
-sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.16.1/cl-dag-l1.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-dag-l1.jar
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v1.0.1/cl-dag-l1.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-dag-l1.jar
 ```
 Download the **cl-wallet.jar** JAR file.
 ```
-sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v0.16.1/cl-wallet.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-wallet.jar
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v1.0.1/cl-wallet.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-wallet.jar
 ```
 Download the **seed list file** that contains the Node IDs with permissions to JOIN the network.
 ```
-sudo wget https://constellationlabs-dag.s3.us-west-1.amazonaws.com/testnet-seedlisting -O /var/tessellation/seed-list -o /dev/null
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v1.0.1/mainnet-seedlist -P /var/tessellation; sudo chmod +x /var/tessellation/cl-wallet.jar -O /var/tessellation/seed-list -o /dev/null
 ```
 
 Let's verify that our files are in place. Depending on your terminal application, the files should appear in GREEN. Make sure they are executable:  `-rwxr-xr-x`

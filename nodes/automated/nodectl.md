@@ -108,6 +108,23 @@ When your environment is requested, you should enter in `mainnet`
 ### STEP 4
 Report your `nodeid` shown at the end of the process, to your administrators.
 
+### STEP 5
+When you are notified that you have been properly added to the `seed-list`
+verify
+```
+sudo nodectl update_seedlist
+```
+```
+sudo nodectl check_seedlist
+```
+
+### STEP 6
+Once your `nodeid` is confirmed to have been added to the `seed-list`
+verify
+```
+sudo nodectl restart -p all
+```
+
 ## OTHER IMPORTANT COMMANDS
 show your nodeid
 ```
@@ -120,4 +137,24 @@ sudo nodectl dag
 show your private key for import into your Stargazer wallet
 ```
 sudo nodectl export_private_key
+```
+show node's status on L0 and L1
+```
+sudo nodectl status
+```
+show node's status on just L0
+```
+sudo nodectl status -p dag-l0
+```
+show node's status on just L1
+```
+sudo nodectl status -p dag-l1
+```
+show node's connection status on L0
+```
+sudo nodectl check_connection -p dag-l0
+```
+Review all known `nodectl` commands, and shortcuts
+```
+sudo nodectl help
 ```
