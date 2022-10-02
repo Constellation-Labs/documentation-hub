@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-In this tutorial, you'll learn how to set up and run a validator node in two parts: **Part 1** provides information on providers, how to generate SSH keys, and several common VPS setup guides. **Part 2** goes over how to install node dependencies and packages, and lastly, how to create a private key and node service to join a network.
+In this tutorial, you'll learn how to set up and run a validator node in three parts (2 main parts): **Part 1** provides information on providers, how to generate SSH keys, and several common VPS setup guides. **Part 2** goes over how to install node using our automated `nodectl` tool.  **Part 3** shows you how to install a Node manually by installing dependencies and packages, and instructs how to create a private key and the node services necessary to join the network.
 
 ## Before you begin:
 

@@ -17,13 +17,16 @@ Decide on how you will run your validator.
 - Hosting provider
 - Dedicated server
 
-## Setup
+## Automation
+- **Recommended**: Use `nodectl`.
 
+## Manual Setup
 - Setup your server
 - Turn your server into a node
+    - install dependencies
+    - install Constellation Network binaries
 
-## Configure
-
+## Manual Configuration
 - Setup services
 - Setup configuration
 - Define security

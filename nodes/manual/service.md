@@ -1,10 +1,10 @@
 ---
-title: Create Node Service
+title: Create Node Service(s)
 hide_table_of_contents: false
 ---
 
 <head>
-  <title>Setup Node Service</title>
+  <title>Setup Node Service(s)</title>
   <meta
     name="description"
     content="This document will help to setup our Node's service file."
@@ -43,9 +43,9 @@ Your screen will not react and your password will not show as you type.
 [...]
 ```
 
-### Modify bash script
+### Create new bash script(s)
 
-We are going to modify our **`cn-node`** Bash script file first. 
+We are going to create our **`cn-nodel0` or `cn-nodel1`** Bash scripts first. 
 
 Once again we will using **Nano** editor.
 
@@ -55,21 +55,34 @@ How to use the `nano` text editor is out of scope of this document; however, you
 You can use whatever editor you want.
 
 :::note Nano Quick Notes
- - `sudo nano cn-cnode` will start the program
+ - `sudo nano cn-cnodel0` will start the editor
  - use your keyboard arrows to navigate (not your mouse)
  - ctrl-o command-o (letter o) will save the contents of the file
- - give the file a name (`cn-node`)
+ - give the file a name (`cn-nodel0`)
  - ctrl-x command-x to exit the editor
 :::
 
 ```
-sudo nano /usr/local/bin/cn-node
+sudo nano /usr/local/bin/cn-nodel0
 ```
 
-You will be adding the following line to the **end** of the script. Make sure to either copy-n-paste or **very carefully** type in the command, you need it **exactly** as shown to work.
+Add the commands to read your `cn-node` file and start the layer0 or layer1 service
 
 ```
-/usr/bin/java -jar '-Xms1024M' '-Xmx7G' '-Xss256K' /var/tessellation/cl-node.jar run-validator --collateral 0 --seedlist /var/tessellation/seed-list & 
+#!/bin/bash
+. /usr/local/bin/cn-node
+/usr/bin/java -jar '-Xms1024M' '-Xmx7G' '-Xss256K' /var/tessellation/cl-node.jar run-validator --seedlist /var/tessellation/seed-list & 
+```
+```
+sudo nano /usr/local/bin/cn-nodel1
+```
+
+Add the commands to read your `cn-node` file and start the layer0 or layer1 service
+
+```
+#!/bin/bash
+. /usr/local/bin/cn-node
+/usr/bin/java -jar '-Xms1024M' '-Xmx3G' '-Xss256K' /var/tessellation/cl-dag-l1.jar run-validator --public-port 91010 --p2p-port 9011 --cli-port 9012 & 
 ```
 
 ##### The above commands will:
@@ -88,36 +101,56 @@ circumstances.  You may also apply these variables directly at the command line 
 ```
 :::
 
-### Create service file
+### Create service file(s)
 
 Using our **Nano** editor.
 (You can use whatever editor you want.)
 
 ```
-sudo nano /etc/systemd/system/node.service
+sudo nano /etc/systemd/system/node_l0.service
 ```
 
 You will be adding the following lines into our new **service file**.
 
 ```
 [Unit]
-Description=Constellation Node service
+Description=Constellation Node service Layer0
 StartLimitBurst=50
 StartLimitIntervalSec=0
 [Service]
 Type=forking
 WorkingDirectory=/var/tessellation
-ExecStart=/usr/local/bin/cn-node
+ExecStart=/usr/local/bin/cn-nodel0
 [Install]
 WantedBy=multi-user.target
 ```
 
-Our service file is created, and we can exit Nano. (see quick ref above 👆)
+```
+sudo nano /etc/systemd/system/node_l1.service
+```
+
+You will be adding the following lines into our new **service file**.
+
+```
+[Unit]
+Description=Constellation Node service Layer1
+StartLimitBurst=50
+StartLimitIntervalSec=0
+[Service]
+Type=forking
+WorkingDirectory=/var/tessellation
+ExecStart=/usr/local/bin/cn-nodel1
+[Install]
+WantedBy=multi-user.target
+```
+
+Our service files are created, and we can exit Nano. (see quick ref above 👆)
 
 :::tip QUICK UNDERSTANDING
-Normally, we would want to `enable` the `node.service` to start automatically on boot.  This would be done with the following command:
+Normally, we would want to `enable` the `node_l0.service` and `node_l1.service` to start automatically on boot.  This would be done with the following command:
 ```
-sudo systemctl enable node
+sudo systemctl enable node_l0
+suod systemctl enable node_l1
 ```
 **HOWEVER** this introduces a security vulnerability concerning our `Validator Node`.
 
@@ -136,13 +169,15 @@ export CL_PASSWORD="place_your_passphrase_here"
 ```
 We can now **`start`** our **Node** service.
 ```
-sudo systemctl start node
+sudo systemctl start node_l0
+sudo systemctl start node_l1
 ```
 
 **Verification** step: Let's see if our service **started**.
 
 ```
-sudo systemctl is-active node
+sudo systemctl is-active node_l0
+sudo systemctl is-active node_l1
 ```
 
 **VERIFY** that the output of the command  above, is simply `active`.

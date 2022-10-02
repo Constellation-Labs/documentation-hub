@@ -23,7 +23,7 @@ Our example will join the **testnet 2.0** network.
 
 From your **local system**, log into your **cloud instance's** terminal as **nodeadmin** using your Apple terminal, Window's PuTTY, or your terminal application of choice.
 
-:::note
+:::note NOTE
 You can remind yourself how to access your VPS here for [Macintosh](/nodes/resources/accessMac) or [Windows](/nodes/resources/accessWin).
 :::
 
@@ -36,7 +36,7 @@ sudo apt -y update && sudo apt -y upgrade
 
 You will be prompted for your **`nodeadmin`** password.
 
-:::warning
+:::warning WARNING
 Your screen will not react and your password will not show as you type.  
 **Reminder**: `[...]` in the output command examples means that there is a bunch of output that has been redacted to eliminate confusion. 
 :::
@@ -76,9 +76,21 @@ export CL_PASSWORD="place_your_passphrase_here"
 
 ### Join the network
 
-Next our command to **join** is:
+:::note NOTE
+We are using 9000,9001, and 9002 for layer0 in this example; as well as, 9010,9011, and 9012. 
+:::
+
+:::danger IMPORTANT
+The IP ADDRESS and NODE ID used below are examples only.  You will need to use an actual Node IP and NodeId alive and in `Ready` state on the network.
+ Next our command to **join** is:
+
+Layer0
 ```
-curl -X POST http://127.0.0.1:9002/cluster/join -H 'Content-type: application/json' -d '{ "id": "e2f4496e5872682d7a55aa06e507a58e96b5d48a5286bfdff7ed780fa464d9e789b2760ecd840f4cb3ee6e1c1d81b2ee844c88dbebf149b1084b7313eb680714", "ip": "13.52.246.74", "p2pPort": 9001 }'
+curl -X POST http://127.0.0.1:9002/cluster/join -H 'Content-type: application/json' -d '{ "id": "abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123ab", "ip": "111.111.111.111", "p2pPort": 9001 }'
+```
+Layer1
+```
+curl -X POST http://127.0.0.1:9012/cluster/join -H 'Content-type: application/json' -d '{ "id": "abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123ab", "ip": "111.111.111.111", "p2pPort": 9011 }'
 ```
 
 We should now be joined to the network. Lets check to see if we are connected by Checking our Peers.
@@ -88,12 +100,19 @@ Open your browser on your local computer.
 ```
 http://<ip_address_of_your_instance>:9000/cluster/info
 ```
-:::info MAKE SURE
-We need to replace `<ip_address_of_your_instance>` with your Node's ip address.
 :::
 
+:::tip MAKE SURE
+We need to replace `<ip_address_of_your_instance>` with your Cluster's **Load Balancer**, **Edge Gateway** or **Existing Node** on the network.  *This may result in using port `80` or `443` as well.*
+:::
+
+Layer0
 ```
 http://111.111.111.111:9000/cluster/info
+```
+Layer1
+```
+http://111.111.111.111:9010/cluster/info
 ```
 
 You will see a list of lines with **`id`**, **`ip`**, **`publicPort`**, **`p2pPort`**, **`session`**, **`state`**.
