@@ -74,6 +74,7 @@ module.exports = {
       label: 'Running a Node (Part 3)',
       collapsed: false,
       items: [
+        'manual/getting-started-manual',
         'manual/nonRootUser',
         'manual/dependencies',
         'manual/binaries',
