@@ -85,7 +85,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://discord.gg/hPSExRH2wJ',
+              href: 'https://discord.gg/ESQmGwat',
               label: 'Devs on Discord',
               target: '_blank',
               rel: null,
@@ -128,7 +128,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://discord.gg/dWHxqhjMct',
+              href: 'https://discord.gg/ESQmGwat',
               label: 'Discord',
               target: '_blank',
               rel: null,
