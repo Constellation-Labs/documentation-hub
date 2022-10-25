@@ -30,7 +30,7 @@ import DocsCards from '@components/global/DocsCards';
     <p>Subscribe to our channel and never miss another Hypergraph Hour episode.</p>
   </DocsCard>
 
-  <DocsCard header="Devs on Discord" href="https://discord.gg/ESQmGwat" icon="/icons/icon_discord.png">
+  <DocsCard header="Devs on Discord" href="https://discord.gg/9PhXJKeAWC" icon="/icons/icon_discord.png">
     <p>Stuck on code or looking for feedback? Join the conversation in #devs-general.</p>
   </DocsCard>
 

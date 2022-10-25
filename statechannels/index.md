@@ -11,7 +11,7 @@ With the launch of Constellation MainNet 2.0 in Q3 of 2022, a new paradigm of di
 
 Presently, state channel development can be considered to be in an alpha state. Core functionality is available for developers who want to get started early while we roll out the remaining functionality and developer tools. New code examples covering different aspects of development will release regularly. 
 
-Developer support is available on [Discord](https://discord.gg/ESQmGwat).
+Developer support is available on [Discord](https://discord.gg/9PhXJKeAWC).
 
 ### What's available now
 - Core [Tessellation codebase](https://github.com/constellation-labs/tessellation) supporting L0 and DAG L1

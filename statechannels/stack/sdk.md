@@ -14,7 +14,7 @@ The state channel SDK is not yet a stable release; please keep this in mind if y
 :::
 
 <DocsCards>
-  <DocsCard header="State Channel SDK" href="https://chrome.google.com/webstore/detail/stargazer-wallet/pgiaagfkgcbnmiiolekcfmljdagdhlcm?hl=en-US" icon="/icons/icon-placeholder.png">
+  <DocsCard header="State Channel SDK" href="https://github.com/Constellation-Labs/tessellation/tree/696177b7a3770ed305ec2504ac02dbd187033aa9/modules/sdk/src/main/scala/org/tessellation/sdk" icon="/icons/icon-placeholder.png">
     <p>State Channel SDK</p>
   </DocsCard>
 </DocsCards>

@@ -1,5 +1,5 @@
 ---
-title: Query and Retrive
+title: Query and Retrieve
 slug: query-retrieve
 hide_table_of_contents: false
 ---
