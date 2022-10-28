@@ -17,7 +17,7 @@ State channel developers may use testnet as they're nearing production readiness
 ## Connecting to Testnet
 The following urls can used to access testnet: 
 - __Block Explorer API__: https://be-testnet.constellationnetwork.io
-- __L0 API__: http://lb-testnet.constellationnetwork.io:9000
-- __L1 API__: http://lb-testnet.constellationnetwork.io:9010
+- __L0 API__: https://l0-lb-testnet.constellationnetwork.io
+- __L1 API__: https://l1-lb-testnet.constellationnetwork.io
 
 See [Available APIs](/apps/network-apis) for detailed information on available endpoints. 
