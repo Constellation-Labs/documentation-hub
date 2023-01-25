@@ -31,8 +31,8 @@ The following endpoints are used by default by Dag4.
 
 #### 2.0 Testnet
 - Block Explorer API: https://be-testnet.constellationnetwork.io
-- L0 API: http://lb-testnet.constellationnetwork.io:9000
-- L1 API: http://lb-testnet.constellationnetwork.io:9010
+- L0 API: https://l0-lb-testnet.constellationnetwork.io
+- L1 API: https://l1-lb-testnet.constellationnetwork.io
 
 ```js
 dag4.account.connect({
@@ -43,8 +43,8 @@ dag4.account.connect({
 
 #### 2.0 Mainnet
 - Block Explorer API: https://be-mainnet.constellationnetwork.io
-- L0 API: http://lb-mainnet.constellationnetwork.io:9000
-- L1 API: http://lb-mainnet.constellationnetwork.io:9010
+- L0 API: https://l0-lb-mainnet.constellationnetwork.io
+- L1 API: https://l1-lb-mainnet.constellationnetwork.io
 
 ```js
 dag4.account.connect({
