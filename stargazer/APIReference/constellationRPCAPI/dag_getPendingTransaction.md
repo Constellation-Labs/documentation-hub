@@ -38,7 +38,7 @@ type PendingTransaction = {
     salt: BigNumber | String // Salt
   }
   hash: String<Hash> // Hash of the transaction
-  status: String // Status of the transaction
+  status: String // Status of the transaction. Currently there is only one status: "Waiting"
 }
 ```
 

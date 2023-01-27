@@ -5,13 +5,13 @@ hide_table_of_contents: true
 <head>
   <meta
     name="description"
-    content="Returns information about a transaction by hash."
+    content="Returns information about a transaction by hash.  If the transaction object is returned, the transaction was included in a block and lives in the network."
   />
 </head>
 
 <intro-end />
 
-Returns information about a transaction by hash.
+Returns information about a transaction by hash. If the transaction object is returned, the transaction was included in a block and lives in the network.
 
 ##### Parameters
 
