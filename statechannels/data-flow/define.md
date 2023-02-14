@@ -51,7 +51,23 @@ trait StateChannelDef[A \<: Ω, B <: Ω, S <: Ω] {
 
 ### address
 
-The `val address` is an immutable data type where you pass in the Constellation Network wallet address that you want to associate the state channel with. The address is a hash of a public key that takes the form of a base58 string. An example of a Constellation address is `DAG5ZTe31ysjikEgREqnf9CQR2KVYv3pfxV5NQZY`. The address is divided into three parts: the prefix being 0xDAG, the parity check bit, and the tail. In this example, 5 is the parity direct sum bit and `ZTe31ysjikEgREqnf9CQR2KVYv3pfxV5NQZY` is the tail. We can verify the integrity of the address by adding all digits in the tail as a direct sum and comparing with the parity check bit. In the example, 3+1+9+2+3+5 = 23 ; 2 + 3 = 5, which can also be represented as 23 divmod 9 = 5.
+The `val address` is an immutable data type whose value identifies the Constellation Network wallet address you want to
+associate with the state channel. The address value is the concatenation of 
+* The prefix string `"DAG"`
+* a check digit
+* the [base58 encoded](https://en.bitcoin.it/Base58Check_encoding) hash of a public key. 
+
+The check digit is computed by taking the only the characters of the base58 encoding of the public key that are digits, 
+interpreting them as decimal value, and taking the sum of the digits. If the sum is greater than 9, the sum is reduced 
+to a single digit by taking the remainder of the sum divided by 9.
+
+For example, if the base58 encoded hash is `ZTe31ysjikEgREqnf9CQR2KVYv3pfxV5NQZY`, so the check digit calculation is:
+
+> 3 + 1 + 9 + 2 + 3 + 5 = 23<br/>
+> 23 mod 9 = 5
+
+Concatenating the prefix "DAG", the check digit "5" and the base58 encoding of the hash gives the address 
+`DAG5ZTe31ysjikEgREqnf9CQR2KVYv3pfxV5NQZY`.
 
 ```scala
 val address: Address
