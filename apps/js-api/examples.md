@@ -33,6 +33,6 @@ Want to see your open source project featured here? [Submit your project for con
     <p>Stargazer Wallet is a cross-chain wallet supporting Constellation Network and Ethereum ecosystems. It is available as a Chrome extension and as a mobile app for iOS and Android.</p>
   </DocsCard>
   <DocsCard header="Telegram Tip Bot" href="https://github.com/StardustCollective/telegram-bot-tipjar" img="/icons/img02.png">
-    <p>The Telegram Tip Bot is a small cloud application integrated with Telegram that allows users to send DAG to each other with TG commands. Because transactions on the HyperGraph are free, all tip transactions are able to be processed on-chain.</p>
+    <p>The Telegram Tip Bot is a small cloud application integrated with Telegram that allows users to send DAG to each other with TG commands. Because DAG transactions on the Hypergraph are free, all tip transactions are able to be processed on-chain.</p>
   </DocsCard>
 </DocsCards>

@@ -35,28 +35,41 @@ import ThemedImage from '@theme/ThemedImage';
   />
 </div>
 
+## Core Concepts
 <DocsCards>
-  <DocsCard header="Core Concepts" href="/core-concepts" img="/img/home/core-concepts.jpg">
-    <p>Learn how the HyperGraph functions and gain understanding of the fundamental building blocks of the network.</p>
+  <DocsCard header="Constellation Primer" href="/learn" img="/img/home/core-concepts.jpg">
+    <p>Your Constellation crib sheet for high-level understanding of the Hypergraph network and its core components.</p>
   </DocsCard>
 
-  <DocsCard header="Build a State Channel" href="/statechannels" img="/img/home/state-channel.jpg">
-    <p>Leverage the power of the HyperGraph to build custom applications with your business logic.</p>
+  <DocsCard header="Why Constellation?" href="/learn/basic-concepts/why-constellation" img="/img/home/community.jpg">
+    <p>Learn about the benefits of building on Constellation Network.</p>
   </DocsCard>
 
-  <DocsCard header="Run a Validator Node" href="/nodes" img="/img/home/nodes.jpg">
-    <p>Build, Configure, and Deploy a Validator Node on the HyperGraph.</p>
+  <DocsCard header="Explore Our Ecosystem" href="/learn/tools-resources/constellation-ecosystem" img="/img/home/community.jpg">
+    <p>Discover products and services in Constellation's growing ecosystem.</p>
+  </DocsCard>
+</DocsCards>
+
+## Developer Guides
+<DocsCards>
+  <DocsCard header="Build a Metagraph" href="/metagraphs" img="/img/home/state-channel.jpg">
+    <p>Explore metagraph development concepts and learn how to build custom applications on the Hypergraph.</p>
   </DocsCard>
 
+  <DocsCard header="Euclid SDK" href="/sdk" img="/img/home/community.jpg">
+    <p>Build with Euclid, a powerful toolkit for metagraph development.</p>
+  </DocsCard>
+  <DocsCard header="Network APIs" href="/hypergraph/architecture" img="/img/home/state-channel.jpg">
+    <p>Integrate your app or exchange with the Hypergraph Network.</p>
+  </DocsCard>
+</DocsCards>
+
+## Developer Tools
+<DocsCards>
   <DocsCard header="Integrate Stargazer Wallet" href="/stargazer" img="/img/home/stargazer.jpg">
     <p>Connect Stargazer Wallet to your Web3 app to access Constellation and Ethereum chains.</p>
   </DocsCard>
-
-  <DocsCard header="Apps and Integrations" href="/apps" img="/img/home/apps.jpg">
-    <p>Integrate your app, wallet, or exchange with the HyperGraph.</p>
-  </DocsCard>
-
-  <DocsCard header="Community" href="/community" img="/img/home/community.jpg">
-    <p>Join the best community in crypto across the globe and connect with fellow Web3 devs.</p>
+  <DocsCard header="Run a Validator Node" href="/validate" img="/img/home/community.jpg">
+    <p>Build, configure, and deploy a validator node on the Hypergraph.</p>
   </DocsCard>
 </DocsCards>
