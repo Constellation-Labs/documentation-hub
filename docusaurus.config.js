@@ -48,7 +48,7 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'core-concepts',
+          docId: 'learn',
           label: 'Learn',
           position: 'left',
         },
@@ -60,9 +60,15 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'nodes',
+          docId: 'validate',
           label: 'Validate',
           position: 'left',
+        },
+        {
+          type: 'cta',
+          position: 'left',
+          text: 'Euclid SDK',
+          href: `/sdk`,
         },
         {
           type: 'search',
@@ -201,10 +207,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'core-concepts',
-        path: 'core-concepts',
-        routeBasePath: 'core-concepts',
-        sidebarPath: require.resolve('./sidebarsCoreConcepts.js'),
+        id: 'learn',
+        path: 'learn',
+        routeBasePath: 'learn',
+        sidebarPath: require.resolve('./sidebarsLearn.js'),
         remarkPlugins: [math],
         rehypePlugins: [katex],
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
@@ -218,10 +224,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'statechannels',
-        path: 'statechannels',
-        routeBasePath: 'statechannels',
-        sidebarPath: require.resolve('./sidebarsStatechannels.js'),
+        id: 'metagraphs',
+        path: 'metagraphs',
+        routeBasePath: 'metagraphs',
+        sidebarPath: require.resolve('./sidebarsMetagraphs.js'),
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
           if (locale != 'en') {
             return '/';
@@ -233,10 +239,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'nodes',
-        path: 'nodes',
-        routeBasePath: 'nodes',
-        sidebarPath: require.resolve('./sidebarsNodes.js'),
+        id: 'validate',
+        path: 'validate',
+        routeBasePath: 'validate',
+        sidebarPath: require.resolve('./sidebarsValidate.js'),
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
           if (locale != 'en') {
             return '/';
@@ -270,10 +276,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'apps',
-        path: 'apps',
-        routeBasePath: 'apps',
-        sidebarPath: require.resolve('./sidebarsApps.js'),
+        id: 'sdk',
+        path: 'sdk',
+        routeBasePath: 'sdk',
+        sidebarPath: require.resolve('./sidebarsSDK.js'),
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
           if (locale != 'en') {
             return '/';
@@ -285,10 +291,25 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'api',
-        path: 'api',
-        routeBasePath: 'api',
-        sidebarPath: require.resolve('./sidebarsAPI.js'),
+        id: 'hypergraph',
+        path: 'hypergraph',
+        routeBasePath: 'hypergraph',
+        sidebarPath: require.resolve('./sidebarsHypergraph.js'),
+        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+          if (locale != 'en') {
+            return '/';
+          }
+          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'apps',
+        path: 'apps',
+        routeBasePath: 'apps',
+        sidebarPath: require.resolve('./sidebarsApps.js'),
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
           if (locale != 'en') {
             return '/';
