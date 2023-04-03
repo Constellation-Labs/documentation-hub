@@ -20,11 +20,13 @@ import DocsCards from '@components/global/DocsCards';
   </style>
 </head>
 
-In order to run a Constellation validator node, you'll need to find a suitable place for it to live and work. The three most common ways to accomplish this are through a cloud provider, hosting provider, or dedicated bare metal server.
+### Introduction 
+
+In order to run a Constellation Network validator node, you'll need to find a suitable place for it to live and work. The three most common ways to accomplish this are through a cloud provider, hosting provider, or dedicated bare metal server.
 
 ## Virtual vs Dedicated
 
-A VPS (Virtual Private Server) is a piece of software that runs a virtualized server on a physical machine and shares resources with other instances, making it a more economical choice when starting out. A collection of these VPS instances make up what is referred to as the "cloud." A dedicated bare metal server, on the other hand, is an physical computer that is used by only one consumer or tenant.
+A VPS (Virtual Private Server) is software that runs a virtualized server located on a physical machine and shares resources (tenancies) with other instances, making it a more economical choice when starting out. A collection of these VPS instances make up what is referred to as the "cloud." A dedicated bare metal server, on the other hand, is an physical computer that is used by only one consumer or tenant.  Cloud providers also offer more robust services such as dedicated servers.
 
 ## Cloud Providers {#cloud-providers}
 
@@ -46,6 +48,8 @@ Our setup guides will walk you through deploying a VPS through the three most co
 
 ## Hosting Providers {#hosting-providers}
 A hosting provider is similar to a cloud provider because they are both web-based services, however, a cloud provider offers you more control over building, deploying and self-managing your node instance, while a hosting provider offers limited space and power.
+
+Conversely, a hosting provider can offer you a full dedicated physical machine to administer.
 
 ## Bare Metal {#bare-metal}
 A bare metal server is a physical computer designed to run dedicated services by a single tenant. You can run this dedicated server in its own data center, colocation center, an office, or even out of your own home. Because you have full control over everything from hardware to software, this option should be reserved for advanced operators requiring even more customization and resources.
