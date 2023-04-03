@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Install nodectl
 hide_table_of_contents: true
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Getting Started
-hide_table_of_contents: true
+title: nodectl migrate from version 1
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';

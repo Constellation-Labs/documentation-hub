@@ -10,10 +10,10 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Running a Node (Part 1)',
+      label: 'Node Concepts',
       collapsed: false,
       items: [
-        'validator/install',
+        'validator/get_started',
         'validator/specs',
         'validator/providers',
         'validator/explain',
@@ -63,10 +63,14 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Running a Node (Part 2)',
+      label: 'nodectl utility (Part 2)',
       collapsed: false,
       items: [
         'automated/nodectl',
+        'automated/nodectl_install',
+        'automated/nodectl_migrate_v1',
+        'automated/nodectl_upgrade',
+        'automated/nodectl_commands',
       ],
     },   
     {

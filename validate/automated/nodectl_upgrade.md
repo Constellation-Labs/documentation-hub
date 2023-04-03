@@ -1,6 +1,6 @@
 ---
-title: Getting Started
-hide_table_of_contents: true
+title: Upgrade Tessellation with nodectl
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
