@@ -10,10 +10,9 @@ The basics covered here attempt to paint a landscape of the overall system and i
 ## What is Constellation Network?
 Constellation is a feeless decentralized network that enables anyone to build the future of Web3 on a secure, infinitely scalable and cross-chain interoperable protocol underwritten by [DAG](/learn/advanced-concepts/DAG-Token), its native utility token.
 
-
-### In One Image
-![Hypergraph](/img/coreconcepts/hypergraph.jpeg)
-Image placeholder
+![Constellation Network architecture overview](/img/metagraphs/architecture.png)
+<figcaption><strong>Figure 1.</strong> Network architecture overview.</figcaption>
+<br /><br />
 
 :::info Constellation vs Hypergraph
 Constellation Network is, in its broadest sense, a technology company, but it can also refer to our decentralized network. Throughout the docs, we'll be referring to the network as either **Hypergraph** or **Global L0** which are defined in the following sections.
