@@ -1,6 +1,6 @@
 ---
 title: Add SSH Key
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -22,14 +22,14 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Digital Ocean - Creation Continued
 
-A virtual private machine (VPS) inside Digital Ocean's cloud service is called a **droplet**.
+### Creating SSH Keys
 
-You may access our YouTube video titled **Create Digital Ocean Droplet**, for a detailed visual learning experience. 
+If you prefer a visual accompaniment to help you to configure your Droplet to accept your SSH Keys, or you have not created your SSH keys; you may access our YouTube video titled **Create Digital Ocean Droplet**, for a detailed visual learning experience.  This video also shows you have to upload your SSH keys 
 
 You may also follow *step by step* instructions using the tutorial below for Apple/Linux or Windows. 
 
 :::note
-If you choose the YouTube Series, it is highly recommended to watch the entire series, from the beginning.
+If you choose the YouTube Series, it is highly recommended to watch the entire series, from the beginning and follow along with the step-by-step below.
 :::
 SSH Key Generation Series - **Video 4a** by NetMet.
 
@@ -39,27 +39,26 @@ Please like and subscribe to support NetMet's work and to be alerted to new cont
 
 ---
 
+## Upload SSH Keys to our Droplet
+
+### Authentication Method
+
 We need a way to access our **Droplet** (VPS). 
 
-:::danger CAUTION
-Popular opinion (`and Constellation Network`) **strongly** suggests that it is a **bad** idea to use the `password authentication` method. 
-
-We will setup access to our Droplet, via an **SSH Key pair**, created here [mac](../sshkeys/creationMac) or here [windows](../sshkeys/creationWin).
-:::
-
-Continuing where we left off from the [Create a Droplet](createDroplet.md) section:
+We will setup access to our Droplet, via an **SSH Key pair**, created here [mac](../sshkeys/creationMac) or here [windows](../sshkeys/creationWin). (Also visualized in the YouTube Series above.)
 
   1. Choose **SSH Keys**
   2. Choose **New SSH Key**
 
 ![](/img/validator_nodes/node-do-sshkey1.png)
+![](/img/validator_nodes/node-do-sshkey2.png)
 
   1. Paste the public **SSH Key** contents saved in previous steps into this box
   2. Provide a **name** for your public key on Digital Ocean.  This will be a name that Digital Ocean will recognize to offer you access to your key in the future. (`tag`)
   3. Click the **Add SSH Key** button
 
-![](/img/validator_nodes/node-do-sshkey2.png)
+![](/img/validator_nodes/node-do-sshkey3.png)
 
-#### Next steps
+## Next steps
 
-Staying on the Digital Ocean web console page, inside the Create Droplet process, continue to the final steps to launch your Droplet in the Digital Ocean cloud.
+Staying on the Digital Ocean web console page, inside the Create Droplet process, continue to the next steps.

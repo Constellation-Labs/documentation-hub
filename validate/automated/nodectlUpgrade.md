@@ -1,5 +1,5 @@
 ---
-title: nodectl Command Reference
+title: Upgrade Tessellation with nodectl
 hide_table_of_contents: false
 ---
 
@@ -46,7 +46,7 @@ The purpose of this utility is to **make things easier** on you.  It obviates so
 Using `nodectl`
 
 #### Step 1
-Make sure you go through [Running a Node (Part 1)](../validator/install.md) and then go through the process of setting up your **VPS**.
+Make sure you go through [Running a Node (Part 1)](./../validator/install.md) and then go through the process of setting up your **VPS**.
 
 :::danger
 You will need to review the **required** specifications for MainNet 2.0 launch!  You can review them [here](../validator/specs.md)

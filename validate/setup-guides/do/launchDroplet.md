@@ -1,6 +1,6 @@
 ---
 title: Deploy Droplet
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -20,19 +20,19 @@ import DocsCards from '@components/global/DocsCards';
   </style>
 </head>
 
-##### INSTANCES
+## Finalize Details
 
+### Instances
 We only need only **one** droplet for this process, so we can leave this set to `1 Droplet`.
 
 
 You may want to change the hostname of your node to something that makes a little more sense to you. However, if you want to keep some anonymity as to the purpose of your Node, that is up to you.
 
 :::note
-This should be behind the scenes and only you will have access to this information, so a more familiar name, may be in order?
+If you choose to install your Node using **nodectl**, your hostname will be changed for you.  If you are manually building your Node, this hostname will be behind the scenes and only you will have access to this information, so a more familiar name, may be in order?
 :::
 
 ![](/img/validator_nodes/node-do-launch1.png)
-
 
 You can add **tags** to you Node, it helps in situations where you have many other resources that you might be using in conjunction with your Node, for your business needs.
 
@@ -42,19 +42,14 @@ Bottom Line: You **do not** need `tags` for our objectives, but if you find that
 
 ![](/img/validator_nodes/node-do-launch2.png)
 
-Adding **backups**, this will cost you a little extra money. 
+### Project
 
-Digital Ocean can make snapshots of your instance in the event of a failure, etc. If technical difficulties or corruption occurs, you will be able to get back up and running quickly.
+If you created a Project name for your Node(s), you can select it here; otherwise, you can keep the default project name.
 
-This is **not** a necessary action because Constellation doesn't hold anything important on your Node. If you are required to rebuild your Node, you can have it back up and running on a new instance pretty quickly, as well.  Also, backups may hold **sensitive** information. 
+![](/img/validator_nodes/node-do-project.png)
 
-:::danger HIGHLY IMPORTANT
-**ONE** important piece of information is your **`private key file (p12)`**, this is **not** something that should be backed up in a snapshot, you should backup and protect your private key file externally outside of Digital Ocean, in cold storage. So again, this is an optional element up to your discretion.
-:::
 
-![](/img/validator_nodes/node-do-launch4.png)
-
-##### LAUNCH
+### Create Droplet
 
 You are **READY**! On the Digital Ocean Site, click the `CREATE DROPLET` button to launch your **Droplet** in the cloud!
 
