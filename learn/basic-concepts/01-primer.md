@@ -26,8 +26,6 @@ Constellation Network is, in its broadest sense, a technology company, but it ca
 ### Hypergraph
 The design of the Hypergraph network is based on a graph structure that looks like a set of dots (vertices) joined by lines (edges). More specifically, this structure is known as a [directed acyclic graph](/learn/advanced-concepts/DAG-structure) (DAG) which allows for endless horizontal scalability, so as the network grows, it becomes even faster. This design results in a network that is not only secure, but fully decentralized and infinitely scalable, solving the Blockchain Trilemma whereby only two of the three options were possible to achieve.
 
-[ insert DAG vs Blockchain diagram here ]
-
 ### DAG Token
 [DAG](/learn/advanced-concepts/DAG-Token) is the native utility token of Constellation Network, eponymously named after the network's [structure](/learn/advanced-concepts/DAG-structure) as previously described. DAG underwrites all projects connected to the Hypergraph and secures network utility by providing liquidity and sufficient bandwidth to the entire ecosystem.
 
