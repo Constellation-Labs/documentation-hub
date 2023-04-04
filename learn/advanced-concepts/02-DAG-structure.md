@@ -1,7 +1,7 @@
 ---
 title: DAG Structure
 sidebar_label: DAG Structure
-hide_table_of_contents: false
+hide_table_of_contents: true
 ---
 <intro-end />
 
@@ -16,4 +16,4 @@ Each node can have more than one parent root which enables significantly more tr
 ![Network Structure](/img/learn/graph-vs-hypergraph.png)
 <br />
 
-Think of a Hypergraph as a graph that allows you to model group relations instead of only binary relations, enabling a graph to be constructed of other graphs. It’s a set of a sets that enables different graphs to be connected together by their relationships to form a greater graph structure. In this Hypergraph structure there is the notion of “Hyper-edges” and “Hyper-vertices” that connect the graphs together, with each hyperedge connecting an arbitrary number of hypervertices (instead of only two in a regular graph). This allows the Constellation Network to weave immutable state data originating from entirely different networks and systems together into one ever-evolving data structure. The Hypergraph can be used to compose complex decentralized application logic, such as multi-network API calls and cross-network exchange of tokenized assets.
+Think of a Hypergraph as a graph that allows you to model group relations instead of only binary relations, enabling a graph to be constructed of other graphs. It’s a set of a sets that enables different graphs to be connected together by their relationships to form a greater graph structure. In this Hypergraph structure there is the notion of “Hyperedges” and “Hypervertices” that connect the graphs together, with each hyperedge connecting an arbitrary number of hypervertices (instead of only two in a regular graph). This allows the Constellation Network to weave immutable state data originating from entirely different networks and systems together into one ever-evolving data structure. The Hypergraph can be used to compose complex decentralized application logic, such as multi-network API calls and cross-network exchange of tokenized assets.
