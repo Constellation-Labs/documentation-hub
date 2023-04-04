@@ -64,5 +64,3 @@ Staking $DAG on [Lattice](https://constellationnetwork.io/lattice) (powered by C
 ### Provide Liquidity
 
 Provide liquidity and sufficient bandwidth for other L0 projects running dApps on the network, such as Alkimi Exchange, the first decentralized ad exchange.
-
-*Embed [video](https://www.youtube.com/watch?v=wGfMsrskf3A) here*
