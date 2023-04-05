@@ -1,6 +1,6 @@
 ---
 title: Create Security Rules
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -20,7 +20,7 @@ import DocsCards from '@components/global/DocsCards';
   </style>
 </head>
 
-### Securing our EC2 Instance
+## Securing our EC2 Instance
 
 We need to `restrict` the access to our **EC2 Instance** down to just the essentials necessary for our future **Node** to operate properly. We do not want our EC2 instance `wide open` and `vulnerable` to malicious actors out on the Internet.
 
@@ -42,22 +42,34 @@ These documents reference creating a single layer 0 or metagraph.  For the launc
 
 <iframe width="75%" height="380" src="https://www.youtube.com/embed/0plYuXJwfOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+### Open Compute EC2 Console 
+Click on the`Services` button to start our process.
 
-#### EC2 DASHBOARD
+![](/img/validator_nodes/node-aws-ec2-services1.png)
 
-From the new `drop down` box, choose the option **EC2** from the `compute service section`.
+From the new drop down box, choose the option **`Compute`**.
 
-![](/img/validator_nodes/node-aws-sg1.png)
+![](/img/validator_nodes/node-aws-ec2-services2.png)
 
-Amazon Web Services select **`EC2`**
+Choose the option **`EC2`** from the **Compute** section.
 
-![](/img/validator_nodes/node-aws-sg2.png)
+![](/img/validator_nodes/node-aws-ec2-services3.png)
+
+### Region
+
+We need to pick a `region` to host our EC2 instance.
+
+![](/img/validator_nodes/node-aws-ec2-3.png)
+
+### Access our EC2 details
 
 From the `instance dashboard`, click the link corresponding to your **`instance id`**.
 
-![](/img/validator_nodes/node-aws-sg3.png)
+![](/img/validator_nodes/node-aws-ec2-launch3.png)
 
 This will show all the `details` of our instance.
+
+### Access the Security Group Console
 
   - Select the **`Security tab`**.
   - Select the link corresponding to the **`security group`** that should have been automatically assigned to your **`instance`**.
@@ -66,12 +78,14 @@ This will show all the `details` of our instance.
 
 This will take us to our **security group**.
 
-#### Amazon Web Services OUTBOUND requests
+### Amazon Web Services OUTBOUND requests
 
 We are going to `allow` our instance to access `all` outbound requests. This set up will allow connections that initiate from your EC2 instance outbound. We will not change them. 
 
-:::info
-If you are a more advanced user, you can alter these rules to your liking.
+:::info Advance Concept
+If you are a more advanced user, you can alter these rules to your liking.  AWS will monitor all inbound requests that are not allowed by associating them with an outbound request.  If an incoming TCP or UDP packet attempts to reach your instance without an associated outbound request, it will be automatically denied.
+
+This is what is called `stateful`.
 :::
 
 #### Amazon Web Services INBOUND requests
@@ -105,11 +119,19 @@ We will leave the **`SSH`** as our `Type`, and then begin to enter in our **`IP 
 
 As you fill it in, the search box should populate and add the **`/32`** for us. Select (click) the option so it populates just below the search box.
 
+:::info Previous Launch Wizard
+In the [EC2 (Part 1)](createEC2.md) we had an optional section to associate your local system's IP address. 
+
+If this was followed, your SSH connection may already be set correctly
+:::
+
 ![](/img/validator_nodes/node-aws-sg6.png)
 
 We want to add our second `inbound` rule.
 
 ![](/img/validator_nodes/node-aws-sg7.png)
+
+### Constellation SG Rules
 
 For this rule, we will add a port range with a `-` (dash) in-between the numbers to get **`9000-9001`**.
 
@@ -123,11 +145,16 @@ Our **inbound rules** will look something like this 👇
 
 Click on **`Save rules`**.
 
+**[REPEAT](#constellation-sg-rules)** This process for ports `9010-9011`.
+
 :::info
-Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) **API** access.   Ports 9000 and 9001 are configurable and can be independent (to your needs) on the Hypergraph Global Layer0 or State Channel network you connect to.  Node Operators will need to learn what ports are opened for access to the State Channels, and update their firewall (change) accordingly
+Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) **API** access.   Ports 9000 and 9001 are configurable and can be independent (to your needs) on the Hypergraph Global Layer0 or State Channel network you connect to.  Node Operators will need to learn what ports are opened for access to the State Channels, and update their firewall (change) accordingly.
+
+The port numbers selected should not matter; however, for non-advanced users, using the ports mentioned in the above section is recommended.
 :::
 
-### MAINNET 2.0 LAUNCH REQUIREMENT
+## MainNet 2.0 Launch Requirements
+
 It is **highly** recommended that you use `nodectl` to install and control/admin your Node.
 
 Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet 2.0 Validator Node's `Layer1` connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.

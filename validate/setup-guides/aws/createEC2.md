@@ -1,6 +1,6 @@
 ---
-title: Deploy EC2
-hide_table_of_contents: true
+title: Deploy EC2 (Part 1)
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -33,26 +33,38 @@ Please like and subscribe to support NetMet's work and to be alerted to new cont
 
 ---
 
-This is a longer drawn out process, but we can make it through it. Let's begin creating our instance!
+## EC2 CREATION
 
-#### SERVICES 
+### Wizards
+The video utilized the classic EC2 wizard setup process.  The `step-by-step` in the below documentation will show both the classic wizard and the new setup wizard.  Please use the right side navigation links to skip to the desired guide.
+
+This is a longer process, but we can make it through it. Let's begin creating our instance!
+
+### Open Compute EC2 Console 
 Click on the`Services` button to start our process.
 
-![](/img/validator_nodes/node-aws-ec2-1.png)
+![](/img/validator_nodes/node-aws-ec2-services1.png)
 
-From the new drop down box, choose the option **`EC2`** from the **compute service** section.
+From the new drop down box, choose the option **`Compute`**.
 
-![](/img/validator_nodes/node-aws-ec2-2.png)
+![](/img/validator_nodes/node-aws-ec2-services2.png)
 
+Choose the option **`EC2`** from the **Compute** section.
+
+![](/img/validator_nodes/node-aws-ec2-services3.png)
+
+### Region
 
 We need to pick a `region` to host our EC2 instance.
 
 ![](/img/validator_nodes/node-aws-ec2-3.png)
 
-:::info IMPORTANT INFORMATION
-We will need an **`a1.xlarge`** (or better) as our `instance type`. This instance type is **not** available in all regions.
+## Begin building EC2
 
-( `US-West-2 Oregon` has this instance type available. )
+:::info IMPORTANT INFORMATION
+We will need an **`t2.2xlarge`** or **`a1.2xlarge`** (or better) as our `instance type`. This instance type is **not** available in all regions.  You can move between regions to find which regions offer with instance types.
+
+The US regions may not offer `a` type instances.  **We will use the `t2.2xlarge` for our tutorial**.  This offers `32Gib` of RAM verses the required `16Gib`; however, this can only create better performance on our future Node.
 :::
 
 If we don't see our Instances dashboard. Choose the `Instances` from the left side menu.
@@ -63,110 +75,52 @@ The term *new* is used simply because (at the time of this documentation creatio
 
 ![](/img/validator_nodes/node-aws-ec2-4.png)
 
-#### LAUNCH INSTANCE CREATION WIZARD
+### Launch Creation Wizard
 
 Choose **Launch instances** from the `top right` of the dashboard. This will tell AWS to guide us through the launch of an instance via their `launch wizard`.
 
 ![](/img/validator_nodes/node-aws-ec2-5.png)
 
-    - We will choose `Ubuntu 20.04 LTS` from the list.
-    - We will choose `ARM` from the 64-bit option type.
-    - We will click `Select`.
+### Name your instance
 
-:::note
-You can use any Debian distribution you would like, it does not need to be Ubuntu. We will be using Ubuntu throughout our tutorial(s), so if you choose a different distribution, you may need to change some commands to match your chosen distribution.
-:::
-
+![](/img/validator_nodes/node-aws-ec2-name-tag.png)
 :::tip
 It is **highly** recommended (but not required) to use a `Debian` distribution.
 :::
 
-![](/img/validator_nodes/node-aws-ec2-6.png)
+### Pick EC2 Image 
 
-#### INSTANCE TYPE
-
-Click on **All instance families** to drop down the list
-
-![](/img/validator_nodes/node-aws-ec2-7.png)
-
-We will choose `a1`. Constellation Network wants us to use `a1.xlarge`
-
-Click on **`a1.xlarge`**.
-
-![](/img/validator_nodes/node-aws-ec2-8.png)
-
-Click on Next: `Configure instance Details`.
-
-
-![](/img/validator_nodes/node-aws-ec2-9.png)
-
-#### EC2 Details
-
-Need to supply AWS some details
-
-Switch our Auto-assign Public IP to Disabled. We are going to create an EIP later in this process.
-
-![](/img/validator_nodes/node-aws-ec2-10.png)
-
-#### STORAGE
-
-Click on Next: `Add Storage`.
-
-![](/img/validator_nodes/node-aws-ec2-11.png)
-
-Change the storage size to **`160`**.
-
-![](/img/validator_nodes/node-aws-ec2-12.png)
-
-
-The next 2 steps are **Add Tags** and **Configure Security Groups**; however, *we will skip these for now*, and come back to configure them later on in our tutorial steps.
-
-Let's get our instance up and running. Select **Review and Launch**!
-
-![](/img/validator_nodes/node-aws-ec2-13.png)
-
-We will continue configuration while it is launching
-
-:::danger Possible Warning
-
-We may see these warnings, that our Node is vulnerable. We can safely ignore these because our Node will not have an IP address and can not access the Internet, with its current configuration.
-
-We will only be able to work with this EC2 instance from our dashboard only. Do not worry though, when we are done, our communications will be fixed; as well as, our security setup.
-
-![](/img/validator_nodes/node-aws-ec2-14.png)
-
-This is OK, we will fix later! 
+:::note
+You can use any Debian distribution you would like, it does not need to be Ubuntu. We will be using **`Ubuntu`** throughout our tutorial(s), so if you choose a different distribution, you may need to change some commands to match your chosen distribution.
 :::
 
-You can **launch**!
+![](/img/validator_nodes/node-aws-ec2-distro.png)
 
-![](/img/validator_nodes/node-aws-ec2-15.png)
+We choose:
+  - Ubuntu
+  - 64-bit (x86)
+  - 22.04 LTS
 
-Once we hit the `Launch` we will be prompted to add our `SSH Key Pair`. You should have created one from the last section. 
+You may choose whatever distribution (distro) and version of your chosen distro that you are most comfortable with.  **HOWEVER**, you must use a **Debian** Linux distro to participate in Constellation Network's MainNet 2.0.
 
-You will choose those keys on the next screen.
+Most recommended are:
+  - Debian  
+  - Ubuntu
 
-##### ASSIGN KEY PAIR
+### Instance Type
 
-If you did not create an SSH key in the last section, you will have the option to create a new key here. This is **NOT** recommended.
+Click on the `t1.micro` Free tier eligible box to expose the search bar.
 
-Select an existing key pair
+Type in `t2.2xlarge`.
 
-  - Select the key we created in the last section either [macintosh](../sshkeys/creationMac) or [windows](../sshkeys/creationWin)
-  - Acknowledge your access to your private key.
+Select `t2.2xlarge`.
 
-![](/img/validator_nodes/node-aws-ec2-16.png)
+![](/img/validator_nodes/node-aws-ec2-instance.png)
 
-:::danger DANGEROUS
-If you lose your keys, you will lose access to your instance.
+:::important
+We now know the **REGION** that our Instance type is available and will **stop** here!  We will need to return to this section and repeat the above steps again...
+
+Before we do this, we must upload our **SSH keys** to this AWS **region**.  
+
+In the next section, we continue by preparing our SSH keys, and then return to continue building your EC2 instance (and future Constellation Network Node).
 :::
-
-**Return** to the `dashboard` and `confirm` that your node is there. 
-
-It may take a moment or two for it to spin up and pass it's checks.
-
-##### VERIFY
-
-Is our Node up?
-
-![](/img/validator_nodes/node-aws-ec2-17.png)

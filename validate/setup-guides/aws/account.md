@@ -1,6 +1,6 @@
 ---
-title: Create AWS EC2
-hide_table_of_contents: true
+title: Create New Account
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';

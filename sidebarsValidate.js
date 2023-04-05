@@ -44,8 +44,9 @@ module.exports = {
           label: 'Amazon Web Services',
           items: [
             'setup-guides/aws/account',
-            'setup-guides/aws/applySSHec2',
             'setup-guides/aws/createEC2',
+            'setup-guides/aws/applySSHec2',
+            'setup-guides/aws/createEC2-2',
             'setup-guides/aws/eip',
             'setup-guides/aws/sg',
           ],
