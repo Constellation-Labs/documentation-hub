@@ -23,3 +23,9 @@
   to = "/metagraphs"
   status = 301
   force = false
+
+[[redirects]]
+  from = "/validators"
+  to = "/validate"
+  status = 301
+  force = false
