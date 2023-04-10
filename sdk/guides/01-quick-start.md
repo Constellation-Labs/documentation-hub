@@ -107,9 +107,11 @@ After your containers are built, go ahead and start them with the `start_genesis
 scripts/hydra start_genesis
 ```
 
-Once the process is complete your should see output like this: 
+Once the process is complete you should see output like this: 
 ```
-Containers successfully built. URLs:
+Containers successfully built. 
+
+URLs:
 Global L0: http://localhost:9000/cluster/info
 Currency L0: http://localhost:9100/cluster/info
 Currency L1 - 1: http://localhost:9200/cluster/info
@@ -124,7 +126,7 @@ scripts/hydra status
 ```
 
 ## Next Steps
-You should now have a minimal development environment installed and running 🎉
+You now have a minimal development environment installed and running 🎉
 
 <DocsCards>
   <DocsCard header="Send your first transaction" href="/sdk/guides/send-transaction" icon="/icons/icon-placeholder.png">

@@ -25,9 +25,11 @@ cd sdk-developer-dashboard
 
 #### Install dependencies
 *Node 16 recommended
-```
+```yarn
 yarn install
-(or npm install)
+```
+```npm
+npm install
 ```
 
 #### Start the app
