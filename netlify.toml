@@ -20,7 +20,13 @@
 
 [[redirects]]
   from = "/state-channels/*"
-  to = "/metagraphs/index.html"
+  to = "/metagraphs"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/statechannels/*"
+  to = "/metagraphs"
   status = 301
   force = false
 
