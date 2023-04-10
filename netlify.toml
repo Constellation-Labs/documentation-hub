@@ -7,19 +7,19 @@
   ## more info on configuring this file: https://www.netlify.com/docs/netlify-toml-reference/
 
 [[redirects]]
-  from = "/core-concepts"
+  from = "/core-concepts/*"
   to = "/learn"
   status = 301
   force = false
 
 [[redirects]]
-  from = "/nodes"
-  to = "/validate"
+  from = "/nodes/*"
+  to = "/validate/:splat"
   status = 301
   force = false
 
 [[redirects]]
-  from = "/state-channels"
+  from = "/state-channels/*"
   to = "/metagraphs"
   status = 301
   force = false
