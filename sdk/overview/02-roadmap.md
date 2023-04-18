@@ -21,7 +21,7 @@ Please note that the information provided on this page is subject to change, as 
 - Developer Dashboard
 
 ### Future releases
-**v1.1 April/May 2023**
+**v1.1 May 2023**
 - Metagraph Token support in Block Explorer API (DAG Explorer, Stargazer support)
 - Currency Framework support for multiple peer signatures on snapshots
 - Currency Framework support for custom rewards mechanisms and rewards overrides
@@ -30,5 +30,5 @@ Please note that the information provided on this page is subject to change, as 
 ### Metagraph Token Rollout (2023)
 - **March 30th:** beta signups available for Testnet launch of metagraph tokens
 - **Mid April:** review applications and token projects launch on testnet
-- **April/May:** security review of metagraph tokens
-- **May:** launch of tokens on mainnet and exchange integrations
+- **May/June:** security review of metagraph tokens
+- **June:** launch of tokens on mainnet and exchange integrations
