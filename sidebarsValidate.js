@@ -66,13 +66,26 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'nodectl utility (Part 2)',
+      label: 'nodectl utility',
       collapsed: false,
       items: [
-        'automated/nodectl',
-        'automated/nodectlInstall',
-        'automated/nodectlMigrateV1',
-        'automated/nodectlUpgrade',
+        'automated/nodectl',  
+        {
+          type: 'category',
+          label: 'Installation',
+          items: [
+            'automated/nodectlInstall',
+            'automated/nodectlMigrateV1',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Upgrade',
+          items: [
+            'automated/nodectlInstall',
+            'automated/nodectlMigrateV1',
+          ],
+        },
         'automated/nodectlCommands',
       ],
     },   

@@ -1,5 +1,5 @@
 ---
-title: nodectl Command Reference
+title: Command Reference
 hide_table_of_contents: false
 ---
 
