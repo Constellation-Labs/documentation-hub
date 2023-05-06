@@ -261,6 +261,8 @@ The IP address `111.111.111.111` is a fake IP used for example purposes only
   Are you migrating over an existing p12 private key? [n]:<br />
 </MacWindow>
 
+If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#import-p12-file); otherwise continue forward.
+
 Since this is a **brand new** installation, we will choose **n** (or just hit enter to accept the default) when requested to migrate over an existing **p12** file.  The **p12** file is your private key file used to store elements necessary to authenticate to the MainNet and also your Node's wallet information.
 
 ```

@@ -75,7 +75,7 @@ module.exports = {
           label: 'Installation',
           items: [
             'automated/nodectlInstall',
-            'automated/nodectlMigrateV1',
+            'automated/nodectlInstallMigrate',
           ],
         },
         {
