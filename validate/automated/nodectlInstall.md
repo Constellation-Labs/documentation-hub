@@ -34,6 +34,11 @@ It is assumed that prior to reaching this documentation, the future Node Operato
 Please refer to [Node Concepts](../validator/get_started.md) to follow the `step-by-step` guide on building your future Node.
 
 *For Ease of explanation, this documentation will assume use of the **Ubuntu** Debian distribution of Linux on a **VPS** in the cloud.*
+
+:::info p12 Migration
+If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#download-binary); otherwise continue forward.
+:::
+
 ## Download nodectl
 
 ### Before we begin
@@ -170,6 +175,10 @@ You will notice **nodectl** will attempt to run the `version` command.
 - Displays the version
   - In this example) version 2.7.0
 
+:::info p12 Migration
+If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#install-steps); otherwise continue forward.
+:::
+
 ## Install nodectl
 ```
 sudo nodectl install
@@ -261,9 +270,11 @@ The IP address `111.111.111.111` is a fake IP used for example purposes only
   Are you migrating over an existing p12 private key? [n]:<br />
 </MacWindow>
 
+:::info p12 Migration
 If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#import-p12-file); otherwise continue forward.
+:::
 
-Since this is a **brand new** installation, we will choose **n** (or just hit enter to accept the default) when requested to migrate over an existing **p12** file.  The **p12** file is your private key file used to store elements necessary to authenticate to the MainNet and also your Node's wallet information.
+ **brand new** installation, we will choose **n** (or just hit enter to accept the default) when requested to migrate over an existing **p12** file.  The **p12** file is your private key file used to store elements necessary to authenticate to the MainNet and also your Node's wallet information.
 
 ```
 Are you migrating over an existing p12 private key? [n]: n
@@ -585,6 +596,10 @@ default_layer1 ................................ complete<br />
 Creating [Node] directories.................... complete<br />
 </MacWindow>
 
+:::info p12 Migration
+If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#choose-p12-file); otherwise continue forward.
+:::
+
 ### Build our wallet (p12)
 
 nodectl will now help us through the process of creating our Node's wallet and authentication requirements. This is necessary to join the Hypergraph/Metagraph via authentication, and collect rewards for work accomplished on the Hypergraph/Metagraph.
@@ -647,6 +662,8 @@ Do not use the special character `section` sign.
   access to the Hypergraph."<br />
 </MacWindow>
 
+#### Passphrase entry
+
 We can now provide a new unique passphrase for our p12 file.  
 
 :::danger IMPORTANT
@@ -667,6 +684,10 @@ Confirm your passphrase
 Write your passphrase down in a very secure location, and never share it out to anyone that should **not** have direct access to your Node or Node's wallet.
 
 ### Create p12 alias
+
+:::danger IMPORTANT
+If you are migrating an existing **[p12 private key file](./nodectlInstallMigrate.md)**, you must use the same alias as you did when you originally created the file.  Failure to do so will lead to errors.
+:::
 
 Constellation Network requires that you provide an alias for your `p12 file`.  This alias is important, and should also not be forgotten.  
 
