@@ -82,7 +82,7 @@ module.exports = {
           type: 'category',
           label: 'Upgrade',
           items: [
-            'automated/nodectlInstall',
+            'automated/nodectlUpgrade',
             'automated/nodectlMigrateV1',
           ],
         },

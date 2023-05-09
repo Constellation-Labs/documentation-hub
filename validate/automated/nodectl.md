@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -42,10 +42,34 @@ The succeeding documentation will describe the features behind **nodectl** and h
   </DocsCard>
 </DocsCards>
 
+### nodectl operations
+
+<DocsCards>
+    <DocsCard header="Upgrade" href="/learn" img="/img/home/core-concepts.jpg">
+    <p>Upgrade nodectl on an existing Node.</p>
+  </DocsCard>
+
+  <DocsCard header="Command Reference" href="/sdk" img="/img/home/stargazer.jpg">
+    <p>Command Reference Guide for nodectl</p>
+  </DocsCard>
+</DocsCards>
+
 ### Brand New Node
 
-This is when you are created a **new** Node from scratch that will include a new Node wallet (p12 file).
+This documentation will help, through step-by-step instructions, to create a **new** Node from scratch.  Your new Node will include a new wallet ([p12](./nodectlInstall.md#what-is-a-p12-file) file).
 
 ### Rebuild/Migrate Node
 
-This is when you are replacing an existing Node by transferring it to a new container, VPS or hardware.  The existing Node is in production; however, you would like to use the ephemeral nature of Constellation's Validator Node to start fresh on a new build of its underlining Linux distribution.  This will require transferring your Node's wallet (p12 file) from the existing (old) Node to your new Node.
+These documents will help, through step-by-step instructions, with replacing an existing Node by transferring it to a new container, VPS or hardware.
+
+The existing Node is in production; however, you would like to use the ephemeral nature of Constellation's Validator Node to start fresh on a new build of its underlining Linux distribution.  
+
+This will require transferring your Node's wallet ([p12](./nodectlInstall.md#what-is-a-p12-file) file) from the existing (old) Node to your new Node.
+
+### Upgrade nodectl on your Node
+
+When you have nodectl up and running and a new version of nodectl is released.  The following documentation will help the Node Operator navigate with a step-by-step guide on how to upgrade.
+
+### Command Reference Guide
+
+After installation is complete, the command reference guide can help you navigate the features of nodectl, beyond standard Node management commands.

@@ -1,16 +1,17 @@
 ---
-title: Upgrade Tessellation with nodectl
+title: Upgrading with nodectl
 hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
+import MacWindow from '@site/src/components/global/MacWindow';
 
 <head>
   <title>MainNet 2.0 Automation with nodectl</title>
   <meta
     name="description"
-    content="MainNet 2.0 Automation"
+    content="MainNet 2.0 Automation - Upgrade Tessellation with nodectl"
   />
   <style>{`
     :root {
@@ -20,141 +21,176 @@ import DocsCards from '@components/global/DocsCards';
   </style>
 </head>
 
-:::danger IMPORTANT
-The **manual instructions** to install a Node on MainNet 2.0 are for a **single Layer design**.  MainNet 2.0 will be requiring that you run both Layer0 and Layer1 as we perform Genesis.  
+### Description
 
-*This will change in the future*.
+This document will show you; through step-by-step instructions, how to upgrade your Node to the latest version of **Tessellation** or **nodectl**.
+
+**Tessellation** is the code name for the protocol that runs on your Node.  It is the guts of how your Node is able to operate on the **Hypergraph** or **Metagraph**.  
+
+**nodectl** is a utility that runs on your Node and helps you automate some of the more complex processes that Tessellation requires to run efficiently. 
+
+## Prerequisite
+### Installation
+
+This document assumes that you have nodectl with Tessellation already running on your Node.  
+
+If this is not the case, please review the [installation guide](./nodectl.md) `Getting Started`: to determine the type of installation required.
+
+## Upgrade
+
+<DocsCards>
+  <DocsCard header="Upgrade nodectl" href="#upgrade-nodectl-utility" img="/img/home/state-channel.jpg">
+    <p>Upgrade the nodectl utility.</p>
+  </DocsCard>
+
+  <DocsCard header="Upgrade Tessellation" href="#upgrade-tessellation" img="/img/home/community.jpg">
+    <p>Upgrade Tessellation using nodectl.</p>
+  </DocsCard>
+</DocsCards>
+
+## Upgrade nodectl utility
+
+There are `3` upgrade mechanisms regarding `nodectl`.
+1. Upgrade the nodectl utility to a new version. (binary)
+2. Upgrade your Node to handle new features of nodectl, or modify some elements to make your Node more efficient when working with the nodectl utility.
+3. Upgrade Tessellation
+
+Mechanisms `2` and `3` may include updating features of the VPS to facility functionality of your Node.
+
+Using nodectl's built-in upgrade command, you do not have to worry about the differences mentioned when upgrading nodectl.  nodectl is smart enough to guide you through the upgrade process.  It will know if you need any extra steps to complete. 
+
+These steps include:
+  - Is it safe to upgrade from the current version of nodectl your Node is running to the latest version?  There is an upgrade path that might need to be taken; dependent on, how long you have waited to upgrade your Node.
+  - Does your Node require an extra upgrade steps to complete the nodectl upgrade for effective operation.
+
+:::caution 
+Currently there is not a scheduled release process for nodectl.
 :::
 
-:::success IMPORTANT
-It is highly **recommended** that you use **nodectl** to install your Node!
-:::
+### Upgrade to new version of nodectl
 
-All Nodes will be required to run both the **Global Layer 0** and the **DAG State Channel Layer1**.
+**nodectl** is simply a single binary file.  That is to say, it is single file that you can simply download from the Internet and execute on your system.  
 
-:::caution CAUTION
-It is highly recommend to use the **latest** version of **NODECTL**!  It very possible that this documentation will fall behind and be a little out-of-date.  *Please correct the version in the url provided below, if necessary*.
-:::
+In the <span style={{color:'blue', fontWeight: '800'}}>unlikely event</span> you need to do a manual install of nodectl, it will be necessary to make sure the binary is executable (advanced system management).  We will cover manual downloads below.
 
-### DESCRIPTION
+#### Upgrade detection
+**nodectl** attempts to be smart enough to determine if there is an upgrade available. It does this by reaching out an external source ( the nodectl repository on GitHub ) and checking for the latest upgrade.
 
-**nodectl** pronouced node "c" "t" "l", node-cuttle, or node control.
+In this example, a `sudo nodectl list` command was issued, and I new version was detected.
 
-The purpose of this utility is to **make things easier** on you.  It obviates some of the technical aspects of running a Validator Node, so that anyone can do it!
+*The full output of the list command was omitted*.
+<MacWindow>
+<span style={{color:'purple'}}>nodeadmin@Constellation-Node:~#</span> sudo nodectl list<br />
+  A new version of nodectl was detected: <br />
+  v2.7.1<br />
+  To upgrade issue: sudo nodectl upgrade_nodectl<br />            
+</MacWindow>
 
-### INSTALL YOUR NODE
-Using `nodectl`
+In the above output, it shows us that our Node is not up-to-date and the latest version available is `v2.7.1`.
 
-#### Step 1
-Make sure you go through [Running a Node (Part 1)](./../validator/install.md) and then go through the process of setting up your **VPS**.
+#### Upgrade nodectl via nodectl
+If **nodectl** is already [installed](nodectl.md) on your system, we can issue the `upgrade_nodectl` command to attempt to upgrade.
 
-:::danger
-You will need to review the **required** specifications for MainNet 2.0 launch!  You can review them [here](../validator/specs.md)
-:::
-
-#### Step 2
-Download the latest (this is important make sure you are at the latest version) of **nodectl**. (*Do not use any pre-releases*)
-```
-https://github.com/netmet1/constellation_nodectl/releases
-```
-Log into your VPS and download the latest release of **nodectl**.
-
-:::danger VERY IMPORTANT
-The links below show the latest version of `nodectl` at the time of this writing!  You **MUST** make sure that you download the most recent version of `nodectl` in order to create the best possible user experience.   Review the link below, compare it to the [repository version](https://github.com/netmet1/constellation_nodectl/releases), and if it there is a newer release, change the URL below to match.
-
-example 
-
-**JUST AN EXAMPLE**: If the latest version is `1.6.2` (made up example) but these instructions show `v1.6.0`.
-
-> **github.com/netmet1/constellation_nodectl/releases/download/*v1.6.0*/nodectl_x86_64**
-
-will become
-
-> **github.com/netmet1/constellation_nodectl/releases/download/*v1.6.3*/nodectl_x86_64**
-:::
-
-The following commands will download the latest version, set the file's permissions and move it to the proper directory on your Linux VPS.
-
-**x86_64** *(most common)*
-```
-sudo wget https://github.com/netmet1/constellation_nodectl/releases/download/v1.6.0/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl
-```
-
-**arm_64**
-```
-sudo wget https://github.com/netmet1/constellation_nodectl/releases/download/v1.6.0/nodectl_arm64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl
-```
-
-:::note NOTE
-After the initial download via a `wget` nodectl will warn you when a new versions are available.  at that time it will show you the proper command to issue to download the newest version
 ```
 sudo nodectl upgrade_nodectl
 ```
-:::
+When we execute the `upgrade_nodectl` command; in this example, the [auto_restart](./nodectlCommands.md#auto-restart) feature was enabled.  Since nodectl cannot upgrade while the `auto_restart` feature is actively running, nodectl will disable the feature auto_magically, for us.
 
-## INSTALL TESSELLATION LAYER0 and LAYER1
+nodectl will detect that there is a new version and ask us if we are sure we want to continue?  We can say **`y`** here.
 
-### STEP 1
-```
-sudo nodectl install
-```
+<MacWindow>
+<span style={{color: "purple"}}>nodeadmin@Constellation-Node:~#</span> sudo nodectl upgrade_nodectl<br />
+   FOUND  auto_restart instance.<br />
+  AutoRestart service with pid [3101736] ........ disabled<br /> 
+  Auto Restart will reengage at completion of requested task<br />
+  A <span style={{textDecoration: "underline"}}>new</span> version of nodectl was detected:.........<br />                                                            
+  v2.7.1<br />
+  To upgrade issue: sudo nodectl upgrade_nodectl<br />
+   WARNING  This will upgrade mainnet<br />
+  You are currently on: MAINNET<br />
+    version: v2.7.0<br />
+  available: v2.7.1<br />
+  Are you sure you want to continue? [n]: y<br />
+</MacWindow>
 
-### STEP 2
-The installation will take you through what information is needed by you, `step-by-step`.
+nodectl will begin the upgrade of nodectl.  In the background through automation nodectl will:
+1. Download the necessary binary perspective GitHub repository.
+2. Place the binary in the correct location on your VPS/Node.
+3. Update the permissions of the nodectl binary as required.
+4. Determine if a Node upgrade is necessary.
 
-### STEP 3
-When your environment is requested, you should enter in `mainnet`
+#### Architecture
 
-### STEP 4
-Report your `nodeid` shown at the end of the process, to your administrators.
+It will detect the architecture of our VPS, in this example `x86_64` (most common).
 
-### STEP 5
-When you are notified that you have been properly added to the `seed-list`
-verify
-```
-sudo nodectl update_seedlist
-```
-```
-sudo nodectl check_seedlist
-```
+Because nodectl cannot upgrade while it is running, nodectl will:
+- Exit itself before upgrading
+- Upgrade
+- Inform us whether or not we need to upgrade our Node's internals.
+- Re-enable `auto_restart` if enabled.
 
-### STEP 6
-Once your `nodeid` is confirmed to have been added to the `seed-list`
-verify
-```
-sudo nodectl restart -p all
-```
+In this example:
+- We do not need to upgrade our Node.  
+- We have `auto_restart` enabled.
 
-## OTHER IMPORTANT COMMANDS
-show your nodeid
+nodectl will let us know, and request we press &lt;enter&gt; to continue without an upgrade and then restart the `auto_restart` feature.
+
+<MacWindow>
+  Upgrading nodectl version from v2.7.0 to v2.7.1<br />
+<br />
+  Detected architecture: x86_64<br />
+  WARNING nodectl will exit to upgrade.<br />
+  Please be patient and allow the upgrade to complete before<br />
+  continuing to work.<br />
+<br />
+  COMPLETED! nodectl upgraded to v2.7.1 <br />
+  VERSION        MAJOR          MINOR       PATCH<br />
+  v2.7.1         2              7              1<br />            
+<br />
+  This version of nodectl DOES NOT require an upgrade be performed<br />
+  Press [ENTER] to continue...<br />
+<br />
+  node restart service started...<br /> 
+</MacWindow>
+
+In the event our Node requires an internal upgrade of the `Node` components, for various reasons including:
+  - Tessellation changes
+  - VPS changes
+  - nodectl changes
+
+The output will look different, as shown below
+
+<MacWindow>
+  Upgrading nodectl version from v2.7.0 to v2.7.1<br />
+<br />
+  Detected architecture: x86_64<br />
+  WARNING nodectl will exit to upgrade.<br />
+  Please be patient and allow the upgrade to complete before<br />
+  continuing to work.<br />
+<br />
+  COMPLETED! nodectl upgraded to v2.7.1 <br />
+  VERSION        MAJOR          MINOR       PATCH<br />
+  v2.7.1         2              7              1<br />            
+<br />
+  This version of nodectl requires an upgrade be performed<br />
+  on your Node.<br />
+  Press Y then [ENTER] to upgrade or N then [ENTER] to cancel:<br />
+</MacWindow>
+
+It is **highly** recommended to **upgrade** your Node when requested.  Failure to do so may result in undesirable results or failures.
+
+#### Manual Installation
+Follow the release notes instructions for the release you desire to install
+> [nodectl releases](https://github.com/netmet1/constellation_nodectl/releases)
+
+
+### Upgrade Node to work with new nodectl features
+
+It is very simple to upgrade your Node with new nodectl features.  We simply execute the upgrade command and follow the prompts.
 ```
-sudo nodectl nodeid
+sudo nodectl upgrade
 ```
-show your dag address
-```
-sudo nodectl dag
-```
-show your private key for import into your Stargazer wallet
-```
-sudo nodectl export_private_key
-```
-show node's status on L0 and L1
-```
-sudo nodectl status
-```
-show node's status on just L0
-```
-sudo nodectl status -p dag-l0
-```
-show node's status on just L1
-```
-sudo nodectl status -p dag-l1
-```
-show node's connection status on L0
-```
-sudo nodectl check_connection -p dag-l0
-```
-Review all known `nodectl` commands, and shortcuts
-```
-sudo nodectl help
-```
+Since the process of an upgrade is exactly the same as the process necessary to upgrade **Tessellation**, we can skip to the [Upgrade Tessellation](#upgrade-tessellation) to see the step-by-step process.
+
+## Upgrade Tessellation
+
