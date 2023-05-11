@@ -17,9 +17,15 @@ module.exports = {
         'validator/specs',
         'validator/providers',
         'validator/vpsExplained',
-        'validator/sshkeyExplained',
-        'validator/creationMac',
-        'validator/creationWin',
+        {
+          type: 'category',
+          label: 'SSH Keys',
+          items: [
+            'validator/sshkeyExplained',
+            'validator/creationMac',
+            'validator/creationWin',
+          ],
+        },
       ],
     },
     {

@@ -1,5 +1,5 @@
 ---
-title: SSH Keys
+title: SSH Keys Explained
 slug: ssh-keys
 hide_table_of_contents: false
 ---
