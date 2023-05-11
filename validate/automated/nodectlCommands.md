@@ -27,3 +27,7 @@ import DocsCards from '@components/global/DocsCards';
 ### Upgrade
 
 ### Upgrade Path
+
+### Upgrade nodectl
+
+### View Config

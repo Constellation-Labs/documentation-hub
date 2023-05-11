@@ -97,6 +97,7 @@ Click **Session** section (top of menu) and click on the **Save** button. This w
 ![](/img/validator_nodes/nodeAccessWin9.png)
 
 ### Create remote connection
+
 Click **Open**.
 
 ![](/img/validator_nodes/nodeAccessWin10.png)
