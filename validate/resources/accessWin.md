@@ -73,6 +73,11 @@ Click **Auth** under the **SSH** section under **Connection** section.
 Click on the **Browse** and `navigate` to your **SSH Key File**. Choose the file and make sure it populates into the `Private Key box`. Optionally you can type the file's full PATH into the box.
 ![](/img/validator_nodes/nodeAccessWin8.png)
 
+:::info Feature Change
+Version &gt; `v0.76` updated the `SSH private key location` to its own separate section.
+:::
+![](/img/validator_nodes/putty078-creditional-change.jpg)
+
 Click **Session** section (top of menu) and click on the **Save** button. This will persist our session information for later.
 ![](/img/validator_nodes/nodeAccessWin9.png)
 

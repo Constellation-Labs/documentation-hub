@@ -82,6 +82,7 @@ module.exports = {
           type: 'category',
           label: 'Upgrade',
           items: [
+            'automated/nodectlUpgradePath',
             'automated/nodectlUpgrade',
             'automated/nodectlMigrateV1',
           ],

@@ -60,8 +60,8 @@ We want to choose an **N1** VM.
 ![](/img/validator_nodes/node-gcp-instance5.png)
 
 - Change our **Machine Type** to **`Custom`**
-- Modify our **vCPU** to **`4`**
-- Modify our **Memory** to **`8Gb`**
+- Modify our **vCPU** to **`8`**
+- Modify our **Memory** to **`16Gb`**
 
 ![](/img/validator_nodes/node-gcp-instance6.png)
 
@@ -83,7 +83,7 @@ Change our Operating System to **`Ubuntu`**.
 You can use any (Debian) distribution that makes you comfortable. The instructions/tutorial here will assume `Ubuntu`, so you may need to modify your commands to match your distribution.
 :::
 
-Modify our Ubuntu Version to `20.4`. 
+Modify our Ubuntu Version to `22.4`. 
 
 :::info
 Again, you are free to use whatever (Debian) distribution you are comfortable with.
