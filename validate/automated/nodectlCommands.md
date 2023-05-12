@@ -1,5 +1,5 @@
 ---
-title: Command Reference
+title: command reference
 hide_table_of_contents: false
 ---
 

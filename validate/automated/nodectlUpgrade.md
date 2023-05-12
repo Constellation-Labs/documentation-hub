@@ -1,5 +1,5 @@
 ---
-title: Upgrading with nodectl
+title: upgrading with nodectl
 hide_table_of_contents: false
 ---
 

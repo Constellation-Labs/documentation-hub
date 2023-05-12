@@ -93,12 +93,13 @@ module.exports = {
             'automated/nodectlMigrateV1',
           ],
         },
+        'automated/nodectlConfig',
         'automated/nodectlCommands',
       ],
     },   
     {
       type: 'category',
-      label: 'Running a Node (Part 3)',
+      label: 'Manual Node Install',
       collapsed: false,
       items: [
         'manual/getting-started-manual',
