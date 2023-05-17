@@ -53,8 +53,21 @@ sudo nodectl status -p dag-l0
 
 - The `dag-l0` is a **parameter**.
 
-> :::note
+:::note
 This reference guide will explorer the [status command](#status) in further detail; however, in the above example, the switch `-p` stands for "what profile would you like to explorer the status of?" and the parameter `dag-l0` is the profile in question we would like to review.
+:::
+
+:::note Final Note
+If a `switch` requires a `parameter`, it must be directly after the `switch` is supplied on the command line.  However, the order of the `switches` that do not require or require parameters does **not** matter.
+
+switch1 requires a parameter1, switch2 does not require a parameter.
+```
+sudo nodectl -switch1 parameter1 -switch2
+```
+is the same as
+```
+sudo nodectl -switch2 -switch1 parameter1
+```
 :::
 
 ### What is pagination?
@@ -103,7 +116,8 @@ The command takes a single argument.
 | :---: | :---: | :--- | :----: |
 |  -p | `<profile_name>` | starts the service related to the profile name in question. | **required** |
 
-> **Examples**
+> ##### Examples
+-
 Help Screen
 ```
 sudo nodectl start -p dag-l0 help  
@@ -122,7 +136,8 @@ The command takes a single argument.
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | starts the service related to the profile name in question. | **required** |
 
-> **Examples**
+> ##### Examples
+-
 Help Screen
 ```
 sudo nodectl stop -p dag-l0 help  
@@ -147,7 +162,8 @@ This command will take the following actions on the profile it was connected on:
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` \| `all` | restarts the service related to the profile name in question. | **required** |
 
-> **Examples**
+> ##### Examples
+-
 Help Screen
 ```
 sudo nodectl restart -p dag-l0 help  
@@ -191,7 +207,8 @@ It is appropriate to `leave` the cluster before you issue a `stop` command.
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | leaves the cluster related to the profile name in question. | **required** |
 
-> **Examples** 
+> ##### Examples 
+-
 Help Screen
 ```
 sudo nodectl leave -p dag-l0 help  
@@ -213,7 +230,8 @@ You will need to make sure that the profile related to the cluster your are atte
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | join the cluster related to the profile name in question. | **required** |
 
-> **Examples**
+> ##### Examples
+-
 Help Screen
 ```
 sudo nodectl join -p dag-l0 help  
@@ -241,7 +259,8 @@ If the `-p` switch is used with the `<profile_name>`, only that profile's status
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | join the cluster related to the profile name in question. | **optional** |
 
-> **Examples**
+> ##### Examples
+-
 Help Screen
 ```
 sudo nodectl status help  
@@ -279,7 +298,8 @@ The **`list`** command does not take any arguments and displays the details of t
 | P2P API TCP | The TCP port configured that is used for gossip peer to peer API communications. |
 | CLI API TCP | The TCP port configured that is used for internal API calls only. |  
   
-> **Examples**
+> ##### Examples
+-
 show this help screen
 ```
 sudo nodectl list help
@@ -288,6 +308,86 @@ execute the list command
 ```
 sudo nodectl list
 ```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>peers</span>
+
+This command will attempt to list all the peers found on the cluster and list their IP addresses for review.
+
+| switch | parameters | Description | Is Switch Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | join the cluster related to the profile name in question. | **required** |
+| -t | `<target_node>` | Node on the cluster (ip or hostname) that you would like to use as your target for finding peers. | **optional** |
+| -c | None | count the peers on the network. | **optional** |
+| -np | None | no [pagination](#what-is-pagination). | **optional** |
+| --csv | None | create csv output instead of print out. | **optional** |
+| --output | `<file_name>` | **requires** `--csv` --> this can only be a filename. If you would like to have your output saved to an alternate location, you can update the configuration file via the [configure command](#span-stylecolorgreenfontsize13emconfigurespan). | **optional** |
+| --basic | None | show only the ip address and public port. | **optional** |
+| --extended | None | show full nodeid and dag address. | **optional** |
+  
+Normal output from the peers command will show all the peers seen on a given **Metagraph** or the **HyperGraph** (profile dependent) this will include:
+- node ip with public port 
+  - `10.10.10.10:1000` = `10.10.10.10` with public TCP port of `1000`
+- nodeid (shortened)
+- DAG wallet (shortened)
+    
+You can utilize the **`--basic`** switch to force **nodectl** to only show the `PEER IP:TCP PORT` column.
+    
+You can utilize the **`--extended`** switch to force **nodectl** to only show all fields in long format.
+
+If you do not use the `--basic` or `--extended` switches, the output will be in shorten form for all elements (ip:port, dag address, nodeid).
+
+#### Dictionary
+| abbrv | Description |
+| :--:  | :-- |
+| *  | Indicates the ip searched against was either the `edge` and `source` ip. |
+| i  | Initial State |
+| rj | ReadyToJoin State |
+| ss | StartingSession State |
+| l  | Leaving State |
+| s  | SessionStarted State |
+| o  | Offline State |
+
+> ##### Examples
+-
+help screen
+```
+sudo nodectl peers help
+```
+show nodes on cluster from random peer on the cluster from a specific profile
+```
+sudo nodectl peers -p <profile_name>
+```
+show YOUR Nodes's peers
+```
+sudo nodectl peers -p <profile_name> -t self
+```
+show peers on the cluster utilizing a specific target ip address.
+```
+sudo nodectl peers -p <profile_name> -t <ip_address or hostname>
+```
+show count of peers your node is able to see. (synonymous with `find` command) show peers on the cluster utilizing a specific.
+```
+sudo nodectl peers -p <profile_name> -c
+```
+source target ip address to count against.
+```
+sudo nodectl peers -p <profile_name> -t <ip_address or hostname> -c
+```
+  
+#### Other examples
+example usage for a profile called dag-l0
+```sudo nodectl peers -p dag-l0```
+
+example usage for --basic
+```sudo nodectl peers -p dag-l0 --basic```
+
+example usage for --extended
+```sudo nodectl peers -p dag-l0 --extended```
+  
+create a csv file 
+```sudo nodectl peers -p <profile_name> --csv```
+create a csv file named test.csv
+```sudo nodectl peers -p <profile_name> --csv --output test.csv```
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>find</span>
 
@@ -305,8 +405,8 @@ It will show you the profile searched (required) and offer you confirmation that
 
 | switch | parameters | Description | Is Switch Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<source_node>` | Node on the cluster you want to use to lookup other nodes. | **required** |
-| -s | `<target_node>` | Node on the cluster (ip address of hostname) you want to look up on the cluster. | **optional** |
+| -s | `<source_node>` | Node on the cluster you want to use to lookup other nodes. | **required** |
+| -t | `<target_node>` | Node on the cluster (ip address of hostname) you want to look up on the cluster. | **optional** |
 
 You may specify a **`source`** node that will be used as to lookup the **`target`** node on the cluster and return a `True` or `False` depending on whether or not it is found.
   
@@ -318,7 +418,8 @@ Choosing a **source node** that is **NOT** on the network may result in an error
 You can use the keyword `self` to indicate the local (`localhost`) Node for either `-s` or `-t`.
 :::
 
-> **Examples**
+> ##### Examples
+-
 help screen
 ```
 sudo nodectl find help
@@ -369,6 +470,68 @@ If a different target node 10.1.1.2 identified by a -t is listed/seen by a Node 
 sudo nodectl find -p dag-l0 -s 10.2.2.2 -t 10.1.1.2
 ```
 
+### <span style={{color:'green',fontSize:'1.3em'}}>check_seedlist</span>
+The **`check_seedlist`** command takes one argument.
+
+| switch | parameters | Description | Is Switch Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | related to the profile to verify access permissions. | **required** |
+
+**`check_seedlist`** will pull your `nodeid` out of your p12 file and compare it to the seedlist downloaded from **Constellation Network's** authorized list.
+  
+:::note
+This command is specific to current restrictions placed on the Hypergraph for controlled access prior to the **PRO Score** [proof of reputable observation] release.
+:::
+
+| Title | Description |
+| -- | :-- |
+| ip address | The `ip address` of the Node in question |
+| p12 filename | The name of the `p12` file on the Node |
+| p12 location | The location of the `p12` file on the Node |
+| node id | The `p12` public key node id. |
+| node id found on seed list | This will be a `true` or `False`.  In the event of a `False` please contact an administrator on the **Constellation Network** official Discord server. |
+ 
+> ##### Examples
+help screen
+```
+sudo nodectl check_seedlist help
+```  
+execute the check_seedlist command
+```
+sudo nodectl check_seedlist
+```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>show_node_states</span> 
+
+The **`show_node_states`** command does not take any arguments and displays the list of the known Node States that you may find on the Cluster or that **nodectl** defines when not on the cluster.
+
+| Command | Shortcut |
+| :----: | :---: |
+| show_node_states  |  -sns  |
+
+##### nodectl only states
+
+| State | Description |
+| -- | :-- |
+| ApiNotReady | shown if nodectl can not reach the Node's internal API server. |
+| SessionNotFound | shown if nodectl can not read the Node's session via the internal API server. | 
+| SessionIgnored | shown if nodectl is not online and there is not a session to display. | 
+  
+> ##### Examples
+-
+help screen
+```
+sudo nodectl show_node_states help
+```
+execute the show_node_states command
+```
+sudo nodectl show_node_states
+```  
+execute using shortcut switch command
+```
+sudo nodectl -sns
+```
+
 ### <span style={{color:'green',fontSize:'1.3em'}}>show_current_rewards</span>
 
 The **`show_current_rewards`** command takes several parameters.
@@ -409,7 +572,7 @@ Currently this command only searches on the MainNet layer0 global network.
 
 If the **-w** `<dag_wallet_address>` is used, the **-p** `<profile_name>` will be ignored unless the profile fails to be present on the Node (exist in the configuration).
         
-> **examples**
+> ##### Examples
 help screen
 ```
 sudo nodectl show_current_rewards help
@@ -463,7 +626,7 @@ The option will be carried out and the Node Operator will be offered a visual co
 | :----: | :---: |
 | clean_snapshots  |  -cs  |
 
-> **Example**
+> ##### Examples
 ```
 sudo nodectl clean_snapshots
 ```
@@ -495,7 +658,8 @@ be removed, number of files, and size to be freed by their removal.
 | uploads | clear uploads located in the default or specified log directories. |
 | backups | clear backups located in the default or specified log directories. |
 
-> **Examples**
+> ##### Examples
+-
 help file
 ```
 sudo nodectl clear_files help
@@ -510,6 +674,63 @@ sudo nodectl -cf -t logs
 ```
 
 ## Distribution Operations
+
+### <span style={{color:'green',fontSize:'1.3em'}}>whoami</span>
+
+The `whoami` command displays the external ip address of your Node. Unless optional `-id` is specified.
+  
+The `external IP` of your Node is the address that allows your Node to communicate with the rest of the systems on the Internet.  This is the address that your Node will use to communicate with the rest of the decentralized Nodes that make up the **Hypergraph** and/or **Metagraphs** that your Node will attempt to communications with via p2p connections and APIs.
+
+| switch | parameters | Description | Is Switch Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | In order to use the **`-id`** option, **nodectl** will need to know which profile to review the `nodeid` from. | **optional** |
+| -id | `<full_node_id>` | enter the log type that is desired. | **optional** |
+
+:::warning 
+The -id switch followed by the full nodeid requested, will lookup the node id and return its IP address.  This command will require the `-p` with the profile name of the network you are searching.
+:::
+
+> ##### Examples
+-
+help file
+```
+sudo nodectl whoami help
+```
+show external ip
+```
+sudo nodectl whoami
+```
+show ip address of node_id from a cluster via a profile this Node is connected to
+```
+sudo nodectl whoami -id <node_id> -p <profile>
+```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>reboot</span>
+
+The **`reboot`** command does not take any arguments and offers the Node Operator the ability to reboot their physical or VPS (Virtual Private Server in the cloud) via a warm boot.
+  
+:::success Recommended
+For Node Operation this command is **preferred/recommended** over normal operating system reboot command. 
+:::
+
+When issued the nodectl reboot command will gracefully leave the profiles defined in the nodectl configuration file before rebooting the Node.
+  
+#### dictionary
+| term | definition |
+| --- | :--- |
+| warm boot | restart your entire system via software |
+| cold boot | physical start and stop of your Server or VPS |
+   
+> ##### Examples
+-
+help screen
+```
+sudo nodectl reboot help
+```  
+execute the reboot command
+```
+sudo nodectl reboot
+```
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>disable_root_ssh</span> 
 
@@ -539,8 +760,9 @@ You should use an unused port between `1024` and `65535`.
 | :---: | :---: | :--- | :----: |
 | -p | `<port number>` | Which port number would you like to change your SSH port for use? | **required** |
 
-> **Examples**
-Extended help
+> ##### Examples
+-
+help file
 ```
 sudo nodectl change_ssh_port help
 ```
@@ -560,7 +782,8 @@ The `nodeid` command will retrieve your Node's public key (nodeid) for either yo
 | -p | `<profile_name>` | which profile are you seeking the nodeid from. | **required** |
 | -t | `<ip_address` | retrieve remote by target IP address. | **optional** |
 
-> **Examples**
+> ##### Examples
+-
 Help Screen
 ```
 sudo nodectl nodeid help  
@@ -612,7 +835,8 @@ The `--output` switch can only be a filename.  If you would like to have your ou
 | Rewards | $DAG reward found for this wallet in the snapshot data |
 | Total Rewards | Accumulation of the rewards found during this period of time |
 
-> **Examples**
+> ##### Examples
+-
 Help Screen
 ```
 sudo nodectl dag -p dag-l0 help  
@@ -636,6 +860,32 @@ Retrieve the Node's dag wallet without [pagination](#what-is-pagination).
 sudo nodectl dag -p dag-l0 -np   
 ```
 
+### <span style={{color:'green',fontSize:'1.3em'}}>nodeid2dag</span>
+
+The **`nodeid2dag`** command will take in a required public node id or public key ( `128 byte` hexadecimal string ) and converts it into its associated **Constellation Network** DAG wallet address.
+  
+| switch | parameters | Description | Is Switch Required or Optional |
+| :---: | :---: | :--- | :----: |
+| None | `<node_id>` | 128 byte node id (public key) to derive DAG wallet from. | **required** |
+
+:::warning
+The `<node_id>` is required and does not have a related `switch`.
+:::
+
+> ##### Examples
+help file
+```
+sudo nodectl nodeid2dag help
+```
+convert nodeid to dag wallet
+```
+sudo nodectl nodeid2dag <node_id>
+```
+
+:::note
+Due to the cryptographic nature of a DAG wallet, you can only 1-way hash a nodeid to the DAG wallet, and not visa-versa.    
+:::
+
 ### <span style={{color:'green',fontSize:'1.3em'}}>passwd12</span>  
 
 The `passwd12` command does not take any arguments.
@@ -648,7 +898,8 @@ This command offers the Node Operator the ability to change their p12 keystore f
 Please run the sudo nodectl configure command to update your passphrase (if necessary) after completing the passphrase update utility command.
 :::
 
-> **Examples**
+> ##### Examples
+-
 Help File
 ```
 sudo nodectl passwd12 help
@@ -684,7 +935,8 @@ In edit configuration mode, **nodectl** will offer you several options
 1. Edit Profiles
 2. Edit Global Settings
     
-> **Examples**
+> ##### Examples
+-
 help screen
 ```
 sudo nodectl configure help 
@@ -744,7 +996,8 @@ Please see the [upgrade nodectl](nodectlUpgrade.md) documentation for a detailed
 Dedicated command to upgrade the **nodectl** binary file.
 Please see the [upgrade_nodectl](nodectlUpgrade.md) documentation for a detailed explanation of the command.
 
-> **Examples**
+> ##### Examples
+-
 help file
 ```
 sudo nodectl upgrade_nodectl help
@@ -777,7 +1030,8 @@ If a profile name is not supplied, nodectl will use the first found profile conf
 | nodectl latest | What version of **nodectl** was found in the current repository. |
 | nodectl version match | Does the Node match up to the repository? |
 
-> **Examples**
+> ##### Examples
+-
 Show help
 ```
 sudo nodectl check_version help
