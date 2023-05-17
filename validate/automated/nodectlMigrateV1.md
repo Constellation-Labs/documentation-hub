@@ -147,7 +147,7 @@ A new **feature** of **nodectl** is the ability to **hide** the passphrase in th
 :::danger IMPORTANT
 This feature was added per request from the community; however, because the hot wallet is on your Node, this only adds a small layer of obscurity to attempting to retrieve your passphrase if the Node is compromised.
 
-This will disable your ability to use the **[auto restart](./nodectlCommands.md#auto-restart)** feature including the `auto_upgrade` feature.
+This will disable your ability to use the **[auto restart](./nodectlCommands.md#span-stylecolorgreenfontsize2emautorestartspan)** feature including the `auto_upgrade` feature.
 :::
 
 <span style={{color:'green', fontWeight:'800', fontSize:'1.5em'}}>It is recommended to keep your passphrase visible.</span>

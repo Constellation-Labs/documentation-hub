@@ -417,7 +417,7 @@ In the below example, the `uploads` directory was found to be emtpy, so the step
 
 Similar to the **backups** and **uploads**, the logs directory can become large related to log files that are being built up and not removed.
 
-In the below example, some of the log files were ommitted with `[...]` representing files that were built up.  You will notice `layer0` and `layer1` logs being represented.
+In the below example, some of the log files were ommitted with `[...]` representing files that were built up.  You will notice **hypergraph** *`layer0`* and **metagraph* *`layer1`* logs being represented.
 
 <MacWindow>
   ---------- * Clean up logs * -----------<br />
@@ -574,7 +574,7 @@ Below we will see that our Node reached `WaitingForReady` while it was connected
   1683294932039         1683294932039         True<br />
 </MacWindow>
 
-### Layer1 services
+### Metagrpah services *layer1*
 
 **nodectl** will now start up your `layer1` service which was configured in a profile called `dag-l1`.  
 
