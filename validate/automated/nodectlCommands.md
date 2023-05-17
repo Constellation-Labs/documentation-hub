@@ -489,7 +489,7 @@ This command is specific to current restrictions placed on the Hypergraph for co
 | p12 filename | The name of the `p12` file on the Node |
 | p12 location | The location of the `p12` file on the Node |
 | node id | The `p12` public key node id. |
-| node id found on seed list | This will be a `true` or `False`.  In the event of a `False` please contact an administrator on the **Constellation Network** official Discord server. |
+| node id found on seed list | This will be a `True` or `False`.  In the event of a `False` please contact an administrator on the **Constellation Network** official Discord server. |
  
 > ##### Examples
 help screen
@@ -499,6 +499,30 @@ sudo nodectl check_seedlist help
 execute the check_seedlist command
 ```
 sudo nodectl check_seedlist
+```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>update_seedlist</span> 
+
+The **`update_seedlist`** command does not take any arguments.
+  
+`update_seedlist` will pull down the latest seedlist from the Constellation Network repositories. This command can be used in the event your Node is unable to authenticate (and therefor will not connect) to the network.  
+  
+Using the [`check_seedlist`](#span-stylecolorgreenfontsize13emcheckseedlistspan) command, a Node Operator  can confirm if the Node is seen on the access lists; if not, issue the `update_seedlist` command to attempt to correct the issue.
+  
+:::note 
+If you update the seedlist and still receive a `False`, you may need to contact a **Constellation Network** support Administrator for further help. This can be done by accessing the **Constellation Network** official Discord server.
+:::    
+
+*This command is specific to current restrictions placed on the Hypergraph for controlled access prior to the PRO Score [proof of reputable observation] release.*
+        
+> ##### Examples
+help screen
+```
+sudo nodectl update_seedlist help
+```  
+execute the update_seedlist command
+```
+sudo nodectl update_seedlist
 ```
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>show_node_states</span> 
@@ -908,6 +932,35 @@ Go through the p12 passphrase change process
 ```
 sudo nodectl passwd12
 ```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>export_private_key</span> 
+
+The **`export_private_key`** command does not take any arguments.
+  
+`export_private_key` will pull your private out of your p12 file and print it to the screen.
+  
+:::danger
+Do not share this private key with anyone that you do not completely trust with your financial assets.
+:::
+
+Import the private key produced by this command into your StarGazer wallet in order to control your Node's wallet.
+        
+> ##### Examples
+help screen
+```
+sudo nodectl export_private_key help
+```  
+execute the export_private_key command
+```
+sudo nodectl export_private_key
+```
+
+
+
+
+
+
+
 
 ## Configuration
 
