@@ -117,12 +117,11 @@ The command takes a single argument.
 |  -p | `<profile_name>` | starts the service related to the profile name in question. | **required** |
 
 > ##### Examples
--
-Help Screen
+- help Screen
 ```
 sudo nodectl start -p dag-l0 help  
 ```
-Start profile named `dag-l0`
+- start profile named `dag-l0`
 ```  
 sudo nodectl start -p dag-l0
 ```
@@ -138,11 +137,11 @@ The command takes a single argument.
 
 > ##### Examples
 -
-Help Screen
+- help Screen
 ```
 sudo nodectl stop -p dag-l0 help  
 ```
-Stop profile named `dag-l0`
+- stop profile named `dag-l0`
 ```  
 sudo nodectl stop -p dag-l0
 ```
@@ -163,16 +162,15 @@ This command will take the following actions on the profile it was connected on:
 | -p | `<profile_name>` \| `all` | restarts the service related to the profile name in question. | **required** |
 
 > ##### Examples
--
-Help Screen
+- help Screen
 ```
 sudo nodectl restart -p dag-l0 help  
 ```
-Restart all the profiles configured on the Node, in proper (recommended) order.
+- restart all the profiles configured on the Node, in proper (recommended) order.
 ```  
 sudo nodectl restart -p all
 ```
-Start profile named `dag-l0`
+- start profile named `dag-l0`
 ```  
 sudo nodectl restart -p dag-l0
 ```
@@ -208,12 +206,11 @@ It is appropriate to `leave` the cluster before you issue a `stop` command.
 | -p | `<profile_name>` | leaves the cluster related to the profile name in question. | **required** |
 
 > ##### Examples 
--
-Help Screen
+- help Screen
 ```
 sudo nodectl leave -p dag-l0 help  
 ```
-Leave profile named `dag-l0`
+- leave profile named `dag-l0`
 ```  
 sudo nodectl leave -p dag-l0
 ```
@@ -231,12 +228,11 @@ You will need to make sure that the profile related to the cluster your are atte
 | -p | `<profile_name>` | join the cluster related to the profile name in question. | **required** |
 
 > ##### Examples
--
-Help Screen
+- help Screen
 ```
 sudo nodectl join -p dag-l0 help  
 ```
-Join profile named `dag-l0`
+- join profile named `dag-l0`
 ```  
 sudo nodectl join -p dag-l0
 ```
@@ -260,16 +256,15 @@ If the `-p` switch is used with the `<profile_name>`, only that profile's status
 | -p | `<profile_name>` | join the cluster related to the profile name in question. | **optional** |
 
 > ##### Examples
--
-Help Screen
+- help Screen
 ```
 sudo nodectl status help  
 ```
-Show all profiles
+- show all profiles
 ```
 sudo nodectl status
 ```
-Show status of profile named `dag-l0`
+- show status of profile named `dag-l0`
 ```  
 sudo nodectl status -p dag-l0
 ```
@@ -299,12 +294,11 @@ The **`list`** command does not take any arguments and displays the details of t
 | CLI API TCP | The TCP port configured that is used for internal API calls only. |  
   
 > ##### Examples
--
-show this help screen
+- help screen
 ```
 sudo nodectl list help
 ```  
-execute the list command
+- execute the list command
 ```
 sudo nodectl list
 ```
@@ -348,46 +342,55 @@ If you do not use the `--basic` or `--extended` switches, the output will be in 
 | o  | Offline State |
 
 > ##### Examples
--
-help screen
+- help screen
 ```
 sudo nodectl peers help
 ```
-show nodes on cluster from random peer on the cluster from a specific profile
+- show nodes on cluster from random peer on the cluster from a specific profile
 ```
 sudo nodectl peers -p <profile_name>
 ```
-show YOUR Nodes's peers
+- show YOUR Nodes's peers
 ```
 sudo nodectl peers -p <profile_name> -t self
 ```
-show peers on the cluster utilizing a specific target ip address.
+- show peers on the cluster utilizing a specific target ip address.
 ```
 sudo nodectl peers -p <profile_name> -t <ip_address or hostname>
 ```
-show count of peers your node is able to see. (synonymous with `find` command) show peers on the cluster utilizing a specific.
+- show count of peers your node is able to see. (synonymous with `find` command) show peers on the cluster utilizing a specific.
 ```
 sudo nodectl peers -p <profile_name> -c
 ```
-source target ip address to count against.
+- source target ip address to count against.
 ```
 sudo nodectl peers -p <profile_name> -t <ip_address or hostname> -c
 ```
   
 #### Other examples
 example usage for a profile called dag-l0
-```sudo nodectl peers -p dag-l0```
+```
+sudo nodectl peers -p dag-l0
+```
 
 example usage for --basic
-```sudo nodectl peers -p dag-l0 --basic```
+```
+sudo nodectl peers -p dag-l0 --basic
+```
 
 example usage for --extended
-```sudo nodectl peers -p dag-l0 --extended```
+```
+sudo nodectl peers -p dag-l0 --extended
+```
   
 create a csv file 
-```sudo nodectl peers -p <profile_name> --csv```
+```
+sudo nodectl peers -p <profile_name> --csv
+```
 create a csv file named test.csv
-```sudo nodectl peers -p <profile_name> --csv --output test.csv```
+```
+sudo nodectl peers -p <profile_name> --csv --output test.csv
+```
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>find</span>
 
@@ -419,24 +422,23 @@ You can use the keyword `self` to indicate the local (`localhost`) Node for eith
 :::
 
 > ##### Examples
--
-help screen
+- help screen
 ```
 sudo nodectl find help
 ```
-Check if your Node is listed/seen on the cluster using a random source Node that is already found on the cluster.
+- check if your Node is listed/seen on the cluster using a random source Node that is already found on the cluster.
 ```
 sudo nodectl find -p <profile_name>
 ```
-Check if your Node is listed/seen on the cluster using a specific source Node.
+- check if your Node is listed/seen on the cluster using a specific source Node.
 ```
 sudo nodectl find -p <profile_name> -s <source_ip_host>
 ```
-Check if your Node is listed/seen on the cluster using a specific source Node and a specific target Node (other then your own.
+- check if your Node is listed/seen on the cluster using a specific source Node and a specific target Node (other then your own.
 ```
 sudo nodectl find -p <profile_name> -s <source_ip_host> -t <target_ip_host>
 ```
-Order of the values does not matter.
+- order of the values does not matter.
 
 #### other `find` examples
 
@@ -469,9 +471,6 @@ If a different target node 10.1.1.2 identified by a -t is listed/seen by a Node 
 ```
 sudo nodectl find -p dag-l0 -s 10.2.2.2 -t 10.1.1.2
 ```
-
-
-
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>check_connection</span>
 
@@ -523,37 +522,27 @@ The Node may be off the network and a restart is required.  You can use the [res
 You can contact a System Administrator to see if your log files may help to figure out if your issue is correctable.
 
 > ##### Examples
--
-scenario for help 
-- Node you joined to originally (source) : **`10.1.1.1`**
-- The IP of your Node (edge) : **`10.2.2.2`**
-- The IP of another Node (other) : **`10.3.3.3`**
-- The IP of another Node (other) : **`10.4.4.4`**
-help menu
+- scenario for help 
+  - Node you joined to originally (source) : **`10.1.1.1`**
+  - The IP of your Node (edge) : **`10.2.2.2`**
+  - The IP of another Node (other) : **`10.3.3.3`**
+  - The IP of another Node (other) : **`10.4.4.4`**
+- help menu
 ```
 sudo nodectl check-connection help 
 ```
-check random "source" against the local "edge" Node
+- check random "source" against the local "edge" Node
 ```
 sudo nodectl check-connection -p <profile_name>
 ```
-check random "source" Node against "other" Node
+- check random "source" Node against "other" Node
 ```
 sudo nodectl check-connection -p dag-l0 -e 10.3.3.3
 ```
-check "any other Node" against "any other Node"
+- check "any other Node" against "any other Node"
 ```
 sudo nodectl check-connection -p dag-l0 -s 10.3.3.3 -s 10.4.4.4
 ```            
-
-
-
-
-
-
-
-
-
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>check_source_connection</span>
 
@@ -604,16 +593,151 @@ Node restart service does not need to be restarted because pid
 | Edge -> State | Can the **EDGE** Node see the edge Node **`True`** or **`False`**. The edge Node's state is in **`Ready`** state. |  
 
 > ##### Examples
--
-help screen
+- help screen
 ```
 sudo nodectl check_source_connection help
 ```  
-execute the check_source_connection command
+- execute the check_source_connection command
 ```
 sudo nodectl check_source_connection
 ```
 
+### <span style={{color:'green',fontSize:'1.3em'}}>health</span>
+
+The **`health`** command does not take any arguments.
+
+It displays the basic health elements of your Node.
+
+| OUTPUT | Description |
+| :---: | :------- |
+| ok | Falls within normal operating parameters |
+| low | Falls outside of normal operating parameters - minimum |
+| warn  | Falls outside of normal operating parameters| 
+
+| Title | Description | 
+| ---: | :--- |
+| 15M CPU | Average usage of CPU over 15 minute intervals. |
+| Disk Usage | How much hard drive (DISK) space is in use. |
+| Uptime Days | How long the operating system has been running since the last boot/reboot. |
+| Memory | RAM usage. | 
+| Swap | SWAP space HD usage. |
+
+> ##### Examples
+- help screen
+```
+sudo nodectl health help
+```  
+- execute the health command
+```
+sudo nodectl health
+```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>sec</span>
+
+The **`sec`** command does not take any arguments.
+
+It displays the basic security elements of your Node.  It displays parsed elements from the auth.log file on your Debian operating system.
+  
+Following the table formatted output, **nodectl** will display a list of `date` -> `ip address` of external access requests against your Node.
+
+:::note 
+The results will be based off the current and last "rolled" auth.log file.
+:::
+
+example output
+```
+  LOG ERRORS          ACCESS ACCEPTED     ACCESS DENIED       MAX EXCEEDED        PORT RANGE
+  10                  31                  41                  39                  1024-4000
+```
+
+| Title | Description | 
+| ---: | :--- |
+| Log Errors | How many ERROR statements were found. |
+| Access Accepted | Count of how many logins were requested and accepted. |
+| Access Denied | Count of how many Invalid logins were found. |
+| Max Exceeded | Count of how many Invalid logins were blocked due to excessive attempts. | 
+| Port Range | What the minium and maximum port range for the denied attempts were identified. |
+| Since | The creation date of the last auth.log that was reviewed. |
+
+> ##### Examples
+- help screen
+```
+ssudo nodectl sec help
+```  
+- execute the sec command
+```
+sudo nodectl sec
+```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>price</span>
+
+| Command | Alias |
+| :---: | :---: | 
+| price  | prices |
+
+The **`price`** command does not take any arguments. Performs a quick lookup for crypto prices via **CoinGecko's** public API.  
+
+:::warning
+This command is for recreation purposes **only**.  
+
+**Constellation Network** is not a financial advisor. Information obtained from CoinGecko and does not represent any opinions or financial advise of or from Constellation Network.
+:::
+
+| Title | Description | 
+| ---: | :--- |
+| $DAG | Constellation Network |
+| $LTX | Lattice Exchange |
+| $BTC | Bitcoin |
+| $ETH | Ethereum | 
+| $QNT | Quant Network |
+
+> ##### Examples
+- help screen
+```
+ssudo nodectl price help
+```  
+- execute the price command
+```
+sudo nodectl price
+```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>market</span>
+
+| Command | Alias |
+| :---: | :---: | 
+| market | markets |
+
+The **`market`** command does not take any arguments. 
+
+Performs a quick lookup for crypto markets via CoinGecko's public API
+  
+The command will list the Top 10 Crypto markets at the current moment in time and in the event that **Constellation Network** is not in the top ten, it will list it's current position in relation to the rest of the known markets.
+  
+:::warning
+This command is for recreation purposes **only**.  
+
+**Constellation Network** is not a financial advisor. Information obtained from CoinGecko and does not represent any opinions or financial advise of or from Constellation Network.
+:::
+
+| Title | Description | 
+| ---: | :--- |
+| Rank | Ranking 1 Best, 1+X Worst |
+| Name | Token name |
+| Symbol | Token symbol |
+| Price| Current price at time of execution. | 
+| Market Cap | Market Capitalization |
+| Total Supply | Total supply of tokens |
+| ATH | All Time High of the token |
+
+> ##### Examples
+- help screen
+```
+sudo nodectl market help
+```  
+- execute the market command
+```
+sudo nodectl market
+```
 
 
 
@@ -622,9 +746,53 @@ sudo nodectl check_source_connection
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### <span style={{color:'green',fontSize:'1.3em'}}>refresh_binaries</span> 
+
+The **`refresh_binaries`** command does not take any arguments.
+  
+| Command | Shortcut |
+| :---: | :---: | 
+| check_source_connection  | -rtb  |
+
+This command will download and overwrite the existing **Tessellation** binaries files that are required to run your Node.  The result of this command will be to download the binaries from the latest release and is independent of a system upgrade.
+  
+This command can be used to refresh your binaries in the event that you have a corrupted system.
+  
+This command should be accompanied by the restart command in order to allow your Node to utilize the new binary files.
+  
+This includes the latest seed-list access list file.
+  
+> ##### Examples
+- help screen
+```
+sudo nodectl refresh_binaries help
+```  
+- execute the refresh_binaries command
+```
+sudo nodectl refresh_binaries
+```
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>check_seedlist</span>
 The **`check_seedlist`** command takes one argument.
+
+| Command | Shortcut |
+| :---: | :---: | 
+| check_seedlist  | -csl |
 
 | switch | parameters | Description | Is Switch Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -645,11 +813,11 @@ This command is specific to current restrictions placed on the Hypergraph for co
 | node id found on seed list | This will be a `True` or `False`.  In the event of a `False` please contact an administrator on the **Constellation Network** official Discord server. |
  
 > ##### Examples
-help screen
+- help screen
 ```
 sudo nodectl check_seedlist help
 ```  
-execute the check_seedlist command
+- execute the check_seedlist command
 ```
 sudo nodectl check_seedlist
 ```
@@ -658,6 +826,10 @@ sudo nodectl check_seedlist
 
 The **`update_seedlist`** command does not take any arguments.
   
+| Command | Shortcut |
+| :---: | :---: | 
+| update_seedlist  | -csc  |
+
 `update_seedlist` will pull down the latest seedlist from the Constellation Network repositories. This command can be used in the event your Node is unable to authenticate (and therefor will not connect) to the network.  
   
 Using the [`check_seedlist`](#span-stylecolorgreenfontsize13emcheckseedlistspan) command, a Node Operator  can confirm if the Node is seen on the access lists; if not, issue the `update_seedlist` command to attempt to correct the issue.
@@ -669,14 +841,54 @@ If you update the seedlist and still receive a `False`, you may need to contact 
 *This command is specific to current restrictions placed on the Hypergraph for controlled access prior to the PRO Score [proof of reputable observation] release.*
         
 > ##### Examples
-help screen
+- help screen
 ```
 sudo nodectl update_seedlist help
 ```  
-execute the update_seedlist command
+- execute the update_seedlist command
 ```
 sudo nodectl update_seedlist
 ```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>show_seedlist_participation</span> 
+
+| Command | Shortcut |
+| :---: | :---: | 
+| show_seedlist_participation | -cslp  |
+
+The check_seedlist_participation command does not take any arguments.
+  
+This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.
+  
+This command can be used to review seed list access-list participation for any/all given profile(s) in the configuration that has a seed-list setup.
+       
+> ##### Examples
+- help screen
+```
+sudo nodectl check_seedlist_participation help
+```  
+- execute the check_seedlist_participation command
+```
+sudo nodectl check_seedlist_participation
+```  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>show_node_states</span> 
 
@@ -1193,8 +1405,78 @@ upgrade nodectl
 sudo nodectl upgrade_nodectl
 ```
 
-### check_versions
+## Troubleshooting
+### <span style={{color:'green',fontSize:'1.3em'}}>logs</span> 
 
+The **`logs`** command will print out the contents of the logs that have been requested.
+
+| Command | Alias |
+| :---: | :---: | 
+| logs  |  log |
+
+| switch | parameters | Description | Is Switch Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | The name of the profile. This is important because (for example) the app.log shares the same log name for each profile.  The Node Operator will need to specify which profile to review. | **required** |
+| -l| `<log_name>` | Name of the log that you would like to review.  see [log types](#log-types) | **required** |
+| -g | `<word>` | filter out (*grep*) the word `<word>`. This is case insensitive. | **optional** |
+| -f | None | `follow` the log line by line.  As a new line is added to the log during execution of user or program initiated elements that might print to the log file being monitored. To cancel out of the "-f" command you will simultaneously press and hold the control `ctrl key` on your keyboard and press the `c` key. | **optional** |
+
+##### Syntax:
+```
+sudo nodectl logs -p <profile_name> <log_name> [-g <grep_value>] [-f]
+```
+
+##### Log Types
+| Log Name |
+| :--: |
+| app |
+| http |
+| nodectl |
+
+> ##### Examples
+- request to follow the log app.log from the dag-l0 profile filtering out the word "error" from each line.
+```
+sudo nodectl -p dag-l0 -l app -g error -f
+```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>send_logs</span> 
+
+The **`send_logs`** command is a *debug* command used to help accumulate log files to send to Developers or System Engineering to dissect; to better the code base.
+  
+During the execution you will be offered a menu to upload:
+- current logs  
+- backup logs  
+- specific date logs  
+- date range logs  
+- archived logs  
+    
+Once you follow the prompts a tarball gzip file will appear in the uploads directory and the system will offer you the ability to upload the results to the transfer.sh service.
+
+| Command | Shortcut |
+| :---: | :---: | 
+| send_logs  |  -sl |
+
+| switch | parameters | Description | Is Switch Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which profile are you attempting to glean logs from. | **required** |
+  
+> ##### Examples
+- help screen
+```
+sudo nodectl send_logs help
+```
+```
+sudo nodectl -sl help
+```  
+- execute a log preparation for upload
+```
+sudo nodectl send_logs -p <profile_name>  
+```
+```
+sudo nodectl -sl -p <profile_name>  
+```
+
+### <span style={{color:'green',fontSize:'1.3em'}}>check_versions</span> 
 With the `check_versions` command, **nodectl** will go out and review the latest versions of both **Constellation Network Tessellation** and **nodectl**. 
 
 **nodectl** will review the current github repo and compare it to the versions running on the Node. 
@@ -1217,12 +1499,11 @@ If a profile name is not supplied, nodectl will use the first found profile conf
 | nodectl version match | Does the Node match up to the repository? |
 
 > ##### Examples
--
-Show help
+- help menu
 ```
 sudo nodectl check_version help
 ```
-Execute the check_version command
+- execute the check_version command
 ```
 sudo nodectl check_version
 ```
