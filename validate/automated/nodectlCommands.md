@@ -470,6 +470,159 @@ If a different target node 10.1.1.2 identified by a -t is listed/seen by a Node 
 sudo nodectl find -p dag-l0 -s 10.2.2.2 -t 10.1.1.2
 ```
 
+
+
+
+### <span style={{color:'green',fontSize:'1.3em'}}>check_connection</span>
+
+The **`check_connection`** command will execute a search on the currently connected **Hypergraph** or **Metagraph** cluster. 
+
+| Command | Shortcut |
+| :---: | :---: | 
+| check_connection  | -cc |
+
+| switch | parameters | Description | Is Switch Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which cluster related to the profile name in question do we want to review. | **required** |
+| -s | `<ip_address or hostname>` | identify a **source** Node to use specifically by the `check_connection` command, to test against the **edge** Node. | **optional** |
+| -e | `<ip_address or hostname>` | identify a **edge** Node to compare against the **source** Node. | **optional** | 
+
+If the `-s` switch is not specified, **nodectl** will pick a random Node on the cluster specified by the `-p` profile required parameter.
+  
+It will search against the Node the `check_connection` command was executed upon unless an **`edge device`** to check against the `source` is specified by an optional `-e` switch.
+  
+The command will compare the Nodes found on the source against the Nodes found on the edge.  If the Nodes connected to each do not match, the command will display those Nodes that are missing between the two.
+
+##### Dictionary
+| symbol | description |
+| :--: | :-- |
+|  *   | Indicates the ip searched against was either the edge and source ip
+|  i   | Initial State
+|  rj  | ReadyToJoin State
+|  ss  | StartingSession State
+|  s   | SessionStarted State
+|  rd  | ReadyToDownload State
+|  wd  | WaitingForDownload State
+|  wr  | WaitingForReady State
+|  dp  | DownloadInProgress State
+|  ob  | Observing State
+|      | Ready
+|  l   | Leaving State
+|  o   | Offline State
+|  a   | ApiNotReady State (nodectl only)
+
+#### If Node shows `False`
+There may be circumstances where your Node is showing a False positive.  The network may still be converging or another Node may be causing your Node to show False.
+  
+In some cases you may need to wait a little time and check the Node (check-connection) again.
+
+However, if you are seeing many Nodes "missing", please wait a period of time and check again anyway. 
+  
+The Node may be off the network and a restart is required.  You can use the [restart command](#span-stylecolorgreenfontsize13emrestartspan) to attempt to restart and join the network. 
+
+You can contact a System Administrator to see if your log files may help to figure out if your issue is correctable.
+
+> ##### Examples
+-
+scenario for help 
+- Node you joined to originally (source) : **`10.1.1.1`**
+- The IP of your Node (edge) : **`10.2.2.2`**
+- The IP of another Node (other) : **`10.3.3.3`**
+- The IP of another Node (other) : **`10.4.4.4`**
+help menu
+```
+sudo nodectl check-connection help 
+```
+check random "source" against the local "edge" Node
+```
+sudo nodectl check-connection -p <profile_name>
+```
+check random "source" Node against "other" Node
+```
+sudo nodectl check-connection -p dag-l0 -e 10.3.3.3
+```
+check "any other Node" against "any other Node"
+```
+sudo nodectl check-connection -p dag-l0 -s 10.3.3.3 -s 10.4.4.4
+```            
+
+
+
+
+
+
+
+
+
+
+### <span style={{color:'green',fontSize:'1.3em'}}>check_source_connection</span>
+
+The **`check_source_connection`** command takes a profile argument.
+
+| Command | Shortcut |
+| :---: | :---: | 
+| check_source_connection  | -csc  |
+
+| switch | parameters | Description | Is Switch Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which cluster related to the profile name in question do we want to review. | **required** |
+    
+When executed the `check_source_connection` command will attempt to find a random Node on the current known **Hypergraph** or **Metagraph** cluster.
+  
+:::warning 
+The random Node **needs** to be joined into the **consensus of the cluster**, and **must** be on the cluster and in **`Ready`** state.
+
+**nodectl** should take care of this for us.
+:::
+
+example output
+```
+States: Initial, ReadyToJoin, StartingSession, SessionStarted,                                         
+        ReadyToDownload, WaitingForDownload, DownloadInProgress, Observing, 
+        WaitingForReady, WaitingForObserving, Ready, Leaving, 
+        Offline, ApiNotReady, SessionIgnored, SessionNotFound, 
+          
+Source: Server this Node is joined to
+        Edge: This Node
+
+Note: If the SOURCE is on a different network it will show ApiNotReady
+
+FULL CONNECTION              PROFILE                                                                   
+True                         dag-l0                     
+SOURCE -> STATE              EDGE -> STATE              
+True | Ready                 True | Ready               
+  
+Node restart service does not need to be restarted because pid
+[4157840] was found already. 
+```  
+
+| Title | Description | 
+| ---: | :--- |
+| Full Connection | Both the source Node picked by nodectl and the local **edge** Node that executed the `check_source_connection` command can see each other **`True`** or cannot **`False`**. |
+| Profile | The profile that this command was run against. |
+| Source -> State | Can the **SOURCE** Node see the edge Node **`True `** or **`False`**. The source Node's state is in **`Ready`** state. |
+| Edge -> State | Can the **EDGE** Node see the edge Node **`True`** or **`False`**. The edge Node's state is in **`Ready`** state. |  
+
+> ##### Examples
+-
+help screen
+```
+sudo nodectl check_source_connection help
+```  
+execute the check_source_connection command
+```
+sudo nodectl check_source_connection
+```
+
+
+
+
+
+
+
+
+
+
 ### <span style={{color:'green',fontSize:'1.3em'}}>check_seedlist</span>
 The **`check_seedlist`** command takes one argument.
 
@@ -620,19 +773,6 @@ create a csv file and put in the designated `uploads` directory with specified n
 ```
 sudo nodectl show_current_rewards --csv --output test.csv
 ```
-  
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>clean_snapshots</span>
 
@@ -954,13 +1094,6 @@ execute the export_private_key command
 ```
 sudo nodectl export_private_key
 ```
-
-
-
-
-
-
-
 
 ## Configuration
 
