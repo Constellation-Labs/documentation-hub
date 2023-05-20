@@ -1049,6 +1049,125 @@ or
 sudo nodectl -cf -t logs
 ```
 
+### <span style={{color:'green',fontSize:'1.3em'}}>auto_restart</span> 
+
+The **`auto_restart`** command takes several arguments.
+
+This feature is **disabled**, by default. 
+
+**`auto_restart`** is a special feature of **nodectl** that will continuously monitor your Node to make sure the various profiles are *on the cluster* (**hypergraph** or **metagraphs**).
+
+| Monitor to keep |
+| :--- |
+| Each profile's state on the cluster is in `Ready` state. |
+| The Node's `session` is concurrent with the cluster's `session`. |
+  
+:::success IMPORTANT
+Although you can enable **`auto_restart`** (also with the **`auto_upgrade`** feature) from the command line, you should use the [configure command](#span-stylecolorgreenfontsize13emconfigurespan) to enable the feature.  This will allow you to keep `auto_restart` working properly throughout the use of **nodectl**
+:::
+
+| switch | parameters | Description | Is Switch Required or Optional |
+| :---: | :---: | :--- | :----: |
+| None | enable | enable the `auto_restart` feature. | **optional** |
+| None | disable | disable the `auto_restart` feature. | **optional** |
+| None | restart | disable and then enable the `auto_restart` feature | **optional** |
+| None | status | display the `auto_restart` and `auto_upgrade` feature status | **optional** |
+| None | check_pid | display the `process id` of the process that is currently running the `auto_restart` feature. | **optional** |
+| --auto_upgrade | None | enable the `auto_upgrade` feature with the `auto_restart` service. | **optional** |
+
+:::danger IMPORTANT WARNING  
+Do **not** rely on `auto_restart` feature completely. `auto_restart` is **not perfect** and should be used as a tool to help keep your Node up in a consistent fashion; however, it may **not be fool proof**, and you should still monitor your Node manually to make sure it stays online with the proper known cluster session.
+:::  
+
+**nodectl** will processing each profile in its own thread (`i/o`).  **nodectl** will wait a randomly set time (per thread) and check the Node's condition after each successive random sleep timer expires.
+
+| activate `auto_restart` identifiers |
+| :--- |
+| Its service in an inactive state |
+| Node's cluster state is not `Ready` |
+| The Node's known cluster session does **not** match the cluster's known session. |
+  
+If the **session** of the cluster does **not** match the Node **session** that was established at the cluster's genesis (at the beginning of the cluster's initialization), an `auto_restart` will be triggered. This session will change if a restart or roll-back is identified. 
+   
+If your Node is currently joined to an older session it will no longer be participating on the proper cluster (what can be considered a "*floating island*"), `auto_restart` will attempt to correct the situation.
+  
+:::warning IMPORTANT
+An auto_restart may take up to 18 minutes to complete.  
+
+This is because the Node will detect one or both profiles down and restart the Global **hypergraph** first. **nodectl** will then attempt to bring up any **metagraphs**.  To avoid timing conflicts with other Node's that may also have `auto_restart` enabled, `auto_restart` has random timers put in place throughout a restart process.  
+
+**nodectl** will need to properly link your **metagraph** to the Global **hypergraph**. 
+
+It is important to understand this is a background and unattended process, the delay is created on **purpose**.
+:::
+  
+It is recommended by the developers to link a **metagraph** (*that requires this type of setup*) through your Node's own Global **hypergraph** connection.
+  
+:::warning PATIENCE
+If you are using `auto_restart` **please remember** if you are physically monitoring your Node while it is enabled, you need to exercise **patience** to allow it to figure out how to get back online by itself as necessary.  
+:::
+
+Forcing a manual restart will **disable** `auto_restart`.  If enabled in the configuration, nodectl will attempt to re-enable `auto_restart` after any command that requires it to be temporarily disabled.
+  
+In order to avoid duplicate or unwanted behavior such as your Node restarting when you do not want it started, the auto_restart feature will automatically disable if you attempt to issue any command that manipulates the services.
+- leave
+- stop
+- start
+- join
+- restart
+- upgrade
+  
+#### AUTO UPGRADE
+
+You can enable this feature by issuing: `sudo nodectl configure -e` (find details of the [configure command here](#span-stylecolorgreenfontsize13emconfigurespan). 
+  
+**`auto_upgrade`** can only be enabled with the `auto_restart` feature enabled.
+  
+Optionally if you are not using the configuration, you can enable auto_upgrade by issuing the optional `--auto_upgrade` switch when enabling `auto_restart` from the command line.
+  
+During a Tessellation upgrade, the session will change.  This will trigger an auto restart.  During the restart, nodectl will identify the version of **Tessellation** on the Node verses what is running on the cluster. If it does not match, nodectl will attempt to upgrade the **Tessellation** binaries before  continuing.
+  
+:::danger IMPORTANT
+**nodectl** will not `auto_upgrade` itself.  
+
+Newer versions of nodectl may require a upgrade be executed in order to update any system services or files that may have changed [for any of many reasons].
+:::
+
+#### auto_restart/auto_upgrade passphrase requirement  
+:::warning Hidden passphrase
+**nodectl** will not work unless the `p12 passphrase` is present in the configuration file.  In order to join the network unattended, nodectl will need to know how to authenticate against the Hypergraph.
+:::
+
+> ##### Examples)
+- help screen
+```
+sudo nodectl auto_restart help
+sudo nodectl auto_upgrade help
+```
+- persist auto_restart in configuration and auto_upgrade *choose Edit --> Auto Restart Section*.
+```sudo nodectl configure```
+- manual enable auto_restart services
+```
+sudo nodectl auto_restart enable
+```  
+- manual enable auto_restart services with auto_upgrade
+```
+sudo nodectl auto_restart enable --auto_upgrade
+```
+- manual disable auto_restart services
+```
+sudo nodectl auto_restart disable
+```
+- manual restart auto_restart services
+```
+sudo nodectl auto_restart restart
+```
+check if auto_restart is running by searching for the process id (pid) of the auto_restart service. The command will also show status of auto features set in the configuration.
+```
+sudo nodectl auto_restart check_pid
+sudo nodectl auto_restart status
+```
+
 ## Distribution Operations
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>whoami</span>
@@ -1376,12 +1495,25 @@ The `validate_config` command will attempt to review your `cn-config.yaml` file 
 | :---: | :---: | 
 | validate_config  |  -val  |
 
-
-### <span style={{color:'green',fontSize:'1.3em'}}>auto_restart</span> 
-
-
-
 ### <span style={{color:'green',fontSize:'1.3em'}}>upgrade_path</span>
+
+The upgrade_path command does not take any arguments and offers the Node Operator the ability to check their Node's current nodectl version for upgrade path requirements.
+  
+If the Node is not at the most current version of nodectl, this command will warn you of this fact, let you know what the next necessary upgrade is, and will show you upgrade path requirements.
+   
+| Command | Shortcut |
+| :---: | :---: | 
+| upgrade_path  |  -up  |
+  
+> ##### Example Usage
+- help screen
+```
+sudo nodectl upgrade_path help
+```  
+- execute the upgrade_path command
+```
+sudo nodectl upgrade_path
+```
 
 ### <span style={{color:'green',fontSize:'1.3em'}}>upgrade</span>  
 
