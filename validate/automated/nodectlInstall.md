@@ -53,12 +53,12 @@ If you are coming from the ***New Node Installation with p12 migration*** docume
 *replace **ssh_key_name** with the name of your ssh key file.*
 [SSH Concepts](../validator/sshkeyExplained.md)
 <MacWindow>
-netmet@netmet-MacBook-Pro .ssh % ssh ubuntu@44.211.47.118 -i my-ssh-pem-file<br />
-The authenticity of host '44.211.47.118 (44.211.47.118)' can't be established.<br />
+netmet@netmet-MacBook-Pro .ssh % ssh ubuntu@112.112.112.112 -i my-ssh-pem-file<br />
+The authenticity of host '112.112.112.112 (112.112.112.112)' can't be established.<br />
 ED25519 key fingerprint is SHA256:dU7879879879879789879878977Fiuiuiuiuiuiuug1.<br />
 This key is not known by any other names<br />
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes<br />
-Warning: Permanently added '44.211.47.118' (ED25519) to the list of known hosts.<br />
+Warning: Permanently added '112.112.112.112' (ED25519) to the list of known hosts.<br />
 Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-1031-aws x86_64)<br />
 <br />
  * Documentation:  https://help.ubuntu.com<br />
@@ -101,7 +101,7 @@ In the above example, you will see `ubuntu@ip-172-31-90-241:~$`, on the last lin
   - admin
   - root
 
-Throughout the rest of this documentation, you will replace the name `ubuntu` with the user you have identified.  
+Throughout the rest of this documentation, you should replace the name `ubuntu` with the user you have identified.  
 
 ### Download nodectl
 Download the latest version of nodectl.
@@ -176,7 +176,7 @@ You will notice **nodectl** will attempt to run the `version` command.
   - In this example) version 2.7.0
 
 :::info p12 Migration
-If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#install-steps); otherwise continue forward.
+If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#upload-existing-p12); otherwise continue forward.
 :::
 
 ## Install nodectl
@@ -190,7 +190,7 @@ ubuntu@ip-172-31-90-241:~$ sudo nodectl install
 ### Confirm Installation Request
 You will be presented a screen that will offer some instructions on how the installation will work.
 
-Default options that will be presented within brackets [].  If you would like to use the default option, you can just hit the &lt;enter&gt; key, on your keyboard.
+Default options that will be presented within brackets `[ ]`.  If you would like to use the default option, you can just hit the <kbd>enter</kbd>, on your keyboard.
 
 <MacWindow>
  ========================================<br />
@@ -220,7 +220,7 @@ Default options that will be presented within brackets [].  If you would like to
   Are you sure you want to continue this installation? [n]: <br />
 </MacWindow>
 
-Type in `y` and then hit the &lt;enter&gt; key.
+Type in `y` and then hit the <kbd>enter</kbd> key.
 ```
 Are you sure you want to continue this installation? [n]: y
 ```
@@ -243,7 +243,7 @@ The TestNet environment is a testing and experimental environment that you will 
 
 TestNet Nodes are used by the Hypergraph and Metagraphs to be beat up upon.  These Nodes will experience trial and error moments.  The TestNet requires more experienced Node Operators and a little more dedication verses the **set it and forget it** environment created within the **MainNet**.
 
-For the purposes of this tutorial, we will be joining the **MainNet** environment.  To accept this choice, you will hit the **M** key on your keyboard.  You will **NOT** be required to hit enter afterwards.
+For the purposes of this tutorial, we will be joining the **MainNet** environment.  To accept this choice, you will hit the **M** key on your keyboard.  You will **NOT** be required to hit <kbd>enter</kbd> afterwards.
 
 <MacWindow>
 ------ * Installation Starting * -------<br />
@@ -274,7 +274,7 @@ The IP address `111.111.111.111` is a fake IP used for example purposes only
 If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#import-p12-file); otherwise continue forward.
 :::
 
- **brand new** installation, we will choose **n** (or just hit enter to accept the default) when requested to migrate over an existing **p12** file.  The **p12** file is your private key file used to store elements necessary to authenticate to the MainNet and also your Node's wallet information.
+ Since this is a **brand new** installation, we will choose **n** (or just hit enter to accept the default) when requested to migrate over an existing **p12** file.  The **p12** file is your private key file used to store elements necessary to authenticate to the MainNet and also your Node's wallet information.
 
 ```
 Are you migrating over an existing p12 private key? [n]: n
@@ -318,12 +318,14 @@ Continuing the **system requirements** nodectl will create and setup your swap f
 
 Once the system requirements section is completed via 100% automation, you be directed to a new screen.  **nodectl** will detect the current user logged in. In our example using the Ubuntu distribution on AWS, the user called `ubuntu`.  
 
-It is time to change this and move to a more secure username.  We will create this user now; however, we will continue the installation with the `ubuntu` user.  At the end of the install, we will switch over to our new Node administrator account.
+It is time to change this and move to a more secure username.  We will create this user now; **however**, we will continue the installation with the `ubuntu` user.  At the end of the install, we will switch over to our new Node administrator account.  
+
+**We will continue to use our `Ubuntu` user until instructed otherwise.**
 
 :::danger Reminder 
 This user will depend on your service provider and/or your Linux distribution of choice. 
 
-Possibly:
+Most Commonly:
   - root
   - admin
   - ubuntu
@@ -355,7 +357,7 @@ Since this documentation is publicly available and nodectl is open sourced, the 
   <br /> 
 </MacWindow>
 
-We can hit the &lt;enter&gt; key to accept `nodeadmin` as our default, or input `nodeadmin` (or a username of your choice) to continue.
+We can hit the <kbd>enter</kbd> key to accept `nodeadmin` as our default, or input `nodeadmin` (or a username of your choice) to continue.
 
 ### Setup Password
 
@@ -363,7 +365,9 @@ Our `nodeadmin` user (or whichever user you decided to create - heretofore `node
 
 This password will be used during each initial nodectl request.  
 
-Afterwards for seurity purposes, you will be prompted to re-enter your password when administrative commands are required **and** the timeout has been reached.
+Afterwards for security purposes, your Linux distribution will prompt to re-enter your password when administrative commands are required **and/or**:
+- It is the initial command request
+- The distribution's timeout limit has been reached.
 
 The nodectl installer will offer you some information (similar to these comments) about the various password, keyphrase, or passphrases `[passphrases]` that will be required to run your Node. 
 
@@ -393,7 +397,14 @@ Unauthorized access can be potentially crippling to the operations of your Node;
 <br /> 
 </MacWindow>
 
-We will create a password of at least **`10`** characters in length.  You can use whatever characters you desire. However, caution should be excerpted when attempting to use of `section sign` characters as **nodectl** may not work properly with them.
+We will create a password of at least **`10`** characters in length.  You can use whatever characters you desire. However, caution should be exercised when attempting to use of `section sign` characters as **nodectl** may not work properly with them.
+
+When creating your passphrase, avoid use of:
+ - periods
+ - double `//` 
+ - section signs
+ - double quotes
+ - single quotes
 
 :::note Important
 You will **not** see any characters while you enter and confirm the password.  This is a feature of the operating system done for security reasons.
@@ -435,7 +446,7 @@ If you followed the recommended [setup](../validator/get_started.md) instruction
 
 Unless you are running your Node in a specialized way that required you to use a username/password method of accessing your future Node, instead of SSH keys (not recommended unless you are an advanced user with specific reasoning) ...  
 
-We will choose the default option `y` (or just hit the &lt;enter&gt; key).
+We will choose the default option `y` (or just hit the <kbd>enter</kbd> key).
 
 <MacWindow>
   ========================================<br /> 
@@ -452,7 +463,7 @@ We will choose the default option `y` (or just hit the &lt;enter&gt; key).
   If you followed the provided instructions and are not an advanced user, you most likely setup<br /> 
   your VPS with SSH key pairs.<br /> 
 <br /> 
-  Did you use an SSH key pair? [y]:<br />  
+  Did you use an SSH key pair? [y]: y<br />  
 <br /> 
 </MacWindow>
 
@@ -479,7 +490,7 @@ nodectl attempts to be as smart as possible to identify default accounts from ot
  - Google Cloud Provider (GCP)
 :::
 
-We will say `y` (or hit &lt;enter&gt; key).
+We will say `y` (or hit <kbd>enter</kbd> key).
 
 <MacWindow>
   <br />  
@@ -498,26 +509,28 @@ We will say `y` (or hit &lt;enter&gt; key).
 nodectl will disable these accounts.  
 
 :::note
-This is reversible if desired.
+This is reversible if desired via the [enable_root_ssh](./nodectlCommands#enable_root_ssh) command.
 :::
 
 <MacWindow>
 Disabling [SSH] for root, ubuntu and/or admin.. disable<br />
 </MacWindow>
 
-### Test nodeadmin access
+### Test `nodeadmin` access
 
 Let's pause the installation process here. **Before we continue**, we should quickly access our Node using our newly created **nodeadmin** account.
 
-**DO NOT CLOSE THE INSTALLER TERMINAL WINDOW**
+<p><span style={{color:'red', fontSize:'1.1em', fontWeight: '600'}}>DO NOT CLOSE THE INSTALLER TERMINAL WINDOW</span></p>
 
-You should now copy the same configuration you used to access your instance (which opened our installation shell); however, using our `nodeadmin` user instead.
+You should now copy the same configuration you used to access your instance initially (which opened our installation shell); however, using our `nodeadmin` user instead.
+
+*We are simply testing that we have access to our Node via the new `nodeadmin` account, before we continue to lock down our Node for better security.*
 
 Reminder how to do this is for [windows](../resources/accessWin.md).
 
 Reminder how to do this for [mac](../resources/accessMac.md).
 
-Now that we are comfortable that we have access to our Node via the **`nodeadmin`** user account.  We can close the `nodeadmin` terminal window, returning to our original terminal which has the installer running.
+Now that we are comfortable that we have access to our Node via the **`nodeadmin`** user account.  We can close the **test** `nodeadmin` terminal window (that we opened in this step). This will return us to our original terminal which has the installer running, as the `ubuntu` user.
 
 ### Disable root
 
@@ -544,7 +557,7 @@ nodectl will default to `n` for the protection of user, as this is an advanced s
   Make sure your non-root user access is available before you exit
   the current terminal shell!  (keep open and connected until fully tested and verified.)<br /> 
 <br /> 
-  Are you SURE you want to continue? [n]: <br /> 
+  Are you SURE you want to continue? [n]: y<br /> 
 <br /> 
 </MacWindow>
 
@@ -557,7 +570,7 @@ Reloading [SSH] daemon......................... complete  <br />
 
 nodectl will now "warn" you that it will default to the **Constellation Network** dual layer configuration.
 
-Your Node will be setup to connect to both the Hypergraph (Constellation's Global Layer0); as well as, Constellation's Metagraph (Layer1).  In order to properly participate on Constellation's **MainNet** network, your Node will be required to connect to both.
+Your Node will be setup to connect to both the **Hypergraph** (Constellation's Global Layer0); as well as, Constellation's **Metagraph** (Layer1).  In order to properly participate on Constellation's **MainNet** network, your Node will be required to connect to both.
 
 Do not worry, nodectl will take care of all the technical details for you!
 
@@ -612,7 +625,7 @@ The `p12` file is a specially formatted private key file used by (but not create
 
 You can now provide a file name for your `p12` file.  This can be any name that suits your needs.  As an added precaution, do not share this filename with anyone that shouldn't have access to the file.
 
-If you would like to keep the default `nodeadmin-node.12` name, just hit the &lt;enter&gt; key.
+If you would like to keep the default name `nodeadmin-node.p12` **(*not recommended*)**, just hit the <kbd>enter</kbd> key.
 
 <MacWindow>
   ========================================<br />
@@ -626,9 +639,12 @@ We are ready to provide nodectl with a passphrase for our future `p12` file.
 
 nodectl will again provide you with information about creating the passphrase.
 
-Do not use `single` or `double` quote characters.
-
-Do not use the special character `section` sign.
+When creating your passphrase, **do not use**:
+ - periods
+ - double `//` 
+ - section signs
+ - double quotes
+ - single quotes
 
 <MacWindow>
   We will end of up with 3 separate unique
@@ -686,10 +702,12 @@ Write your passphrase down in a very secure location, and never share it out to 
 ### Create p12 alias
 
 :::danger IMPORTANT
-If you are migrating an existing **[p12 private key file](./nodectlInstallMigrate.md)**, you must use the same alias as you did when you originally created the file.  Failure to do so will lead to errors.
+If you are **migrating** an existing **[p12 private key file](./nodectlInstallMigrate.md)**, you must use the same alias as you did when you originally created the file.  Failure to do so will lead to errors.
+
+*MainNet 1.0 Node Operators, this is **not** your MainNet 1.0 Node alias; rather, it is your **wallet's** alias*
 :::
 
-Constellation Network requires that you provide an alias for your `p12 file`.  This alias is important, and should also not be forgotten.  
+**Constellation Network** requires that you provide an alias for your `p12 file`.  This alias is important, and should also not be forgotten.  
 
 <MacWindow>
   Please create a simple name to help you remember your<br />
@@ -739,16 +757,16 @@ Now that nodectl has completed the process of creating your Node for you.  We ha
 
 #### node ID
 
-nodectl will access your `p12` private key file and attempt to extract your Node's `nodeid` from the file. 
+nodectl will access your new or migrated `p12` private key file and attempt to extract your Node's `nodeid` from the file. 
 
 The `nodeid` can be considered your Node's **`public`** key.  It is public information, and we do not have to worry about exposing it.
 
-Write this nodeid down for your own reference; however, you will be able to derive your nodeid using dedicated nodectl commands at any time later on, via the `sudo nodectl nodeid` command.  Please refer to the [command reference](nodectlCommands.md) section for details on this command and others.
+Write this nodeid down for your own reference; however, you will be able to derive your nodeid using dedicated commands at any time later on, via the [`sudo nodectl nodeid`](./nodectlCommands#nodeid) command.
 
-Regardless, the results will be presented to you as part of the installation process.
+The `nodeid` results will be presented to you as part of the final steps of the installation process.
 
 :::info Invalid
-The IP address and nodeid presented below are for demonstration purposes only and are not valid nor correctly formated.
+The IP address and nodeid presented below are for demonstration purposes only and are not valid nor correctly formatted.
 :::
 
 <MacWindow>
@@ -761,14 +779,14 @@ The IP address and nodeid presented below are for demonstration purposes only an
   P12 FILENAME                    P12 LOCATION<br />                   
   nodeadmin-node.p12              /home/nodeadmin/tessellation/<br />  
   NODE ID<br /> 
-  5872afe110ee7295111111111111111111111122222222222222222225900ec0fab1cb15511f1a485ef6cccd291d82948c8cc1b340e46332c70636e53447b85b<br /> 
+  5872afe110ee729511111111111111111111112222222222222222222333333333333333333333344444444444444444448cc1b340e46332c70636e53447b85b<br />
 </MacWindow>
 
 #### Seed list
 
 The seed list is the access list that determines which Nodes are allowed and not allowed on **MainNet**.  This is a temporary authentication mechanism pre-PRO score implementation. 
 
-nodectl will issue the `sudo nodectl check_seedlist` command, to confirm whether or not your Node is able to participate on the Hypergraph at the current time.
+nodectl will issue the [`sudo nodectl check_seedlist`](./nodectlCommands#check_seedlist) command, to confirm whether or not your Node is able to participate on the Hypergraph at the current time.
 
 <MacWindow>
  ----- * Check Seed List Request * ------<br /> 
@@ -811,7 +829,7 @@ We will now be presented with final instructional steps.
   Total installation time:  1.229 minutes <br /> 
 </MacWindow>
 
-As stated in our final instructions on our Node, and now that our Node is completed, we need to make sure we have communicated our newly created `nodeid` to Constellation Network admins (most likely method is through the Constellation Network Discord channels).
+Now that our Node installation is complete; as stated in our final instructions on our Node, we need to make sure we have communicated our newly created `nodeid` to **Constellation Network** Admins (most likely method is through the Constellation Network Discord channels).
 
 We will need to collateralize our Node with the necessary amount of **`$DAG`**.
 
@@ -835,4 +853,5 @@ Our Node's prompt should change, and our `ubuntu` and `root` users will no longe
 You now have a **Constellation Network** validator Node!
 
 ### Command Reference
-Next steps while you wait for your Node to be accepted for access (via the seed list).  We recommend that you review all the available features and commands of **nodectl**, via the [command reference](./nodectlCommands.md) documentation.
+
+While we wait for your Node to be accepted for access (via the seed list), we recommend that you review all the available features and commands of **nodectl**, via the [command reference](./nodectlCommands.md) documentation.

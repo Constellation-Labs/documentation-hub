@@ -44,7 +44,7 @@ Lets check our current version level of **nodectl**.
 sudo nodectl version
 ```
 <MacWindow>
-nodeadmin@Constellation-Node:~# sudo nodectl version
+nodeadmin@Constellation-Node:~# sudo nodectl version<br />
   VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAJOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MINOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PATCH<br />
   v1.12.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br />            
 nodeadmin@Constellation-Node:~# 
@@ -52,8 +52,11 @@ nodeadmin@Constellation-Node:~#
 
 :::danger IMPORTANT
 <span style={{color:'red', fontWeight:'800', fontSize:'20px'}}>If we are not on version 1.12.0 of nodectl ...</span> 
+<br />
 
-Please refer to the [upgrade path](./nodectlUpgradePath.md) documentation, and make sure your Node is proper on `v1.12.0` prior to continuing with this tutorial.
+If you are <span style={{color:'red', fontWeight:'800'}}>not</span> on <span style={{color:'green', fontWeight:'800', fontSize:'20px'}}>v1.12.0</span>...
+
+Please make sure to follow the [upgrade path](./nodectlUpgradePath.md) documentation, to avoid **unexpected** errors.
 :::
 
 ### Download v2 binary
@@ -64,7 +67,9 @@ Now that we have confirmed that we are on `v1.12.0` of **nodectl**, we use the [
 sudo nodectl upgrade_nodectl
 ```
 
-When we issue this command on `v1.12.0` you should get a *warning* that a new version is detected, and a recommendation to issue the `upgrade_nodectl` command (which we can ignore because it is the same command we issued).
+When we issue this command on `v1.12.0` you should get a *warning* that a new version is detected, and a recommendation to issue the `upgrade_nodectl` command 
+
+We can ignore because it is the same command we already issued.
 
 We will be informed of the availability of `v2.7.1` (as of the time of this tutorial writing).  We can say **`y`** to continue.
 
@@ -92,16 +97,18 @@ nodectl will exit and fire up a temporary bash script
 root@Constellation-Node:~# 
 </MacWindow>
 
-Do not issue any commands, just allow the next process to begin, and the upgrade will complete on its own.
+Do not issue any commands, just allow the next process to begin...
+
+When requested we can hit the <kbd>enter</kbd> key to complete the **nodectl** upgrade.
 
 <MacWindow>
 COMPLETED! nodectl upgraded to 2.7.1<br />
 <br />
   VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAJOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MINOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PATCH<br />
   v7.7.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br />          
-
+<br />
 press enter to continue...
-
+<br /><br />
 root@Constellation-Node:~# 
 </MacWindow>
 
@@ -116,12 +123,23 @@ The next step will be to run the `sudo nodectl upgrade` command, to complete the
 ```
 sudo nodectl upgrade
 ```
+<MacWindow>
+root@Constellation-Node:~# sudo nodectl upgrade 
+</MacWindow>
 
 ### Migration confirmation
 
 The screen will clear and **nodectl** will review the current **Node**, identify that it is running `v1` and begin by asking us to confirm that we want to migrate.
 
-We do want to migrate so we will say `y` here.
+It is necessary for us to **MIGRATE** our Node from `version 1` to `version 2`, as there are significant changes that need to be handled.  
+
+Most significantly:
+  - Migration and deprecation of the `cn-node` bash script file that used to run some of our Node operations for us.
+  - Addition of the [`cn-config.yaml`](./nodectlConfig) file.
+  - Removal of old directory structures.
+  - Addition of new services.
+
+We **do** want to migrate so we will say **`y`** here.
 
 <MacWindow>
   ========================================<br />
@@ -147,7 +165,7 @@ A new **feature** of **nodectl** is the ability to **hide** the passphrase in th
 :::danger IMPORTANT
 This feature was added per request from the community; however, because the hot wallet is on your Node, this only adds a small layer of obscurity to attempting to retrieve your passphrase if the Node is compromised.
 
-This will disable your ability to use the **[auto restart](./nodectlCommands.md#span-stylecolorgreenfontsize2emautorestartspan)** feature including the `auto_upgrade` feature.
+This will disable your ability to use the **[auto restart](./nodectlCommands#auto_restart)** feature including the `auto_upgrade` feature.
 :::
 
 <span style={{color:'green', fontWeight:'800', fontSize:'1.5em'}}>It is recommended to keep your passphrase visible.</span>
@@ -155,7 +173,7 @@ This will disable your ability to use the **[auto restart](./nodectlCommands.md#
 <p></p>
 
 :::note Side Note
-Make sure to follow the recommended security lock down measures during the build of your underlining VPS (container or bare metal), as an alternative to hiding your passphrase here.
+Make sure to follow the recommended security lock down measures during the [build](../validator/get_started.md) of your underlining VPS (container or bare metal), as an alternative to hiding your passphrase here.
 :::
 
 We will say **`y`** here (but you can also say **n**).
@@ -179,9 +197,9 @@ We will say **`y`** here (but you can also say **n**).
 
 In version **`1`** of **nodectl** we only had the ability to use a single **p12** file that contained our **Node's** wallet, which was also used to authenticate against the network cluster.
 
-In version **`2`** we now introduce the ability to use multiple **p12** private key files, therefore, allowing us to use different wallets for each **Metagraph** and/or for joining the **Hypergraph**.
+In version **`2`** we now introduce the ability to use multiple **p12** private key files; therefore, allowing us to use different wallets for each **Metagraph** and/or for joining the **Hypergraph**.
 
-Version **`2`** introduces **profiles** which allow us to dynamically configure our Node to join as many Metagraphs as we want; as well as, Hypergraphs.  
+Version **`2`** introduces **profiles** which allow us to dynamically configure our Node to join as many **Hypergraphs** and **Metagraphs** as necessary.  
 
 We also introduce the **Global p12** section.  If you do not specifically identify a **p12** file for a profile, it will **default** to the **Global p12** configuration.
 
@@ -241,7 +259,7 @@ We can say **y** here.
 
 New to **`v2`** we deprecate the `cn-node` bash script file, and replace it with a configurable yaml file.
 
-This allows us to configure our **Metagraphs** and the **Hypergraph** to our needs.
+This allows us to configure our **Hypergraphs** and **Metagraphs** to our needs.
 
 First **nodectl** will injest the `cn-node` script and back it up.
 
@@ -293,15 +311,22 @@ You can choose `y` or `n` here depending.  We recommend that you review the conf
 
 ### Review configuration yaml
 
-If you answered **`y`** to the question above: You will be offered a paginated view of the configuration file.
+If you answered **`y`** to the question above: You will be offered a [paginated](./nodectlCommands#what-is-pagination) view of the configuration file.
 
-Please see the [view config command](./nodectlCommands.md#view-config) from the [command reference guide](./nodectlCommands.md) for a detailed explanation of this output.
+Please see the [view config command](./nodectlCommands.md#view_config) from the [command reference guide](./nodectlCommands.md) for a detailed explanation of this output.
 
 ### Configuration Verification
 
 nodectl will now flash up some messages showing you that it is setting up some configuration parameters for us.  We can allow nodectl to complete the `self` updates on its own.
 
 This will include replacing default elements of the configuration with your Node's specific details; as well as, confirm the validity of the configuration file.
+
+<MacWindow>
+Replacing configuration self items: link host ip
+</MacWindow>
+<MacWindow>
+Replacing configuration self items: link host public key
+</MacWindow>
 
 ### Upgrade
 
@@ -324,10 +349,12 @@ When we are ready, we can issue a **`y`** here... and the **upgrade** will begin
 
 At this point in the migration from `v1` to `v2`, we are done and can now access the [upgrade nodectl](./nodectlUpgrade.md#handle-os-system-upgrades) document to follow along with the process step-by-step.
 
-:::success Reminder
-PLease remember to say **`n`** when requested to delete your **backups**. This will allow you to save your backup `cn-node` file.  
+:::success Important Reminder
+During the upgrade process (mentioned above), please remember to say **`n`** when requested to delete your **backups**. This will allow you to save your backup `cn-node` file.  Saving this file will ensure that you can revert to `version 1` if (in the unlikely event) you need to.
 
-Once your Node is online and working as desired, during the next upgrade, you can choose **`y`** to remove the `cn-node` file permanently.
+During the next upgrade, you can choose **`y`** when requested to remove your **backups**, to remove the `cn-node` file permanently.
+
+**or** 
+
+Once your Node is online and working as desired, you can manually remove this file.
 :::
-
-

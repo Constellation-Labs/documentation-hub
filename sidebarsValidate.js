@@ -121,7 +121,8 @@ module.exports = {
         'resources/accessWin',
         'resources/p12backup-mac',
         'resources/p12backup-win',        
-        'resources/sshconfig',        
+        'resources/sshconfig',
+        'resources/p12v1v2-migrate'        
       ],
     },
   ],

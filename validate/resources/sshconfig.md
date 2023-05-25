@@ -93,12 +93,12 @@ Let’s take the example `2222`.
 
 ![](/img/validator_nodes/ssh_port_config02.png)
 
-On your keyboard, press `CTRL+O`.
+On your keyboard, press <kbd>ctrl</kbd><kbd>o</kbd>.
 
 ![](/img/validator_nodes/ssh_port_config03.png)
 👆🏽 You should see this message at the bottom of the screen. 
 
-Hit `Enter` to confirm, then press `CTRL+X` to close the text editor and return to command prompt.
+Hit `Enter` to confirm, then press <kbd>ctrl</kbd><kbd>x</kbd> to close the text editor and return to command prompt.
 
 ### Confirm
 With the following command below, we should see our updated `Port 2222` echoed to the screen.

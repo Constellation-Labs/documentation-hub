@@ -39,7 +39,7 @@ If this is not the case, please review the [installation guide](./nodectl.md) `G
 ## Upgrade
 
 <DocsCards>
-  <DocsCard header="Upgrade nodectl" href="#upgrade-nodectl-utility" img="/img/home/state-channel.jpg">
+  <DocsCard header="Upgrade nodectl" href="#upgrading-with-nodectl" img="/img/home/state-channel.jpg">
     <p>Upgrade the nodectl utility.</p>
   </DocsCard>
 
@@ -51,17 +51,18 @@ If this is not the case, please review the [installation guide](./nodectl.md) `G
 ## Upgrading with nodectl
 
 There are `3` upgrade mechanisms regarding `nodectl`.
-1. Upgrade the nodectl utility to a new version. (binary)
-2. Upgrade your Node to handle new features of nodectl, or modify some elements to make your Node more efficient when working with the nodectl utility.
-3. Upgrade Tessellation and any elements of the VPS that may require modification to work with the Tessellation protocol.
+1. Upgrade the **nodectl** utility to a new version. (binary)
+2. Upgrade your Node to handle new features of **nodectl**, or modify some elements to make your Node more efficient when working with the **nodectl** utility.
+3. Upgrade **Tessellation** and any elements of the VPS that may require modification to work with the **Tessellation** protocol.
 
-Mechanisms `2` and `3` may include updating features of the VPS to facility functionality of your Node.
+Mechanisms `2` and `3` may include updating features of the VPS to facilitate functionality of your Node.
 
-Using nodectl's built-in upgrade command, you do not have to worry about the differences mentioned when upgrading nodectl.  nodectl is smart enough to guide you through the upgrade process.  It will know if you need any extra steps to complete. 
+Using **nodectl's** built-in [upgrade command](./nodectlCommands#upgrade_nodectl), you do not have to worry about the differences mentioned when upgrading nodectl.  **nodectl** is smart enough to guide you through the upgrade process.  It will know if you need any extra steps to complete. 
 
 These steps include:
-  - Is it safe to upgrade from the current version of nodectl your Node is running to the latest version?  There is an upgrade path that might need to be taken; dependent on, how long you have waited to upgrade your Node.
-  - Does your Node require an extra upgrade steps to complete the nodectl upgrade for effective operation.
+  - Is it safe to upgrade from the current version of **nodectl** your Node is running to the latest version?  
+    - There is an [upgrade path](./nodectlUpgradePath) that might need to be taken; dependent on, how long you have waited to upgrade your Node.
+  - Does your Node require any extra upgrade steps to complete the **nodectl** upgrade for effective operation.
 
 :::caution 
 Currently there is not a scheduled release process for nodectl.
@@ -69,14 +70,21 @@ Currently there is not a scheduled release process for nodectl.
 
 ### Upgrade to new version of nodectl
 
-**nodectl** is simply a single binary file.  That is to say, it is single file that you can simply download from the Internet and execute on your system.  
+**nodectl** is simply a single binary files compiled to work on 1 of either 2 Linux architectures.  That is to say, it is single file that you can simply download from the Internet and execute on your system. 
 
-In the <span style={{color:'blue', fontWeight: '800'}}>unlikely event</span> you need to do a manual install of nodectl, it will be necessary to make sure the binary is executable (advanced system management).  We will cover manual downloads below.
+:::warning 
+**nodectl** has **2** separate binary files. Both work **only** on Linux Debian based distributions
+  - x86_64
+  - arm64
+:::
+
+In the <span style={{color:'blue', fontWeight: '800'}}>unlikely event</span> you need to do a manual upgrade of **nodectl**, it will be necessary to make sure the binary is executable (*This is an advanced system management process*).  We will cover manual downloads below.
 
 #### Upgrade detection
-**nodectl** attempts to be smart enough to determine if there is an upgrade available. It does this by reaching out an external source ( the nodectl repository on GitHub ) and checking for the latest upgrade.
 
-In this example, a `sudo nodectl list` command was issued, and I new version was detected.
+**nodectl** is smart enough to attempt to determine if there is an upgrade available. By reaching out to an external source (*scrapping the nodectl repository on GitHub* ) nodectl will check for the latest upgrade.
+
+As an example (*the list command is unrelated to this document's purpose*), a [`sudo nodectl list`](./nodectlCommands#list) command was issued, and a **new** version on nodectl was detected.
 
 *The full output of the list command was omitted*.
 <MacWindow>
@@ -94,7 +102,7 @@ If **nodectl** is already [installed](nodectl.md) on your system, we can issue t
 ```
 sudo nodectl upgrade_nodectl
 ```
-When we execute the `upgrade_nodectl` command; in this example, the [auto_restart](./nodectlCommands.md#auto-restart) feature was enabled.  Since nodectl cannot upgrade while the `auto_restart` feature is actively running, nodectl will disable the feature auto_magically, for us.
+When we execute the [`upgrade_nodectl`](./nodectlCommands#upgrade_nodectl) command; in this example below, the auto_restart feature (*The [auto_restart](nodectlCommands#auto_restart) command is unrelated this document's purpose.*) was enabled.  Since nodectl cannot upgrade while the `auto_restart` feature is actively running, nodectl will disable the feature auto_magically for us.
 
 nodectl will detect that there is a new version and ask us if we are sure we want to continue?  We can say **`y`** here.
 
@@ -121,19 +129,21 @@ nodectl will begin the upgrade of nodectl.  In the background through automation
 
 #### Architecture
 
-It will detect the architecture of our VPS, in this example `x86_64` (most common).
+**nodectl** will detect the architecture of our VPS, in this example `x86_64` ( ( *most common* ).
 
 Because nodectl cannot upgrade while it is running, nodectl will:
-- Exit itself before upgrading
-- Upgrade
-- Inform us whether or not we need to upgrade our Node's internals.
+- Exit itself before upgrading.
+- Upgrade.
+  - **nodectl** will create a temporary bash script.
+  - execute the script.
+- Inform us whether or not we need to upgrade anything necessary for Tessellation or the Linux distribution to operate effectively with nodectl.
 - Re-enable `auto_restart` if enabled.
 
 In this example:
 - We do not need to upgrade our Node.  
-- We have `auto_restart` enabled.
+- We have `auto_restart` enabled in the [configuration](./nodectlConfig).
 
-nodectl will let us know, and request we press &lt;enter&gt; to continue without an upgrade and then restart the `auto_restart` feature.
+**nodectl** will let us know, and request we press <kbd>enter</kbd> to continue without an upgrade and then restart the `auto_restart` feature.
 
 <MacWindow>
   Upgrading nodectl version from v2.7.0 to v2.7.1<br />
@@ -147,6 +157,13 @@ nodectl will let us know, and request we press &lt;enter&gt; to continue without
   VERSION        MAJOR          MINOR       PATCH<br />
   v2.7.1         2              7              1<br />            
 <br />
+  This version of nodectl DOES NOT require an upgrade be performed<br />
+  Press [ENTER] to continue...<br />
+</MacWindow>
+
+The [auto_restart](./nodectlCommands#auto_restart) service will restart.
+
+<MacWindow>
   This version of nodectl DOES NOT require an upgrade be performed<br />
   Press [ENTER] to continue...<br />
 <br />
@@ -179,7 +196,7 @@ The output will look different, as shown below
 
 It is **highly** recommended to **upgrade** your Node when requested.  Failure to do so may result in undesirable results or failures.
 
-#### Manual Installation
+### Manual Installation
 Follow the release notes instructions for the release you desire to install
 > [nodectl releases](https://github.com/netmet1/constellation_nodectl/releases)
 
@@ -191,27 +208,31 @@ sudo nodectl upgrade
 ```
 
 :::danger Keep In Mind
-If you are upgrading nodectl via the `sudo nodectl upgrade` command and not **Tessellation**, when requested to enter in the `version` of Tessellation you want to upgrade to, you will choose the same version.
+If you are upgrading nodectl via the `sudo nodectl upgrade` command and not **Tessellation**, when requested to enter in the `version` of Tessellation you want to upgrade to, you will choose the same version.  You should be able to simple hit the <kbd>enter</kbd> when **nodectl** requests the **Tessellation** versioning.
 <MacWindow>
-Testing
+------ * Handle Node Versioning * ------<br />
+<br />
+The following version is the latest ........... v1.11.0<br />
+The following version is running currently .... v1.11.0<br />
+  Please enter version to upgrade to.........[v1.11.0] :<br />
 </MacWindow>
 :::
+
 Since the process of an upgrade is exactly the same as the process necessary to upgrade **Tessellation**, we can skip to the [Upgrade Tessellation](#upgrade-tessellation) section to see the step-by-step process.
 
 ## Upgrade Tessellation
 
 ### Introduction
 
-nodectl's `upgrade` command serves 2 purposes simultaneously.
+nodectl's `upgrade` command serves `2` purposes simultaneously.
 
-  1. Upgrade **Tessellation**.
-    
-    Including any VPS (bare metal or container) background adds, changes, or enhancements that relate to **Tessellation**.
+  1. Upgrade **Tessellation**.   
+  - Including any VPS (bare metal or container) background adds, changes, or enhancements that relate to **Tessellation**.
 
-  2. Upgrade VPS (bare metal or container) background adds, changes, or enhancements that may or may not relate to **Tessellation**. 
+  2. Upgrade the **VPS** (bare metal or container) background adds, changes, or enhancements that may or may not relate to **Tessellation** ( *may be related to the distribution or nodectl instead* ). 
 
 ### Start Upgrade
-From the local login on our **Node**.  We can issue the `upgrade` command.
+From the remote login on our **Node**.  We can issue the `upgrade` command.
 ```
 sudo nodectl upgrade
 ```
@@ -219,10 +240,24 @@ sudo nodectl upgrade
 <span style={{color:"purple"}}>nodeadmin@Constellation-Node:~#</span> sudo nodectl upgrade
 </MacWindow>
 
-### Confirm Upgrade
-After execution of the `sudo nodectl upgrade` command, the screen will clear and you will be requested to confirm that you want to upgrade.
+:::note Side Note
+If the `-ni` (non-interactive) switch is included when the upgrade was executed, unless there is an issue that warrants **nodectl** to disengage non-interactive mode, you will not be prompted to answer any questions, instead off the **defaults** will be used.
 
-In this example, the [auto restart](nodectlCommands.md#auto-restart) feature was enabled.  In order to upgrade, we will need to disable this feature prior to upgrading.  If auto restart is running, it will conflict with the requests to start and stop services.
+```
+sudo nodectl upgrade -ni
+```
+non-interactive if passphrase is removed from the configuration.
+```
+sudo nodectl upgrade -ni --pass <my_passphrase>
+```
+
+This document will assume that we are running the upgrade in interactive mode.
+:::
+
+### Confirm Upgrade
+After execution of the `sudo nodectl upgrade` command, the screen will clear and you will be requested to confirm the upgrade you requested.
+
+In this example, the [auto restart](nodectlCommands.md#auto-restart) feature was enabled.  In order to upgrade, we will need to disable this feature prior to upgrading.  If auto restart is running, it will conflict with the requests to start and stop services.  **Don't worry**, nodectl will disable and re-enable the `auto_restart` feature for us.
 
 We can choose **y** here.
 
@@ -244,9 +279,10 @@ We can choose **y** here.
 ### Handle OS System Upgrades
 nodectl will begin the **automated** process of upgrading, we only need to sit back and watch.
 
-- make sure we are allowed to upgrade
-- identify our external IP address
-- update the system package list on the Debian distribution.
+nodectl will:
+- Make sure we are allowed to upgrade.
+- Identify our external IP address.
+- Update the system package list on the Debian distribution.
 
 <MacWindow>
   ---- * Handle OS System Upgrades * -----<br />
@@ -257,7 +293,9 @@ nodectl will begin the **automated** process of upgrading, we only need to sit b
 </MacWindow>
 
 ### Verify Node Upgrade
-nodectl will review the associated p12 file on your system and will identify the `node id`.  No user intervention is required.
+nodectl will review the associated p12 file on your system and will identify the `node id`.  
+
+No user intervention is required.
 
 <MacWindow>
 ------- * Verify Node Upgrade * -------- <br />  
@@ -269,33 +307,35 @@ nodectl will review the associated p12 file on your system and will identify the
 nodectl will check the difference in versioning between what is currently running on your Node and what version is known as the latest available version of **Tessellation**.
 
 :::caution
-In the event that you are only upgrading nodectl and **not** Tessellation, you will keep the same version.
+In the event that you are only upgrading nodectl and **not** Tessellation, you will keep the same version by simply hitting <kbd>enter</kbd> to accept the default.
 :::
 
-In the below example, **nodectl** identified that we are running version `v2.0.0-alpha.2` on our Node; however, `v2.0.0-alpha.5` is the latest.
+In the below example, **nodectl** identified that we are running version `v1.10.0` on our Node; however, `v1.11.0` is the latest.
 
-**nodectl** will auto-magically select the latest version for us, so we can just hit the &gt;enter&lt; key here.
+**nodectl** will auto-magically select the latest version for us, so we can just hit the <kbd>enter</kbd> key here.
 
 :::danger
-Entering an invalid version may result in an inoperable Node.  In the event this happens, you can restart the upgrade to attempt to correct.
+Entering an invalid version may result in an inoperable Node.  In the event this happens, you can restart the upgrade in an attempt to correct the issue.
 :::
 
 <MacWindow>
   ------ * Handle Node Versioning * ------<br />
 <br />
-  The following version is the latest ........... v2.0.0-alpha.5 <br />
-  The following version is running currently .... v2.0.0-alpha.2<br />
-  Please enter version to upgrade to.........[v2.0.0-alpha.5] : <br />
+  The following version is the latest ........... v1.10.0 <br />
+  The following version is running currently .... v1.11.0<br />
+  Please enter version to upgrade to.........[v1.11.0] : <br />
 </MacWindow>
 
 ### Upgrade in progress
-**nodectl** will now take over and start the upgrade process.  You are free to sit back, relax and watch the progress.
+**nodectl** will now take over and start the upgrade process.  You are free to sit back, relax and watch the progress.  
+
+Later in the upgrade ( unless the `-ni` [switch](./nodectlCommands.md#what-is-a-switch-and-parameter) was chosen ) you will be prompted to answer some questions related to the upgrade.
 
 We recommend you don't leave it unattended to avoid timeouts, missed possible errors, or user interactive prompts that will require your attention.
 
 **nodectl** will take the Node off the cluster (HyperGraph and Metagraph) in preparation for upgrade.
 
-In the example below, you will see that **nodectl** identified `dag-l0` and `dag-l1` profiles configured on your Node.  It will gracefully attempt to remove these profiles from their perspective clusters.
+In the example below, you will see that **nodectl** identified `dag-l0` and `dag-l1` profiles configured on your Node.  It will gracefully attempt to remove itself from the clusters configured by these profiles.
 
 <MacWindow>
  -------- * Take Node Offline * ---------<br />
@@ -319,25 +359,26 @@ It will also identify the service name (Debian OS level) `node_l0` and `node_l1`
   Stop request initiated [node_l0] .............. complete <br />  
 </MacWindow>
 
-**nodectl** will issue a `status` against the Node to confirm the results of the stoppage.
+**nodectl** will issue a [`status command`](./nodectlCommands#status) against the Node to confirm the results of the stoppage.
 
 :::info
-formatting of the window example is misrepresented due to formatting.  The display on your node will be better represented.
+Formatting of the window example is misrepresented due to formatting.  The display on your node will be better represented.
 :::
 
 <MacWindow>
- SERVICE                JOIN STATE            PROFILE<br /> 
-  inactive (dead)       ApiNotReady  dag-l1<br /> 
-  PUBLIC API TCP        P2P API TCP           CLI API TCP <br /> 
-  9000                  9001                  9002<br /> 
-  CURRENT SESSION       FOUND SESSION         ON NETWORK<br /> 
-  1683294942915         SessionNotFound       False<br /> 
-  SERVICE               JOIN STATE            PROFILE<br /> 
-  inactive (dead)       ApiNotReady           dag-l0 <br /> 
-  PUBLIC API TCP        P2P API TCP           CLI API TCP<br /> 
-  9010                  9011                  9012<br /> 
-  CURRENT SESSION       FOUND SESSION         ON NETWORK<br /> 
-  1683294932039         SessionNotFound       False<br /> 
+ SERVICE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOIN STATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROFILE<br /> 
+  inactive (dead)&nbsp;&nbsp;&nbsp;&nbsp;ApiNotReady&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dag-l1<br /> 
+  PUBLIC API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2P API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLI API TCP <br /> 
+  9010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9011&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9012<br /> 
+  CURRENT SESSION&nbsp;&nbsp;&nbsp;&nbsp;FOUND SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON NETWORK<br /> 
+  1683294942915&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SessionNotFound&nbsp;&nbsp;&nbsp;False<br /> 
+  <br />
+  SERVICE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOIN STATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROFILE<br /> 
+ inactive (dead)&nbsp;&nbsp;&nbsp;&nbsp;ApiNotReady&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dag-l0<br /> 
+  PUBLIC API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2P API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLI API TCP <br /> 
+  9000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9002<br /> 
+  CURRENT SESSION&nbsp;&nbsp;&nbsp;&nbsp;FOUND SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON NETWORK<br /> 
+  1454859585788&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SessionNotFound&nbsp;&nbsp;&nbsp;False<br /> 
 </MacWindow>
 
 ### Node Internal Configuration
@@ -377,9 +418,9 @@ Advanced users may want to transfer these files to a secondary backup directory 
 <span style={{color:'red'}}>You should have a backup of the following files in a secure location off of you Node.  These files contain passphrases and critical wallet contents</span>
 <br />
 <br />
-<span style={{color:'red'}}>- p12 file</span>
+<span style={{color:'red', fontWeight:'800'}}>&rarr; p12 file</span>
 <br />
-<span style={{color:'red'}}>- cn-config.yaml</span>
+<span style={{color:'red', fontWeight:'800'}}>&rarr; cn-config.yaml</span>
 <br />
 <br />
 <span style={{color:'red'}}>which contains your passphrase.</span>
@@ -417,7 +458,7 @@ In the below example, the `uploads` directory was found to be emtpy, so the step
 
 Similar to the **backups** and **uploads**, the logs directory can become large related to log files that are being built up and not removed.
 
-In the below example, some of the log files were ommitted with `[...]` representing files that were built up.  You will notice **hypergraph** *`layer0`* and **metagraph* *`layer1`* logs being represented.
+In the below example, some of the log files were ommitted with `[...]` representing files that were built up.  You will notice **hypergraph** *`layer0`* and **metagraph** *`layer1`* logs being represented.
 
 <MacWindow>
   ---------- * Clean up logs * -----------<br />
@@ -460,7 +501,7 @@ Here we can safely clear out our older snapshots.
 
 #### Allow snapshot removal
 
-**nodectl** will begin the process of removing the snapshots.  This is done in a file by file basis to avoid timeouts and false-positive (perception freezing due to background processes).  Please have patience during this step.
+**nodectl** will begin the process of removing the snapshots.  This is done in a file by file basis to avoid timeouts and false-positive (perception of freezing due to background processes).  Please have patience during this step.
 
 <MacWindow>
   -------- * Clean up snapshots * -------- <br />
@@ -479,16 +520,14 @@ cleaning logs from [snapshots] > 30 days ...... complete<br />
 </MacWindow>
 
 ### Update packages and seed lists
-**nodectl** will pull down the necessary packages that will upgrade your Node to the latest and greatest versions.
+**nodectl** will pull down the necessary packages that will upgrade your Node to the latest versions.
 
-We will also update any access permission lists (*seed lists*) that need to match for proper authentication to the Hypergraph and Metagraphs.
+We will also update any access permission lists (*seed lists*) that need to match for proper authentication to the **Hypergraph** and **Metagraphs**.
 
 :::note
 If there is not a *seed list* present for a particular profile, the fetch will be disabled and skipped.  You have the ability to configure this within the **nodectl** configuration file.
 
-```
-sudo nodectl configure
-```
+[`sudo nodectl configure`](./nodectlCommands.md#configure)
 :::
 
 You can sit back and relax as nodectl continues to upgrade your Node for you.
@@ -522,20 +561,23 @@ You can sit back and relax as nodectl continues to upgrade your Node for you.
 Then it will verify the status and display for you.
 
 <MacWindow>
-  Fetching Status [dag-l0] ......................<br />
-  SERVICE               JOIN STATE            PROFILE<br />
-  active (running)      ReadyToJoin           dag-l0 <br />
-  PUBLIC API TCP        P2P API TCP           CLI API TCP<br />
-  9000                  9001                  9002<br />
-  CURRENT SESSION       FOUND SESSION         ON NETWORK <br />
-  1683294932039         SessionNotFound       ReadyToJoin<br />
+ SERVICE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOIN STATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROFILE<br /> 
+  active (running)&nbsp;&nbsp;&nbsp;&nbsp;ReadyToJoin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dag-l0<br /> 
+  PUBLIC API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2P API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLI API TCP <br /> 
+  9000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9002<br /> 
+  CURRENT SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FOUND SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON NETWORK<br /> 
+  1683294932039&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SessionNotFound&nbsp;&nbsp;&nbsp;ReadyToJoin<br /> 
 </MacWindow>
 
 It is **important** to note here that we **only** brought back up our **layer0** service.  In this example the profile called `dag-l0` is started.
 
-A special **recommended** feature of **nodectl** is coordination to allow your Node to proper join the `layer0` network cluster first.  Join consensus for that layer, and then once in a `Ready` state (properly joined) it will then allow the required `layer1` connection to be created by **linking through your Node's `layer0`** network. 
+A special **recommended** feature of **nodectl** is coordination to allow your Node to proper join:
+- The `layer0` network cluster joins first.  
+- Join consensus for that layer.
+- Wait for `Ready` state (properly joined).
+- Allow the required `layer1` connection to be created by **linking through your Node's `layer0`** network. 
 
-This is recommended because it provides a consistent and reliable layer 0 to layer 1 link for your Node to function as efficiently as possible between clusters.
+This is recommended because it provides a consistent and reliable layer0 to layer1 link for your Node to function as efficiently as possible between clusters.
 
 We will find our Node is `ReadytoJoin`.
 
@@ -546,11 +588,11 @@ We will find our Node is `ReadytoJoin`.
 
 ### Re-join the Network
 
-The configured `layer0` network will rejoin the network.  In this case the profile `dag-l0` is configured as the layer0 and will attempt to join.
+The configured `layer0` profile will rejoin the network.  In this case the profile `dag-l0` is configured as the layer0 and will attempt to join.
 
-In this [upgrade](./nodectlCommands.md#upgrade) (document/manual) we did **not** choose the `-w` (watch) mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, **nodectl** will skip watching for the remaining peers to connect and simply and safely continue the upgrade process.
+In this [upgrade](./nodectlCommands.md#upgrade) (document/manual) we did **not** choose the `-w` ([watch](./nodectlCommands#upgrade)) mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, **nodectl** will skip watching for the remaining peers to connect and simply and safely continue the upgrade process.
 
-It is necessary that all peers on the network learn about all other peers on the network via the gossip mechanisms in the Constellation Network's DAG protocol setup.  However, it is not important to wait for all connections to be established, to complete the upgrade.
+It is necessary that all peers on the network learn about all other peers on the network via the gossip mechanisms in the **Constellation Network's** DAG protocol setup.  However, it is not important to wait for all connections to be established, to complete the upgrade.
 
 Below we will see that our Node reached `WaitingForReady` while it was connected to `36` out of `48` known Nodes on the network.  **nodectl** continued the upgrade process...
 
@@ -564,14 +606,16 @@ Below we will see that our Node reached `WaitingForReady` while it was connected
   Join process complete ......................... done<br />
   ok that peer count &lt; cluster peer count<br />
   watch mode was not chosen by upgrade.<br />
-<br />                                                                                         
+<br /> 
   Checking status [dag-l0] ......................<br />
-  SERVICE               JOIN STATE            PROFILE<br />
-  active (running)      Ready                 dag-l0<br />
-  PUBLIC API TCP        P2P API TCP           CLI API TCP<br />
-  9000                  9001                  9002<br />
-  CURRENT SESSION       FOUND SESSION         ON NETWORK<br />
-  1683294932039         1683294932039         True<br />
+<br />
+ SERVICE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOIN STATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROFILE<br /> 
+  active (running)&nbsp;&nbsp;&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dag-l0<br /> 
+  PUBLIC API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2P API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLI API TCP <br /> 
+  9000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9002<br /> 
+  CURRENT SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FOUND SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON NETWORK<br /> 
+  1683294932039&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1683294932039&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True<br /> 
+<br />
 </MacWindow>
 
 ### Metagrpah services *layer1*
@@ -589,12 +633,12 @@ Check the status of `dag-l1`.
 
 <MacWindow>
   Fetching Status [dag-l1] ......................<br />
-  SERVICE               JOIN STATE            PROFILE<br />
-  active (running)      ReadyToJoin           dag-l1<br />
-  PUBLIC API TCP        P2P API TCP           CLI API TCP<br />
-  8015                  8016                  8017<br />
-  CURRENT SESSION       FOUND SESSION         ON NETWORK <br />
-  1683294942915         SessionNotFound       ReadyToJoin<br />
+ SERVICE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOIN STATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROFILE<br /> 
+  active (running)&nbsp;&nbsp;&nbsp;&nbsp;ReadyToJoin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dag-l1<br /> 
+  PUBLIC API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2P API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLI API TCP <br /> 
+  9010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9011&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9012<br /> 
+  CURRENT SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FOUND SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON NETWORK<br /> 
+  1683294942915&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SessionNotFound&nbsp;&nbsp;&nbsp;ReadyToJoin<br /> 
 </MacWindow>
 
 We are in the `ReadyToJoin` state. Will have to now wait for `dag-l0` profile, that is our `layer0` profile to be in `Ready` state.
@@ -615,7 +659,7 @@ If our Node is not properly in `Ready` state on `layer0`, **nodectl** will patie
 
 **nodectl** will now attempt to join the `dag-l1`.  
 
-As mentioned above, in this [upgrade](./nodectlCommands.md#upgrade) (document/manual) we did **not** choose the `-w` (watch) mode.  **nodectl** will not wait for all peers to connect, as it is not necessary to complete the upgrade.
+As mentioned above, in this [upgrade](./nodectlCommands.md#upgrade) (document/manual) we did **not** choose the `-w` ([watch](./nodectlCommands#upgrade)) mode.  **nodectl** will not wait for all peers to connect, as it is not necessary to complete the upgrade.
 
 <MacWindow>
   ---------- * Joining dag-l1 * ----------<br />
@@ -636,12 +680,12 @@ As mentioned above, in this [upgrade](./nodectlCommands.md#upgrade) (document/ma
 
 <MacWindow>
  Checking status [dag-l1] ......................<br /> 
-  SERVICE               JOIN STATE            PROFILE<br />
-  active (running)      Ready                 dag-l1<br />
-  PUBLIC API TCP        P2P API TCP           CLI API TCP<br />
-  9010                  9011                  9012<br />
-  CURRENT SESSION       FOUND SESSION         ON NETWORK<br />
-  1683294942915         1683294942915         True<br />
+ SERVICE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOIN STATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROFILE<br /> 
+  active (running)&nbsp;&nbsp;&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dag-l1<br /> 
+  PUBLIC API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2P API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLI API TCP <br /> 
+  9010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9011&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9012<br /> 
+  CURRENT SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FOUND SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON NETWORK<br /> 
+  1683294942915&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1683294942915&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True<br />
 </MacWindow>
 
 ### Complete the upgrade
@@ -658,7 +702,7 @@ As mentioned above, in this [upgrade](./nodectlCommands.md#upgrade) (document/ma
 
 ### Restart auto restart feature
 
-Since the [auto restart](./nodectlCommands.md#auto-restart) feature is, in this example, was **enabled**, the auto restart feature will re-enable at the end of the upgrade for us.
+Since the [auto restart](./nodectlCommands.md#auto_restart) feature; in this example, was **enabled**, the auto restart feature will re-enable at the end of the upgrade for us.
 
 <MacWindow>
   node restart service started... 

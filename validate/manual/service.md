@@ -57,9 +57,9 @@ You can use whatever editor you want.
 :::note Nano Quick Notes
  - `sudo nano cn-cnodel0` will start the editor
  - use your keyboard arrows to navigate (not your mouse)
- - ctrl-o command-o (letter o) will save the contents of the file
+ - <kbd>ctrl</kbd>-<kbd>o</kbd> or <kbd>command</kbd>-<kbd>o</kbd> (letter o) will save the contents of the file
  - give the file a name (`cn-nodel0`)
- - ctrl-x command-x to exit the editor
+ - <kbd>ctrl</kbd>-<kbd>x</kbd> or <kbd>command</kbd>-<kbd>x</kbd> to exit the editor
 :::
 
 ```

@@ -33,7 +33,7 @@ It will be up to the Node Operator to properly navigate back and forth between t
 
 It is recommended to go through the installation steps below one by one.  
 
-Once you reach the end of the **section** on the **installation** documentation, you will notice a <span style={{color:'blue'}}>blue box</span> that will offer you the ability to navigate to the exact location you need to return to.  Alternatively, you can press the &lt;back&gt; button to return to this document.
+Once you reach the end of the **section** on the **installation** documentation, you will notice a <span style={{color:'blue'}}>blue box</span> that will offer you the ability to navigate to the exact location you need to return to.  Alternatively, you can press the <kbd>&larr;</kbd> button to return to this document.
 
 :::note 
 You can read ahead in this document to see where changes are required
@@ -91,11 +91,11 @@ We can choose **`y`** here.
 nodectl will warn you that we need to upload your existing **p12** file; however, we should have already done this via the [Upload existing p12](#upload-existing-p12) section of this documentation.
 
 If you have **NOT** completed [Upload existing p12](#upload-existing-p12), you can:
-  1. Enter `y` here to exit the installation.
+  1. Enter `y` here (*see below*) to exit the installation.
   2. Follow the necessary [instructions](#upload-existing-p12) to upload your p12.
   3. Repeat the steps until you return to this point of the document.
 
-If you already have your **p12 private key file** uploaded, you should choose `n` (or just accept `n` by hitting the &lt;enter&gt;) to continue.
+If you already have your **p12 private key file** uploaded, you should choose `n` ( or just accept `n` by hitting the <kbd>enter</kbd> ) to continue.
 
 <MacWindow>
   BEFORE WE BEGIN <br />
@@ -131,7 +131,7 @@ The installation will import your selected p12 and use it for **all** profiles (
 
 After installation is complete you can update the nodectl **configuration** to use dedicated p12 files for each profile associated with your Node.
 
-See the [Command Reference](nodectlCommands.md) for more details
+See the [configuration document](./nodectlConfig.md) **or** the [Command Reference](nodectlCommands.md), for more details
 ```
 sudo nodectl configure
 ```
@@ -139,7 +139,7 @@ sudo nodectl configure
 
 nodectl will offer us a menu of options for any **p12** files that it finds on your system.  In this example we can pretend we uploaded **mynode.p12** to our `ubuntu` users's account using the [upload steps](#step-3---upload-existing-p12).
 
-We can choose `1` (no **not** hit &lt;enter&gt;)
+We can choose `1` ( do **not** hit <kbd>enter</kbd> )
 
 If you do **not** see your p12 file, this means either you placed it in a location that nodectl is not looking within, or you did not properly upload your p12 file.  If the former, you can hit `2` and then enter in the fully qualified location of your p12 file.
 

@@ -33,11 +33,11 @@ The succeeding documentation will describe the features behind **nodectl** and h
 ### Installing nodectl
 
 <DocsCards>
-  <DocsCard header="New Node" href="/metagraphs" img="/img/home/state-channel.jpg">
+  <DocsCard header="New Node" href="./nodectlInstall" img="/img/home/state-channel.jpg">
     <p>Install brand new Node.</p>
   </DocsCard>
 
-  <DocsCard header="Migrate Node" href="/sdk" img="/img/home/community.jpg">
+  <DocsCard header="Migrate Node" href="./nodectlInstallMigrate" img="/img/home/community.jpg">
     <p>Migrate existing Node to new container, instance, or hardware.</p>
   </DocsCard>
 </DocsCards>
@@ -45,8 +45,12 @@ The succeeding documentation will describe the features behind **nodectl** and h
 ### nodectl operations
 
 <DocsCards>
-    <DocsCard header="Upgrade" href="/learn" img="/img/home/core-concepts.jpg">
+  <DocsCard header="Upgrade" href="./nodectlUpgrade" img="/img/home/core-concepts.jpg">
     <p>Upgrade nodectl on an existing Node.</p>
+  </DocsCard>
+
+  <DocsCard header="v1.12.0 to v2.x.x" href="./nodectlMigrateV1" img="/img/home/core-concepts.jpg">
+    <p>Upgrade from version 1.12.0 nodectl to the new version 2.x.x</p>
   </DocsCard>
 
   <DocsCard header="Command Reference" href="/sdk" img="/img/home/stargazer.jpg">
@@ -69,6 +73,10 @@ This will require transferring your Node's wallet ([p12](./nodectlInstall.md#wha
 ### Upgrade nodectl on your Node
 
 When you have nodectl up and running and a new version of nodectl is released.  The following documentation will help the Node Operator navigate with a step-by-step guide on how to upgrade.
+
+### Upgrade your Node from version 1 to version 2
+
+Specific step-by-step instructions to upgrade from version 1 of nodectl to version 2.
 
 ### Command Reference Guide
 
