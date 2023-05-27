@@ -53,7 +53,7 @@ The succeeding documentation will describe the features behind **nodectl** and h
     <p>Upgrade from version 1.12.0 nodectl to the new version 2.x.x</p>
   </DocsCard>
 
-  <DocsCard header="Command Reference" href="/sdk" img="/img/home/stargazer.jpg">
+  <DocsCard header="Command Reference" href="./nodectlCommands" img="/img/home/stargazer.jpg">
     <p>Command Reference Guide for nodectl</p>
   </DocsCard>
 </DocsCards>
