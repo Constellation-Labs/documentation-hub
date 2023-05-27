@@ -4,7 +4,16 @@ sidebar_label: Tokenomics Litepaper
 hide_table_of_contents: false
 ---
 
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
+
 Implementing Generative Tokenomics in the Hypergraph for Validator Nodes and Metagraphs at Scale
+
+<DocsCards>
+  <DocsCard header="Read PDF version" href="https://docs.constellationnetwork.io/docs/Constellation-Network_Tokenomics-Litepaper_v2.pdf" target="_blank" rel="noreferrer" icon="/icons/icon_pdf.png">
+  <p>Alternatively, you can download the Tokenonmics Litepaper as a PDF.</p>
+  </DocsCard>
+</DocsCards>
 
 ## Introduction
 

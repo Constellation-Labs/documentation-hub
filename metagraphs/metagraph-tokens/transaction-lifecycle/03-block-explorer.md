@@ -9,6 +9,4 @@ The Block Explorer API is a service provided for the network to assist in indexi
 
 The Block Explorer API depends on a snapshot streaming service that listens for finalized Global Snapshots on the network and indexes them on a elastisearch instance. The elastisearch instance is made available to the Block Explorer REST API for public queries of transactions, snapshots, and rewards. 
 
-For more information on the Block Explorer API, see the API Integration section of the docs. 
-
-<TODO>Add link for Block Explorer section + graphic showing txn flow to block explorer</TODO>
+For more information on the Block Explorer API, see the [Network APIs](/hypergraph/architecture) section of the docs. 

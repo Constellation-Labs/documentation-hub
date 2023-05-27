@@ -3,9 +3,6 @@ title: Validator Nodes
 hide_table_of_contents: false
 ---
 
-<intro-end />
-
-## Overview
 Constellation Network is a permissionless decentralized protocol that consists of independently owned and operated validator nodes. Validator nodes provide computational resources that are used to perform consensus on the state of data that flows through the network. They are incentivized through Constellation Network's native currency, $DAG, which is used to quantify and pay the costs of these consumed compute resources.
 
 ![Validator Nodes](/img/coreconcepts/nodes.png)

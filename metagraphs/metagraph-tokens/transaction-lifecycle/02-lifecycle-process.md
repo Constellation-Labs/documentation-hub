@@ -9,9 +9,7 @@ hide_table_of_contents: false
 
 Transactions can be created by a wallet app or developer library. Transactions must be signed with the sender’s private key and follow other transaction format guidelines. 
 
-See wallets, dag4.js, Transaction Format, and API docs. 
-
-<TODO> link to wallets overview, dag4.js docs, “Basics - Transactions” doc, and REST API docs.</TODO>
+See [wallets](/learn/tools-resources/wallets), [dag4.js](/hypergraph/dag4), and [Network APIs](/hypergraph/architecture). 
 
 ## Initial L1 Transaction Validation
 
@@ -65,15 +63,11 @@ The same validations from the previous step are run against blocks submitted to 
 
 ## Currency L0 Snapshot Consensus
 
-Validated blocks are included in Currency Snapshots which undergo their own consensus process on the Currency L0 network. See Snapshot Lifecycle for additional information on that process. 
-
-<TODO>Add a link to the Snapshot Lifecycle doc</TODO>
+Validated blocks are included in Currency Snapshots which undergo their own consensus process on the Currency L0 network. See [Snapshot Lifecycle](/metagraphs/concepts/snapshot-lifecycle) for additional information on that process. 
 
 ## Global L0 Validation
 
-Currency snapshots are sent to the Global L0 to undergo Global L0 validation and be included in Global Snapshots. See Snapshot Lifecycle for additional detail on that process. 
-
-<TODO>Add a link to the Snapshot Lifecycle doc</TODO>
+Currency snapshots are sent to the Global L0 to undergo Global L0 validation and be included in Global Snapshots. See [Snapshot Lifecycle](/metagraphs/concepts/snapshot-lifecycle) for additional detail on that process. 
 
 ## Finality
 
