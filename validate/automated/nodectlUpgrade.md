@@ -27,7 +27,19 @@ This document will show you; through step-by-step instructions, how to upgrade y
 
 **Tessellation** is the code name for the protocol that runs on your Node.  It is the guts of how your Node is able to operate on the **Hypergraph** or **Metagraph**.  
 
-**nodectl** is a utility that runs on your Node and helps you automate some of the more complex processes that Tessellation requires to run efficiently. 
+**[nodectl](./nodectl.md)** is a utility that runs on your Node and helps you automate some of the more complex processes that Tessellation requires to run efficiently. 
+
+## Quick Start
+
+In order to upgrade your Node.
+1. Issue the command: `sudo nodectl upgrade`
+2. Follow the prompts.
+
+In order to upgrade **[nodectl](nodectl.md)**.
+1. Issue the command: `sudo nodectl upgrade_nodectl`
+2. Follow the prompts.
+
+# Details of the UPGRADE process
 
 ## Prerequisite
 ### Installation
