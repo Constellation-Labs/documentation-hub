@@ -423,15 +423,10 @@ You should review your backups to make sure you do **NOT** delete files you may 
 
 Advanced users may want to transfer these files to a secondary backup directory to keep them safe.
 
-<span style={{color:'red'}}>You should have a backup of the following files in a secure location off of you Node.  These files contain passphrases and critical wallet contents</span>
-<br />
-<br />
-<span style={{color:'red', fontWeight:'800'}}>&rarr; p12 file</span>
-<br />
-<span style={{color:'red', fontWeight:'800'}}>&rarr; cn-config.yaml</span>
-<br />
-<br />
-<span style={{color:'red'}}>which contains your passphrase.</span>
+**You should have a backup of the following files in a secure location off of you Node.  These files contain passphrases and critical wallet contents which contain your passphrase.**
+
+- p12 file
+- cn-config.yaml
 :::
 
 The answer to this question, is **up to you**, in the example we said **y**.
