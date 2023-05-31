@@ -25,16 +25,28 @@ Decide if you want to automate the creation of your Node or handle it manually.
 #### Cloud Provider
 Utilizing a Cloud Provider to build your Node is the most common option.  Choose a provider that meets your requirements, build a VPS instance, download nodectl or manually install dependencies, and then create your Node. 
 
+- Begin [here](providers.md)
+
 #### Hosting Provider
-Utilize a Hosting Provider to handle a dedicated server to run your Node on top of.
+Utilize a Hosting Provider to handle a dedicated server to run your Node.  This option will require you to do some research on our own to find a hosting provider.  There are many options to choose from.
+
+- Begin [here](https://www.google.com/search?q=top+10+hosting+providers)
 
 #### Dedicated Server
 Run your Node on your own dedicated "bare metal" server.  This is the most advanced option and requires more knowledge of how to handle hardware, operating systems, and software.
 
+Buying a server or purchasing the necessary hardware to run a Node is out of the scope of this documentation. 
+
+To deploy a Node to run on the **Hypergraph** and also the **DAG Layer1 metagraph**, you should make sure your bare metal server supports the following [specs](specs.md).
+
 #### nodectl Automation
-Build a Node in minutes using Constellation Network's utility **nodectl**.
+Once you have established where you are going to build your Node or what hardware you are going to use.  You can decide to turn your server into a Node in minutes using Constellation Network's utility **nodectl**.
+
+- Begin [here](../automated/nodectl)
 
 #### Manual Installation
 Build your Node manually by handling all then necessary setup requirements step by step.  
 
 Manual installation will require more time; however, will give a new Node Operator the insight into what is going on "under the hood" on a server that is running as a Constellation Network Node.  
+
+- Begin [here](../manual/getting-started-manual.md)
