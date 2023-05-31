@@ -74,7 +74,7 @@ These steps include:
   - arm64
 :::
 
-In the <span style={{color:'blue', fontWeight: '800'}}>unlikely event</span> you need to do a manual upgrade of **nodectl**, it will be necessary to make sure the binary is executable (*This is an advanced system management process*).  We will cover manual downloads below.
+In the **unlikely event** you need to do a manual upgrade of **nodectl**, it will be necessary to make sure the binary is executable (*This is an advanced system management process*).  We will cover manual downloads below.
 
 #### Upgrade detection
 
