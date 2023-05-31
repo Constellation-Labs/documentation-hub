@@ -64,10 +64,6 @@ These steps include:
     - There is an [upgrade path](./nodectlUpgradePath) that might need to be taken; dependent on, how long you have waited to upgrade your Node.
   - Does your Node require any extra upgrade steps to complete the **nodectl** upgrade for effective operation.
 
-:::caution 
-Currently there is not a scheduled release process for nodectl.
-:::
-
 ### Upgrade to new version of nodectl
 
 **nodectl** is simply a single binary files compiled to work on 1 of either 2 Linux architectures.  That is to say, it is single file that you can simply download from the Internet and execute on your system. 
