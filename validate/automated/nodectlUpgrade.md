@@ -621,7 +621,7 @@ Below we will see that our Node reached `WaitingForReady` while it was connected
 <br />
 </MacWindow>
 
-### Metagrpah services *layer1*
+### Metagraph services *layer1*
 
 **nodectl** will now start up your `layer1` service which was configured in a profile called `dag-l1`.  
 
