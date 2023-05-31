@@ -33,7 +33,7 @@ It will be up to the Node Operator to properly navigate back and forth between t
 
 It is recommended to go through the installation steps below one by one.  
 
-Once you reach the end of the **section** on the **installation** documentation, you will notice a <span style={{color:'blue'}}>blue box</span> that will offer you the ability to navigate to the exact location you need to return to.  Alternatively, you can press the <kbd>&larr;</kbd> button to return to this document.
+Once you reach the end of the **section** on the **installation** documentation, you will notice a *blue box* that will offer you the ability to navigate to the exact location you need to return to.  Alternatively, you can press the <kbd>&larr;</kbd> button to return to this document.
 
 :::note 
 You can read ahead in this document to see where changes are required
@@ -69,7 +69,7 @@ Follow the instructions to restore your p12 file:
 
 Follow all steps provided by [Node Install](./nodectlInstall.md#install-nodectl) until your reach the request to migrate your [**p12 private key**] file.  
 
-Throughout the **installation** documentation there will be <span style={{color:'blue'}}>blue info boxes</span> that you can use to return to this document.
+Throughout the **installation** documentation there will be *blue info boxes* that you can use to return to this document.
 
 When you return from the main **installation** we can continue with **migration specific** instructions.
 
@@ -116,7 +116,7 @@ If you already have your **p12 private key file** uploaded, you should choose `n
 <br />
 </MacWindow>
 
-You can now return to the **[nodectl installation](./nodectlInstall.md#system-requirements)** and follow the instructions until you reach the next <span style={{color:'blue'}}>blue box</span> to return here.
+You can now return to the **[nodectl installation](./nodectlInstall.md#system-requirements)** and follow the instructions until you reach the next *blue box* to return here.
 
 ### Choose P12 file
 

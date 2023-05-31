@@ -96,7 +96,7 @@ As an example (*the list command is unrelated to this document's purpose*), a [`
 
 *The full output of the list command was omitted*.
 <MacWindow>
-<span style={{color:'purple'}}>nodeadmin@Constellation-Node:~#</span> sudo nodectl list<br />
+nodeadmin@Constellation-Node:~# sudo nodectl list<br />
   A new version of nodectl was detected: <br />
   v2.7.1<br />
   To upgrade issue: sudo nodectl upgrade_nodectl<br />            
@@ -115,11 +115,11 @@ When we execute the [`upgrade_nodectl`](./nodectlCommands#upgrade_nodectl) comma
 nodectl will detect that there is a new version and ask us if we are sure we want to continue?  We can say **`y`** here.
 
 <MacWindow>
-<span style={{color: "purple"}}>nodeadmin@Constellation-Node:~#</span> sudo nodectl upgrade_nodectl<br />
+nodeadmin@Constellation-Node:~# sudo nodectl upgrade_nodectl<br />
    FOUND  auto_restart instance.<br />
   AutoRestart service with pid [3101736] ........ disabled<br /> 
   Auto Restart will reengage at completion of requested task<br />
-  A <span style={{textDecoration: "underline"}}>new</span> version of nodectl was detected:.........<br />                                                            
+  A *new* version of nodectl was detected:.........<br />                                                            
   v2.7.1<br />
   To upgrade issue: sudo nodectl upgrade_nodectl<br />
    WARNING  This will upgrade mainnet<br />
@@ -245,7 +245,7 @@ From the remote login on our **Node**.  We can issue the `upgrade` command.
 sudo nodectl upgrade
 ```
 <MacWindow>
-<span style={{color:"purple"}}>nodeadmin@Constellation-Node:~#</span> sudo nodectl upgrade
+nodeadmin@Constellation-Node:~# sudo nodectl upgrade
 </MacWindow>
 
 :::note Side Note

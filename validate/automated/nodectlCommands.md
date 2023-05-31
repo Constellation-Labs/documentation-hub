@@ -26,7 +26,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 
 
-<span style={{color: "purple", fontSize:"4em", fontWeight:"800"}}>nodectl</span>
+# nodectl
 
 ## Introduction
 
@@ -108,8 +108,8 @@ Commands that create the need for pagination will generally offer a `-np` (*no p
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>help</span>
-
+### help
+---
 The **`help`** command will offer help for most commands available by the **nodectl** utility.
 
 Node Operators can issue the `help` command by itself to see a basic rundown of all **switches** and **parameter** requirements.
@@ -137,8 +137,8 @@ sudo nodectl status help
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>start</span>
-
+### start
+---
 The **`start`** command takes a single [switch](#what-is-a-switch-and-parameter).
 
 **Start** the service related to a configured profile name.  This command will not work without the `<profile_name>` supplied.
@@ -160,7 +160,8 @@ sudo nodectl start -p dag-l0
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>stop</span>
+### stop
+---
 The **`stop`** command takes a single [parameter](#what-is-a-switch-and-parameter).
 
 **Stop** the service related to a configured profile name.  This command will not work without the `<profile_name>` supplied.
@@ -183,7 +184,8 @@ sudo nodectl stop -p dag-l0
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>restart</span>
+### restart
+---
 The **`restart`** command takes a single [parameter](#what-is-a-switch-and-parameter).
 
 **Restart** the service related to a configured profile name.  This command will not work without the `<profile_name>` supplied or special **parameter** `all`.
@@ -215,7 +217,8 @@ sudo nodectl restart -p dag-l0
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>slow_restart</span> 
+### slow_restart 
+---
 
 The **`slow_restart`** command is [almost] exactly the same as the [restart](#restart) command; however, if you issue a **slow restart** the process will take **10 minutes** to complete. (*600 seconds*)
 
@@ -227,7 +230,8 @@ The `slow_restart` will allow enough time for a Node to be off the network and r
 | :----: | :---: |
 | slow_restart  |  -sr   |
 
-### <span style={{color:'green',fontSize:'1.3em'}}>restart_only</span> 
+### restart_only 
+---
 
 The `restart_only` command is exactly the same as the [restart](#restart) command; however, if you issue a **restart_only**, the process will exclude the `join` action to rejoin the cluster.
 
@@ -241,7 +245,8 @@ After a `restart_only` is executed, the profile should end in an `ReadyToJoin` s
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>leave</span> 
+### leave 
+---
 The **`leave`** command takes a single [parameter](#what-is-a-switch-and-parameter).
 
 **Leave** the **hypergraph** or **metagraphs** related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-a-switch-and-parameter) supplied.
@@ -267,7 +272,8 @@ sudo nodectl leave -p dag-l0
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>join</span> 
+### join 
+---
 
 The **`join`** command takes a single [parameter](#what-is-a-switch-and-parameter).
 
@@ -297,7 +303,8 @@ sudo nodectl join -p dag-l0
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>status</span> 
+### status 
+---
 
 The **`status`** command takes a single **optional** [parameter](#what-is-a-switch-and-parameter).
 
@@ -342,7 +349,8 @@ sudo nodectl status -p dag-l0
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>list</span>
+### list
+---
 
 The **`list`** command does not take any [parameters](#what-is-a-switch-and-parameter) and displays the details of the profiles found in the [**`cn-config.yaml`**](./nodectlConfig.md) file.  You can update the **`cn-config.yaml`** file with the [configure command](#configure).
 
@@ -367,7 +375,8 @@ sudo nodectl list
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>peers</span>
+### peers
+---
 
 The **`peers`** command will attempt to list all the peers found on the cluster; as well as, list their IP addresses for review.
 
@@ -461,7 +470,8 @@ sudo nodectl peers -p <profile_name> --csv --output test.csv
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>find</span>
+### find
+---
 
 The **`find`** command takes several parameters.
   
@@ -478,7 +488,7 @@ It will show you the profile searched (required) and offer you confirmation that
 | [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -s | `<source_node>` | Node on the cluster you want to use to lookup other nodes. | **optional** |
-| -t | `<target_node>` | Node on the cluster (ip address of hostname) you want to look up on the cluster. | **optional** |
+| -t | `<target_node>` | Node on the cluster (ip address, hostname, or nodeid) you want to look up on the cluster. | **optional** |
 
 You may specify a **`source`** node that will be used as the reference point to lookup the **`target`** node (either your Node *default* or a specified target) on the cluster and return a `True` or `False` depending on whether or not it is found.
   
@@ -516,6 +526,10 @@ or
 ```
 sudo nodectl find -p dag-l0 -t 10.1.1.1
 ```
+look for a node by `nodeid`
+```
+sudo nodectl find -p dag-l0 -t <nodeid>
+```
 If our node is `10.1.1.1` check if `10.1.1.1` is listed/seen by a Node identified by the `-s` option (`10.2.2.2`) on the cluster we are connected to.
 ```
 sudo nodectl find -p dag-l0 -s 10.2.2.2
@@ -540,7 +554,8 @@ sudo nodectl find -p dag-l0 -s 10.2.2.2 -t 10.1.1.2
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>check_connection</span>
+### check_connection
+---
 
 The **`check_connection`** command will execute a search on the currently connected **Hypergraph** or **Metagraph** cluster. 
 
@@ -620,7 +635,8 @@ sudo nodectl check-connection -p dag-l0 -s 10.3.3.3 -s 10.4.4.4
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>check_source_connection</span>
+### check_source_connection
+---
 
 The **`check_source_connection`** command takes a profile [parameter](#what-is-a-switch-and-parameter).
 
@@ -681,7 +697,8 @@ sudo nodectl check_source_connection
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>health</span>
+### health
+---
 
 The **`health`** command does not take any [parameters](#what-is-a-switch-and-parameter).
 
@@ -714,7 +731,8 @@ sudo nodectl health
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>sec</span>
+### sec
+---
 
 The **`sec`** command does not take any [parameters](#what-is-a-switch-and-parameter).
 
@@ -758,7 +776,8 @@ sudo nodectl sec
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>price</span>
+### price
+---
 
 | Command | Alias |
 | :---: | :---: | 
@@ -795,7 +814,8 @@ sudo nodectl price
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>market</span>
+### market
+---
 
 | Command | Alias |
 | :---: | :---: | 
@@ -836,7 +856,8 @@ sudo nodectl market
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>refresh_binaries</span> 
+### refresh_binaries 
+---
 
 The **`refresh_binaries`** command does not take any [parameters](#what-is-a-switch-and-parameter).
   
@@ -865,7 +886,9 @@ sudo nodectl refresh_binaries
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>check_seedlist</span>
+### check_seedlist
+---
+
 The **`check_seedlist`** command takes one [parameter](#what-is-a-switch-and-parameter).
 
 | Command | Shortcut |
@@ -903,7 +926,8 @@ sudo nodectl check_seedlist
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>update_seedlist</span> 
+### update_seedlist 
+---
 
 The **`update_seedlist`** command does not take any [parameters](#what-is-a-switch-and-parameter).
   
@@ -934,7 +958,8 @@ sudo nodectl update_seedlist
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>show_seedlist_participation</span> 
+### show_seedlist_participation 
+---
 
 The **`check_seedlist_participation`** command does not take any [parameters](#what-is-a-switch-and-parameter).
 
@@ -959,7 +984,8 @@ sudo nodectl check_seedlist_participation
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>show_node_states</span> 
+### show_node_states 
+---
 
 The **`show_node_states`** command does not take any [parameters](#what-is-a-switch-and-parameter).
 
@@ -994,7 +1020,8 @@ sudo nodectl -sns
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>show_current_rewards</span>
+### show_current_rewards
+---
 
 The **`show_current_rewards`** command takes several parameters.
   
@@ -1066,7 +1093,8 @@ sudo nodectl show_current_rewards --csv --output test.csv
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>clean_snapshots</span>
+### clean_snapshots
+---
 
 :::danger 
 This command should be used sparingly, only as absolutely necessary.
@@ -1103,7 +1131,8 @@ sudo nodectl -cs
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>clean_files</span>
+### clean_files
+---
 
 The **`clean_files`** command will offers the Node Operator the ability to clear specified logs or special stored files that may not be needed anymore.
 
@@ -1145,7 +1174,8 @@ sudo nodectl -cf -t logs
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>auto_restart</span> 
+### auto_restart 
+---
 
 The **`auto_restart`** command takes several [parameters](#what-is-a-switch-and-parameter).
 
@@ -1283,7 +1313,8 @@ sudo nodectl auto_restart status
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>whoami</span>
+### whoami
+---
 
 The **`whoami`** command displays the external ip address of your Node. 
 
@@ -1311,7 +1342,7 @@ sudo nodectl whoami help
 ```
 sudo nodectl whoami
 ```
-- Show ip address of node_id from a cluster via a profile this Node is connected to
+- Show ip address of a Node by `nodeid` from a cluster via a profile this Node is connected to
 ```
 sudo nodectl whoami -p <profile> -id <node_id>
 ```
@@ -1319,7 +1350,8 @@ sudo nodectl whoami -p <profile> -id <node_id>
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>reboot</span>
+### reboot
+---
 
 The **`reboot`** command does not take any [parameters](#what-is-a-switch-and-parameter) and offers the Node Operator the ability to reboot their physical or VPS (Virtual Private Server in the cloud) via a warm boot.
   
@@ -1348,7 +1380,8 @@ sudo nodectl reboot
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>disable_root_ssh</span> 
+### disable_root_ssh 
+---
 
 The **`disable_root_ssh`** command is a *special* command that works on the Debian distribution level.  It will disable the ability for access to the **root** user, via remote access.
 
@@ -1368,7 +1401,8 @@ sudo nodectl disable_root_ssh
 ```
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>enable_root_ssh</span> 
+### enable_root_ssh 
+---
 
 The **`enable_root_ssh`** command is a *special* command that works on the Debian distribution level.  It will enable the ability for access to the **root** user, via remote access.
 
@@ -1384,7 +1418,8 @@ sudo nodectl enable_root_ssh
 ```
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>change_ssh_port</span>
+### change_ssh_port
+---
 
 The **`change_ssh_port`** command is a *special* command that works on the Debian distribution level. For added security, it is **recommended** that your run your **SSH** remote access through a non-commonly known port number.  In the case of the **ssh** protocol, a port that is different from port `22`.
 
@@ -1412,7 +1447,8 @@ sudo nodectl change_ssh_port -p 4242
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>nodeid</span> 
+### nodeid 
+---
 
 The **`nodeid`** command will retrieve your Node's public key (nodeid) for either your local Node or another Node by supplying the `-t` (target) [switch](#what-is-a-switch-and-parameter) followed by the `ip_address` of the node on the cluster that is targeted.
 
@@ -1442,7 +1478,8 @@ sudo nodectl nodeid -t 111.111.111.111
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>id</span> 
+### id 
+---
 
 The **`id`** command is an alias to the [nodeid](#nodeid) command.
 
@@ -1452,7 +1489,8 @@ The **`id`** command is an alias to the [nodeid](#nodeid) command.
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>dag</span> 
+### dag 
+---
 
 The **`dag`** command will retrieve your Node's wallet information for your local Node.
 
@@ -1514,7 +1552,8 @@ sudo nodectl dag -p dag-l0 -np
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>nodeid2dag</span>
+### nodeid2dag
+---
 
 The **`nodeid2dag`** command will take in a required public node id or public key ( `128 byte` hexadecimal string ) and converts it into its associated **Constellation Network** DAG wallet address.
   
@@ -1543,7 +1582,8 @@ Due to the cryptographic nature of a DAG wallet, you can only 1-way hash a nodei
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>passwd12</span>  
+### passwd12  
+---
 
 The **`passwd12`** command does not take any [parameters](#what-is-a-switch-and-parameter).
 
@@ -1556,7 +1596,7 @@ Please run the [`sudo nodectl configure`](#configure) command to update your pas
 :::
 
 :::danger IMPORTANT
-<span style={{color:'red', fontWeight:'800'}}>BACKUP</span> your <span style={{color:'purple', fontWeight:'800'}}>p12</span> prior to using the <span style={{color:'green'}}>passwd12</span> command
+**BACKUP** your **p12** prior to using the **passwd12** command
 :::
 
 > #### Examples
@@ -1572,7 +1612,8 @@ sudo nodectl passwd12
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>export_private_key</span> 
+### export_private_key
+---
 
 The **`export_private_key`** command does not take any [parameters](#what-is-a-switch-and-parameter).
   
@@ -1604,7 +1645,8 @@ sudo nodectl export_private_key
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>configure</span>
+### configure
+---
 
 The **`configure`** command will attempt to guide the Node Operator through the **creating** or **editing** the [**`cn-config.yaml`**](./nodectlConfig.md) file.
   
@@ -1656,7 +1698,8 @@ sudo nodectl configure -a -e
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>view_config</span> 
+### view_config
+---
 
 The **`view_config`** command will show a [paginated](#what-is-pagination) view of the current [`cn-config.yaml`](./nodectlConfig.md) file.  
 
@@ -1671,7 +1714,8 @@ The **`view_config`** command will show a [paginated](#what-is-pagination) view 
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>validate_config</span>
+### validate_config
+---
 
 The **`validate_config`** command will attempt to review your [`cn-config.yaml`](./nodectlConfig.md) file for errors that may cause **unexpected** results when attempting to run your Node.
 
@@ -1682,7 +1726,8 @@ The **`validate_config`** command will attempt to review your [`cn-config.yaml`]
 In the event that **nodectl** finds discrepancies or errors in the **cn-config.yaml**, a table of errors and possible resolutions will be displayed as output.
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>upgrade_path</span>
+### upgrade_path
+---
 
 The **`upgrade_path`** command does not take any [parameters](#what-is-a-switch-and-parameter) and offers the Node Operator the ability to check their Node's current nodectl version for upgrade path requirements.
   
@@ -1707,7 +1752,8 @@ sudo nodectl upgrade_path
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>upgrade</span>  
+### upgrade  
+---
 
 The **`upgrade`** command is used to upgrade both **Tessellation** and **nodectl** backend files.
 
@@ -1726,7 +1772,8 @@ Please see the [upgrade nodectl](nodectlUpgrade.md) documentation for a detailed
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>upgrade_nodectl</span>  
+### upgrade_nodectl  
+---
 
 The **`upgrade_nodectl`** command is a dedicated command used to upgrade the **nodectl** binary file.
 
@@ -1750,7 +1797,8 @@ sudo nodectl upgrade_nodectl
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>logs</span> 
+### logs 
+---
 
 The **`logs`** command will print out the contents of the logs that have been requested.
 
@@ -1786,7 +1834,8 @@ sudo nodectl logs -p dag-l0 -l app -g error -f
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>send_logs</span> 
+### send_logs 
+---
 
 The **`send_logs`** command is a *debug* command used to help accumulate log files to send to Developers or System Engineering to dissect; to better the code base.
   
@@ -1826,7 +1875,8 @@ sudo nodectl -sl -p <profile_name>
 
 
 
-### <span style={{color:'green',fontSize:'1.3em'}}>check_versions</span> 
+### check_versions 
+---
 
 With the **`check_versions`** command, **nodectl** will go out and review the latest versions of both **Constellation Network Tessellation** and **nodectl**. 
 

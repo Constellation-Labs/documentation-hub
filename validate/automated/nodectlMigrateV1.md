@@ -51,10 +51,10 @@ nodeadmin@Constellation-Node:~#
 </MacWindow>
 
 :::danger IMPORTANT
-<span style={{color:'red', fontWeight:'800', fontSize:'20px'}}>If we are not on version 1.12.0 of nodectl ...</span> 
+If we are not on version 1.12.0 of nodectl ...
 <br />
 
-If you are <span style={{color:'red', fontWeight:'800'}}>not</span> on <span style={{color:'green', fontWeight:'800', fontSize:'20px'}}>v1.12.0</span>...
+If you are **NOT** on `v1.12.0`...
 
 Please make sure to follow the [upgrade path](./nodectlUpgradePath.md) documentation, to avoid **unexpected** errors.
 :::
@@ -168,9 +168,7 @@ This feature was added per request from the community; however, because the hot 
 This will disable your ability to use the **[auto restart](./nodectlCommands#auto_restart)** feature including the `auto_upgrade` feature.
 :::
 
-<span style={{color:'green', fontWeight:'800', fontSize:'1.5em'}}>It is recommended to keep your passphrase visible.</span>
-
-<p></p>
+#### It is recommended to keep your passphrase visible.
 
 :::note Side Note
 Make sure to follow the recommended security lock down measures during the [build](../validator/get_started.md) of your underlining VPS (container or bare metal), as an alternative to hiding your passphrase here.

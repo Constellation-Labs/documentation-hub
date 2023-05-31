@@ -385,7 +385,7 @@ Unauthorized access can be potentially crippling to the operations of your Node;
   We will end of up with 3 separate unique<br /> 
   passphrases.<br /> 
 <br /> 
-  1 SSH KEY passphrase/keyphrase - <span style={{color: 'green'}}>already created</span><br /> 
+  1 SSH KEY passphrase/keyphrase - already created<br /> 
 <br /> 
   <b>2 User nodeadmin's VPS admin password </b><br /> 
 <br /> 
@@ -520,7 +520,7 @@ Disabling [SSH] for root, ubuntu and/or admin.. disable<br />
 
 Let's pause the installation process here. **Before we continue**, we should quickly access our Node using our newly created **nodeadmin** account.
 
-<p><span style={{color:'red', fontSize:'1.1em', fontWeight: '600'}}>DO NOT CLOSE THE INSTALLER TERMINAL WINDOW</span></p>
+#### DO NOT CLOSE THE INSTALLER TERMINAL WINDOW
 
 You should now copy the same configuration you used to access your instance initially (which opened our installation shell); however, using our `nodeadmin` user instead.
 
@@ -846,7 +846,7 @@ Our Node's prompt should change, and our `ubuntu` and `root` users will no longe
 :::
 
 <MacWindow>
-<span style={{color:'blue'}}>nodeadmin@Constellation-Node:</span>~$ 
+nodeadmin@Constellation-Node:~$ 
 </MacWindow>
 
 ## CONGRATULATIONS
