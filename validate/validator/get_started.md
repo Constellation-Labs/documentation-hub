@@ -23,7 +23,7 @@ Decide if you want to automate the creation of your Node or handle it manually.
 - [manual installation](#manual-installation)
 
 #### Cloud Provider
-Utilizing a Cloud Provider to build your Node on to of, it the most common option.  Choose a Provider that meets your requirements, build an Instance, and then creating a Node on top of your cloud instance. 
+Utilizing a Cloud Provider to build your Node is the most common option.  Choose a provider that meets your requirements, build a VPS instance, download nodectl or manually install dependencies, and then create your Node. 
 
 #### Hosting Provider
 Utilize a Hosting Provider to handle a dedicated server to run your Node on top of.
