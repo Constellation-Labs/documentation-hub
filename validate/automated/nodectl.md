@@ -62,6 +62,8 @@ The succeeding documentation will describe the features behind **nodectl** and h
 
 This documentation will help, through step-by-step instructions, to create a **new** Node from scratch.  Your new Node will include a new wallet ([p12](./nodectlInstall.md#what-is-a-p12-file) file).
 
+Start [here](./nodectlInstall.md).
+
 ### Rebuild/Migrate Node
 
 These documents will help, through step-by-step instructions, with replacing an existing Node by transferring it to a new container, VPS or hardware.
@@ -70,14 +72,20 @@ The existing Node is in production; however, you would like to use the ephemeral
 
 This will require transferring your Node's wallet ([p12](./nodectlInstall.md#what-is-a-p12-file) file) from the existing (old) Node to your new Node.
 
+Start [here](./nodectlInstallMigrate.md).
+
 ### Upgrade nodectl on your Node
 
 When you have nodectl up and running and a new version of nodectl is released.  The following documentation will help the Node Operator navigate with a step-by-step guide on how to upgrade.
+
+Start [here](./nodectlUpgrade.md).
 
 ### Upgrade your Node from version 1 to version 2
 
 Specific step-by-step instructions to upgrade from version 1 of nodectl to version 2.
 
+Start [here](./nodectlMigrateV1.md).
+
 ### Command Reference Guide
 
-After installation is complete, the command reference guide can help you navigate the features of nodectl, beyond standard Node management commands.
+After installation is complete, the [command reference guide](./nodectlCommands.md) can help you navigate the features of nodectl, beyond standard Node management commands.
