@@ -67,7 +67,7 @@ Once the command (*that required auto_restart to be disabled*) completes, **node
 In the beginning, it is better **not** to enter into advanced mode.  This will offer you more detailed explanations of each aspect of the configuration.  
 :::
 
-You can just hit the <kbd>enter</kbd> key to accept the default **`n`** to stay in `normal` mode.
+You can just hit the <kbd>enter</kbd> key to accept the default **`n`** to stay in `detailed` mode.
 
 ```
 sudo nodectl configure
