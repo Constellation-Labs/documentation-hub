@@ -95,6 +95,7 @@ module.exports = {
         },
         'automated/nodectlConfig',
         'automated/nodectlCommands',
+        'automated/nodectlAutorestart',
       ],
     },   
     {
