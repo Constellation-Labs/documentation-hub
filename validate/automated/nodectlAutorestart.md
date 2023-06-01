@@ -1,5 +1,5 @@
 ---
-title: configure auto restart and upgrade
+title: auto restart auto upgrade
 hide_table_of_contents: false
 ---
 
@@ -31,7 +31,11 @@ Auto Restart command reference can be found [here](./nodectlCommands#auto_restar
 
 The **auto upgrade** (*auto_upgrade*) command is an extension of the **auto_restart** feature.  It works in conjunction with the auto restart.
 
-In the event that **nodectl** detects that your Node is not properly connected to the **hypergraph** and/or **metagraphs**, as detected in the [configuration](./nodectlConfig.md), it will not only attempt to get your Node back online; additionally, it will also make sure that the **version** of **Tessellation** is also up to date by upgrading your Node automatically.
+In the event that **nodectl** detects that your Node is not properly connected to the **hypergraph** and/or **metagraphs**, as configured in the [configuration](./nodectlConfig.md), it will not only attempt to get your Node back online; additionally, it will also make sure that the **version** of **Tessellation** is also up to date by upgrading your Node automatically.
+
+:::warning
+`auto_upgrade` requires that `auto_restart` is also enabled.
+:::
 
 ## How to enable Auto Restart
 
@@ -44,14 +48,26 @@ Enable `auto_restart` in the configuration, or enable `auto_restart` and `auto_u
 This method will also add in the capability to re-enable the `auto_restart` feature in the event it was disabled.
 
 :::info Informational
-For special commands [see command reference](./nodectlCommands#auto_restart) the `auto_restart` feature must be disabled first.  If `auto_restart` is enabled in the [configuration](./nodectlConfig.md); once a command that requires `auto_restart` to be disabled and disables it, it will be restarted automatically
+For some specific commands ([see command reference.](./nodectlCommands#auto_restart)) the `auto_restart` feature must be disabled first.  
+
+If `auto_restart` is enabled in the [configuration](./nodectlConfig.md); once a command that requires `auto_restart` to be disabled is executed, `auto_restart` will automatically disable itself.  
+
+Once the command (*that required auto_restart to be disabled*) completes, **nodectl** will be restart the `auto_restart` feature again automatically.
 :::
 
+#### Steps to configure `auto_restart` in the configuration:
+
 1. Connect to your Node
+   - Connect to a [mac](../resources/accessMac.md).
+   - Connect to [windows](../resources/accessWin.md).
 
 2. Enter the [configuration](./nodectlConfig.md) using the [configure](./nodectlCommands#configure) command.
 
-In the beginning, it is better **not** to enter into advanced mode.  This will offer you more detailed explanations of each aspect of the configuration.  You can just hit the <kbd>enter</kbd> key to accept the default **`n`**.
+:::info Suggestion
+In the beginning, it is better **not** to enter into advanced mode.  This will offer you more detailed explanations of each aspect of the configuration.  
+:::
+
+You can just hit the <kbd>enter</kbd> key to accept the default **`n`** to stay in `normal` mode.
 
 ```
 sudo nodectl configure
@@ -154,8 +170,8 @@ Do you want to [enable] auto_upgrade? [y]:<br />
   have hit &lt;enter&gt; along with your option; therefore, choosing the default.  You can choose
   n here and reenter the correct value.<br />
 <br />
-  disable auto restart: n<br />
-  disable auto upgrade: n<br />
+  enable auto restart: y<br />
+  enable auto upgrade: y<br />
   <br />
   Please confirm values are as requested: [y]: <br />
 </MacWindow>
@@ -185,7 +201,7 @@ Do you want to [enable] auto_upgrade? [y]:<br />
 You can either `enable` or `disable` via the commands referenced.
 
 :::danger Warning
-**nodectl** is not a program that continuously runs on your Node (not including `auto_restart` which does run as a service.)  On a reboot of your server or VPS, your `auto_restart` service will not enable until a `nodectl` command is executed
+**nodectl** is not a program that continuously runs on your Node (not including `auto_restart` which does run as a service.)  On a reboot of your server or VPS, your `auto_restart` service will not enable until a `nodectl` command is executed which will trigger the `auto_restart` service to engage if enabled.
 :::
 
 10. Exit out of the configuration feature by pressing the <kbd>q</kbd> key.
@@ -209,3 +225,20 @@ You can either `enable` or `disable` via the commands referenced.
 Configuration manipulation quit by Operator<br />
 nodeadmin@Constellation-Node:~# 
 </MacWindow>
+
+### Manual Method 2
+
+:::warning 
+This method should only be used in more specifically cases where using the configuration is not an option.
+
+This method can also be used in conjunction with having `auto_restart` enabled in the configuration.
+:::
+
+#### Steps to manually enable auto restart
+```
+sudo nodectl auto_restart enable
+sudo nodectl auto_restart disable
+sudo nodectl auto_restart restart
+sudo nodectl auto_restart enable --auto_upgrade
+```
+see [auto_restart](./nodectlCommands#auto_restart) or [auto_upgrade](./nodectlCommands#auto-upgrade) command reference for more details.

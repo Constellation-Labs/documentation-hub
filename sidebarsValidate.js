@@ -93,9 +93,17 @@ module.exports = {
             'automated/nodectlMigrateV1',
           ],
         },
+        {
+          type: 'category',
+          label: 'Features',
+          items: [
+            'automated/nodectlAutorestart',
+            'automated/nodectlCommands',
+          ],
+        },
         'automated/nodectlConfig',
-        'automated/nodectlCommands',
-        'automated/nodectlAutorestart',
+        
+
       ],
     },   
     {
