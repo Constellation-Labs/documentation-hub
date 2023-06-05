@@ -12,12 +12,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Begin the process of building an EC2 instance to turn into a Constellation Node."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 A virtual machine inside AWS's cloud service is called a **`EC2 instance`**. *Elastic Compute Cloud*.

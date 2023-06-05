@@ -12,12 +12,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Uploading our Public key to AWS EC2 Instance"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## AWS - EC2

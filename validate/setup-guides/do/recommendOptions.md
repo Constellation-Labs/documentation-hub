@@ -1,6 +1,6 @@
 ---
 title: Recommend Options
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 <head>
@@ -9,12 +9,6 @@ hide_table_of_contents: true
     name="description"
     content="Digital Ocean Droplet Creation options recommendations."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Digital Ocean Recommendations

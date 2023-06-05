@@ -12,12 +12,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Setting up a Digital Ocean VPS called a Droplet"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Digital Ocean - Droplet

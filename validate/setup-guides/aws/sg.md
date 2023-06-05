@@ -12,12 +12,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Apply our Security Group(s) to our EC2 Instance"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Securing our EC2 Instance

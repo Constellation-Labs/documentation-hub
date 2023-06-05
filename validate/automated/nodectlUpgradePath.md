@@ -1,6 +1,6 @@
 ---
 title: nodectl upgrade path
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -13,12 +13,6 @@ import MacWindow from '@site/src/components/global/MacWindow';
     name="description"
     content="MainNet 2.0 Automation - Understanding the nodectl upgrade path"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Understanding the Upgrade Path

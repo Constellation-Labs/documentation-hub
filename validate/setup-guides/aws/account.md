@@ -12,12 +12,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Building a Validator Node on AWS's platform."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Amazon Web Services - AWS

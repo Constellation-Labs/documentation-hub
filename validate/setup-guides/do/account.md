@@ -1,6 +1,6 @@
 ---
 title: Create Account
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -12,12 +12,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Building a Validator Node on Digital Ocean's platform."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Digital Ocean

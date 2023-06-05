@@ -1,6 +1,6 @@
 ---
 title: Setup Firewall
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';

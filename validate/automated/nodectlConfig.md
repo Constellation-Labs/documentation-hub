@@ -13,12 +13,6 @@ import MacWindow from '@site/src/components/global/MacWindow';
     name="description"
     content="an explanation of nodectl's config.yaml file."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Introduction

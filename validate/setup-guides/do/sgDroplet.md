@@ -12,18 +12,12 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Secure our ingress and egress rules for our droplet"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
-## SETUP DIGITAL OCEAN FIREWALL RULES
+## Setup Digital Ocean Firewall Rules
 
 :::danger VERY IMPORTANT FOR MAINNET 2.0 LAUNCH
-These documents reference creating a single layer 0 or Metagraph.  For the launch of MainNet 2.0, you will installing a **DUAL** layer - `layer0` and `layer1` - validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  **The YouTube Series does not cover these extra rules.**; however, the process is the same (you just have to repeat some steps).
+These documents reference creating a single layer 0 or Metagraph.  For the launch of MainNet 2.0, you will installing a dual layer - `layer0` and `layer1` - validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  **The YouTube Series does not cover these extra rules.**; however, the process is the same (you just have to repeat some steps).
 :::
 
 If you **launched** your Droplet, and it is already **deployed**, we can begin implementing some necessary access rules; as well as, security measures, by adding **`Firewall Rules`**. This will reduce access `inbound` to our Node from the Internet. This therefor reduces your Node's exposure to nefarious actors.

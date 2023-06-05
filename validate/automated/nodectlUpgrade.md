@@ -13,12 +13,6 @@ import MacWindow from '@site/src/components/global/MacWindow';
     name="description"
     content="MainNet 2.0 Automation - Upgrade Tessellation with nodectl"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ### Description

@@ -4,13 +4,12 @@ slug: manual-install-getting-started
 hide_table_of_contents: false
 ---
 ## Before you begin:
-# STOP !
+
 :::danger MANUAL INSTALLATION ONLY
 If you have decided on using **`nodectl`** (excellent choice) to create your Node please do **not** continue with this section of instructions.
 :::
 
 nodectl users do **NOT** need to follow any instructions in this section because `nodectl` does all of this for you.
-
 
 ## Manual Process (only)
 

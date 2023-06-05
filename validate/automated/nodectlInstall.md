@@ -13,12 +13,6 @@ import MacWindow from '@site/src/components/global/MacWindow';
     name="description"
     content="nodectl installation of new Node"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Introduction

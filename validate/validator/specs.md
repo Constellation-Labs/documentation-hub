@@ -12,12 +12,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="MainNet 2.0 Hardware Requirements"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 Currently **MainNet 2.0** requires all Nodes run on both the **Hypergraph** (**Global Layer 0**) and the **Constellation Network DAG Metagraph** (**Layer 1**). 

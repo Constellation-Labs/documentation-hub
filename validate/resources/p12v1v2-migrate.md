@@ -14,12 +14,6 @@ import MacWindow from '@site/src/components/global/MacWindow';
     content="how to migrate a p12 file in v1 format to v2"
     title="p12 migrate v1 to v2"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Introduction

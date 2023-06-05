@@ -14,12 +14,6 @@ import MacWindow from '@site/src/components/global/MacWindow';
     content="nodectl command reference guide"
     title="Command Reference Guide"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 
