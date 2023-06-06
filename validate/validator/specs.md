@@ -17,8 +17,6 @@ import DocsCards from '@components/global/DocsCards';
 Currently **MainNet 2.0** requires all Nodes run on both the **Hypergraph** (**Global Layer 0**) and the **Constellation Network DAG Metagraph** (**Layer 1**). 
 
 The following table defines the specifications required for a Node to work properly and efficiently on MainNet 2.0 network.
-
-
 ### HARDWARE REQUIREMENTS
 | Element | Value	| Details |
 | --- | --- | --- |
