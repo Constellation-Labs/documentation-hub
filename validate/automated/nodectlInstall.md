@@ -2,6 +2,7 @@
 title: New Node Installation
 hide_table_of_contents: false
 ---
+<intro-end />
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
@@ -19,11 +20,11 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 The following documentation will help guide a new Node Operator through all the necessary steps required to turn an instance, VPS, or bare metal system into a Validator Node.
 
-This new installation can be preformed [manually](../manual/getting-started-manual.md) if desired by advanced end users; however, **nodectl** is recommended.
+This new installation can be preformed [manually](../manual/getting-started-manual.md) if desired by advanced end users; however, nodectl is recommended.
 
 ## Requirements
 
-It is assumed that prior to reaching this documentation, the future Node Operator has followed all the necessary steps in creating a **Debian based** Linux server instance, VPS, or bare metal system.
+It is assumed that prior to reaching this documentation, the future Node Operator has followed all the necessary steps in creating a Debian-based Linux server instance, VPS, or bare metal system.
 
 Please refer to [Node Concepts](../validator/get_started.md) to follow the `step-by-step` guide on building your future Node.
 
@@ -42,7 +43,7 @@ If you are coming from the ***New Node Installation with p12 migration*** docume
    - arm64
 
 ### Access your VPS
-**SSH** into your Debian based OS system. 
+SSH into your Debian based OS system. 
 
 *replace **ssh_key_name** with the name of your ssh key file.*
 [SSH Concepts](../validator/sshkeyExplained.md)
@@ -90,7 +91,7 @@ See "man sudo_root" for details.<br />
 ubuntu@ip-172-31-90-241:~$<br />
 </MacWindow>
 
-In the above example, you will see `ubuntu@ip-172-31-90-241:~$`, on the last line.  The `ubuntu` before the `@` indicates that our logged in **user** is called: `ubuntu`.  You may most likely see:
+In the above example, you will see `ubuntu@ip-172-31-90-241:~$`, on the last line.  The `ubuntu` before the `@` indicates that our logged in User is called: `ubuntu`.  You may most likely see:
   - ubuntu
   - admin
   - root
@@ -100,7 +101,7 @@ Throughout the rest of this documentation, you should replace the name `ubuntu` 
 ### Download nodectl
 Download the latest version of nodectl.
 :::warning
-Make sure you download the **latest** version of nodectl.  Even though the documentation may reflect correctly, it is **recommended** to verify to ensure your Node is operating at the latest version.  Documentation can become outdated; however, the methods and actions will remain the same.
+Make sure you download the latest version of nodectl.  Even though the documentation may reflect correctly, it is recommended to verify to ensure your Node is operating at the latest version.  Documentation can become outdated; however, the methods and actions will remain the same.
 :::
 Open your web browser and enter in:
 ```
@@ -109,12 +110,12 @@ https://github.com/netmet1/constellation_nodectl/releases
 Access [nodectl releases](https://github.com/netmet1/constellation_nodectl/releases) 
 
 1. click on the latest version
-2. Find the **Manual Installation** section
+2. Find the Manual Installation section
 
 ![](/img/validator_nodes/nodectl_install_release.png).
 
 3. Fine the appropriate link based on the architecture that matches your VPS.
-4. Hi-lite and copy to your clipboard or click on the clipboard icon on the *right* side of the box with the link embedded.
+4. Hi-lite and copy to your clipboard or click on the clipboard icon on the right side of the box with the link embedded.
 5. Paste the copied link into your VPS terminal window.
 
 Windows users using `putty` will make sure the putty window is in focus (selected) and then `right-click` with the mouse which will paste into your putty terminal
@@ -128,7 +129,7 @@ The command pasted into your VPS will be a correlation of commands that will:
 - Update the permissions on the binary
 - Issue a version check which should show the version, major, minor, and patch level.
 
-The first command in the string of commands included in this "copy and paste" should *fail* on a our new VPS.  This command attempts to disable the automatic restart feature that nodectl offers.  This is offered in the multiple command string to assist in **upgrades** of nodectl which will fail to download if the auto restart feature is running. Since we do not have nodectl installed or running, we can **safely** ignore the error message. 
+The first command in the string of commands included in this "copy and paste" should *fail* on a our new VPS.  This command attempts to disable the automatic restart feature that nodectl offers.  This is offered in the multiple command string to assist in upgrades of nodectl which will fail to download if the auto restart feature is running. Since we do not have nodectl installed or running, we can safely ignore the error message. 
 
 *Alternatively, more advanced users can remove the first command prior to execution, if desired.*
 :::
@@ -159,10 +160,10 @@ Creating log directory for nodectl<br />
 <b style={{color: 'red'}}>ubuntu</b>@ip-172-31-90-241:~$ <br />
 </MacWindow>
 
-In the example output above, the **expected** error is shown in red.
+In the example output above, the expected error is shown in red.
 
-In the example output above, the **username** we are logged in with is also hi-lited in red.
-You will notice **nodectl** will attempt to run the `version` command.
+In the example output above, the username we are logged in with is also hi-lited in red.
+You will notice nodectl will attempt to run the `version` command.
 - nodectl executes
 - nodectl notices there is no installation
 - nodectl sets up a logging directory
@@ -219,25 +220,25 @@ Type in `y` and then hit the <kbd>enter</kbd> key.
 Are you sure you want to continue this installation? [n]: y
 ```
 
-nodectl will begin the installation process and ask you which **HyperGraph** environment you would like to install and join with.
+nodectl will begin the installation process and ask you which HyperGraph environment you would like to install and join with.
 
 ### Choose our environment
 
 #### MainNet
-The MainNet environment is the most likely environment that you will be using **nodectl** to join into.  This will turn your VPS into a **Constellation Network Validator Node**.  A Constellation Validator Node will be setup for you and when completed you will be joining to separate networks, via your single Node.
+The MainNet environment is the most likely environment that you will be using nodectl to join into.  This will turn your VPS into a Constellation Network Validator Node.  A Constellation Validator Node will be setup for you and when completed you will be joining to separate networks, via your single Node.
 
-1. The Global Layer0 **HyperGraph**
-2. The Constellation Network associated Layer1 **MetaGraph**
+1. The Global Layer0 HyperGraph
+2. The Constellation Network associated Layer1 MetaGraph
 
 #### TestNet
-The TestNet environment is a testing and experimental environment that you will be using **nodectl** to join into.  This will turn your VPS into a **Constellation Network Validator Node**.  A Constellation Validator Node will be setup for you and when completed you will be joining to separate networks, via your single Node.
+The TestNet environment is a testing and experimental environment that you will be using nodectl to join into.  This will turn your VPS into a Constellation Network Validator Node.  A Constellation Validator Node will be setup for you and when completed you will be joining to separate networks, via your single Node.
 
-1. The TestNet Global Layer0 **HyperGraph**
-2. The TestNet Constellation Network associated Layer1 **MetaGraph**
+1. The TestNet Global Layer0 HyperGraph
+2. The TestNet Constellation Network associated Layer1 MetaGraph
 
-TestNet Nodes are used by the Hypergraph and Metagraphs to be beat up upon.  These Nodes will experience trial and error moments.  The TestNet requires more experienced Node Operators and a little more dedication verses the **set it and forget it** environment created within the **MainNet**.
+TestNet Nodes are used by the Hypergraph and Metagraphs to be beat up upon.  These Nodes will experience trial and error moments.  The TestNet requires more experienced Node Operators and a little more dedication verses the "set it and forget it" environment created within the MainNet.
 
-For the purposes of this tutorial, we will be joining the **MainNet** environment.  To accept this choice, you will hit the **M** key on your keyboard.  You will **NOT** be required to hit <kbd>enter</kbd> afterwards.
+For the purposes of this tutorial, we will be joining the MainNet environment.  To accept this choice, you will hit the **M** key on your keyboard.  You will NOT be required to hit <kbd>enter</kbd> afterwards.
 
 <MacWindow>
 ------ * Installation Starting * -------<br />
@@ -268,14 +269,14 @@ The IP address `111.111.111.111` is a fake IP used for example purposes only
 If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#import-p12-file); otherwise continue forward.
 :::
 
- Since this is a **brand new** installation, we will choose **n** (or just hit enter to accept the default) when requested to migrate over an existing **p12** file.  The **p12** file is your private key file used to store elements necessary to authenticate to the MainNet and also your Node's wallet information.
+ Since this is a brand new installation, we will choose `n` (or just hit enter to accept the default) when requested to migrate over an existing `p12` file.  The `p12` file is your private key file used to store elements necessary to authenticate to the MainNet and also your Node's wallet information.
 
 ```
 Are you migrating over an existing p12 private key? [n]: n
 ```
 
 ### System Requirements
-**nodectl** will begin to install the necessary dependencies that will allow your future Node to run properly.  This will include several packages including the java development kit package.  
+nodectl will begin to install the necessary dependencies that will allow your future Node to run properly.  This will include several packages including the java development kit package.  
 
 We can sit back and relax during these steps of the installation.  Some installations may take longer than others, so please do be patient.
 
@@ -296,7 +297,7 @@ We can sit back and relax during these steps of the installation.  Some installa
 
 ### Swap Setup
 
-Continuing the **system requirements** nodectl will create and setup your swap file.  This step sets up your Node to have an extra method to properly manage memory.  The swap will utilize disk usage when memory access is required but not available.  This is a common setup for Apple, Windows or Linux systems.
+Continuing the system requirements, nodectl will create and setup your swap file.  This step sets up your Node to have an extra method to properly manage memory.  The swap will utilize disk usage when memory access is required but not available.  This is a common setup for Apple, Windows or Linux systems.
 
 <MacWindow>
   Enabling OS swap [creating].................... running<br />
@@ -310,11 +311,11 @@ Continuing the **system requirements** nodectl will create and setup your swap f
 
 ### Setup Node Admin User
 
-Once the system requirements section is completed via 100% automation, you be directed to a new screen.  **nodectl** will detect the current user logged in. In our example using the Ubuntu distribution on AWS, the user called `ubuntu`.  
+Once the system requirements section is completed via 100% automation, you be directed to a new screen.  nodectl will detect the current user logged in. In our example using the Ubuntu distribution on AWS, the user called `ubuntu`.  
 
-It is time to change this and move to a more secure username.  We will create this user now; **however**, we will continue the installation with the `ubuntu` user.  At the end of the install, we will switch over to our new Node administrator account.  
+It is time to change this and move to a more secure username.  We will create this user now; However, we will continue the installation with the `ubuntu` user.  At the end of the install, we will switch over to our new Node administrator account.  
 
-**We will continue to use our `Ubuntu` user until instructed otherwise.**
+We will continue to use our `Ubuntu` user until instructed otherwise.
 
 :::danger Reminder 
 This user will depend on your service provider and/or your Linux distribution of choice. 
@@ -325,7 +326,7 @@ Most Commonly:
   - ubuntu
 :::
 
-**nodectl** will recommend that you use **nodeadmin** as your default Node Administrator.  This will force us away from a commonly known usernames such as `ubuntu` or `admin`.
+nodectl will recommend that you use `nodeadmin` as your default Node Administrator.  This will force us away from a commonly known usernames such as `ubuntu` or `admin`.
 
 :::note Side Note
 Since this documentation is publicly available and nodectl is open sourced, the use of `nodeadmin` can also be deemed a commonly used username; however, properly securing down your Node as recommended by this documentation, should provide proper security to make the use of `nodeadmin` a very minimal security risk.
@@ -359,20 +360,20 @@ Our `nodeadmin` user (or whichever user you decided to create - heretofore `node
 
 This password will be used during each initial nodectl request.  
 
-Afterwards for security purposes, your Linux distribution will prompt to re-enter your password when administrative commands are required **and/or**:
+Afterwards for security purposes, your Linux distribution will prompt to re-enter your password when administrative commands are required and/or:
 - It is the initial command request
 - The distribution's timeout limit has been reached.
 
 The nodectl installer will offer you some information (similar to these comments) about the various password, keyphrase, or passphrases `[passphrases]` that will be required to run your Node. 
 
-:::danger IMPORTANT
-You **must** secure this password/passphrase in a safe secure location and/or remember them.  
+:::danger Important
+You must secure this password/passphrase in a safe secure location and/or remember them.  
 
 Your passphrase will offer access to your Node and the VPS your Node runs on.  
 
-Unauthorized access can be potentially crippling to the operations of your Node; as well as, may have financial consequences because your Node will hold a **hot wallet**.  
+Unauthorized access can be potentially crippling to the operations of your Node; as well as, may have financial consequences because your Node will hold a hot wallet.  
 
-*This particular passphrase/password does not offer access to your **p12** wallet, which will be discussed later in this documentation.*
+*This particular passphrase/password does not offer access to your `p12` wallet, which will be discussed later in this documentation.*
 :::
 
 <MacWindow>
@@ -391,7 +392,7 @@ Unauthorized access can be potentially crippling to the operations of your Node;
 <br /> 
 </MacWindow>
 
-We will create a password of at least **`10`** characters in length.  You can use whatever characters you desire. However, caution should be exercised when attempting to use of `section sign` characters as **nodectl** may not work properly with them.
+We will create a password of at least **`10`** characters in length.  You can use whatever characters you desire. However, caution should be exercised when attempting to use of `section sign` characters as nodectl may not work properly with them.
 
 When creating your passphrase, avoid use of:
  - periods
@@ -461,7 +462,7 @@ We will choose the default option `y` (or just hit the <kbd>enter</kbd> key).
 <br /> 
 </MacWindow>
 
-nodectl will locate the **SSH keys** you are using and transfer it over to your new administrative (`nodeadmin`) user's account, to allow access; as well as, update necessary files.
+nodectl will locate the SSH keys you are using and transfer it over to your new administrative (`nodeadmin`) user's account, to allow access; as well as, update necessary files.
 
 <MacWindow>
 Transferring SSH key to [nodeadmin] ........... completed    <br /> 
@@ -471,12 +472,12 @@ Transferring SSH key to [nodeadmin] ........... completed    <br />
 
 To add more security to our future Node, we will now be offered the chance to disable remote access via the user accounts that we will no longer be using.
 
-Also, we will disable the **root** user account's ability to remotely access our Node.  The **root** user should **ONLY** be used sparingly for full access necessities.  We will access the **root** user; as needed, via the `nodeadmin` account.
+Also, we will disable the root user account's ability to remotely access our Node.  The root user should only be used sparingly for full access necessities.  We will access the root user; as needed, via the `nodeadmin` account.
 
 Once completed, we will only access our Node from the `nodadmin` account.  This is a good security measure.
 
 :::note 
-The Node in this tutorial is being created using an **AWS** instance in the cloud.  AWS uses a commonly known `ubuntu` user for initial access. 
+The Node in this tutorial is being created using an AWS instance in the cloud.  AWS uses a commonly known `ubuntu` user for initial access. 
 
 nodectl attempts to be as smart as possible to identify default accounts from other cloud providers; such as:
  
@@ -512,7 +513,7 @@ Disabling [SSH] for root, ubuntu and/or admin.. disable<br />
 
 ### Test `nodeadmin` access
 
-Let's pause the installation process here. **Before we continue**, we should quickly access our Node using our newly created **nodeadmin** account.
+Let's pause the installation process here. Before we continue, we should quickly access our Node using our newly created `nodeadmin` account.
 
 #### DO NOT CLOSE THE INSTALLER TERMINAL WINDOW
 
@@ -530,10 +531,10 @@ Now that we are comfortable that we have access to our Node via the **`nodeadmin
 
 We can now safely allow nodectl to disable the root user's remote access.  
 
-We will **only** use the root user by connecting through `nodeadmin` and then switching to the `root` user as necessary.
+We will only use the root user by connecting through `nodeadmin` and then switching to the `root` user as necessary.
 
 :::danger Do not worry
-Do not worry if some of this information seems advanced.  At the end of the day, you should not need to access the root user to run your Node.  In the event you have any issues, you can access **Constellation Network's** Discord channel, to request help and advise.
+Do not worry if some of this information seems advanced.  At the end of the day, you should not need to access the root user to run your Node.  In the event you have any issues, you can access Constellation Network's Discord channel, to request help and advise.
 
 We are confident you can simply follow the instructions to build your Node as recommended.
 :::
@@ -562,9 +563,9 @@ Reloading [SSH] daemon......................... complete  <br />
   Disabling [SSH] for root, ubuntu and/or admin.. complete  <br />                                                               
 </MacWindow>
 
-nodectl will now "warn" you that it will default to the **Constellation Network** dual layer configuration.
+nodectl will now "warn" you that it will default to the Constellation Network dual layer configuration.
 
-Your Node will be setup to connect to both the **Hypergraph** (Constellation's Global Layer0); as well as, Constellation's **Metagraph** (Layer1).  In order to properly participate on Constellation's **MainNet** network, your Node will be required to connect to both.
+Your Node will be setup to connect to both the Hypergraph (Constellation's Global Layer0); as well as, Constellation's Metagraph (Layer1).  In order to properly participate on Constellation's **MainNet** network, your Node will be required to connect to both.
 
 Do not worry, nodectl will take care of all the technical details for you!
 
