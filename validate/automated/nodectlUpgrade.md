@@ -2,6 +2,7 @@
 title: upgrading with nodectl
 hide_table_of_contents: false
 ---
+<intro-end />
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';

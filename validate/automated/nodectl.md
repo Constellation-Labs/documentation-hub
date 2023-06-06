@@ -2,6 +2,7 @@
 title: Getting Started
 hide_table_of_contents: false
 ---
+<intro-end />
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
@@ -16,13 +17,13 @@ import DocsCards from '@components/global/DocsCards';
 
 ## What is nodectl
 
-**nodectl** pronounced node "c" "t" "l", node-kuttle, or node control.
+nodectl pronounced node "c" "t" "l", node-kuttle, or node control.
 
-The purpose of this utility is to **make things easier** on you.  
+The purpose of this utility is to make things easier on you.  
 
-It obviates all of the technical aspects of running a Validator Node, so that anyone can do it!  It comes packed with features designed to navigate the complexities of Constellation Network's validation Node on the **Hypergraph** and/or **Metagraphs**. 
+It obviates all of the technical aspects of running a Validator Node, so that anyone can do it!  It comes packed with features designed to navigate the complexities of Constellation Network's validation Node on the Hypergraph and/or Metagraphs. 
 
-The succeeding documentation will describe the features behind **nodectl** and help to provide an easy to use guide for a utility that was designed with ease in mind.
+The succeeding documentation will describe the features behind nodectl and help to provide an easy to use guide for a utility that was designed with ease in mind.
 
 ### Installing nodectl
 

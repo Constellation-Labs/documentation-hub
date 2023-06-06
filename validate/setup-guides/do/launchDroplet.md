@@ -23,12 +23,12 @@ We only need only **one** droplet for this process, so we can leave this set to 
 You may want to change the hostname of your node to something that makes a little more sense to you. However, if you want to keep some anonymity as to the purpose of your Node, that is up to you.
 
 :::note
-If you choose to install your Node using **nodectl**, your hostname will be changed for you.  If you are manually building your Node, this hostname will be behind the scenes and only you will have access to this information, so a more familiar name, may be in order?
+If you choose to install your Node using `nodectl`, your hostname will be changed for you.  If you are manually building your Node, this hostname will be behind the scenes and only you will have access to this information, so a more familiar name, may be in order?
 :::
 
 ![](/img/validator_nodes/node-do-launch1.png)
 
-You can add **tags** to you Node, it helps in situations where you have many other resources that you might be using in conjunction with your Node, for your business needs.
+You can add **tags** to your Node, which helps in situations where you have other resources that you might be using in conjunction with your Node, for your business needs.
 
 :::info
 Bottom Line: You **do not** need `tags` for our objectives, but if you find that you may want to includes `tags` for some purpose in the future, you can add them later. Go ahead and enter any `tags` here, or you can leave this blank.
@@ -45,7 +45,7 @@ If you created a Project name for your Node(s), you can select it here; otherwis
 
 ### Create Droplet
 
-You are **READY**! On the Digital Ocean Site, click the `CREATE DROPLET` button to launch your **Droplet** in the cloud!
+On the Digital Ocean Site, click the `Create Droplet` button to launch your Droplet in the cloud!
 
 ![](/img/validator_nodes/node-do-launch3.png)
 

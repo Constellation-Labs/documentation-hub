@@ -2,6 +2,7 @@
 title: auto restart auto upgrade
 hide_table_of_contents: false
 ---
+<intro-end />
 
 import MacWindow from '@site/src/components/global/MacWindow';
 
@@ -15,17 +16,17 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## What is Auto Restart?
 
-**nodectl** offers an special feature called **auto restart** (*auto_restart*).
+nodectl offers an special feature called auto restart (*auto_restart*).
 
-This feature will detect if your Node is not properly connected to the **hypergraph** and/or **metagraphs**, as detected in the [configuration](./nodectlConfig.md) of **nodectl**.
+This feature will detect if your Node is not properly connected to the Hypergraph and/or Metagraphs, as detected in the [configuration](./nodectlConfig.md) of nodectl.
 
 Auto Restart command reference can be found [here](./nodectlCommands#auto_restart).
 
 ## What is Auto Upgrade?
 
-The **auto upgrade** (*auto_upgrade*) command is an extension of the **auto_restart** feature.  It works in conjunction with the auto restart.
+The auto upgrade (*auto_upgrade*) command is an extension of the auto_restart feature.  It works in conjunction with the auto restart.
 
-In the event that **nodectl** detects that your Node is not properly connected to the **hypergraph** and/or **metagraphs**, as configured in the [configuration](./nodectlConfig.md), it will not only attempt to get your Node back online; additionally, it will also make sure that the **version** of **Tessellation** is also up to date by upgrading your Node automatically.
+In the event that nodectl detects that your Node is not properly connected to the Hypergraph and/or Metagraphs, as configured in the [configuration](./nodectlConfig.md), it will not only attempt to get your Node back online; additionally, it will also make sure that the version of Tessellation is also up to date by upgrading your Node automatically.
 
 :::warning
 `auto_upgrade` requires that `auto_restart` is also enabled.
@@ -58,10 +59,10 @@ Once the command (*that required auto_restart to be disabled*) completes, **node
 2. Enter the [configuration](./nodectlConfig.md) using the [configure](./nodectlCommands#configure) command.
 
 :::info Suggestion
-In the beginning, it is better **not** to enter into advanced mode.  This will offer you more detailed explanations of each aspect of the configuration.  
+In the beginning, it is better not to enter into advanced mode.  This will offer you more detailed explanations of each aspect of the configuration.  
 :::
 
-You can just hit the <kbd>enter</kbd> key to accept the default **`n`** to stay in `detailed` mode.
+You can just hit the <kbd>enter</kbd> key to accept the default `n` to stay in `detailed` mode.
 
 ```
 sudo nodectl configure
@@ -195,7 +196,7 @@ Do you want to [enable] auto_upgrade? [y]:<br />
 You can either `enable` or `disable` via the commands referenced.
 
 :::danger Warning
-**nodectl** is not a program that continuously runs on your Node (not including `auto_restart` which does run as a service.)  On a reboot of your server or VPS, your `auto_restart` service will not enable until a `nodectl` command is executed which will trigger the `auto_restart` service to engage if enabled.
+nodectl is not a program that continuously runs on your Node (not including `auto_restart` which does run as a service.)  On a reboot of your server or VPS, your `auto_restart` service will not enable until a `nodectl` command is executed which will trigger the `auto_restart` service to engage if enabled.
 :::
 
 10. Exit out of the configuration feature by pressing the <kbd>q</kbd> key.

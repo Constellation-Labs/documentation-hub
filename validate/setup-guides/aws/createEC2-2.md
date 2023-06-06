@@ -2,6 +2,7 @@
 title: Deploy EC2 (Part 2)
 hide_table_of_contents: false
 ---
+<intro-end />
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
@@ -17,35 +18,35 @@ import DocsCards from '@components/global/DocsCards';
 ## EC2 CREATION (Part 2)
 
 :::note
-If you came from the previous section [Deploy EC2 (Part 1)](./createEC2.md) you should already be in the `Compute` section in the correct `Region` as your future Instance type.  Skip to [Continue building EC2](#continue-building-ec2)
+If you came from the previous section [Deploy EC2 (Part 1)](./createEC2.md) you should already be in the Compute section in the correct Region as your future Instance type.  Skip to [Continue building EC2](#continue-building-ec2)
 :::
 
 ### Open Compute EC2 Console 
 
-Click on the`Services` button to start our process.
+Click on the `Services` button to start our process.
 
 ![](/img/validator_nodes/node-aws-ec2-services1.png)
 
-From the new drop down box, choose the option **`Compute`**.
+From the new drop down box, choose the option `Compute`.
 
 ![](/img/validator_nodes/node-aws-ec2-services2.png)
 
-Choose the option **`EC2`** from the **Compute** section.
+Choose the option `EC2` from the Compute section.
 
 ![](/img/validator_nodes/node-aws-ec2-services3.png)
 
 ### Region
 
-We need to pick a `region` to host our EC2 instance.
+We need to pick a Region to host our EC2 instance.
 
 ![](/img/validator_nodes/node-aws-ec2-3.png)
 
 ## Continue building EC2
 
 :::info IMPORTANT INFORMATION
-We will need an **`t2.2xlarge`** or **`a1.2xlarge`** (or better) as our `instance type`. This instance type is **not** available in all regions.  You can move between regions to find which regions offer with instance types.
+We will need an `t2.2xlarge` or `a1.2xlarge` (or better) as our `instance type`. This instance type is not available in all regions. You can move between regions to find which regions offer with instance types.
 
-The US regions may not offer `a` type instances.  **We will use the `t2.2xlarge` for our tutorial**.  This offers `32Gib` of RAM verses the required `16Gib`; however, this can only create better performance on our future Node.
+The US regions may not offer `a` type instances.  We will use the `t2.2xlarge` for our tutorial.  This offers `32Gib` of RAM verses the required `16Gib`; however, this can only create better performance on our future Node.
 :::
 
 If we don't see our Instances dashboard. Choose the `Instances` from the left side menu.
@@ -58,21 +59,20 @@ The term *new* is used simply because (at the time of this documentation creatio
 
 ### Launch Creation Wizard
 
-Choose **Launch instances** from the `top right` of the dashboard. This will tell AWS to guide us through the launch of an instance via their `launch wizard`.
+Choose `Launch instances` from the top right of the dashboard. This will tell AWS to guide us through the launch of an instance via their Launch Wizard.
 
 ![](/img/validator_nodes/node-aws-ec2-5.png)
 
 ### Name your instance
 
+It is highly recommended (but not required) to use a Debian distribution.
+
 ![](/img/validator_nodes/node-aws-ec2-name-tag.png)
-:::tip
-It is **highly** recommended (but not required) to use a `Debian` distribution.
-:::
 
 ### Pick EC2 Image 
 
 :::note
-You can use any Debian distribution you would like, it does not need to be Ubuntu. We will be using **`Ubuntu`** throughout our tutorial(s), so if you choose a different distribution, you may need to change some commands to match your chosen distribution.
+You can use any Debian distribution you would like, it does not need to be Ubuntu. We will be using Ubuntu throughout our tutorial(s), so if you choose a different distribution, you may need to change some commands to match your chosen distribution.
 :::
 
 ![](/img/validator_nodes/node-aws-ec2-distro.png)
@@ -82,7 +82,7 @@ We choose:
   - 64-bit (x86)
   - 22.04 LTS
 
-You may choose whatever distribution (distro) and version of your chosen distro that you are most comfortable with.  **HOWEVER**, you must use a **Debian** Linux distro to participate in Constellation Network's MainNet 2.0.
+You may choose whatever distribution (distro) and version of your chosen distro that you are most comfortable with. However, you must use a Debian Linux distro to participate in Constellation Network's MainNet 2.0.
 
 Most recommended are:
   - Debian  
@@ -92,9 +92,9 @@ Most recommended are:
 
 Click on the `t1.micro` Free tier eligible box to expose the search bar.
 
-Type in `t2.2xlarge`.
+- Type in `t2.2xlarge`.
 
-Select `t2.2xlarge`.
+- Select `t2.2xlarge`.
 
 ![](/img/validator_nodes/node-aws-ec2-instance.png)
 
@@ -122,35 +122,34 @@ We can leave the root volume as `gp2` and we do not need to alter any other elem
 
 ### Summary and Launch
 
-On the `right` side of the launch wizard we can see a `summary` of our setup.
+On the right side of the launch wizard we can see a summary of our setup.
 
-keep the `Number of instances` to `1`.
+- Keep the Number of instances to `1`.
 
-Click on `Launch instance`.
+- Click on `Launch instance`.
 
 ![](/img/validator_nodes/node-aws-ec2-launch.png)
 
 A progress bar will commence and result in...
 
+![](/img/validator_nodes/node-aws-ec2-launch2.png)
+
 :::note
 The instance id will not match the one in the examples.  This is a unique identifier for each EC2 instance launched.
 :::
 
-![](/img/validator_nodes/node-aws-ec2-launch2.png)
-
 ### Verify our EC2 instance
 
-We should now see on our main `instance` panel our new EC2 instance.
+We should now see a new EC2 instance in our main Instance panel.
 
 ![](/img/validator_nodes/node-aws-ec2-launch3.png)
 
 Click on the `instance-id` to zoom in on the details of our EC2 instance.
-
-We can see our `Public IP Address` that is needed to access this EC2 instance and log into our Ubuntu system.
+We can see our Public IP Address that is needed to access this EC2 instance and log into our Ubuntu system.
 
 ![](/img/validator_nodes/node-aws-ec2-public-ip.png)
 
-We can see the `Key Pair` assigned and if it is correct. Located in the bottom `Details` section, middle row, middle of the column.
+We can see the Key Pair assigned and if it is correct. Located in the bottom Details section, middle row, middle of the column.
 
 Along with all the other necessary details for this EC2 instance.  You can click around and see all the details as you see fit.
 
@@ -158,4 +157,4 @@ Along with all the other necessary details for this EC2 instance.  You can click
 
 ---
 
-In the next section we will assign our EIP address to our future Constellation Network Validator Node!
+In the next section we will assign an EIP address to our future Constellation Network Validator Node!
