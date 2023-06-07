@@ -13,7 +13,7 @@ When an Administrator (Node Operator) builds a VPS in the cloud, they will need 
 
 When data traverses the Internet, it is vulnerable to getting intercepted by nefarious actors to steal, spy, or use the data flowing between our local and remote systems, in some way unintended by the owner of the connection and data.
 
-To protect against such vulnerability, we encrypt our data before it leaves the local or remote system, traverses the connection between the local and remote system, and finally reaches its intended destination where it gets decrypted.  This is called an **encrypted tunnel** between devices.
+To protect against such vulnerability, we encrypt our data before it leaves the local or remote system, traverses the connection between the local and remote system, and finally reaches its intended destination where it gets decrypted.  This is called an encrypted tunnel between devices.
 
 SSH (Secure Shell) keys are a pair of public and private keys (i.e. a key pair) that are used to authenticate and establish an encrypted connection between your local computer and remote machine (a Node). Depending on the situation, the public key may be in charge of decrypting data while the private key is in charge of encrypting data, or visa-versa.  
 

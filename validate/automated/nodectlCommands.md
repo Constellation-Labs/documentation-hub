@@ -2,6 +2,7 @@
 title: command reference guide
 hide_table_of_contents: false
 ---
+<intro-end />
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
@@ -24,7 +25,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-This document compliments the **nodectl** [help command](#help) reference offered through execution of a Node running the **nodectl** utility. 
+This document compliments the nodectl [help command](#help) reference offered through execution of a Node running the nodectl utility. 
 
 
 
