@@ -47,7 +47,7 @@ In order to properly migrate our existing **p12** private key file to our new No
 
 By default, when we log into a new instance in the cloud, we will be using the default user account that was created by your provider.  (Exception: If you built your server yourself via a bare metal installation.)
 
-We will upload our **p12** private key file, to the "root" of this default user's home directory. Once again, by simply logging into your default user's account, you will be directed automatically to the root of that user's account.  **nodectl** will be able to find your **p12** file if you place it in this location.
+We will upload our **p12** private key file, to the "root" of this default user's home directory. Once again, by simply logging into your default user's account, you will be directed automatically to the root of that user's account.  nodectl will be able to find your **p12** file if you place it in this location.
 
 :::info
 You may want to read the entire document; however, this tutorial will direct you to the `restore` portion of the document.
@@ -132,7 +132,7 @@ sudo nodectl configure
 ```
 :::
 
-nodectl will offer us a menu of options for any **p12** files that it finds on your system.  In this example we can pretend we uploaded **mynode.p12** to our `ubuntu` users's account using the [upload steps](#step-3---upload-existing-p12).
+nodectl will offer us a menu of options for any **p12** files that it finds on your system.  In this example we can pretend we uploaded **mynode.p12** to our `ubuntu` users's account using the [upload steps](#upload-existing-p12).
 
 We can choose `1` ( do **not** hit <kbd>enter</kbd> )
 

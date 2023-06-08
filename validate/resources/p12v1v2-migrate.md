@@ -18,7 +18,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-**Constellation Network** has invoked a new **p12** file standard for accessing the **Constellation Network Hypergraph and Metagraphs**.
+Constellation Network has invoked a new **p12** file standard for accessing the **Constellation Network Hypergraph and Metagraphs**.
 
 The original `version 1` **p12** files are no longer in use.  
 
@@ -35,14 +35,14 @@ The purpose of this document is to help any **Node Operators** that are still ru
 We need to verify that we have the proper software packages installed on our system in order to push forward with a migration.
 
 The **easiest** way to do this:
-- To utilize an existing **Constellation Network Validator Node** with **nodectl** installed.
-- To install **nodectl** on a fresh Linux Debian distribution.
+- To utilize an existing **Constellation Network Validator Node** with nodectl installed.
+- To install nodectl on a fresh Linux Debian distribution.
 
 Alternatively, you can install the proper components on your own and follow the instructions after complete.
 
 ### Setup using nodectl
 
-If you already have **nodectl** running on your VPS, you only need upload your `version 1` p12 file via the **restore** process.
+If you already have nodectl running on your VPS, you only need upload your `version 1` p12 file via the **restore** process.
 
 - [restore p12 from mac](../resources/p12backup-mac#restore-p12-file)
 - [restore p12 from windows](../resources/p12backup-win#restoring-your-p12)
@@ -51,7 +51,7 @@ If you already have **nodectl** running on your VPS, you only need upload your `
 If utilizing an existing ( *or running* ) **Validator Node**, please make sure you do not overwrite your existing **p12** private key file or settings.
 :::
 
-#### If you do not have **nodectl** installed...
+#### If you do not have nodectl installed...
 
 Simply:
   - [Build a VPS](../validator/get_started.md)
@@ -59,13 +59,13 @@ Simply:
   - Follow the instructions to [install nodectl](../automated/nodectlInstall.md) 
   
   :::info Side Note
-  We will not be using this VPS as a **Validator Node**.  The purpose of installing **nodectl** is just a simply way to add all the necessary components/tools necessary to convert our **p12** `version 1` to `version 2`. 
+  We will not be using this VPS as a **Validator Node**.  The purpose of installing nodectl is just a simply way to add all the necessary components/tools necessary to convert our **p12** `version 1` to `version 2`. 
   :::
 
 :::note
 If you are planning to build a dedicated VPS that will **not** ultimately be used as a validator Node, you do not need to adhere to the advised VPS sizing requirements.
 
-You only need to verify that you have at least `30Gb` of hard drive space (disk) to make sure there is enough room for **nodectl**'s automation process to install the necessary components. 
+You only need to verify that you have at least `30Gb` of hard drive space (disk) to make sure there is enough room for nodectl's automation process to install the necessary components. 
 :::
 
 [Skip](#conversion-process) to the conversion process steps.
@@ -83,7 +83,7 @@ If not planning on using the VPS as a **Validator Node**; rather, just to conver
 Now that we have all the necessary components installed on our VPS, we can begin the conversion process.
 
 :::warning Note
-We will not be using **nodectl** after this point.
+We will not be using nodectl after this point.
 :::
 
 ### What we need?
@@ -117,7 +117,7 @@ Before we continue, it is important to have all our information in place to avoi
 ### Change directories
 
 :::success MOVING FORWARD
-The rest of this document will **assume** that you migrating your `version 1` p12 private key file to `version 2` using a **VPS** with **nodectl** version `2.x.x` installed.
+The rest of this document will **assume** that you migrating your `version 1` p12 private key file to `version 2` using a **VPS** with nodectl version `2.x.x` installed.
 :::
 
 :::danger Not using nodectl
@@ -219,7 +219,7 @@ EC Public Key [ee:ff:aa:bb:cc:dd:ee:ff:11:22:33:44:55:66:77:88:99:aa:bb:cc]<br /
 Your **p12** file should now be migrated from `version 1` to `version 2`.  Place your original `version 1` in a secure location for temporary storage.
 
 You should now test your **new** `version 2` p12 private key file.  You can do this by: 
-- Connecting to your appropriate **Constellation Network** cluster (**Hypergraph** or **Metagraph**). 
+- Connecting to your appropriate Constellation Network cluster (hypergraph or metagraph). 
 - [Exporting your private key](../automated/nodectlCommands#export_private_key).
 - Utilizing your **p12** private key file with whatever process you require. 
 
@@ -233,9 +233,9 @@ After completing the connection tests, exporting your [private key](../automated
 
 #### nodectl users
 
-If you did **not** rename your `v2` **p12** back to the original **p12** filename used before the migration ( and do not intend to ), you should make sure **nodectl** is aware of the p12 file name change.
+If you did **not** rename your `v2` **p12** back to the original **p12** filename used before the migration ( and do not intend to ), you should make sure nodectl is aware of the p12 file name change.
 
-You can update the [configuration](../automated/nodectlConfig.md) by issuing a [`sudo nodectl configure`](../automated/nodectlCommands#configure) on your Node with **nodectl** installed.
+You can update the [configuration](../automated/nodectlConfig.md) by issuing a [`sudo nodectl configure`](../automated/nodectlCommands#configure) on your Node with nodectl installed.
 
 
 

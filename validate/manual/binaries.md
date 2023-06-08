@@ -42,10 +42,10 @@ Your screen will not react and your password will not show as you type.
 
 ### Download packages
 
-We are ready to download the **Tessellation** packages that will be executed on your VPS to turn it into a **Node**. We can now pull down the latest release from Constellation Network's repository.
+We are ready to download the Tessellation packages that will be executed on your VPS to turn it into a **Node**. We can now pull down the latest release from Constellation Network's repository.
 
 :::danger VERY IMPORTANT
-When downloading **Tessellation**...
+When downloading Tessellation...
 
 MAKE SURE YOU USE THE **CORRECT** VERSION!  
 Installing an older or incorrect version could lead to unexpected results.

@@ -40,14 +40,14 @@ There are two ways to enable auto_restart and auto_upgrade.
 
 Enable `auto_restart` in the configuration, or enable `auto_restart` and `auto_upgrade` in the configuration.
 
-This method will also add in the capability to re-enable the `auto_restart` feature in the event it was disabled.
+This method will also add in the capability to automatically re-enable the `auto_restart` feature in the event it was disabled.
 
 :::info Informational
 For some specific commands ([see command reference.](./nodectlCommands#auto_restart)) the `auto_restart` feature must be disabled first.  
 
 If `auto_restart` is enabled in the [configuration](./nodectlConfig.md); once a command that requires `auto_restart` to be disabled is executed, `auto_restart` will automatically disable itself.  
 
-Once the command (*that required auto_restart to be disabled*) completes, **nodectl** will be restart the `auto_restart` feature again automatically.
+Once the command (*that required auto_restart to be disabled*) completes, nodectl will be restart the `auto_restart` feature again automatically.
 :::
 
 #### Steps to configure `auto_restart` in the configuration:

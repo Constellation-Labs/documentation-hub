@@ -18,22 +18,22 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Description
 
-**nodectl** is a utility program for building, upgrading and managing **Constellation Network Validator Nodes**.
+nodectl is a utility program for building, upgrading and managing **Constellation Network Validator Nodes**.
 
-Over the course of the original creation of **nodectl** it has undergone two major version upgrades.
+Over the course of the original creation of nodectl it has undergone two major version upgrades.
   - version 0 to version 1
   - version 1 to version 2
 
-The purpose of this documentation is to teach a `Node Operator` running version **1** of **nodectl**, how to upgrade to verison **2** of nodectl, via a step-by-step tutorial.
+The purpose of this documentation is to teach a `Node Operator` running version **1** of nodectl, how to upgrade to verison **2** of nodectl, via a step-by-step tutorial.
 
-A migration module has been added to **nodectl** to facilitate this effort.
+A migration module has been added to nodectl to facilitate this effort.
 
 ## Migrate v1 to v2
 ### Upgrade Path
 
-The very first thing we need to consider is that we are on `the` correct version of **nodectl** that supports upgrading to `v2`.
+The very first thing we need to consider is that we are on `the` correct version of nodectl that supports upgrading to `v2`.
 
-Lets check our current version level of **nodectl**.
+Lets check our current version level of nodectl.
 
 ```
 sudo nodectl version
@@ -56,7 +56,7 @@ Please make sure to follow the [upgrade path](./nodectlUpgradePath.md) documenta
 
 ### Download v2 binary
 
-Now that we have confirmed that we are on `v1.12.0` of **nodectl**, we use the [upgrade_nodectl command](./nodectlCommands.md#upgrade-nodectl) to initiate the download of the **nodectl binary** from the GitHub repository to our Node.
+Now that we have confirmed that we are on `v1.12.0` of nodectl, we use the [upgrade_nodectl command](./nodectlCommands.md#upgrade_nodectl) to initiate the download of the **nodectl binary** from the GitHub repository to our Node.
 
 ```
 sudo nodectl upgrade_nodectl
@@ -94,7 +94,7 @@ root@Constellation-Node:~#
 
 Do not issue any commands, just allow the next process to begin...
 
-When requested we can hit the <kbd>enter</kbd> key to complete the **nodectl** upgrade.
+When requested we can hit the <kbd>enter</kbd> key to complete the nodectl upgrade.
 
 <MacWindow>
 COMPLETED! nodectl upgraded to 2.7.1<br />
@@ -109,7 +109,7 @@ root@Constellation-Node:~#
 
 ### Upgrade VPS backend with nodectl
 
-We now have the `v2.7.1` **binary** of **nodectl** downloaded and confirmed to be installed on our VPS/Node.
+We now have the `v2.7.1` **binary** of nodectl downloaded and confirmed to be installed on our VPS/Node.
 
 The next step will be to run the `sudo nodectl upgrade` command, to complete the:
 1. migration from v1 to v2
@@ -124,7 +124,7 @@ root@Constellation-Node:~# sudo nodectl upgrade
 
 ### Migration confirmation
 
-The screen will clear and **nodectl** will review the current **Node**, identify that it is running `v1` and begin by asking us to confirm that we want to migrate.
+The screen will clear and nodectl will review the current **Node**, identify that it is running `v1` and begin by asking us to confirm that we want to migrate.
 
 It is necessary for us to **MIGRATE** our Node from `version 1` to `version 2`, as there are significant changes that need to be handled.  
 
@@ -155,7 +155,7 @@ We **do** want to migrate so we will say **`y`** here.
 
 ### Passphrase Removal
 
-A new **feature** of **nodectl** is the ability to **hide** the passphrase in the configuration.  Hiding your passphrase will add *a little* more security to keeping the **hot wallet** on your Node more protected.
+A new **feature** of nodectl is the ability to **hide** the passphrase in the configuration.  Hiding your passphrase will add *a little* more security to keeping the **hot wallet** on your Node more protected.
 
 :::danger IMPORTANT
 This feature was added per request from the community; however, because the hot wallet is on your Node, this only adds a small layer of obscurity to attempting to retrieve your passphrase if the Node is compromised.
@@ -188,15 +188,15 @@ We will say **`y`** here (but you can also say **n**).
 
 ### Global passphrase statement
 
-In version **`1`** of **nodectl** we only had the ability to use a single **p12** file that contained our **Node's** wallet, which was also used to authenticate against the network cluster.
+In version **`1`** of nodectl we only had the ability to use a single **p12** file that contained our **Node's** wallet, which was also used to authenticate against the network cluster.
 
-In version **`2`** we now introduce the ability to use multiple **p12** private key files; therefore, allowing us to use different wallets for each **Metagraph** and/or for joining the **Hypergraph**.
+In version **`2`** we now introduce the ability to use multiple **p12** private key files; therefore, allowing us to use different wallets for each metagraph and/or for joining the hypergraph.
 
-Version **`2`** introduces **profiles** which allow us to dynamically configure our Node to join as many **Hypergraphs** and **Metagraphs** as necessary.  
+Version **`2`** introduces **profiles** which allow us to dynamically configure our Node to join as many hypergraphs and metagraphs as necessary.  
 
 We also introduce the **Global p12** section.  If you do not specifically identify a **p12** file for a profile, it will **default** to the **Global p12** configuration.
 
-During the migration from `v1` to `v2`, we will setup **`dag-l0`** as our **Hypergraph** profile, and **`dag-l1`** as our **Metagraph** profile.  Both of these profiles will be setup to use **Global** p12 configuration.
+During the migration from `v1` to `v2`, we will setup **`dag-l0`** as our hypergraph profile, and **`dag-l1`** as our metagraph profile.  Both of these profiles will be setup to use **Global** p12 configuration.
 
 The statement below explains the concept of p12 differentiation and the global section.
 
@@ -250,20 +250,24 @@ We can say **y** here.
 
 ### Build new cn-config.yaml
 
-New to **`v2`** we deprecate the `cn-node` bash script file, and replace it with a configurable yaml file.
+:::info What is the cn-node file?
+The `cn-node` file is a bash script that was used in `v1.x.x` of nodectl to supply the necessary environment variables to Tessellation to properly operate on the Constellation Network Global Layer0 and Layer1 networks (hypergraph and metagraph).
+:::
 
-This allows us to configure our **Hypergraphs** and **Metagraphs** to our needs.
+New to **`v2`** we deprecate the `cn-node` bash script file and replace it with a configurable yaml file.
 
-First **nodectl** will injest the `cn-node` script and back it up.
+This allows us to configure our hypergraphs and metagraphs to our needs.
+
+nodectl will injest the `cn-node` script and back it up.
 
 <MacWindow>
   Ingesting [cn-node] file....................... complete<br />
   Backing up cn-node file ....................... complete<br />
 </MacWindow>
 
-**nodectl** will warn us that our backed up `cn-node` will still contain the passphrase for our p12 private key file; and therefore, our Node's wallet access.  
+nodectl will warn us that our backed up `cn-node` will still contain the passphrase for our p12 private key file; and therefore, our Node's wallet access.  
 
-Once we have confirmed that we are all set, it may be a good idea to remove this backup file.  
+Once we have confirmed that we properly upgraded (at the end of this process), it may be a good idea to remove this backup file.  
 
 :::danger IMPORTANT
 During the upgrade process (as part of this upgrade and after this migration portion) you will be requested to clear your backup folder.

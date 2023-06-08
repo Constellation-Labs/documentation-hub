@@ -9,7 +9,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ### What are SSH Keys?
 
-When an Administrator (Node Operator) builds a VPS in the cloud, they will need a way to access and administer that VPS (instance).  This is generally done by using a local computer (personal laptop or other type of local system) to connect to the VPS for administration.  In most cases this requires the local system to connect to the remote system (our Cloud VPS) through the Internet.
+When an Administrator (Node Operator) builds a VPS in the cloud, they will need a way to access and administer that VPS (instance). This is generally done by using a local computer (personal laptop or other type of local system) to connect to the VPS for administration.  In most cases this requires the local system to connect to the remote system (our Cloud VPS) through the Internet.
 
 When data traverses the Internet, it is vulnerable to getting intercepted by nefarious actors to steal, spy, or use the data flowing between our local and remote systems, in some way unintended by the owner of the connection and data.
 
@@ -22,11 +22,11 @@ In the case of connections to a Cloud instance, the public key is used to encryp
 ## How to create SSH keys
 
 <DocsCards>
-  <DocsCard header="SSH keys on Mac" href="/nodes/validator/creationMac" icon="/icons/icon_apple.png">
+  <DocsCard header="SSH keys on Mac" href="creationMac" icon="/icons/icon_apple.png">
     <p>How to generate SSH keys on a Mac.</p>
   </DocsCard>
 
-  <DocsCard header="SSH keys on Windows" href="/nodes/validator/creationWin" icon="/icons/icon_windows.png">
+  <DocsCard header="SSH keys on Windows" href="creationWin" icon="/icons/icon_windows.png">
     <p>How to generate SSH keys on Windows.</p>
   </DocsCard>
 </DocsCards>

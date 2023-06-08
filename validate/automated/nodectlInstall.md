@@ -136,7 +136,7 @@ The first command in the string of commands included in this "copy and paste" sh
 
 <MacWindow>
 ubuntu@ip-172-31-90-241:~$ sudo nodectl auto_restart disable; sudo wget https://github.com/netmet1/constellation_testnet_nodectl/releases/download/v2.7.0/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v<br />
-sudo: <b style={{color: 'red'}}>nodectl: command not found</b><br />
+sudo: <b>nodectl: command not found</b><br />
 --2023-05-01 20:16:11--  https://github.com/netmet1/constellation_testnet_nodectl/releases/download/v2.7.0/nodectl_x86_64<br />
 Resolving github.com (github.com)... 111.111.111.111<br />
 Connecting to github.com (github.com)|111.111.111.111|:443... connected.<br />
@@ -157,10 +157,10 @@ No installation found<br />
 Creating log directory for nodectl<br />
   VERSION        MAJOR          MINOR          PATCH <br />                                                                   
   v2.7.0         2              7              0 <br />           
-<b style={{color: 'red'}}>ubuntu</b>@ip-172-31-90-241:~$ <br />
+<b>ubuntu</b>@ip-172-31-90-241:~$ <br />
 </MacWindow>
 
-In the example output above, the expected error is shown in red.
+In the example output above, the expected error is shown in **bold**.
 
 In the example output above, the username we are logged in with is also hi-lited in red.
 You will notice nodectl will attempt to run the `version` command.
@@ -283,15 +283,15 @@ We can sit back and relax during these steps of the installation.  Some installa
 <MacWindow>
 ------- * SYSTEM REQUIREMENTS * --------<br />
 <br />
-  Installing dependency [haveged] ............... complete><br />                                                      
-  default-jdk may take a few minutes to install<br />                                                              
-  Installing dependency [default-jdk] ........... complete<br />                                                        
-  Installing dependency [vim] ................... complete<br />                                                       
-  Installing dependency [curl] .................. complete<br />                                                       
+  Installing dependency [haveged] ............... complete<br /> 
+  default-jdk may take a few minutes to install<br />
+  Installing dependency [default-jdk] ........... complete<br /> 
+  Installing dependency [vim] ................... complete<br />
+  Installing dependency [curl] .................. complete<br />
   Installing dependency [wget] .................. complete<br />  
-  Fetch Tessellation binary [cl-keytool.jar] .... complete<br />                                                          
-  Fetch Tessellation binary [cl-node.jar] ....... complete<br />                                                        
-  Fetch Tessellation binary [cl-dag-l1.jar] ..... complete<br />                                                       
+  Fetch Tessellation binary [cl-keytool.jar] .... complete<br />
+  Fetch Tessellation binary [cl-node.jar] ....... complete<br />
+  Fetch Tessellation binary [cl-dag-l1.jar] ..... complete<br />
   Fetch Tessellation binary [cl-wallet.jar] ..... complete<br />  
 </MacWindow>
 
@@ -645,11 +645,11 @@ When creating your passphrase, **do not use**:
   We will end of up with 3 separate unique
   passphrases.<br />
 <br />
-  1 SSH KEY passphrase/keyphrase - <b style={{color: 'green'}}>already created</b><br />
+  1 SSH KEY passphrase/keyphrase - >already created<br />
 <br />
-  2 User nodeadmin's VPS admin password - <b style={{color: 'green'}}>already created</b><br />
+  2 User nodeadmin's VPS admin password - already created<br />
 <br />
-  3 <b>P12 Private key passphrase/keyphrase</b><br />
+  3 P12 Private key passphrase/keyphrase<br />
 <br />
   You will not see your password as you type it, this is for security purposes.
   Your password should contain capital & lowercase letters, numbers, special characters,
@@ -702,7 +702,7 @@ If you are **migrating** an existing **[p12 private key file](./nodectlInstallMi
 *MainNet 1.0 Node Operators, this is **not** your MainNet 1.0 Node alias; rather, it is your **wallet's** alias*
 :::
 
-**Constellation Network** requires that you provide an alias for your `p12 file`.  This alias is important, and should also not be forgotten.  
+Constellation Network requires that you provide an alias for your `p12 file`.  This alias is important, and should also not be forgotten.  
 
 <MacWindow>
   Please create a simple name to help you remember your<br />
@@ -793,7 +793,7 @@ nodectl will issue the [`sudo nodectl check_seedlist`](./nodectlCommands#check_s
   NODE ID      <br />        
   5872afe110ee7295111111111111111111111122222222222222222225900ec0fab1cb15511f1a485ef6cccd291d82948c8cc1b340e46332c70636e53447b85b<br /> 
   NODE ID FOUND ON SEED LIST<br /> 
-  <b style={{color: 'red'}} >False</b><br /> 
+  <b>False</b><br /> 
 </MacWindow>
 
 In this example you will see that this particular Node's `nodeid` is not able to participate on the Hypergraph. This is because it was not found on the current `seed list`.  
@@ -824,7 +824,7 @@ We will now be presented with final instructional steps.
   Total installation time:  1.229 minutes <br /> 
 </MacWindow>
 
-Now that our Node installation is complete; as stated in our final instructions on our Node, we need to make sure we have communicated our newly created `nodeid` to **Constellation Network** Admins (most likely method is through the Constellation Network Discord channels).
+Now that our Node installation is complete; as stated in our final instructions on our Node, we need to make sure we have communicated our newly created `nodeid` to Constellation Network Admins (most likely method is through the Constellation Network Discord channels).
 
 We will need to collateralize our Node with the necessary amount of **`$DAG`**.
 
@@ -845,8 +845,8 @@ nodeadmin@Constellation-Node:~$
 </MacWindow>
 
 ## CONGRATULATIONS
-You now have a **Constellation Network** validator Node!
+You now have a Constellation Network validator Node!
 
 ### Command Reference
 
-While we wait for your Node to be accepted for access (via the seed list), we recommend that you review all the available features and commands of **nodectl**, via the [command reference](./nodectlCommands.md) documentation.
+While we wait for your Node to be accepted for access (via the seed list), we recommend that you review all the available features and commands of nodectl, via the [command reference](./nodectlCommands.md) documentation.

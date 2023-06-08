@@ -33,7 +33,7 @@ This document compliments the nodectl [help command](#help) reference offered th
 
 ### What is a switch and parameter?
 
-A command-line **switch** is a modifier that is added to the end of a command being executed by **nodectl**.
+A command-line **switch** is a modifier that is added to the end of a command being executed by nodectl.
 
 It follows the `sudo nodectl <command>`.  
 
@@ -84,7 +84,7 @@ sudo nodectl -switch2 -switch1 parameter1
 
 ### What is pagination?
 
-The most common method of accessing your Node is through a [remote shell](../validator/sshkeyExplained.md).  When we issue a command within our remote shell, the output of a command may extend past the height of the terminal window.  In this case, **nodectl** will "page" the output by pausing when the output printed to the screen reaches the height of the window, before needing to scroll.
+The most common method of accessing your Node is through a [remote shell](../validator/sshkeyExplained.md).  When we issue a command within our remote shell, the output of a command may extend past the height of the terminal window.  In this case, nodectl will "page" the output by pausing when the output printed to the screen reaches the height of the window, before needing to scroll.
 
 It will offer you the option to quit or continue.
 
@@ -105,7 +105,7 @@ Commands that create the need for pagination will generally offer a `-np` (*no p
 
 ### help
 ---
-The **`help`** command will offer help for most commands available by the **nodectl** utility.
+The **`help`** command will offer help for most commands available by the nodectl utility.
 
 Node Operators can issue the `help` command by itself to see a basic rundown of all **switches** and **parameter** requirements.
 
@@ -244,9 +244,9 @@ After a `restart_only` is executed, the profile should end in an `ReadyToJoin` s
 ---
 The **`leave`** command takes a single [parameter](#what-is-a-switch-and-parameter).
 
-**Leave** the **hypergraph** or **metagraphs** related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-a-switch-and-parameter) supplied.
+**Leave** the hypergraph or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-a-switch-and-parameter) supplied.
 
-Issuing a `leave` against your Node will allow your Node to complete any processes on the **Hypergraph** or **Metagraph** that it may be involved in **before** your Node exits the cluster.
+Issuing a `leave` against your Node will allow your Node to complete any processes on the hypergraph or metagraph that it may be involved in **before** your Node exits the cluster.
 
 It is appropriate and will improve your Node's **PRO** score to `leave` the cluster before you issue a `stop` command.
   
@@ -272,7 +272,7 @@ sudo nodectl leave -p dag-l0
 
 The **`join`** command takes a single [parameter](#what-is-a-switch-and-parameter).
 
-**Join** the **hypergraphs** or **metagraphs** related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-a-switch-and-parameter) supplied.
+**Join** the hypergraphs or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-a-switch-and-parameter) supplied.
 
 You will need to make sure that the profile related to the cluster your are attempting to join is started; as well as, the status of your Node is in `ReadyToJoin` [status](#status) on the cluster.
   
@@ -386,7 +386,7 @@ The **`peers`** command will attempt to list all the peers found on the cluster;
 | --basic | None | show only the ip address and public port. | **optional** |
 | --extended | None | show full nodeid and dag address. | **optional** |
   
-Normal output from the peers command will show all the peers seen on a given **Metagraph** or the **HyperGraph** (profile dependent) this will include:
+Normal output from the peers command will show all the peers seen on a given metagraph or the hypergraph (profile dependent) this will include:
 - node ip with public port 
   - `10.10.10.10:1000` = `10.10.10.10` with public TCP port of `1000`
 - nodeid (shortened to first 8 hex values, `....`, last 8 hex values)
@@ -394,9 +394,9 @@ Normal output from the peers command will show all the peers seen on a given **M
 - DAG wallet (shortened)
    - `DAG12345...78910111`
    
-You can utilize the **`--basic`** [switch](#what-is-a-switch-and-parameter) to force **nodectl** to only show the `PEER IP:TCP PORT` column.
+You can utilize the **`--basic`** [switch](#what-is-a-switch-and-parameter) to force nodectl to only show the `PEER IP:TCP PORT` column.
     
-You can utilize the **`--extended`** [switch](#what-is-a-switch-and-parameter) to force **nodectl** to only show all fields in long format.
+You can utilize the **`--extended`** [switch](#what-is-a-switch-and-parameter) to force nodectl to only show all fields in long format.
 
 If you do not use the `--basic` or `--extended` [switches](#what-is-a-switch-and-parameter), the output will be in shorten form for all elements (ip:port, dag address, nodeid).
 
@@ -470,7 +470,7 @@ sudo nodectl peers -p <profile_name> --csv --output test.csv
 
 The **`find`** command takes several parameters.
   
-This command will attempt to find the requested peer on the current connected **hypergraph** or **metagraph**.
+This command will attempt to find the requested peer on the current connected hypergraph or metagraph.
 
 The find command offers insight into the 
 - number of nodes on the cluster
@@ -552,7 +552,7 @@ sudo nodectl find -p dag-l0 -s 10.2.2.2 -t 10.1.1.2
 ### check_connection
 ---
 
-The **`check_connection`** command will execute a search on the currently connected **Hypergraph** or **Metagraph** cluster. 
+The **`check_connection`** command will execute a search on the currently connected hypergraph or metagraph cluster. 
 
 | Command | Shortcut |
 | :---: | :---: | 
@@ -564,7 +564,7 @@ The **`check_connection`** command will execute a search on the currently connec
 | -s | `<ip_address or hostname>` | identify a **source** Node to use specifically by the `check_connection` command, to test against the **edge** Node. | **optional** |
 | -e | `<ip_address or hostname>` | identify a **edge** Node to compare against the **source** Node. | **optional** | 
 
-If the `-s` [switch](#what-is-a-switch-and-parameter) is not specified, **nodectl** will pick a random Node on the cluster specified by the `-p` profile required parameter.
+If the `-s` [switch](#what-is-a-switch-and-parameter) is not specified, nodectl will pick a random Node on the cluster specified by the `-p` profile required parameter.
   
 It will search against the Node the `check_connection` command was executed upon unless an **`edge device`** to check against the `source` is specified by an optional `-e` [switch](#what-is-a-switch-and-parameter).
   
@@ -643,12 +643,12 @@ The **`check_source_connection`** command takes a profile [parameter](#what-is-a
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which cluster related to the profile name in question do we want to review. | **required** |
     
-When executed the `check_source_connection` command will attempt to find a random Node on the current known **Hypergraph** or **Metagraph** cluster.
+When executed the `check_source_connection` command will attempt to find a random Node on the current known hypergraph or metagraph cluster.
   
 :::warning 
 The random Node **needs** to be joined into the **consensus of the cluster**, and **must** be on the cluster and in **`Ready`** state.
 
-**nodectl** should take care of this for us.
+nodectl should take care of this for us.
 :::
 
 example output
@@ -735,12 +735,12 @@ sec = security
 
 It displays the basic security elements of your Node.  It displays parsed elements from the `auth.log` file on your Debian operating system.
   
-Following the table formatted output, **nodectl** will display a list of `date` -> `ip address` of external access requests against your Node.
+Following the table formatted output, nodectl will display a list of `date` -> `ip address` of external access requests against your Node.
 
 :::note 
 The results will be based off the current and last "rolled" auth.log file.
 
-This **nodectl** feature is currently not related to the **Tessellation** processes on a Node.  It is reviewing distribution level `auth` files.
+This nodectl feature is currently not related to the Tessellation processes on a Node.  It is reviewing distribution level `auth` files.
 :::
 
 example output
@@ -785,7 +785,7 @@ This command performs a quick lookup for crypto prices via **CoinGecko's** publi
 :::warning
 This command is for recreation purposes **only**.  
 
-**Constellation Network** is not a financial advisor. Information obtained from CoinGecko and does not represent any opinions or financial advise of or from Constellation Network.
+Constellation Network is not a financial advisor. Information obtained from CoinGecko and does not represent any opinions or financial advise of or from Constellation Network.
 :::
 
 | Title | Description | 
@@ -820,12 +820,12 @@ The **`market`** command does not take any [parameters](#what-is-a-switch-and-pa
 
 Performs a quick lookup for crypto markets via CoinGecko's public API.
   
-The command will list the Top 10 Crypto markets at the current moment in time. In the event that **Constellation Network** is not in the top ten, it will list it's current position in relation to the rest of the known markets.
+The command will list the Top 10 Crypto markets at the current moment in time. In the event that Constellation Network is not in the top ten, it will list it's current position in relation to the rest of the known markets.
   
 :::warning
 This command is for recreation purposes **only**.  
 
-**Constellation Network** is not a financial advisor. Information obtained from CoinGecko and does not represent any opinions or financial advise of or from Constellation Network.
+Constellation Network is not a financial advisor. Information obtained from CoinGecko and does not represent any opinions or financial advise of or from Constellation Network.
 :::
 
 | Title | Description | 
@@ -860,7 +860,7 @@ The **`refresh_binaries`** command does not take any [parameters](#what-is-a-swi
 | :---: | :---: | 
 | check_source_connection  | -rtb  |
 
-This command will download and overwrite the existing **Tessellation** binaries files that are required to run your Node.  The result of this command will be to download the binaries from the latest release and is independent of a system upgrade.
+This command will download and overwrite the existing Tessellation binaries files that are required to run your Node.  The result of this command will be to download the binaries from the latest release and is independent of a system upgrade.
   
 This command can be used to refresh your binaries in the event that you have a corrupted system.
   
@@ -897,7 +897,7 @@ The **`check_seedlist`** command takes one [parameter](#what-is-a-switch-and-par
 **`check_seedlist`** will pull your `nodeid` out of your p12 file and compare it to the seedlist downloaded from **Constellation Network's** authorized list.
   
 :::note
-This command is specific to current restrictions placed on the **Hypergraph** for controlled access prior to the **PRO Score** [proof of reputable observation] release.
+This command is specific to current restrictions placed on the hypergraph for controlled access prior to the **PRO Score** [proof of reputable observation] release.
 :::
 
 | Title | Description |
@@ -906,7 +906,7 @@ This command is specific to current restrictions placed on the **Hypergraph** fo
 | p12 filename | The name of the `p12` file on the local Node |
 | p12 location | The location of the `p12` file on the local Node |
 | node id | The `p12` public key ( *nodeid* ). |
-| node id found on seed list | This will be a `True` or `False`.  In the event of a `False` please contact an administrator on the **Constellation Network** official Discord server. |
+| node id found on seed list | This will be a `True` or `False`.  In the event of a `False` please contact an administrator on the Constellation Network official Discord server. |
  
 > #### Examples
 - Help screen
@@ -935,7 +935,7 @@ The **`update_seedlist`** command does not take any [parameters](#what-is-a-swit
 Using the [`check_seedlist`](#check_seedlist) command, a Node Operator  can confirm if the Node is seen on the access lists; if not, issue the `update_seedlist` command to attempt to correct the issue.
   
 :::note 
-If you update the seedlist and still receive a `False`, you may need to contact a **Constellation Network** support Administrator for further help. This can be done by accessing the **Constellation Network** official Discord server.
+If you update the seedlist and still receive a `False`, you may need to contact a Constellation Network support Administrator for further help. This can be done by accessing the Constellation Network official Discord server.
 :::    
 
 *This command is specific to current restrictions placed on the Hypergraph for controlled access prior to the PRO Score [proof of reputable observation] release.*
@@ -984,7 +984,7 @@ sudo nodectl check_seedlist_participation
 
 The **`show_node_states`** command does not take any [parameters](#what-is-a-switch-and-parameter).
 
-This command displays the list of the known Node States that you may find on the Cluster or that **nodectl** defines when not on the cluster.
+This command displays the list of the known Node States that you may find on the Cluster or that nodectl defines when not on the cluster.
 
 | Command | Shortcut |
 | :----: | :---: |
@@ -1098,7 +1098,7 @@ This command should be used sparingly, only as absolutely necessary.
 The **`clean_snapshots`** command will offers the Node Operator the ability to clear **snapshots**.  
 
 :::warning 
-With the evaluation of the **Tessellation** protocol, the introduction of **incremental snapshots** may cause this command be deprecated in future releases.
+With the evaluation of the Tessellation protocol, the introduction of **incremental snapshots** may cause this command be deprecated in future releases.
 :::
 
 Once the command is executed the Node Operator will be offered a CLI menu of **snapshot** removal options to choose.
@@ -1176,7 +1176,7 @@ The **`auto_restart`** command takes several [parameters](#what-is-a-switch-and-
 
 This feature is **disabled**, by default. 
 
-**`auto_restart`** is a special feature of **nodectl** that will continuously monitor your Node to make sure the various profiles are *on the cluster* (**hypergraph** or **metagraphs**).
+**`auto_restart`** is a special feature of nodectl that will continuously monitor your Node to make sure the various profiles are *on the cluster* (hypergraph or metagraphs).
 
 | Monitor to keep |
 | :--- |
@@ -1184,9 +1184,9 @@ This feature is **disabled**, by default.
 | The Node's `session` is concurrent with the cluster's `session`. |
   
 :::success IMPORTANT
-The Node Operator/Administrator should use **nodectl**'s configuration profile to enable/disable this feature. Although you can enable **`auto_restart`** (also with the **`auto_upgrade`** feature) from the command line, you should use the [configure command](#configure) to enable the feature.  
+The Node Operator/Administrator should use nodectl's configuration profile to enable/disable this feature. Although you can enable **`auto_restart`** (also with the **`auto_upgrade`** feature) from the command line, you should use the [configure command](#configure) to enable the feature.  
 
-This will allow you to keep `auto_restart` working properly throughout the use of **nodectl**.
+This will allow you to keep `auto_restart` working properly throughout the use of nodectl.
 :::
 
 | [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
@@ -1202,9 +1202,9 @@ This will allow you to keep `auto_restart` working properly throughout the use o
 Do **not** rely on `auto_restart` feature completely. `auto_restart` is **not perfect** and should be used as a tool to help keep your Node up in a consistent fashion; however, it may **not be fool proof**, and you should still monitor your Node manually to make sure it stays online with the proper known cluster session.
 :::  
 
-**nodectl** will processing each profile in its own thread (`i/o`).  
+nodectl will processing each profile in its own thread (`i/o`).  
 
-**nodectl** will wait a randomly set time (per thread) and check the Node's condition after each successive random sleep timer expires.
+nodectl will wait a randomly set time (per thread) and check the Node's condition after each successive random sleep timer expires.
 
 | activate `auto_restart` identifiers |
 | :--- |
@@ -1225,13 +1225,13 @@ If your Node is currently joined to an older session it will no longer be partic
 An auto_restart may take up to ~18 minutes to complete.  
 :::
 
-These long executions are because the Node will detect one or both profiles down and restart the Global **hypergraph** first. **nodectl** will then attempt to bring up any **metagraphs**.  To avoid timing conflicts with other Node's that may also have `auto_restart` enabled, `auto_restart` has random timers put in place throughout a restart process.  
+These long executions are because the Node will detect one or both profiles down and restart the Global hypergraph first. nodectl will then attempt to bring up any metagraphs.  To avoid timing conflicts with other Node's that may also have `auto_restart` enabled, `auto_restart` has random timers put in place throughout a restart process.  
 
-**nodectl** will need to properly link your **metagraph** to the Global **hypergraph**. 
+nodectl will need to properly link your metagraph to the Global hypergraph. 
 
 It is important to understand this is a background and unattended process, the delay is created on **purpose**.
   
-It is recommended by the developers to link a **metagraph** (*that requires this type of setup*) through your Node's own Global **hypergraph** connection.
+It is recommended by the developers to link a metagraph (*that requires this type of setup*) through your Node's own Global hypergraph connection.
   
 :::warning PATIENCE
 If you are using `auto_restart` **please remember** if you are physically monitoring your Node while it is enabled, you need to exercise **patience** to allow it to figure out how to get back online by itself as necessary.  
@@ -1255,17 +1255,17 @@ You can enable this feature by issuing: `sudo nodectl configure -e` (find detail
   
 Optionally if you are not using the configuration, you can enable auto_upgrade by issuing the optional `--auto_upgrade` [switch](#what-is-a-switch-and-parameter) when enabling `auto_restart` from the command line.
   
-During a Tessellation upgrade, the session will change.  This will trigger an auto restart.  During the restart, nodectl will identify the version of **Tessellation** on the Node verses what is running on the cluster. If it does not match, nodectl will attempt to upgrade the **Tessellation** binaries before  continuing.
+During a Tessellation upgrade, the session will change.  This will trigger an auto restart.  During the restart, nodectl will identify the version of Tessellation on the Node verses what is running on the cluster. If it does not match, nodectl will attempt to upgrade the Tessellation binaries before  continuing.
   
 :::danger IMPORTANT
-**nodectl** will not `auto_upgrade` itself.  
+nodectl will not `auto_upgrade` itself.  
 
 Newer versions of nodectl may require a upgrade be executed in order to update any system services or files that may have changed [for any of many reasons].
 :::
 
 #### auto_restart/auto_upgrade passphrase requirement  
 :::warning Hidden passphrase
-**nodectl** will not work unless the `p12 passphrase` is present in the configuration file.  In order to join the network unattended, nodectl will need to know how to authenticate against the Hypergraph.
+nodectl will not work unless the `p12 passphrase` is present in the configuration file.  In order to join the network unattended, nodectl will need to know how to authenticate against the Hypergraph.
 :::
 
 Persist auto_restart in configuration and auto_upgrade *choose Edit --> Auto Restart Section*.
@@ -1317,11 +1317,11 @@ Optionally, you can use the optional `-id` switch to map a `nodeid` to an `ip ad
   
 The `external IP` of your Node is the address that allows your Node to communicate with the rest of the systems on the Internet.  
 
-This is the address that your Node will use to communicate with the rest of the decentralized Nodes that make up the **Hypergraph** and/or **Metagraphs**.  Your Node will attempt to communications with via other Nodes via p2p and public API requests.
+This is the address that your Node will use to communicate with the rest of the decentralized Nodes that make up the hypergraph and/or metagraphs.  Your Node will attempt to communications with via other Nodes via p2p and public API requests.
 
 | [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | In order to use the **`-id`** option, **nodectl** will need to know which profile to review the `nodeid` from. | **optional** |
+| -p | `<profile_name>` | In order to use the **`-id`** option, nodectl will need to know which profile to review the `nodeid` from. | **optional** |
 | -id | `<full_node_id>` | p12 public key `nodeid` to lookup. | **optional** |
 
 :::warning 
@@ -1354,7 +1354,7 @@ The **`reboot`** command does not take any [parameters](#what-is-a-switch-and-pa
 For Node Operation this command is **preferred/recommended** over normal operating system reboot command. 
 :::
 
-When issued, the **nodectl** `reboot` command will gracefully leave the profiles defined in the nodectl configuration file before rebooting the Node.
+When issued, the nodectl `reboot` command will gracefully leave the profiles defined in the nodectl configuration file before rebooting the Node.
   
 #### dictionary
 | term | definition |
@@ -1405,7 +1405,7 @@ The **`enable_root_ssh`** command is a *special* command that works on the Debia
 It is **recommended** to have the **root** user's remote access (inbound/ingress) **disabled**.  The only way the root user should be accessed is through the **nodeadmin** user account.
 :::
 
-This command can be used to reverse this security setting configured via **nodectl**'s installation process.
+This command can be used to reverse this security setting configured via nodectl's installation process.
 
 > #### Example
 ```
@@ -1491,7 +1491,7 @@ The **`dag`** command will retrieve your Node's wallet information for your loca
 
 You can specify another Node by supplying the `-w` (wallet) switch followed by the `dag_wallet` of the Node on the cluster that is targeted.
 
-Following general output details about your wallet, **nodectl** will query the DAG explorer API and retrieve details of the last 350 snapshot entries.  This level of detail can be excluded by using the `-b` switch.  
+Following general output details about your wallet, nodectl will query the DAG explorer API and retrieve details of the last 350 snapshot entries.  This level of detail can be excluded by using the `-b` switch.  
 
 | [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -1550,7 +1550,7 @@ sudo nodectl dag -p dag-l0 -np
 ### nodeid2dag
 ---
 
-The **`nodeid2dag`** command will take in a required public node id or public key ( `128 byte` hexadecimal string ) and converts it into its associated **Constellation Network** DAG wallet address.
+The **`nodeid2dag`** command will take in a required public node id or public key ( `128 byte` hexadecimal string ) and converts it into its associated Constellation Network DAG wallet address.
   
 | [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -1618,7 +1618,7 @@ The **`export_private_key`** command does not take any [parameters](#what-is-a-s
 Do not share this private key with anyone that you do not completely trust with your financial assets.
 :::
 
-**nodectl** is designed to work with `p12` private key files that support Constellation Network `v2` keys.   If you are running an older node, please refer to the [v1 to v2 migration](../resources/p12v1v2-migrate.md) document.
+nodectl is designed to work with `p12` private key files that support Constellation Network `v2` keys.   If you are running an older node, please refer to the [v1 to v2 migration](../resources/p12v1v2-migrate.md) document.
 
 Import the private key produced by this command into your **StarGazer wallet** (or other) in order to control your Node's wallet.
         
@@ -1645,7 +1645,7 @@ sudo nodectl export_private_key
 
 The **`configure`** command will attempt to guide the Node Operator through the **creating** or **editing** the [**`cn-config.yaml`**](./nodectlConfig.md) file.
   
-The [`cn-config.yaml`](./nodectlConfig.md) file is an extremely important file that **nodectl** uses to determine how it should control and configure your **Constellation Network** Validator Node.
+The [`cn-config.yaml`](./nodectlConfig.md) file is an extremely important file that nodectl uses to determine how it should control and configure your Constellation Network Validator Node.
 
 The `configure` command will offer a relatively detailed explanation of all configuration options, unless the `-a` (*advanced*) switch is used.  
 
@@ -1657,12 +1657,12 @@ The `configure` command will offer a relatively detailed explanation of all conf
 | -e | None | enter directly into **edit** configuration mode for existing configurations. | **optional** |
 | -n | None | enter directly into **new** configuration mode. | **optional** |
   
-In new configuration mode, **nodectl** will offer you two (2) options
+In new configuration mode, nodectl will offer you two (2) options
 
 1. Predefined Profile settings
 2. Manual Configuration
     
-In edit configuration mode, **nodectl** will offer you several options
+In edit configuration mode, nodectl will offer you several options
 1. Edit Profiles
 2. Edit Global Settings
     
@@ -1718,7 +1718,7 @@ The **`validate_config`** command will attempt to review your [`cn-config.yaml`]
 | :---: | :---: | 
 | validate_config  |  -val  |
 
-In the event that **nodectl** finds discrepancies or errors in the **cn-config.yaml**, a table of errors and possible resolutions will be displayed as output.
+In the event that nodectl finds discrepancies or errors in the **cn-config.yaml**, a table of errors and possible resolutions will be displayed as output.
 
 
 ### upgrade_path
@@ -1750,16 +1750,16 @@ sudo nodectl upgrade_path
 ### upgrade  
 ---
 
-The **`upgrade`** command is used to upgrade both **Tessellation** and **nodectl** backend files.
+The **`upgrade`** command is used to upgrade both Tessellation and nodectl backend files.
 
 | [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -w | None | **watch** mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, **nodectl** will skip watching for the remaining peers to connect and simply and safely continue the upgrade process, therefore saving time. | **optional** |
+| -w | None | **watch** mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, nodectl will skip watching for the remaining peers to connect and simply and safely continue the upgrade process, therefore saving time. | **optional** |
 | --pass | `<passphrase>` | If the Node Operator chose to `hide` their passphrase by excluding it from the [`configuration file`](./nodectlConfig), you will need to supply it at the command line using this switch. | **optional** |
 | -ni | None | Non-Interactive &rarr If you want to use the `upgrade` command with all the defaults chosen, nodectl will not ask any interactive questions. | **optional** |
 
 :::note Just in Case
-In the event of the `-ni` is used, if **nodectl** identifies anything unusual, it still may disengage non-interactive mode and ask any necessary questions, in an attempt to avoid unexpected errors.
+In the event of the `-ni` is used, if nodectl identifies anything unusual, it still may disengage non-interactive mode and ask any necessary questions, in an attempt to avoid unexpected errors.
 :::
 
 Please see the [upgrade nodectl](nodectlUpgrade.md) documentation for a detailed explanation of the command.
@@ -1770,7 +1770,7 @@ Please see the [upgrade nodectl](nodectlUpgrade.md) documentation for a detailed
 ### upgrade_nodectl  
 ---
 
-The **`upgrade_nodectl`** command is a dedicated command used to upgrade the **nodectl** binary file.
+The **`upgrade_nodectl`** command is a dedicated command used to upgrade the nodectl binary file.
 
 Please see the [upgrade_nodectl](nodectlUpgrade.md) documentation for a detailed explanation of the command.
 
@@ -1873,9 +1873,9 @@ sudo nodectl -sl -p <profile_name>
 ### check_versions 
 ---
 
-With the **`check_versions`** command, **nodectl** will go out and review the latest versions of both **Constellation Network Tessellation** and **nodectl**. 
+With the **`check_versions`** command, nodectl will go out and review the latest versions of both Constellation Network Tessellation and nodectl. 
 
-**nodectl** will review the current github repo and compare it to the versions running on the Node. 
+nodectl will review the current github repo and compare it to the versions running on the Node. 
 
 It will report back `True` or `False` based on whether the versions match.
 
@@ -1885,11 +1885,11 @@ It will report back `True` or `False` based on whether the versions match.
 
 | Output Header | Description |
 | ---: | :------ |
-| Tess installed | What version of **Tessellation** was found on the Node. |
-| Tess latest | What version of **Tessellation** was found in the current repository. |
+| Tess installed | What version of Tessellation was found on the Node. |
+| Tess latest | What version of Tessellation was found in the current repository. |
 | Tess version match | Does the Node match up to the repository? |
-| nodectl installed  | What version of **nodectl** was found on the Node. |
-| nodectl latest | What version of **nodectl** was found in the current repository. |
+| nodectl installed  | What version of nodectl was found on the Node. |
+| nodectl latest | What version of nodectl was found in the current repository. |
 | nodectl version match | Does the Node match up to the repository? |
 
 > #### Examples

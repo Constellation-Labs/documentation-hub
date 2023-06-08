@@ -27,15 +27,15 @@ A VPS (Virtual Private Server) is software that runs a virtualized server locate
 Our setup guides will walk you through deploying a VPS through the three most common cloud providers below.
 
 <DocsCards>
-  <DocsCard header="Amazon Web Services" href="/nodes/setup-guides/aws/account" icon="/icons/icon_aws.png">
+  <DocsCard header="Amazon Web Services" href="../setup-guides/aws/account" icon="/icons/icon_aws.png">
     <p>Set up your EC2 VPS on AWS.</p>
   </DocsCard>
 
-  <DocsCard header="Digital Ocean" href="/nodes/setup-guides/do/account" icon="/icons/icon_digitalocean.png">
+  <DocsCard header="Digital Ocean" href="../setup-guides/do/account" icon="/icons/icon_digitalocean.png">
     <p>Set up your VPS droplet on Digital Ocean.</p>
   </DocsCard>
 
-  <DocsCard header="Google Cloud Platform" href="/nodes/setup-guides/gcp/account" icon="/icons/icon-placeholder.png">
+  <DocsCard header="Google Cloud Platform" href="../setup-guides/gcp/account" icon="/icons/icon-placeholder.png">
     <p>Set up your VPS on GCP.</p>
   </DocsCard>
 </DocsCards>

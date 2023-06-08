@@ -158,7 +158,7 @@ In order to start the `service` properly, you will need to supply your `p12` pas
 
 As an **alternative** we will **not** automatically start the service on system boot.  We will add to our list of `to-dos` to manually start the process and supply the `passphrase` on each restart.
 
-**Constellation Network** [nodectl](../nodectl/install) `command line utility` will ease this process as a **better** solution.
+Constellation Network [nodectl](../nodectl/install) `command line utility` will ease this process as a **better** solution.
 :::
 
 

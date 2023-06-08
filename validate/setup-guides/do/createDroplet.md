@@ -120,4 +120,4 @@ We do not need additional storage.  We will **skip** this section.
 
 ## Next Steps
 
-Next, we will work on uploading our SSH Key Pair which was created [here](../../validator/explain.md).
+Next, we will work on uploading our SSH Key Pair which was created [here](../../validator/sshkeyExplained.md).
