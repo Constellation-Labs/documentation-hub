@@ -1,160 +1,86 @@
 ---
-title: nodectl
+title: Getting Started
 hide_table_of_contents: false
 ---
+<intro-end />
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation nodectl utility</title>
   <meta
     name="description"
-    content="MainNet 2.0 Automation"
+    content="Constellation nodectl utility"
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
-:::danger IMPORTANT
-The **manual instructions** to install a Node on MainNet 2.0 are for a **single Layer design**.  MainNet 2.0 will be requiring that you run both Layer0 and Layer1 as we perform Genesis.  
+## What is nodectl
 
-*This will change in the future*.
-:::
+nodectl pronounced node "c" "t" "l", node-kuttle, or node control.
 
-:::success IMPORTANT
-It is highly **recommended** that you use **nodectl** to install your Node!
-:::
+The purpose of this utility is to make things easier on you.  
 
-All Nodes will be required to run both the **Global Layer 0** and the **DAG State Channel Layer1**.
+It obviates all of the technical aspects of running a Validator Node, so that anyone can do it!  It comes packed with features designed to navigate the complexities of Constellation Network's validation Node on the Hypergraph and/or Metagraphs. 
 
-:::caution CAUTION
-It is highly recommend to use the **latest** version of **NODECTL**!  It very possible that this documentation will fall behind and be a little out-of-date.  *Please correct the version in the url provided below, if necessary*.
-:::
+The succeeding documentation will describe the features behind nodectl and help to provide an easy to use guide for a utility that was designed with ease in mind.
 
-### DESCRIPTION
+### Installing nodectl
 
-**nodectl** pronouced node "c" "t" "l", node-cuttle, or node control.
+<DocsCards>
+  <DocsCard header="New Node" href="./nodectlInstall" img="/img/home/state-channel.jpg">
+    <p>Install brand new Node.</p>
+  </DocsCard>
 
-The purpose of this utility is to **make things easier** on you.  It obviates some of the technical aspects of running a Validator Node, so that anyone can do it!
+  <DocsCard header="Migrate Node" href="./nodectlInstallMigrate" img="/img/home/community.jpg">
+    <p>Migrate existing Node to new container, instance, or hardware.</p>
+  </DocsCard>
+</DocsCards>
 
-### INSTALL YOUR NODE
-Using `nodectl`
+### nodectl operations
 
-#### Step 1
-Make sure you go through [Running a Node (Part 1)](../validator/install.md) and then go through the process of setting up your **VPS**.
+<DocsCards>
+  <DocsCard header="Upgrade" href="./nodectlUpgrade" img="/img/home/core-concepts.jpg">
+    <p>Upgrade nodectl on an existing Node.</p>
+  </DocsCard>
 
-:::danger
-You will need to review the **required** specifications for MainNet 2.0 launch!  You can review them [here](../validator/specs.md)
-:::
+  <DocsCard header="v1.12.0 to v2.x.x" href="./nodectlMigrateV1" img="/img/home/core-concepts.jpg">
+    <p>Upgrade from version 1.12.0 nodectl to the new version 2.x.x</p>
+  </DocsCard>
 
-#### Step 2
-Download the latest (this is important make sure you are at the latest version) of **nodectl**. (*Do not use any pre-releases*)
-```
-https://github.com/netmet1/constellation_nodectl/releases
-```
-Log into your VPS and download the latest release of **nodectl**.
+  <DocsCard header="Command Reference" href="./nodectlCommands" img="/img/home/stargazer.jpg">
+    <p>Command Reference Guide for nodectl</p>
+  </DocsCard>
+</DocsCards>
 
-:::danger VERY IMPORTANT
-The links below show the latest version of `nodectl` at the time of this writing!  You **MUST** make sure that you download the most recent version of `nodectl` in order to create the best possible user experience.   Review the link below, compare it to the [repository version](https://github.com/netmet1/constellation_nodectl/releases), and if it there is a newer release, change the URL below to match.
+### Brand New Node
 
-example 
+This documentation will help, through step-by-step instructions, to create a **new** Node from scratch.  Your new Node will include a new wallet ([p12](./nodectlInstall.md#what-is-a-p12-file) file).
 
-**JUST AN EXAMPLE**: If the latest version is `1.6.2` (made up example) but these instructions show `v1.6.0`.
+Start [here](./nodectlInstall.md).
 
-> **github.com/netmet1/constellation_nodectl/releases/download/*v1.6.0*/nodectl_x86_64**
+### Rebuild/Migrate Node
 
-will become
+These documents will help, through step-by-step instructions, with replacing an existing Node by transferring it to a new container, VPS or hardware.
 
-> **github.com/netmet1/constellation_nodectl/releases/download/*v1.6.3*/nodectl_x86_64**
-:::
+The existing Node is in production; however, you would like to use the ephemeral nature of Constellation's Validator Node to start fresh on a new build of its underlining Linux distribution.  
 
-The following commands will download the latest version, set the file's permissions and move it to the proper directory on your Linux VPS.
+This will require transferring your Node's wallet ([p12](./nodectlInstall.md#what-is-a-p12-file) file) from the existing (old) Node to your new Node.
 
-**x86_64** *(most common)*
-```
-sudo wget https://github.com/netmet1/constellation_nodectl/releases/download/v1.6.0/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl
-```
+Start [here](./nodectlInstallMigrate.md).
 
-**arm_64**
-```
-sudo wget https://github.com/netmet1/constellation_nodectl/releases/download/v1.6.0/nodectl_arm64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl
-```
+### Upgrade nodectl on your Node
 
-:::note NOTE
-After the initial download via a `wget` nodectl will warn you when a new versions are available.  at that time it will show you the proper command to issue to download the newest version
-```
-sudo nodectl upgrade_nodectl
-```
-:::
+When you have nodectl up and running and a new version of nodectl is released.  The following documentation will help the Node Operator navigate with a step-by-step guide on how to upgrade.
 
-## INSTALL TESSELLATION LAYER0 and LAYER1
+Start [here](./nodectlUpgrade.md).
 
-### STEP 1
-```
-sudo nodectl install
-```
+### Upgrade your Node from version 1 to version 2
 
-### STEP 2
-The installation will take you through what information is needed by you, `step-by-step`.
+Specific step-by-step instructions to upgrade from version 1 of nodectl to version 2.
 
-### STEP 3
-When your environment is requested, you should enter in `mainnet`
+Start [here](./nodectlMigrateV1.md).
 
-### STEP 4
-Report your `nodeid` shown at the end of the process, to your administrators.
+### Command Reference Guide
 
-### STEP 5
-When you are notified that you have been properly added to the `seed-list`
-verify
-```
-sudo nodectl update_seedlist
-```
-```
-sudo nodectl check_seedlist
-```
-
-### STEP 6
-Once your `nodeid` is confirmed to have been added to the `seed-list`
-verify
-```
-sudo nodectl restart -p all
-```
-
-## OTHER IMPORTANT COMMANDS
-show your nodeid
-```
-sudo nodectl nodeid
-```
-show your dag address
-```
-sudo nodectl dag
-```
-show your private key for import into your Stargazer wallet
-```
-sudo nodectl export_private_key
-```
-show node's status on L0 and L1
-```
-sudo nodectl status
-```
-show node's status on just L0
-```
-sudo nodectl status -p dag-l0
-```
-show node's status on just L1
-```
-sudo nodectl status -p dag-l1
-```
-show node's connection status on L0
-```
-sudo nodectl check_connection -p dag-l0
-```
-Review all known `nodectl` commands, and shortcuts
-```
-sudo nodectl help
-```
+After installation is complete, the [command reference guide](./nodectlCommands.md) can help you navigate the features of nodectl, beyond standard Node management commands.

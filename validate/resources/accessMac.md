@@ -15,6 +15,7 @@ hide_table_of_contents: false
 If you're more of a visual learner, watch the [video walkthrough](https://www.youtube.com/embed/7lhiuFtrOzU) of this tutorial.
 :::
 
+## Reference
 #### Definitions table
 
 | Key Value | Value |
@@ -26,13 +27,12 @@ If you're more of a visual learner, watch the [video walkthrough](https://www.yo
 | Remote System | The system (VPS) we created in the prior documentation (DO, AWS, or GCP) that we are connecting to |
 | [...] | Indicates redacted text and/or information |
 
-
-
 :::danger REMINDER
 We are `pretending` our remote location (VPS) has an external IP address of `111.111.111.111` and our user name is `netmet` ⬅️ do **not** use this!
 :::
 
-#### Open up a new terminal session
+## Setup remote connection
+### Open up a new terminal
 
 1. Click on the desktop to change your top menu bar to `Finder` setup.
 2. Click on `Go` and choose `Utilities`
@@ -54,6 +54,7 @@ You may need to remove the ~/.ssh/ from the command if you did not save your SSH
 Different cloud providers use different default users to access your VPS for the first time.  **GCP** and **DO** use `root` while **AWS** uses `ubuntu`.   We will use `root` in our examples...  make sure to change this to `ubuntu` if you are using **AWS**, or review the documentation for the provider of your choice to determine their default username.
 :::
 
+### Issue connection command
 ```
 ssh -i ~/.ssh/cn-node-id root@111.111.111.111
 ```
@@ -69,9 +70,13 @@ Do not look at the screen as you are typing, this may help you to not make a mis
 
 Output will look like below
 
+### Enter challenge passphrase
+
 ```
 Enter passphrase for key '/home/netmet/.ssh/cn_node_id':
 ```
+
+### Approve authenticity
 
 We should now be challenged with a **WARNING** message about the **authenticity** of our **SSH keys**. We can accept this warning because we know that we just created them.
 

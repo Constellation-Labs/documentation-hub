@@ -14,5 +14,5 @@ While Proof-of-Work or Proof-of-Stake incentivize security through claimed ‘ze
 Node incentivization is weighted by the total contribution relative to this score and the volume of data they are validating, in a form that encourages even relatively small nodes to operate fairly . Calculations are derived from chain data per finality window (or snapshot) and distributed immediately. The opportunity for nodes to participate in consensus and validation activities will depend on the demand for their compute resources, as difficulty is dynamically adjusted based on overall data throughput metrics.
 
 :::info Interested in being a node operator?
-Learn more about the process of running a validator node in the [Validator Nodes section](/nodes).
+Learn more about the process of running a validator node in the [Validator Nodes section](../../validate).
 :::

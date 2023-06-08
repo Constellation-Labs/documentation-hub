@@ -15,7 +15,7 @@ Constellation is a feeless decentralized network that enables anyone to build th
 <br /><br />
 
 :::info Constellation vs Hypergraph
-Constellation Network is, in its broadest sense, a technology company, but it can also refer to our decentralized network. Throughout the docs, we'll be referring to the network as either **Hypergraph** or **Global L0** which are defined in the following sections.
+Constellation Network is, in its broadest sense, a technology company, but it can also refer to our decentralized network. Throughout the docs, we'll be referring to the network as either hypergraph or **Global L0** which are defined in the following sections.
 :::
 
 ## Network Components

@@ -1,7 +1,8 @@
 ---
-title: Create AWS EC2
-hide_table_of_contents: true
+title: Create New Account
+hide_table_of_contents: false
 ---
+<intro-end />
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
@@ -12,12 +13,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Building a Validator Node on AWS's platform."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Amazon Web Services - AWS
@@ -26,7 +21,7 @@ Creating your account on AWS is a simple process similar to all other SaaS model
 
 ![](/img/validator_nodes/node-aws-account.png)
 
-In order to run our Constellation Node, you will need to make your *first* **financial** and **sweat-equity** investments.
+In order to run our Constellation Node, you will need to make your *first* financial and *weat-equity investments.
 
 ## Sign Up
 

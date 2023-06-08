@@ -10,15 +10,22 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Running a Node (Part 1)',
+      label: 'Node Concepts',
       collapsed: false,
       items: [
-        'validator/install',
+        'validator/get_started',
         'validator/specs',
         'validator/providers',
-        'validator/explain',
-        'validator/creationMac',
-        'validator/creationWin',
+        'validator/vpsExplained',
+        {
+          type: 'category',
+          label: 'SSH Keys',
+          items: [
+            'validator/sshkeyExplained',
+            'validator/creationMac',
+            'validator/creationWin',
+          ],
+        },
       ],
     },
     {
@@ -33,6 +40,7 @@ module.exports = {
             'setup-guides/do/account',
             'setup-guides/do/createDroplet',
             'setup-guides/do/applySSHDroplet',
+            'setup-guides/do/recommendOptions',
             'setup-guides/do/launchDroplet',
             'setup-guides/do/sgDroplet',
           ],
@@ -42,8 +50,9 @@ module.exports = {
           label: 'Amazon Web Services',
           items: [
             'setup-guides/aws/account',
-            'setup-guides/aws/applySSHec2',
             'setup-guides/aws/createEC2',
+            'setup-guides/aws/applySSHec2',
+            'setup-guides/aws/createEC2-2',
             'setup-guides/aws/eip',
             'setup-guides/aws/sg',
           ],
@@ -63,15 +72,43 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Running a Node (Part 2)',
+      label: 'nodectl utility',
       collapsed: false,
       items: [
-        'automated/nodectl',
+        'automated/nodectl',  
+        {
+          type: 'category',
+          label: 'Installation',
+          items: [
+            'automated/nodectlInstall',
+            'automated/nodectlInstallMigrate',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Upgrade',
+          items: [
+            'automated/nodectlUpgradePath',
+            'automated/nodectlUpgrade',
+            'automated/nodectlMigrateV1',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Features',
+          items: [
+            'automated/nodectlAutorestart',
+            'automated/nodectlCommands',
+          ],
+        },
+        'automated/nodectlConfig',
+        
+
       ],
     },   
     {
       type: 'category',
-      label: 'Running a Node (Part 3)',
+      label: 'Manual Node Install',
       collapsed: false,
       items: [
         'manual/getting-started-manual',
@@ -93,7 +130,8 @@ module.exports = {
         'resources/accessWin',
         'resources/p12backup-mac',
         'resources/p12backup-win',        
-        'resources/sshconfig',        
+        'resources/sshconfig',
+        'resources/p12v1v2-migrate'        
       ],
     },
   ],

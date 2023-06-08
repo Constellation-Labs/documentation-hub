@@ -1,7 +1,8 @@
 ---
 title: Create Project
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
+<intro-end />
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
@@ -12,12 +13,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Create a Project to work with on Google Cloud Platform (GCP)."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Google Cloud Platform (GCP) Project
@@ -26,20 +21,19 @@ Before we begin, we need to create a Project inside of Google Cloud Platform to 
 
 ##### INSTRUCTIONS
 
-Connect to to your Google account.
-
-Open the Select a projects panel.
+- Connect to to your Google account.
+- Open the `Select a project` panel.
 
 ![](/img/validator_nodes/node-gcp-project1.png)
 
-Select a **`new`** project.
+- Select a `new` project.
 
 ![](/img/validator_nodes/node-gcp-project2.png)
 
-We will work on our **Hypergraph** or **State Channel** `Validator Node` via a GCP `Project`. This will help us organize our GCP projects, whether it is multiple Constellation State Channels in the future, or other projects unrelated.
+We will work on our Hypergraph or State Channel Validator Node via a GCP `Project`. This will help us organize our GCP projects, whether it is multiple Constellation State Channels in the future, or other projects unrelated.
 
 :::info
-We will use the `TestNet` in our examples
+In our examples we will use `TestNet`.
 :::
 
 ##### NEW PROJECT

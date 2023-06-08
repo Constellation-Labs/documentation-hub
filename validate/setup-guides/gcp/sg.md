@@ -1,7 +1,8 @@
 ---
 title: Setup Firewall
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
+<intro-end />
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
@@ -12,25 +13,19 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Add Security Group to Google Cloud Platform (GCP) instance."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Google Cloud Platform (GCP) Firewall 
 
-We now will go through the steps **required** to lock down our new Google Cloud Platform instance.
+We now will go through the steps required to lock down our new Google Cloud Platform instance.
 
-We will setup the instance's firewall **SG** to only allow inbound connections necessary for our Node to operate properly.
+We will setup the instance's firewall SG to only allow inbound connections necessary for our Node to operate properly.
 
 Our outbound rules will be setup to only allow connections that were initiated from the instance.
 
 #### VPC NETWORK
 
-From the **LEFT** main panel, scroll down to **`VPC Network`** ➡️ **`Firewall`**.
+From the left main panel, scroll down to VPC Network ➡️ Firewall.
 
 :::info
 If necessary click on the 三 to open the main panel
@@ -40,7 +35,7 @@ If necessary click on the 三 to open the main panel
 
 From the top you should notice we are inside our Project
 
-You will also notice we have some **default** rules.
+You will also notice we have some default rules.
 
 - Wide open access for `SSH`
 - Wide open access for `RDP`
@@ -49,24 +44,24 @@ You will also notice we have some **default** rules.
 
 
 :::danger
-You are dealing with **crypto**, so you want to have some tight security. You are in charge of your own **DeFi** here so if something goes wrong, no one is going to be able to help you.
+You are dealing with crypto, so you want to have some tight security. You are in charge of your own DeFi here so if something goes wrong, no one is going to be able to help you.
 :::
 
 :::info 
 This will affect your ability to access your Node from anywhere, but security needs to be taken into consideration when dealing with finances.
 :::
 
-Select the two default rules for **SSH** and **RDP**. Click the **`DELETE`** button to clean up these unwanted open rules.
+Select the two default rules for SSH and RDP. Click the `DELETE` button to clean up these unwanted open rules.
 
 ![](/img/validator_nodes/node-gcp-sg3.png)
 
 :::danger VERY IMPORTANT FOR MAINNET 2.0 LAUNCH
-These documents reference creating a single layer 0 or metagraph.  For the launch of MainNet 2.0, you will installing a **DUAL** layer - `layer0` and `layer1` - validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  The YouTube Series does not cover these extra rules.
+These documents reference creating a single layer 0 or metagraph.  For the launch of MainNet 2.0, you will installing a DUAL layer - `layer0` and `layer1` - validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  The YouTube Series does not cover these extra rules.
 :::
 
 #### NEW RULES
 
-Click on the **CREATE FIREWALL RULE** option.
+- Click on the `CREATE FIREWALL RULE` option.
 
 ![](/img/validator_nodes/node-gcp-sg4.png)
 
@@ -89,27 +84,27 @@ Let's walk through the two Inbound Rules that we will need.
 
 #### NAME
 
-Give our first rule a **`Name`**.
+- Give our first rule a name.
 
 ![](/img/validator_nodes/node-gcp-sg5.png)
 
 #### ACCOUNT
 
-We are going to assign this rule to our **Specific service account**.
+- Assign this rule to our Specific service account.
 
 ![](/img/validator_nodes/node-gcp-sg6.png)
 
 #### SERVICE ACCOUNT
-- Select **`In this project`**
-- We don't need a service account so we will choose **`No service account`**.
+- Select `In this project`
+- We don't need a service account so we will choose `No service account`
 
 ![](/img/validator_nodes/node-gcp-sg7.png)
 
 #### IP ADDRESS
 
-Enter in our IP address that we retrieved from [whatismyip.com](https://www.whatismyip.com).
+- Enter in our IP address that we retrieved from [whatismyip.com](https://www.whatismyip.com)
 
-Add the **`/32`** to the ending.
+- Add the `/32` to the ending
 
 :::danger
 Do not use 111.111.111.111/32, this is just an example
@@ -117,13 +112,13 @@ Do not use 111.111.111.111/32, this is just an example
 
 ![](/img/validator_nodes/node-gcp-sg8.png)
 
-We are going to add our **SSH** port `22` rule back into our rule set, but this time lock it down to only allow our local IP inbound.
+- Add our SSH port `22` rule back into our rule set, but this time lock it down to only allow our local IP inbound.
 
 ![](/img/validator_nodes/node-gcp-sg9.png)
 
-All the other options on this `Create Firewall Rule` section should be left **as is**, no need to alter them unless you are an `advanced` user and want to update elements to suit your needs.
+All the other options on this `Create Firewall Rule` section should be left as is, no need to alter them unless you are an *advanced* user and want to update elements to suit your needs.
 
-Click on **CREATE**.
+- Click on `CREATE`
 
 ![](/img/validator_nodes/node-gcp-sg10.png)
 
@@ -134,49 +129,51 @@ Click on **CREATE**.
 
 #### NEW RULE
 
-We will go through the exact same process as the 👆 rule for our next rule.
+Now, go through the exact same process as the 👆 rule for our next rule.
 
-Click on the **CREATE FIREWALL RULE** option.
+- Click on the `CREATE FIREWALL RULE` option
 
 ![](/img/validator_nodes/node-gcp-sg12.png)
 
-Add a **name** to the our firewall rule.
+- Add a name to the our firewall rule
 
 ![](/img/validator_nodes/node-gcp-sg13.png)
 
-We are going to assign this rule to our **Specified service account**.
+Let's assign this rule to our Specified service account.
 
 ![](/img/validator_nodes/node-gcp-sg14.png)
 
-- Select **In this project**.
-- We don't need a **service account** so we will choose **`No service account`**.
+- Select `In this project`
+- We don't need a Service Account, so we will choose `No service account`
 
 ![](/img/validator_nodes/node-gcp-sg15.png)
 
-We will tell our rule to let anything access these ports from the internet. `0.0.0.0/0` add the **`/0`** to the ending.
+We will tell our rule to let anything access these ports from the internet. Add `/0` to the ending of `0.0.0.0`. 
+Example: `0.0.0.0/0`
 
 ![](/img/validator_nodes/node-gcp-sg16.png)
 
-Choose the **Specified protocols** and **ports** option.
-
-- Check the `tcp:` box.
-- Enter in `9000` followed by a `-` (dash) and then `9001` (no spaces).
+- Choose the Specified protocols and `ports` option
+- Check the `tcp:` box
+- Enter in `9000` followed by a `-` (dash) and then `9001` (no spaces)
 
 ![](/img/validator_nodes/node-gcp-sg17.png)
 
-All the other options on this Create Firewall Rule section should be left `as is`, no need to alter them unless you are an advanced user and want to update elements to suit your needs.
+All the other options on this Create Firewall Rule section should be left as is, no need to alter them unless you are an advanced user and want to update elements to suit your needs.
 
-Click on **`CREATE`**
+- Click on `CREATE`
 
 ![](/img/validator_nodes/node-gcp-sg18.png)
 
 ### MAINNET 2.0 LAUNCH REQUIREMENT
-It is **highly** recommended that you use `nodectl` to install and control/admin your Node.
+It is highly recommended that you use `nodectl` to install and control/admin your Node.
 
-Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet 2.0 Validator Node's `Layer1` connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
+Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet 2.0 Validator Node's Layer1 connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
 
 #### VERIFY ALL OUR RULES
 
 ![](/img/validator_nodes/node-gcp-sg19.png)
 
-Our **firewall** security group is now properly setup to work with your future Node.  Congrats!
+---
+
+Our firewall security group is now properly setup to work with your future Node. Congrats!

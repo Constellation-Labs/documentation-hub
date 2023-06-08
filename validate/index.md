@@ -2,7 +2,7 @@
 title: Validator Nodes
 sidebar_label: Introduction
 slug: /
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -16,10 +16,28 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-In this tutorial, you'll learn how to set up and run a validator node in three parts (2 main parts): **Part 1** provides information on providers, how to generate SSH keys, and several common VPS setup guides. **Part 2** goes over how to install node using our automated `nodectl` tool.  **Part 3** shows you how to install a Node manually by installing dependencies and packages, and instructs how to create a private key and the node services necessary to join the network.
+In this tutorial, Node Operators will learn how to build and manage a validator node.
 
-## Before you begin:
+<DocsCards>
+  <DocsCard header="Build a VPS" href="validator/getting-started" img="/img/validator_nodes/cloud.png">
+    <p>Setup a Virtual Private Server (VPS) in the cloud including SSH keys; to install your Constellation Node.</p>
+  </DocsCard>
 
-:::info Are you on the seedlist?
-Both Mainnet 2.0 and Testnet 2.0 currently have a seedlist in place that only allows specific `NodeIds` to join the network. This provides an extra layer of security and stability as the ecosystem matures, and will eventually be phased out for anyone to join. The seedlist is currently closed although we are accepting applications from metagraph developers or integration partners that need access to develop on the network. Please fill out [this form](https://airtable.com/shroR5bXszQXdh6dn) if you fit into that category.
+  <DocsCard header="NODECTL User Guide" href="automated/nodectl" img="/img/validator_nodes/nodes_logo.jpg">
+    <p>Turn your VPS into a Constellation Node using Constellation Network's <b>nodectl</b> utility.</p>
+  </DocsCard>
+
+  <DocsCard header="Manual Installation" href="manual/manual-install-getting-started" img="/img/validator_nodes/hard_hat.png">
+    <p>ADVANCED: <b>Manually</b> setup a Node from a clean Debian installation.</p>
+  </DocsCard>
+</DocsCards>
+
+## Before you begin
+
+:::info Are you on the seed list?
+Both Mainnet 2.0 and Testnet 2.0 currently have a seed list in place that only allows specific `nodeids` to join the network. 
+
+The seed list provides an extra layer of security and stability as the ecosystem matures and will eventually be phased out.  Once the seed list restrictions are removed, anyone (with properly collateral and vps or hardware requirements) will be able to join the Hypergraph or a Metagraph. 
+
+The seed list is currently closed; although, we are accepting applications, from other Metagraph developers or integration partners, that need access to develop on the network. Please fill out [this form](https://airtable.com/shroR5bXszQXdh6dn) if you have an interest in participating.
 :::

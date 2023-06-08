@@ -1,7 +1,8 @@
 ---
 title: Create Account
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
+<intro-end />
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
@@ -12,12 +13,6 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Building a Validator Node on Digital Ocean's platform."
   />
-  <style>{`
-    :root {
-      --doc-item-container-width: 60rem;
-    }
-  `}
-  </style>
 </head>
 
 ## Digital Ocean
@@ -26,7 +21,7 @@ Creating your account on Digital Ocean is a simple process similar to all other 
 
 ![](/img/validator_nodes/node-do-account.png)
 
-In order to run our Constellation Node, you will need to make your *first* **financial** and **sweat-equity** investments.
+In order to run our Constellation Node, you will need to make your *first* financial and sweat-equity investments.
 
 ## Sign Up
 

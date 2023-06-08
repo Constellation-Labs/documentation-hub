@@ -49,7 +49,7 @@ sftp -i ~/.ssh/my-node-ssh-keyname nodeadmin@123.123.123.123
 
 <MacWindow>
 constellation@MacBook constellation-backup % sftp -i ~/.ssh/my-node-ssh-keyname nodadmin@123.123.123.123<br />
-Enter passphrase for key '/Users/netmet/.ssh/const_node_rsa': <br />
+Enter passphrase for key '/Users/netmet/.ssh/my-node-ssh-keyname': <br />
 Connected to 1123.123.123.123.<br />
 sftp><br />
 </MacWindow>
@@ -160,9 +160,8 @@ sftp -i ~/.ssh/my-node-ssh-keyname nodeadmin@123.123.123.123
 ```
 <MacWindow>
 constellation@MacBook constellation-backup % sftp -i ~/.ssh/my-node-ssh-keyname nodadmin@123.123.123.123<br />
-Enter passphrase for key '/Users/netmet/.ssh/const_node_rsa': <br />
-Connected to 1123.123.123.123.<br />
-sftp><br />
+Enter passphrase for key 'my-node-ssh-keyname': 
+Welcome to Ubuntu 20.04.5 LTS<br />
 </MacWindow>
 
 ### Locate P12 file
