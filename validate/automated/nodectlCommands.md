@@ -84,7 +84,7 @@ sudo nodectl -switch2 -switch1 parameter1
 
 ### What is pagination?
 
-The most common method of accessing your Node is through a [remote shell](../validator/sshkeyExplained.md).  When we issue a command within our remote shell, the output of a command may extend past the height of the terminal window.  In this case, nodectl will "page" the output by pausing when the output printed to the screen reaches the height of the window, before needing to scroll.
+The most common method of accessing your Node is through a [remote shell](/validate/validator/ssh-keys).  When we issue a command within our remote shell, the output of a command may extend past the height of the terminal window.  In this case, nodectl will "page" the output by pausing when the output printed to the screen reaches the height of the window, before needing to scroll.
 
 It will offer you the option to quit or continue.
 
@@ -347,7 +347,7 @@ sudo nodectl status -p dag-l0
 ### list
 ---
 
-The **`list`** command does not take any [parameters](#what-is-a-switch-and-parameter) and displays the details of the profiles found in the [**`cn-config.yaml`**](./nodectlConfig.md) file.  You can update the **`cn-config.yaml`** file with the [configure command](#configure).
+The **`list`** command does not take any [parameters](#what-is-a-switch-and-parameter) and displays the details of the profiles found in the [**`cn-config.yaml`**](/validate/automated/nodectlConfig.md) file.  You can update the **`cn-config.yaml`** file with the [configure command](#configure).
 
 | Title | Description | 
 | ---: | :--- |
@@ -1585,7 +1585,7 @@ The **`passwd12`** command does not take any [parameters](#what-is-a-switch-and-
 This command offers the Node Operator the ability to change their p12 keystore file's passphrase through an interactive experience.
   
 :::warning
-**`passwd12`** will not update the [cn-config.yaml](./nodectlConfig.md) file.
+**`passwd12`** will not update the [cn-config.yaml](/validate/automated/nodectlConfig) file.
 
 Please run the [`sudo nodectl configure`](#configure) command to update your passphrase (if necessary) after completing the passphrase update utility command.
 :::
@@ -1618,7 +1618,7 @@ The **`export_private_key`** command does not take any [parameters](#what-is-a-s
 Do not share this private key with anyone that you do not completely trust with your financial assets.
 :::
 
-nodectl is designed to work with `p12` private key files that support Constellation Network `v2` keys.   If you are running an older node, please refer to the [v1 to v2 migration](../resources/p12v1v2-migrate.md) document.
+nodectl is designed to work with `p12` private key files that support Constellation Network `v2` keys.   If you are running an older node, please refer to the [v1 to v2 migration](/validate/resources/p12v1v2-migrate) document.
 
 Import the private key produced by this command into your **StarGazer wallet** (or other) in order to control your Node's wallet.
         
@@ -1643,9 +1643,9 @@ sudo nodectl export_private_key
 ### configure
 ---
 
-The **`configure`** command will attempt to guide the Node Operator through the **creating** or **editing** the [**`cn-config.yaml`**](./nodectlConfig.md) file.
+The **`configure`** command will attempt to guide the Node Operator through the **creating** or **editing** the [**`cn-config.yaml`**](/validate/automated/nodectlConfig) file.
   
-The [`cn-config.yaml`](./nodectlConfig.md) file is an extremely important file that nodectl uses to determine how it should control and configure your Constellation Network Validator Node.
+The [`cn-config.yaml`](/validate/automated/nodectlConfig) file is an extremely important file that nodectl uses to determine how it should control and configure your Constellation Network Validator Node.
 
 The `configure` command will offer a relatively detailed explanation of all configuration options, unless the `-a` (*advanced*) switch is used.  
 
@@ -1666,7 +1666,7 @@ In edit configuration mode, nodectl will offer you several options
 1. Edit Profiles
 2. Edit Global Settings
     
-See the [configuration guide document](./nodectlConfig) for more details on this command.
+See the [configuration guide document](/validate/automated/nodectlConfig) for more details on this command.
 
 > #### Examples
 - Help screen
@@ -1696,7 +1696,7 @@ sudo nodectl configure -a -e
 ### view_config
 ---
 
-The **`view_config`** command will show a [paginated](#what-is-pagination) view of the current [`cn-config.yaml`](./nodectlConfig.md) file.  
+The **`view_config`** command will show a [paginated](#what-is-pagination) view of the current [`cn-config.yaml`](/validate/automated/nodectlConfig) file.  
 
 | Command | Shortcut |
 | :---: | :---: | 
@@ -1712,7 +1712,7 @@ The **`view_config`** command will show a [paginated](#what-is-pagination) view 
 ### validate_config
 ---
 
-The **`validate_config`** command will attempt to review your [`cn-config.yaml`](./nodectlConfig.md) file for errors that may cause **unexpected** results when attempting to run your Node.
+The **`validate_config`** command will attempt to review your [`cn-config.yaml`](/validate/automated/nodectlConfig) file for errors that may cause **unexpected** results when attempting to run your Node.
 
 | Command | Shortcut |
 | :---: | :---: | 
@@ -1728,7 +1728,7 @@ The **`upgrade_path`** command does not take any [parameters](#what-is-a-switch-
   
 If the Node is not at the most current version of nodectl, this command will produce a warning. The warning will let the Node Administrator know what the next necessary upgrade version should be, and will show you upgrade path requirements.
    
-See the [upgrade path](./nodectlUpgradePath.md) document for more details.
+See the [upgrade path](/validate/automated/nodectlUpgradePath) document for more details.
 
 | Command | Shortcut |
 | :---: | :---: | 
@@ -1755,7 +1755,7 @@ The **`upgrade`** command is used to upgrade both Tessellation and nodectl backe
 | [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -w | None | **watch** mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, nodectl will skip watching for the remaining peers to connect and simply and safely continue the upgrade process, therefore saving time. | **optional** |
-| --pass | `<passphrase>` | If the Node Operator chose to `hide` their passphrase by excluding it from the [`configuration file`](./nodectlConfig), you will need to supply it at the command line using this switch. | **optional** |
+| --pass | `<passphrase>` | If the Node Operator chose to `hide` their passphrase by excluding it from the [`configuration file`](/validate/automated/nodectlConfig), you will need to supply it at the command line using this switch. | **optional** |
 | -ni | None | Non-Interactive &rarr If you want to use the `upgrade` command with all the defaults chosen, nodectl will not ask any interactive questions. | **optional** |
 
 :::note Just in Case
