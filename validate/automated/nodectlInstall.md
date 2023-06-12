@@ -20,18 +20,18 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 The following documentation will help guide a new Node Operator through all the necessary steps required to turn an instance, VPS, or bare metal system into a Validator Node.
 
-This new installation can be preformed [manually](../manual/getting-started-manual.md) if desired by advanced end users; however, nodectl is recommended.
+This new installation can be preformed [manually](/validate/manual/manual-install-getting-started) if desired by advanced end users; however, nodectl is recommended.
 
 ## Requirements
 
 It is assumed that prior to reaching this documentation, the future Node Operator has followed all the necessary steps in creating a Debian-based Linux server instance, VPS, or bare metal system.
 
-Please refer to [Node Concepts](../validator/get_started.md) to follow the `step-by-step` guide on building your future Node.
+Please refer to [Node Concepts](/validate/) to follow the `step-by-step` guide on building your future Node.
 
 *For Ease of explanation, this documentation will assume use of the **Ubuntu** Debian distribution of Linux on a **VPS** in the cloud.*
 
 :::info p12 Migration
-If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#download-binary); otherwise continue forward.
+If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/nodectlInstallMigrate#download-binary); otherwise continue forward.
 :::
 
 ## Download nodectl
@@ -46,7 +46,7 @@ If you are coming from the ***New Node Installation with p12 migration*** docume
 SSH into your Debian based OS system. 
 
 *replace **ssh_key_name** with the name of your ssh key file.*
-[SSH Concepts](../validator/sshkeyExplained.md)
+[SSH Concepts](/validate/validator/ssh-keys)
 <MacWindow>
 netmet@netmet-MacBook-Pro .ssh % ssh ubuntu@112.112.112.112 -i my-ssh-pem-file<br />
 The authenticity of host '112.112.112.112 (112.112.112.112)' can't be established.<br />
@@ -105,9 +105,9 @@ Make sure you download the latest version of nodectl.  Even though the documenta
 :::
 Open your web browser and enter in:
 ```
-https://github.com/netmet1/constellation_nodectl/releases
+https://github.com/StardustCollective/nodectl/releases
 ```
-Access [nodectl releases](https://github.com/netmet1/constellation_nodectl/releases) 
+Access [nodectl releases](https://github.com/StardustCollective/nodectl/releases) 
 
 1. click on the latest version
 2. Find the Manual Installation section
@@ -171,7 +171,7 @@ You will notice nodectl will attempt to run the `version` command.
   - In this example) version 2.7.0
 
 :::info p12 Migration
-If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#upload-existing-p12); otherwise continue forward.
+If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/nodectlInstallMigrate#upload-existing-p12); otherwise continue forward.
 :::
 
 ## Install nodectl
@@ -266,7 +266,7 @@ The IP address `111.111.111.111` is a fake IP used for example purposes only
 </MacWindow>
 
 :::info p12 Migration
-If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#import-p12-file); otherwise continue forward.
+If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/nodectlInstallMigrate#import-p12-file); otherwise continue forward.
 :::
 
  Since this is a brand new installation, we will choose `n` (or just hit enter to accept the default) when requested to migrate over an existing `p12` file.  The `p12` file is your private key file used to store elements necessary to authenticate to the MainNet and also your Node's wallet information.
@@ -437,7 +437,7 @@ Adding new user [nodeadmin] to sudo group...... complete<br />
 
 ### Handle SSH Keys
 
-If you followed the recommended [setup](../validator/get_started.md) instructions to build your VPS to run your Node on, you should have gone through the process of creating [ssh keys](../validator/sshkeyExplained.md).
+If you followed the recommended [setup](/validate/) instructions to build your VPS to run your Node on, you should have gone through the process of creating [ssh keys](/validate/validator/ssh-keys).
 
 Unless you are running your Node in a specialized way that required you to use a username/password method of accessing your future Node, instead of SSH keys (not recommended unless you are an advanced user with specific reasoning) ...  
 
@@ -504,7 +504,7 @@ We will say `y` (or hit <kbd>enter</kbd> key).
 nodectl will disable these accounts.  
 
 :::note
-This is reversible if desired via the [enable_root_ssh](./nodectlCommands#enable_root_ssh) command.
+This is reversible if desired via the [enable_root_ssh](/validate/automated/nodectlCommands#enable_root_ssh) command.
 :::
 
 <MacWindow>
@@ -521,9 +521,9 @@ You should now copy the same configuration you used to access your instance init
 
 *We are simply testing that we have access to our Node via the new `nodeadmin` account, before we continue to lock down our Node for better security.*
 
-Reminder how to do this is for [windows](../resources/accessWin.md).
+Reminder how to do this is for [windows](/validate/resources/accessWin).
 
-Reminder how to do this for [mac](../resources/accessMac.md).
+Reminder how to do this for [mac](/validate/resources/accessMac).
 
 Now that we are comfortable that we have access to our Node via the **`nodeadmin`** user account.  We can close the **test** `nodeadmin` terminal window (that we opened in this step). This will return us to our original terminal which has the installer running, as the `ubuntu` user.
 
@@ -605,7 +605,7 @@ Creating [Node] directories.................... complete<br />
 </MacWindow>
 
 :::info p12 Migration
-If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](./nodectlInstallMigrate.md#choose-p12-file); otherwise continue forward.
+If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/nodectlInstallMigrate#choose-p12-file); otherwise continue forward.
 :::
 
 ### Build our wallet (p12)
@@ -697,7 +697,7 @@ Write your passphrase down in a very secure location, and never share it out to 
 ### Create p12 alias
 
 :::danger IMPORTANT
-If you are **migrating** an existing **[p12 private key file](./nodectlInstallMigrate.md)**, you must use the same alias as you did when you originally created the file.  Failure to do so will lead to errors.
+If you are **migrating** an existing **[p12 private key file](/validate/automated/nodectlInstallMigrate)**, you must use the same alias as you did when you originally created the file.  Failure to do so will lead to errors.
 
 *MainNet 1.0 Node Operators, this is **not** your MainNet 1.0 Node alias; rather, it is your **wallet's** alias*
 :::
@@ -756,7 +756,7 @@ nodectl will access your new or migrated `p12` private key file and attempt to e
 
 The `nodeid` can be considered your Node's **`public`** key.  It is public information, and we do not have to worry about exposing it.
 
-Write this nodeid down for your own reference; however, you will be able to derive your nodeid using dedicated commands at any time later on, via the [`sudo nodectl nodeid`](./nodectlCommands#nodeid) command.
+Write this nodeid down for your own reference; however, you will be able to derive your nodeid using dedicated commands at any time later on, via the [`sudo nodectl nodeid`](/validate/automated/nodectlCommands#nodeid) command.
 
 The `nodeid` results will be presented to you as part of the final steps of the installation process.
 
@@ -781,7 +781,7 @@ The IP address and nodeid presented below are for demonstration purposes only an
 
 The seed list is the access list that determines which Nodes are allowed and not allowed on **MainNet**.  This is a temporary authentication mechanism pre-PRO score implementation. 
 
-nodectl will issue the [`sudo nodectl check_seedlist`](./nodectlCommands#check_seedlist) command, to confirm whether or not your Node is able to participate on the Hypergraph at the current time.
+nodectl will issue the [`sudo nodectl check_seedlist`](/validate/automated/nodectlCommands#check_seedlist) command, to confirm whether or not your Node is able to participate on the Hypergraph at the current time.
 
 <MacWindow>
  ----- * Check Seed List Request * ------<br /> 
@@ -849,4 +849,4 @@ You now have a Constellation Network validator Node!
 
 ### Command Reference
 
-While we wait for your Node to be accepted for access (via the seed list), we recommend that you review all the available features and commands of nodectl, via the [command reference](./nodectlCommands.md) documentation.
+While we wait for your Node to be accepted for access (via the seed list), we recommend that you review all the available features and commands of nodectl, via the [command reference](/validate/automated/nodectlCommands) documentation.

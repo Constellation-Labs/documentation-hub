@@ -18,7 +18,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-The document will act as [but not necessarily] an appendix to the [Installation documentation](./nodectlInstall.md).  
+The document will act as [but not necessarily] an appendix to the [Installation documentation](/validate/automated/nodectlInstall).  
 
 It is designed to assist a Node Operator that will be doing a brand new installation; however, allow the migration of an existing private key file [**`p12 file`**], at the same time. 
 
@@ -36,10 +36,10 @@ You can read ahead in this document to see where changes are required
 
 ## Pre-install Steps
 ### Requirements
-[Requirements](./nodectlInstall.md#requirements)
+[Requirements](/validate/automated/nodectlInstall#requirements)
 
 ### Download Binary
-[Download nodectl](./nodectlInstall.md#download-nodectl)
+[Download nodectl](/validate/automated/nodectlInstall#download-nodectl)
 
 ### Upload existing p12
 
@@ -54,21 +54,21 @@ You may want to read the entire document; however, this tutorial will direct you
 :::
 
 Follow the instructions to restore your p12 file:
-  - [Restore a p12 file on Mac](../resources/p12backup-mac.md#restore-p12-file)
-  - [Restore a p12 file on Windows](../resources/p12backup-win.md#restoring-your-p12)
+  - [Restore a p12 file on Mac](/validate/resources/p12backup-mac#restore-p12-file)
+  - [Restore a p12 file on Windows](/validate/resources/p12backup-win#restoring-your-p12)
 
 ---
 
 ## Install Steps
 ### Start Installation
 
-Follow all steps provided by [Node Install](./nodectlInstall.md#install-nodectl) until your reach the request to migrate your [**p12 private key**] file.  
+Follow all steps provided by [Node Install](/validate/automated/nodectlInstall#install-nodectl) until your reach the request to migrate your [**p12 private key**] file.  
 
 Throughout the **installation** documentation there will be *blue info boxes* that you can use to return to this document.
 
 When you return from the main **installation** we can continue with **migration specific** instructions.
 
-[Node Install](./nodectlInstall.md#install-nodectl)
+[Node Install](/validate/automated/nodectlInstall#install-nodectl)
 
 ### Import p12 file
 
@@ -111,7 +111,7 @@ If you already have your **p12 private key file** uploaded, you should choose `n
 <br />
 </MacWindow>
 
-You can now return to the **[nodectl installation](./nodectlInstall.md#system-requirements)** and follow the instructions until you reach the next *blue box* to return here.
+You can now return to the **[nodectl installation](/validate/automated/nodectlInstall#system-requirements)** and follow the instructions until you reach the next *blue box* to return here.
 
 ### Choose P12 file
 
@@ -126,7 +126,7 @@ The installation will import your selected p12 and use it for **all** profiles (
 
 After installation is complete you can update the nodectl **configuration** to use dedicated p12 files for each profile associated with your Node.
 
-See the [configuration document](./nodectlConfig.md) **or** the [Command Reference](nodectlCommands.md), for more details
+See the [configuration document](/validate/automated/nodectlConfig) **or** the [Command Reference](/validate/automated/nodectlCommands), for more details
 ```
 sudo nodectl configure
 ```
@@ -148,7 +148,7 @@ If you do **not** see your p12 file, this means either you placed it in a locati
   KEY PRESS an option<br />
 </MacWindow>
 
-You can now return to the **[nodectl installation](./nodectlInstall.md#passphrase-entry)** and follow the instructions until you reach the end.
+You can now return to the **[nodectl installation](/validate/automated/nodectlInstall#passphrase-entry)** and follow the instructions until you reach the end.
 
 ---
 This concludes the specifics of p12 migration (and this document).

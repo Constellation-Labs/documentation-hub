@@ -51,12 +51,12 @@ If we are not on version 1.12.0 of nodectl ...
 
 If you are **NOT** on `v1.12.0`...
 
-Please make sure to follow the [upgrade path](./nodectlUpgradePath.md) documentation, to avoid **unexpected** errors.
+Please make sure to follow the [upgrade path](/validate/automated/nodectlUpgradePath) documentation, to avoid **unexpected** errors.
 :::
 
 ### Download v2 binary
 
-Now that we have confirmed that we are on `v1.12.0` of nodectl, we use the [upgrade_nodectl command](./nodectlCommands.md#upgrade_nodectl) to initiate the download of the **nodectl binary** from the GitHub repository to our Node.
+Now that we have confirmed that we are on `v1.12.0` of nodectl, we use the [upgrade_nodectl command](/validate/automated/nodectlCommands#upgrade_nodectl) to initiate the download of the **nodectl binary** from the GitHub repository to our Node.
 
 ```
 sudo nodectl upgrade_nodectl
@@ -130,7 +130,7 @@ It is necessary for us to **MIGRATE** our Node from `version 1` to `version 2`, 
 
 Most significantly:
   - Migration and deprecation of the `cn-node` bash script file that used to run some of our Node operations for us.
-  - Addition of the [`cn-config.yaml`](./nodectlConfig) file.
+  - Addition of the [`cn-config.yaml`](/validate/automated/nodectlConfig) file.
   - Removal of old directory structures.
   - Addition of new services.
 
@@ -160,13 +160,13 @@ A new **feature** of nodectl is the ability to **hide** the passphrase in the co
 :::danger IMPORTANT
 This feature was added per request from the community; however, because the hot wallet is on your Node, this only adds a small layer of obscurity to attempting to retrieve your passphrase if the Node is compromised.
 
-This will disable your ability to use the **[auto restart](./nodectlCommands#auto_restart)** feature including the `auto_upgrade` feature.
+This will disable your ability to use the **[auto restart](/validate/automated/nodectlCommands#auto_restart)** feature including the `auto_upgrade` feature.
 :::
 
 #### It is recommended to keep your passphrase visible.
 
 :::note Side Note
-Make sure to follow the recommended security lock down measures during the [build](../validator/get_started.md) of your underlining VPS (container or bare metal), as an alternative to hiding your passphrase here.
+Make sure to follow the recommended security lock down measures during the [build](/validate/automated/nodectl) of your underlining VPS (container or bare metal), as an alternative to hiding your passphrase here.
 :::
 
 We will say **`y`** here (but you can also say **n**).
@@ -308,9 +308,9 @@ You can choose `y` or `n` here depending.  We recommend that you review the conf
 
 ### Review configuration yaml
 
-If you answered **`y`** to the question above: You will be offered a [paginated](./nodectlCommands#what-is-pagination) view of the configuration file.
+If you answered **`y`** to the question above: You will be offered a [paginated](/validate/automated/nodectlCommands#what-is-pagination) view of the configuration file.
 
-Please see the [view config command](./nodectlCommands.md#view_config) from the [command reference guide](./nodectlCommands.md) for a detailed explanation of this output.
+Please see the [view config command](/validate/automated/nodectlCommands#view_config) from the [command reference guide](/validate/automated/nodectlCommands) for a detailed explanation of this output.
 
 ### Configuration Verification
 
@@ -344,7 +344,7 @@ The next step is to upgrade our Node to complete all the backend required detail
 
 When we are ready, we can issue a **`y`** here... and the **upgrade** will begin.
 
-At this point in the migration from `v1` to `v2`, we are done and can now access the [upgrade nodectl](./nodectlUpgrade.md#handle-os-system-upgrades) document to follow along with the process step-by-step.
+At this point in the migration from `v1` to `v2`, we are done and can now access the [upgrade nodectl](/validate/automated/nodectlUpgrade#handle-os-system-upgrades) document to follow along with the process step-by-step.
 
 :::success Important Reminder
 During the upgrade process (mentioned above), please remember to say **`n`** when requested to delete your **backups**. This will allow you to save your backup `cn-node` file.  Saving this file will ensure that you can revert to `version 1` if (in the unlikely event) you need to.
