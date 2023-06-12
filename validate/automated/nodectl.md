@@ -28,11 +28,11 @@ The succeeding documentation will describe the features behind nodectl and help 
 ### Installing nodectl
 
 <DocsCards>
-  <DocsCard header="New Node" href="./nodectlInstall" img="/img/home/state-channel.jpg">
+  <DocsCard header="New Node" href="/validate/automated/nodectlInstall" img="/img/home/state-channel.jpg">
     <p>Install brand new Node.</p>
   </DocsCard>
 
-  <DocsCard header="Migrate Node" href="./nodectlInstallMigrate" img="/img/home/community.jpg">
+  <DocsCard header="Migrate Node" href="/validate/automated/nodectlInstallMigrate" img="/img/home/community.jpg">
     <p>Migrate existing Node to new container, instance, or hardware.</p>
   </DocsCard>
 </DocsCards>
@@ -40,15 +40,15 @@ The succeeding documentation will describe the features behind nodectl and help 
 ### nodectl operations
 
 <DocsCards>
-  <DocsCard header="Upgrade" href="./nodectlUpgrade" img="/img/home/core-concepts.jpg">
+  <DocsCard header="Upgrade" href="/validate/automated/nodectlUpgrade" img="/img/home/core-concepts.jpg">
     <p>Upgrade nodectl on an existing Node.</p>
   </DocsCard>
 
-  <DocsCard header="v1.12.0 to v2.x.x" href="./nodectlMigrateV1" img="/img/home/core-concepts.jpg">
+  <DocsCard header="v1.12.0 to v2.x.x" href="/validate/automated/nodectlMigrateV1" img="/img/home/core-concepts.jpg">
     <p>Upgrade from version 1.12.0 nodectl to the new version 2.x.x</p>
   </DocsCard>
 
-  <DocsCard header="Command Reference" href="./nodectlCommands" img="/img/home/stargazer.jpg">
+  <DocsCard header="Command Reference" href="/validate/automated/nodectlCommands" img="/img/home/stargazer.jpg">
     <p>Command Reference Guide for nodectl</p>
   </DocsCard>
 </DocsCards>
