@@ -40,7 +40,7 @@ Please like and subscribe to support NetMet's work, to be alerted to new content
 
 We need a way to access our Droplet (VPS). 
 
-We will setup access to our Droplet, via an SSH Key pair, created here [mac](../../validator/creationMac) or here [windows](../../validator/creationWin). (Also visualized in the YouTube Series above.)
+We will setup access to our Droplet, via an SSH Key pair, created here [mac](/validate/validator/creationMac) or here [windows](/validate/validator/creationWin). (Also visualized in the YouTube Series above.)
 
   1. Choose SSH Keys
   2. Choose New SSH Key
