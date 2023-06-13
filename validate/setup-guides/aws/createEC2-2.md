@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 ## EC2 CREATION (Part 2)
 
 :::note
-If you came from the previous section [Deploy EC2 (Part 1)](./createEC2.md) you should already be in the Compute section in the correct Region as your future Instance type.  Skip to [Continue building EC2](#continue-building-ec2)
+If you came from the previous section [Deploy EC2 (Part 1)](/validate/setup-guides/aws/createEC2) you should already be in the Compute section in the correct Region as your future Instance type.  Skip to [Continue building EC2](#continue-building-ec2)
 :::
 
 ### Open Compute EC2 Console 
@@ -100,7 +100,7 @@ Click on the `t1.micro` Free tier eligible box to expose the search bar.
 
 ### SSH Keys
 
-Click on the drop down box under the `Key pair (login)` section and choose the key pair we created and uploaded in the previous sections regarding SSH keys.  If you do not have an SSH key uploaded, return to the [previous](./applySSHec2.md) section before continuing.
+Click on the drop down box under the `Key pair (login)` section and choose the key pair we created and uploaded in the previous sections regarding SSH keys.  If you do not have an SSH key uploaded, return to the [previous](/validate/setup-guides/aws/applySSHec2) section before continuing.
 
 
 #### Network Settings
