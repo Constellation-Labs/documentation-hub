@@ -272,7 +272,7 @@ You are able to hide the passphrase within the `cn-config.yaml` file.  If this i
 You can supply `none` on the passphrase lines to hide your `p12`'s passphrase.
 :::
 :::warning
-If the passphrase is not supplied within the `cn-config.yaml`, you will not be able to access the [auto_restart](nodectlCommands#auto_restart) functionality of nodectl.
+If the passphrase is not supplied within the `cn-config.yaml`, you will not be able to access the [auto_restart](/validate/automated/nodectlCommands#auto_restart) functionality of nodectl.
 :::
 
 ## profile (continued)

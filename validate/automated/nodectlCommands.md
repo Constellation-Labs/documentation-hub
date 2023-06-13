@@ -347,7 +347,7 @@ sudo nodectl status -p dag-l0
 ### list
 ---
 
-The **`list`** command does not take any [parameters](#what-is-a-switch-and-parameter) and displays the details of the profiles found in the [**`cn-config.yaml`**](/validate/automated/nodectlConfig.md) file.  You can update the **`cn-config.yaml`** file with the [configure command](#configure).
+The **`list`** command does not take any [parameters](#what-is-a-switch-and-parameter) and displays the details of the profiles found in the [**`cn-config.yaml`**](/validate/automated/nodectlConfig) file.  You can update the **`cn-config.yaml`** file with the [configure command](#configure).
 
 | Title | Description | 
 | ---: | :--- |
@@ -1762,7 +1762,7 @@ The **`upgrade`** command is used to upgrade both Tessellation and nodectl backe
 In the event of the `-ni` is used, if nodectl identifies anything unusual, it still may disengage non-interactive mode and ask any necessary questions, in an attempt to avoid unexpected errors.
 :::
 
-Please see the [upgrade nodectl](nodectlUpgrade.md) documentation for a detailed explanation of the command.
+Please see the [upgrade nodectl](/validate/automated/nodectlUpgrade) documentation for a detailed explanation of the command.
 
 
 
@@ -1772,7 +1772,7 @@ Please see the [upgrade nodectl](nodectlUpgrade.md) documentation for a detailed
 
 The **`upgrade_nodectl`** command is a dedicated command used to upgrade the nodectl binary file.
 
-Please see the [upgrade_nodectl](nodectlUpgrade.md) documentation for a detailed explanation of the command.
+Please see the [upgrade_nodectl](/validate/automated/nodectlUpgrade) documentation for a detailed explanation of the command.
 
 > #### Examples
 - Help file
