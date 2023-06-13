@@ -42,7 +42,7 @@ We are `pretending` our remote location (VPS) has an external IP address of `111
 
 Lets use the **SSH** command to connect to our VPS. Issue the `ssh` command, including the `-i` option to tell SSH to use our specific `identity file` (ssh key file).
 
-We will **not** be using a standard password to access our VPS; rather, a `SSH key pair` with a `passphrase`. We created this key pair in the previous sections ([macintosh](./sshkeys/creationMac) or [windows](./sshkeys/creationWin)).
+We will **not** be using a standard password to access our VPS; rather, a `SSH key pair` with a `passphrase`. We created this key pair in the previous sections ([macintosh](/validate/validator/creationMac) or [windows](/validate/validator/creationWin)).
 
 Issue these commands from your **Local System** to connect to the `IP address` of your **Remote System**.
 
