@@ -44,7 +44,7 @@ Ports **8000-9999** may be reserved for metagraphs and Global Layer 0, therefore
 
 Make sure you have your `p12` private key store backed up before you continue this procedure!
 
-See documentation to backup your `p12` for [Macintosh](/nodes/resources/p12backup-mac) or [Windows](/nodes/resources/p12backup-win).
+See documentation to backup your `p12` for [Macintosh](/validate/resources/p12backup-mac) or [Windows](/validate/resources/p12backup-win).
 
 ### VPS Firewall Settings
 
@@ -66,7 +66,7 @@ The firewall should contain an existing entry for SSH access on **port 22**. Do 
 Access your VPS node in order to update the `sshd_config` file. This is the default global configuration file for Debian OS.
 
 :::note Remote Access
-You can remind yourself how to access your VPS here for [Macintosh](/nodes/resources/accessMac) or [Windows](/nodes/resources/accessWin).
+You can remind yourself how to access your VPS here for [Macintosh](/validate/resources/accessMac) or [Windows](/validate/resources/accessWin).
 :::
 
 #### Windows
