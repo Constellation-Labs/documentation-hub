@@ -235,4 +235,4 @@ After completing the connection tests, exporting your [private key](/validate/au
 
 If you did **not** rename your `v2` **p12** back to the original **p12** filename used before the migration ( and do not intend to ), you should make sure nodectl is aware of the p12 file name change.
 
-You can update the [configuration](/validate/automated/nodectlConfig) by issuing a [`sudo nodectl configure`](../automated/nodectlCommands#configure) on your Node with nodectl installed.
+You can update the [configuration](/validate/automated/nodectlConfig) by issuing a [`sudo nodectl configure`](/validate/automated/nodectlCommands#configure) on your Node with nodectl installed.

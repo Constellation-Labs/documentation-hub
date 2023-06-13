@@ -34,7 +34,7 @@ Please like and subscribe to support NetMet's work and to be alerted to new cont
 
 ---
 
-We need a way to access our EC2 Instance (VPS). Please refer to the [SSH](../../validator/sshkeyExplained.md) section to create your SSH key pair.  
+We need a way to access our EC2 Instance (VPS). Please refer to the [SSH](/validate/validator/ssh-keys) section to create your SSH key pair.  
 
 :::danger Warning Not Recommended
 You also have the ability to create a less secure SSH key pair directly from AWS's EC2 creation wizard.  This is not recommended because it does not offer the ability to supply a passphrase with your SSH key.  
@@ -55,7 +55,7 @@ This method has been shown in the documentation even though not recommended, bec
 ### Access EC2 Compute Section
 
 :::note
-If you came from the previous section [Deploy EC2 (Part 1)](./createEC2.md) you should already be in the Compute section in the correct Region as your future Instance type. Skip to [Select Key Pairs](#select-key-pairs)
+If you came from the previous section [Deploy EC2 (Part 1)](/validate/setup-guides/aws/createEC2) you should already be in the Compute section in the correct Region as your future Instance type. Skip to [Select Key Pairs](#select-key-pairs)
 :::
 
 Click on the `Services` button to start our process.
@@ -75,7 +75,7 @@ Choose the option EC2 from the Compute section.
 Now, we'll need to pick a Region to host our EC2 instance.
 
 :::note
-You will need to choose a Region that supports either an `a` type or `t` type compute instance.  Please refer to the [Create EC2](./createEC2.md) for further details.
+You will need to choose a Region that supports either an `a` type or `t` type compute instance.  Please refer to the [Create EC2](/validate/setup-guides/aws/createEC2) for further details.
 
 Failure to have the correct Region chosen will cause you to repeat this section again in order to upload your SSH key to the correct Region.
 :::
