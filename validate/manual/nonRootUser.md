@@ -14,7 +14,7 @@ hide_table_of_contents: false
 At this point in the documentation, you should have successfully accessed your **new** VPS (Virtual Private Server) in the cloud of your choice.
 
 :::info GCP USERS
-If you are utilizing **GCP** (Google Cloud Platform) this section can be skipped, and you can proceed directly to the next section [installing depenencies](dependencies)
+If you are utilizing **GCP** (Google Cloud Platform) this section can be skipped, and you can proceed directly to the next section [installing dependencies](/validate/manual/dependencies)
 :::
 
 ## Best Practices
@@ -32,7 +32,7 @@ Our goal is to create a user that does not have **root** access. This will add a
 From your local system, log into (**create an SSH session**) your cloud instance's terminal, as **root**. 
 
 :::tip 
-You can review the **[Accessing your Node YouTube video](https://www.youtube.com/embed/7lhiuFtrOzU)** to remind yourself how to gain access to your node; alternatively, you may return to the previous section [mac](/nodes/resources/accessMac) or [windows](/nodes/resources/accessWin) for details.
+You can review the **[Accessing your Node YouTube video](https://www.youtube.com/embed/7lhiuFtrOzU)** to remind yourself how to gain access to your node; alternatively, you may return to the previous section [mac](/validate/resources/accessMac) or [windows](/validate/resources/accessWin) for details.
 :::
 
 Use your **Apple terminal**, **Window's PuTTY**, or your terminal application of choice.
@@ -59,7 +59,7 @@ New password:
 
 ### Enter password
 
-Enter in a **complex** [password](/nodes/resources/password), verify it, and **copy it into a safe location** so you don't forget.
+Enter in a **complex** [password](/validate/resources/password), verify it, and **copy it into a safe location** so you don't forget.
 
 ```
 New password:
@@ -177,7 +177,7 @@ It is now time to go back into your PuTTy session and update the username from *
 
 You will do this within the configuration sections of PuTTy.
 
-If you do not remember how to do this access this link [Access your cloud instance](/nodes/resources/accessWin) to refresh your memory.  
+If you do not remember how to do this access this link [Access your cloud instance](/validate/resources/accessWin) to refresh your memory.  
 
 While going through the steps again, substitute `nodeadmin` where ever you see `root`.
 :::
@@ -187,7 +187,7 @@ While going through the steps again, substitute `nodeadmin` where ever you see `
 
 You will change the **root@** to **nodeadmin@** in your ssh access expression from your Apple/Linux local terminal session.
 
-If you do not remember how to do this access this link select [Access your cloud instance](/nodes/resources/accessMac) to refresh your memory.
+If you do not remember how to do this access this link select [Access your cloud instance](/validate/resources/accessMac) to refresh your memory.
 
 While going through the steps again, substitute `nodeadmin` where ever you see `root`.
 :::
