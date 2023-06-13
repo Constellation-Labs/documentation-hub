@@ -22,7 +22,7 @@ This document will show you; through step-by-step instructions, how to upgrade y
 
 Tessellation is the code name for the protocol that runs on your Node.  It is the guts of how your Node is able to operate on the hypergraph or metagraph.  
 
-**[nodectl](./nodectl.md)** is a utility that runs on your Node and helps you automate some of the more complex processes that Tessellation requires to run efficiently. 
+**[nodectl](/validate/automated/nodectl)** is a utility that runs on your Node and helps you automate some of the more complex processes that Tessellation requires to run efficiently. 
 
 ## Quick Start
 
@@ -30,7 +30,7 @@ In order to upgrade your Node.
 1. Issue the command: `sudo nodectl upgrade`
 2. Follow the prompts.
 
-In order to upgrade **[nodectl](nodectl.md)**.
+In order to upgrade **[nodectl](/validate/automated/nodectl)**.
 1. Issue the command: `sudo nodectl upgrade_nodectl`
 2. Follow the prompts.
 
@@ -41,7 +41,7 @@ In order to upgrade **[nodectl](nodectl.md)**.
 
 This document assumes that you have nodectl with Tessellation already running on your Node.  
 
-If this is not the case, please review the [installation guide](./nodectl.md) `Getting Started`: to determine the type of installation required.
+If this is not the case, please review the [installation guide](/validate/automated/nodectl) `Getting Started`: to determine the type of installation required.
 
 ## Upgrade
 
@@ -64,11 +64,11 @@ There are `3` upgrade mechanisms regarding `nodectl`.
 
 Mechanisms `2` and `3` may include updating features of the VPS to facilitate functionality of your Node.
 
-Using **nodectl's** built-in [upgrade command](./nodectlCommands#upgrade_nodectl), you do not have to worry about the differences mentioned when upgrading nodectl.  nodectl is smart enough to guide you through the upgrade process.  It will know if you need any extra steps to complete. 
+Using **nodectl's** built-in [upgrade command](/validate/automated/nodectlCommands#upgrade_nodectl), you do not have to worry about the differences mentioned when upgrading nodectl.  nodectl is smart enough to guide you through the upgrade process.  It will know if you need any extra steps to complete. 
 
 These steps include:
   - Is it safe to upgrade from the current version of nodectl your Node is running to the latest version?  
-    - There is an [upgrade path](./nodectlUpgradePath) that might need to be taken; dependent on, how long you have waited to upgrade your Node.
+    - There is an [upgrade path](/validate/automated/nodectlUpgradePath) that might need to be taken; dependent on, how long you have waited to upgrade your Node.
   - Does your Node require any extra upgrade steps to complete the nodectl upgrade for effective operation.
 
 ### Upgrade to new version of nodectl
@@ -87,7 +87,7 @@ In the **unlikely event** you need to do a manual upgrade of nodectl, it will be
 
 nodectl is smart enough to attempt to determine if there is an upgrade available. By reaching out to an external source (*scrapping the nodectl repository on GitHub* ) nodectl will check for the latest upgrade.
 
-As an example (*the list command is unrelated to this document's purpose*), a [`sudo nodectl list`](./nodectlCommands#list) command was issued, and a **new** version on nodectl was detected.
+As an example (*the list command is unrelated to this document's purpose*), a [`sudo nodectl list`](/validate/automated/nodectlCommands#list) command was issued, and a **new** version on nodectl was detected.
 
 *The full output of the list command was omitted*.
 <MacWindow>
@@ -100,12 +100,12 @@ nodeadmin@Constellation-Node:~# sudo nodectl list<br />
 In the above output, it shows us that our Node is not up-to-date and the latest version available is `v2.7.1`.
 
 #### Upgrade nodectl via nodectl
-If nodectl is already [installed](nodectl.md) on your system, we can issue the `upgrade_nodectl` command to attempt to upgrade.
+If nodectl is already [installed](/validate/automated/nodectl) on your system, we can issue the `upgrade_nodectl` command to attempt to upgrade.
 
 ```
 sudo nodectl upgrade_nodectl
 ```
-When we execute the [`upgrade_nodectl`](./nodectlCommands#upgrade_nodectl) command; in this example below, the auto_restart feature (*The [auto_restart](nodectlCommands#auto_restart) command is unrelated this document's purpose.*) was enabled.  Since nodectl cannot upgrade while the `auto_restart` feature is actively running, nodectl will disable the feature auto_magically for us.
+When we execute the [`upgrade_nodectl`](/validate/automated/nodectlCommands#upgrade_nodectl) command; in this example below, the auto_restart feature (*The [auto_restart](/validate/automated/nodectlCommands#auto_restart) command is unrelated this document's purpose.*) was enabled.  Since nodectl cannot upgrade while the `auto_restart` feature is actively running, nodectl will disable the feature auto_magically for us.
 
 nodectl will detect that there is a new version and ask us if we are sure we want to continue?  We can say **`y`** here.
 
@@ -144,7 +144,7 @@ Because nodectl cannot upgrade while it is running, nodectl will:
 
 In this example:
 - We do not need to upgrade our Node.  
-- We have `auto_restart` enabled in the [configuration](./nodectlConfig).
+- We have `auto_restart` enabled in the [configuration](/validate/automated/nodectlConfig).
 
 nodectl will let us know, and request we press <kbd>enter</kbd> to continue without an upgrade and then restart the `auto_restart` feature.
 
@@ -164,7 +164,7 @@ nodectl will let us know, and request we press <kbd>enter</kbd> to continue with
   Press [ENTER] to continue...<br />
 </MacWindow>
 
-The [auto_restart](./nodectlCommands#auto_restart) service will restart.
+The [auto_restart](/validate/automated/nodectlCommands#auto_restart) service will restart.
 
 <MacWindow>
   This version of nodectl DOES NOT require an upgrade be performed<br />
@@ -201,7 +201,7 @@ It is **highly** recommended to **upgrade** your Node when requested.  Failure t
 
 ### Manual Installation
 Follow the release notes instructions for the release you desire to install
-> [nodectl releases](https://github.com/netmet1/constellation_nodectl/releases)
+> [nodectl releases](https://github.com/StardustCollective/nodectl/releases)
 
 ### Upgrade Node to work with new nodectl features
 
@@ -260,7 +260,7 @@ This document will assume that we are running the upgrade in interactive mode.
 ### Confirm Upgrade
 After execution of the `sudo nodectl upgrade` command, the screen will clear and you will be requested to confirm the upgrade you requested.
 
-In this example, the [auto restart](nodectlCommands.md#auto-restart) feature was enabled.  In order to upgrade, we will need to disable this feature prior to upgrading.  If auto restart is running, it will conflict with the requests to start and stop services.  **Don't worry**, nodectl will disable and re-enable the `auto_restart` feature for us.
+In this example, the [auto restart](/validate/automated/nodectlCommands#auto-restart) feature was enabled.  In order to upgrade, we will need to disable this feature prior to upgrading.  If auto restart is running, it will conflict with the requests to start and stop services.  **Don't worry**, nodectl will disable and re-enable the `auto_restart` feature for us.
 
 We can choose **y** here.
 
@@ -332,7 +332,7 @@ Entering an invalid version may result in an inoperable Node.  In the event this
 ### Upgrade in progress
 nodectl will now take over and start the upgrade process.  You are free to sit back, relax and watch the progress.  
 
-Later in the upgrade ( unless the `-ni` [switch](./nodectlCommands.md#what-is-a-switch-and-parameter) was chosen ) you will be prompted to answer some questions related to the upgrade.
+Later in the upgrade ( unless the `-ni` [switch](/validate/automated/nodectlCommands#what-is-a-switch-and-parameter) was chosen ) you will be prompted to answer some questions related to the upgrade.
 
 We recommend you don't leave it unattended to avoid timeouts, missed possible errors, or user interactive prompts that will require your attention.
 
@@ -362,7 +362,7 @@ It will also identify the service name (Debian OS level) `node_l0` and `node_l1`
   Stop request initiated [node_l0] .............. complete <br />  
 </MacWindow>
 
-nodectl will issue a [`status command`](./nodectlCommands#status) against the Node to confirm the results of the stoppage.
+nodectl will issue a [`status command`](/validate/automated/nodectlCommands#status) against the Node to confirm the results of the stoppage.
 
 :::info
 Formatting of the window example is misrepresented due to formatting.  The display on your node will be better represented.
@@ -525,7 +525,7 @@ We will also update any access permission lists (*seed lists*) that need to matc
 :::note
 If there is not a *seed list* present for a particular profile, the fetch will be disabled and skipped.  You have the ability to configure this within the nodectl configuration file.
 
-[`sudo nodectl configure`](./nodectlCommands.md#configure)
+[`sudo nodectl configure`](/validate/automated/nodectlCommands#configure)
 :::
 
 You can sit back and relax as nodectl continues to upgrade your Node for you.
@@ -588,7 +588,7 @@ We will find our Node is `ReadytoJoin`.
 
 The configured `layer0` profile will rejoin the network.  In this case the profile `dag-l0` is configured as the layer0 and will attempt to join.
 
-In this [upgrade](./nodectlCommands.md#upgrade) (document/manual) we did **not** choose the `-w` ([watch](./nodectlCommands#upgrade)) mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, nodectl will skip watching for the remaining peers to connect and simply and safely continue the upgrade process.
+In this [upgrade](/validate/automated/nodectlCommands#upgrade) (document/manual) we did **not** choose the `-w` ([watch](/validate/automated/nodectlCommands#upgrade)) mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, nodectl will skip watching for the remaining peers to connect and simply and safely continue the upgrade process.
 
 It is necessary that all peers on the network learn about all other peers on the network via the gossip mechanisms in the **Constellation Network's** DAG protocol setup.  However, it is not important to wait for all connections to be established, to complete the upgrade.
 
@@ -657,7 +657,7 @@ If our Node is not properly in `Ready` state on `layer0`, nodectl will patiently
 
 nodectl will now attempt to join the `dag-l1`.  
 
-As mentioned above, in this [upgrade](./nodectlCommands.md#upgrade) (document/manual) we did **not** choose the `-w` ([watch](./nodectlCommands#upgrade)) mode.  nodectl will not wait for all peers to connect, as it is not necessary to complete the upgrade.
+As mentioned above, in this [upgrade](/validate/automated/nodectlCommands#upgrade) (document/manual) we did **not** choose the `-w` ([watch](/validate/automated/nodectlCommands#upgrade)) mode.  nodectl will not wait for all peers to connect, as it is not necessary to complete the upgrade.
 
 <MacWindow>
   ---------- * Joining dag-l1 * ----------<br />
@@ -700,7 +700,7 @@ nodectl will complete the process.
 
 ### Restart auto restart feature
 
-Since the [auto restart](./nodectlCommands.md#auto_restart) feature; in this example, was **enabled**, the auto restart feature will re-enable at the end of the upgrade for us.
+Since the [auto restart](/validate/automated/nodectlCommands#auto_restart) feature; in this example, was **enabled**, the auto restart feature will re-enable at the end of the upgrade for us.
 
 <MacWindow>
   node restart service started... 

@@ -18,12 +18,12 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Understanding the Upgrade Path
 
-Utilizing the [upgrade_path](./nodectlCommands.md#upgrade_path) command, you can review what versions of nodectl you need upgrade to **before** reaching the final version you are attempting to reach.  
+Utilizing the [upgrade_path](/validate/automated/nodectlCommands#upgrade_path) command, you can review what versions of nodectl you need upgrade to **before** reaching the final version you are attempting to reach.  
 
 It will offer you information regarding what the `upgrade path` is to properly advance your way, through versions of nodectl from the current version your Node is running to the latest version.
 
 :::danger IMPORTANT
-Regardless of what version you are on.  It is **HIGHLY RECOMMENDED** and **REQUIRED** to download the next version in line with `path` shown with the [upgrade_path](./nodectlCommands.md#upgrade_path) command (available after version 2), and regardless of... to utilize the [upgrade command](./nodectlCommands.md#upgrade) after the download is completed, for each version you download.
+Regardless of what version you are on.  It is **HIGHLY RECOMMENDED** and **REQUIRED** to download the next version in line with `path` shown with the [upgrade_path](/validate/automated/nodectlCommands#upgrade_path) command (available after version 2), and regardless of... to utilize the [upgrade command](/validate/automated/nodectlCommands#upgrade) after the download is completed, for each version you download.
 :::
 
 ## Current Upgrade Path Table
@@ -64,7 +64,7 @@ You will need to start by finding the closest version to your version, that is g
 :::danger IMPORTANT
 **Version 1.12.0** to **version 2.7.1** will require a special **migration** process.
 
-This migration can be accomplished by following the step-by-step process via the [migration tutorial](nodectlMigrateV1.md).
+This migration can be accomplished by following the step-by-step process via the [migration tutorial](/validate/automated/nodectlMigrateV1).
 :::
 
 End of document

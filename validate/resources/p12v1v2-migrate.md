@@ -44,8 +44,8 @@ Alternatively, you can install the proper components on your own and follow the 
 
 If you already have nodectl running on your VPS, you only need upload your `version 1` p12 file via the **restore** process.
 
-- [restore p12 from mac](../resources/p12backup-mac#restore-p12-file)
-- [restore p12 from windows](../resources/p12backup-win#restoring-your-p12)
+- [restore p12 from mac](/validate/resources/p12backup-mac#restore-p12-file)
+- [restore p12 from windows](/validate/resources/p12backup-win#restoring-your-p12)
 
 :::danger
 If utilizing an existing ( *or running* ) **Validator Node**, please make sure you do not overwrite your existing **p12** private key file or settings.
@@ -54,9 +54,9 @@ If utilizing an existing ( *or running* ) **Validator Node**, please make sure y
 #### If you do not have nodectl installed...
 
 Simply:
-  - [Build a VPS](../validator/get_started.md)
+  - [Build a VPS](/validate/validator/getting-started)
   - Upload the `version 1` p12 file for conversion via the **restore** process (above).
-  - Follow the instructions to [install nodectl](../automated/nodectlInstall.md) 
+  - Follow the instructions to [install nodectl](/validate/automated/nodectlInstall) 
   
   :::info Side Note
   We will not be using this VPS as a **Validator Node**.  The purpose of installing nodectl is just a simply way to add all the necessary components/tools necessary to convert our **p12** `version 1` to `version 2`. 
@@ -72,7 +72,7 @@ You only need to verify that you have at least `30Gb` of hard drive space (disk)
 
 ### Setup manually
 
-Please follow the [manual](../manual/getting-started-manual.md) instructions. 
+Please follow the [manual](/validate/manual/manual-install-getting-started) instructions. 
 
 :::note
 If not planning on using the VPS as a **Validator Node**; rather, just to convert your p12 file from `version 1` to `version 2`, you only need to use a simple VPS instance and allow for at least `30Gb` of hard drive space (disk)
@@ -92,7 +92,7 @@ Before we continue, it is important to have all our information in place to avoi
 
 #### What do we need?
 - Option 1
-  - **`nodectl`** [installed](../automated/nodectlInstall.md)
+  - **`nodectl`** [installed](/validate/automated/nodectlInstall)
 - Option 2
   - `java` installed
   - `haveged` installed
@@ -101,7 +101,7 @@ Before we continue, it is important to have all our information in place to avoi
 
 #### What we also need?
 
-- p12 `version 1` private key file uploaded from our [mac](../resources/p12backup-mac#restore-p12-file) or [windows](../resources/p12backup-win#restoring-your-p12) system.
+- p12 `version 1` private key file uploaded from our [mac](/validate/resources/p12backup-mac#restore-p12-file) or [windows](/validate/resources/p12backup-win#restoring-your-p12) system.
 
 - Our **p12** details
   - `keystore` passphrase &rarr; `CL_KEYSTORE`
@@ -220,7 +220,7 @@ Your **p12** file should now be migrated from `version 1` to `version 2`.  Place
 
 You should now test your **new** `version 2` p12 private key file.  You can do this by: 
 - Connecting to your appropriate Constellation Network cluster (hypergraph or metagraph). 
-- [Exporting your private key](../automated/nodectlCommands#export_private_key).
+- [Exporting your private key](/validate/automated/nodectlCommands#export_private_key).
 - Utilizing your **p12** private key file with whatever process you require. 
 
 #### Optional
@@ -229,13 +229,10 @@ Rename your new `version 2` p12 file to either the original name (dropping the `
 mv /home/nodeadmin/tessellation/myconstellation_v2.p12 /home/nodeadmin/tessellation/myconstellation.p12
 ```
 
-After completing the connection tests, exporting your [private key](../automated/nodectlCommands#export_private_key) and verifying that you have full access to your wallet... You can **destroy** your original **p12** so that no one can get a hold of it.
+After completing the connection tests, exporting your [private key](/validate/automated/nodectlCommands#export_private_key) and verifying that you have full access to your wallet... You can **destroy** your original **p12** so that no one can get a hold of it.
 
 #### nodectl users
 
 If you did **not** rename your `v2` **p12** back to the original **p12** filename used before the migration ( and do not intend to ), you should make sure nodectl is aware of the p12 file name change.
 
-You can update the [configuration](../automated/nodectlConfig.md) by issuing a [`sudo nodectl configure`](../automated/nodectlCommands#configure) on your Node with nodectl installed.
-
-
-
+You can update the [configuration](/validate/automated/nodectlConfig) by issuing a [`sudo nodectl configure`](/validate/automated/nodectlCommands#configure) on your Node with nodectl installed.

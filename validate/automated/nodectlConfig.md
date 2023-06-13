@@ -49,7 +49,7 @@ Currently, nodectl holds predefined configurations that were recommended by the 
 
 As nodectl becomes more adopted by the community, other ecosystem communities, companies developing a metagraph on Constellation Networks protocol, or other entity may submit their desired configuration to this project for addition and adoption.
 
-As new pre-configured profiles are submitted, they will be able to be appended to the Node's configuration via the [configure command](./nodectlCommands.md#configure).
+As new pre-configured profiles are submitted, they will be able to be appended to the Node's configuration via the [configure command](/validate/automated/nodectlCommands#configure).
 
 ### Custom
 
@@ -57,7 +57,7 @@ You may encounter situations when the Metagraph you are attempting to connect to
 
 You may encounter situations where you need to adjust your Node's Metagraph settings to meet your requirements (advanced users).
 
-Through customization, you can build your own profile or tweak your own settings via the [configure command](./nodectlCommands.md#configure).
+Through customization, you can build your own profile or tweak your own settings via the [configure command](/validate/automated/nodectlCommands#configure).
 
 ## Global Parameters
 
@@ -66,7 +66,7 @@ Outside of the profiles, nodectl also has other settings that will relate to all
 As nodectl matures, other features may be added that will enhance the profiles effectiveness.
 
 Currently we can setup the following global sections:
-- [auto restart](nodectlCommands.md#auto-restart)
+- [auto restart](/validate/automated/nodectlCommands#auto_restart)
 - global p12 section
 
 ## cn-config.yaml
@@ -76,7 +76,7 @@ We will now go through the different sections of the `cn-config.yaml` file.
 The cn-config.yaml file holds all the customizable parameters of your Node from the profiles to the global settings.
 
 :::success IMPORTANT
-Unless you are an advanced Node Operator, it is strongly advised not to modify this file directly.  You should use nodectl's [configure command](./nodectlCommands.md#configure) instead.
+Unless you are an advanced Node Operator, it is strongly advised not to modify this file directly.  You should use nodectl's [configure command](/validate/automated/nodectlCommands#configure) instead.
 :::
 
 ## top of file
@@ -264,7 +264,7 @@ Key | Value | Description | Required |
 | key_location | `<full_path>` \| global | Directory path to the `p12` file that will be associated with this profile. | Yes |
 | p12_name | `<string>` \| global | Name of the `p12` file that will be associated with this profile. | Yes |
 | wallet_alias | `<string>` \| global | The alias supplied to the `p12` to be associated with this profile, during its creation. | Yes |
-| passphrase | `<string>` \| global | The passphrase that will unlock the `p12` file that is associated with this profile. **Do not include escape sequences (double backslashs), section signs, single quotes, or double quotes in a passphrase, AND please enclose the definition passphrase within quotes in the configuration yaml.**  The warning inside this message is only for those that are manually editing the cn-config.yaml file, which is NOT recommended.  Instead use the [configure command](nodectlCommands.md#configure) | Yes |
+| passphrase | `<string>` \| global | The passphrase that will unlock the `p12` file that is associated with this profile. **Do not include escape sequences (double backslashs), section signs, single quotes, or double quotes in a passphrase, AND please enclose the definition passphrase within quotes in the configuration yaml.**  The warning inside this message is only for those that are manually editing the cn-config.yaml file, which is NOT recommended.  Instead use the [configure command](/validate/automated/nodectlCommands#configure) | Yes |
 
 :::note Hiding Passphrase
 You are able to hide the passphrase within the `cn-config.yaml` file.  If this is done, when the `passphrase` is not supplied at the command line, nodectl will prompt you for all passphrases prior to executing the command requested (if the passphrase is required).
@@ -272,7 +272,7 @@ You are able to hide the passphrase within the `cn-config.yaml` file.  If this i
 You can supply `none` on the passphrase lines to hide your `p12`'s passphrase.
 :::
 :::warning
-If the passphrase is not supplied within the `cn-config.yaml`, you will not be able to access the [auto_restart](nodectlCommands.md#auto-restart) functionality of nodectl.
+If the passphrase is not supplied within the `cn-config.yaml`, you will not be able to access the [auto_restart](/validate/automated/nodectlCommands#auto_restart) functionality of nodectl.
 :::
 
 ## profile (continued)
@@ -340,7 +340,7 @@ nodectl has a *special* feature that includes:
   - auto restart
   - auto upgrade
 
-You can enable the auto restart feature that will restart your Node if it detects that it fell off the Hypergraph or Metagraph. See the [auto restart command](./nodectlCommands.md#auto-restart).
+You can enable the auto restart feature that will restart your Node if it detects that it fell off the Hypergraph or Metagraph. See the [auto restart command](/validate/automated/nodectlCommands#auto_restart).
 
 ```
   auto_restart:
@@ -373,7 +373,7 @@ Key | Value | Description | Required |
 | key_location | `<full_path>` | Directory path to the `p12` file that will be associated with this profile. | Yes |
 | p12_name | `<string>` | Name of the `p12` file that will be associated with this profile. | Yes |
 | wallet_alias | `<string>` | The alias supplied to the `p12` to be associated with this profile, during its creation. | Yes |
-| passphrase | `<string>` | The passphrase that will unlock the `p12` file that is associated with this profile. **Do not include escape sequences (double backslashs), section signs, single quotes, or double quotes in a passphrase, AND please enclose the definition passphrase within quotes in the configuration yaml.**  The warning inside this message is only for those that are manually editing the cn-config.yaml file, which is NOT recommended.  Instead use the [configure command](nodectlCommands.md#configure) | Yes |
+| passphrase | `<string>` | The passphrase that will unlock the `p12` file that is associated with this profile. **Do not include escape sequences (double backslashs), section signs, single quotes, or double quotes in a passphrase, AND please enclose the definition passphrase within quotes in the configuration yaml.**  The warning inside this message is only for those that are manually editing the cn-config.yaml file, which is NOT recommended.  Instead use the [configure command](/validate/automated/nodectlCommands#configure) | Yes |
 
 :::note Hiding Passphrase
 You are able to hide the passphrase within the `cn-config.yaml` file.  If this is done, when the `passphrase` is not supplied at the command line, nodectl will prompt you for all passphrases prior to executing the command requested (if the passphrase is required).
@@ -381,5 +381,5 @@ You are able to hide the passphrase within the `cn-config.yaml` file.  If this i
 You can supply `none` on the passphrase lines to hide your `p12`'s passphrase.
 :::
 :::warning
-If the passphrase is not supplied within the `cn-config.yaml`, you will not be able to access the [auto_restart](nodectlCommands.md#auto-restart) functionality of nodectl.
+If the passphrase is not supplied within the `cn-config.yaml`, you will not be able to access the [auto_restart](/validate/automated/nodectlCommands#auto_restart) functionality of nodectl.
 :::

@@ -18,7 +18,7 @@ It is of _vital_ importance to keep a cold backup of your P12 file.  The term **
 
 ## Backing up your P12
 
-Log into your **local system** and open a [terminal session](/nodes/resources/accessMac).
+Log into your **local system** and open a [terminal session](/validate/resources/accessMac).
 
 ### Create directory
 

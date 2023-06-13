@@ -22,7 +22,7 @@ We are now ready to create our Tessellation service!
 From your **local system**, log into your **cloud instance's** terminal as **nodeadmin** using your Apple terminal, Window's PuTTY, or your terminal application of choice.
 
 :::note
-You can remind yourself how to access your VPS here for [Macintosh](/nodes/resources/accessMac) or [Windows](/nodes/resources/accessWin).
+You can remind yourself how to access your VPS here for [Macintosh](/validate/resources/accessMac) or [Windows](/validate/resources/accessWin).
 :::
 
 ### Update node
@@ -158,7 +158,7 @@ In order to start the `service` properly, you will need to supply your `p12` pas
 
 As an **alternative** we will **not** automatically start the service on system boot.  We will add to our list of `to-dos` to manually start the process and supply the `passphrase` on each restart.
 
-Constellation Network [nodectl](../nodectl/install) `command line utility` will ease this process as a **better** solution.
+Constellation Network [nodectl](/validate/automated/nodectl) `command line utility` will ease this process as a **better** solution.
 :::
 
 

@@ -15,7 +15,7 @@ It is of _vital_ importance to keep a cold backup of your P12 file.  The term **
 
 ## Backing up your P12
 
-Log into your **local system** and open an [Explorer session](/nodes/resources/accessWin).
+Log into your **local system** and open an [Explorer session](/validate/resources/accessWin).
 
 ### Create directory
 

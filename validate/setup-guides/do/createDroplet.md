@@ -17,7 +17,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Digital Ocean - Droplet
 
-A [virtual private machine (VPS)](../../validator/vps) inside Digital Ocean's cloud service is called a **droplet**.
+A [virtual private machine (VPS)](/validate/validator/vps) inside Digital Ocean's cloud service is called a **droplet**.
 
 You may access our YouTube video titled **Create Digital Ocean Droplet**, for a detailed visual learning experience.
 
@@ -35,7 +35,7 @@ If you choose the watch the YouTube Series, it is highly recommended to watch th
 
 ## SSH Key Generation Series - **Video 4a** by NetMet.
 
-Video 4a describes building a VPS on Digital Ocean.  You should have your [SSH keys created](../../validator/ssh-keys) prior to initialing the creation and deployment of your Constellation Network Validator Node on Digital Ocean.
+Video 4a describes building a VPS on Digital Ocean.  You should have your [SSH keys created](/validate/validator/ssh-keys) prior to initialing the creation and deployment of your Constellation Network Validator Node on Digital Ocean.
 
 Please **like** and **subscribe** to support NetMet's work, and be alerted to new content specifically applied to Constellation Network in the future.
 
@@ -44,7 +44,7 @@ Please **like** and **subscribe** to support NetMet's work, and be alerted to ne
 ---
 
 ## Build Droplet
-Now that we are all [signed up on Digital Ocean](./account), we can begin creating our Droplet to run our Node. After successfully logging in to Digital Ocean, you should find yourself on their main Web console page.
+Now that we are all [signed up on Digital Ocean](/validate/setup-guides/do/account), we can begin creating our Droplet to run our Node. After successfully logging in to Digital Ocean, you should find yourself on their main Web console page.
 
 The `Create` dropdown list selector is located in the top right corner of the page.
 
@@ -107,7 +107,7 @@ Our goal is to allow our system enough fire power to build a nice PRO score that
 
 ### Choose instance resources
 
-As stated in the [Hardware Requirements](../../validator/specs)
+As stated in the [Hardware Requirements](/validate/validator/specs)
 
 ![](/img/validator_nodes/node-do-sizing2.png)
 
@@ -120,4 +120,4 @@ We do not need additional storage.  We will **skip** this section.
 
 ## Next Steps
 
-Next, we will work on uploading our SSH Key Pair which was created [here](../../validator/sshkeyExplained.md).
+Next, we will work on uploading our SSH Key Pair which was created [here](/validate/validator/ssh-keys).

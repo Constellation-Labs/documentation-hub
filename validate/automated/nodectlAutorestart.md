@@ -18,15 +18,15 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 nodectl offers an special feature called auto restart (*auto_restart*).
 
-This feature will detect if your Node is not properly connected to the Hypergraph and/or Metagraphs, as detected in the [configuration](./nodectlConfig.md) of nodectl.
+This feature will detect if your Node is not properly connected to the Hypergraph and/or Metagraphs, as detected in the [configuration](/validate/automated/nodectlConfig) of nodectl.
 
-Auto Restart command reference can be found [here](./nodectlCommands#auto_restart).
+Auto Restart command reference can be found [here](/validate/automated/nodectlCommands#auto_restart).
 
 ## What is Auto Upgrade?
 
 The auto upgrade (*auto_upgrade*) command is an extension of the auto_restart feature.  It works in conjunction with the auto restart.
 
-In the event that nodectl detects that your Node is not properly connected to the Hypergraph and/or Metagraphs, as configured in the [configuration](./nodectlConfig.md), it will not only attempt to get your Node back online; additionally, it will also make sure that the version of Tessellation is also up to date by upgrading your Node automatically.
+In the event that nodectl detects that your Node is not properly connected to the Hypergraph and/or Metagraphs, as configured in the [configuration](/validate/automated/nodectlConfig), it will not only attempt to get your Node back online; additionally, it will also make sure that the version of Tessellation is also up to date by upgrading your Node automatically.
 
 :::warning
 `auto_upgrade` requires that `auto_restart` is also enabled.
@@ -43,9 +43,9 @@ Enable `auto_restart` in the configuration, or enable `auto_restart` and `auto_u
 This method will also add in the capability to automatically re-enable the `auto_restart` feature in the event it was disabled.
 
 :::info Informational
-For some specific commands ([see command reference.](./nodectlCommands#auto_restart)) the `auto_restart` feature must be disabled first.  
+For some specific commands ([see command reference.](/validate/automated/nodectlCommands#auto_restart)) the `auto_restart` feature must be disabled first.  
 
-If `auto_restart` is enabled in the [configuration](./nodectlConfig.md); once a command that requires `auto_restart` to be disabled is executed, `auto_restart` will automatically disable itself.  
+If `auto_restart` is enabled in the [configuration](/validate/automated/nodectlConfig); once a command that requires `auto_restart` to be disabled is executed, `auto_restart` will automatically disable itself.  
 
 Once the command (*that required auto_restart to be disabled*) completes, nodectl will be restart the `auto_restart` feature again automatically.
 :::
@@ -53,10 +53,10 @@ Once the command (*that required auto_restart to be disabled*) completes, nodect
 #### Steps to configure `auto_restart` in the configuration:
 
 1. Connect to your Node
-   - Connect to a [mac](../resources/accessMac.md).
-   - Connect to [windows](../resources/accessWin.md).
+   - Connect to a [mac](/validate/resources/accessMac).
+   - Connect to [windows](/validate/resources/accessWin).
 
-2. Enter the [configuration](./nodectlConfig.md) using the [configure](./nodectlCommands#configure) command.
+2. Enter the [configuration](/validate/automated/nodectlConfig) using the [configure](/validate/automated/nodectlCommands#configure) command.
 
 :::info Suggestion
 In the beginning, it is better not to enter into advanced mode.  This will offer you more detailed explanations of each aspect of the configuration.  
@@ -236,4 +236,4 @@ sudo nodectl auto_restart disable
 sudo nodectl auto_restart restart
 sudo nodectl auto_restart enable --auto_upgrade
 ```
-see [auto_restart](./nodectlCommands#auto_restart) or [auto_upgrade](./nodectlCommands#auto-upgrade) command reference for more details.
+see [auto_restart](/validate/automated/nodectlCommands#auto_restart) or [auto_upgrade](/validate/automated/nodectlCommands#auto-upgrade) command reference for more details.

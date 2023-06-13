@@ -16,7 +16,7 @@ You are now ready to prepare your node to run **`Tessellation`**.
 ## Instructions
 
 ### Log into your node
-Refer to the remote access guides for [Macintosh](/nodes/resources/accessMac) or [Windows](/nodes/resources/accessWin).
+Refer to the remote access guides for [Macintosh](/validate/resources/accessMac) or [Windows](/validate/resources/accessWin).
 
 ### Update node
 

@@ -116,7 +116,7 @@ We will leave the `SSH` as our Type, and then begin to enter in our IP address (
 As you fill it in, the search box should populate and add the `/32` for us. Select (click) the option so it populates just below the search box.
 
 :::info Previous Launch Wizard
-In the [EC2 (Part 1)](createEC2.md) we had an optional section to associate your local system's IP address. 
+In the [EC2 (Part 1)](/validate/setup-guides/aws/createEC2) we had an optional section to associate your local system's IP address. 
 
 If this was followed, your SSH connection may already be set correctly
 :::
