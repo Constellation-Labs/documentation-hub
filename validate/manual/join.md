@@ -24,7 +24,7 @@ Our example will join the **testnet 2.0** network.
 From your **local system**, log into your **cloud instance's** terminal as **nodeadmin** using your Apple terminal, Window's PuTTY, or your terminal application of choice.
 
 :::note NOTE
-You can remind yourself how to access your VPS here for [Macintosh](/nodes/resources/accessMac) or [Windows](/nodes/resources/accessWin).
+You can remind yourself how to access your VPS here for [Macintosh](/validate/resources/accessMac) or [Windows](/validate/resources/accessWin).
 :::
 
 ### Update your node
