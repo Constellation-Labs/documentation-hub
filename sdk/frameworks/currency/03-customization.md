@@ -1,6 +1,6 @@
 ---
-title: Customizations
-sidebar_label: Customizations
+title: Customization
+sidebar_label: Customization
 hide_table_of_contents: false
 ---
 
