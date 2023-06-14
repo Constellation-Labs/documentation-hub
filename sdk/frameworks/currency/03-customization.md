@@ -1,6 +1,6 @@
 ---
-title: Extend
-sidebar_label: Extend
+title: Customization
+sidebar_label: Customization
 hide_table_of_contents: false
 ---
 
