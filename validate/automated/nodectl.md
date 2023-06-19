@@ -17,7 +17,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## What is nodectl
 
-nodectl pronounced node "c" "t" "l", node-kuttle, or node control.
+nodectl pronounced node "c" "t" "l", node-cuttle, or node control.
 
 The purpose of this utility is to make things easier on you.  
 

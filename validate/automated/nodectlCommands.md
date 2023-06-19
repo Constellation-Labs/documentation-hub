@@ -1351,7 +1351,7 @@ You should use an unused port between `1024` and `65535`.
 
 | [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<port number>` | Which port number would you like to change your SSH port for use? | **required** |
+| --port | `<port number>` | Which port number would you like to change your SSH port for use? | **required** |
 
 > #### Examples
 - Help file
@@ -1360,7 +1360,7 @@ sudo nodectl change_ssh_port help
 ```
 - Change SSH TCP port to port `4242`
 ```
-sudo nodectl change_ssh_port -p 4242
+sudo nodectl change_ssh_port --port 4242
 ```
 
 
