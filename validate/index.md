@@ -19,15 +19,15 @@ import DocsCards from '@components/global/DocsCards';
 In this tutorial, Node Operators will learn how to build and manage a validator node.
 
 <DocsCards>
-  <DocsCard header="Build a VPS" href="validator/getting-started" img="/img/validator_nodes/cloud.png">
+  <DocsCard header="Build a VPS" href="/validate/validator/getting-started" img="/img/validator_nodes/cloud.png">
     <p>Setup a Virtual Private Server (VPS) in the cloud including SSH keys; to install your Constellation Node.</p>
   </DocsCard>
 
-  <DocsCard header="NODECTL User Guide" href="automated/nodectl" img="/img/validator_nodes/nodes_logo.jpg">
+  <DocsCard header="NODECTL User Guide" href="/validate/automated/nodectl" img="/img/validator_nodes/nodes_logo.jpg">
     <p>Turn your VPS into a Constellation Node using Constellation Network's <b>nodectl</b> utility.</p>
   </DocsCard>
 
-  <DocsCard header="Manual Installation" href="manual/manual-install-getting-started" img="/img/validator_nodes/hard_hat.png">
+  <DocsCard header="Manual Installation" href="/validate/manual/manual-install-getting-started" img="/img/validator_nodes/hard_hat.png">
     <p>ADVANCED: <b>Manually</b> setup a Node from a clean Debian installation.</p>
   </DocsCard>
 </DocsCards>
