@@ -1901,6 +1901,12 @@ sudo nodectl logs -p <profile_name> <log_name> [-g <grep_value>] [-f]
 ```
 sudo nodectl logs -p dag-l0 -l app -g error -f
 ```
+- Request to view the nodectl logs 
+  - *The nodectl log is a command request that carries an exception.  This request to view the logs does not take the `-p <profile>` switch.*
+
+```
+sudo nodectl logs -l nodectl
+```
 
 
 
