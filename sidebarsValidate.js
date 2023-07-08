@@ -95,10 +95,11 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Features',
+          label: 'Resources',
           items: [
-            'automated/nodectlAutorestart',
             'automated/nodectlCommands',
+            'automated/nodectlAutorestart',
+            'automated/nodectlProfileChange',
           ],
         },
         'automated/nodectlConfig',
@@ -131,7 +132,7 @@ module.exports = {
         'resources/p12backup-mac',
         'resources/p12backup-win',        
         'resources/sshconfig',
-        'resources/p12v1v2-migrate'        
+        'resources/p12v1v2-migrate',      
       ],
     },
   ],
