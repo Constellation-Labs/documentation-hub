@@ -38,7 +38,16 @@ You have a Node up and running with an existing configuration.
 
 ### Before we begin
 
-*The ip address and pem file are fictitious, use your own Node IP and credentials.*
+The ip address and pem file are fictitious, use your own Node IP and credentials.
+
+:::warning Important
+During the process of building a new profile, the configuration validator will run against your new configuration several times prior to completing the build.  You may see a **`CONFIGURATION DID NOT VALIDATE`** message; however, you can **safely** ignore this because nodectl will correct the validation error before the build process is completed.  
+
+nodectl will show the following message below the validation issues...
+<MacWindow>
+Issue found can safely be ignored for new configurations.
+</MacWindow>
+:::
 
 ### Access Your Node
 
@@ -255,6 +264,51 @@ We will be offered the option to review the newly created configuration.  You ma
 
 <MacWindow>
   Review the created configuration? [y]: 
+</MacWindow>
+
+### Old Profiles
+
+:::warning 
+You may be presented with a **`CONFIGURATION FILE DID NOT VALIDATE`** message.  
+
+This can be safely ignored.  nodectl will correct the issue prior to completing the new configuration build.
+
+<MacWindow>
+Issue found can safely be ignored for new configurations.
+</MacWindow>
+:::
+
+nodectl will attempt to clean up old profiles that are not found in the configuration `cn-config.yaml` file.
+
+In the event there are **not** old profiles that need to cleaned up, you will not see this message.
+
+If presented to us, we can say <kbd>y</kbd> and <kbd>enter</kbd> here.
+
+<MacWindow>
+  Abandoned [dag-l0] profile.................. found<br />               
+  Abandoned [dag-l1] profile.................. found<br />                      
+  It is recommended to clean up old profiles to:<br />  
+    - Avoid conflicts<br />  
+    - Avoid undesired Node behavior<br />  
+    - Free up disk<br />  
+<br />  
+  Remove old profiles? [y]: y<br />  
+</MacWindow>
+
+If you are making a change to a profile; however, using the **same** profile name, nodectl will check for abandoned snapshots and request that you remove them.  If is highly recommended to remove irrelevant snapshots! If you are not overwriting an existing profile, you will not see this message.
+
+If presented with this message, we can say <kbd>y</kbd> and <kbd>enter</kbd> here.
+<MacWindow>
+  An existing snapshot directory structure exists<br />
+  profile: intnet-l0<br />
+  This may cause unexpected errors and conflicts, nodectl will remove snapshot contents from this
+  directory<br />
+<br />
+  Remove snapshot contents? [y]: y<br />
+</MacWindow>
+
+<MacWindow>
+Cleaning [intnet-l0] snapshots................ found
 </MacWindow>
 
 ### Exit configurator
