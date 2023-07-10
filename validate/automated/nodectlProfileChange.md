@@ -38,7 +38,16 @@ You have a Node up and running with an existing configuration.
 
 ### Before we begin
 
-*The ip address and pem file are fictitious, use your own Node IP and credentials.*
+The ip address and pem file are fictitious, use your own Node IP and credentials.
+
+:::warning Important
+During the process of building a new profile, the configuration validator will run against your new configuration several times prior to completing the build.  You may see a **`CONFIGURATION DID NOT VALIDATE`** message; however, you can **safely** ignore this because nodectl will correct the validation error before the build process is completed.  
+
+nodectl will show the following message below the validation issues...
+<MacWindow>
+Issue found can safely be ignored for new configurations.
+</MacWindow>
+:::
 
 ### Access Your Node
 
