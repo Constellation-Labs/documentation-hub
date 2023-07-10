@@ -15,9 +15,9 @@ Returns the balance of the selected metagraph token.
 
 ##### Parameters
 
-| Name    | Type         | Description              |
-| ------- | ------------ | ------------------------ |
-| address | `DAGAddress` | Metagraph token address. |
+| Name             | Type         | Description                        |
+| ---------------- | ------------ | ---------------------------------- |
+| metagraphAddress | `DAGAddress` | The address of the metagraph token |
 
 ##### Return Type
 
