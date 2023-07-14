@@ -52,11 +52,11 @@ cp metagraph-file.p12 global-l0/
 cd global-l0/
 ```
 
-- Ensure that the **`p12`** file in the **`global-l0`** directory is authorized on the testnet seedlist.
+- Ensure that the **`p12`** file in the **`global-l0`** directory is authorized on the integrationnet seedlist.
 - Download the seedlist to the **`global-l0`** folder using
 
 ```bash
-wget https://constellationlabs-dag.s3.us-west-1.amazonaws.com/testnet-seedlist
+wget https://constellationlabs-dag.s3.us-west-1.amazonaws.com/integrationnet-seedlist
 ```
 
 - Set the following environment variables:
@@ -76,7 +76,7 @@ curl ifconfig.me
 - Run the following command:
 
 ```bash
-nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 8000 --p2p-port 8001 --cli-port 8003 --collateral 0 --seedlist testnet-seedlist -e testnet  > logs.log 2>&1 &
+nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 8000 --p2p-port 8001 --cli-port 8003 --collateral 0 --seedlist integrationnet-seedlist -e testnet  > logs.log 2>&1 &
 ```
 
 - You should see that 1 file and 1 directory were created: `logs.log` and `logs`
@@ -84,7 +84,7 @@ nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port
 - Now we need to join this Global L0 to the testnet, run the following command:
 
 ```bash
-curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":testnet_node_id", "ip": ":testned_node_ip", "p2pPort": :testnet_node_p2p_port }'
+curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":testned_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
 ```
 
 - The **`id`**, **`ip`**, and **`p2pPort`** parameters are obtained from inspecting the node info on the testnet. For example: **http://13.57.186.140:9000/node/info**.
@@ -163,13 +163,13 @@ cd global-l0/
 ```
 
 :::important
-The p12 file inside the global-l0 folder has to be authorized on the testnet seedlist and different from instance 1
+The p12 file inside the global-l0 folder has to be authorized on the integrationnet seedlist and different from instance 1
 :::important
 
 - Download the seedlist to the folder
 
 ```bash
-wget https://constellationlabs-dag.s3.us-west-1.amazonaws.com/testnet-seedlist
+wget https://constellationlabs-dag.s3.us-west-1.amazonaws.com/integrationnet-seedlist
 ```
 
 - Run the global L0 instance. For that, we need to provide some parameters first:
@@ -189,7 +189,7 @@ curl ifconfig.me
 - Then you need to run the following command:
 
 ```bash
-nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 8000 --p2p-port 8001 --cli-port 8003 --collateral 0 --seedlist testnet-seedlist -e testnet  > logs.log 2>&1 &
+nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 8000 --p2p-port 8001 --cli-port 8003 --collateral 0 --seedlist integrationnet-seedlist -e testnet  > logs.log 2>&1 &
 ```
 
 - You should see that 1 file and 1 directory were created: `logs.log` and `logs`
@@ -197,7 +197,7 @@ nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port
 - Now we need to add this Global L0 to the testnet:
 
 ```bash
-curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":testnet_node_id", "ip": ":testned_node_ip", "p2pPort": :testnet_node_p2p_port }'
+curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":testned_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
 ```
 
 - The parameters: `id`, `ip`, and `p2pPort` are found inspecting the node info on testnet, as an example: http://13.57.186.140:9000/node/info
@@ -278,13 +278,13 @@ cd global-l0/
 ```
 
 :::important
-The p12 file inside the global-l0 folder has to be authorized on the testnet seedlist and different from the other instances
+The p12 file inside the global-l0 folder has to be authorized on the integrationnet seedlist and different from the other instances
 :::important
 
 - Download the seedlist to the folder
 
 ```bash
-wget https://constellationlabs-dag.s3.us-west-1.amazonaws.com/testnet-seedlist
+wget https://constellationlabs-dag.s3.us-west-1.amazonaws.com/integrationnet-seedlist
 ```
 
 - Run the global L0 instance. For that, we need to provide some parameters first:
@@ -304,7 +304,7 @@ curl ifconfig.me
 - Run the following command:
 
 ```bash
-nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 8000 --p2p-port 8001 --cli-port 8003 --collateral 0 --seedlist testnet-seedlist -e testnet  > logs.log 2>&1 &
+nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 8000 --p2p-port 8001 --cli-port 8003 --collateral 0 --seedlist integrationnet-seedlist -e testnet  > logs.log 2>&1 &
 ```
 
 - You should see that 1 file and 1 directory were created: `logs.log` and `logs`
@@ -312,7 +312,7 @@ nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port
 - Now we need to add this Global L0 to the testnet:
 
 ```bash
-curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":testnet_node_id", "ip": ":testned_node_ip", "p2pPort": :testnet_node_p2p_port }'
+curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":testned_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
 ```
 
 - The parameters: `id`, `ip`, and `p2pPort` can be found by inspecting the node info on testnet, as an example: http://13.57.186.140:9000/node/info
