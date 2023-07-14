@@ -40,7 +40,7 @@ package com.my.currency.l0
 
 import cats.effect.{Async, IO}
 import org.tessellation.BuildInfo
-import org.tessellation.currency.BaseDataApplicationL0Service
+import org.tessellation.currency.dataApplication.BaseDataApplicationL0Service
 import org.tessellation.currency.l0.CurrencyL0App
 import org.tessellation.currency.schema.currency.{
   CurrencyBlock,
@@ -136,7 +136,7 @@ package com.my.currency.l0
 import cats.effect.{Async, IO}
 import cats.implicits.{toFoldableOps, toFunctorOps, toTraverseOps}
 import org.tessellation.BuildInfo
-import org.tessellation.currency.BaseDataApplicationL0Service
+import org.tessellation.currency.dataApplication.BaseDataApplicationL0Service
 import org.tessellation.currency.l0.CurrencyL0App
 import org.tessellation.currency.schema.currency.{CurrencyBlock, CurrencyIncrementalSnapshot, CurrencySnapshotStateProof, CurrencyTransaction}
 import org.tessellation.schema.address.Address
@@ -220,7 +220,7 @@ import cats.implicits.catsSyntaxApplicativeId
 import derevo.circe.magnolia.{decoder, encoder}
 import derevo.derive
 import org.tessellation.BuildInfo
-import org.tessellation.currency.BaseDataApplicationL0Service
+import org.tessellation.currency.dataApplication.BaseDataApplicationL0Service
 import org.tessellation.currency.l0.CurrencyL0App
 import org.tessellation.currency.schema.currency.{CurrencyBlock, CurrencyIncrementalSnapshot, CurrencySnapshotStateProof, CurrencyTransaction}
 import org.tessellation.schema.address.Address
