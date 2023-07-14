@@ -38,7 +38,10 @@ See [Creating a personal access token](https://docs.github.com/en/authentication
 
 Edit the `euclid.json` file with your token. You can leave the other variables as default for now. 
 ```
-github_token="<your-token>"
+{
+  "github_token": "<your-token>",
+  ...
+}
 ```
 
 ## Build
