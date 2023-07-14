@@ -14,7 +14,7 @@ Getting started with metagraph development can be challenging due to the infrast
 A minimal development environment for the Constellation Network consists of the following components:
 
 - 1 Global L0 node
-- 1 Metagraph L0 node
+- 3 Metagraph L0 node
 - 3 Metagraph L1 - Currency nodes
 - 3 DAG L1 nodes (optional)
 - 3 Metagraph L1 - Data nodes (optional)
