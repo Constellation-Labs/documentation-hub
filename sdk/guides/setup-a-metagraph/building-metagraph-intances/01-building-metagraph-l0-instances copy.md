@@ -81,14 +81,14 @@ nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port
 
 - You should see that 1 file and 1 directory were created: `logs.log` and `logs`
 - Inside the directory `logs` you can see one file `app.log` .Here is the initialization logs
-- Now we need to join this Global L0 to the testnet, run the following command:
+- Now we need to join this Global L0 to the integrationnet, run the following command:
 
 ```bash
 curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":testned_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
 ```
 
-- The **`id`**, **`ip`**, and **`p2pPort`** parameters are obtained from inspecting the node info on the testnet. For example: **http://13.57.186.140:9000/node/info**.
-- You can check if your node successfully joined the testnet at:
+- The **`id`**, **`ip`**, and **`p2pPort`** parameters are obtained from inspecting the node info on the integrationnet. For example: **http://103.145.63.182:9000/node/info**.
+- You can check if your node successfully joined the integrationnet at:
 http://:your_ip:8000/cluster/info
 - 
 
@@ -194,14 +194,14 @@ nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port
 
 - You should see that 1 file and 1 directory were created: `logs.log` and `logs`
 - Inside the directory `logs` you can see one file `app.log`.
-- Now we need to add this Global L0 to the testnet:
+- Now we need to add this Global L0 to the integrationnet:
 
 ```bash
 curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":testned_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
 ```
 
-- The parameters: `id`, `ip`, and `p2pPort` are found inspecting the node info on testnet, as an example: http://13.57.186.140:9000/node/info
-- You can check if your node successfully joined the testnet by doing this:
+- The parameters: `id`, `ip`, and `p2pPort` are found inspecting the node info on integrationnet, as an example: http://103.145.63.182:9000/node/info
+- You can check if your node successfully joined the integrationnet by doing this:
 http://:your_ip:8000/cluster/info
 
 Now that we have one global L0 instance running, we need to run our metagraph L0 instance
@@ -309,14 +309,14 @@ nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port
 
 - You should see that 1 file and 1 directory were created: `logs.log` and `logs`
 - Inside the directory `logs` you can see one file `app.log` .Here is the initialization logs
-- Now we need to add this Global L0 to the testnet:
+- Now we need to add this Global L0 to the integrationnet:
 
 ```bash
 curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":testned_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
 ```
 
-- The parameters: `id`, `ip`, and `p2pPort` can be found by inspecting the node info on testnet, as an example: http://13.57.186.140:9000/node/info
--Check if your node successfully joined the testnet:
+- The parameters: `id`, `ip`, and `p2pPort` can be found by inspecting the node info on integrationnet, as an example: http://103.145.63.182:9000/node/info
+-Check if your node successfully joined the integrationnet:
 http://:your_ip:8000/cluster/info
 
 Now that we have one global L0 instance running, we need to run our metagraph L0 instance

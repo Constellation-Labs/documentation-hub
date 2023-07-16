@@ -41,8 +41,8 @@ rm metagraph-file.p12
 - Then we can create a new one:
 
 ```bash
-export CL_KEYSTORE="metagraph_testnet.p12"
-export CL_KEYALIAS="metagraph_testnet"
+export CL_KEYSTORE="metagraph_integrationnet.p12"
+export CL_KEYALIAS="metagraph_integrationnet"
 export CL_PASSWORD="password"
 
 java -jar cl-keytool.jar generate
@@ -87,8 +87,8 @@ rm metagraph-file.p12
 - Then we create a new one:
 
 ```bash
-export CL_KEYSTORE="metagraph_testnet.p12"
-export CL_KEYALIAS="metagraph_testnet"
+export CL_KEYSTORE="metagraph_integrationnet.p12"
+export CL_KEYALIAS="metagraph_integrationnet"
 export CL_PASSWORD="password"
 
 java -jar cl-keytool.jar generate
@@ -143,8 +143,8 @@ rm metagraph-file.p12
 - Then we can create a new one:
 
 ```bash
-export CL_KEYSTORE="metagraph_testnet.p12"
-export CL_KEYALIAS="metagraph_testnet"
+export CL_KEYSTORE="metagraph_integrationnet.p12"
+export CL_KEYALIAS="metagraph_integrationnet"
 export CL_PASSWORD="password"
 
 java -jar cl-keytool.jar generate

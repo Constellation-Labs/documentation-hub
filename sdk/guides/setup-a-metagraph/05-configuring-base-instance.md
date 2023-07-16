@@ -69,7 +69,7 @@ sudo apt-get update
 sudo apt-get install sbt -y
 ```
 
-- Next, clone the Tessellation repository and checkout the testnet node version. You can find the testnet node version using the **`/node/info`** endpoint.
+- Next, clone the Tessellation repository and checkout the integrationnet node version. You can find the integrationnet node version using the **`/node/info`** endpoint.
 
 ![configuring instance 04](/img/sdk/configuring-base-image-04.png)
 
