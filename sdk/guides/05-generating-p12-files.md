@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 ## Introduction
 
-This guide will walk you through the process of creating your own custom p12 files. We will generate three files to match the original configuration.
+This guide will walk you through the process of creating your own custom p12 files. We will generate three files to match the original Euclid Development Environment project's configuration.
 
 :::caution
 If using a Euclid Development Environment project, you must update your configuration to use your own custom p12 files. Projects submitted with the default p12 files that come with the project will be rejected. 
