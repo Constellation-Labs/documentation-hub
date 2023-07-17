@@ -8,7 +8,7 @@ hide_table_of_contents: false
 #### Finding your Node IDs
 Your node ID is the public key of your wallet which will be stored as a p12 file. If using a Euclid Development Environment project, you must update you configuration to use your own custom p12 files. Projects submitted with the default p12 files that come with the project will be rejected. 
 
-Download the `cl-wallet.jar` executable. This is distributed as an asset with each [release of Tessellation](https://github.com/Constellation-Labs/tessellation/releases). `cl-wallet.jar` can also be found in a Euclid Development Environment project under `infra/docker/shared/jars/cl-wallet.jar`. 
+Download the `cl-wallet.jar` executable. This is distributed as an asset with each [release of Tessellation](https://github.com/Constellation-Labs/tessellation/releases).
 
 Editing the details of the following variables and export to your environment. 
 ```bash
