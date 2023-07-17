@@ -40,7 +40,7 @@ scp -i ":your_ssh_key_file.pem" :p12_file.p12 your_instance:your_path
 
 - In this guide, the **`p12`** file is referred to as **`metagraph-file.p12`**.
 
-****Creating the Global L0****
+**Creating the Global L0**
 
 - Let’s create a new directory to run the global L0
 
@@ -80,7 +80,7 @@ nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port
 ```
 
 - You should see that 1 file and 1 directory were created: `logs.log` and `logs`
-- Inside the directory `logs` you can see one file `app.log` .Here is the initialization logs
+- Inside the directory `logs` you can see one file `app.log`. Here is the initialization logs
 - Now we need to join this Global L0 to the integrationnet, run the following command:
 
 ```bash
@@ -89,8 +89,7 @@ curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application
 
 - The **`id`**, **`ip`**, and **`p2pPort`** parameters are obtained from inspecting the node info on the integrationnet. For example: **http://103.145.63.182:9000/node/info**.
 - You can check if your node successfully joined the integrationnet at:
-http://:your_ip:8000/cluster/info
-- 
+http://:your_ip:8000/cluster/info 
 
 Now that we have one global L0 instance running, we need to run our metagraph L0 instance
 

@@ -20,7 +20,7 @@ chmod 400 MyKeypair.pem
 - Now, use the **`ssh`** command to connect to your instance:
 
 ```jsx
-ssh -i "MyKeypair.pem" ubuntu@ec2-35-88-229-4.us-west-2.compute.amazonaws.com
+ssh -i "MyKeypair.pem" ubuntu@your_instance.aws-region.compute.amazonaws.com
 ```
 
 - The name/IP of the instance will be different, but you can get the instructions on how to connect via ssh in the **`Connect to your instance`** section of the EC2 Console.:
@@ -69,14 +69,14 @@ sudo apt-get update
 sudo apt-get install sbt -y
 ```
 
-- Next, clone the Tessellation repository and checkout the integrationnet node version. You can find the integrationnet node version using the **`/node/info`** endpoint.
+- Next, clone the Tessellation repository and checkout the integrationnet node version. You can find the integrationnet node version using the **`/node/info`** endpoint in any existing node of the network.
 
 ![configuring instance 04](/img/sdk/configuring-base-image-04.png)
 
 ```bash
 git clone https://github.com/Constellation-Labs/tessellation.git
 cd tessellation
-git checkout v2.0.0-alpha.7
+git checkout v2.0.0-alpha.10
 ```
 
 - Create a GitHub token to build and publish the JARs.
@@ -87,7 +87,7 @@ git checkout v2.0.0-alpha.7
 rm -r ~/.m2
 ```
 
-- Publish the JARs that will be used for the Metagraph instances:
+- Publish locally (on the `.m2` directory) the JARs that will be used for the Metagraph instances:
 
 ```bash
 
@@ -121,14 +121,14 @@ curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64
 
 ```bash
 source ~/.profile
-cs install giter8
+./cs install giter8
 ```
 
 - Now create the Metagraph project. We will use the `gitter` lib for that
 - **We should provide the same version as the Tessellation checkout above**
 
 ```bash
-g8 Constellation-Labs/currency --tag v2.0.0-alpha.7 --name="my-project" --tessellation_version="2.0.0-alpha.6"
+g8 Constellation-Labs/currency --tag v2.0.0-alpha.10 --name="my-project" --tessellation_version="2.0.0-alpha.10"
 ```
 
 - If you want to customize the reward logic before compiling, see the **[Customize Rewards](https://docs.constellationnetwork.io/sdk/guides/customize-rewards/)** guide:
@@ -148,13 +148,13 @@ mv my-project/modules/l0/target/scala-2.13/my-project-currency-l0-assembly-0.1.0
 mv my-project/modules/l1/target/scala-2.13/my-project-currency-l1-assembly-0.1.0-SNAPSHOT.jar metagraph-l1.jar
 ```
 
-- We should now download some files from the Tessellation repo releases. In this example, we should go to the releases [https://github.com/Constellation-Labs/tessellation/releases/tag/v2.0.0-](https://github.com/Constellation-Labs/tessellation/releases/tag/v2.0.0-alpha.3)alpha.7
+- We should now download some files from the Tessellation repo releases. In this example, we should go to the releases [https://github.com/Constellation-Labs/tessellation/releases/tag/v2.0.0-alpha.10](https://github.com/Constellation-Labs/tessellation/releases/tag/v2.0.0-alpha.10)
 - Then we need the files: cl-node.jar, cl-wallet.jar
 
 ```bash
-wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.0.0-alpha.7/cl-node.jar
-wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.0.0-alpha.7/cl-wallet.jar
-wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.0.0-alpha.7/cl-keytool.jar
+wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.0.0-alpha.10/cl-node.jar
+wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.0.0-alpha.10/cl-wallet.jar
+wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.0.0-alpha.10/cl-keytool.jar
 ```
 
 - Create a **`genesis.csv`** file:

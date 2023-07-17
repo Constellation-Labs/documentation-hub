@@ -13,7 +13,7 @@ This tutorial will guide you through the process of setting up a Metagraph on Am
 Please note that all steps in this tutorial are performed on the EC2 page within the AWS console. Be sure to follow the steps in the exact order they are presented.
 :::
 
-- You will need at least 3 **`p12`** files. You can check  [here](/sdk/guides/working-with-p12-files) **how to generate p12 files**
+- You will need at least 3 **`p12`** files. You can check  [here](/sdk/guides/generating-p12-files) **how to generate p12 files**
 - For the tests, ensure that the ID of all your **`p12`** files is on the Integration net seedlist otherwise your setup won't work. You can check the seedlist [here](https://constellationlabs-dag.s3.us-west-1.amazonaws.com/integrationnet-seedlist) or you can apply for a Integration net spot.
 
 

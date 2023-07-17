@@ -18,9 +18,9 @@ Download the `cl-wallet.jar` executable. This is distributed as an asset with ea
 
 Editing the details of the following variables and export to your environment. 
 ```bash
-export CL_KEYSTORE="key-0.p12"
-export CL_KEYALIAS="alias"
-export CL_PASSWORD="password"
+export CL_KEYSTORE=":your_file_name.p12"
+export CL_KEYALIAS=":your_file_alias"
+export CL_PASSWORD=":your_file_password"
 ```
 
 Then you can run the following to get your node ID:
