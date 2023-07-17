@@ -22,7 +22,7 @@ See the [project repo](https://github.com/Constellation-Labs/currency.g8) for fu
 ## Installation
 Make sure you have Scala installed and then install giter8
 ```bash
-cs install giter8
+./cs install giter8
 ```
 
 Now you can install the template

@@ -27,6 +27,7 @@ Many developers can skip this step because these dependencies are already instal
 - [Docker](https://docs.docker.com/get-docker/)
 - [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 - [Scala](https://www.scala-lang.org/download/)
+- [Jq](https://jqlang.github.io/jq/download/)
 
 
 #### Install argc
@@ -36,7 +37,7 @@ cargo install argc
 
 #### Install Giter
 ```bash
-cs install giter8
+./cs install giter8
 ```
 
 #### Configure Docker
@@ -58,7 +59,7 @@ cd euclid-development-environment
 See the [Development Environment](/sdk/elements/dev-environment#project-directory-structure) section for an overview of the directory structure of the project. 
 
 #### Configure
-Edit the `GITHUB_TOKEN` variable within the `.env` file with your Github Access Token generated previously. Update the `PROJECT_NAME` variable to the name of your project. 
+Edit the `github_token` variable within the `euclid.json` file with your Github Access Token generated previously. Update the `PROJECT_NAME` variable to the name of your project. 
 ```
 GITHUB_TOKEN=<your token here>
 PROJECT_NAME=<your-project-name>
@@ -94,7 +95,7 @@ scripts/hydra install
 ```
 
 ## Build
-Build your network clusters with hydra. By default, this builds `global-l0`, `currency-l0`, `currency-l1`, and `prometheus` + `grafana` monitoring containers. The `dag-l1` cluster is not built by default since it isn't strictly necessary for metagraph development. You can include it with the `--include-dag-l1` option. 
+Build your network clusters with hydra. By default, this builds `global-l0`, `metagraph-l0`, `metagraph-l1-currency`, `metagraph-l1-data`, and `prometheus` + `grafana` monitoring containers. The `dag-l1` cluster is not built by default since it isn't strictly necessary for metagraph development. You can include it on the `euclid.json` file. 
 
 Start the build process. This can take a significant amount of time... be patient. 
 ```
@@ -112,12 +113,17 @@ Once the process is complete you should see output like this:
 Containers successfully built. 
 
 URLs:
-Global L0: http://localhost:9000/cluster/info
-Currency L0: http://localhost:9100/cluster/info
-Currency L1 - 1: http://localhost:9200/cluster/info
-Currency L1 - 2: http://localhost:9300/cluster/info
-Currency L1 - 3: http://localhost:9400/cluster/info
-Grafana: http://localhost:3000/
+Global L0:  http://localhost:9000/cluster/info
+Currency L0 - 1:  http://localhost:9400/cluster/info
+Currency L0 - 2:  http://localhost:9500/cluster/info
+Currency L0 - 3:  http://localhost:9600/cluster/info
+Currency L1 - 1:  http://localhost:9700/cluster/info
+Currency L1 - 2:  http://localhost:9800/cluster/info
+Currency L1 - 3:  http://localhost:9900/cluster/info
+Data L1 - 1:  http://localhost:8000/cluster/info
+Data L1 - 2:  http://localhost:8100/cluster/info
+Data L1 - 3:  http://localhost:8200/cluster/info
+Grafana:  http://localhost:3000/
 ```
 
 You can also check the status of your containers with the `status` command. 

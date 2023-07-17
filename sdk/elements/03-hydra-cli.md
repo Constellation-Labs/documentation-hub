@@ -36,9 +36,12 @@ Create a Github personal access token. This token is necessary for building Tess
 
 See [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for details on how to create your token. The token only needs the `read:packages` permission. 
 
-Edit the `.env` file with your token. You can leave the other variables as default for now. 
+Edit the `euclid.json` file with your token. You can leave the other variables as default for now. 
 ```
-GITHUB_TOKEN=<your-token>
+{
+  "github_token": "<your-token>",
+  ...
+}
 ```
 
 ## Build
