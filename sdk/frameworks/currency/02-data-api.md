@@ -13,7 +13,7 @@ Want to jump directly to a code example? A number of examples can be found on Gi
 :::
 
 ## Data Application Architecture
-Data applications or metagraphs implementing the Data API are built on top of the Currency Framework. In a standard Currency Framework metagraph, the metagraph consists of 3 mL0 (metagraph L0) nodes and 3 cL1 (currency L1) nodes. Data applications build on top of this structure and introduce a 2nd L1 layer that runs in parallel with the currency L1 layer. A data application's minimal structure consists of 3 mL0 nodes, 3 dL1 (data L1) nodes, and optionally 3 cL0 nodes. Blocks produced by both the cL1 and dL1 nodes undergo consensus on the L0 layer and their data is grouped together within metagraph snapshots. 
+Data applications or metagraphs implementing the Data API are built on top of the Currency Framework. In a standard Currency Framework metagraph, the metagraph consists of 3 mL0 (metagraph L0) nodes and 3 cL1 (currency L1) nodes. Data applications build on top of this structure and introduce a 2nd L1 layer that runs in parallel with the currency L1 layer. A data application's minimal structure consists of 3 mL0 (metagraph l0) nodes, 3 dL1 (data L1) nodes, and optionally 3 cL0 (currency l0) nodes. Blocks produced by both the cL1 and dL1 nodes undergo consensus on the L0 layer and their data is grouped together within metagraph snapshots. 
 
 ### The DataApplication Instance
 Data Applications provide an instance of `BaseDataApplicationL0Service` and `BaseDataApplicationL1Service` to the L0 and Data L1 CurrencyApp definitions, found in Main.scala for L0 and L1 respectively. The definition of these services contain a set of overridable methods that allow the developer to provide custom data validation logic to the existing application flow. 
@@ -25,9 +25,10 @@ A Data Application, at it's core, is about state management. We define our initi
 __Data L1 layer lifecycle__
 1. Update received by POST endpoint on L1 (POST `/data`)
 2. Update is decoded as `Signed[DataUpdate]`
-3. Signature validated
-4. `validateUpdate` called
-5. Data enqueued for L1 consensus
+3. `deserializeUpdate` called
+4. Signature validated
+5. `validateUpdate` called
+6. Data enqueued for L1 consensus
 
 
 __L0 layer lifecycle__
@@ -74,7 +75,7 @@ This method validates the update on the L1 layer and can return synchronous erro
 For example, validate a field is within a positive range:
 ```scala
 def validateUpdate(update: Update): IO[DataApplicationValidationErrorOr[Unit]] = IO {
-  if (update.timestamp <= 0) {
+  if (update.usage <= 0) {
     DataApplicationValidationError.invalidNec
   } else {
     ().validNec
