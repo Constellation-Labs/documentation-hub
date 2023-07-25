@@ -8,7 +8,7 @@ In order to leverage the global L0 network for validation and consensus, metagra
 
 ## Limitations
 
-The global L0 network enforces a snapshot size limit of 50kb of incremental data per snapshot. This constraint has been implemented to guarantee efficient processing and storage of snapshots on the network. Any snapshot exceeding this size limit will be rejected by the network. Developers are encouraged to optimize their data structures and ensure that their snapshots adhere to this size limitation.
+The global L0 network enforces a snapshot size limit of 500kb of incremental data per snapshot. This constraint has been implemented to guarantee efficient processing and storage of snapshots on the network. Any snapshot exceeding this size limit will be rejected by the network. Developers are encouraged to optimize their data structures and ensure that their snapshots adhere to this size limitation.
 
 ## Fees
 
