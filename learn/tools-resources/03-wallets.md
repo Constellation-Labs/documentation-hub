@@ -40,7 +40,7 @@ Bitfi is a hardware wallet that supports multiple currencies including DAG. Bitf
 ## Molly Wallet
 Molly Wallet is a cross platform desktop app that supports $DAG. 
 
-:::info
+:::caution
 This wallet is no longer receiving updates or enhancements. Nevertheless, it remains accessible and functional for users who wish to continue using it. 
 :::
 <DocsCards>

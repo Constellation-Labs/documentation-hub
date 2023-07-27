@@ -59,7 +59,7 @@ Our goal is to make Metagraph deployment cost-competitive with web2 legacy servi
 
 ### Snapshot to Hypergraph
 
-All Metagraphs will send snapshots to the Hypergraph, which include associated fees. Each snapshot is capable of containing many individual transactions. Currently, snapshots sent to the Hypergraph are capped at 50kb; these snapshots can include Metagraph Token transactions and other raw data points. Metagraphs may choose to pass the incurred snapshot fees to their users within their own tokenomics (like a gas fee to use their Metagraphs network) or to pay them through other means. As mentioned earlier, other factors, such as the computational power needed to validate the transaction and attached priority fees, will determine the total cost.
+All Metagraphs will send snapshots to the Hypergraph, which include associated fees. Each snapshot is capable of containing many individual transactions. Currently, snapshots sent to the Hypergraph are capped at 500kb; these snapshots can include Metagraph Token transactions and other raw data points. Metagraphs may choose to pass the incurred snapshot fees to their users within their own tokenomics (like a gas fee to use their Metagraphs network) or to pay them through other means. As mentioned earlier, other factors, such as the computational power needed to validate the transaction and attached priority fees, will determine the total cost.
 
 ![Token Lifecycle](/img/metagraphs/token-lifecycle.png)
 <figcaption><strong>Figure 3:</strong> Lifecycle of a Metagraph token transaction from creation to finality.</figcaption>
@@ -74,7 +74,7 @@ It is equally important to point out that Metagraphs can issue their own Metagra
 
 ## Metagraph: Network Fees
 
-In order to use the Hypergraph, Metagraphs must contribute fees to the network for each snapshot of state submitted. Metagraphs have the option of passing these fees on to their users or not, giving them the flexibility to organize their networks to meet the needs of diverse use cases. Snapshot fees are submitted to the Hypergraph in DAG, and these fees are irrecoverable. This mechanism could create a deflationary pressure on the network that will counteract rewards distributions to Validator Nodes. The first Metagraphs launching at the end of the Hercules era and the beginning of the Gemini era will pay no fees to the network and be limited to a snapshot size of 50kb or less. In this early stage, Metagraph snapshots without fees will trigger on-demand global snapshots, allowing high throughput for Metagraph data. 
+In order to use the Hypergraph, Metagraphs must contribute fees to the network for each snapshot of state submitted. Metagraphs have the option of passing these fees on to their users or not, giving them the flexibility to organize their networks to meet the needs of diverse use cases. Snapshot fees are submitted to the Hypergraph in DAG, and these fees are irrecoverable. This mechanism could create a deflationary pressure on the network that will counteract rewards distributions to Validator Nodes. The first Metagraphs launching at the end of the Hercules era and the beginning of the Gemini era will pay no fees to the network and be limited to a snapshot size of 500kb or less. In this early stage, Metagraph snapshots without fees will trigger on-demand global snapshots, allowing high throughput for Metagraph data. 
 
 During the Gemini era, a snapshot prioritization function will be released that will introduce a fee mechanism for Metagraphs on the network. Snapshots without fees will still be accepted but they will be limited to one Metagraph snapshot per global snapshot. Feeless snapshots will not trigger on-demand consensus once the prioritization function is released which will effectively rate limit free snapshots to a rate of one every few seconds. Snapshots with fees will be processed on-demand and will allow for significantly higher snapshot throughput. 
 
@@ -98,7 +98,7 @@ multiplier = 1 / (stakedDAG x stakingWeight) + (averageProScore x proWeight)
 fee = (baseFee * workAmount * workMultiplier) + optionalTip
 ```
 
-The fee structure outlined above and the 50kb snapshot size limitation will increase with the rollout of future development releases in future eras, allowing for more complex data types validated by the Hypergraph, and additional value for Validator Nodes.
+The fee structure outlined above and the 500kb snapshot size limitation will increase with the rollout of future development releases in future eras, allowing for more complex data types validated by the Hypergraph, and additional value for Validator Nodes.
 
 Below are the description of the inputs (outside of the limitless potential inputs of PRO score):
 
