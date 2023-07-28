@@ -577,10 +577,10 @@ You can read the informational notice from the installer and press any key to co
    IMPORTANT <br />
 <br />
   nodectl installation will install the new Node with default Constellation
-  Network DAG Global Layer0 and DAG Layer1 State Channel settings.<br />
+  Network DAG Global Layer0 and DAG Layer1 metagraph settings.<br />
 <br />
   After installation is complete, the Node Administrator may alter the nodectl
-  configuration to modify nodectl to connect to the State Channel of
+  configuration to modify nodectl to connect to the metagraph of
   choice via the command:<br />
 <br />
   sudo nodectl configure<br />

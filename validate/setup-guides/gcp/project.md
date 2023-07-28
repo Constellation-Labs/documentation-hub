@@ -30,7 +30,7 @@ Before we begin, we need to create a Project inside of Google Cloud Platform to 
 
 ![](/img/validator_nodes/node-gcp-project2.png)
 
-We will work on our Hypergraph or State Channel Validator Node via a GCP `Project`. This will help us organize our GCP projects, whether it is multiple Constellation State Channels in the future, or other projects unrelated.
+We will work on our Hypergraph or Metagraph Validator Node via a GCP `Project`. This will help us organize our GCP projects, whether it is multiple Constellation Metagraphs in the future, or other projects unrelated.
 
 :::info
 In our examples we will use `TestNet`.

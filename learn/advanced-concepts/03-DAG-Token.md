@@ -11,7 +11,7 @@ import DocsCards from '@components/global/DocsCards';
 
 DAG is the Hypergraph's native cryptocurrency. The [$DAG token](https://constellationnetwork.io/dag-token) operates on an exclusive metagraph that facilitates seamless interaction between metagraphs and network nodes. In other words, $DAG binds network components together and is how the Hypergraph provides utility.
 
-The mission of the DAG token, is to promote Constellation's Network by incentivizing participation from all stakeholders, from Validator Nodes to Metagraphs.
+The mission of the DAG token, is to promote Constellation's Network by incentivizing participation from all stakeholders, from Validator Nodes to metagraphs.
 
 DAG tokens are distributed as rewards to those responsible for securing and maintaining the decentralized network, thereby ensuring a decentralized ecosystem. A fundamental principle from DAG's mission is the facilitation of low-complexity transactions without transaction fees, a move designed to promote network adoption and lower entry barriers for users. 
 
