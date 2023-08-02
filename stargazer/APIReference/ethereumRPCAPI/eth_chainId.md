@@ -24,10 +24,10 @@ None
 ```typescript title="ChainId"
 type ChainId =
   | "1" // Ethereum Mainnet
-  | "2" // Morden Testnet (deprecated)
-  | "3" // Ropsten Testnet
-  | "4" // Rinkeby Testnet
-  | "5"; // Goerli Testnet
+  | "2" // Morden TestNet (deprecated)
+  | "3" // Ropsten TestNet
+  | "4" // Rinkeby TestNet
+  | "5"; // Goerli TestNet
 ```
 
 ##### Example

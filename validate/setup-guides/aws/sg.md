@@ -144,7 +144,7 @@ Our inbound rules will look something like this 👇
 **[REPEAT](#constellation-sg-rules)** This process for ports `9010-9011`.
 
 :::info
-Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) API access. Ports 9000 and 9001 are configurable and can be independent (to your needs) on the Hypergraph Global Layer0 or Metagraph network you connect to.  Node Operators will need to learn what ports are opened for access to the Metagraphs, and update their firewall (change) accordingly.
+Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) API access. Ports 9000 and 9001 are configurable and can be independent (to your needs) on the Hypergraph Global Layer0 or metagraph network you connect to. Node Operators will need to learn what ports are opened for access to the Metagraphs, and update their firewall (change) accordingly.
 
 The port numbers selected should not matter; however, for non-advanced users, using the ports mentioned in the above section is recommended.
 :::

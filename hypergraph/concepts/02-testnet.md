@@ -1,14 +1,14 @@
 ---
-title: Testnet
+title: TestNet
 slug: /testnet
-sidebar_label: Testnet
+sidebar_label: TestNet
 hide_table_of_contents: false
 ---
 <intro-end />
 
-Constellation provides developers with the testnet, a  testing environment where new protocol updates are released and tested before they reach production. Unlike the more stable integration net, the testnet is a  platform for developers wanting to experiment with the latest features and validate their applications' compatibility with upcoming changes. 
+Metagraph developers can use testnet as an experimental environment designed for testing metagraphs against the newest protocol updates before they are rolled out to integrationnet. Unlike the more stable integrationnet, the testnet provides a platform for developers to experiment with the latest features, enabling them to validate how their metagraphs will interact with upcoming changes.
 
-## Connecting to Testnet
+## Connecting to TestNet
 The following urls can used to access testnet: 
 - __Block Explorer API__: https://be-testnet.constellationnetwork.io
 - __Global L0 API__: https://l0-lb-testnet.constellationnetwork.io

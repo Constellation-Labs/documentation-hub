@@ -10,7 +10,7 @@ hide_table_of_contents: false
 Constellation provides developers with a full featured testnet to test applications before they're ready for the production environment. 
 The testnet has all of the same features as mainnet and can therefore be used to validate application integrations in a realistic way. 
 
-:::info Developing a metagraph
+:::info Developing a Metagraph
 Metagraph developers may use testnet as they're nearing production readiness. For initial development, developing on your own test cluster is recommended. See [Setting Up a Private L0 Cluster](/metagraphs).
 :::
 

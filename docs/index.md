@@ -52,7 +52,7 @@ import ThemedImage from '@theme/ThemedImage';
 
 ## Developer Guides
 <DocsCards>
-  <DocsCard header="Build a metagraph" href="/metagraphs" img="/img/home/state-channel.jpg">
+  <DocsCard header="Build a Metagraph" href="/metagraphs" img="/img/home/state-channel.jpg">
     <p>Explore metagraph development concepts and learn how to build custom applications on the Hypergraph.</p>
   </DocsCard>
 

@@ -31,6 +31,6 @@ The goal here is to support this level of customization, by splitting operations
 Metagraphs can define their own tokens, known as metagraph tokens, which can be used to transact within their network, reward node operators, and assign value to data. Learn more about the [Metagraph Token Standard](/metagraphs/metagraph-tokens/overview). 
 
 :::info Want to learn more about building a metagraph? 
-Detailed information on the design and implementation of metagraphs can be found in the [Build a metagraph](/metagraphs) section.
+Detailed information on the design and implementation of metagraphs can be found in the [Build a Metagraph](/metagraphs) section.
 :::
 

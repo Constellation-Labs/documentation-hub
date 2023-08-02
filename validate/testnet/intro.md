@@ -23,5 +23,5 @@ While on the **TestNet** you will be able to:
 
 - Safely and securely manipulate and test your Validator Node's 
 functionality.
-- Help other Metagraph companies build, test and prepare to deploy their Metagraphs.
+- Help other metagraph companies build, test and prepare to deploy their metagraphs.
 - Help Constellation Network's **core** protocol team enhance **MainNet 2.0**.

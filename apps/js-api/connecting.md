@@ -29,7 +29,7 @@ dag4.account.connect({
 ### Default Endpoints
 The following endpoints are used by default by Dag4. 
 
-#### 2.0 Testnet
+#### 2.0 TestNet
 - Block Explorer API: https://be-testnet.constellationnetwork.io
 - L0 API: https://l0-lb-testnet.constellationnetwork.io
 - L1 API: https://l1-lb-testnet.constellationnetwork.io
@@ -57,9 +57,9 @@ dag4.account.connect({
 Note: Mainnet 1.0 will become obsolete as soon as Mainnet 2.0 is live. The Load balancer API will no longer be available but the Block Explorer API will continue to be available to provide historical transaction records.
 :::
 
-#### 1.0 Testnet
+#### 1.0 TestNet
 - Block Explorer API: https://api-be.exchanges.constellationnetwork.io
-- Load Balancer API: http://lb.exchanges.constellationnetwork.io:9000
+- Load Balancer API: https://lb.exchanges.constellationnetwork.io:9000
 
 ```js
 dag4.account.connect({
@@ -70,7 +70,7 @@ dag4.account.connect({
 
 #### 1.0 Mainnet
 - Block Explorer API: https://block-explorer.constellationnetwork.io
-- Load Balancer API: http://lb.constellationnetwork.io:9000
+- Load Balancer API: https://lb.constellationnetwork.io:9000
 
 ```js
 dag4.account.connect({
