@@ -23,6 +23,7 @@ You can use one of the load balancer endpoints below or connect directly to a ne
 #### Base urls​:
 
 - Testnet: https://l1-lb-testnet.constellationnetwork.io
+- Integration net: https://l1-lb-integrationnet.constellationnetwork.io
 - Mainnet: https://l1-lb-mainnet.constellationnetwork.io
 
 ## Global L0 API
@@ -36,4 +37,5 @@ You can use one of the load balancer endpoints below or connect directly to a ne
 
 #### Base urls​:
 - Testnet: https://l0-lb-testnet.constellationnetwork.io
+- Integration net: https://l0-lb-integrationnet.constellationnetwork.io
 - Mainnet: https://l0-lb-mainnet.constellationnetwork.io

@@ -18,4 +18,5 @@ An off-network API offering indexed and searchable transactions, snapshots, and 
 
 #### Base urls:
 - Testnet: https://be-testnet.constellationnetwork.io
+- Integration net: https://be-integrationnet.constellationnetwork.io
 - Mainnet: https://be-mainnet.constellationnetwork.io

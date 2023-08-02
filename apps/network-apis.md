@@ -16,6 +16,7 @@ An off-network API offering indexed and searchable transactions, snapshots, and 
 
 ##### Base urls
 - **Testnet:** https://be-testnet.constellationnetwork.io
+- **Integration net:** https://be-integrationnet.constellationnetwork.io
 - **Mainnet:** https://be-mainnet.constellationnetwork.io
 
 ### L0 API
@@ -25,6 +26,7 @@ An on-node API for getting real time information on snapshots, and address balan
 
 ##### Base urls 
 - **Testnet:** https://l0-lb-testnet.constellationnetwork.io
+- **Integration net:** https://l0-lb-integrationnet.constellationnetwork.io
 - **Mainnet:** https://l0-lb-mainnet.constellationnetwork.io
 
 ### L1 API
@@ -34,4 +36,5 @@ An on-node API for posting DAG transactions and fetching information on address 
 
 ##### Base urls
 - **Testnet:** https://l1-lb-testnet.constellationnetwork.io
+- **Integration net:** https://l1-lb-integrationnet.constellationnetwork.io
 - **Mainnet:** https://l1-lb-mainnet.constellationnetwork.io

@@ -41,6 +41,21 @@ dag4.account.connect({
 });
 ```
 
+#### 2.0 Integration net
+- Block Explorer API: https://be-integrationnet.constellationnetwork.io
+- L0 API: http://lb-integrationnet.constellationnetwork.io:9000
+- L1 API: http://lb-integrationnet.constellationnetwork.io:9010
+
+```js
+dag4.account.connect({
+  id: 'integration2',
+  networkVersion: '2.0',
+  beUrl: 'https://be-integrationnet.constellationnetwork.io',
+  l0Url: 'https://l0-lb-integrationnet.constellationnetwork.io',
+  l1Url: 'https://l1-lb-integrationnet.constellationnetwork.io'
+}, false);
+```
+
 #### 2.0 Mainnet
 - Block Explorer API: https://be-mainnet.constellationnetwork.io
 - L0 API: http://lb-mainnet.constellationnetwork.io:9000
