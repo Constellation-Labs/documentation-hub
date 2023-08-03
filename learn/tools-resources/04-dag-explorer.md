@@ -10,10 +10,10 @@ import DocsCards from '@components/global/DocsCards';
 
 The DAG Explorer is an open source tool available for the Constellation community to monitor transaction statuses and other important information about the network. The tool supports MainNet and all test networks. 
 
-## Mainnets
+## MainNets
 
 :::info
-Mainnet 1.0 network transitioned to Mainnet 2.0 on 2022-09-28. Use Mainnet 2.0 to view current activity.
+MainNet 1.0 network transitioned to MainNet 2.0 on 2022-09-28. Use MainNet 2.0 to view current activity.
 :::
   
 
@@ -21,8 +21,8 @@ Mainnet 1.0 network transitioned to Mainnet 2.0 on 2022-09-28. Use Mainnet 2.0 t
   <DocsCard header="MainNet 2.0" href="https://mainnet.dagexplorer.io" icon="/icons/icon-placeholder.png">
     <p>DAG Explorer for MainNet</p>
   </DocsCard>
-  <DocsCard header="Mainnet 1.0" href="https://mainnet1.dagexplorer.io/" icon="/icons/icon-placeholder.png">
-      <p>DAG Explorer for Mainnet 1.0 (deprecated)</p>
+  <DocsCard header="MainNet 1.0" href="https://mainnet1.dagexplorer.io/" icon="/icons/icon-placeholder.png">
+      <p>DAG Explorer for MainNet 1.0 (deprecated)</p>
   </DocsCard>
 </DocsCards> 
 
@@ -30,7 +30,7 @@ Mainnet 1.0 network transitioned to Mainnet 2.0 on 2022-09-28. Use Mainnet 2.0 t
 
 <DocsCards> 
   <DocsCard header="IntegrationNet" href="https://integrationnet.dagexplorer.io" icon="/icons/icon-placeholder.png">
-      <p>DAG Explorer for Integration net</p>
+      <p>DAG Explorer for IntegrationNet</p>
   </DocsCard>
   <DocsCard header="TestNet" href="https://testnet.dagexplorer.io" icon="/icons/icon-placeholder.png">
       <p>DAG Explorer for TestNet</p>

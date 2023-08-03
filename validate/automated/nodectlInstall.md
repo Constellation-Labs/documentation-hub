@@ -243,7 +243,7 @@ For the purposes of this tutorial, we will be joining the MainNet environment.  
 <MacWindow>
 ------ * Installation Starting * -------<br />
 <br />
-  nodectl needs to know if your Node will be running on mainnet <br />
+  nodectl needs to know if your Node will be running on MainNet <br />
   or testnet: <br />
 <br />
   OPTIONS<br />

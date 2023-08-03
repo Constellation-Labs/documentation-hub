@@ -35,7 +35,7 @@ In this tutorial, Node Operators will learn how to build and manage a validator 
 ## Before you begin
 
 :::info Are you on the seed list?
-Both Mainnet 2.0 and Testnet 2.0 currently have a seed list in place that only allows specific `nodeids` to join the network. 
+Both MainNet 2.0 and Testnet 2.0 currently have a seed list in place that only allows specific `nodeids` to join the network. 
 
 The seed list provides an extra layer of security and stability as the ecosystem matures and will eventually be phased out.  Once the seed list restrictions are removed, anyone (with properly collateral and vps or hardware requirements) will be able to join the Hypergraph or a Metagraph. 
 

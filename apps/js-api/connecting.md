@@ -41,7 +41,7 @@ dag4.account.connect({
 });
 ```
 
-#### 2.0 Mainnet
+#### 2.0 MainNet
 - Block Explorer API: https://be-mainnet.constellationnetwork.io
 - L0 API: https://l0-lb-mainnet.constellationnetwork.io
 - L1 API: https://l1-lb-mainnet.constellationnetwork.io
@@ -54,7 +54,7 @@ dag4.account.connect({
 ```
 
 :::caution Warning
-Note: Mainnet 1.0 will become obsolete as soon as Mainnet 2.0 is live. The Load balancer API will no longer be available but the Block Explorer API will continue to be available to provide historical transaction records.
+Note: MainNet 1.0 will become obsolete as soon as MainNet 2.0 is live. The Load balancer API will no longer be available but the Block Explorer API will continue to be available to provide historical transaction records.
 :::
 
 #### 1.0 TestNet
@@ -68,7 +68,7 @@ dag4.account.connect({
 });
 ```
 
-#### 1.0 Mainnet
+#### 1.0 MainNet
 - Block Explorer API: https://block-explorer.constellationnetwork.io
 - Load Balancer API: https://lb.constellationnetwork.io:9000
 

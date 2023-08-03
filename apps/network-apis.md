@@ -17,7 +17,7 @@ An off-network API offering indexed and searchable transactions, snapshots, and 
 ##### Base urls
 - **Testnet:** https://be-testnet.constellationnetwork.io
 - **IntegrationNet:** https://be-integrationnet.constellationnetwork.io
-- **Mainnet:** https://be-mainnet.constellationnetwork.io
+- **MainNet:** https://be-mainnet.constellationnetwork.io
 
 ### L0 API
 [OAS3 Spec](http://apidoc-dev.constellationnetwork.io.s3-website.us-west-1.amazonaws.com/node/#/)
