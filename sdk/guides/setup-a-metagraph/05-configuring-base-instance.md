@@ -3,6 +3,8 @@ id: configuring-base-instance
 title: Configuring base instance
 ---
 
+## Connecting to the instance
+
 - From your **`Instances`** page, click on your instance.
 - Then you should see something like this:
 
@@ -32,6 +34,8 @@ ssh -i "MyKeypair.pem" ubuntu@your_instance.aws-region.compute.amazonaws.com
 
 ![configuring instance 03](/img/sdk/configuring-base-image-03.png)
 
+## Base instance setup
+
 - Now, you can start setting up your instance. Create a directory named **`code`** and navigate into it:
 
 ```bash
@@ -39,7 +43,7 @@ mkdir code
 cd code/
 ```
 
-- Next, install the necessary dependencies:
+- Install the necessary dependencies:
 
 ```bash
 sudo apt-get update
@@ -69,7 +73,9 @@ sudo apt-get update
 sudo apt-get install sbt -y
 ```
 
-- Next, clone the Tessellation repository and checkout the integrationnet node version. You can find the integrationnet node version using the **`/node/info`** endpoint in any existing node of the network.
+## Setting up the Tessellation repository
+
+- Clone the Tessellation repository and checkout the integrationnet node version. You can find the integrationnet node version using the **`/node/info`** endpoint in any existing node of the network.
 
 ![configuring instance 04](/img/sdk/configuring-base-image-04.png)
 
@@ -105,13 +111,17 @@ sbt shared/publishM2
 sbt kernel/publishM2 keytool/publishM2 sdk/publishM2 dagL1/publishM2 currencyL0/publishM2 currencyL1/publishM2
 ```
 
-This will take some time.
+:::info
+This part of the process can take some time.
+:::
 
 - Return to the root directory:
 
 ```scala
 cd ..
 ```
+
+## Creating the metagraph project
 
 - Install the coursier and giter8 packages:
 
@@ -130,9 +140,10 @@ source ~/.profile
 ```bash
 g8 Constellation-Labs/currency --tag v2.0.0-alpha.10 --name="my-project" --tessellation_version="2.0.0-alpha.10"
 ```
+:::important
+If you want to customize the reward logic before compiling, check the **[Customize rewards guide](https://docs.constellationnetwork.io/sdk/guides/customize-rewards/)**
+:::
 
-- If you want to customize the reward logic before compiling, see the **[Customize Rewards](https://docs.constellationnetwork.io/sdk/guides/customize-rewards/)** guide:
-https://docs.constellationnetwork.io/sdk/guides/customize-rewards/
 - Compile the Metagraph L0 and Metagraph L1 jars:
 
 ```bash
@@ -147,6 +158,8 @@ cd ..
 mv my-project/modules/l0/target/scala-2.13/my-project-currency-l0-assembly-0.1.0-SNAPSHOT.jar metagraph-l0.jar
 mv my-project/modules/l1/target/scala-2.13/my-project-currency-l1-assembly-0.1.0-SNAPSHOT.jar metagraph-l1.jar
 ```
+
+## Setting up the genesis file
 
 - We should now download some files from the Tessellation repo releases. In this example, we should go to the releases [https://github.com/Constellation-Labs/tessellation/releases/tag/v2.0.0-alpha.10](https://github.com/Constellation-Labs/tessellation/releases/tag/v2.0.0-alpha.10)
 - Then we need the files: cl-node.jar, cl-wallet.jar
@@ -163,13 +176,21 @@ wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.0.0
 touch genesis.csv
 ```
 
-- Edit the genesis file: (**We used ‘vim’ in this example, you can choose any text editors that you want to**):
+- Edit the genesis file:
+
+:::info
+The steps below use vim, you can use any text editor of your preference
+:::
 
 ```bash
 vim genesis.csv
 ```
 
-- Add the following values to the file: (**NOTE: The addresses and amounts below are just examples, you can replace them with any of your addresses and amounts if you want to**):
+- Add the following values to the file: 
+
+:::info
+The addresses and amounts below are just examples, you can edit and customize them to match your use case
+:::
 
 ```bash
 DAG8pkb7EhCkT3yU87B2yPBunSCPnEdmX2Wv24sZ,1000000000000
@@ -177,4 +198,4 @@ DAG4o41NzhfX6DyYBTTXu6sJa6awm36abJpv89jB,1000000000000
 DAG4Zd2W2JxL1f1gsHQCoaKrRonPSSHLgcqD7osU,1000000000000
 ```
 
-- Right now, we have the base image configured. This image will be used in all Metagraph instances
+We now have the base image configured. This image will be used in all Metagraph instances

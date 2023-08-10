@@ -17,5 +17,6 @@ An off-network API offering indexed and searchable transactions, snapshots, and 
 [Open API Spec](http://apidoc-dev.constellationnetwork.io.s3-website.us-west-1.amazonaws.com/block-explorer/)
 
 #### Base urls:
-- Testnet: https://be-testnet.constellationnetwork.io
-- Mainnet: https://be-mainnet.constellationnetwork.io
+- TestNet: https://be-testnet.constellationnetwork.io
+- IntegrationNet: https://be-integrationnet.constellationnetwork.io
+- MainNet: https://be-mainnet.constellationnetwork.io

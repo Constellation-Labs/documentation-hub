@@ -13,6 +13,6 @@ This guide focuses on programmatic integrations using Constellation Network APIs
 
 ### Quickstart
 Already know what you're looking for? Jump ahead.
-- [Testnet](./testnet)
+- [TestNet](./testnet)
 - [Dag4.js Javascript SDK](./dag4)
 - [Network APIs](./network-apis)

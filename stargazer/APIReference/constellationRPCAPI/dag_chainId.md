@@ -23,7 +23,7 @@ None
 
 ```typescript title="ChainId"
 type ChainId =
-  | "1" // Constellation Mainnet
+  | "1" // Constellation MainNet
   | "3"; // Ceres Testnet (fka. Exchanges Network)
 ```
 

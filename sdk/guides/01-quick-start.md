@@ -26,8 +26,9 @@ Many developers can skip this step because these dependencies are already instal
 - [Node JS](https://nodejs.org/en)
 - [Docker](https://docs.docker.com/get-docker/)
 - [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
-- [Scala](https://www.scala-lang.org/download/)
+- [Scala 2.13](https://www.scala-lang.org/download/)
 - [Jq](https://jqlang.github.io/jq/download/)
+
 
 
 #### Install argc

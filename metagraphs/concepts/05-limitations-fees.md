@@ -8,13 +8,13 @@ In order to leverage the global L0 network for validation and consensus, metagra
 
 ## Limitations
 
-The global L0 network enforces a snapshot size limit of 50kb of incremental data per snapshot. This constraint has been implemented to guarantee efficient processing and storage of snapshots on the network. Any snapshot exceeding this size limit will be rejected by the network. Developers are encouraged to optimize their data structures and ensure that their snapshots adhere to this size limitation.
+The global L0 network enforces a snapshot size limit of 500kb of incremental data per snapshot. This constraint has been implemented to guarantee efficient processing and storage of snapshots on the network. Any snapshot exceeding this size limit will be rejected by the network. Developers are encouraged to optimize their data structures and ensure that their snapshots adhere to this size limitation.
 
 ## Fees
 
-State channels can submit one snapshot per global snapshot without paying a fee. Subsequent snapshots submitted to the global L0 network will be held in the mempool until the next global snapshot is triggered, effectively rate-limiting snapshots submitted without a fee.
+Metagraphs can submit one snapshot per global snapshot without paying a fee. Subsequent snapshots submitted to the global L0 network will be held in the mempool until the next global snapshot is triggered, effectively rate-limiting snapshots submitted without a fee.
 
-State channel snapshots submitted without a fee or with an insufficient fee will not be validated by the network, but the metagraph snapshot hash will still be included in the global snapshot.
+Metagraph snapshots submitted without a fee or with an insufficient fee will not be validated by the network, but the metagraph snapshot hash will still be included in the global snapshot.
 
 :::info
 

@@ -127,7 +127,7 @@ We will **leave** the `All IPv4` and `All IPv6` items.
 Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) **API** access.  Ports 9000 and 9001 are configurable and will be dependent on the access rules for the specific Hypergraph or Metagraph network you connect to.  **99%** of the tim, the ports used here can be any port the Node Operator wants to use.  Most Hypergraph and Metagraphs will not restrict the ports to be used.  However, Node Operators will need to learn what ports are opened for access to the Metagraphs, and update their firewall (change) accordingly.
 :::
 
-## Mainnet 2.0 Launch Requirement 
+## MainNet 2.0 Launch Requirement 
 It is highly recommended that you use `nodectl` to install and control/admin your Node.
 
 Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet 2.0 Validator Node's `Layer1` connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.  

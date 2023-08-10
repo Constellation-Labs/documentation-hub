@@ -15,7 +15,7 @@ Constellation is a feeless decentralized network that enables anyone to build th
 <br /><br />
 
 :::info Constellation vs Hypergraph
-Constellation Network is, in its broadest sense, a technology company, but it can also refer to our decentralized network. Throughout the docs, we'll be referring to the network as either hypergraph or **Global L0** which are defined in the following sections.
+Constellation Network is, in its broadest sense, a technology company, but it can also refer to our decentralized network. Throughout the docs, we'll be referring to the network as either **Hypergraph** or **Global L0** which are defined in the following sections.
 :::
 
 ## Network Components
@@ -51,4 +51,4 @@ Hypergraph and Global L0 are sometimes used interchangeably, with the distinctio
 Metagraph nodes in this layer are responsible for submitting [snapshots](/metagraphs/concepts/snapshots) to the Global L0. A snapshot contains a bundle of validated transactions that are passed from metagraph L1 to metagraph L0 for consensus before it's finally captured on the Hypergraph.
 
 ### Metagraph L1
-This layer symbolizes the actual "blockchain" or mainnet, and is where the metagraph networks reside — this is why metagraphs are often described as networks built on top of Hypergraph. The first round of consensus is performed here before it's passed down to metagraph L0 for a second round.
+This layer symbolizes the actual "blockchain" or MainNet, and is where the metagraph networks reside — this is why metagraphs are often described as networks built on top of Hypergraph. The first round of consensus is performed here before it's passed down to metagraph L0 for a second round.

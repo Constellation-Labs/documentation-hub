@@ -6,7 +6,7 @@ hide_table_of_contents: false
 
 <intro-end />
 
-The articles in this section of the documentation hub provide a starting point for understanding metagraph development, planning your metagraph design, and eventual implementation. 
+The articles in this section of the documentation hub provide a starting point for understanding metagraph development, planning your metagraph design, and implementation. 
 
 ## A note on the state of the network
 With the launch of Constellation MainNet 2.0 in 2022, a new paradigm of distributed ledger technology became available to application developers for the very first time. As with all complex challenges, progress is not always a direct path and success doesn't come all at once. With that in mind, we want to set appropriate expectations for developers who want to build a metagraph on the network about what tools will be available to them and when. 

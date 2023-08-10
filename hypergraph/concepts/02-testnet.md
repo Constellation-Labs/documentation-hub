@@ -1,19 +1,14 @@
 ---
-title: Testnet
+title: TestNet
 slug: /testnet
-sidebar_label: Testnet
+sidebar_label: TestNet
 hide_table_of_contents: false
 ---
 <intro-end />
 
-Constellation provides developers with a full featured testnet to test applications and metagraphs before they're ready for the production environment. 
-The testnet has all of the same features as mainnet and can therefore be used to validate application integrations in a realistic way. 
+Metagraph developers can use testnet as an experimental environment designed for testing metagraphs against the newest protocol updates before they are rolled out to integrationnet. Unlike the more stable integrationnet, the testnet provides a platform for developers to experiment with the latest features, enabling them to validate how their metagraphs will interact with upcoming changes.
 
-:::info Developing a metagraph
-Metagraph developers may use testnet as they're nearing production readiness. For initial development, developing on your own test cluster is recommended. See [Deploying to Testnet](/sdk/guides/deploy-testnet).
-:::
-
-## Connecting to Testnet
+## Connecting to TestNet
 The following urls can used to access testnet: 
 - __Block Explorer API__: https://be-testnet.constellationnetwork.io
 - __Global L0 API__: https://l0-lb-testnet.constellationnetwork.io
@@ -21,7 +16,7 @@ The following urls can used to access testnet:
 
 See [Available APIs](/hypergraph/global-apis) for detailed information on available endpoints. 
 
-## Testnet Faucet
+## Faucet
 Constellation hosts a testnet faucet which distributes testnet DAG for testing purposes. This coin has no value and can only be used on the testnet. The faucet provides small amounts of DAG at each request with rate limiting to prevent depletion of its DAG reserves. 
 
 The faucet can be accessed at:

@@ -4,16 +4,16 @@ hide_table_of_contents: false
 ---
 <intro-end />
 
-This guide will walk you through basic state channel (metagraph) functionality including creating a snapshot, posting to the global L0, and implementing basic token functionality.
+This guide will walk you through basic metagraph functionality including creating a snapshot, posting to the global L0, and implementing basic token functionality.
 
 ## What you'll learn
-1. Create a state channel snapshot comprised of L1 data transactions
-2. Post the state channel snapshot to the global L0
-3. Retrieve the state channel snapshot from the global L0 snapshot
-4. Convert the state channel snapshot to a human readable format
+1. Create a metagraph snapshot comprised of L1 data transactions
+2. Post the metagraph snapshot to the global L0
+3. Retrieve the metagraph snapshot from the global L0 snapshot
+4. Convert the metagraph snapshot to a human readable format
 5. Retreive the L1 data transactions in human readable format
 6. Create a basic token
-7. Post a simple token transaction to the state channel to transfer tokens from one wallet to another
+7. Post a simple token transaction to the metagraph to transfer tokens from one wallet to another
 8. Retrieve token transaction details with a given transaction ID
 9. Retrieve token balance in a wallet with a given wallet address
 10. Retrieve all transactions related to a wallet with a given wallet address
@@ -79,9 +79,9 @@ java -cp tessellation-demo-assembly-0.1.jar com.tessellation.demo.Main run-demo
 curl -i http://<demo-ip-address>:19000/demo/ping
 ```
 
-**6.** Create a state channel snapshot
+**6.** Create a metagraph snapshot
 
-For the purposes of this demo we have used the following state channel address: `DAG45MPJCa2RsStWfdv8RZshrMpsFHhnsiHN7kvX`
+For the purposes of this demo we have used the following metagraph address: `DAG45MPJCa2RsStWfdv8RZshrMpsFHhnsiHN7kvX`
 
 We will use both a valid and an invalid transaction example 
 - **Valid:** [examples/DemoTransaction.json](https://github.com/Alkimi-Exchange/state-channel-demo/blob/main/examples/DemoTransaction.json)
@@ -101,25 +101,25 @@ This POST call will return a serialized signed transaction in the format
 {"value":{"lastSnapshotHash":"0000000000000000000000000000000000000000000000000000000000000000","content":[120,1,-22,7,2,97,109,111,117,110,-12,105,-28,2,-48,15,0,3,105,100,79,0]},"proofs":[{"id":"746f871e529455fd5b92ebd32af554aa2ec493f4d1b8679f405191405aea6083e8b63b740874962dcb71ce9bdaf6f1ea1a94ae6428a271c102141f80d5187a2d","signature":"3045022100d1f120f5663b9a69cc139676d021f6a7f7fc8e24492a2df267f85c8f58403b5802205df4aee32ae375f89bbfda9eaf97393099ad8a81ded983f2eb3824eae3f0d5d8"}]}
 ```
 
-**7.** Submit the state channel snapshot to the global L0
+**7.** Submit the metagraph snapshot to the global L0
 
-A sample state channel snapshot can be seen here - [examples/SignedStateChannelSnapshotBinary.json](https://github.com/Alkimi-Exchange/state-channel-demo/blob/main/examples/SignedStateChannelSnapshotBinary.json)
+A sample metagraph snapshot can be seen here - [examples/SignedStateChannelSnapshotBinary.json](https://github.com/Alkimi-Exchange/state-channel-demo/blob/main/examples/SignedStateChannelSnapshotBinary.json)
 
-Use the serialized signed transaction that was the result of the previous step as the input for this step. The state channel snapshot can be posted to the global L0 using the following command.
+Use the serialized signed transaction that was the result of the previous step as the input for this step. The metagraph snapshot can be posted to the global L0 using the following command.
 ```bash
 curl -v -X POST http://<l0-node-ip>:9000/state-channels/DAG45MPJCa2RsStWfdv8RZshrMpsFHhnsiHN7kvX/snapshot -H 'Content-Type:application/json' -H "Accept:application/json" -d @SignedStateChannelSnapshotBinary.json
 ```
 
 On success, this API returns 200 OK. 
 
-**8.** Retrieve the state channel snapshot from the global L0 snapshot
+**8.** Retrieve the metagraph snapshot from the global L0 snapshot
 
-Use the following command to retrieve the state channel snapshot from the global L0 snapshot
+Use the following command to retrieve the metagraph snapshot from the global L0 snapshot
 ```bash
 curl -i http://<l0-node-ip>:9000/global-snapshots/latest
 ```
 
-`l0-node-ip` refers to the genesis or validator node IP that this state channel snapshot is retrieved from.
+`l0-node-ip` refers to the genesis or validator node IP that this metagraph snapshot is retrieved from.
 
 :::info L0 API Endpoints
 Looking for additional information on available L0 API endpoints? See the full [API spec.](/apps/network-apis)
@@ -137,9 +137,9 @@ curl -i http://<l1-node-ip>:19000/demo/transactions/{ordinal}
 ```
 Returns any demo transactions persisted in the global snapshot with the supplied ordinal.
 
-**11.** Create subsequent state channel snapshots
+**11.** Create subsequent metagraph snapshots
 
-To create further state channel snaphots, the `lastSnapshotHash` value must be provided as a query parameter to the endpoint while creating the state channel snapshot. This value is the hash of the previous state channel snapshot posted. 
+To create further metagraph snaphots, the `lastSnapshotHash` value must be provided as a query parameter to the endpoint while creating the metagraph snapshot. This value is the hash of the previous metagraph snapshot posted. 
 
 ```bash
 curl -v -X POST http://localhost:19000/demo/state-channel-snapshot?lastSnapshotHash=854693443ff34068f267428420e42cbcc79824bea7e004faffbca67fddad3f08 -H 'Content-Type:application/json' -H "Accept:application/json" -d @examples/DemoTransaction.json
@@ -162,14 +162,14 @@ The remainder of this guide walks us through basic token functionality such as t
 - DAG45MPJCa2RsStWfdv8RZshrMpsFHhnsiHN7kvP -> 10000 tokens
 - DAG45MPJCa2RsStWfdv8RZshrMpsFHhnsiHN7kvT -> 10000 tokens
 
-These wallet balances are held in the state channel. When a token transaction is sent to the state channel, the transaction is validated i.e. checked that the addresses are valid DAG addresses and that the source wallet has the requisite number of tokens to make a successful transfer. Once the validations have passed, the state channel updates the wallet balances to reflect the requested token transaction.
+These wallet balances are held in the metagraph. When a token transaction is sent to the metagraph, the transaction is validated i.e. checked that the addresses are valid DAG addresses and that the source wallet has the requisite number of tokens to make a successful transfer. Once the validations have passed, the metagraph updates the wallet balances to reflect the requested token transaction.
 
 **13.** Check the balance of each wallet with the following command
 ```bash
 curl -i http://localhost:19000/demo/token-balances/{dagWalletAddress}
 ```
 
-**14.** Submit a token transaction to the state channel
+**14.** Submit a token transaction to the metagraph
 Using the example [TokenTransaction](https://github.com/Alkimi-Exchange/state-channel-demo/blob/main/examples/TokenTransaction.json) format, submit a token transaction. 
 
 ```bash
@@ -177,7 +177,7 @@ curl -v -X POST http://localhost:19000/demo/token-transactions  -H 'Content-Type
 ```
 
 :::info Demo purposes only
-Note that token transactions should be signed by the source wallet. The state channel should validate the signature before taking any action. However, for the purpose of this demo, these transactions are sent unsigned. This would need to be changed for a production ready code.
+Note that token transactions should be signed by the source wallet. The metagraph should validate the signature before taking any action. However, for the purpose of this demo, these transactions are sent unsigned. This would need to be changed for a production ready code.
 ::: 
 
 **15.** Explore transactions with the API

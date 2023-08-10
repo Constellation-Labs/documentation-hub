@@ -13,9 +13,9 @@ The DAG L1 network is a special case metagraph that validates transactions, runs
 
 ### What is $DAG ?
 
-Constellation’s [$DAG coin](https://constellationnetwork.io/dag-token) is a next-generation cryptocurrency platform built on a Directed Acyclic Graph (DAG) structure. This hypergraph-based protocol enables Constellation to create a trustless, decentralized network of nodes that share data in real time — without the need for mining or other energy-intensive processes. Since its launch in late 2018, the coin has earned rave reviews from blockchain developers and crypto users alike — and its $DAG token is quickly becoming one of the most sought-after assets in the industry.
+Constellation’s [$DAG coin](https://constellationnetwork.io/dag-token) is a cryptocurrency platform built on a Directed Acyclic Graph (DAG) structure. This hypergraph-based protocol enables Constellation to create a trustless, decentralized network of nodes that share data in real time — without the need for mining or other energy-intensive processes.
 
-$DAG works on an exclusive dApp, binding all components of the Hypergraph for enhanced scalability and feeless peer-to-peer transactions. Transactions are validated by node operators and its reward layer maintains the network with millions of monthly transactions. $DAG's microservice framework allows for advanced data connections to be made in a secure manner.
+DAG operates on a special-case Layer 1 network that interacts directly with the Global L0, binding all components of the Hypergraph for  scalability and feeless peer-to-peer transactions. $DAG's microservice framework allows for advanced data connections to be made in a secure manner.
 
 ## Technology Behind the Coin
 
@@ -23,17 +23,17 @@ At its core, Constellation’s Directed Acyclic Graph Structure (DAG) structure 
 
 ## Who Uses $DAG?
 
-As opposed to traditional cryptocurrencies such as Bitcoin and Ethereum, Constellation's $DAG coin offers several benefits that can improve crypto transactions' efficiency and security. The architecture of the system is ideal for:
+Constellation's $DAG coin offers several benefits that can improve crypto transactions' efficiency and security. The architecture of the system is ideal for:
 
 ### Token Purchasers and Holders
 
-Individuals that have purchased $DAG, are speculating, trading, or sending $DAG between their wallets, using it as a peer-to-peer currency.
+Individuals that have purchased $DA are sending it between their wallets, using it as a peer-to-peer currency.
 
 ### Node Validators
 
 These individuals manage nodes and receive $DAG as a reward for participating in Hypergraph and consensus. Consensus is the programmatic means to govern and optimize the network with speed and security. The collection of these nodes is distributed, and forms the Hypergraph.
 
-### dApp Businesses
+### Metagraph Businesses
 
 With Constellation's HGTP protocol, individuals and organizations can create immutable, automated and programmatic businesses and tokens with the Metagraph Token Standard.
 
@@ -51,16 +51,6 @@ The tokenization of data could one day allow data packages to be traded and sold
 
 ## The mission of $DAG
 
-By leveraging a unique combination of nodes and rewards, $DAG wallet users can unlock the power of the decentralized network and reap the benefits of this cutting-edge technology. The more dApps that launch on the network, the more utility the $DAG token will have, and the more scarce $DAG will become. By holding $DAG, you can participate in the [generative economics of the network](https://www.youtube.com/watch?v=wGfMsrskf3A) and support increased bandwidth in various ways.
+By leveraging a unique combination of nodes and rewards, $DAG wallet users can unlock the power of the decentralized network and reap the benefits of this cutting-edge technology. The more metagraphs that launch on the network, the more utility the $DAG token will have, and the more scarce $DAG will become. By holding $DAG, you can participate in the [generative economics of the network](https://www.youtube.com/watch?v=wGfMsrskf3A) and support increased bandwidth in various ways.
 
-### Validate Data
 
-Stake $DAG to run a node on the Hypergraph network to validate data and transactions and receive validator rewards of $DAG.
-
-### Secure Network Utility
-
-Staking $DAG on [Lattice](https://constellationnetwork.io/lattice) (powered by Constellation’s HGTP) secures network utility and enables cross-chain liquidity between other ecosystems.
-
-### Provide Liquidity
-
-Provide liquidity and sufficient bandwidth for other L0 projects running dApps on the network, such as Alkimi Exchange, the first decentralized ad exchange.

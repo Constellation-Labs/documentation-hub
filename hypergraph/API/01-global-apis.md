@@ -22,8 +22,9 @@ You can use one of the load balancer endpoints below or connect directly to a ne
 
 #### Base urls​:
 
-- Testnet: https://l1-lb-testnet.constellationnetwork.io
-- Mainnet: https://l1-lb-mainnet.constellationnetwork.io
+- TestNet: https://l1-lb-testnet.constellationnetwork.io
+- IntegrationNet: https://l1-lb-integrationnet.constellationnetwork.io
+- MainNet: https://l1-lb-mainnet.constellationnetwork.io
 
 ## Global L0 API
 The Global L0 API can be used to fetch global snapshot information, view DAG supply and address balances, and submit metagraph (state channel) snapshots. 
@@ -35,5 +36,6 @@ You can use one of the load balancer endpoints below or connect directly to a ne
 [Open API Spec](http://apidoc-dev.constellationnetwork.io.s3-website.us-west-1.amazonaws.com/node/#/)
 
 #### Base urls​:
-- Testnet: https://l0-lb-testnet.constellationnetwork.io
-- Mainnet: https://l0-lb-mainnet.constellationnetwork.io
+- TestNet: https://l0-lb-testnet.constellationnetwork.io
+- IntegratioNet: https://l0-lb-integrationnet.constellationnetwork.io
+- MainNet: https://l0-lb-mainnet.constellationnetwork.io

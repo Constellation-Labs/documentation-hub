@@ -5,7 +5,7 @@ slug: /metagraph-tokens
 hide_table_of_contents: false
 ---
 
-Metagraph tokens work in much the same way as DAG. In order to interact with a Metagraph Token you will need to first create a metagraph client. 
+Metagraph tokens work in much the same way as DAG. In order to interact with a metagraph token you will need to first create a metagraph client. 
 
 :::info Minimum Version
 You will need version 2.1.1 or higher in order to interact with metagraph token networks. 
