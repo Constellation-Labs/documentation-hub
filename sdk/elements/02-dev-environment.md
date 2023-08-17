@@ -35,9 +35,9 @@ The system requirements for running a Euclid Development Environment project are
 
 ## Included Tools
 The Euclid Development Environment includes the following components:
-- The [Hydra CLI](/sdk/hydra-cli) tool for building and managing clusters of docker containers for each of the network configurations
+- The [Hydra CLI](/sdk/elements/hydra-cli) tool for building and managing clusters of docker containers for each of the network configurations
 - Docker files for building and connecting each of the required local clusters
-- A [Telemetry Dashboard](/sdk/telemetry-dashboard) consisting of two additional docker containers running Prometheus and Grafana.
+- A [Telemetry Dashboard](/sdk/elements/telemetry-dashboard) consisting of two additional docker containers running Prometheus and Grafana.
 - Optionally, run the [Developer Dashboard](/sdk/elements/developer-dashboard), a NextJS frontend javascript app for use during development.
 
 ## Install
