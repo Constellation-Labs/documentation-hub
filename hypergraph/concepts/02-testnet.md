@@ -6,7 +6,7 @@ hide_table_of_contents: false
 ---
 <intro-end />
 
-Metagraph developers can use TestNet as an experimental environment designed for testing metagraphs against the newest protocol updates before they are rolled out to integrationnet. Unlike the more stable IntegrationNet, the TestNet provides a platform for developers to experiment with the latest features, enabling them to validate how their metagraphs will interact with upcoming changes.
+Metagraph developers can use TestNet as an experimental environment designed for testing metagraphs against the newest protocol updates before they are rolled out to IntegrationNet. Unlike the more stable IntegrationNet, the TestNet provides a platform for developers to experiment with the latest features, enabling them to validate how their metagraphs will interact with upcoming changes.
 
 ## Connecting to TestNet
 The following urls can used to access TestNet: 
