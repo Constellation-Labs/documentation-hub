@@ -96,6 +96,10 @@ git clone https://github.com/Constellation-Labs/tessellation.git
 git checkout v2.0.0-alpha.2
 ```
 
+:::warning 
+Make sure you're using the latest version of Tessellation. You can find the most recent release in [**here**](https://github.com/Constellation-Labs/tessellation/releases).
+:::
+
 Move to the tesselation folder and checkout to branch/version that you want. You can skip the `git checkout :version` if you want to use the develop default branch
 ```bash
 cd tesselation

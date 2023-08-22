@@ -84,6 +84,9 @@ git clone https://github.com/Constellation-Labs/tessellation.git
 cd tessellation
 git checkout v2.0.0-alpha.10
 ```
+:::warning 
+Make sure you're using the latest version of Tessellation. You can find the most recent release in [**here**](https://github.com/Constellation-Labs/tessellation/releases).
+:::
 
 - Create a GitHub token to build and publish the JARs.
 - Instructions on creating an **[access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)** can be found in the GitHub documentation. The token should only have the **`read:packages`** scope.
@@ -140,6 +143,10 @@ source ~/.profile
 ```bash
 g8 Constellation-Labs/currency --tag v2.0.0-alpha.10 --name="my-project" --tessellation_version="2.0.0-alpha.10"
 ```
+:::warning 
+Make sure you're using the latest version of Tessellation. You can find the most recent release in [**here**](https://github.com/Constellation-Labs/tessellation/releases).
+:::
+
 :::important
 If you want to customize the reward logic before compiling, check the **[Customize rewards guide](https://docs.constellationnetwork.io/sdk/guides/customize-rewards/)**
 :::
@@ -169,6 +176,10 @@ wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.0.0
 wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.0.0-alpha.10/cl-wallet.jar
 wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.0.0-alpha.10/cl-keytool.jar
 ```
+
+:::warning 
+Make sure you're using the latest version of Tessellation. You can find the most recent release in [**here**](https://github.com/Constellation-Labs/tessellation/releases).
+:::
 
 - Create a **`genesis.csv`** file:
 
