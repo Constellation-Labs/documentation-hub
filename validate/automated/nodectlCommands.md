@@ -1556,6 +1556,11 @@ The **`export_private_key`** command does not take any [parameters](#what-is-a-s
 Do not share this private key with anyone that you do not completely trust with your financial assets.
 :::
 
+| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| :----: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which profile are you seeking the nodeid from. | **required** |
+
+
 nodectl is designed to work with `p12` private key files that support Constellation Network `v2` keys.   If you are running an older node, please refer to the [v1 to v2 migration](/validate/resources/p12v1v2-migrate) document.
 
 Import the private key produced by this command into your **StarGazer wallet** (or other) in order to control your Node's wallet.
@@ -1567,7 +1572,7 @@ sudo nodectl export_private_key help
 ```  
 - Expose your private key
 ```
-sudo nodectl export_private_key
+sudo nodectl export_private_key -p <profile_name>
 ```
 
 
