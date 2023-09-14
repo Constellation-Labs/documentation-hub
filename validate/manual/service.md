@@ -82,7 +82,7 @@ Add the commands to read your `cn-node` file and start the layer0 or layer1 serv
 ```
 #!/bin/bash
 . /usr/local/bin/cn-node
-/usr/bin/java -jar '-Xms1024M' '-Xmx3G' '-Xss256K' /var/tessellation/cl-dag-l1.jar run-validator --public-port 91010 --p2p-port 9011 --cli-port 9012 & 
+/usr/bin/java -jar '-Xms1024M' '-Xmx3G' '-Xss256K' /var/tessellation/cl-dag-l1.jar run-validator --public-port 9010 --p2p-port 9011 --cli-port 9012 & 
 ```
 
 ##### The above commands will:
