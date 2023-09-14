@@ -589,6 +589,7 @@ The **`check_seedlist`** command takes one [parameter](#what-is-an-option-and-pa
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | related to the profile to verify access permissions. | **required** |
+| -id | `<node_id>` | nodeid of the Node you would like to verify seed list participation (if not local to the Node) | **optional** <br/> *version >`2.9.x`* | 
 
 **`check_seedlist`** will pull your `nodeid` out of your p12 file and compare it to the seedlist downloaded from **Constellation Network's** authorized list.
   
@@ -627,8 +628,11 @@ The **`check_seedlist_participation`** command does not take any [parameters](#w
 | :---: | :---: | 
 | check_seedlist_participation | -cslp  |
 
-This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.  It will be deprecated as soon as no longer necessary.
-  
+*This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.  It will be deprecated as soon as no longer necessary.*
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | related to the profile to verify access permissions. | **required** | 
 This command can be used to review seed list access-list participation for any/all given profile(s) in the configuration that has a seed-list setup.
        
 > #### Examples
@@ -638,7 +642,7 @@ sudo nodectl check_seedlist_participation help
 ```  
 - Execute the check_seedlist_participation command
 ```
-sudo nodectl check_seedlist_participation
+sudo nodectl check_seedlist_participation -p <profile_name>
 ```  
 
 
