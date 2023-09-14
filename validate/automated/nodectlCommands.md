@@ -613,6 +613,35 @@ sudo nodectl check_seedlist
 ```
 
 
+
+
+
+### check_seedlist_participation 
+---
+
+The **`check_seedlist_participation`** command does not take any [parameters](#what-is-a-switch-and-parameter).
+
+| Command | Shortcut |
+| :---: | :---: | 
+| check_seedlist_participation | -cslp  |
+
+This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.  It will be deprecated as soon as no longer necessary.
+  
+This command can be used to review seed list access-list participation for any/all given profile(s) in the configuration that has a seed-list setup.
+       
+> #### Examples
+- Help screen
+```
+sudo nodectl check_seedlist_participation help
+```  
+- Execute the check_seedlist_participation command
+```
+sudo nodectl check_seedlist_participation
+```  
+
+
+
+
 ### clean_files
 ---
 
@@ -1195,30 +1224,6 @@ sudo nodectl -sns
 
 
 
-
-
-### show_seedlist_participation 
----
-
-The **`check_seedlist_participation`** command does not take any [parameters](#what-is-a-switch-and-parameter).
-
-| Command | Shortcut |
-| :---: | :---: | 
-| show_seedlist_participation | -cslp  |
-
-This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.  It will be deprecated as soon as no longer necessary.
-  
-This command can be used to review seed list access-list participation for any/all given profile(s) in the configuration that has a seed-list setup.
-       
-> #### Examples
-- Help screen
-```
-sudo nodectl check_seedlist_participation help
-```  
-- Execute the check_seedlist_participation command
-```
-sudo nodectl check_seedlist_participation
-```  
 
 
 
