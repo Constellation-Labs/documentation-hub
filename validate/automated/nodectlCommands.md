@@ -223,9 +223,9 @@ The purpose of the `slow_restart` command is to assist a Node that may be **stuc
 
 The `slow_restart` will allow enough time for a Node to be off the network and reset any issues.
 
-| Command | Shortcut |
-| :----: | :---: |
-| slow_restart  |  -sr   |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| slow_restart  |  -sr   | >v1.x.x |
 
 ### restart_only 
 ---
@@ -438,9 +438,9 @@ sudo nodectl auto_restart status
 
 The **`check_connection`** command will execute a search on the currently connected hypergraph or metagraph cluster. 
 
-| Command | Shortcut |
-| :---: | :---: | 
-| check_connection  | -cc |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_connection  | -cc | >v1.x.x |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -519,9 +519,9 @@ sudo nodectl check-connection -p dag-l0 -s 10.3.3.3 -s 10.4.4.4
 
 The **`check_source_connection`** command takes a profile [parameter](#what-is-an-option-and-parameter).
 
-| Command | Shortcut |
-| :---: | :---: | 
-| check_source_connection  | -csc  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_source_connection  | -csc  | >v1.x.x |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -582,9 +582,9 @@ sudo nodectl check_source_connection
 
 The **`check_seedlist`** command takes one [parameter](#what-is-an-option-and-parameter).
 
-| Command | Shortcut |
-| :---: | :---: | 
-| check_seedlist  | -csl |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_seedlist  | -csl | >v2.x.x |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -624,8 +624,8 @@ sudo nodectl check_seedlist
 
 The **`check_seedlist_participation`** command does not take any [parameters](#what-is-an-option-and-parameter).
 
-| Command | Shortcut |
-| :---: | :---: | 
+| Command | Shortcut | Version |
+| :---: | :---: | :---: | >v2.7.x |
 | check_seedlist_participation | -cslp  |
 
 *This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.  It will be deprecated as soon as no longer necessary.*
@@ -660,9 +660,9 @@ The option will be carried out and the Node Operator will be offered a visual co
 - number of files
 - Size to be freed by their removal.
 
-| Command | Shortcut |
-| :----: | :---: |
-| clean_files  |  -cf  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| clean_files  |  -cf  | >v2.7.x |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -709,9 +709,9 @@ Once the command is executed the Node Operator will be offered a CLI menu of **s
   
 The option will be carried out and the Node Operator will be offered a visual confirmation of the **snapshots** to be removed, number of snapshots, and size to be freed by their removal.
 
-| Command | Shortcut |
-| :----: | :---: |
-| clean_snapshots  |  -cs  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| clean_snapshots  |  -cs  | >v2.7.x |
 
 > #### Examples
 - Help screen
@@ -1055,9 +1055,9 @@ sudo nodectl price
 
 The **`refresh_binaries`** command does not take any [parameters](#what-is-an-option-and-parameter).
   
-| Command | Shortcut |
-| :---: | :---: | 
-| check_source_connection  | -rtb  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_source_connection  | -rtb  | >v1.x.x
 
 This command will download and overwrite the existing Tessellation binaries files that are required to run your Node.  The result of this command will be to download the binaries from the latest release and is independent of a system upgrade.
   
@@ -1077,6 +1077,43 @@ sudo nodectl refresh_binaries help
 sudo nodectl refresh_binaries
 ```
 
+
+
+### quick_status
+---
+
+The **`quick_status`** command takes a single **optional** [parameter](#what-is-an-option-and-parameter).
+
+**quick_status** will review the current status of your Node and offer a single output of the found **state** of your Node's known clusters, as quickly as possible.
+
+If the `-p` option is used with the `<profile_name>`, only that profile's status will appear.  If the `quick_status` command is called without the `-p` [option](#what-is-an-option-and-parameter), all profiles will be shown.
+
+The difference between `quick_status` and [status](#status) are two-fold:
+1. `quick_status` will only show the state of the Node's known active profile(s)
+2. `quick_status` will review the state of your Node's known active profile(s) via the local API on the Node.  This should be understood and used with caution, as if your Node is in `Ready` state but not on the proper cluster, you may receive a false positive.  The [status](#status) command; although more time costly (*expensive*), will offer a better outlook on your Node by providing metics such as `sessions`. 
+  
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| quick_status  |  -qs  | >2.9.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | supply profile name [parameter](#what-is-an-option-and-parameter) to show quick_status. | **optional** |
+| -w | `<seconds>` | watch command. will continuously check the status of your Node until <kbd>q</kbd> is pressed.  *Note*: You should **not** use the <kbd>ctrl</kbd>-<kbd>c</kbd> to exit as it may cause your keyboard to stop echoing output to your terminal.  If this does happen, you can simply exit the terminal session and log back in to correct the display issues. | **optional** |
+
+> #### Examples
+- Help screen
+```
+sudo nodectl quick_status help  
+```
+- Show all profiles
+```
+sudo nodectl quick_status
+```
+- Show status of profile named `dag-l0`
+```  
+sudo nodectl quick_status -p dag-l0
+```
 
 
 
@@ -1138,9 +1175,9 @@ This only pertains to global **MainNet** rewards.
 This does not apply to TestNet rewards.
 :::
 
-| Command | Shortcut |
-| :----: | :---: |
-| show_current_rewards  |  -scr  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_current_rewards  |  -scr  | >v2.x.x |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -1202,9 +1239,9 @@ The **`show_node_states`** command does not take any [parameters](#what-is-an-op
 
 This command displays the list of the known Node States that you may find on the Cluster or that nodectl defines when not on the cluster.
 
-| Command | Shortcut |
-| :----: | :---: |
-| show_node_states  |  -sns  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_node_states  |  -sns  | >2.x.x |
 
 ##### nodectl only states
 
@@ -1243,13 +1280,14 @@ The **`status`** command takes a single **optional** [parameter](#what-is-an-opt
 
 If the `-p` option is used with the `<profile_name>`, only that profile's status will appear.  If the `status` command is called without the `-p` [option](#what-is-an-option-and-parameter), all profiles will be shown.
   
-| Command | Shortcut |
-| :---: | :---: | 
-| status  |  -s      |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| status  |  -s  | >1.x.x |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | supply profile name [parameter](#what-is-an-option-and-parameter) to show status. | **optional** |
+| -w | `<seconds>` | watch command. will continuously check the status of your Node until <kbd>q</kbd> is pressed.  *Note*: You should **not** use the <kbd>ctrl</kbd>-<kbd>c</kbd> to exit as it may cause your keyboard to stop echoing output to your terminal.  If this does happen, you can simply exit the terminal session and log back in to correct the display issues. Available in version >v2.9.0 | **optional** |
 
 > #### Examples
 - Help screen
@@ -1302,9 +1340,9 @@ sudo nodectl status -p dag-l0
 
 The **`update_seedlist`** command does not take any [parameters](#what-is-an-option-and-parameter).
   
-| Command | Shortcut |
-| :---: | :---: | 
-| update_seedlist  | -usl |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| update_seedlist  | -usl | v2.x.x |
 
 | [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
 | :----: | :---: | :--- | :----: |
@@ -1608,15 +1646,15 @@ The **`id`** command is an alias to the [nodeid](#nodeid) command.
 
 The **`nodeid`** command will retrieve your Node's public key (nodeid) for either your local Node or another Node by supplying the `-t` (target) [option](#what-is-an-option-and-parameter) followed by the `ip_address` of the node on the cluster that is targeted.
 
-| Command | Alias |
-| :----: | :---: |
-| nodeid  |  id  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| nodeid  |  id  | >v2.x.x |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :----: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which profile are you seeking the nodeid from. | **required** |
 | -t | `<ip_address` | retrieve remote by target IP address. | **optional** |
-
+| -l |  | Display the nodeid in long format. | **optional** |
 > #### Examples
 - Help Screen
 ```
@@ -1800,9 +1838,9 @@ If the Node is not at the most current version of nodectl, this command will pro
    
 See the [upgrade path](/validate/automated/nodectlUpgradePath) document for more details.
 
-| Command | Shortcut |
-| :---: | :---: | 
-| upgrade_path  |  -up  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| upgrade_path  |  -up  | >v2.7.x
   
 > ##### Example Usage
 - Help screen
@@ -1822,9 +1860,9 @@ sudo nodectl upgrade_path
 
 The **`validate_config`** command will attempt to review your [`cn-config.yaml`](/validate/automated/nodectlConfig) file for errors that may cause **unexpected** results when attempting to run your Node.
 
-| Command | Shortcut |
-| :---: | :---: | 
-| validate_config  |  -val  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| validate_config  |  -val  | >v2.7.x |
 
 In the event that nodectl finds discrepancies or errors in the **cn-config.yaml**, a table of errors and possible resolutions will be displayed as output.
 
@@ -1834,9 +1872,9 @@ In the event that nodectl finds discrepancies or errors in the **cn-config.yaml*
 
 The **`view_config`** command will show a [paginated](#what-is-pagination) view of the current [`cn-config.yaml`](/validate/automated/nodectlConfig) file.  
 
-| Command | Shortcut |
-| :---: | :---: | 
-| view_config  |  -vc    |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| view_config  |  -vc    | >v2.7.x
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -1864,9 +1902,9 @@ nodectl will review the current github repo and compare it to the versions runni
 
 It will report back `True` or `False` based on whether the versions match.
 
-| Command | Shortcut |
-| :---: | :---: | 
-| check_versions  |  -cv   |  
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_versions  |  -cv   | >v2.x.x |
 
 | Output Header | Description |
 | ---: | :------ |
@@ -1946,9 +1984,9 @@ During the execution you will be offered a menu to upload:
     
 Once you follow the prompts a tarball gzip file will appear in the uploads directory and the system will offer you the ability to upload the results to the transfer.sh service.
 
-| Command | Shortcut |
-| :---: | :---: | 
-| send_logs  |  -sl |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| send_logs  |  -sl | >v2.x.x |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
