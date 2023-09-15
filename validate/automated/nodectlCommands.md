@@ -1754,6 +1754,7 @@ The `configure` command will offer a relatively detailed explanation of all conf
 | :---: | :---: | :--- | :----: |
 | -a | None | enable advanced mode. | **optional** |
 | -e | None | enter directly into **edit** configuration mode for existing configurations. | **optional** |
+| -ep | None | enter directly into **edit profile** configuration mode for existing configurations. >v2.9.0 | **optional** |
 | -n | None | enter directly into **new** configuration mode. | **optional** |
   
 In new configuration mode, nodectl will offer you two (2) options
