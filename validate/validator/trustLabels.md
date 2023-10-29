@@ -23,15 +23,15 @@ those nodes. For example, if `Node B` views `Node A` with a `-1` trust, `Node B`
 
 `0` indicates neutral trust and is distinct from the absence of a trust label. In other words, `0`
 means you know about the node and have no reason to trust or distrust it. No trust label means you
-don't know about the node. You should not provide labels to nodes you do not know about.
+don't know about the node. **Do not** provide labels to nodes you do not know about.
 
 As your nodes interact with the other nodes on the network, they will develop their personal view of
 each peer's trustworthiness. So, the trust labels that you provided diminish in significance. In
-other words, trust labels are at their most impactful when there is no other knowledge of or history
-of interactions with the other nodes on the network. Trust labels represent your personal view of
-the trustworthiness of your peers and help secure your nodes. Do not replicate someone else's trust
-labels. PRO automatically incorporates information from peer nodes. So, there is no need to copy
-someone else's scores.
+other words, trust labels are at their most impactful when there is no other knowledge of or
+interaction history with the other nodes on the network. Trust labels represent your personal view
+of the trustworthiness of your peers and help secure your nodes. **Do not** replicate someone else's
+trust labels. PRO automatically incorporates information from peer nodes. So, there is no need to
+copy someone else's scores.
 
 When booting your node, use the `` argument and provide the path to a flat file containing the trust
 labels. The file is a text file with a single trust label entry per line formatted like so:
