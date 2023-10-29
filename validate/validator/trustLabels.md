@@ -29,7 +29,7 @@ each other node's trustworthiness. So, the trust labels that you provided dimish
 In other words, trust labels are at their most impactful when there is no other knowledge or
 interaction history. Trust labels are meant to secure your nodes and represent your personal view of
 the trustworthiness of other nodes on the network. You should not replicate someone else's trust
-labels. PRO automatically incorporates information from peer nodes. So, there is no need to copy
+labels. PRO automatically incorporates information from peer nodes, so there is no need to copy
 someone else's scores.
 
 When booting your node, use the `` argument and provide the path to a flat file containing the trust
