@@ -47,10 +47,10 @@ sudo wget https://github.com/Constellation-Labs/tessellation/releases/latest/dow
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/latest/download/cl-node.jar -P /var/tessellation
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/latest/download/cl-dag-l1.jar -P /var/tessellation
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/latest/download/cl-wallet.jar -P /var/tessellation
-sudo wget https://github.com/Constellation-Labs/tessellation/releases/latest/download/mainnet-seedlist -P /var/tessellation
+sudo wget https://github.com/Constellation-Labs/tessellation/releases/latest/download/mainnet-seedlist -O /var/tessellation/seed-list -o /dev/null
 
+# set executable flag
 sudo chmod +x /var/tessellation/*.jar
-sudo chmod +x /var/tessellation/cl-wallet.jar -O /var/tessellation/seed-list -o /dev/null
 ```
 
 Let's verify that our files are in place. Depending on your terminal application, the files should appear in GREEN. Make sure they are executable:  `-rwxr-xr-x`
