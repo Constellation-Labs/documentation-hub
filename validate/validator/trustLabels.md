@@ -45,13 +45,13 @@ They are also used in situations where multiple versions of the network (forks) 
 
 `0` indicates neutral trust and is distinct from the absence of a trust label. It means you know about the node and have no reason to trust or distrust it.
 
-:::important
+:::important Information
 In general, avoid giving a node a `0` trust label. Instead, don’t provide a trust label.
 :::
 
 No trust label means you don't know about the node.
 
-:::danger
+:::danger Do Not
 Do not provide labels for nodes you do not know about.
 :::
 
