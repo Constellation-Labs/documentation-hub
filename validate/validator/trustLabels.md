@@ -1,5 +1,5 @@
 ---
-title: Trust Labels Explained
+title: Trust Labels
 slug: trust-labels
 hide_table_of_contents: false
 ---
