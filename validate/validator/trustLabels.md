@@ -8,7 +8,9 @@ hide_table_of_contents: false
 
 ## Introduction
 
-Trust labels constitute integral aspects of the Proof of Reputable Observation (PRO) system. They impact several facets, such as determining the nodes from which to obtain snapshots. Trust labels are off-chain information concerning the security of nodes and their potential to harm the network. These labels are local bias values that you supply to your nodes during the joining process to the cluster (metagraph). They are specific to each node. Consequently, different nodes can exhibit varying degrees of bias.
+Trust labels constitute integral aspects of the Proof of Reputable Observation (PRO) system.
+
+They impact several facets, such as determining the nodes from which to obtain snapshots. Trust labels are off-chain information concerning the security of nodes and their potential to harm the network. These labels are local bias values that you supply to your nodes during the joining process to the cluster (metagraph). They are specific to each node. Consequently, different nodes can exhibit varying degrees of bias.
 
 :::note
 On a blockchain, `off-chain` information refers to data and transactions that are not recorded directly on the blockchain. It describes any data or processes that occur outside the main blockchain network.
