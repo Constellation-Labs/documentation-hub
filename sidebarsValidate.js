@@ -76,7 +76,7 @@ module.exports = {
       label: 'nodectl utility',
       collapsed: false,
       items: [
-        'automated/nodectl', 
+        'automated/nodectl',  
         {
           type: 'category',
           label: 'Installation',
@@ -104,6 +104,8 @@ module.exports = {
           ],
         },
         'automated/nodectlConfig',
+
+
       ],
     },   
     {
@@ -129,9 +131,9 @@ module.exports = {
         'resources/accessMac',
         'resources/accessWin',
         'resources/p12backup-mac',
-        'resources/p12backup-win',     
+        'resources/p12backup-win',        
         'resources/sshconfig',
-        'resources/p12v1v2-migrate',     
+        'resources/p12v1v2-migrate',      
       ],
     },
   ],
