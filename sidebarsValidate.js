@@ -17,6 +17,7 @@ module.exports = {
         'validator/specs',
         'validator/providers',
         'validator/vpsExplained',
+        'validator/trustLabels',
         {
           type: 'category',
           label: 'SSH Keys',
