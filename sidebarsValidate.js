@@ -104,7 +104,7 @@ module.exports = {
           ],
         },
         'automated/nodectlConfig',
-
+      
 
       ],
     },   
@@ -137,4 +137,5 @@ module.exports = {
       ],
     },
   ],
+
 };
