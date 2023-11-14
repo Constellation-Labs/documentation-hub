@@ -87,7 +87,7 @@ data from peer nodes, obviating the need to replicate scores from others.
 
 ### Supplying Trust Labels
 
-When your node initiates a join to the cluster (metagraph), use the `--trust_labels` argument and
+When your node initiates a join to the cluster (metagraph), use the `--ratings` argument and
 provide the path to a flat file containing the trust labels.
 
 The file is a text file with a single trust label entry per line in the following format:
