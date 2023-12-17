@@ -14,6 +14,8 @@ module.exports = {
       collapsed: false,
       items: [
         'validator/get_started',
+        'validator/build',
+        'validator/node_creation',
         'validator/specs',
         'validator/providers',
         'validator/vpsExplained',
