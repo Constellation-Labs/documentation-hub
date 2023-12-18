@@ -20,7 +20,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 The following documentation will help guide a new Node Operator through all the necessary steps required to turn an instance, VPS, or bare metal system into a Validator Node.
 
-This new installation can be preformed [manually](/validate/manual/manual-install-getting-started) if desired by advanced end users; however, nodectl is recommended.
+This new installation can be preformed [manually](/validate/manual/manual-install-getting-started) if desired by advanced end users; however, **nodectl is recommended.**
 
 ## Requirements
 
@@ -112,9 +112,9 @@ Access [nodectl releases](https://github.com/StardustCollective/nodectl/releases
 1. click on the latest version
 2. Find the Manual Installation section
 
-![](/img/validator_nodes/nodectl_install_release.png).
+![](/img/validator_nodes/nodectl_install_release1.png).
 
-3. Fine the appropriate link based on the architecture that matches your VPS.
+3. Find the appropriate link based on the architecture that matches your VPS.
 4. Hi-lite and copy to your clipboard or click on the clipboard icon on the right side of the box with the link embedded.
 5. Paste the copied link into your VPS terminal window.
 

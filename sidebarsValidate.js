@@ -83,7 +83,18 @@ module.exports = {
           type: 'category',
           label: 'Installation',
           items: [
-            'automated/nodectlInstall',
+            'automated/install/nodectlInstallIntro',
+            {
+              type: 'category',
+              label: 'Installation Steps',
+              items: [
+                'automated/install/nodectlInstallRequire',
+                'automated/install/nodectlInstallCheckList',
+                'automated/install/nodectlInstallAccess',
+                'automated/install/nodectlInstallUpdate',      
+                'automated/install/nodectlInstallDownload',                            
+              ],
+            },
             'automated/nodectlInstallMigrate',
           ],
         },
