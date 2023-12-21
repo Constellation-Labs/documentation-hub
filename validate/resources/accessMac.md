@@ -21,14 +21,14 @@ If you're more of a visual learner, watch the [video walkthrough](https://www.yo
 | Key Value | Value |
 | --------- | ----- |
 | SSH Key File | cn_node_id
-| Remote IP address of our VPS | `111.111.111.111` |
+| Remote IP address of our VPS | `113.113.113.113` |
 | SSH Key Pair File Location | `Users/.ssh/home/netmet` |
 | Local System | The system used to access our remote VPS |
 | Remote System | The system (VPS) we created in the prior documentation (DO, AWS, or GCP) that we are connecting to |
 | [...] | Indicates redacted text and/or information |
 
 :::danger REMINDER
-We are `pretending` our remote location (VPS) has an external IP address of `111.111.111.111` and our user name is `netmet` ⬅️ do **not** use this!
+We are `pretending` our remote location (VPS) has an external IP address of `113.113.113.113` and our user name is `netmet` ⬅️ do **not** use this!
 :::
 
 ## Setup remote connection
@@ -56,7 +56,7 @@ Different cloud providers use different default users to access your VPS for the
 
 ### Issue connection command
 ```
-ssh -i ~/.ssh/cn-node-id root@111.111.111.111
+ssh -i ~/.ssh/cn-node-id root@113.113.113.113
 ```
 
 Enter your `SSH key passphrase` to access your remote node.
@@ -81,8 +81,8 @@ Enter passphrase for key '/home/netmet/.ssh/cn_node_id':
 We should now be challenged with a **WARNING** message about the **authenticity** of our **SSH keys**. We can accept this warning because we know that we just created them.
 
 ```
-$ ssh -i ~/.ssh/id_cn_node root@111.111.111.111
-The authenticity of host '111.111.111.111 (111.111.111.111)' can't be established.
+$ ssh -i ~/.ssh/id_cn_node root@113.113.113.113
+The authenticity of host '113.113.113.113 (113.113.113.113)' can't be established.
 ED25519 key fingerprint is SHA256:rGh+b304FFJeXct7xYU000=dkfjrEskafjDDjancifO.
 This key is not known by any other names
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
@@ -100,7 +100,7 @@ Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.4.0-89-generic x86_64)
 System information as of [...]
 
 System load: 0.34 Users logged in: 0
-Usage of /: 2.1% of 154.90GB IPv4 address for eth0: 111.111.111.111
+Usage of /: 2.1% of 154.90GB IPv4 address for eth0: 113.113.113.113
 Memory usage: 5% IPv4 address for eth0: 10.17.0.6
 Swap usage: 0% IPv4 address for eth1: 10.108.0.4
 Processes: 157

@@ -1,6 +1,6 @@
 ---
-title: Apply Updates
-hide_table_of_contents: true
+title: New Install - Apply Updates
+hide_table_of_contents: false
 ---
 <intro-end />
 
@@ -23,7 +23,11 @@ You will not be using the mouse during the rest of this documentation process, y
 :::
 
 ### Update
-In a single command that executes both the package manager update that will tell us what we need to upgrade, and then issuing the upgrade, we complete the process of updating our Node's normal and security packages.
+In a single line command that executes both the package manager update and upgrade, we complete the process of updating our VPS's regular and security packages.
+
+1. The `update`` will download and update the list of packages that are available for upgrades.
+1. The `upgrade` command will perform the upgrades using the newly updated list.
+1. The `-y` adds the `yes` confirmation to both commands so we are not prompted with an extra confirmation request before the actions are executed.
 
 ```
 sudo apt -y update && sudo apt -y upgrade
@@ -32,13 +36,26 @@ sudo apt -y update && sudo apt -y upgrade
 ubuntu@ip-172-31-90-241:~$ sudo apt -y update && sudo apt -y upgrade<br />
 </MacWindow>
 
+### Purple Boxes
+
 :::info Purple Boxes
-If during these steps you encounter a PURPLE/PINK box asking you to select options and continue, or to just continue.  You can just select the defaults followed by the `OK`, `Continue` or `Confirm` buttons.
+If during these steps you encounter a PURPLE/PINK box asking you to select options and continue, or to just continue.  You can select the defaults followed by the `OK`, `Continue` or `Confirm` buttons.
 
-Since we are not doing any special customization to our core services on this VPS, accepting the default recommendations it best practice.  *Advanced users can handle this as they wish, as this does not affect how the Node will run.*.
+For a update message that looks like 👇 this, we can just hit <kbd>enter</kbd>.
 
-- If the `OK` (or other acceptance box) is already selected, just hit the `<enter>` key.
-- If there are choice to be made, use the `<tab>` key to advanced the selection hi-liter to the `OK` (or other acceptance box) and then hit the `<enter>` key.
+![](/img/validator_nodes/nodectl_purple.png)
+
+or for a message that looks like 👇 this.
+
+![](/img/validator_nodes/nodectl_purple1.png)
+
+Hit the <kbd>tab</kbd> key until the <kbd>ok</kbd> is highlighted, then hit the <kbd>enter</kbd>.
+
+![](/img/validator_nodes/nodectl_purple2.png)
+
+Since we are not doing any special customization to our core services on this VPS, accepting the default recommendations it best practice.  
+
+*Advanced users can handle this as they wish, as this does not affect how the Node will run.*.
 :::
 
 

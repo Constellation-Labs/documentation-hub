@@ -1,5 +1,5 @@
 ---
-title: Access VPS
+title: New Install - Access VPS
 hide_table_of_contents: false
 ---
 <intro-end />
@@ -19,6 +19,8 @@ import MacWindow from '@site/src/components/global/MacWindow';
 This section begins the step-by-step follow along instructions.
 
 ### Steps
+The following steps will be discussed one at a time 👇 below.
+
 1. If required, reminder yourself about SSH Concepts by clicking [here](/validate/validator/ssh-keys).
 1. Open up a terminal session within Macintosh or Linux, or a remote connection application, such as PuTTy, for Windows users.
 1. Issue the SSH connection request from your local system (Macintosh, Windows, or Linux).  This is just your local desktop or laptop computer.
@@ -27,18 +29,19 @@ This section begins the step-by-step follow along instructions.
 #### Access your VPS
 SSH into your Debian based OS system. 
 
-*Replace **ssh_key_name** with the name of your ssh key file.*
-*Replace **112.112.112.112** with the IP address of your VPS.*
+- Replace **my-ssh-pem-file** with the name of your ssh key file.
+- Replace **113.113.113.113** with the IP address of your VPS.
+
 ```
-ssh ubuntu@112.112.112.112 -i my-ssh-pem-file
+ssh ubuntu@113.113.113.113 -i my-ssh-pem-file
 ```
 <MacWindow>
-netmet@netmet-MacBook-Pro .ssh % ssh ubuntu@112.112.112.112 -i my-ssh-pem-file<br />
-The authenticity of host '112.112.112.112 (112.112.112.112)' can't be established.<br />
+netmet@netmet-MacBook-Pro .ssh % ssh ubuntu@113.113.113.113 -i my-ssh-pem-file<br />
+The authenticity of host '113.113.113.113 (113.113.113.113)' can't be established.<br />
 ED25519 key fingerprint is SHA256:dU7879879879879789879878977Fiuiuiuiuiuiuug1.<br />
 This key is not known by any other names<br />
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes<br />
-Warning: Permanently added '112.112.112.112' (ED25519) to the list of known hosts.<br />
+Warning: Permanently added '113.113.113.113' (ED25519) to the list of known hosts.<br />
 Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-1031-aws x86_64)<br />
 <br />
  * Documentation:  https://help.ubuntu.com<br />
@@ -79,9 +82,9 @@ ubuntu@ip-172-31-90-241:~$<br />
 ### Explained
 
 1. We issued the connection request with the `ssh` command.
-1. As it was our initial attempt to access this VPS, a warning message was presented, cautioning us about connecting to what the computer system deemed an "unknown" connection, potentially of a malicious nature. However, since we are aware that this request was intentionally initiated, we can proceed with the connection.
+1. Because this was our initial attempt to access this VPS, a warning message was presented, cautioning us about connecting to what the local computer system deemed an "unknown" connection, potentially of a malicious nature. However, since we are aware that this request was intentionally initiated by us, we can proceed with the connection.
 1. We type `yes` to proceed with accessing the new VPS (and future Node). This action informs the local computer system not to prompt us again, indicating our trust in this system. The local computer will now remember that it can trust this system for future connection requests, enabling access to this new VPS system.  We will not be challenged with this warning again.
-1. The `MOTD` (Message of the Day Banner) displays any basic system related details of the VPS we connected into; along with, security patch information. We can review this information, but no action is required for now (until later in the documentation).
+1. The `MOTD` (Message of the Day) banner displays basic system related details of the VPS we connected into; along with, security patch information. We can review this information, but no action is required for now (until later in the documentation).
 1. Finally we see `ubuntu@ip-172-31-90-241:~$`, on the last line.  The `ubuntu` before the `@` indicates that the username we logged into as; is called: `ubuntu`.  
 
 ##### Likely alternate usernames

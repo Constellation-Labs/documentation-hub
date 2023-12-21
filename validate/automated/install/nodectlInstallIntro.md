@@ -1,5 +1,5 @@
 ---
-title: nodectl Introduction
+title: New Install - nodectl Introduction
 hide_table_of_contents: true
 ---
 <intro-end />

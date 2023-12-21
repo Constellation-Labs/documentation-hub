@@ -93,7 +93,7 @@ We will leave SSH as our Type, and then highlight (select the individual item) a
 
 Add to that box in its place (replacing the (now removed) `All IPv4` and `All IPv6`) the IP address we retrieved from [here](https://www.whatismyip.com). One small modification: we want to add `/32` to the end. 
 
-Example) If `111.111.111.111` was our IP address then we would add in `111.111.111.111/32`
+Example) If `113.113.113.113` was our IP address then we would add in `113.113.113.113/32`
 
 :::note
 If you want to access your Node from other locations, you will have to add the IP addresses from those locations in `one-by-one`. If you are more advanced, you can add `subnets` by updating the `CIDR` block (subnet mask). 

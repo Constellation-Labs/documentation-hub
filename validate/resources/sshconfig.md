@@ -56,7 +56,7 @@ Port 2222 is used as an example; please select another custom port for your own 
 
 Log into your VPS provider admin console and add a new rule allowing inbound connections to `port 2222`, restricting access only to the local IP. 
 
-The firewall should contain an existing entry for SSH access on **port 22**. Do **NOT** delete the existing port `22` rule at this time. Copy this rule by adding custom `port 2222`. In the example, `111.111.111.111/32` is the local IP.
+The firewall should contain an existing entry for SSH access on **port 22**. Do **NOT** delete the existing port `22` rule at this time. Copy this rule by adding custom `port 2222`. In the example, `113.113.113.113/32` is the local IP.
 
 ![](/img/validator_nodes/ssh_port_inbound_rules.png)
 *Example shows Digital Ocean*
@@ -142,12 +142,12 @@ Makes sure to save the new profile settings to your `TestNet` configuration, and
 
 The old command used to connect to your VPS node using the standard SSH `port 22` looked like this:
 ```
-ssh -i ~/.ssh/cn-node-id nodeadmin@111.111.111.111
+ssh -i ~/.ssh/cn-node-id nodeadmin@113.113.113.113
 ```
 
 With this new command, specify your custom port to replace `2222`.
 ```
-ssh -p 2222 -i ~/.ssh/cn-node-id nodeadmin@111.111.111.111
+ssh -p 2222 -i ~/.ssh/cn-node-id nodeadmin@113.113.113.113
 ```
 
 ### Delete old SSH rule

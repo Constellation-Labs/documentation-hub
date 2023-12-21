@@ -60,28 +60,20 @@ We need to pick a Region to host our EC2 instance.
 ## Begin building EC2
 
 :::info IMPORTANT INFORMATION
-We will need an `t2.2xlarge` or `a1.2xlarge` (or better) as our `instance type`. This instance type is not available in all regions.  You can move between regions to find which regions offer with instance types.
-
-The US regions may not offer `a` type instances.  We will use the `t2.2xlarge` for our tutorial.  This offers `32Gib` of RAM verses the required `16Gib`; however, this can only create better performance on our future Node.
+We will need an `t2.2xlarge`. This instance type is not available in all regions.  You can move between regions to find which regions offer with instance types.
 :::
 
 If we don't see our Instances dashboard. Choose the `Instances` from the left side menu.
 
-:::note
-The term *new* is used simply because (at the time of this documentation creation) this was a new and improved version of the dashboard that AWS recently released. We have the New EC2 Experience selected.
-:::
-
-![](/img/validator_nodes/node-aws-ec2-4.png)
-
 ### Launch Creation Wizard
 
-Choose **Launch instances** from the top right of the dashboard. This will tell AWS to guide us through the launch of an instance via their Launch Wizard.
+Choose **Launch instances** from the middle dashboard. This will tell AWS to guide us through the launch of an instance via their Launch Wizard.
 
-![](/img/validator_nodes/node-aws-ec2-5.png)
+![](/img/validator_nodes/node-aws-ec2-4a.png)
 
 ### Name your instance
 
-It is highly recommended (but not required) to use a `Debian` distribution.
+Giving your new instance a name (tag) will be useful in identifying your instance's purpose later on during normal business operations.
 
 ![](/img/validator_nodes/node-aws-ec2-name-tag.png)
 
@@ -110,10 +102,13 @@ Most recommended are:
 - Type in **t2.2xlarge**.
 - Select **t2.2xlarge**.
 
-![](/img/validator_nodes/node-aws-ec2-instance.png)
+![](/img/validator_nodes/node-aws-ec2-instance-a.png)
 
+### Continuing
 :::important
-We now know the REGION that our Instance type is available and will stop here!  We will need to return to this section and repeat the above steps again...
+We now know the REGION that our Instance type is available and will stop here!  
+
+We will need to return to this section and repeat the above steps again...
 
 Before we do this, we must upload our SSH keys to this AWS Region.  
 

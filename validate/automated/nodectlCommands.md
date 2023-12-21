@@ -1664,9 +1664,9 @@ sudo nodectl nodeid help
 ```  
 sudo nodectl nodeid
 ```
-- Retrieve nodeid of a Node on the cluster with the IP address of `111.111.111.111`.
+- Retrieve nodeid of a Node on the cluster with the IP address of `113.113.113.113`.
 ```  
-sudo nodectl nodeid -t 111.111.111.111
+sudo nodectl nodeid -t 113.113.113.113
 ```
 
 

@@ -291,7 +291,7 @@ nodectl will:
   ---- * Handle OS System Upgrades * -----<br />
 <br />
   Check permissions & versioning ................ complete<br />
-  Obtaining External IP ......................... 111.111.111.111 <br />
+  Obtaining External IP ......................... 113.113.113.113 <br />
   Updating the Debian OS system ................. complete<br />
 </MacWindow>
 

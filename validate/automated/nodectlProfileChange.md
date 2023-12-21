@@ -55,12 +55,12 @@ Log into your Node via a remote session:
 - Remote access via [Mac](/validate/resources/accessMac)
 - Remote access via [Windows](/validate/resources/accessWin)
 
-In our example, we connect from a Mac into our Node.  This is done by requesting a `ssh` session (secure shell) into your Node that is located at the Internet Address (IP) of `112.112.112.112` using our SSH private key called `my-ssh-pem-file`.  
+In our example, we connect from a Mac into our Node.  This is done by requesting a `ssh` session (secure shell) into your Node that is located at the Internet Address (IP) of `113.113.113.113` using our SSH private key called `my-ssh-pem-file`.  
 
 *Use your own ip address and ssh key pair here.*
 
 <MacWindow>
-netmet@netmet-MacBook-Pro% ssh ubuntu@112.112.112.112 -i ~/.ssh/my-ssh-pem-file<br />
+netmet@netmet-MacBook-Pro% ssh ubuntu@113.113.113.113 -i ~/.ssh/my-ssh-pem-file<br />
 Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.19.0-1025-aws x86_64)<br />
 <br />
  * Documentation:  https://help.ubuntu.com<br />
