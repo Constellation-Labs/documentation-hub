@@ -107,7 +107,7 @@ Let's walk through the two Inbound Rules that we will need.
 - Add the `/32` to the ending
 
 :::danger
-Do not use 111.111.111.111/32, this is just an example
+Do not use 113.113.113.113/32, this is just an example
 :::
 
 ![](/img/validator_nodes/node-gcp-sg8.png)

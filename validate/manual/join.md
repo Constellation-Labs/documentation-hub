@@ -86,11 +86,11 @@ The IP ADDRESS and NODE ID used below are examples only.  You will need to use a
 
 Layer0
 ```
-curl -X POST http://127.0.0.1:9002/cluster/join -H 'Content-type: application/json' -d '{ "id": "abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123ab", "ip": "111.111.111.111", "p2pPort": 9001 }'
+curl -X POST http://127.0.0.1:9002/cluster/join -H 'Content-type: application/json' -d '{ "id": "abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123ab", "ip": "113.113.113.113", "p2pPort": 9001 }'
 ```
 Layer1
 ```
-curl -X POST http://127.0.0.1:9012/cluster/join -H 'Content-type: application/json' -d '{ "id": "abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123ab", "ip": "111.111.111.111", "p2pPort": 9011 }'
+curl -X POST http://127.0.0.1:9012/cluster/join -H 'Content-type: application/json' -d '{ "id": "abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123ab", "ip": "113.113.113.113", "p2pPort": 9011 }'
 ```
 
 We should now be joined to the network. Lets check to see if we are connected by Checking our Peers.
@@ -108,11 +108,11 @@ We need to replace `<ip_address_of_your_instance>` with your Cluster's **Load Ba
 
 Layer0
 ```
-http://111.111.111.111:9000/cluster/info
+http://113.113.113.113:9000/cluster/info
 ```
 Layer1
 ```
-http://111.111.111.111:9010/cluster/info
+http://113.113.113.113:9010/cluster/info
 ```
 
 You will see a list of lines with **`id`**, **`ip`**, **`publicPort`**, **`p2pPort`**, **`session`**, **`state`**.
@@ -124,7 +124,7 @@ The **`"id"`** fields in this example are randomly made up improperly formatted 
 :::
 
 ```
-[{"id":"11111111111111111aaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbccccccccccccccddddddddddddddddddddeeeeeeeeeeeeeeeeeeeeeeeeffffffffffffff","ip":"111.111.111.111","publicPort":9000,"p2pPort":9001,"session":"aaaaaaaa-bbbb-cccc-dddd-ffffffffffff","state":"Ready"},
+[{"id":"11111111111111111aaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbccccccccccccccddddddddddddddddddddeeeeeeeeeeeeeeeeeeeeeeeeffffffffffffff","ip":"113.113.113.113","publicPort":9000,"p2pPort":9001,"session":"aaaaaaaa-bbbb-cccc-dddd-ffffffffffff","state":"Ready"},
 {"id":"ggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhiiiiiiiiiiiiiiiiiiiiiijjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkkklllllllllllllllllmmmmmmmmm","ip":"122.222.222.222","publicPort":9000,"p2pPort":9001,"session":"gggggggg-hhhh-iiii-jjjj-kkkkkkkkkkkk","state":"Ready"},
 {"id":"nnnnnnnnnnnnoooooooooooooooopppppppppppppppppppqqqqqqqqqqqqqqqqqqqqrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrsssssssssssssssstttttttttttttttt","ip":"133.333.333.333","publicPort":9000,"p2pPort":9001,"session":"llllllll-mmmm-nnnn-oooo-pppppppppppp","state":"Ready"}
 [...]

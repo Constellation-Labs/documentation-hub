@@ -1,0 +1,82 @@
+---
+title: New Install - Choose Cluster Environment
+hide_table_of_contents: false
+---
+<intro-end />
+
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
+import MacWindow from '@site/src/components/global/MacWindow';
+
+<head>
+  <title>MainNet 2.0 Automation with nodectl</title>
+  <meta
+    name="description"
+    content="nodectl installation of new Node"
+  />
+</head>
+
+The first thing that we need to accomplish is determining the environment that we want to configure on our future Node.  We will explain this here.
+
+
+## Choose our environment
+
+### MainNet
+The MainNet environment is a production environment. This will turn your VPS into a Constellation Network Validator Node.  A Constellation Validator Node will be setup for you and when completed you will be joining two separate networks, via your single Node.
+
+1. The Global Layer0 HyperGraph.
+2. The Constellation Network associated currency Layer1 MetaGraph.
+
+### IntegrationNet
+The IntegrationNet environment is a TestNet designed specifically for Metagraph development. This will turn your VPS into a Constellation Network Validator Test Node.  A Constellation Validator Node will be setup for you and when completed you will be joining two separate networks, via your single Node.
+
+1. The IntegrationNet Global Layer0 HyperGraph.
+2. The IntegrationNet Constellation Network associated currency Layer1 MetaGraph.
+
+Within this environment, your Node will participate in the testing of new Metagraphs, new features of those Metagraphs, and various related testing required to help stabilize the Constellation Network protocol.
+
+### TestNet
+The TestNet environment is a testing and experimental environment.  
+
+This will turn your VPS into a Constellation Network Validator Node.  A Constellation Validator Node will be setup for you and when completed you will be joining two separate networks, via your single Node.
+
+1. The TestNet Global Layer0 HyperGraph.
+2. The TestNet Constellation Network associated currency Layer1 MetaGraph.
+
+TestNet Nodes are used by the Hypergraph and Metagraphs to be beat up upon.  These Nodes will experience trial and error moments.  The TestNet requires more experienced Node Operators and a little more dedication verses the "set it and forget it" environment created within the MainNet.  TestNet testing is a little more aggressive and time intensive than IntegrationNet.
+
+### Choose our Environment
+
+:::note
+For the purposes of this tutorial, we will be joining the MainNet environment. 
+
+If you are joining the IntegrationNet environment, you can substitute any references to MainNet with IntegrationNet.
+:::
+
+To accept this choice, you will hit the <kbd>2</kbd> key on your keyboard.  You will **NOT** be required to hit <kbd>enter</kbd> afterwards.
+
+
+<MacWindow>
+------ * Installation Starting * -------<br />
+<br />
+For a new installation, the Node Operator can choose to build this
+Node based on various Metagraph pre-defined configurations.<br />
+<br />
+If the Metagraph this Node is being built to participate on is not
+part of this list, it is advised to choose MainNet as the default to complete the installation.<br />
+<br />
+The MainNet configuration template will only be a placeholder to allow this Node to install all required components, to ensure successful implementation of this utility. If a pre-defined Metagraph listed above is not the ultimate role of this future Node, following a successful installation, the next steps should be for you to refer to the Metagraph Administrators of the Metagraph you are expected to finally connect with. The Administrator will offer instructions on how to obtain the required configuration file for said Metagraph.<br />
+<br />
+Please key press number of a Metagraph configuration below:<br />
+<br />
+Check permissions & versioning ................ running<br />                    
+<br />
+* PLEASE CHOOSE METAGRAPH TO INSTALL * <br />
+<br />
+  1) integrationnet <br />
+  2) mainnet <br />
+  3) testnet <br />
+  Q)uit <br />
+<br />
+  KEY PRESS an option<br />
+</MacWindow>

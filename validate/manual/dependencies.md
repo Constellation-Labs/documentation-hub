@@ -33,9 +33,19 @@ We need to install **Java** and **Havged** onto our system.
 This will take a few minutes to complete.
 
 ```
+sudo apt -y install haveged
+```
+:::danger
+Tessellation requires version 11 of Java to be installed. Normally you can install haveged and default-jdk in one line.
+```
 sudo apt -y install default-jdk haveged
 ```
+However, depending on the Debian distribution you are using, you may need to install Java manually via the **required** version.  Distributions such as `Ubuntu 23.04` will install a higher version of Java; preventing Tessellation from properly running on your Node.
+:::
 
+```
+sudo apt -y install default-jdk
+```
 Output will look similar to below: 
 
 ```

@@ -1,5 +1,5 @@
 ---
-title: Deploy EC2 (Part 2)
+title: Deploy EC2
 hide_table_of_contents: false
 ---
 <intro-end />
@@ -44,9 +44,9 @@ We need to pick a Region to host our EC2 instance.
 ## Continue building EC2
 
 :::info IMPORTANT INFORMATION
-We will need an `t2.2xlarge` or `a1.2xlarge` (or better) as our `instance type`. This instance type is not available in all regions. You can move between regions to find which regions offer with instance types.
+We will need an `t2.2xlarge`. You can move between regions to find which regions offer with instance types.
 
-The US regions may not offer `a` type instances.  We will use the `t2.2xlarge` for our tutorial.  This offers `32Gib` of RAM verses the required `16Gib`; however, this can only create better performance on our future Node.
+We will use the `t2.2xlarge` for our tutorial.  
 :::
 
 If we don't see our Instances dashboard. Choose the `Instances` from the left side menu.
@@ -55,13 +55,13 @@ If we don't see our Instances dashboard. Choose the `Instances` from the left si
 The term *new* is used simply because (at the time of this documentation creation) this was a new and improved version of the dashboard that AWS recently released. We have the New EC2 Experience selected.
 :::
 
-![](/img/validator_nodes/node-aws-ec2-4.png)
+![](/img/validator_nodes/node-aws-ec2-4aa.png)
 
 ### Launch Creation Wizard
 
 Choose `Launch instances` from the top right of the dashboard. This will tell AWS to guide us through the launch of an instance via their Launch Wizard.
 
-![](/img/validator_nodes/node-aws-ec2-5.png)
+![](/img/validator_nodes/node-aws-ec2-4a.png)
 
 ### Name your instance
 
@@ -96,7 +96,7 @@ Click on the `t1.micro` Free tier eligible box to expose the search bar.
 
 - Select `t2.2xlarge`.
 
-![](/img/validator_nodes/node-aws-ec2-instance.png)
+![](/img/validator_nodes/node-aws-ec2-instance-a.png)
 
 ### SSH Keys
 
@@ -113,11 +113,11 @@ For now, you can leave everything as default.  If you would like to take an extr
 
 ### Storage
 
-We will need at least `160 GiB` (Gigabytes) of storage for our Node to function properly.  This storage will be used to handle Global snapshots.
+We will need at least `160 GiB` and up to `320 Gib` (Gigabytes) of storage for our Node to function properly.  This storage will be used to handle Global snapshots.
 
-We can leave the root volume as `gp2` and we do not need to alter any other elements of the storage section.
+We can leave the root volume as `gp3` and we do not need to alter any other elements of the storage section.
 
-![](/img/validator_nodes/node-aws-ec2-storage.png)
+![](/img/validator_nodes/node-aws-ec2-storage-a.png)
 
 
 ### Summary and Launch

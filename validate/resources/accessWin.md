@@ -22,14 +22,14 @@ If you're more of a visual learner, watch the [video walkthrough](https://www.yo
 | Key Value | Value |
 | --------- | ----- |
 | SSH Key File | cn_node_id
-| Remote IP address of our VPS | `111.111.111.111` |
+| Remote IP address of our VPS | `113.113.113.113` |
 | SSH Key Pair File Location | `Users/.ssh/home/netmet`|
 | Local System | The system used to access our remote VPS |
 | Remote System | The system (VPS) we created in the prior documentation (DO, AWS, or GCP) that we are connecting to |
 | [...] | Indicates redacted text and/or information |
 
 :::danger REMINDER
-We are `pretending` our remote location (VPS) has an external IP address of `111.111.111.111` and our user name is `netmet` ⬅️ do **not** use this!
+We are `pretending` our remote location (VPS) has an external IP address of `113.113.113.113` and our user name is `netmet` ⬅️ do **not** use this!
 :::
 
 :::info
@@ -44,7 +44,7 @@ Time to connect to our newly created instance!
 Start up **Putty.exe** and in the `Host Name (or IP address)` place the IP address of your VPS instance.
 
 :::danger
-`111.111.111.111` is a fake IP address: Do not use.
+`113.113.113.113` is a fake IP address: Do not use.
 :::
 
 ### Setup TCP port

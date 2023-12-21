@@ -41,7 +41,7 @@ You also have the ability to create a less secure SSH key pair directly from AWS
 
 This alone is an X!  Your Node will be supplying a hot wallet. If you do not have a passphrase to access your Node (therefore only needing the private key file), is a bad idea.
 
-![](/img/validator_nodes/node-aws-autosshkey.png)
+![](/img/validator_nodes/node-aws-autosshkey-a.png)
 
 If you are on Windows choose `.ppk` as your format.
 

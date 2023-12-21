@@ -31,23 +31,25 @@ This document compliments the nodectl [help command](#help) reference offered th
 
 
 
-### What is a switch and parameter?
+### What is an option and parameter?
 
-A command-line **switch** is a modifier that is added to the end of a command being executed by nodectl.
+A command-line **option** is a modifier that is added to the end of a command being executed by nodectl.
 
 It follows the `sudo nodectl <command>`.  
 
-When the command is requested and the `switch` added, it may be followed by specific items or "instructions" that are called **parameters**.
+When the command is requested and the `option` added, it may be followed by specific items or "instructions" that are called **parameters**. 
 
 #### Examples
 
-`sudo nodectl <command> <switch> <parameter>`
+`sudo nodectl <command> <option> <parameter>`
 
-`sudo nodectl <command> <switch> <parameter> <switch> <parameter>`
+`sudo nodectl <command> <option> <parameter> <option> <parameter>`
 
-`sudo nodectl <command> <switch> <parameter> <switch> <switch>`
+`sudo nodectl <command> <option> <parameter> <option> <option>`
 
-Some **switches** do not require a **parameter** afterwards.
+:::important Option without parameters
+Some **options** do not require a **parameter** be supplied afterwards. The option may need to be supplied alone.
+:::
 
 | As a simple example, the command
 ```
@@ -56,24 +58,24 @@ sudo nodectl status -p dag-l0
 
 - The `status` is the **command**
 
-- The `-p` is a **switch**
+- The `-p` is a **option**
 
 - The `dag-l0` is a **parameter**.
 
 :::note
-This reference guide will explorer the [status command](#status) in further detail; however, in the above example, the switch `-p` stands for "what profile would you like to explorer the status of?" and the parameter `dag-l0` is the profile in question we would like to review.
+This reference guide will explorer the [status command](#status) in further detail; however, in the above example, the option `-p` stands for "what profile would you like to explorer the status of?" and the parameter `dag-l0` is the profile in question we would like to review.
 :::
 
 :::note Final Note
-If a `switch` requires a `parameter`, it must be directly after the `switch` is supplied on the command line.  However, the order of the `switches` that do not require or require parameters does **not** matter.
+If a `option` requires a `parameter`, it must be directly after the `option` is supplied on the command line.  However, the order of the `options` that do not require or require parameters does **not** matter.
 
-switch1 requires a parameter1, switch2 does not require a parameter.
+option1 requires a parameter1, option2 does not require a parameter.
 ```
-sudo nodectl -switch1 parameter1 -switch2
+sudo nodectl -option1 parameter1 -option2
 ```
 is the same as
 ```
-sudo nodectl -switch2 -switch1 parameter1
+sudo nodectl -option2 -option1 parameter1
 ```
 :::
 
@@ -88,7 +90,7 @@ The most common method of accessing your Node is through a [remote shell](/valid
 
 It will offer you the option to quit or continue.
 
-Commands that create the need for pagination will generally offer a `-np` (*no pagination*) [switch](#what-is-a-switch-and-parameter) to disable pagination.
+Commands that create the need for pagination will generally offer a `-np` (*no pagination*) [option](#what-is-an-option-and-parameter) to disable pagination.
 
 <MacWindow>
   Press any key or `q` to quit
@@ -107,7 +109,7 @@ Commands that create the need for pagination will generally offer a `-np` (*no p
 ---
 The **`help`** command will offer help for most commands available by the nodectl utility.
 
-Node Operators can issue the `help` command by itself to see a basic rundown of all **switches** and **parameter** requirements.
+Node Operators can issue the `help` command by itself to see a basic rundown of all **options** and **parameter** requirements.
 
 ```
 sudo nodectl help
@@ -134,11 +136,11 @@ sudo nodectl status help
 
 ### start
 ---
-The **`start`** command takes a single [switch](#what-is-a-switch-and-parameter).
+The **`start`** command takes a single [option](#what-is-an-option-and-parameter).
 
 **Start** the service related to a configured profile name.  This command will not work without the `<profile_name>` supplied.
   
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 |  -p | `<profile_name>` | starts the service related to the profile name supplied. | **required** |
 
@@ -157,11 +159,11 @@ sudo nodectl start -p dag-l0
 
 ### stop
 ---
-The **`stop`** command takes a single [parameter](#what-is-a-switch-and-parameter).
+The **`stop`** command takes a single [parameter](#what-is-an-option-and-parameter).
 
 **Stop** the service related to a configured profile name.  This command will not work without the `<profile_name>` supplied.
   
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | stops the service related to the profile name supplied. | **required** |
 
@@ -181,7 +183,7 @@ sudo nodectl stop -p dag-l0
 
 ### restart
 ---
-The **`restart`** command takes a single [parameter](#what-is-a-switch-and-parameter).
+The **`restart`** command takes a single [parameter](#what-is-an-option-and-parameter).
 
 **Restart** the service related to a configured profile name.  This command will not work without the `<profile_name>` supplied or special **parameter** `all`.
   
@@ -191,7 +193,7 @@ This command will take the following actions (**in order**) on the profile it wa
  - Start the service 
  - Re-join the cluster.
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` \| `all` | restarts the service related to the profile name in question. | **required** |
 
@@ -221,9 +223,9 @@ The purpose of the `slow_restart` command is to assist a Node that may be **stuc
 
 The `slow_restart` will allow enough time for a Node to be off the network and reset any issues.
 
-| Command | Shortcut |
-| :----: | :---: |
-| slow_restart  |  -sr   |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| slow_restart  |  -sr   | >v1.x.x |
 
 ### restart_only 
 ---
@@ -242,17 +244,17 @@ After a `restart_only` is executed, the profile should end in an `ReadyToJoin` s
 
 ### leave 
 ---
-The **`leave`** command takes a single [parameter](#what-is-a-switch-and-parameter).
+The **`leave`** command takes a single [parameter](#what-is-an-option-and-parameter).
 
-**Leave** the hypergraph or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-a-switch-and-parameter) supplied.
+**Leave** the hypergraph or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-an-option-and-parameter) supplied.
 
 Issuing a `leave` against your Node will allow your Node to complete any processes on the hypergraph or metagraph that it may be involved in **before** your Node exits the cluster.
 
 It is appropriate and will improve your Node's **PRO** score to `leave` the cluster before you issue a `stop` command.
   
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | leaves the cluster related to the profile [parameter](#what-is-a-switch-and-parameter) supplied. | **required** |
+| -p | `<profile_name>` | leaves the cluster related to the profile [parameter](#what-is-an-option-and-parameter) supplied. | **required** |
 
 > #### Examples 
 - Help screen
@@ -270,15 +272,15 @@ sudo nodectl leave -p dag-l0
 ### join 
 ---
 
-The **`join`** command takes a single [parameter](#what-is-a-switch-and-parameter).
+The **`join`** command takes a single [parameter](#what-is-an-option-and-parameter).
 
-**Join** the hypergraphs or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-a-switch-and-parameter) supplied.
+**Join** the hypergraphs or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-an-option-and-parameter) supplied.
 
 You will need to make sure that the profile related to the cluster your are attempting to join is started; as well as, the status of your Node is in `ReadyToJoin` [status](#status) on the cluster.
   
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | join the cluster related to the profile name [parameter](#what-is-a-switch-and-parameter) supplied. | **required** |
+| -p | `<profile_name>` | join the cluster related to the profile name [parameter](#what-is-an-option-and-parameter) supplied. | **required** |
 
 > #### Examples
 - Help screen
@@ -300,7 +302,7 @@ sudo nodectl join -p dag-l0
 ### auto_restart 
 ---
 
-The **`auto_restart`** command takes several [parameters](#what-is-a-switch-and-parameter).
+The **`auto_restart`** command takes several [parameters](#what-is-an-option-and-parameter).
 
 This feature is **disabled**, by default. 
 
@@ -317,7 +319,7 @@ The Node Operator/Administrator should use nodectl's configuration profile to en
 This will allow you to keep `auto_restart` working properly throughout the use of nodectl.
 :::
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :----: | :----: | :---- | :----: |
 | None | enable | enable the `auto_restart` feature. | **optional** |
 | None | disable | disable the `auto_restart` feature. | **optional** |
@@ -381,7 +383,7 @@ You can enable this feature by issuing: `sudo nodectl configure -e` (find detail
   
 **`auto_upgrade`** can only be enabled with the `auto_restart` feature enabled.
   
-Optionally if you are not using the configuration, you can enable auto_upgrade by issuing the optional `--auto_upgrade` [switch](#what-is-a-switch-and-parameter) when enabling `auto_restart` from the command line.
+Optionally if you are not using the configuration, you can enable auto_upgrade by issuing the optional `--auto_upgrade` [option](#what-is-an-option-and-parameter) when enabling `auto_restart` from the command line.
   
 During a Tessellation upgrade, the session will change.  This will trigger an auto restart.  During the restart, nodectl will identify the version of Tessellation on the Node verses what is running on the cluster. If it does not match, nodectl will attempt to upgrade the Tessellation binaries before  continuing.
   
@@ -436,19 +438,19 @@ sudo nodectl auto_restart status
 
 The **`check_connection`** command will execute a search on the currently connected hypergraph or metagraph cluster. 
 
-| Command | Shortcut |
-| :---: | :---: | 
-| check_connection  | -cc |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_connection  | -cc | >v1.x.x |
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which cluster related to the profile name in question do we want to review. | **required** |
 | -s | `<ip_address or hostname>` | identify a **source** Node to use specifically by the `check_connection` command, to test against the **edge** Node. | **optional** |
 | -e | `<ip_address or hostname>` | identify a **edge** Node to compare against the **source** Node. | **optional** | 
 
-If the `-s` [switch](#what-is-a-switch-and-parameter) is not specified, nodectl will pick a random Node on the cluster specified by the `-p` profile required parameter.
+If the `-s` [option](#what-is-an-option-and-parameter) is not specified, nodectl will pick a random Node on the cluster specified by the `-p` profile required parameter.
   
-It will search against the Node the `check_connection` command was executed upon unless an **`edge device`** to check against the `source` is specified by an optional `-e` [switch](#what-is-a-switch-and-parameter).
+It will search against the Node the `check_connection` command was executed upon unless an **`edge device`** to check against the `source` is specified by an optional `-e` [option](#what-is-an-option-and-parameter).
   
 The command will compare the Nodes found on the source against the Nodes found on the edge.  If the Nodes connected to each do not match, the command will display those Nodes that are missing between the two.
 
@@ -515,13 +517,13 @@ sudo nodectl check-connection -p dag-l0 -s 10.3.3.3 -s 10.4.4.4
 ### check_source_connection
 ---
 
-The **`check_source_connection`** command takes a profile [parameter](#what-is-a-switch-and-parameter).
+The **`check_source_connection`** command takes a profile [parameter](#what-is-an-option-and-parameter).
 
-| Command | Shortcut |
-| :---: | :---: | 
-| check_source_connection  | -csc  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_source_connection  | -csc  | >v1.x.x |
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which cluster related to the profile name in question do we want to review. | **required** |
     
@@ -578,15 +580,16 @@ sudo nodectl check_source_connection
 ### check_seedlist
 ---
 
-The **`check_seedlist`** command takes one [parameter](#what-is-a-switch-and-parameter).
+The **`check_seedlist`** command takes one [parameter](#what-is-an-option-and-parameter).
 
-| Command | Shortcut |
-| :---: | :---: | 
-| check_seedlist  | -csl |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_seedlist  | -csl | >v2.x.x |
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | related to the profile to verify access permissions. | **required** |
+| -id | `<node_id>` | nodeid of the Node you would like to verify seed list participation (if not local to the Node) | **optional** <br/> *version >`2.9.x`* | 
 
 **`check_seedlist`** will pull your `nodeid` out of your p12 file and compare it to the seedlist downloaded from **Constellation Network's** authorized list.
   
@@ -613,6 +616,38 @@ sudo nodectl check_seedlist
 ```
 
 
+
+
+
+### check_seedlist_participation 
+---
+
+The **`check_seedlist_participation`** command does not take any [parameters](#what-is-an-option-and-parameter).
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: | >v2.7.x |
+| check_seedlist_participation | -cslp  |
+
+*This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.  It will be deprecated as soon as no longer necessary.*
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | related to the profile to verify access permissions. | **required** | 
+This command can be used to review seed list access-list participation for any/all given profile(s) in the configuration that has a seed-list setup.
+       
+> #### Examples
+- Help screen
+```
+sudo nodectl check_seedlist_participation help
+```  
+- Execute the check_seedlist_participation command
+```
+sudo nodectl check_seedlist_participation -p <profile_name>
+```  
+
+
+
+
 ### clean_files
 ---
 
@@ -625,11 +660,11 @@ The option will be carried out and the Node Operator will be offered a visual co
 - number of files
 - Size to be freed by their removal.
 
-| Command | Shortcut |
-| :----: | :---: |
-| clean_files  |  -cf  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| clean_files  |  -cf  | >v2.7.x |
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -t | `<log_type` | enter the log type that is desired. | **required** |
 
@@ -674,9 +709,9 @@ Once the command is executed the Node Operator will be offered a CLI menu of **s
   
 The option will be carried out and the Node Operator will be offered a visual confirmation of the **snapshots** to be removed, number of snapshots, and size to be freed by their removal.
 
-| Command | Shortcut |
-| :----: | :---: |
-| clean_snapshots  |  -cs  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| clean_snapshots  |  -cs  | >v2.7.x |
 
 > #### Examples
 - Help screen
@@ -711,14 +746,14 @@ The find command offers insight into the
     
 It will show you the profile searched (required) and offer you confirmation that your Node is seen on the cluster.
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -s | `<source_node>` | Node on the cluster you want to use to lookup other nodes. | **optional** |
 | -t | `<target_node>` | Node on the cluster (ip address, hostname, or nodeid) you want to look up on the cluster. | **optional** |
 
 You may specify a **`source`** node that will be used as the reference point to lookup the **`target`** node (either your Node *default* or a specified target) on the cluster and return a `True` or `False` depending on whether or not it is found.
   
-You may use the **`self`** keyword for either the `source` ( `-s` ) or `target` ( `-t` ) [parameters](#what-is-a-switch-and-parameter).
+You may use the **`self`** keyword for either the `source` ( `-s` ) or `target` ( `-t` ) [parameters](#what-is-an-option-and-parameter).
 
 :::danger Note
 Choosing a **source node** that is **NOT** on the network may result in an error or false negative.
@@ -784,7 +819,7 @@ sudo nodectl find -p dag-l0 -s 10.2.2.2 -t 10.1.1.2
 ### health
 ---
 
-The **`health`** command does not take any [parameters](#what-is-a-switch-and-parameter).
+The **`health`** command does not take any [parameters](#what-is-an-option-and-parameter).
 
 It displays the basic health elements of your Node.
 
@@ -818,7 +853,7 @@ sudo nodectl health
 ### list
 ---
 
-The **`list`** command does not take any [parameters](#what-is-a-switch-and-parameter) and displays the details of the profiles found in the [**`cn-config.yaml`**](/validate/automated/nodectlConfig) file.  You can update the **`cn-config.yaml`** file with the [configure command](#configure).
+The **`list`** command does not take any [parameters](#what-is-an-option-and-parameter) and displays the details of the profiles found in the [**`cn-config.yaml`**](/validate/automated/nodectlConfig) file.  You can update the **`cn-config.yaml`** file with the [configure command](#configure).
 
 | Title | Description | 
 | ---: | :--- |
@@ -847,7 +882,7 @@ sudo nodectl list
 | :---: | :---: | 
 | market | markets |
 
-The **`market`** command does not take any [parameters](#what-is-a-switch-and-parameter). 
+The **`market`** command does not take any [parameters](#what-is-an-option-and-parameter). 
 
 Performs a quick lookup for crypto markets via CoinGecko's public API.
   
@@ -888,7 +923,7 @@ sudo nodectl market
 
 The **`peers`** command will attempt to list all the peers found on the cluster; as well as, list their IP addresses for review.
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | review the cluster that relates to the requested profile. | **required** |
 | -t | `<target_node>` | Node on the cluster (ip or hostname) that you would like to use as your target (The Node to use as reference.) for finding peers. | **optional** |
@@ -907,11 +942,11 @@ Normal output from the peers command will show all the peers seen on a given met
 - DAG wallet (shortened)
    - `DAG12345...78910111`
    
-You can utilize the **`--basic`** [switch](#what-is-a-switch-and-parameter) to force nodectl to only show the `PEER IP:TCP PORT` column.
+You can utilize the **`--basic`** [option](#what-is-an-option-and-parameter) to force nodectl to only show the `PEER IP:TCP PORT` column.
     
-You can utilize the **`--extended`** [switch](#what-is-a-switch-and-parameter) to force nodectl to only show all fields in long format.
+You can utilize the **`--extended`** [option](#what-is-an-option-and-parameter) to force nodectl to only show all fields in long format.
 
-If you do not use the `--basic` or `--extended` [switches](#what-is-a-switch-and-parameter), the output will be in shorten form for all elements (ip:port, dag address, nodeid).
+If you do not use the `--basic` or `--extended` [options](#what-is-an-option-and-parameter), the output will be in shorten form for all elements (ip:port, dag address, nodeid).
 
 #### Dictionary
 | abbrv | Description |
@@ -984,7 +1019,7 @@ sudo nodectl peers -p <profile_name> --csv --output test.csv
 | :---: | :---: | 
 | price  | prices |
 
-The **`price`** command does not take any [parameters](#what-is-a-switch-and-parameter). 
+The **`price`** command does not take any [parameters](#what-is-an-option-and-parameter). 
 
 This command performs a quick lookup for crypto prices via **CoinGecko's** public API.  
 
@@ -1018,11 +1053,11 @@ sudo nodectl price
 ### refresh_binaries 
 ---
 
-The **`refresh_binaries`** command does not take any [parameters](#what-is-a-switch-and-parameter).
+The **`refresh_binaries`** command does not take any [parameters](#what-is-an-option-and-parameter).
   
-| Command | Shortcut |
-| :---: | :---: | 
-| check_source_connection  | -rtb  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_source_connection  | -rtb  | >v1.x.x
 
 This command will download and overwrite the existing Tessellation binaries files that are required to run your Node.  The result of this command will be to download the binaries from the latest release and is independent of a system upgrade.
   
@@ -1044,11 +1079,48 @@ sudo nodectl refresh_binaries
 
 
 
+### quick_status
+---
+
+The **`quick_status`** command takes a single **optional** [parameter](#what-is-an-option-and-parameter).
+
+**quick_status** will review the current status of your Node and offer a single output of the found **state** of your Node's known clusters, as quickly as possible.
+
+If the `-p` option is used with the `<profile_name>`, only that profile's status will appear.  If the `quick_status` command is called without the `-p` [option](#what-is-an-option-and-parameter), all profiles will be shown.
+
+The difference between `quick_status` and [status](#status) are two-fold:
+1. `quick_status` will only show the state of the Node's known active profile(s)
+2. `quick_status` will review the state of your Node's known active profile(s) via the local API on the Node.  This should be understood and used with caution, as if your Node is in `Ready` state but not on the proper cluster, you may receive a false positive.  The [status](#status) command; although more time costly (*expensive*), will offer a better outlook on your Node by providing metics such as `sessions`. 
+  
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| quick_status  |  -qs  | >2.9.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | supply profile name [parameter](#what-is-an-option-and-parameter) to show quick_status. | **optional** |
+| -w | `<seconds>` | watch command. will continuously check the status of your Node until <kbd>q</kbd> is pressed.  *Note*: You should **not** use the <kbd>ctrl</kbd>-<kbd>c</kbd> to exit as it may cause your keyboard to stop echoing output to your terminal.  If this does happen, you can simply exit the terminal session and log back in to correct the display issues. | **optional** |
+
+> #### Examples
+- Help screen
+```
+sudo nodectl quick_status help  
+```
+- Show all profiles
+```
+sudo nodectl quick_status
+```
+- Show status of profile named `dag-l0`
+```  
+sudo nodectl quick_status -p dag-l0
+```
+
+
 
 ### sec
 ---
 
-The **`sec`** command does not take any [parameters](#what-is-a-switch-and-parameter).
+The **`sec`** command does not take any [parameters](#what-is-an-option-and-parameter).
 
 sec = security 
 
@@ -1103,20 +1175,20 @@ This only pertains to global **MainNet** rewards.
 This does not apply to TestNet rewards.
 :::
 
-| Command | Shortcut |
-| :----: | :---: |
-| show_current_rewards  |  -scr  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_current_rewards  |  -scr  | >v2.x.x |
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | review the cluster related to the profile name in question. | **required** |
-| -w | `<dag_wallet_address>` | DAG wallet on the cluster.  Use this switch if you are interested in an alterative Node that is not the local Node. | **optional** |
+| -w | `<dag_wallet_address>` | DAG wallet on the cluster.  Use this option if you are interested in an alterative Node that is not the local Node. | **optional** |
 | -s | `<snapshot_history_size>` | **default**: 50, The amount of snapshots to review. | **optional** |
 | -np | None | no [pagination](#what-is-pagination). | **optional** |
 | --csv | None | create csv (comma separated values) output file instead of printing output to the screen. | **optional** |
 | --output | `<file_name>` | **requires** `--csv` --> this can only be a filename. If you would like to have your output saved to an alternate location, you can update the configuration file's `upload` location, via the [configure command](#configure). | **optional** |
   
-The `--output` [switch](#what-is-a-switch-and-parameter) can only be a filename.  If you would like to have your output saved to an alternate location, you can update the configuration file via the [configure](#configure) command. 
+The `--output` [option](#what-is-an-option-and-parameter) can only be a filename.  If you would like to have your output saved to an alternate location, you can update the configuration file via the [configure](#configure) command. 
 
 [`sudo nodectl configure`](#configure)
                                               
@@ -1163,13 +1235,13 @@ sudo nodectl show_current_rewards --csv --output test.csv
 ### show_node_states 
 ---
 
-The **`show_node_states`** command does not take any [parameters](#what-is-a-switch-and-parameter).
+The **`show_node_states`** command does not take any [parameters](#what-is-an-option-and-parameter).
 
 This command displays the list of the known Node States that you may find on the Cluster or that nodectl defines when not on the cluster.
 
-| Command | Shortcut |
-| :----: | :---: |
-| show_node_states  |  -sns  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_node_states  |  -sns  | >2.x.x |
 
 ##### nodectl only states
 
@@ -1188,7 +1260,7 @@ sudo nodectl show_node_states help
 ```
 sudo nodectl show_node_states
 ```  
-- Execute using shortcut [switch](#what-is-a-switch-and-parameter) command
+- Execute using shortcut [option](#what-is-an-option-and-parameter) command
 ```
 sudo nodectl -sns
 ```
@@ -1197,48 +1269,25 @@ sudo nodectl -sns
 
 
 
-### show_seedlist_participation 
----
-
-The **`check_seedlist_participation`** command does not take any [parameters](#what-is-a-switch-and-parameter).
-
-| Command | Shortcut |
-| :---: | :---: | 
-| show_seedlist_participation | -cslp  |
-
-This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.  It will be deprecated as soon as no longer necessary.
-  
-This command can be used to review seed list access-list participation for any/all given profile(s) in the configuration that has a seed-list setup.
-       
-> #### Examples
-- Help screen
-```
-sudo nodectl check_seedlist_participation help
-```  
-- Execute the check_seedlist_participation command
-```
-sudo nodectl check_seedlist_participation
-```  
-
-
 
 
 ### status 
 ---
 
-The **`status`** command takes a single **optional** [parameter](#what-is-a-switch-and-parameter).
+The **`status`** command takes a single **optional** [parameter](#what-is-an-option-and-parameter).
 
 **Status** will review the current status of your Node.
 
-If the `-p` switch is used with the `<profile_name>`, only that profile's status will appear.  If the `status` command is called without the `-p` [switch](#what-is-a-switch-and-parameter), all profiles will be shown.
+If the `-p` option is used with the `<profile_name>`, only that profile's status will appear.  If the `status` command is called without the `-p` [option](#what-is-an-option-and-parameter), all profiles will be shown.
   
-| Command | Shortcut |
-| :---: | :---: | 
-| status  |  -s      |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| status  |  -s  | >1.x.x |
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | supply profile name [parameter](#what-is-a-switch-and-parameter) to show status. | **optional** |
+| -p | `<profile_name>` | supply profile name [parameter](#what-is-an-option-and-parameter) to show status. | **optional** |
+| -w | `<seconds>` | watch command. will continuously check the status of your Node until <kbd>q</kbd> is pressed.  *Note*: You should **not** use the <kbd>ctrl</kbd>-<kbd>c</kbd> to exit as it may cause your keyboard to stop echoing output to your terminal.  If this does happen, you can simply exit the terminal session and log back in to correct the display issues. Available in version >v2.9.0 | **optional** |
 
 > #### Examples
 - Help screen
@@ -1289,11 +1338,16 @@ sudo nodectl status -p dag-l0
 ### update_seedlist 
 ---
 
-The **`update_seedlist`** command does not take any [parameters](#what-is-a-switch-and-parameter).
+The **`update_seedlist`** command does not take any [parameters](#what-is-an-option-and-parameter).
   
-| Command | Shortcut |
-| :---: | :---: | 
-| update_seedlist  | -usl |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| update_seedlist  | -usl | v2.x.x |
+
+| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| :----: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which profile are you seeking the update seed list. | **required** |
+
 
 `update_seedlist` will pull down the latest seedlist from the Constellation Network repositories. This command can be used in the event your Node is unable to authenticate (and therefor will not connect) to the network.  
   
@@ -1349,7 +1403,7 @@ The **`change_ssh_port`** command is a *special* command that works on the Debia
 
 You should use an unused port between `1024` and `65535`.
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | --port | `<port number>` | Which port number would you like to change your SSH port for use? | **required** |
 
@@ -1413,7 +1467,7 @@ sudo nodectl enable_root_ssh
 ### reboot
 ---
 
-The **`reboot`** command does not take any [parameters](#what-is-a-switch-and-parameter) and offers the Node Operator the ability to reboot their physical or VPS (Virtual Private Server in the cloud) via a warm boot.
+The **`reboot`** command does not take any [parameters](#what-is-an-option-and-parameter) and offers the Node Operator the ability to reboot their physical or VPS (Virtual Private Server in the cloud) via a warm boot.
   
 :::success Recommended
 For Node Operation this command is **preferred/recommended** over normal operating system reboot command. 
@@ -1445,19 +1499,19 @@ sudo nodectl reboot
 
 The **`whoami`** command displays the external ip address of your Node. 
 
-Optionally, you can use the optional `-id` switch to map a `nodeid` to an `ip address` on a cluster.
+Optionally, you can use the optional `-id` option to map a `nodeid` to an `ip address` on a cluster.
   
 The `external IP` of your Node is the address that allows your Node to communicate with the rest of the systems on the Internet.  
 
 This is the address that your Node will use to communicate with the rest of the decentralized Nodes that make up the hypergraph and/or metagraphs.  Your Node will attempt to communications with via other Nodes via p2p and public API requests.
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | In order to use the **`-id`** option, nodectl will need to know which profile to review the `nodeid` from. | **optional** |
 | -id | `<full_node_id>` | p12 public key `nodeid` to lookup. | **optional** |
 
 :::warning 
-The -id [switch](#what-is-a-switch-and-parameter) followed by the full nodeid requested, will lookup the node id and return its IP address.  This command will require the `-p` with the profile name of the network you are searching.
+The -id [option](#what-is-an-option-and-parameter) followed by the full nodeid requested, will lookup the node id and return its IP address.  This command will require the `-p` with the profile name of the network you are searching.
 :::
 
 > #### Examples
@@ -1483,20 +1537,20 @@ sudo nodectl whoami -p <profile> -id <node_id>
 
 The **`dag`** command will retrieve your Node's wallet information for your local Node.
 
-You can specify another Node by supplying the `-w` (wallet) switch followed by the `dag_wallet` of the Node on the cluster that is targeted.
+You can specify another Node by supplying the `-w` (wallet) option followed by the `dag_wallet` of the Node on the cluster that is targeted.
 
-Following general output details about your wallet, nodectl will query the DAG explorer API and retrieve details of the last 350 snapshot entries.  This level of detail can be excluded by using the `-b` switch.  
+Following general output details about your wallet, nodectl will query the DAG explorer API and retrieve details of the last 350 snapshot entries.  This level of detail can be excluded by using the `-b` option.  
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which profile are you seeking the wallet information from. | **required** |
 | -w | `<dag_wallet>` | retrieve remote by target wallet address. | **optional** |
-| -b | None | if the `brief` [switch](#what-is-a-switch-and-parameter) is included a detailed view of the wallet transactions will be excluded from the command's output. | **optional** |
+| -b | None | if the `brief` [option](#what-is-an-option-and-parameter) is included a detailed view of the wallet transactions will be excluded from the command's output. | **optional** |
 | -np | None | By default, the `dag` command will [paginate](#what-is-pagination) the output, the `-np` flag will force `no pagination` during command output printing. | **optional** |
-| --csv | None | Export the file to default dated file name to the default uploads (see [configuration file](#configure)) or based on the `--output` [switch](#what-is-a-switch-and-parameter) (below). | **optional** |
+| --csv | None | Export the file to default dated file name to the default uploads (see [configuration file](#configure)) or based on the `--output` [option](#what-is-an-option-and-parameter) (below). | **optional** |
 | --output | `<file_name>` | **requires** `--csv` --> this can only be a filename. If you would like to have your output saved to an alternate location, you can update the configuration file's `upload` location, via the [configure command](#configure). | **optional** |
   
-The `--output` [switch](#what-is-a-switch-and-parameter) can only be a filename.  If you would like to have your output saved to an alternate location, you can update the configuration file via the [configure](#configure) command. 
+The `--output` [option](#what-is-an-option-and-parameter) can only be a filename.  If you would like to have your output saved to an alternate location, you can update the configuration file via the [configure](#configure) command. 
 
 | Output Header | Description |
 | ---: | :------ |
@@ -1543,13 +1597,18 @@ sudo nodectl dag -p dag-l0 -np
 ### export_private_key
 ---
 
-The **`export_private_key`** command does not take any [parameters](#what-is-a-switch-and-parameter).
+The **`export_private_key`** command does not take any [parameters](#what-is-an-option-and-parameter).
   
 `export_private_key` will pull your private out of your p12 file and print it to the screen.
   
 :::danger
 Do not share this private key with anyone that you do not completely trust with your financial assets.
 :::
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :----: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which profile are you seeking the private key from. | **required** |
+
 
 nodectl is designed to work with `p12` private key files that support Constellation Network `v2` keys.   If you are running an older node, please refer to the [v1 to v2 migration](/validate/resources/p12v1v2-migrate) document.
 
@@ -1562,7 +1621,7 @@ sudo nodectl export_private_key help
 ```  
 - Expose your private key
 ```
-sudo nodectl export_private_key
+sudo nodectl export_private_key -p <profile_name>
 ```
 
 
@@ -1585,17 +1644,17 @@ The **`id`** command is an alias to the [nodeid](#nodeid) command.
 ### nodeid 
 ---
 
-The **`nodeid`** command will retrieve your Node's public key (nodeid) for either your local Node or another Node by supplying the `-t` (target) [switch](#what-is-a-switch-and-parameter) followed by the `ip_address` of the node on the cluster that is targeted.
+The **`nodeid`** command will retrieve your Node's public key (nodeid) for either your local Node or another Node by supplying the `-t` (target) [option](#what-is-an-option-and-parameter) followed by the `ip_address` of the node on the cluster that is targeted.
 
-| Command | Alias |
-| :----: | :---: |
-| nodeid  |  id  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| nodeid  |  id  | >v2.x.x |
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :----: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which profile are you seeking the nodeid from. | **required** |
 | -t | `<ip_address` | retrieve remote by target IP address. | **optional** |
-
+| -l |  | Display the nodeid in long format. | **optional** |
 > #### Examples
 - Help Screen
 ```
@@ -1605,9 +1664,9 @@ sudo nodectl nodeid help
 ```  
 sudo nodectl nodeid
 ```
-- Retrieve nodeid of a Node on the cluster with the IP address of `111.111.111.111`.
+- Retrieve nodeid of a Node on the cluster with the IP address of `113.113.113.113`.
 ```  
-sudo nodectl nodeid -t 111.111.111.111
+sudo nodectl nodeid -t 113.113.113.113
 ```
 
 
@@ -1621,12 +1680,12 @@ sudo nodectl nodeid -t 111.111.111.111
 
 The **`nodeid2dag`** command will take in a required public node id or public key ( `128 byte` hexadecimal string ) and converts it into its associated Constellation Network DAG wallet address.
   
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | None | `<node_id>` | 128 byte node id (public key) to derive DAG wallet from. | **required** |
 
 :::warning
-The `<node_id>` is required and does not have a related [switch](#what-is-a-switch-and-parameter).
+The `<node_id>` is required and does not have a related [option](#what-is-an-option-and-parameter).
 :::
 
 > #### Examples
@@ -1649,7 +1708,7 @@ Due to the cryptographic nature of a DAG wallet, you can only 1-way hash a nodei
 ### passwd12  
 ---
 
-The **`passwd12`** command does not take any [parameters](#what-is-a-switch-and-parameter).
+The **`passwd12`** command does not take any [parameters](#what-is-an-option-and-parameter).
 
 This command offers the Node Operator the ability to change their p12 keystore file's passphrase through an interactive experience.
   
@@ -1687,14 +1746,15 @@ The **`configure`** command will attempt to guide the Node Operator through the 
   
 The [`cn-config.yaml`](/validate/automated/nodectlConfig) file is an extremely important file that nodectl uses to determine how it should control and configure your Constellation Network Validator Node.
 
-The `configure` command will offer a relatively detailed explanation of all configuration options, unless the `-a` (*advanced*) switch is used.  
+The `configure` command will offer a relatively detailed explanation of all configuration options, unless the `-a` (*advanced*) option is used.  
 
 *nodectl will confirm if you want to enter advanced mode if not specified.*
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -a | None | enable advanced mode. | **optional** |
 | -e | None | enter directly into **edit** configuration mode for existing configurations. | **optional** |
+| -ep | None | enter directly into **edit profile** configuration mode for existing configurations. >v2.9.0 | **optional** |
 | -n | None | enter directly into **new** configuration mode. | **optional** |
   
 In new configuration mode, nodectl will offer you two (2) options
@@ -1738,10 +1798,10 @@ sudo nodectl configure -a -e
 
 The **`upgrade`** command is used to upgrade both Tessellation and nodectl backend files.
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -w | None | **watch** mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, nodectl will skip watching for the remaining peers to connect and simply and safely continue the upgrade process, therefore saving time. | **optional** |
-| --pass | `<passphrase>` | If the Node Operator chose to `hide` their passphrase by excluding it from the [`configuration file`](/validate/automated/nodectlConfig), you will need to supply it at the command line using this switch. | **optional** |
+| --pass | `<passphrase>` | If the Node Operator chose to `hide` their passphrase by excluding it from the [`configuration file`](/validate/automated/nodectlConfig), you will need to supply it at the command line using this option. | **optional** |
 | -ni | None | Non-Interactive &rarr If you want to use the `upgrade` command with all the defaults chosen, nodectl will not ask any interactive questions. | **optional** |
 
 :::note Just in Case
@@ -1773,15 +1833,15 @@ sudo nodectl upgrade_nodectl
 ### upgrade_path
 ---
 
-The **`upgrade_path`** command does not take any [parameters](#what-is-a-switch-and-parameter) and offers the Node Operator the ability to check their Node's current nodectl version for upgrade path requirements.
+The **`upgrade_path`** command does not take any [parameters](#what-is-an-option-and-parameter) and offers the Node Operator the ability to check their Node's current nodectl version for upgrade path requirements.
   
 If the Node is not at the most current version of nodectl, this command will produce a warning. The warning will let the Node Administrator know what the next necessary upgrade version should be, and will show you upgrade path requirements.
    
 See the [upgrade path](/validate/automated/nodectlUpgradePath) document for more details.
 
-| Command | Shortcut |
-| :---: | :---: | 
-| upgrade_path  |  -up  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| upgrade_path  |  -up  | >v2.7.x
   
 > ##### Example Usage
 - Help screen
@@ -1801,9 +1861,9 @@ sudo nodectl upgrade_path
 
 The **`validate_config`** command will attempt to review your [`cn-config.yaml`](/validate/automated/nodectlConfig) file for errors that may cause **unexpected** results when attempting to run your Node.
 
-| Command | Shortcut |
-| :---: | :---: | 
-| validate_config  |  -val  |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| validate_config  |  -val  | >v2.7.x |
 
 In the event that nodectl finds discrepancies or errors in the **cn-config.yaml**, a table of errors and possible resolutions will be displayed as output.
 
@@ -1813,11 +1873,11 @@ In the event that nodectl finds discrepancies or errors in the **cn-config.yaml*
 
 The **`view_config`** command will show a [paginated](#what-is-pagination) view of the current [`cn-config.yaml`](/validate/automated/nodectlConfig) file.  
 
-| Command | Shortcut |
-| :---: | :---: | 
-| view_config  |  -vc    |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| view_config  |  -vc    | >v2.7.x
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -np | None | By default, the `view_config` command will [paginate](#what-is-pagination) the output, the `-np` flag will force `no pagination` during command output printing. | **optional** |
 
@@ -1843,9 +1903,9 @@ nodectl will review the current github repo and compare it to the versions runni
 
 It will report back `True` or `False` based on whether the versions match.
 
-| Command | Shortcut |
-| :---: | :---: | 
-| check_versions  |  -cv   |  
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_versions  |  -cv   | >v2.x.x |
 
 | Output Header | Description |
 | ---: | :------ |
@@ -1877,7 +1937,7 @@ The **`logs`** command will print out the contents of the logs that have been re
 | :---: | :---: | 
 | logs  |  log |
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | The name of the profile. This is important because (for example) the app.log shares the same log name for each profile.  The Node Operator will need to specify which profile to review. | **required** |
 | -l| `<log_name>` | Name of the log that you would like to review.  see [log types](#log-types) | **required** |
@@ -1902,7 +1962,7 @@ sudo nodectl logs -p <profile_name> <log_name> [-g <grep_value>] [-f]
 sudo nodectl logs -p dag-l0 -l app -g error -f
 ```
 - Request to view the nodectl logs 
-  - *The nodectl log is a command request that carries an exception.  This request to view the logs does not take the `-p <profile>` switch.*
+  - *The nodectl log is a command request that carries an exception.  This request to view the logs does not take the `-p <profile>` option.*
 
 ```
 sudo nodectl logs -l nodectl
@@ -1925,11 +1985,11 @@ During the execution you will be offered a menu to upload:
     
 Once you follow the prompts a tarball gzip file will appear in the uploads directory and the system will offer you the ability to upload the results to the transfer.sh service.
 
-| Command | Shortcut |
-| :---: | :---: | 
-| send_logs  |  -sl |
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| send_logs  |  -sl | >v2.x.x |
 
-| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which profile are you attempting to glean logs from. | **required** |
   
