@@ -9,6 +9,10 @@ Let’s create our Metagraph L0 😎, our L0 will need you to set up at least 3 
  Remember to replace the parameters that start with `:something...` with your own specific values 
 :::
 
+:::note
+ METAGRAPH_ID it's the metagraphID generated when [Configuring Base Instance](/sdk/guides/setup-a-metagraph/base-instance/configuring-base-instance)
+:::
+
 :::important
 The **`METAGRAPH_ID`** must remain consistent for all nodes across the L0 and L1 layers.
 :::
@@ -22,10 +26,10 @@ These steps should be performed for each instance you wish to create.
 - Name your instance, select the **`Instance Type`** as **`t2.large`**, choose your **`Key pair`**, and select the appropriate **`Security Groups`**.
 - Then press `Launch Instance`
 - To connect to the instance, use **`ssh`** or another AWS-provided option. If the instance user differs from **`ubuntu`**, switch to **`ubuntu`** before proceeding.
-- Upon connecting, navigate to the code folder using
+- Upon connecting, navigate to the `code` folder using
 
 ```bash
-cd code/
+cd code
 ```
 
 ### Setup Metagraph L0 - Instance 1
@@ -35,19 +39,16 @@ To create the first Metagraph L0 instance, follow these steps:
 - Securely transfer one of your **`p12`** files to the instance using **`scp`**. For example:
 
 ```bash
-scp -i ":your_ssh_key_file.pem" :p12_file.p12 your_instance:your_path
+scp -i "MyKeypair.pem" :p12_file.p12 your_instance:code
 ```
 
 - In this guide, the **`p12`** file is referred to as **`metagraph-file.p12`**.
 
 **Creating the Global L0**
 
-- Let’s create a new directory to run the global L0
+- Let’s copy the `.p12` file to global-l0 directory
 
 ```bash
-mkdir global-l0
-cp cl-node.jar global-l0/
-cp cl-wallet.jar global-l0/
 cp metagraph-file.p12 global-l0/
 cd global-l0/
 ```
@@ -76,7 +77,7 @@ curl ifconfig.me
 - Run the following command:
 
 ```bash
-nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 8000 --p2p-port 8001 --cli-port 8003 --collateral 0 --seedlist integrationnet-seedlist -e testnet  > logs.log 2>&1 &
+nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 6000 --p2p-port 6001 --cli-port 6002 --collateral 0 --seedlist integrationnet-seedlist -e integrationnet  > logs.log 2>&1 &
 ```
 
 - You should see that 1 file and 1 directory were created: `logs.log` and `logs`
@@ -84,24 +85,25 @@ nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port
 - Now we need to join this Global L0 to the integrationnet, run the following command:
 
 ```bash
-curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":testned_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
+curl -v -X POST http://localhost:6002/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":integrationnet_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
 ```
 
 - The **`id`**, **`ip`**, and **`p2pPort`** parameters are obtained from inspecting the node info on the integrationnet. For example: **http://103.145.63.182:9000/node/info**.
 - You can check if your node successfully joined the integrationnet at:
-http://:your_ip:8000/cluster/info 
+http://:your_ip:6000/cluster/info 
 
 Now that we have one global L0 instance running, we need to run our metagraph L0 instance
 
-- Return to the code folder
+- Return to the `code` folder and move to the `metagraph-l0` directory
 
 ```bash
-cd ..
+cd ../metagraph-l0
 ```
 
 - We should use a authorized `.p12` file, we can use the previous one used on global-l0 layer and set the same parameters:
 
 ```bash
+cp ../metagraph-file.p12 metagraph-file.p12
 export CL_KEYSTORE=":p12_file_used_on_seedlist_1.p12"
 export CL_KEYALIAS=":p12_file_used_on_seedlist_1"
 export CL_PASSWORD=":file_password_1"
@@ -111,52 +113,41 @@ export CL_PASSWORD=":file_password_1"
 
 ```bash
 
-export CL_PUBLIC_HTTP_PORT=9000
-export CL_P2P_HTTP_PORT=9001
-export CL_CLI_HTTP_PORT=9002
+export CL_PUBLIC_HTTP_PORT=7000
+export CL_P2P_HTTP_PORT=7001
+export CL_CLI_HTTP_PORT=7002
 export CL_GLOBAL_L0_PEER_HTTP_HOST=localhost
-export CL_GLOBAL_L0_PEER_HTTP_PORT=8000
+export CL_GLOBAL_L0_PEER_HTTP_PORT=6000
 export CL_GLOBAL_L0_PEER_ID=:local_global_l0_id
-export CL_APP_ENV=testnet
+CL_APP_ENV=integrationnet
 export CL_COLLATERAL=0
 ```
 
 - run the following command:
 
 ```bash
-nohup java -jar metagraph-l0.jar run-genesis genesis.csv --ip :instance_ip > metagraph-l0-logs.log 2>&1 &
+nohup java -jar metagraph-l0.jar run-genesis genesis.snapshot --ip :instance_ip > metagraph-l0-logs.log 2>&1 &
 ```
 
 - Folder `logs` should will be created.
 - You can check if your Metagraph L0 successfully started:
-[http://:your_ip:9000/cluster/info](https://www.notion.so/Generating-Base-Instance-39cef6eda5e346939184d18855312044?pvs=21)
-- You should get your metagraph ID from the logs by running the following command:
-
-```bash
-tail -f logs/app.log -n 1000
-```
-
-- The log should look like `Address from genesis data is: DAG...`
-- Store the DAG address, it will be used later and we will refer to this as **METAGRAPH_ID**
+[http://:your_ip:7000/cluster/info](https://www.notion.so/Generating-Base-Instance-39cef6eda5e346939184d18855312044?pvs=21)
 
 ### Setup Metagraph L0 - Intance #2
 
 - We will need another `p12` file , you can use `scp` to send the p12 file to the instance in a secure way:
 
 ```bash
-scp -i ":your_ssh_key_file.pem" :p12_file.p12 your_instance:your_path
+scp -i "MyKeypair.pem" :p12_file.p12 your_instance:code
 ```
 
 - Let's call our `p12` file in this example of `metagraph-file-1.p12`
 
 **GLOBAL L0**
 
-- Let’s create a new directory to run the global L0
+- Let’s copy the `.p12` file to global-l0 directory
 
 ```bash
-mkdir global-l0
-cp cl-node.jar global-l0/
-cp cl-wallet.jar global-l0/
 cp metagraph-file-1.p12 global-l0/
 cd global-l0/
 ```
@@ -188,7 +179,7 @@ curl ifconfig.me
 - Then you need to run the following command:
 
 ```bash
-nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 8000 --p2p-port 8001 --cli-port 8003 --collateral 0 --seedlist integrationnet-seedlist -e testnet  > logs.log 2>&1 &
+nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 6100 --p2p-port 6101 --cli-port 6102 --collateral 0 --seedlist integrationnet-seedlist -e integrationnet  > logs.log 2>&1 &
 ```
 
 - You should see that 1 file and 1 directory were created: `logs.log` and `logs`
@@ -196,24 +187,25 @@ nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port
 - Now we need to add this Global L0 to the integrationnet:
 
 ```bash
-curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":testned_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
+curl -v -X POST http://localhost:6102/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":integrationnet_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
 ```
 
 - The parameters: `id`, `ip`, and `p2pPort` are found inspecting the node info on integrationnet, as an example: http://103.145.63.182:9000/node/info
 - You can check if your node successfully joined the integrationnet by doing this:
-http://:your_ip:8000/cluster/info
+http://:your_ip:6000/cluster/info
 
 Now that we have one global L0 instance running, we need to run our metagraph L0 instance
 
-- Go back to the code folder
+- Return to the `code` folder and move to the `metagraph-l0` directory
 
 ```bash
-cd ..
+cd ../metagraph-l0
 ```
 
 - We should use one authorized `.p12` file, we can use the previous one used on global-l0 layer and set the same parameters:
 
 ```bash
+cp ../metagraph-file-1.p12 metagraph-file-1.p12
 export CL_KEYSTORE=":p12_file_used_on_seedlist_2.p12"
 export CL_KEYALIAS=":p12_file_used_on_seedlist_2"
 export CL_PASSWORD=":file_password_2"
@@ -223,14 +215,14 @@ export CL_PASSWORD=":file_password_2"
 
 ```bash
 
-export CL_PUBLIC_HTTP_PORT=9000
-export CL_P2P_HTTP_PORT=9001
-export CL_CLI_HTTP_PORT=9002
+export CL_PUBLIC_HTTP_PORT=7100
+export CL_P2P_HTTP_PORT=7101
+export CL_CLI_HTTP_PORT=7102
 export CL_GLOBAL_L0_PEER_HTTP_HOST=localhost
-export CL_GLOBAL_L0_PEER_HTTP_PORT=8000
+export CL_GLOBAL_L0_PEER_HTTP_PORT=6000
 export CL_GLOBAL_L0_PEER_ID=:local_global_node_id
 export CL_L0_TOKEN_IDENTIFIER=:**METAGRAPH_ID**
-export CL_APP_ENV=testnet
+CL_APP_ENV=integrationnet
 export CL_COLLATERAL=0
 ```
 
@@ -244,34 +236,31 @@ nohup java -jar metagraph-l0.jar run-validator --ip :ip > metagraph-l0-logs.log 
 - Now we are running Metagraph L0 - 2 as a validator, so we need to join Metagraph L0 - 1. You can get the information by doing this:
 
 ```bash
-http://:metagraph-l0-instance-1:9000/node/info
+http://:metagraph-l0-instance-1:7000/node/info
 ```
 
 ```bash
-curl -v -X POST http://localhost:9002/cluster/join -H "Content-type: application/json" -d '{ "id":":metagraph_node_1_id", "ip": "metagraph_node_1_ip", "p2pPort": 9001 }'
+curl -v -X POST http://localhost:7102/cluster/join -H "Content-type: application/json" -d '{ "id":":metagraph_node_1_id", "ip": "metagraph_node_1_ip", "p2pPort": 7001 }'
 ```
 
 - You can check if your Metagraph L0 successfully started:
-[http://:your_ip:9000/cluster/info](http://:your_ip:8000/cluster/info)
+[http://:your_ip:7000/cluster/info](http://:your_ip:7000/cluster/info)
 
 ### Setup Metagraph L0 - Instance #3
 
 - We need another of the `p12` files here, you can use `scp` to send the p12 file to the instance in a secure way, like this:
 
 ```bash
-scp -i ":your_ssh_key_file.pem" :p12_file.p12 your_instance:your_path
+scp -i "MyKeypair.pem" :p12_file.p12 your_instance:code
 ```
 
 - Let's call our `p12` file in this example of `metagraph-file-2.p12`
 
 **GLOBAL L0**
 
-- Let’s create a new directory to run the global L0
+- Let’s copy the `.p12` file to global-l0 directory
 
 ```bash
-mkdir global-l0
-cp cl-node.jar global-l0/
-cp cl-wallet.jar global-l0/
 cp metagraph-file-2.p12 global-l0/
 cd global-l0/
 ```
@@ -303,7 +292,7 @@ curl ifconfig.me
 - Run the following command:
 
 ```bash
-nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 8000 --p2p-port 8001 --cli-port 8003 --collateral 0 --seedlist integrationnet-seedlist -e testnet  > logs.log 2>&1 &
+nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 6200 --p2p-port 6201 --cli-port 6202 --collateral 0 --seedlist integrationnet-seedlist -e integrationnet  > logs.log 2>&1 &
 ```
 
 - You should see that 1 file and 1 directory were created: `logs.log` and `logs`
@@ -311,24 +300,25 @@ nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port
 - Now we need to add this Global L0 to the integrationnet:
 
 ```bash
-curl -v -X POST http://localhost:8003/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":testned_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
+curl -v -X POST http://localhost:6202/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":integrationnet_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
 ```
 
 - The parameters: `id`, `ip`, and `p2pPort` can be found by inspecting the node info on integrationnet, as an example: http://103.145.63.182:9000/node/info
 -Check if your node successfully joined the integrationnet:
-http://:your_ip:8000/cluster/info
+http://:your_ip:6000/cluster/info
 
 Now that we have one global L0 instance running, we need to run our metagraph L0 instance
 
-- For that, let’s go back to the code folder
+- Return to the `code` folder and move to the `metagraph-l0` directory
 
 ```bash
-cd ..
+cd ../metagraph-l0
 ```
 
 - We should use one authorized `.p12` file, we can use the previous one used on global-l0 layer and set the same parameters:
 
 ```bash
+cp ../metagraph-file-2.p12 metagraph-file-2.p12
 export CL_KEYSTORE=":p12_file_used_on_seedlist_3.p12"
 export CL_KEYALIAS=":p12_file_used_on_seedlist_3"
 export CL_PASSWORD=":file_password_3"
@@ -337,14 +327,14 @@ export CL_PASSWORD=":file_password_3"
 - We should provide the following parameters:
 
 ```bash
-export CL_PUBLIC_HTTP_PORT=9000
-export CL_P2P_HTTP_PORT=9001
-export CL_CLI_HTTP_PORT=9002
+export CL_PUBLIC_HTTP_PORT=7200
+export CL_P2P_HTTP_PORT=7201
+export CL_CLI_HTTP_PORT=7202
 export CL_GLOBAL_L0_PEER_HTTP_HOST=localhost
-export CL_GLOBAL_L0_PEER_HTTP_PORT=8000
+export CL_GLOBAL_L0_PEER_HTTP_PORT=6000
 export CL_GLOBAL_L0_PEER_ID=:local_global_node_id
 export CL_L0_TOKEN_IDENTIFIER=:**METAGRAPH_ID**
-export CL_APP_ENV=testnet
+CL_APP_ENV=integrationnet
 export CL_COLLATERAL=0
 ```
 
@@ -358,17 +348,17 @@ nohup java -jar metagraph-l0.jar run-validator --ip :ip > metagraph-l0-logs.log 
 - Now we are running Metagraph L0 - 2 as a validator, so we need to join Metagraph L0 - 1. You can get the information by doing this:
 
 ```bash
-http://:metagraph-l0-instance-1:9000/node/info
+http://:metagraph-l0-instance-1:7000/node/info
 ```
 
 ```bash
-curl -v -X POST http://localhost:9002/cluster/join -H "Content-type: application/json" -d '{ "id":":metagraph_node_1_id", "ip": "metagraph_node_1_ip", "p2pPort": 9001 }'
+curl -v -X POST http://localhost:7202/cluster/join -H "Content-type: application/json" -d '{ "id":":metagraph_node_1_id", "ip": "metagraph_node_1_ip", "p2pPort": 9001 }'
 ```
 
 - You can check if your Metagraph L0 successfully started by doing this:
-[http://:your_ip:9000/cluster/info](http://:your_ip:8000/cluster/info)
+[http://:your_ip:7000/cluster/info](http://:your_ip:7000/cluster/info)
 - We need another of the `p12` files here, you can use `scp` to send the p12 file to the instance in a secure way, like this:
 
 ```bash
-scp -i ":your_ssh_key_file.pem" :p12_file.p12 your_instance:your_path
+scp -i "MyKeypair.pem" :p12_file.p12 your_instance:code
 ```

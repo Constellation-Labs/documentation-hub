@@ -24,12 +24,12 @@ Please note that all steps in this tutorial are performed on the EC2 page within
 
 **2. [Creating key pairs](/sdk/guides/setup-a-metagraph/key-pairs)**
 
-**3. [Generating base instance](/sdk/guides/setup-a-metagraph/generating-base-instance)**
+**3. [Generating base instance](/sdk/guides/setup-a-metagraph/base-instance/generating-base-instance)**
 
-**4. [Configuring base image](/sdk/guides/setup-a-metagraph/configuring-base-instance)**
+**4. [Configuring base instance](/sdk/guides/setup-a-metagraph/base-instance/configuring-base-instance)**
 
-**5. [Generating AMI (Image) from instance](/sdk/guides/setup-a-metagraph/generating-AMI-from-instance)**
+**5. [Generating AMI (Image) from instance](/sdk/guides/setup-a-metagraph/base-instance/generating-AMI-from-instance)**
 
-**6. [Building metagraph L0 instances](/sdk/guides/setup-a-metagraph/building-metagraph-intances/building-metagraph-L0-instances)**
+**6. [Building metagraph L0 instances](/sdk/guides/setup-a-metagraph/building-metagraph-instances/building-metagraph-L0-instances)**
 
-**7. [Building metagraph L1 instances](/sdk/guides/setup-a-metagraph/building-metagraph-intances/building-metagraph-L1-instances)**
+**7. [Building metagraph L1 instances](/sdk/guides/setup-a-metagraph/building-metagraph-instances/building-currency-L1-instances)**
