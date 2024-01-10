@@ -82,19 +82,20 @@ sudo apt-get update
 sudo apt-get install sbt -y
 ```
 
-- We require the metagraph JARs for metagraph execution. There are two ways to obtain these JARs: 
+- For the metagraph execution you need to generate the metagraph JARs. There are two ways to obtain these JARs: 
 
   - [Generating JARs on Base Instance](/sdk/guides/setup-a-metagraph/base-instance/generating-metagraph-jars)
-	-	[Send JARs generated on Euclid](/sdk/guides/setup-a-metagraph/base-instance/sending-jars-from-euclid)
+	-	[Generating JARs with the Euclid SDK](/sdk/guides/setup-a-metagraph/base-instance/using-jars-from-euclid)
   
 
 ## Setting up the genesis file
 
-- To enable your metagraph to run on the network, we require your metagraphID, which is generated during the genesis process.
-- In addition to the metagraphID, you also need the file containing all information about addresses and values that should be initiated.
+:::info
+The Genesis file is a crucial component of your Metagraph. Thats where your metagraphID is generated and where you generate the initial token balances for your initial distributions.
+:::
 
 ### Dependencies
-- We should now download some files from the Tessellation repo releases. In this example, we should go to the releases [https://github.com/Constellation-Labs/tessellation/releases/tag/v2.2.0](https://github.com/Constellation-Labs/tessellation/releases/tag/v2.2.0)
+- Start by downloading some files from the Tessellation repo releases. Go to the releases [https://github.com/Constellation-Labs/tessellation/releases/tag/v2.2.0](https://github.com/Constellation-Labs/tessellation/releases/tag/v2.2.0)
 - Then we need the files: cl-keytool.jar, cl-wallet.jar, and cl-node.jar
 - Move to the `code` directory and run the following
  
@@ -138,19 +139,19 @@ vim genesis.csv
 
 - Add the following values to the file: 
 
-:::info
-The addresses and amounts below are just examples, you can edit and customize them to match your use case
-:::
-
 ```bash
 DAG8pkb7EhCkT3yU87B2yPBunSCPnEdmX2Wv24sZ,1000000000000
 DAG4o41NzhfX6DyYBTTXu6sJa6awm36abJpv89jB,1000000000000
 DAG4Zd2W2JxL1f1gsHQCoaKrRonPSSHLgcqD7osU,1000000000000
 ```
 
+:::info
+Edit the addresses and balances according to your needs or leave the file empty if your Metagraph starts without any token distribution.
+:::
+
 ### Generating metagraphID
 
-- After building your file, the next step is to generate the metagraphID. To accomplish this, execute the following command:
+-Now that you have generated your genesis file, the next step is to generate the metagraphID. To accomplish this, execute the following command:
 ```bash
 export CL_KEYSTORE=test.p12
 export CL_KEYALIAS=test
@@ -169,17 +170,16 @@ nohup java -jar metagraph-l0.jar create-genesis genesis.csv > metagraph-l0.log 2
 
 rm test.p12
 ```
-- The environment variables above are required, but it will be overwritten in the next steps
+- The environment variables above are required, but they will be overwritten in the next steps
  
 - This command should complete successfully, and you should find the following files in your directory:
   - `genesis.snapshot`
   - `genesis.address`
 
-:::warning
-The files mentioned above are crucial for running your metagraph.
-:::
-
 - You can open the `genesis.address` file to view your metagraphID, which should resemble a DAG address: `DAG...`
 
+:::important
+The MetagraphID needs to be shared with the Constellation Network team to be added to the Allowance List
+:::
 
-We now have the base image configured. This image will be used in all Metagraph instances
+The base instance is now completely configured and you will use it in all Metagraph instances

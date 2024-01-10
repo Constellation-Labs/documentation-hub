@@ -1,9 +1,9 @@
 ---
 id: generating-metagraph-jars
-title: Generating Metagraph JARs on Base Instance
+title: Generating metagraph JARs on the base instance
 ---
 
-If you choose to generate the JARs directly on a base instance, please follow the instructions below
+This guide will give you the step by step on how to generate the metagraph JARs directly on your Base instance.
  
 ## Setting up the Tessellation repository
 
@@ -73,12 +73,12 @@ g8 Constellation-Labs/currency --tag v2.2.0 --name="my-project" --tessellation_v
 Make sure you're using the latest version of Tessellation. You can find the most recent release in [**here**](https://github.com/Constellation-Labs/tessellation/releases).
 :::
 
-:::important
+:::info
 The command above includes the data-l1 layer with `--include_data_l1="yes"`. You can omit this parameter if your implementation does not require this layer.
 :::
 
 :::important
-If you want to customize the reward logic before compiling, check the **[Customize rewards guide](https://docs.constellationnetwork.io/sdk/guides/customize-rewards/)**
+If you want to customize the reward logic before compiling, check the **[Customize rewards guide](/sdk/guides/customize-rewards/)**
 :::
 
 - Compile the Metagraph L0 and Metagraph L1 jars:
@@ -98,6 +98,6 @@ mv my-project/modules/l1/target/scala-2.13/my-project-currency-l1-assembly-0.1.0
 mv my-project/modules/data_l1/target/scala-2.13/my-project-data-l1-assembly-0.1.0-SNAPSHOT.jar data-l1/data-l1.jar
 ```
 
-:::important
+:::info
 If you are not using the data-l1 layer, feel free to exclude `dataL1/assembly` and the subsequent `mv my-project/modules/data_l1/target/scala-2.13/my-project-data-l1-assembly-0.1.0-SNAPSHOT.jar data-l1.jar` steps.
 :::

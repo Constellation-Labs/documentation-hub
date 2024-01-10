@@ -1,9 +1,10 @@
 ---
-id: sending-jars-from-euclid
-title: Sending JARs from Euclid
+id: using-jars-from-euclid
+title: Using JARs generated with the Euclid SDK
 ---
 
-If you opt to send the JARs from Euclid, follow the instructions below:
+This guide will give you the step by step on how to generate the metagraph JARs from the Euclid SDK.
+
 
 ## Locating JARs on Euclid Codebase
 - After ensuring that your project is ready for deployment, navigate to the following directory in the Euclid codebase:
@@ -17,7 +18,7 @@ If you opt to send the JARs from Euclid, follow the instructions below:
 - Refer to the image below for an illustration of the mentioned directory and files:
 ![euclid jar directories](/img/sdk/euclid-jar-directories.png)
 
-## Sending the JARs to the Base Instance
+## Sending the Euclid JARs to the Base Instance
 
 - Use `scp` to transfer the JARs to the base instance.
 
@@ -28,4 +29,4 @@ scp -i "MyKeypair.pem" your_jar_directory/metagraph-l1-currency.jar ubuntu@ec2-y
 scp -i "MyKeypair.pem" your_jar_directory/metagraph-l1-data.jar ubuntu@ec2-your-ip.your-region.compute.amazonaws.com:code/data-l1/data-l1.jar
 ```
 
-- To verify the presence of your JARs in the metagraph, SSH into the instance and search in the directories: code/metagraph-l0, code/currency-l1, and code/data-l1
+- To check if your JARs were successfully sent to your metagraph, SSH into the instance and search in the directories: code/metagraph-l0, code/currency-l1, and code/data-l1
