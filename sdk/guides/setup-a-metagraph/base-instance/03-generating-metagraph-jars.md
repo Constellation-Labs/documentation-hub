@@ -3,7 +3,7 @@ id: generating-metagraph-jars
 title: Generating metagraph JARs on the base instance
 ---
 
-This guide will give you the step by step on how to generate the metagraph JARs directly on your Base instance.
+This guide will give you the step by step on how to generate the metagraph JARs directly on your base instance.
  
 ## Setting up the Tessellation repository
 
@@ -49,7 +49,10 @@ This part of the process can take some time.
 cd ..
 ```
 
-## Creating the metagraph project
+## Metagraph project
+- There are two options for the Metagraph project. You can either create the project from scratch on the instance or upload your existing project to the instance.
+
+### Creating project from scratch
 
 - Install the coursier and giter8 packages:
 
@@ -81,10 +84,18 @@ The command above includes the data-l1 layer with `--include_data_l1="yes"`. You
 If you want to customize the reward logic before compiling, check the **[Customize rewards guide](/sdk/guides/customize-rewards/)**
 :::
 
-- Compile the Metagraph L0 and Metagraph L1 jars:
+### Uploading project
+- You can upload your project tested on Euclid to the `base-instance`
+- To upload your project, you can use `scp` with the `-r` flag:
+```bash
+scp -i "MyKeypair.pem" -r your_project_directory ubuntu@ec2-your-ip.your-region.compute.amazonaws.com:code
+```
+
+## Compiling JARs
+- Compile the metagraph JARs: `metagraph-l0`, `metagraph-l1`, and `data-l1`
 
 ```bash
-cd my-project/
+cd your_project_directory/
 sbt clean currencyL0/assembly currencyL1/assembly dataL1/assembly
 cd ..
 ```
@@ -93,9 +104,9 @@ cd ..
 
 ```bash
 cd ..
-mv my-project/modules/l0/target/scala-2.13/my-project-currency-l0-assembly-0.1.0-SNAPSHOT.jar metagraph-l0/metagraph-l0.jar
-mv my-project/modules/l1/target/scala-2.13/my-project-currency-l1-assembly-0.1.0-SNAPSHOT.jar currency-l1/currency-l1.jar
-mv my-project/modules/data_l1/target/scala-2.13/my-project-data-l1-assembly-0.1.0-SNAPSHOT.jar data-l1/data-l1.jar
+mv your_project_directory/modules/l0/target/scala-2.13/my-project-currency-l0-assembly-0.1.0-SNAPSHOT.jar metagraph-l0/metagraph-l0.jar
+mv your_project_directory/modules/l1/target/scala-2.13/my-project-currency-l1-assembly-0.1.0-SNAPSHOT.jar currency-l1/currency-l1.jar
+mv your_project_directory/modules/data_l1/target/scala-2.13/my-project-data-l1-assembly-0.1.0-SNAPSHOT.jar data-l1/data-l1.jar
 ```
 
 :::info

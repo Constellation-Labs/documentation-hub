@@ -43,7 +43,7 @@ mkdir code
 cd code/
 ```
 
-- Additionally, let's create the following directories: `metagraph-l0`, `currency-l1`, and `data-l1`
+- Additionally, let's create the following directories: `global-l0`, `metagraph-l0`, `currency-l1`, and `data-l1`. These will be the root directories for our global L0 instance (`global-l0`) each of our metagraph layers (`metagraph-l0`, `currency-l1`, `data-l1`).
 
 ```bash
 mkdir global-l0
@@ -70,7 +70,7 @@ sudo apt-get install gnupg -y
 
 ```bash
 sudo echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
-	sudo echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
+sudo echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
 sudo curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add
 ```
 
@@ -91,11 +91,11 @@ sudo apt-get install sbt -y
 ## Setting up the genesis file
 
 :::info
-The Genesis file is a crucial component of your Metagraph. Thats where your metagraphID is generated and where you generate the initial token balances for your initial distributions.
+The Genesis file is a crucial component of your Metagraph. Thats where you generate the initial token balances for your initial distributions.
 :::
 
 ### Dependencies
-- Start by downloading some files from the Tessellation repo releases. Go to the releases [https://github.com/Constellation-Labs/tessellation/releases/tag/v2.2.0](https://github.com/Constellation-Labs/tessellation/releases/tag/v2.2.0)
+- Start by downloading some files from the Tessellation repo releases. Go to the releases [https://github.com/Constellation-Labs/tessellation/releases/latest](https://github.com/Constellation-Labs/tessellation/releases/latest)
 - Then we need the files: cl-keytool.jar, cl-wallet.jar, and cl-node.jar
 - Move to the `code` directory and run the following
  
@@ -119,8 +119,17 @@ mv cl-node.jar global-l0/global-l0.jar
 Make sure you're using the latest version of Tessellation. You can find the most recent release in [**here**](https://github.com/Constellation-Labs/tessellation/releases).
 :::
 
-### Creating Genesis file
-- Move to the directory `code/metagraph-l0`
+### Genesis file
+#### Using genesis.csv from Euclid
+- If you already have your genesis file used for testing on Euclid, you can upload the file here.
+- To send your `genesis.csv` file, you can use `scp`:
+```bash
+scp -i "MyKeypair.pem" your_genesis_file.csv ubuntu@ec2-your-ip.your-region.compute.amazonaws.com:code/metagraph-l0/genesis.csv
+```
+
+#### Creating genesis.csv
+- If you don't have a `genesis.csv` file, or want's to create it, you can follow the steps below
+- Move to the directory `code/metagraph-l0` 
 - Create a **`genesis.csv`** file:
 
 ```bash
@@ -144,6 +153,9 @@ DAG8pkb7EhCkT3yU87B2yPBunSCPnEdmX2Wv24sZ,1000000000000
 DAG4o41NzhfX6DyYBTTXu6sJa6awm36abJpv89jB,1000000000000
 DAG4Zd2W2JxL1f1gsHQCoaKrRonPSSHLgcqD7osU,1000000000000
 ```
+:::note
+These are example values, feel free to use any address and values of your choice
+:::
 
 :::info
 Edit the addresses and balances according to your needs or leave the file empty if your Metagraph starts without any token distribution.
@@ -151,7 +163,8 @@ Edit the addresses and balances according to your needs or leave the file empty 
 
 ### Generating metagraphID
 
--Now that you have generated your genesis file, the next step is to generate the metagraphID. To accomplish this, execute the following command:
+- Now that you have generated your genesis file, the next step is to generate the metagraphID. This metagraph ID will be used to grant your metagraph access to the network (MainNet only) and is the identifier that your metagraph will use on the DAG Explorer. 
+- To generate your metagraphID, execute the following command:
 ```bash
 export CL_KEYSTORE=test.p12
 export CL_KEYALIAS=test
@@ -179,7 +192,7 @@ rm test.p12
 - You can open the `genesis.address` file to view your metagraphID, which should resemble a DAG address: `DAG...`
 
 :::important
-The MetagraphID needs to be shared with the Constellation Network team to be added to the Allowance List
+On MainNet, the MetagraphID needs to be shared with the Constellation Network team to be added to the seedlist
 :::
 
-The base instance is now completely configured and you will use it in all Metagraph instances
+The base instance is now completely configured and you will use it in all metagraph instances
