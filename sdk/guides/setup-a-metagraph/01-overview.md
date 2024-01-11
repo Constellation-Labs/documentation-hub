@@ -40,7 +40,7 @@ Please note that all steps in this tutorial are performed on the EC2 page within
   -  [Generating AMI](/sdk/guides/setup-a-metagraph/base-instance/generating-AMI-from-instance).
 
 - Finally, we need to configure each layer to run the Metagraph. The links below instruct how you can do this:
-  - [Building Global L0](/sdk/guides/setup-a-metagraph/building-metagraph-instances/building-metagraph-L0-instances).
+  - [Building Global L0](/sdk/guides/setup-a-metagraph/building-metagraph-instances/building-global-L0-instances).
    
   - [Building Metagraph L0](/sdk/guides/setup-a-metagraph/building-metagraph-instances/building-metagraph-L0-instances).
 
@@ -49,9 +49,7 @@ Please note that all steps in this tutorial are performed on the EC2 page within
   - [Building Data L1](/sdk/guides/setup-a-metagraph/building-metagraph-instances/building-data-L1-instances).
 
 :::note
-As mentioned earlier, we will require 3 EC2 instances, each responsible for running four layers: `global-l0`, `metagraph-l0`, `currency-l1`, and `data-l1`.
+- As mentioned earlier, we will require 3 EC2 instances, each responsible for running four layers: `global-l0`, `metagraph-l0`, `currency-l1`, and `data-l1`.
+- You can learn how to run instances from AMI **[here](/sdk/guides/setup-a-metagraph/base-instance/launching-instances-from-ami)**
 :::
 
-:::note
-You can learn how to run instances from AMI [here](/sdk/guides/setup-a-metagraph/base-instance/launching-instances-from-ami)
-:::

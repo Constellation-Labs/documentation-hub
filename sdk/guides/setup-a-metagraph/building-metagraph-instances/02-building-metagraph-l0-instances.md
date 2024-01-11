@@ -6,19 +6,10 @@ title: Building metagraph-l0 instances
 Let’s create our Metagraph L0 😎
 
 :::note
- Remember to replace the parameters that start with `:something...` with your own specific values 
-:::
-
-:::note
- You can learn how to run instances from AMI [here](/sdk/guides/setup-a-metagraph/base-instance/launching-instances-from-ami)
-:::
-
-:::note
- Please note that we only require three instances for all layers (`global-l0`, `metagraph-l0`, `currency-l1`, and `data-l1`). We will organize these layers into directories for the instances.
-:::
-
-:::note
- METAGRAPH_ID is the metagraphID generated in the [Configuring Base Instance](/sdk/guides/setup-a-metagraph/base-instance/configuring-base-instance) guide. 
+- Remember to replace the parameters that start with `:something...` with your own specific values
+- You can learn how to run instances from AMI **[here](/sdk/guides/setup-a-metagraph/base-instance/launching-instances-from-ami)**
+- Please note that we only require three instances for all layers (`global-l0`, `metagraph-l0`, `currency-l1`, and `data-l1`). We will organize these layers into directories for the instances.
+- METAGRAPH_ID is the metagraphID generated in the [Configuring Base Instance](/sdk/guides/setup-a-metagraph/base-instance/configuring-base-instance) guide. 
 :::
 
 :::important

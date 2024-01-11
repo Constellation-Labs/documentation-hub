@@ -6,15 +6,9 @@ title: Building global-l0 instances
 Let’s create our Global L0 😎
 
 :::note
- You can learn how to run instances from AMI [here](/sdk/guides/setup-a-metagraph/base-instance/launching-instances-from-ami)
-:::
-
-:::note
- Remember to replace the parameters that start with `:something...` with your own specific values 
-:::
-
-:::note
- Please note that we only require three instances for all layers (`global-l0`, `metagraph-l0`, `currency-l1`, and `data-l1`). We will organize these layers into directories for the instances.
+- You can learn how to run instances from AMI **[here](/sdk/guides/setup-a-metagraph/base-instance/launching-instances-from-ami)**
+- Remember to replace the parameters that start with `:something...` with your own specific values
+- Please note that we only require three instances for all layers (`global-l0`, `metagraph-l0`, `currency-l1`, and `data-l1`). We will organize these layers into directories for the instances.
 :::
 
 ### P12 files
