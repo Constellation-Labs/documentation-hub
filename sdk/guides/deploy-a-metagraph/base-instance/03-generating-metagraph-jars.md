@@ -3,11 +3,14 @@ id: generating-metagraph-jars
 title: Generating metagraph JARs on the base instance
 ---
 
-This guide will give you the step by step on how to generate the metagraph JARs directly on your base instance.
+:::warning
+This guide describes generating metagraph JAR files directly on a node instance. For most use cases, it is recommended to build JAR files using Euclid instead, or to modify this process as part of an automated CI deployment. 
+:::
+
+This guide will give you the step by step on how to generate the metagraph JARs directly on your base instance as an alternative to uploading files tested in Euclid. 
  
 ## Setting up the Tessellation repository
-
-- Clone the Tessellation repository and checkout the integrationnet node version. You can find the integrationnet node version using the **`/node/info`** endpoint in any existing node of the network.
+Clone the Tessellation repository and checkout the integrationnet node version. You can find the integrationnet node version using the **`/node/info`** endpoint in any existing node of the network.
 
 ![configuring instance 04](/img/sdk/configuring-base-image-04.png)
 
@@ -50,7 +53,7 @@ cd ..
 ```
 
 ## Metagraph project
-- There are two options for the Metagraph project. You can either create the project from scratch on the instance or upload your existing project to the instance.
+There are two options for the Metagraph project. You can either create the project from scratch on the instance or upload your existing project to the instance.
 
 ### Creating project from scratch
 
@@ -72,16 +75,8 @@ source ~/.profile
 g8 Constellation-Labs/currency --tag v2.2.0 --name="my-project" --tessellation_version="2.0.0" --include_data_l1="yes"
 ```
 
-:::warning 
-Make sure you're using the latest version of Tessellation. You can find the most recent release in [**here**](https://github.com/Constellation-Labs/tessellation/releases).
-:::
-
 :::info
 The command above includes the data-l1 layer with `--include_data_l1="yes"`. You can omit this parameter if your implementation does not require this layer.
-:::
-
-:::important
-If you want to customize the reward logic before compiling, check the **[Customize rewards guide](/sdk/guides/customize-rewards/)**
 :::
 
 ### Uploading project

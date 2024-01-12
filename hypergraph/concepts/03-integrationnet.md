@@ -10,7 +10,7 @@ Constellation provides developers with a full featured IntegrationNet to test ap
 The IntegrationNet has all of the same features as MainNet and can therefore be used to validate application integrations in a realistic way. 
 
 :::info Developing a Metagraph
-Metagraph developers may use IntegrationNet as they're nearing production readiness. See [Setup a metagraph](/sdk/guides/setup-a-metagraph/overview).
+Metagraph developers may use IntegrationNet as they're nearing production readiness. See [Setup a metagraph](/sdk/guides/deploy-a-metagraph/overview).
 :::
 
 ## Connecting to IntegrationNet
