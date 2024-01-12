@@ -40,4 +40,4 @@ This guide will walk you through a series of steps to manually configure your no
 - [Configure the base instance](/sdk/guides/deploy-a-metagraph/base-instance/configuring-base-instance): Add all dependencies and upload metagraph project files to the base instance.
 - [Generate AMI](/sdk/guides/deploy-a-metagraph/base-instance/generating-AMI-from-instance): Convert the base instance into a reusable AMI. 
 - [Generate EC2 Instances from AMI](/sdk/guides/deploy-a-metagraph/base-instance/launching-instances-from-ami): Using the AMI created in previous steps as a template, generate all 3 EC2 instances. 
-- [Configure Layers](/sdk/guides/deploy-a-metagraph/building-metagraph-instances/building-global-L0-instances): In these steps we will connect to each of the 3 instances and configure each layer individually. 
+- [Configure Layers and Join](/sdk/guides/deploy-a-metagraph/building-metagraph-instances/configuring-p12-files): Configure each of the 4 layers and join to the network.
