@@ -22,10 +22,10 @@ Click **`Add Rule`** under the **`Inbound Rules`** section and add the following
 | Type  | Protocol  | Port Range  | Source  | Purpose |
 |---|---|---|---|---|
 | SSH         | TCP  | 22         | 0.0.0.0/0 | SSH access |
-| Custom TCP  | TCP  | 6000-6002  | 0.0.0.0/0 | gL0 layer |
-| Custom TCP  | TCP  | 7000-7002  | 0.0.0.0/0 | mL0 layer |
-| Custom TCP  | TCP  | 8000-8002  | 0.0.0.0/0 | cL1 layer |
-| Custom TCP  | TCP  | 9000-9002  | 0.0.0.0/0 | dL1 layer |
+| Custom TCP  | TCP  | 9000-9002  | 0.0.0.0/0 | gL0 layer |
+| Custom TCP  | TCP  | 9100-9102  | 0.0.0.0/0 | mL0 layer |
+| Custom TCP  | TCP  | 9200-9202  | 0.0.0.0/0 | cL1 layer |
+| Custom TCP  | TCP  | 9300-9302  | 0.0.0.0/0 | dL1 layer |
 
 
 

@@ -25,7 +25,7 @@ export CL_PASSWORD=":file_password_1"
 ```
 
 Also export the following environment variables, filling in the following:  
-- `CL_GLOBAL_L0_PEER_ID`: The public ID of your Global L0 node which can be obtained from the `/node/info` endpoint of your Global L0 instance (http://your_node_id:6000/node/info). 
+- `CL_GLOBAL_L0_PEER_ID`: The public ID of your Global L0 node which can be obtained from the `/node/info` endpoint of your Global L0 instance (http://your_node_id:9000/node/info). 
 - `CL_L0_PEER_ID`: The public ID of the metagraph l0 node which is the same as `CL_GLOBAL_L0_PEER_ID` above if you're using the same p12 files for all layers.
 - `CL_GLOBAL_L0_PEER_HTTP_HOST`: The public IP of this node (points to global-l0 layer). 
 - `CL_L0_PEER_HTTP_HOST`: The public IP of this node (points to metagraph-l0 layer).
@@ -33,14 +33,14 @@ Also export the following environment variables, filling in the following:
 
 
 ```bash
-export CL_PUBLIC_HTTP_PORT=9000
-export CL_P2P_HTTP_PORT=9001
-export CL_CLI_HTTP_PORT=9002
+export CL_PUBLIC_HTTP_PORT=9300
+export CL_P2P_HTTP_PORT=9301
+export CL_CLI_HTTP_PORT=9302
 export CL_GLOBAL_L0_PEER_HTTP_HOST=:ip_from_metagraph_l0_node_1_global_l0
-export CL_GLOBAL_L0_PEER_HTTP_PORT=6000
+export CL_GLOBAL_L0_PEER_HTTP_PORT=9000
 export CL_GLOBAL_L0_PEER_ID=:id_from_metagraph_l0_node_1_global_l0
 export CL_L0_PEER_HTTP_HOST=:ip_from_metagraph_l0_node_1_metagraph_l0
-export CL_L0_PEER_HTTP_PORT=7000
+export CL_L0_PEER_HTTP_PORT=9100
 export CL_L0_PEER_ID=:id_from_metagraph_l0_node_1_metagraph_l0
 export CL_L0_TOKEN_IDENTIFIER=:**METAGRAPH_ID**
 export CL_APP_ENV=integrationnet
@@ -58,7 +58,7 @@ nohup java -jar data-l1.jar run-initial-validator --ip :instance_ip > metagprah-
 ```
 
 Check if your data L1 node successfully started:
-http://:your_ip:9000/cluster/info
+http://:your_ip:9300/cluster/info
 
 #### Start your data L1 node (validator)
 The 2nd and 3rd nodes should be started in validator mode and joined to the first node that was run in initial-validator mode. All other steps are the same. 
@@ -69,7 +69,7 @@ nohup java -jar data-l1.jar run-validator --ip :ip > data-l1-logs.log 2>&1 &
 
 Run the following command to join, filling in the `id` and `ip` of your first data L1 node. 
 ```bash
-curl -v -X POST http://localhost:8002/cluster/join -H "Content-type: application/json" -d '{ "id":":id_from_data_l1_1", "ip": ":ip_from_data_l1", "p2pPort": 8001 }'
+curl -v -X POST http://localhost:9302/cluster/join -H "Content-type: application/json" -d '{ "id":":id_from_data_l1_1", "ip": ":ip_from_data_l1", "p2pPort": 9301 }'
 ```
 
 ### Repeat
@@ -81,10 +81,10 @@ If you followed all steps, your metagraph is now fully deployed.
 You can check the status of each of the node layers using their IP address and layer port number. 
 
 #### Ports 
-- Global L0: 6000
-- Metagraph L0: 7000
-- Currency L1: 8000
-- Data L1: 9000
+- Global L0: 9000
+- Metagraph L0: 9100
+- Currency L1: 9200
+- Data L1: 9300
 
 #### Endpoints
 - `/cluster/info`: View nodes joined to the current layer's cluster
