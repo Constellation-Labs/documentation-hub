@@ -45,7 +45,7 @@ wget https://github.com/Constellation-Labs/tessellation/releases/download/v2.2.1
 The following command will start your Global L0 node in validator mode. 
 
 ```bash
-nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 6000 --p2p-port 6001 --cli-port 6002 --collateral 0 --seedlist integrationnet-seedlist -e integrationnet  > logs.log 2>&1 &
+nohup java -jar cl-node.jar run-validator --ip :instance_public_ip --public-port 9000 --p2p-port 9001 --cli-port 9002 --collateral 0 --seedlist integrationnet-seedlist -e integrationnet  > logs.log 2>&1 &
 ```
 #### Check logs
 You should see a new directory `logs` with a `app.log` file. Check the logs for any errors. 
@@ -58,14 +58,14 @@ https://l0-lb-integrationnet.constellationnetwork.io/node/info
 
 Run the following command with the **`id`**, **`ip`**, and **`p2pPort`** parameters updated.
 ```bash
-curl -v -X POST http://localhost:6002/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":integrationnet_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
+curl -v -X POST http://localhost:9002/cluster/join -H "Content-type: application/json" -d '{ "id":":integrationnet_node_id", "ip": ":integrationnet_node_ip", "p2pPort": :integrationnet_node_p2p_port }'
 ```
 
 #### Check connection
 Verify that your node is connected to the network with the `/node/info` endpoint on your node. It can be accessed at the following url. You should see `state: Ready` if your node has successfully connected to the network. 
 
 ```
-http://your_node_id:6000/node/info
+http://your_node_id:9000/node/info
 ```
 
 ### Repeat
