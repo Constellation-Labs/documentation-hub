@@ -1,6 +1,7 @@
 ---
 id: generating-metagraph-jars
 title: Generating metagraph JARs on the base instance
+sidebar_class_name: sidebar-hidden
 ---
 
 :::warning
