@@ -102,7 +102,7 @@ cd ..
 cd ..
 mv your_project_directory/modules/l0/target/scala-2.13/my-project-currency-l0-assembly-0.1.0-SNAPSHOT.jar metagraph-l0/metagraph-l0.jar
 mv your_project_directory/modules/l1/target/scala-2.13/my-project-currency-l1-assembly-0.1.0-SNAPSHOT.jar currency-l1/currency-l1.jar
-mv your_project_directory/modules/data_l1/target/scala-2.13/my-project-data-l1-assembly-0.1.0-SNAPSHOT.jar data-l1/data-l1.jar
+mv your_project_directory/modules/data_l1/target/scala-2.13/my-project-data_l1-assembly-0.1.0-SNAPSHOT.jar data-l1/data-l1.jar
 ```
 
 :::info
