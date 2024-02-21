@@ -18,15 +18,14 @@ By introducing fees in a way that stimulates efficient network utilization, fort
 
 Constellation Network adheres to the core principle that most network actions should be feeless, fostering a low-fee environment to support the diverse use cases it aims to nurture. While we clarify that low-fee does not mean no-fee, the careful application of network fees, denominated in DAG, is crucial for network scalability and security. These fees play a pivotal role in the decentralized tokenomics of the network, not only by determining the cost of actions and incentivizing certain behaviors but also by deterring malicious attacks. Striking a careful balance between fees and rewards is vital for the network to attract diverse economic models for our metagraph layer, and to scale and accommodate innovation over the years, while simultaneously supporting robust network security. 
 
-Moreover, it's important to note that our approach to low or zero fees functions as a subsidy to stimulate network participation and growth. By minimizing fees, Constellation Network aims to lower barriers to entry, making it more accessible for users and encouraging broader adoption of both DAG as a utility token and metagraphs as a platform for development. This strategy is designed to support the network's expansion by fostering an environment that is attractive to new users and developers, ultimately contributing to a vibrant and growing ecosystem.
+Moreover, it's important to note that our approach to low or zero fees functions as a subsidy to stimulate network participation and growth. By minimizing fees, Constellation Network aims to lower barriers to entry, making it more accessible for users and encouraging broader adoption of both DAG as a utility token and metagraphs as a platform for development. This strategy is designed to support the network's expansion by fostering an environment that is attractive to new users and developers, ultimately contributing to a self-sustaining and growing ecosystem.
 
-We believe fees are useful for the following purposes:
+Fees are utilized on the network for the following purposes:
 
 - **Securing the network against attacks:** by making certain patterns of behavior more expensive, such as DDoS or spam attacks, the economic viability of attacking network vulnerabilities is reduced.
 - **Efficient resource utilization:** introducing cost mechanisms encourages users towards more resource-efficient behaviors, optimizing network resource usage without imposing limitations. An illustration of this principle is the implementation of metagraph snapshot fees, which attach a tangible cost to data storage on the Hypergraph. This incentivizes metagraph teams to innovate, such as by storing only data notarizations (hashes) on-chain rather than the full data sets, leading to more efficient network space utilization.
 - **Creating a utility marketplace:** network fees serve to facilitate a transaction space where users compensate resource providers for their services, effectively creating a marketplace for the exchange of utility. For example, metagraphs pay snapshot fees for the utility of validation, consensus, and storage on the ledger while validator nodes generate rewards for their work validating transactions, reaching consensus, and providing access to on-chain data.
 
- 
 
 Furthermore, fees fall broadly into two categories: 
 
@@ -261,7 +260,7 @@ Future protocol updates, namely enabling validator reward distribution to L1 nod
 
 Homogeneous node configurations transitioning to heterogeneous configurations to support independent scaling of the Global L0 and DAG L1, as well as metagraph layers. 
 
-As the network evolves to further support independent scaling of validator nodes, it paves the way for a more sustainable economic model with new opportunities to contribute as a node operator. This model not only rewards participants fairly but also ensures that the network remains robust against external threats and scalable in the face of growing demand. This approach fosters an environment where economic activities contribute positively to the community, environment, and overall network health. It encourages a diverse range of participants to contribute to the network's security and decentralization, thereby strengthening the ecosystem.
+As the network evolves to further support independent scaling of network layers, it paves the way for a more sustainable economic model with new opportunities to contribute as a node operator. This model not only rewards participants fairly but also ensures that the network remains robust against external threats and scalable in the face of growing demand. Node operators will have the flexibility to serve as validators in independent global network layers and metagraph layers, either individually or as hybrid nodes that validate for multiple layers simultaneously. This flexibility will significantly expand the pool of node operators, thereby enhancing the network's overall strength.
 
 ### Incentivizing Builders
 
