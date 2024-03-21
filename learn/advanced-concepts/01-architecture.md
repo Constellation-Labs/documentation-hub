@@ -9,7 +9,7 @@ The Hypergraph network is a decentralized protocol made up of multiple independe
 The benefit of this approach is a parallel to the reasoning behind why microservice state isolation is used in conventional industry. State should not be managed exclusively by a global linear ledger, but rather updates should be constrained to their exclusive logical service boundaries.
 
 
-![Hypergraph](/img/coreconcepts/hypergraph.jpeg)
+![Hypergraph](/img/coreconcepts/hypergraph.png)
 
 ## Network Components
 
