@@ -37,4 +37,3 @@ import DocsCards from '@components/global/DocsCards';
   </DocsCard>
 </DocsCards>
 
-
