@@ -19,16 +19,16 @@ This method adds the standard `"\u0019Constellation Signed Data:\n" + len(messag
 The final string looks like this: `"\u0019Constellation Signed Data:\n" + len(message) + "\n" + message`
 :::
 
-:::info Note
-The only difference between `dag_signData` and `dag_signMessage` is the prefix.
+:::caution Warning
+Please be sure you use the correct prefix for the correct method when verifying signatures, `dag_signData` uses "Constellation Signed Data:" while `dag_signMessage` uses "Constellation Signed Message:"
 :::
 
 ##### Parameters
 
-| Name    | Type                                   | Description           |
-| ------- | -------------------------------------- | --------------------- |
-| Account | `Address`                              | Account to sign from. |
-| Request | `Base64<JSONEncoded or StringEncoded>` | Signature Request.    |
+| Name    | Type                                             | Description           |
+| ------- | ------------------------------------------------ | --------------------- |
+| Account | `Address`                                        | Account to sign from. |
+| Request | `Base64<JSONEncoded>` \| `Base64<StringEncoded>` | Signature Request.    |
 
 ##### Return Type
 

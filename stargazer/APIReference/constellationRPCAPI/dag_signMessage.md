@@ -18,8 +18,8 @@ This method adds the standard `"\u0019Constellation Signed Message:\n" + len(mes
 
 The final string looks like this: `"\u0019Constellation Signed Message:\n" + len(message) + "\n" + message`
 :::
-:::info Note
-The only difference between `dag_signMessage` and `dag_signData` is the prefix.
+:::caution Warning
+Please be sure you use the correct prefix for the correct method when verifying signatures, `dag_signMessage` uses "Constellation Signed Message:" while `dag_signData` uses "Constellation Signed Data:"
 :::
 
 ##### Parameters
