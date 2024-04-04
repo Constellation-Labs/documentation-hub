@@ -28,6 +28,7 @@ Many developers can skip this step because these dependencies are already instal
 - [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 - [Scala 2.13](https://www.scala-lang.org/download/)
 - [Jq](https://jqlang.github.io/jq/download/)
+- [Yq](https://github.com/mikefarah/yq)
 
 
 
@@ -60,11 +61,7 @@ cd euclid-development-environment
 See the [Development Environment](/sdk/elements/dev-environment#project-directory-structure) section for an overview of the directory structure of the project. 
 
 #### Configure
-Edit the `github_token` variable within the `euclid.json` file with your Github Access Token generated previously. Update the `PROJECT_NAME` variable to the name of your project. 
-```
-GITHUB_TOKEN=<your token here>
-PROJECT_NAME=<your-project-name>
-```
+Edit the `github_token` variable within the `euclid.json` file with your Github Access Token generated previously. Update the `project_name` field to the name of your project. 
 
 
 #### Hydra
@@ -76,12 +73,20 @@ scripts/hydra -h
 USAGE: hydra <COMMAND>
 
 COMMANDS:
-  install        Builds framework from template 
-  build          Build the clusters
-  start_genesis  Start built clusters from genesis block
-  stop           Stop all the containers
-  destroy        Destroy all the containers
-  status         Check the status of the containers
+  install           Installs a local framework and detaches project
+  install-template  Installs a project from templates
+  build             Build containers
+  start-genesis     Start containers from the genesis snapshot (erasing history) [aliases: start_genesis]
+  start-rollback    Start containers from the last snapshot (maintaining history) [aliases: start_rollback]
+  stop              Stop containers
+  destroy           Destroy containers
+  purge             Destroy containers and images
+  status            Check the status of the containers
+  remote-deploy     Remotely deploy to cloud instances using Ansible [aliases: remote_deploy]
+  remote-start      Remotely start the metagraph on cloud instances using Ansible [aliases: remote_start]
+  remote-status     Check the status of the remote nodes
+  update            Update Euclid
+  logs              Get the logs from containers
 ```
 
 #### Install Project
@@ -95,8 +100,21 @@ Detaching your project from the source repo removes its remote git configuration
 scripts/hydra install   
 ```
 
+You can import a metagraph template from custom examples by using the following command:
+
+```
+scripts/hydra install-template
+```
+
+By default, we use the [Metagraph Examples](https://github.com/Constellation-Labs/metagraph-examples) repository. You should provide the template name when running this command. 
+To list the templates available to install, type:
+
+```
+scripts/hydra install-template --list
+```
+
 ## Build
-Build your network clusters with hydra. By default, this builds `global-l0`, `metagraph-l0`, `metagraph-l1-currency`, `metagraph-l1-data`, and `prometheus` + `grafana` monitoring containers. The `dag-l1` cluster is not built by default since it isn't strictly necessary for metagraph development. You can include it on the `euclid.json` file. 
+Build your network clusters with hydra. By default, this builds `metagraph-ubuntu`, `metagraph-base-image`, and `prometheus` + `grafana` monitoring containers. These images will allow deploy the containers with metagraph layers: `global-l0`, `metagraph-l0`, `currency-l1`, and `data-l1`. The `dag-l1` layer is not built by default since it isn't strictly necessary for metagraph development. You can include it on the `euclid.json` file. 
 
 Start the build process. This can take a significant amount of time... be patient. 
 ```
@@ -104,27 +122,45 @@ scripts/hydra build
 ```
 
 ## Run
-After your containers are built, go ahead and start them with the `start_genesis` command. This starts all network components from a fresh genesis snapshot. 
+After your containers are built, go ahead and start them with the `start-genesis` command. This starts all network components from a fresh genesis snapshot. 
 ```
-scripts/hydra start_genesis
+scripts/hydra start-genesis
 ```
 
 Once the process is complete you should see output like this: 
 ```
-Containers successfully built. 
+################################################################
+######################### METAGRAPH INFO #########################
 
-URLs:
-Global L0:  http://localhost:9000/cluster/info
-Currency L0 - 1:  http://localhost:9400/cluster/info
-Currency L0 - 2:  http://localhost:9500/cluster/info
-Currency L0 - 3:  http://localhost:9600/cluster/info
-Currency L1 - 1:  http://localhost:9700/cluster/info
-Currency L1 - 2:  http://localhost:9800/cluster/info
-Currency L1 - 3:  http://localhost:9900/cluster/info
-Data L1 - 1:  http://localhost:8000/cluster/info
-Data L1 - 2:  http://localhost:8100/cluster/info
-Data L1 - 3:  http://localhost:8200/cluster/info
-Grafana:  http://localhost:3000/
+Metagraph ID: :your_id
+
+
+Container metagraph-node-1 URLs
+Global L0: http://localhost:9000/node/info
+Metagraph L0: http://localhost:9200/node/info
+Currency L1: http://localhost:9300/node/info
+Data L1: http://localhost:9400/node/info
+
+
+Container metagraph-node-2 URLs
+Metagraph L0: http://localhost:9210/node/info
+Currency L1: http://localhost:9310/node/info
+Data L1: http://localhost:9410/node/info
+
+
+Container metagraph-node-3 URLs
+Metagraph L0: http://localhost:9220/node/info
+Currency L1: http://localhost:9320/node/info
+Data L1: http://localhost:9420/node/info
+
+
+Clusters URLs
+Global L0: http://localhost:9000/cluster/info
+Metagraph L0: http://localhost:9200/cluster/info
+Currency L1: http://localhost:9300/cluster/info
+Data L1: http://localhost:9400/cluster/info
+
+####################################################################
 ```
 
 You can also check the status of your containers with the `status` command. 
