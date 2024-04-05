@@ -9,6 +9,20 @@ import DocsCards from '@components/global/DocsCards';
 
 This tutorial will guide you through the process of deploying your Euclid metagraph project to a cloud provider and connecting to IntegrationNet or MainNet. We focus on AWS specifically but the basic principles would apply to any cloud provider. 
 
+:::note Deploying a Metagraph with Euclid
+Utilize Euclid for deploying metagraphs efficiently. Initiate deployment to your remote hosts, including all necessary files and dependencies, with the following command:
+```bash
+./scripts/hydra remote-deploy
+```
+To start your nodes, execute:
+```bash
+./scripts/hydra remote-start
+```
+For comprehensive guidance on utilizing these commands, consult the README file in the [Euclid repository](https://github.com/Constellation-Labs/euclid-development-environment/blob/main/README.md).
+
+Additionally, we offer a demonstration video showcasing this functionality, available [here](https://twitter.com/codebrandes/status/1765904204600938505).
+:::
+
 ## Architecture
 There are many kinds of potential deployment architectures possible for production deployments depending on project scaling needs. Here, we will focus on a deployment strategy that uses a minimal set of infrastructure components to simplify deployment and reduce cloud costs. For most projects, this offers a good starting point that can be expanded on later to meet specific project needs. 
 

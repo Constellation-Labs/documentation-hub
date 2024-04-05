@@ -117,7 +117,7 @@ scripts/hydra build --no_cache
 ```
 Once built, run hydra start to see your changes take effect. 
 ```
-scripts/hydra start_genesis
+scripts/hydra start-genesis
 ``` 
 
 #### View Changes
@@ -199,7 +199,7 @@ scripts/hydra build --no_cache
 ```
 Once built, run hydra start to see your changes take effect. 
 ```
-scripts/hydra start_genesis
+scripts/hydra start-genesis
 ``` 
 
 #### View Changes
@@ -338,7 +338,7 @@ scripts/hydra build --no_cache
 ```
 Once built, run hydra start to see your changes take effect. 
 ```
-scripts/hydra start_genesis
+scripts/hydra start-genesis
 ``` 
 
 #### View Changes

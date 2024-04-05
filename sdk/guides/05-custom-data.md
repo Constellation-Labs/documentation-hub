@@ -19,33 +19,52 @@ In order to get started, install dependencies as described in the [Quick Start G
 
 __Example euclid.json values__
 ```json
-  "github_token": "<your token>",
+  "github_token": "",
+  "version": "0.9.1",
+  "tessellation_version": "2.2.0",
+  "project_name": "custom-project",
   "framework": {
     "name": "currency",
     "modules": [
       "data"
-    ]
+    ],
+    "version": "v2.2.0",
+    "ref_type": "tag"
   },
-  "docker": {
-    "default_containers": [
-      "global-l0",
-      "metagraph-l0",
-      "metagraph-l1-data"
-    ]
-  }
+  "layers": [
+    "global-l0",
+    "metagraph-l0",
+    "currency-l1",
+    "data-l1"
+  ],
 ```
 
-__Run hydra install__
+__Installing Templates with Hydra__
+
+To initiate a metagraph using a template, we provide several options in our [GitHub repository](https://github.com/Constellation-Labs/metagraph-examples). Follow these steps to utilize a template:
+
+1.  List Available Templates: First, determine th`e templates at your disposal by executing the command below:
 ```bash
-  ./scripts hydra install
+./scripts/hydra install-template --list
 ```
 
-Within your Euclid modules directory (source/project/custom-project/modules) you will see three module directories: l0 (metagraph l0), l1 (currency l1), and data_l1 (data l1). Each module has a Main.scala file that defines the application that will run at each corresponding layer. 
+2.  Install a Template: After selecting a template, replace `:repo_name` with your chosen repository's name to install it. For instance:
+```bash
+./scripts/hydra install-template :repo_name
+```
+As a practical example, if you wish to install the `water-and-energy-usage` template, your command would look like this:
+```bash
+./scripts/hydra install-template water-and-energy-usage
+```
+
+This process will set up a metagraph based on the selected template.
+
+Within your Euclid modules directory (source/project/water-and-energy-usage/modules) you will see three module directories: l0 (metagraph l0), l1 (currency l1), and data_l1 (data l1). Each module has a Main.scala file that defines the application that will run at each corresponding layer. 
 
 ```
 - source
   - project
-    - custom-project (your-project-name)
+    - water-and-energy-usage
       - modules
         - l0
         - l1
@@ -53,11 +72,6 @@ Within your Euclid modules directory (source/project/custom-project/modules) you
         - shared_data
       - project
 ```
-
-### Copy Example Files
-To get started with this guide, copy everything under the example [template/modules directory](https://github.com/Constellation-Labs/metagraph-examples/tree/main/examples/DataApi-Water-And-Energy-Usage/template) in the example into your project (custom-project) modules directory. 
-
-You'll also need to copy the `scripts` directory to a local directory and run `npm install` to install the necessary dependencies. 
 
 ## Send Data
 Edit the `send_data_transaction.js` script and fill in the `globalL0Url`, `metagraphL1DataUrl`, and `walletPrivateKey` variables. The private key can be generated with the `dag4.keystore.generatePrivateKey()` method if you don't already have one. 
