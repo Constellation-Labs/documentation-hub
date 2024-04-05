@@ -215,4 +215,4 @@ We are committed to expanding our support for library connectors to meet the evo
 To request the addition of new library connectors or suggest improvements, please reach out to us through the following channels:
 
 - **GitHub Issues**: [StardustCollective/stargazer-wallet-connector](https://github.com/StardustCollective/stargazer-wallet-connector/issues)
-- **Discord Channel**: [Constellation Discord](https://discord.gg/C5EuBrfFEk)
+- **Discord Channel**: [Constellation Discord](https://discord.gg/NKXD5ZJ5cq)
