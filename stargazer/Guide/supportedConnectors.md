@@ -161,7 +161,7 @@ yarn add @stardust-collective/web3-react-stargazer-connector
 import {useStargazerWallet} from '@stardust-collective/web3-react-stargazer-connector';
 
 function App() {
-  const {activate, deactivate, ...state } = stargazerWalletState;
+  const {activate, deactivate, ...state } = useStargazerWallet();
 
   const doConnect = async () => {
     await activate();
