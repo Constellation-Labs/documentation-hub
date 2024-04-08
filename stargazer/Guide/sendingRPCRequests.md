@@ -28,7 +28,7 @@ const ethProvider = window.stargazer.getProvider("ethereum");
 
 ## List available accounts
 
-For listing available accounts in the wallet (and in some cases activating the providers) you can send the following calls to [`dag_accounts`](../APIReference/constellationRPCAPI/dag_accounts.md) RPC method and [`eth_accounts`](../APIReference/ethereumRPCAPI/eth_accounts.md) RPC method.
+For listing available accounts in the wallet you can send the following calls to [`dag_accounts`](../APIReference/constellationRPCAPI/dag_accounts.md) RPC method and [`eth_accounts`](../APIReference/ethereumRPCAPI/eth_accounts.md) RPC method.
 
 :::info Important
 The account at index 0 will always be the active account in Stargazer. Both for Constellation and Ethereum providers.
