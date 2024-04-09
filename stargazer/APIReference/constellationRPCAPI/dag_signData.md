@@ -93,7 +93,7 @@ await provider.request({
 
 ##### Verify
 
-In order to verify the signature you can use `dag4.js`:
+In order to verify the signature you can use the `verifyData()` method from `dag4.js`:
 
 ```typescript title="TypeScript"
 // Build the same signature request
@@ -127,7 +127,7 @@ const signature =
 
 const message = `\u0019Constellation Signed Data:\n${signatureRequestEncoded.length}\n${signatureRequestEncoded}`;
 
-const result = await dag4.keyStore.verify(publicKey, message, signature);
+const result = await dag4.keyStore.verifyData(publicKey, message, signature);
 // true -> verification succeeded
 // false -> verification failed
 ```

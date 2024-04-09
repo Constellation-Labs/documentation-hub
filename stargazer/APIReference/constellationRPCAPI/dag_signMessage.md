@@ -86,7 +86,7 @@ await provider.request({
 
 ##### Verify
 
-In order to verify the signature you can use `dag4.js`:
+In order to verify the signature you can use the `verify()` method from `dag4.js`:
 
 ```typescript title="TypeScript"
 // Build the same signature request
