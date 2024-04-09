@@ -45,7 +45,26 @@ _Read more about the [WalletProvider API](../APIReference/walletProviderAPI/) an
 
 Activating the provider is required before it can be used to interact with the user's wallet. When activation is triggered, a popup is triggered for the user to allow your site access to their wallet. The user may choose a subset of their wallets to share if they have multiple. Activation can be achieved with one of the following methods. 
 
-### Activate method
+### Using `dag_requestAccounts` or `eth_requestAccounts` RPC methods
+
+
+Calling `dag_requestAccounts` or `eth_requestAccounts` RPC methods, depending on the provider being used, will send an activation request for the user to accept. If the user accepts the request, the RPC method will return available accounts for the provider; if not, it will throw an error.
+
+```typescript title="TypeScript"
+await dagProvider.request({ method: "dag_requestAccounts", params: [] });
+// ["DAG88C9WDSKH451sisyEP3hAkgCKn5DN72fuwjfX"] provider was activated
+
+await ethProvider.request({ method: "eth_requestAccounts", params: [] });
+// ["0xAab2C30c02016585EB36b7a0d5608Db787c1e44E"] provider was activated
+```
+
+_Read more about the different RPC methods available both for [Constellation](../APIReference/constellationRPCAPI/) and [Ethereum](../APIReference/ethereumRPCAPI/)._
+
+### Activate method (deprecated)
+
+:::caution Warning
+This method of activation has been deprecated in favor of the [EIP-1102](https://eips.ethereum.org/EIPS/eip-1102) specification, in both Constellation and Ethereum providers.
+:::
 
 You can send an activation request to the user using the provider's [`activate()`](../APIReference/chainProviderAPI/activate.md) method. Once the user accepts the request you'll be able to use the provider's RPC interface and methods for the selected chain.
 
@@ -54,19 +73,6 @@ const activated = await provider.activate("A Cool App Name");
 ```
 
 _Read more about the different RPC methods available both for [Constellation](../APIReference/constellationRPCAPI/) and [Ethereum](../APIReference/ethereumRPCAPI/)._
-
-### Other RPC methods
-
-You can also call any RPC related method such as [`request()`](../APIReference/chainProviderAPI/request.md) or [`on()`](../APIReference/chainProviderAPI/on.md) to activate the provider. It will send an internal activation request for the user to accept. If the user accepts the request, the RPC-related method is executed; if not, it will throw an error.
-
-:::caution Warning
-If the user denies an activation request, the next calls to any RPC related method will immediately throw an error. No further internal activation requests will be sent but you can trigger activation again using the `.activate` method.
-:::
-
-```typescript title="TypeScript"
-await provider.request({ method: "dag_accounts", params: [] });
-// ["DAG88C9WDSKH451sisyEP3hAkgCKn5DN72fuwjfX"] provider was activated
-```
 
 ## Scope of the activation
 

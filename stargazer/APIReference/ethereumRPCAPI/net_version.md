@@ -27,7 +27,8 @@ type ChainId =
   | "2" // Morden Testnet (deprecated)
   | "3" // Ropsten Testnet
   | "4" // Rinkeby Testnet
-  | "5"; // Goerli Testnet
+  | "5" // Goerli Testnet
+  | "11155111"; // Sepolia TestNet
 ```
 
 ##### Example
