@@ -27,7 +27,7 @@ This [upgrade](/validate/automated/nodectlCommands#upgrade) (document/manual) we
 <MacWindow>
 Start request initiated [node_l1] ............. running <br />
 <br />
------ * Check Seed List Request * ------<br />
+----- * CHECK SEED LIST REQUEST * ------<br />
 <br />
 Node found on Seed List ....................... True<br />
 building environment .......................... complete <br />
@@ -65,24 +65,39 @@ NOTE  ml0 or ml1 networks will not join the Hypergraph until its gl0 or ml0 link
 
 ### Prepare join process
 
-The same process used to join layer0 will be initialized again, and nodectl starts the service that allows us to join the `layer1`.
+nodectl starts the process that allows us to join `layer1`.
 
 <MacWindow>
-  ----- * Check Seed List Request * ------<br />
+ ---------- * JOINING DAG-L1 * ----------<br />
 <br />
-Node found on Seed List ....................... True<br />
-building environment .......................... complete<br />
-Updating services file ........................ complete<br />
-Start request initiated [node_l1] ............. complete<br />
+Reviewing [dag-l1] ............................ ReadyToJoin<br />
 </MacWindow>
 
-### Select our source peer
+### DownloadInProgress blocker
+Because our Node's layer0 process was found in the `DownloadInProgress` state.  We are not able to join `layer1`.
 
-The join process will begin. A source Node will be selected.
+nodectl will offer you the following options:
+
+| option | description |
+| :------: | :---------- |
+| **w** | **wait** an extra 30 seconds then check the status again and continue if we are in `Ready` state, or present this options menu again.
+| **s** | **skip** the `layer1` join process.  This can save you a lot of waiting time.  Reviewing the `layer0` process randomly on your own time later, and then requesting a `join` to layer1 once layer0 is in `Ready` state.  Optionally, if you have [auto_restart](../nodectlAutorestart.md) enabled, layer1 will auto join when layer0 is in the proper state. |
+| **q** | *not recommended:* **quit** the upgrade and do not go any further.  This will skip all other upgrade elements. |
+
+We do not need to hit the <kbd>enter</kbd> key, only key press the desired option.
 
 <MacWindow>
-Waiting on profile dag-l0 state to be Ready before initiating Metagraph join.<br />
-Joining with peer [ed6ef751...cf21fc37] ....... 1.1.1.2<br />
+Waiting on profile dag-l0 state to be Ready before initiating cluster join.<br />
+ML0 Link Node in [DownloadInProgress] state | not Ready<br /> 
+Press w to wait 30 seconds<br />
+Press s to skip join<br />
+Press q to quit<br />
+KEY press and OPTION<br />
+</MacWindow>
+
+nodectl will wait 30 seconds before trying again
+<MacWindow>
+ Pausing: 9 of 30 seconds before trying again 0 of 3<br />
 </MacWindow>
 
 ### Verify layer0
@@ -90,7 +105,7 @@ Joining with peer [ed6ef751...cf21fc37] ....... 1.1.1.2<br />
 The Node will make sure the `dag-l0` or layer0 is in `Ready` state.  If not in `Ready` state, the process will not continue.
 
 <MacWindow>
-Current Found State [dag-l0] .................. Ready<br />
+ML0 Link Node in [Ready] state................. Ready<br />
 </MacWindow>
 
 ### Begin the join
@@ -98,7 +113,6 @@ Current Found State [dag-l0] .................. Ready<br />
 The Node will initiate the join to layer1.
 
 <MacWindow>
-Waiting on profile dag-l0 state to be Ready before initiating Metagraph join.<br />
 Joining with peer [ed6ef751...cf21fc37] ....... 1.1.1.2<br />
 Current Found State [dag-l0] .................. Ready<br />
 Join cluster status [dag-l1] .................. Preparing<br />

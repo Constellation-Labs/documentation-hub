@@ -25,8 +25,8 @@ This will be done in unison with the package updates from the previous section.
 No action is required on our part.
 
 <MacWindow>
-  Fetching cluster seed file [testnet->dag-l0] .. complete <br /> 
-  Fetching cluster seed file [testnet->dag-l1] .. disabled/skipped<br />
+  Fetch [mainnet-seedlist -> dag-l0] ............ completed<br />
+  Fetch [seedlist for -> dag-l1] ................ disabled<br />
 </MacWindow>
 
 You may notice that `dag-l1` shows `disabled/skipped`.  

@@ -51,10 +51,14 @@ Reviewing [dag-l0] ............................ ReadyToJoin <br />
 Joining with peer [601f8f1d...f2163467] ....... 1.1.1.1<br />
 Join cluster status [dag-l0] .................. Preparing<br />
 Max Timer  300 seconds<br />
-Peers: 48 Connected: 36 State: WaitingForReady Timer: 20<br />
+Peers: 240 Connected: 36 State: DownloadInProgress Timer: 49<br />
+<br />
+nodectl has detected DownloadInProgress state.<br />
+<br />
+This is not an issue; however, Nodes may take longer than expected time to complete this process.  nodectl will terminate the watching for peers process during this join in order to avoid undesirable wait times.<br />
+<br />
 Join process complete ......................... done<br />
-ok that peer count &lt; cluster peer count<br />
-watch mode was not chosen by upgrade.<br />
+&nbsp;&nbsp;IMPORTANT&nbsp;&nbsp;It is ok that the peer count &lt; cluster peer count because watch mode was not chosen by upgrade.<br />
 <br /> 
   Checking status [dag-l0] ......................<br />
 </MacWindow>
@@ -63,7 +67,7 @@ watch mode was not chosen by upgrade.<br />
 
 <MacWindow>
 PROFILE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SERVICE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOIN STATE<br />
-dag-l0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active (running)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ready<br /> 
+dag-l0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active (running)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DownloadInProgress<br /> 
 PUBLIC API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2P API TCP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLI API TCP<br />    
 9000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9002<br /> 
 LATEST ORDINAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LAST DLed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BLK EXP ORDINAL<br />  
@@ -78,4 +82,6 @@ NODE ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 12345...12345&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> 
 </MacWindow>
 
-nodectl is happy on the primary layer0 and will now attempt to join `layer1`.
+Once nodectl reaches `Ready` on the primary layer0, it will then attempt to join `layer1`.
+
+In our example, the Node has continued to remain in `DownloadInProgress` while it completes the stage of joining the network where the Node obtains its own copy of the blockchain.
