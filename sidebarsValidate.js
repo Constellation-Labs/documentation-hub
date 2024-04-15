@@ -186,6 +186,7 @@ module.exports = {
       collapsed: false,
       items: [
         'resources/password',
+        'resources/validatenodectl',
         'resources/accessMac',
         'resources/accessWin',
         'resources/p12backup-mac',

@@ -1,0 +1,31 @@
+.collapsible-title {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .caret {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    color: red;
+  }
+  
+  .caret.right {
+    transform: rotate(-90deg);
+    color: blue;
+  }
+  
+  .collapsible-content {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    background-color: #fcf4f4;
+  }
+
+  .collapsible-main {
+    padding-bottom: 10px;
+  }
+  
