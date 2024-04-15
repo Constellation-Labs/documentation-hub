@@ -24,7 +24,19 @@ nodectl will complete the process.
   dag-l1 upgrade process completed!<br />
   dag-l0 upgrade process completed!<br />
   Upgrade has completed<br />
-<br />
+</MacWindow>
+
+### Auto Complete Feature
+
+nodectl now has an `auto complete` feature that will allow you to double tap the <kbd>tab</kbd> key after entering the `sudo nodectl ` command.  You will be presented with a request to log out of your session and restart it.  This will load any auto complete elements into your bash shell environment.
+
+<MacWindow>
+  Optionally, please log out and back in in order to update your environment to teach nodectl about
+  any new auto_completion tasks.
+</MacWindow>
+
+### Upgrade is complete
+<MacWindow>
   Total upgrade time: 3.865 minutes<br />
 </MacWindow>
 

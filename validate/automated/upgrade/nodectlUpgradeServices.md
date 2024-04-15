@@ -20,19 +20,11 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ### Services
 
+nodectl will restart services and start the versioning service updater.
+
+<MacWindow>
+Reload the Node's services .................... complete <br />
+Starting versioning updater ................... complete <br /> 
+</MacWindow>
+
 nodectl will bring your service back online for you.
-
-<MacWindow>
-  ------ * Bring Node Back Online * ------<br />
-<br />
-  Reload the Node's services .................... complete<br />
-  building environment .......................... complete<br />
-</MacWindow>
-
-nodectl will start the versioning service updater.
-
-<MacWindow>
-  Staring versioning updater .................... complete<br />
-</MacWindow>
-
-nodectl will bring the Node back online.

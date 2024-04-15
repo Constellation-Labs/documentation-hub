@@ -25,13 +25,16 @@ nodectl will pull down the necessary packages that will upgrade your Node to the
 You can sit back and relax as nodectl continues to upgrade your Node for you.
 
 <MacWindow>
- --------- * Handle Packages * ----------<br />
+ --------- * HANDLE PACKAGES * ----------<br />
 <br />
-  Download [v2.0.0-alpha.5] Constellation Network Tessellation Binaries<br /> 
-  Fetch Tessellation binary [cl-keytool.jar] .... complete<br />                                 
-  Fetch Tessellation binary [cl-node.jar] ....... complete <br /> 
-  Fetch Tessellation binary [cl-dag-l1.jar] ..... complete<br /> 
-  Fetch Tessellation binary [cl-wallet.jar] ..... complete <br /> 
+  Download Tessellation Binaries................. running<br /> 
+  backup files .................................. complete<br />
+  <br />
+  Download version .............................. v2.3.2<br />
+  Fetch [cl-keytool.jar -> global] .............. complete<br />
+  Fetch [cl-wallet.jar -> global] ............... complete<br />
+  Fetch [cl-node.jar -> dag-l0] ................. complete <br /> 
+  Fetch [cl-dag-l1.jar -> dag-l1] ............... complete<br /> 
 </MacWindow>
 
 nodectl will update our access permissions to the cluster next.

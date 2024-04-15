@@ -21,9 +21,10 @@ import MacWindow from '@site/src/components/global/MacWindow';
 nodectl will bring your service back online for you.
 
 <MacWindow>
------- * Bring Node Back Online * ------<br />
+ ------ * BRING NODE BACK ONLINE * ------<br />
+ <br />
+ Start request initiated [node_l0] ............. running  
 <br />
-Start request initiated [node_l0] ............. running<br />
 </MacWindow>
 
 nodectl will make sure we are able to join the cluster (permissions) before it continues.
@@ -48,7 +49,7 @@ nodectl will start the service that is called: `node_l0`.
 :::note
 You can change the name of the service via the configuration file.
 ```
-sudo nodectl configure
+sudo nodectl configure -e
 ```
 :::
 

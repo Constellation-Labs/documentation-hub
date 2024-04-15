@@ -30,23 +30,24 @@ You will see something similar to the 👇 example (but not exact) as your Node 
 The `leave` command can take some time to complete, depending on what processing the Node was in the middle of completing before we requested a graceful `leave`.
 
 <MacWindow>
- -------- * Take Node Offline * ---------<br />
+ -------- * TAKE NODE OFFLINE * ---------<br />
 <br />
-Leaving the cluster for profile ............... dag-l1<br />                                
-Node going [Offline] Please be patient.........<br />                                       
-Leaving the cluster for profile ............... dag-l0<br />                                 
-dag-l1 not out of cluster ..................... Leaving<br />                                
-Node going [Offline] Please be patient.........<br />                                  
-dag-l1 not out of cluster ..................... Leaving<br />                                
-Node going [Offline] Please be patient.........<br />                                   
-dag-l1 not out of cluster ..................... Leaving<br />                                       
-Node going [Offline] Please be patient.........<br />                                                    
-dag-l1 not out of cluster ..................... Leaving<br />                                                 
-Stop request initiated [node_l1] .............. running<br />                                                 
-Stop request initiated [node_l0] .............. running<br />                                                
-Skipping service [node_l0] status already...... ApiNotReady<br />                                             
-Stop request initiated [node_l0] .............. complete<br />                                              
-Stop request initiated [node_l1] .............. complete<br />
+  Leaving the cluster for profile ............... dag-l1<br />
+  Node going [Offline] please be patient......... dag-l1<br />
+  Leaving the cluster for profile ............... dag-l0<br />
+  Node going [Offline] please be patient......... dag-l0<br />
+  Node going [Offline] please be patient......... dag-l1<br />
+  dag-l1 not out of cluster ..................... Leaving<br />
+  Node going [Offline] please be patient......... dag-l1<br />
+  dag-l1 not out of cluster ..................... Leaving<br />
+  Node going [Offline] please be patient......... dag-l1<br />
+  dag-l1 not out of cluster ..................... Leaving<br />
+  Node going [Offline] please be patient......... dag-l1<br />
+  dag-l1 not out of cluster ..................... Leaving<br />
+  stop request initiated [node_l1] .............. running<br />
+  stop request initiated [node_l1] .............. complete<br />
+  stop request initiated [node_l0] .............. running<br />
+  stop request initiated [node_l0] .............. complete<br />
 </MacWindow>
 
 ### Status Display

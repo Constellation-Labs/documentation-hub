@@ -136,6 +136,7 @@ module.exports = {
               items: [
                 'automated/upgrade/nodectlUpgradeIntro',
                 'automated/upgrade/nodectlUpgradeStart',
+                'automated/upgrade/nodectlUpgradeConfirm',
                 'automated/upgrade/nodectlUpgradeSetup',
                 'automated/upgrade/nodectlUpgradeVersion',
                 'automated/upgrade/nodectlUpgradeOffline',
@@ -143,6 +144,7 @@ module.exports = {
                 'automated/upgrade/nodectlUpgradeDirectories',
                 'automated/upgrade/nodectlUpgradePackages',
                 'automated/upgrade/nodectlUpgradeSeedlist', 
+                'automated/upgrade/nodectlUpgradeEncryption',
                 'automated/upgrade/nodectlUpgradeServices', 
                 'automated/upgrade/nodectlUpgradeOnline', 
                 'automated/upgrade/nodectlUpgradeRejoin', 
@@ -186,6 +188,7 @@ module.exports = {
       collapsed: false,
       items: [
         'resources/password',
+        'resources/validatenodectl',
         'resources/accessMac',
         'resources/accessWin',
         'resources/p12backup-mac',

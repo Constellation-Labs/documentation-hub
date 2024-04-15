@@ -39,7 +39,7 @@ Our upgrade will commence.
   =            UPGRADE REQUEST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
   =      TESSELLATION VALIDATOR NODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
   ========================================<br />
-  @netmet72<br />
+  Code Name: Princess Warrior<br />
 </MacWindow>
 
 Next nodectl will collect information to prepare for the upgrade.
