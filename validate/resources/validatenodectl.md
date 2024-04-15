@@ -118,7 +118,8 @@ SUCCESSFUL - AUTHENTIC NODECTL<br />
 Review logs for details.<br />
 </MacWindow>
 
-👆 We can review the logs for more details
+We can review the logs for more details.
+
 <MacWindow>
 sudo nodectl logs -l nodectl
 </MacWindow>

@@ -1820,6 +1820,16 @@ The **`upgrade_nodectl`** command is a dedicated command used to upgrade the nod
 
 Please see the [upgrade_nodectl](/validate/automated/nodectlUpgrade) documentation for a detailed explanation of the command.
 
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| upgrade_nodectl  |  N/A  | >v2.7.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -v | &lt;version&gt; | statically set the version you would like to **upgrade** or **downgrade** to. | **optional** |
+
+*If you attempt to downgrade nodectl to a version that is now backwards compatible, you may risk unexpected results.  Please see [upgrade_path](#upgrade_path) for more details on how to determine if a version is not backward compatible.*
+
 > #### Examples
 - Help file
 ```
@@ -1828,6 +1838,10 @@ sudo nodectl upgrade_nodectl help
 - Upgrade nodectl
 ```
 sudo nodectl upgrade_nodectl
+```
+- Upgrade nodectl to version `v2.13.0`
+```
+sudo nodectl upgrade_nodectl -v v2.13.0
 ```
 
 ### upgrade_path
