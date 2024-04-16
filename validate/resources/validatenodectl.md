@@ -1,12 +1,12 @@
 ---
-title: Validate nodectl
+title: Verify nodectl
 hide_table_of_contents: false
 ---
 import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
 import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Quick Start
-Execute the verify nodectl command once logged into your Node.
+Execute the verify nodectl command after logging into your Node.
 
 <MacWindow>
 sudo nodectl verify_nodectl
@@ -24,11 +24,15 @@ or if the version is not valid
 INVALID SIGNATURE - WARNING
 </MacWindow>
 
+### Short Option
+You can also minimize the displayed output using the `-s` option.
+<MacWindow>
+sudo nodectl verify_nodectl -s
+</MacWindow>
+
 ## Understanding `verify_nodectl`
 
-After issuing the command `sudo nodectl verify_nodectl` on your Node you should receive the following output.
-
-Below we will describe the output section by section
+After issuing the command `sudo nodectl verify_nodectl` on your Node you should respond with validation output, as described in this section of the documentation.
 
 After we initiate the `verify_nodectl` command, nodectl will reach out to the GitHub repository and download:
 - Public Key
@@ -61,7 +65,7 @@ A man-in-the-middle (MITM) attack happens when someone secretly inserts themselv
 </Collapsible>
 
 :::danger IMPORTANT
-When following the URL below :, you should check the SSL certificate on GitHub to verify you are not being directed to a phishing website, and that the GitHub repo name matches `StardustCollective -> nodectl`.
+When following the URL below 👇 you should check the SSL certificate on GitHub to verify you are not being directed to a phishing website, and that the GitHub repo name matches `StardustCollective -> nodectl`.
 :::
 
 *The public key shown below is not valid*.
@@ -80,13 +84,13 @@ our local browser to compare to the authentic repository via https secure
 hypertext transport protocol.<br />
 </MacWindow>
 
-We will receive the URL where we can connect, verify we are not redirected to a phishing site, and compare notes against the output of the command.
+nodectl will display the URL you need to use to connect for your own manual validation. This will help us verify we were not redirected to a phishing site and allow us to compare notes against the output of the command.
 
 <MacWindow>
 https://raw.githubusercontent.com/StardustCollective/nodectl/nodectl_v2130/admin/nodectl_public
 </MacWindow>
 
-Next will receive the hash that our digital signature should produce.  As stated above, we can verify this hash against the GitHub repository as well.
+nodectl will download and show us the hash that our digital signature should produce.  As stated above, we can verify this hash against the GitHub repository as well.
 
 <MacWindow>
 BINARY HASH<br />
@@ -100,7 +104,7 @@ our local browser to compare to the authentic repository via https secure
 hypertext transport protocol.<br />
 </MacWindow>
 
-We will receive the URL where we can connect, verify we are not redirected to a phishing site, and compare notes against the output of the command.
+nodectl will present the URL where we can connect, verify we are not redirected to a phishing site, and compare notes against the output of the `verify_nodectl` command.
 
 <MacWindow>
 <br />
