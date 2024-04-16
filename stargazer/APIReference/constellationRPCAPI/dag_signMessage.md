@@ -11,13 +11,12 @@ hide_table_of_contents: true
 
 <intro-end />
 
-Calculates a constellation signature of the given signature request from the selected account.
+Creates a request to generate a safe signature of typed message data from the selected wallet. This method is intended to be used for general message signing use cases such as verifying the ownership of a wallet. 
 
-:::caution Warning
-This method adds the standard `"\u0019Constellation Signed Message:\n" + len(message) + "\n"` prefix when calculating the signature hash.
+This method adds a standard `"\u0019Constellation Signed Message:\n" + len(message) + "\n"` prefix when calculating the signature hash. The addition of the prefix prevents users from being tricked into signing a valid token transaction with this method. 
 
 The final string looks like this: `"\u0019Constellation Signed Message:\n" + len(message) + "\n" + message`
-:::
+
 :::caution Warning
 Please be sure you use the correct prefix for the correct method when verifying signatures, `dag_signMessage` uses "Constellation Signed Message:" while `dag_signData` uses "Constellation Signed Data:"
 :::
