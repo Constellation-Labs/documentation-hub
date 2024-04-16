@@ -11,13 +11,11 @@ hide_table_of_contents: true
 
 <intro-end />
 
-Creates a request to generate a safe signature of arbitrary data from the selected wallet. This method is intended to be used for interaction with custom data requests to metagraphs and other similar use cases. 
+Creates a request to generate a safe signature of arbitrary data from the selected wallet. This method is intended to be used for interaction with custom data requests to metagraphs and other similar use cases.
 
-:::caution Warning
-This method adds a standard `"\u0019Constellation Signed Data:\n" + len(message) + "\n"` prefix when calculating the signature hash. The addition of the prefix prevents users from being tricked into signing a valid token transaction with this method. 
+This method adds a standard `"\u0019Constellation Signed Data:\n" + len(message) + "\n"` prefix when calculating the signature hash. The addition of the prefix prevents users from being tricked into signing a valid token transaction with this method.
 
 The final string looks like this: `"\u0019Constellation Signed Data:\n" + len(message) + "\n" + message`
-:::
 
 :::caution Warning
 Please be sure you use the correct prefix for the correct method when verifying signatures, `dag_signData` uses "Constellation Signed Data:" while `dag_signMessage` uses "Constellation Signed Message:"
@@ -83,10 +81,7 @@ const signatureRequestEncoded = window.btoa(JSON.stringify(signatureRequest));
 
 await provider.request({
   method: "dag_signData",
-  params: [
-    "DAG88C9WDSKH451sisyEP3hAkgCKn5DN72fuwjfX",
-    signatureRequestEncoded,
-  ],
+  params: ["DAG88C9WDSKH451sisyEP3hAkgCKn5DN72fuwjfX", signatureRequestEncoded],
 });
 // "3045022100b35798008516373fcc6eef75fe8e322ce8fe0dccc4802b052f3ddc7c6b5dc2900220154cac1e4f3e7d9a64f4ed9d2a518221b273fe782f037a5842725054f1c62280"
 ```

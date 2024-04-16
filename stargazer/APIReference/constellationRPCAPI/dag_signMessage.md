@@ -11,9 +11,9 @@ hide_table_of_contents: true
 
 <intro-end />
 
-Creates a request to generate a safe signature of typed message data from the selected wallet. This method is intended to be used for general message signing use cases such as verifying the ownership of a wallet. 
+Creates a request to generate a safe signature of typed message data from the selected wallet. This method is intended to be used for general message signing use cases such as verifying the ownership of a wallet.
 
-This method adds a standard `"\u0019Constellation Signed Message:\n" + len(message) + "\n"` prefix when calculating the signature hash. The addition of the prefix prevents users from being tricked into signing a valid token transaction with this method. 
+This method adds a standard `"\u0019Constellation Signed Message:\n" + len(message) + "\n"` prefix when calculating the signature hash. The addition of the prefix prevents users from being tricked into signing a valid token transaction with this method.
 
 The final string looks like this: `"\u0019Constellation Signed Message:\n" + len(message) + "\n" + message`
 
@@ -71,14 +71,11 @@ const signatureRequest: SignatureRequest = {
 };
 
 // Encode the signature request - Base64 < JSON < Request
-const signatureRequestEnconded = window.btoa(JSON.stringify(signatureRequest));
+const signatureRequestEncoded = window.btoa(JSON.stringify(signatureRequest));
 
 await provider.request({
   method: "dag_signMessage",
-  params: [
-    "DAG88C9WDSKH451sisyEP3hAkgCKn5DN72fuwjfX",
-    signatureRequestEnconded,
-  ],
+  params: ["DAG88C9WDSKH451sisyEP3hAkgCKn5DN72fuwjfX", signatureRequestEncoded],
 });
 // "3045022100b35798008516373fcc6eef75fe8e322ce8fe0dccc4802b052f3ddc7c6b5dc2900220154cac1e4f3e7d9a64f4ed9d2a518221b273fe782f037a5842725054f1c62280"
 ```
