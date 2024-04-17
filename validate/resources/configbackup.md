@@ -18,8 +18,6 @@ You may find it necessary to backup your nodectl configuration file from time to
 
 In the event that your configuration becomes corrupt, restoring from a recent backup can save time.  
 
-Depending on whether or not you have a highly customized configuration file in use on your Node, you may also be able to restore a corrupted configuration through the use of overwriting your configuration with a new configuration file and then modifying your profile and global p12 credentials.
-
 ## What is your configuration?
 
 nodectl is reliant on being able to read and process a configuration file that holds persistent configuration elements that allow nodectl to properly assist in administrating your Node.
@@ -142,3 +140,17 @@ configuration restored!<br />
 <br />
 nodeadmin@Constellation-Node:$
 </MacWindow>
+
+### Alternative Restoration
+
+If you do not have a highly customized configuration file in use on your Node, and a restoration does not restore your ability to use nodectl, you have an alternative solution to regain properly usage of nodectl.
+
+Utilizing the `new` feature in the configurator.
+
+You may also be able to restore a corrupted configuration through the use of overwriting your configuration with a new configuration file and then modifying your profile and global p12 credentials.
+
+<MacWindow>
+nodeadmin@Constellation-Node:~$ sudo nodectl configure -n<br />
+</MacWindow>
+
+Follow the prompts to build a new configurator using `SCENARIO 4`.
