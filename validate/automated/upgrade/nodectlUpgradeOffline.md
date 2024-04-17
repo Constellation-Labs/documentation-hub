@@ -27,9 +27,9 @@ In most cases, we need to take the Node offline to properly upgrade and restart.
 
 You will see something similar to the 👇 example (but not exact) as your Node attempts to gracefully leave the Clusters that each profile belongs to.
 
-The `leave` command can take some time to complete, depending on what processes are running on the Node and need to be completed, before we requested a graceful `leave`.
+The `leave` command can take some time to complete, we need to exercise patience during this process. This is because processes are running on the Node need to be completed, before our request a graceful `leave`.  Once the processes are completed, the Node can properly remove itself from the cluster.
 
-Properly and gracefully leaving the cluster is highly recommended.
+Properly and gracefully leaving the cluster is highly recommended. It will help avoid corrupted snapshots and help relieve stress on the rest of the cluster.
 
 <MacWindow>
  -------- * TAKE NODE OFFLINE * ---------<br />

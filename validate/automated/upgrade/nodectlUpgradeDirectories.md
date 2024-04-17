@@ -26,7 +26,7 @@ nodectl will now offer you the opportunity to clean out your backups.
 
 #### backup cleaning caution
 :::caution
-You should review your backups to make sure you do **NOT** delete files you may have as a **backup** but do **NOT** want to delete.
+You should review your backups to make sure you do **NOT** delete files you may want to retain.
 
 Advanced users may want to transfer these files to a secondary backup directory to keep them safe.
 
@@ -46,7 +46,7 @@ In the event you are offered and choose to encrypt (*which is recommended*):
 
 **Two things are advised**:
 1. Do **not** remove the backups until you have confirmed that your Node is in full operating order.  When requested by the upgrade process, say <kbd>n</kbd>. This will save the current backup with the unencrypted passphrase and proper configuration necessary to run unencrypted, which will ease your ability to restore, in the unlikely event of an issue.
-2. Once you have confirmed your Node is properly working, the `backup` files will still contain your passphrase in clear text.  It is advised to **delete** the backups, once proper operation of the Node is confirmed.  This can be done via the nodectl clear files command, manually, or during the next upgrade request.
+2. Once you have confirmed your Node is properly working, the `backup` files will still contain your passphrase in clear text.  It is advised to **delete** the backups, once proper operation of the Node is confirmed.  This can be done via the nodectl [clean files](../nodectlCommands#clean_files) command, manually, or during the next upgrade request.
 :::
 
 The answer to this question, is **up to you**, in the example we said <kbd>y</kbd>, but please read the important note 👆.

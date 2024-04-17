@@ -28,7 +28,9 @@ nodectl will complete the process.
 
 ### Auto Complete Feature
 
-nodectl now has an `auto complete` feature that will allow you to double tap the <kbd>tab</kbd> key after entering the `sudo nodectl ` command.  You will be presented with a request to log out of your session and restart it.  This will load any auto complete elements into your bash shell environment.
+nodectl now has an `auto complete` feature that will allow you to double tap the <kbd>tab</kbd> key after entering the `sudo nodectl ` command (*note the space after the `nodectl` word.*).  
+
+You will be presented with a request to log out of your session and restart it.  This will load any auto complete elements into your bash shell environment.  auto_complete will not engage until after your reset your login session (log out and log back in).
 
 <MacWindow>
   Optionally, please log out and back in in order to update your environment to teach nodectl about

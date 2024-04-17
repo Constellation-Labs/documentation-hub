@@ -80,7 +80,9 @@ nodectl will offer the ability to clean out your backup folder that may be holdi
 **recommendation**: <kbd>y</kbd>
 
 :::warning CONSIDERATION
-*If you choose to encrypt your passphrase during the upgrade, you should not clear your backups until after you have confirmed your Node is in full working order.  This will allow you to access your backups to restore your configuration, in the unlikely event it is required*
+As of `v2.13.0` and later, nodectl has the ability to encrypt the p12 passphrase present in the `cn-config.yaml` configuration file that allows nodectl to operate properly.
+
+If you choose to encrypt your passphrase during the upgrade, you should not clear your backups until after you have confirmed your Node is in full working order.  This will allow you to access your backups to restore your configuration, in the unlikely event it is required.
 
 In this situation, **recommendation**: <kbd>n</kbd>
 
