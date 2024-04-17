@@ -30,10 +30,10 @@ You should review your backups to make sure you do **NOT** delete files you may 
 
 Advanced users may want to transfer these files to a secondary backup directory to keep them safe.
 
-**You should have a backup of the following files in a secure location off of you Node.  These files contain passphrases and critical wallet contents which contain your passphrase.**
+**You should have a backup of the following files in a secure location that is not on your Node.**
 
 - p12 file
-- cn-config.yaml
+- SSH private and public key
 
 There should not be a backup of your p12 key store file in the backup directory.
 :::
@@ -79,9 +79,11 @@ In the below example, the `uploads` directory was found to be emtpy, so the step
 
 ### Clean up logs
 
-Similar to the **backups** and **uploads**, the logs directory can become large related to log files that are being built up and not removed.
+Similar to the **backups** and **uploads**, the logs directory can become large and take up a lot of space.  These log files can accumulate over time.
 
-In the below example, some of the log files were omitted with `[...]` representing files that were built up.  You will notice hypergraph *`layer0`* and metagraph *`layer1`* logs being represented.
+In the output example below, some of the log files were omitted with `[...]` representing files that were built up.  You will notice hypergraph *`layer0`* and metagraph *`layer1`* logs being represented.
+
+Optionally, we can choose <kbd>enter</kbd> to accept the default value or <kbd>enter</kbd>+<kbd>y</kbd>; otherwise <kbd>n</kbd>+<kbd>enter</kbd>.
 
 <MacWindow>
   ---------- * CLEAN UP LOGS * -----------<br />

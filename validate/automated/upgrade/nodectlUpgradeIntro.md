@@ -18,8 +18,8 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-This document will show you; through step-by-step instructions, how to upgrade your Node to the latest version of Tessellation or nodectl.
+This document will walk you through step-by-step instructions upgrading your Node to the latest version of Tessellation and/or nodectl.
 
 Tessellation is the code name for the protocol that runs on your Node.  It is the guts of how your Node is able to operate on the hypergraph or metagraph.  
 
-**[nodectl](/validate/automated/nodectl)** is a utility that runs on your Node and helps you automate some of the more complex processes that Tessellation requires to run efficiently. 
+**[nodectl](/validate/automated/nodectl)** (code name: Princess Warrier) is a utility that runs on your Node and helps you automate some of the more complex processes that Tessellation requires to run efficiently. 

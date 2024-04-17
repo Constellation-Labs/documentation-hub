@@ -18,18 +18,18 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## ENCRYPTION
 
-New to `v2.13.0` and greater, is the ability to encrypt your p12 passphrase within the nodectl configuration file: `cn-config.yaml`.
+Starting from version v2.13.0, you now have the option to encrypt your p12 passphrase directly within the nodectl configuration file, `cn-config.yaml`.
 
 ### Understanding the Encryption Services
 
-Depending on the version of nodectl, the upgrader *may* offer you the ability to `encyrpt` your p12 passphrase in the configuration.
+Depending on the encryption state of your Node, the upgrader *may* offer you the ability to `encyrpt` your p12 passphrase in the configuration.  *This will be skipped if the configurator module detects the passphrase is already encrypted.*
 
 :::note
 You can encrypt the passphrase at any time using the nodectl configurator.
 ```
 sudo nodectl configure -e
 ```
-Choose `encryption services` from the configurator's main edit menu.
+Choose [encryption services](../nodectlEncryption) from the configurator's main edit menu.
 :::
 
 Simply entering <kbd>y</kbd> here will instruct the upgrader to access the configurator, backup your configuration, and encrypt your passphrase, while offering your a visual understanding of each element.
@@ -37,6 +37,8 @@ Simply entering <kbd>y</kbd> here will instruct the upgrader to access the confi
 If you choose not to encrypt, you can skip to the next section.
 
 ### Encrypting
+We can press <kbd>enter</kbd> to accept the default, or <kbd>y</kbd>+<kbd>enter</kbd>.
+
 <MacWindow>
 ------- * ENCRYPTION SERVICES * --------<br />
 <br />
@@ -47,7 +49,7 @@ Enable encrypt? [y]:<br />
 </MacWindow>
 
 ### Definitions and Reversal
-If you choose to encrypt, the screen will clear and the following output will be seen.  The information will offer information on what is happening and how to handle reversal of the process.
+If you choose to encrypt, the screen will clear and the following output will be seen.  The output will offer information on what is happening and how to handle reversal of the process.
 
 <MacWindow>
 IMPORTANT<br />

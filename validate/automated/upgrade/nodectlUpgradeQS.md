@@ -20,22 +20,27 @@ The process of upgrading your Node is quite simple.
 
 ### Upgrade nodectl
 ```
+sudo nodectl upgrade_nodectl
+```
+with the `-v` option.
+```
 sudo nodectl upgrade_nodectl -v <version_number>
 ```
-If the `-v` is not supplied, nodectl will review your Node's nodectl version and offer you any upgrade available versions to upgrade.  You can simply choose the version from the list.
+If you don't use the `-v`` option with nodectl, it will automatically check the current version of nodectl on your Node and show you if there are any updates available. You can then choose which version to upgrade to from the list provided.
+
 <MacWindow>
-nodeadmin@Constellation-Node:~# sudo nodectl upgrade_nodectl -v v2.12.7       
+nodeadmin@Constellation-Node:~# sudo nodectl upgrade_nodectl -v v2.13.0       
 </MacWindow>
 
 ### Upgrade nodectl components of your Node
 
-After a successful [upgrade](#upgrade-nodectl) of nodectl to the latest version.  You can issue supply the `--nodectl_only` option.  This will instruct the `upgrade` feature to upgrade only components of your VPS (Node) that nodectl requires, related to the new version of nodectl.  
+After a successful [upgrade](#upgrade-nodectl) of nodectl to the latest version.  You can supply the `--nodectl_only` option.  This will instruct the `upgrade` feature to upgrade only components of your VPS (Node) that nodectl requires, related to the new version of nodectl.  
 
 ```
 sudo nodectl upgrade --nodectl_only
 ```
 
-The advantage to this option is that the Node will not handle any Tessellation related features, and therefor, will not take your Node off the cluster, saving you time and your Node uptime.
+The advantage to this option is that the Node will not handle any Tessellation related features, and therefor, will not take your Node off the cluster, saving you time and not affecting the Node's uptime.
 <MacWindow>
 nodeadmin@Constellation-Node:~# sudo nodectl upgrade --nodectl_only       
 </MacWindow>
@@ -64,13 +69,26 @@ nodectl will auto populate the current version of Tessellation for you.  You can
 
 **recommendation**: just hit <kbd>enter</kbd> to accept the default.
 
+### Do you want to encrypt your passphrase?
+As of `v2.13.0`, nodectl has a new feature that will allow you to encrypt your Node's hot wallet passphrase in the configuration.  This will further increase your security if your configuration file is obtained or viewed by someone other than the owner of the wallet (p12 key store file).
+
+**recommendation**: <kbd>y</kbd>
+
 ### Do you want to clear your backups?
 nodectl will offer the ability to clean out your backup folder that may be holding a few older configurations or files.  It is mostly safe to enter <kbd>y</kbd> to this option.
 
 **recommendation**: <kbd>y</kbd>
 
+:::warning CONSIDERATION
+*If you choose to encrypt your passphrase during the upgrade, you should not clear your backups until after you have confirmed your Node is in full working order.  This will allow you to access your backups to restore your configuration, in the unlikely event it is required*
+
+In this situation, **recommendation**: <kbd>n</kbd>
+
+It is recommended to keep the backups in place until it is confirmed that your Node is working properly.  Once confirmed, you can clean up the files using the [clean files](../nodectlCommands#clean_files) command. This ensures that your system remains stable and secure before making any changes.
+:::
+
 ### Do you want to clear your uploads?
-nodectl will offer the ability to clean out your uploads folder that may be holding a few older archived zip files that have been requested in the past, etc. It is safe to enter <kbd>y</kbd> to this option.
+nodectl will offer the ability to clean out your uploads folder that may be holding a few older archived zip files that have been requested and created, in the past. It is safe to enter <kbd>y</kbd> to this option.
 
 **recommendation**: <kbd>y</kbd>
 
@@ -80,18 +98,18 @@ nodectl will offer the ability to clean out your log folder that may be holding 
 **recommendation**: <kbd>y</kbd>
 
 ### During the join process
-You may be asked if you want to continue watching the join procedure of your Node as it rejoins the network.  This is optional and you can choose <kbd>n</kbd> here, which will complete the upgrade and drop you back at the prompt.  
+You may be asked if you want to continue watching, skip, or cancel the upgrade procedure as your Node attempts to rejoin the network cluster.  You can refer to the [DownloadInProgress blocker](./nodectlUpgradeRejoin2#downloadinprogress-blocker) section of the [upgrade walk through](./nodectlUpgradeIntro) section for further details.
 
-After a short wait you can use the `sudo nodectl status` command to verify you are back online.
+**recommendation**: <kbd>s</kbd>
 
-**recommendation**: <kbd>n</kbd>
+The upgrade will skip the attempt to join the layer1 cluster, and continue the rest of the upgrade.  After a short wait you can use the [status](../nodectlCommands#status) command with the `-p` option against the layer0 cluster to verify you are back online.
 
 ## Non Interactive
-The `upgrade` command has the option `-ni`. This option will tell nodectl to enter non-interactive mode.  
+The `upgrade` command has the option `-ni`. This option will tell nodectl to enter [non-interactive](../nodectlCommands#upgrade) mode.  
 
 In non-interactive mode, you will not be prompted to answer any questions, all the defaults will be automatically selected for you.
 
-**Exception**: In the event a critical issue is identified by nodectl, you will be prompted to answer a question.  
+**Exception**: In the event a critical issue is identified by nodectl, you will be prompted to answer a question.  This also applies to more critical security questions that may not be of value to use any particular "default" value.  
 
 ```
 sudo nodectl upgrade -ni
@@ -100,6 +118,12 @@ sudo nodectl upgrade -ni
 ## Passphrase Exclusion
 
 If you do not have your p12 passphrase in your configuration (advanced users) you can issue the `--pass` option at the command line followed by your passphrase to initiate the upgrade.
+
+:::info SUGGESTION
+You should utilize passphrase encryption over not supplying the passphrase for our p12 key store.  This will prevent the need to supply the passphrase on the command line before every command. 
+
+*This will eliminate the concern of having bash history cached at the terminal session.*
+:::
 
 ```
 sudo nodectl upgrade --pass <p12 passphrase here>

@@ -21,7 +21,7 @@ The nodectl utility uses profiles to learn how to connect to various Hypergraph 
 This document will offer a simple guide on how to change from your current profile (generally the default profile used during installation) to a new predefined profile.
 
 :::info Understanding
-This document does not cover the detailed explaination of the various components of the profiles section; however, you can access the [nodectl configuration](/validate/automated/nodectlConfig) document to review a detailed explaination of the [profile](/validate/automated/nodectlConfig#profiles) section.
+This document does not cover the detailed explanation of the various components of the profiles section; however, you can access the [nodectl configuration](/validate/automated/nodectlConfig) document to review a detailed explanation of the [profile](/validate/automated/nodectlConfig#profiles) section.
 :::
 
 ## Change Profiles
