@@ -37,11 +37,11 @@ There are `3` upgrade mechanisms regarding `nodectl`.
 
 **nodectl's** built-in [upgrade command](/validate/automated/nodectlCommands#upgrade_nodectl).
 
-nodectl is smart enough to guide you through the upgrade process.  It will know if you need any extra steps to complete. 
+nodectl is smart enough to guide you through the upgrade process.  It will detect if the Node need any extra steps to complete a successful upgrade. 
 
 These steps include:
   - Is it safe to upgrade from the current version of nodectl your Node is running to the latest version?  
-    - There is an [upgrade path](/validate/automated/nodectlUpgradePath) that might need to be taken; dependent on, how much time has transpired from the last upgrade your Node.
+    - There is an [upgrade path](/validate/automated/nodectlUpgradePath) that might need to be taken; dependent on, how much time has transpired from the last time your Node was upgraded.
   - Does your Node require any extra upgrade steps to complete the nodectl upgrade for effective operation.
 
 nodectl offers the `--nodectl_only` option.  This will allow you to upgrade your Node to handle new nodectl features without upgrading Tessellations and therefor not taking your Node off the Tessellation cluster during the upgrade.
@@ -50,7 +50,7 @@ nodectl offers the `--nodectl_only` option.  This will allow you to upgrade your
 
 nodectl is simply a single binary files compiled to work on your VPS.  
 
-That is to say, it is single file that you can simply download from the Internet and execute on your system without the need for any utility installation. 
+That is to say, it is single file that you can simply download from the Internet and execute on your system without the need for any dependency installations. 
 
 ### Upgrade detection
 
@@ -60,11 +60,11 @@ When a command is issued, nodectl will review the versioning on your Node and if
 
 <MacWindow>
 nodeadmin@Constellation-Node:~# sudo nodectl list<br />
-  A new version of nodectl was detected: v2.12.7<br />
+  A new version of nodectl was detected: v2.13.0<br />
   To upgrade issue: sudo nodectl upgrade_nodectl<br />            
 </MacWindow>
 
-In the above output, it shows us that our Node is not up-to-date and the latest version available is `v2.12.7`.
+In the above output, it shows us that our Node is not up-to-date and the latest version available is `v2.13.0`.
 
 ### Upgrade nodectl via nodectl
 If nodectl is already [installed](/validate/automated/nodectl) on your system, we can issue the `upgrade_nodectl` command to attempt to upgrade.
@@ -92,7 +92,7 @@ This process can possibly break your Node if you do not follow the appropriate u
 
 ### Upgrade Node to work with new nodectl features
 
-It is very simple to upgrade your Node with new nodectl features.  We simply execute the upgrade command and follow the prompts.
+It is very simple to upgrade your Node with new nodectl features.  We simply execute the `upgrade` command with the `--nodectl_only` option and follow the prompts.
 ```
 sudo nodectl upgrade --nodectl_only
 ```

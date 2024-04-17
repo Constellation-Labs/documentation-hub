@@ -27,9 +27,11 @@ nodectl will bring your service back online for you.
 <br />
 </MacWindow>
 
+### Verify access
+
 nodectl will make sure we are able to join the cluster (permissions) before it continues.
 
-- show the Node's nodeid.
+- Show the Node's nodeid.
 - Are we found on the seed list?
 - Prepare environment.
 - Prepare the service files.
@@ -38,20 +40,15 @@ nodectl will make sure we are able to join the cluster (permissions) before it c
   ----- * Check Seed List Request * ------<br />
 <br />
 NODE ID<br />
-abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890<br />
+11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111<br />
 Node found on Seed List ....................... True<br />
 building environment .......................... complete<br />
 Updating services file ........................ complete<br />
 </MacWindow>
 
-nodectl will start the service that is called: `node_l0`.
+### Restart services
 
-:::note
-You can change the name of the service via the configuration file.
-```
-sudo nodectl configure -e
-```
-:::
+nodectl will start the service that is called: `node_l0`.
 
 We will bring our Node back on the layer0 cluster.  
 
@@ -59,6 +56,8 @@ We will bring our Node back on the layer0 cluster.
 Start request initiated [node_l0] ............. complete<br />
 Fetching Status [dag-l0] ......................<br /> 
 </MacWindow>
+
+### Display resulting status
 
 nodectl will verify the status and display for you.
 
@@ -79,15 +78,17 @@ NODE ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 12345...12345&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> 
 </MacWindow>
 
-It is **important** to note here that we **only** brought back up our **layer0** service.  In this example the profile called `dag-l0` is started.
+It is **important** to note here that we only brought back up our layer0 service.  In this example the profile called `dag-l0` is started.
 
-A special **recommended/required** feature of nodectl is coordination to allow your Node to proper join in the correct order.
+A special **required** feature of nodectl is administrating the coordination of re-joining the various clusters configured on your Node in proper order.
 
 - The `layer0` network cluster joins first.  
 - Wait for `Ready` state (properly joined).
 - Allow the required `layer1` connection to be created by **linking through your Node's `layer0`** network. 
 
 This is recommended because it provides a consistent and reliable layer0 to layer1 link for your Node to function as efficiently as possible between clusters.
+
+### Ready To Join
 
 We will find our Node is `ReadytoJoin`.
 

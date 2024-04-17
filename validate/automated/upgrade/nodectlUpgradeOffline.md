@@ -16,18 +16,20 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
+All the necessary information needed to upgrade our Node has been obtained. The process of upgrading the Node can now start.
+
 ### Leave the cluster
 
-All the necessary information needed to upgrade our Node has been obtained the process of upgrading will start.
-
-nodectl will take the Node off the cluster(s).  In the below example, we have two profiles:
+In most cases, we need to take the Node offline to properly upgrade and restart. nodectl will take the Node off the cluster(s).  In the below example, we have two profiles:
 
 1. `dag-l0` - Hypergraph Global Layer 0
 2. `dag-l1` - Metagraph Currency Layer 1
 
 You will see something similar to the 👇 example (but not exact) as your Node attempts to gracefully leave the Clusters that each profile belongs to.
 
-The `leave` command can take some time to complete, depending on what processing the Node was in the middle of completing before we requested a graceful `leave`.
+The `leave` command can take some time to complete, depending on what processes are running on the Node and need to be completed, before we requested a graceful `leave`.
+
+Properly and gracefully leaving the cluster is highly recommended.
 
 <MacWindow>
  -------- * TAKE NODE OFFLINE * ---------<br />

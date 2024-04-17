@@ -63,13 +63,13 @@ sudo nodectl status -p dag-l0
 - The `dag-l0` is a **parameter**.
 
 :::note
-This reference guide will explorer the [status command](#status) in further detail; however, in the above example, the option `-p` stands for "what profile would you like to explorer the status of?" and the parameter `dag-l0` is the profile in question we would like to review.
+This reference guide will explore the [status command](#status) in further detail; however, in the above example, the option `-p` stands for "what profile would you like to explore the status of?" and the parameter `dag-l0` is the profile in question we would like to review.
 :::
 
 :::note Final Note
-If a `option` requires a `parameter`, it must be directly after the `option` is supplied on the command line.  However, the order of the `options` that do not require or require parameters does **not** matter.
+If an `option` requires a `parameter`, it must be entered directly after the `option` is supplied on the command line.  However, the order of the `options` that do not require parameters does **not** matter.
 
-option1 requires a parameter1, option2 does not require a parameter.
+option1 requires parameter1, option2 does not require a parameter.
 ```
 sudo nodectl -option1 parameter1 -option2
 ```

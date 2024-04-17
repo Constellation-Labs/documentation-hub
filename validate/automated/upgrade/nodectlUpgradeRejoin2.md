@@ -20,7 +20,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 nodectl will now attempt to join the `dag-l1`.  
 
-This [upgrade](/validate/automated/nodectlCommands#upgrade) (document/manual) we did **not** choose the `-w` ([watch](/validate/automated/nodectlCommands#upgrade)) mode.  nodectl will not wait for all peers to connect, as it is not necessary to complete the upgrade.
+For the purpose of this [upgrade](/validate/automated/nodectlCommands#upgrade) (document/manual) example, we did **not** choose the `-w` ([watch](/validate/automated/nodectlCommands#upgrade)) mode.  nodectl will not wait for all peers to connect, as it is not necessary to complete the upgrade.
 
 ### Check seed list again and prepare the Node
 
@@ -84,7 +84,7 @@ nodectl will offer you the following options:
 | **s** | **skip** the `layer1` join process.  This can save you a lot of waiting time.  Reviewing the `layer0` process randomly on your own time later, and then requesting a `join` to layer1 once layer0 is in `Ready` state.  Optionally, if you have [auto_restart](../nodectlAutorestart.md) enabled, layer1 will auto join when layer0 is in the proper state. |
 | **q** | *not recommended:* **quit** the upgrade and do not go any further.  This will skip all other upgrade elements. |
 
-We do not need to hit the <kbd>enter</kbd> key, only key press the desired option.
+We do **not** need to hit the <kbd>enter</kbd> key, only key press the desired option.
 
 <MacWindow>
 Waiting on profile dag-l0 state to be Ready before initiating cluster join.<br />
@@ -95,10 +95,26 @@ Press q to quit<br />
 KEY press and OPTION<br />
 </MacWindow>
 
+### Choosing to wait
+
+We press the <kbd>w</kbd> key.
+
 nodectl will wait 30 seconds before trying again
 <MacWindow>
- Pausing: 9 of 30 seconds before trying again 0 of 3<br />
+ Pausing: 9 of 30 seconds before trying again<br />
 </MacWindow>
+
+### Choosing to skip
+
+After 30 seconds we still did not reach `Ready` state on our Layer0 cluster.  We expect that we may need to wait a few hours for the `DownloadInProgress` to complete.  
+
+This time we press <kbd>s</kbd> to `skip` the layer1 join process.
+
+## Layer0 reached `Ready`
+
+For purposes of this documentation, we will show what will happen in the event you reach `Ready` state and do not need to skip the layer1 join process.
+
+You can skip directly to [show status](#show-status-again); to continue with the upgrade documentation.  
 
 ### Verify layer0
 

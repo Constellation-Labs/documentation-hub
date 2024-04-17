@@ -65,7 +65,7 @@ If nodectl sees multiple profiles (such as a layer0 and layer1 configuration) th
 nodectl will only allow one environment to be upgraded at a time.  In the event you have multiple environments running on your Node, you will need to upgrade each independently.
 :::
 
-In this example, nodectl found the profile `dag-l1` running **in the same environment** and will post details about that profile; however, will use the same version as selected by the first profile found.
+In this example, nodectl found the profile `dag-l1` running **in the same environment** and will post details about that profile; however, nodectl will use the same version as selected by the first profile found.
 
 <MacWindow>
 ====================<br />

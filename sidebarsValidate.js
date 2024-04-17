@@ -161,6 +161,7 @@ module.exports = {
           label: 'Resources',
           items: [
             'automated/nodectlCommands',
+            'automated/nodectlEncryption',
             // 'automated/nodectlAutorestart',
             'automated/nodectlProfileChange',
           ],
@@ -191,6 +192,7 @@ module.exports = {
         'resources/validatenodectl',
         'resources/accessMac',
         'resources/accessWin',
+        'resources/configbackup',
         'resources/p12backup-mac',
         'resources/p12backup-win',        
         'resources/sshconfig',

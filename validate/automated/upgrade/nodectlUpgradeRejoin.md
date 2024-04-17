@@ -28,7 +28,11 @@ Without the `-w` we create an upgrade that is less verbose. We save time by not 
 
 ### DownloadInProgress
 
-Most likely, your Node will reach the `DownloadInProgress` state, and may continue the upgrade prior to moving out of this state.  This is perfectly normal, this stage can take longer than most other stages of the join process onto a Metagraph.
+Most likely, your Node will reach the `DownloadInProgress` state, and we may want to continue the upgrade prior to moving out of this state.  
+
+This is perfectly normal situation and this stage may take longer than most other stages of the join process.
+
+DownloadInProgress is the state (stage) of the Node's joining process where it will download your copy of the blockchain.  This is required to participate on the cluster, and this process can take a long time.
 
 #### First time connections
 
@@ -38,11 +42,13 @@ You may not reach the next stage shown below, the Node may not properly connect 
 
 You will be required to come back to your Node after a few hours to complete the join process and bring your layer1 online.  
 
-Alternatively, you can engage the [auto_restart](/validate/automated/nodectlCommands#auto_restart) feature.  When engaged, nodectl will wait for layer0 to move into `Ready` state and automatically join your layer1 for you.
+Alternatively, you can engage the [auto_restart](/validate/automated/nodectlCommands#auto_restart) feature.  When engaged, nodectl will wait for layer0 to move into `Ready` state and automatically join your Node to the layer1 cluster for you.
 
 ### Continuing the upgrade
 
-Below we will see that our Node reached `WaitingForReady` while it was connected to `36` out of `48` known Nodes on the network.  nodectl continued the upgrade process...
+Below we will see that our Node reached `DownloadInProgress` while it was connected to `36` out of `240` known Nodes on the network.  
+
+At ~`49`( the Node reached a timer threshold ~40 ) and nodectl continued on with the upgrade process...
 
 <MacWindow>
 ---------- * Joining dag-l0 * ----------<br />
@@ -84,4 +90,4 @@ NODE ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 
 Once nodectl reaches `Ready` on the primary layer0, it will then attempt to join `layer1`.
 
-In our example, the Node has continued to remain in `DownloadInProgress` while it completes the stage of joining the network where the Node obtains its own copy of the blockchain.
+In our example, the Node has continued to remain in `DownloadInProgress` while it was in the process of completing this stage of joining the network.  

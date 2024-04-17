@@ -17,6 +17,21 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
   />
 </head>
 
+### Fictitious Assumptions 
+Please be aware that the following items are fictitious and are only used as an example and should not be considered real values.
+
+Throughout this guide, please be aware of these fictitious values:
+- Our external IP address will be a fictitious `113.113.113.113`. 
+- Our nodeid equal to all `1`s.
+- Our nodectl version will be `v2.13.0`
+- Our Tessellation version will be `v2.3.3`
+
+:::danger BE AWARE
+As Constellation Network's protocol and/or nodectl improves, the versions presented in the documentation may become out dated.  
+
+The documentation will be updated as any CLI-GUI elements or results from those inputs change, otherwise the versions may not match your Node's presentation or outputs.
+:::
+
 ## Information Gathering
 
 ### Environment Confirmation
@@ -43,17 +58,14 @@ A backup of our configuration will commence and output:
 
 ### Verify Node Upgrade
 
-The the 👇 example, our external IP address is a fictitious `113.113.113.113` and a fictitious nodeid equal to all `1`s.
-
-- nodectl will update verify permissions
-- Obtain our external IP address that allows us access to the Internet to download upgrades.
+It will start by verifying the upgrade path is valid.  If this is not valid, you will be met with a warning (*expand below for details*).
 
 <MacWindow>
 ---- * VERIFY NODE UPGRADE * -----<br />
 Verify upgrade paths .......................... complete<br />
 </MacWindow>
 
-<Collapsible title="possible warning">
+<Collapsible title="possible upgrade path warning">
 You may encounter a warning, if it is identified that you are using a pre-release or non-current version of nodectl.
 
 <MacWindow>
@@ -72,7 +84,7 @@ As long as you are aware you are using a pre-release or known non-stable version
 ### Determine p12 details
 
 - nodectl will verify that our upgrade path is correct.
-- Validate the p12 usage profiles for all profiles.
+- Validate the p12 usage for all profiles.
 - Determine if nodectl is using global references.
 - Obtain the nodeid from the p12 file.
 
