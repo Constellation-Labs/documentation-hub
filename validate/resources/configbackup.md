@@ -14,206 +14,131 @@ import BrowserWindow from '@site/src/components/global/BrowserWindow';
   />
 </head>
 
-It is of _vital_ importance to keep a cold backup of your P12 file.  The term **cold** simply refers to storing your P12 file _offline_, thereby protecting your data from unauthorized access and vulnerabilities. Cold storage may include but are not limited to encrypted hardware wallets or USB keys.
+You may find it necessary to backup your nodectl configuration file from time to time.  
 
-## Backing up your P12
+In the event that your configuration becomes corrupt, restoring from a recent backup can save time.  
 
-Log into your **local system** and open a [terminal session](/validate/resources/accessMac).
+Depending on whether or not you have a highly customized configuration file in use on your Node, you may also be able to restore a corrupted configuration through the use of overwriting your configuration with a new configuration file and then modifying your profile and global p12 credentials.
 
-### Create directory
+## What is your configuration?
 
-Change your current directory to `/home`, then create a temporary directory to store the P12 file. In this example, we'll name our directory `constellation-backup`, but you are free to choose any custom location or directory name.
+nodectl is reliant on being able to read and process a configuration file that holds persistent configuration elements that allow nodectl to properly assist in administrating your Node.
 
-```
-cd ~
-```
+> For Example:
 
-```
-mkdir constellation-backup
-```
+- Holds your p12 private key store details that are utilized to authenticate and validate data on the Node.
+- Holds the details necessary to administer the Hypergraph or Metagraph cluster your Node is running on, in defined profiles.
+- Holds parameters necessary to run various nodectl features.
 
-### Change to temp directory
+## Backing up your configuration
 
-Change directories to your newly created directory.
+Execute the `backup_config` command on your Node.
 
-```
-cd ~/constellation-backup
-```
-
-### Connect to your node
-
-Open an `sftp` session to your node and enter your passphrase to connect. (Remember to replace the examples below with your own info.)
-```
-sftp -i ~/.ssh/my-node-ssh-keyname nodeadmin@123.123.123.123
-```
+### Backup Step One
 
 <MacWindow>
-constellation@MacBook constellation-backup % sftp -i ~/.ssh/my-node-ssh-keyname nodadmin@123.123.123.123<br />
-Enter passphrase for key '/Users/netmet/.ssh/my-node-ssh-keyname': <br />
-Connected to 1123.123.123.123.<br />
-sftp><br />
+nodeadmin@Constellation-Node:~$ sudo nodectl backup_config<br />
 </MacWindow>
 
-:::success What's my key pair name?
-Use the command below to review your `~/.ssh` directory. Alternatively, try looking in your default home directory or where you originally saved your key pair during setup.
+nodectl will begin the process of finding your configuration file and creating a dated copy in the configured backup directory.
 
-```
-ls -l ~/.ssh
-```
+### Backup Process Results
+
+<MacWindow>
+[sudo] password for nodeadmin:<br />
+Backing up configuration ...................... complete<br />
+</MacWindow>
+
+We will presented with detailed information explaining when, where, and what was backed up.
+
+- The file was backed up on `2024-04-17`.
+- The file is located in the `/var/tessellation/backups` directory on the Node.
+- The name of the backup is called `backup_cn-config_2024-04-17-11:56:13Z`.
+- Time Stamps are in UTC
+
+<MacWindow>
+Backup Date: 2024-04-17-11:56:13Z<br />
+Backup Location: /var/tessellation/backups/<br />
+Backup File Name: backup_cn-config_2024-04-17-11:56:13Z<br />
+</MacWindow>
+
+In this example the [auto_restart](../automated/nodectlAutorestart) feature was enabled:
+- Since a backup request does not require the `auto_restart` feature to be disabled to complete, it was running while the backup was created.
+- The pid (process id) for the `auto_restart` feature was found, so no action was needed and the `auto_restart` feature was not restarted (*it was already running*).
+
+<MacWindow>
+Node restart service does not need to be restarted because pid
+[1139563] was found already.<br />
+nodeadmin@Constellation-Node:~$ 
+</MacWindow>
+
+## Restoring your configuration
+
+In the event our Node started to issue an error on startup, some unknown event took place that may have corrupted the configuration, or any other reason that may require you restore you configuration, you can use nodectl's built in restore feature.
+
+<MacWindow>
+nodeadmin@Constellation-Node:~$ sudo nodectl restore_config<br />
+</MacWindow>
+
+nodectl will access the backup directory on your Node, identify the backup files, and display a list of backup files available for restoration.
+
+:::note Note
+The only files that will be displayed are those files that are named in a particular format that nodectl can understand.  
+
+This is the format that nodectl uses during the creation of the backups.
 :::
 
-### Locate P12 file
-
-In your sftp session, change directories to `/home/nodeadmin/tessellation` or your custom location, then list out the contents of the directory.
-
-```
-cd /home/nodeadmin/tessellation
-```
-```
-ls -l
-```
 <MacWindow>
-sftp> cd /home/nodeadmin/tessellation<br />
-sftp> ls -l<br />
--rw-r--r--    1 nodeadmin nodeadmin       31 Jun 11 14:28 my-p12file.p12<br />
-sftp> <br />
+========================================<br />
+=&nbsp;&nbsp;&nbsp;CONSTELLATION NETWORK HYPERGRAPH&nbsp;&nbsp;&nbsp;=<br />
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RESTORE CONFIGURATION FILE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM BACKUPS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
+========================================<br />
+Code Name: Princess Warrior<br />
+<br />
+WARNING<br />
+Restoring the wrong configuration or a configuration from a previous version of nodectl that is not in the current upgrade path may cause nodectl to malfunction.<br />
+<br />
+Proceed with caution!<br />
+Please choose a date time option:<br />
+<br />
+1) 2024-03-07 - 14:19:45 backup <br />
+2) 2024-04-17 - 11:56:13 backup <br />
+3) cancel operation <br />
+<br />
+Enter an option and hit the &lt;enter&gt; key<br />
+:<br />
 </MacWindow>
 
-### Download P12 file
+In our example, we will choose <kbd>2</kbd>+<kbd>enter</kbd> to restore the file from `2024-04-17` at `11:56:13` UTC time.
 
-You have now confirmed the location and existence of your `p12` file.  You can use the `get` command to get the file.  Since you're in your temp directory, the file will automatically download there.
+### Confirm
 
-```
-get my-p12file.p12
-```
+We will be presented with a confirmation before the restoration is executed.
 
-If the file was downloaded correctly, you should see a `100%` status next to the filename.
+:::danger Danger
+Once the new configuration file is put in place, if there are issues with the restoration, you not be able to utilize nodectl properly.
 
-<MacWindow>
-sftp> get my-p12file.p12<br />
-Fetching /home/nodeadmin/tessellation/my-p12file.p12 to my-p12file.p12<br />
-/home/nodeadmin/tessellation/my-p12file.p12   100%   31     0.3KB/s   00:00<br /> 
-sftp> <br />
-</MacWindow>
-
-### End session
-
-Exit your sftp session with the `exit` command.
-```
-exit
-```
-
-### Verify download
-
-Back in your local command prompt, execute a long list `ls -l` inside the `constellation-backup` directory you created earlier. Verify that your p12 key file is downloaded.
-```
-ls -l
-```
-<MacWindow>
-constellation@MacBook constellation-backup % ls -l<br />
-total 8
--rw-r--r--  1 netmet  staff  31 Aug 11 18:30 my-p12file.p12
-constellation@MacBook constellation-backup %
-</MacWindow>
-
-### Transfer to cold storage
-- Transfer your newly downloaded **p12 file** to your **cold storage** device.  
-- Remember to remove the p12 file and temp backup directory when you are done.
-
-
-## Restoring your P12
-
-### Install Tessellation
-
-If you are restoring your p12 file to node that has been installed using `nodectl` (recommended): 
-1. Make sure you do the installation of `Tessellation` first using `nodectl` before you restore your p12 key file.
-2. During the installation you will need to use the **same** p12 file name as you did previously in order to make sure that the configuration `nodectl` builds matches.
-
-### Migrate P12 backup
-
-Migrate your p12 backup from cold storage to your temp `constellation-backup` directory. Make sure you are in the correct directory containing your p12 backup file.
-
-```
-cd ~/constellation-backup
-```
-
-Do a directory listing to make sure you see your backed up file.
-
-```
-ls -l
-```
-
-<MacWindow>
-constellation@MacBook % cd ~/constellation-backup<br />
-constellation@MacBook constellation-backup % ls -l<br />
-total 8
--rw-r--r--  1 netmet  staff  31 Aug 11 18:30 my-p12file.p12
-constellation@MacBook constellation-backup %
-</MacWindow>
-
-### Connect to node
-
-Open an `sftp` session to your node and enter your passphrase to connect. (Remember to replace the examples below with your own info.)
-
-```
-sftp -i ~/.ssh/my-node-ssh-keyname nodeadmin@123.123.123.123
-```
-<MacWindow>
-constellation@MacBook constellation-backup % sftp -i ~/.ssh/my-node-ssh-keyname nodadmin@123.123.123.123<br />
-Enter passphrase for key 'my-node-ssh-keyname': 
-Welcome to Ubuntu 20.04.5 LTS<br />
-</MacWindow>
-
-### Locate P12 file
-
-In your sftp session, change directories to /home/nodeadmin/tessellation or your custom location, then list out the contents of the directory.
-
-```
-cd /home/nodeadmin/tessellation
-```
-```
-ls -l
-```
-
-<MacWindow>
-sftp> cd /home/nodeadmin/tessellation<br />
-sftp> ls -l<br />
--rw-r--r--    1 nodeadmin nodeadmin       31 Jun 11 14:28 my-p12file.p12<br />
-sftp> <br />
-</MacWindow>
-
-You have now confirmed the location and existence of your temporary `p12` file.
-
-:::danger IMPORTANT
-If you followed the directions to restore a new or existing node, you should have used `nodectl` to install
-`Tessellation` properly **using the same P12 filename**.  The directory listing will show your `p12` file with the 
-same name that you are attempting to restore.
+During every restoration, another current backup is automatically created.  This may be used in the event of any unexpected issues. We can restore again to the last known good configuration.
 :::
 
-### Restore P12 file
-
-If you did not create a temporary p12 file, this directory may be empty depending on your custom configuration. Enter the `put` command to restore the p12 file.
-
-```
-put my-p12file.p12
-```
-If the file was downloaded correctly, you should see a `100%` status next to the filename.
-
+We will press <kbd>y</kbd>+<kbd>enter</kbd>
 <MacWindow>
-sftp> put my-p12file.p12<br />
-Uploading my-p12file.p12 to /home/nodeadmin/tessellation/my-p12file.p12<br />
-my-p12file.12   100%   31     0.6KB/s   00:00    <br />
-sftp> <br />
+restore file:<br />
+2024-04-17 - 11:56:13 backup<br />
+/var/tessellation/backups/cn-config.2024-04-17-11:56:13Zbackup.yaml<br />
+<br />
+Are you SURE you want to restore? [n]: y<br />
 </MacWindow>
 
-### Exit session
+### Restore
 
-Exit your sftp session with the `exit` command. You have successfully completed the restore process.
+The restoration will commence, and we will be returned to the Node's prompt upon completion. 
 
-```
-exit
-```
-
-:::info p12 Migration - Blue Box
-If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/migrate/nodectlMigrateUpload); otherwise continue forward.
-:::
+<MacWindow>
+backing up current config ..................... complete<br />
+restoring config .............................. complete<br />
+configuration restored!<br />
+<br />
+nodeadmin@Constellation-Node:$
+</MacWindow>
