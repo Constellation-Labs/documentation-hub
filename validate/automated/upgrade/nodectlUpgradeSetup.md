@@ -18,18 +18,21 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
 </head>
 
 ### Fictitious Assumptions 
-Please be aware that the following items are fictitious and are only used as an example and should not be considered real values.
+Please be aware that the following items are fictitious and are only used as an example and should not be considered real values.  
 
 Throughout this guide, please be aware of these fictitious values:
 - Our external IP address will be a fictitious `113.113.113.113`. 
 - Our nodeid equal to all `1`s.
 - Our nodectl version will be `v2.13.0`
-- Our Tessellation version will be `v2.3.3`
+- Our Tessellation version will be `v2.2.3`
+- Our Environment is `mainnet`
 
 :::danger BE AWARE
 As Constellation Network's protocol and/or nodectl improves, the versions presented in the documentation may become out dated.  
 
 The documentation will be updated as any CLI-GUI elements or results from those inputs change, otherwise the versions may not match your Node's presentation or outputs.
+
+*In some cases, the versions and environment may coincide with real values; however, this may be different for your current upgrade depending on multiple factors.*
 :::
 
 ## Information Gathering

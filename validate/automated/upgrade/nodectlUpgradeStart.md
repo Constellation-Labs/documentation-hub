@@ -41,5 +41,3 @@ Our upgrade will commence.
   ========================================<br />
   Code Name: Princess Warrior<br />
 </MacWindow>
-
-Next nodectl will collect information to prepare for the upgrade.

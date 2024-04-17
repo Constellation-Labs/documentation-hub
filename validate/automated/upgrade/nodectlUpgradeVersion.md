@@ -55,7 +55,7 @@ If we wanted to change this to another version we would enter it here and then h
 
 <MacWindow>
 Press enter to accept the default value between [] brackets.<br />
-Please enter version to upgrade to.........[v2.2.3] : 2.2.2
+Please enter version to upgrade to.........[v2.2.3] : v2.2.2
 </MacWindow>
 
 ### Other profiles

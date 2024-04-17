@@ -30,6 +30,10 @@ Without the `-w` we create an upgrade that is less verbose. We save time by not 
 
 Most likely, your Node will reach the `DownloadInProgress` state, and we may want to continue the upgrade prior to moving out of this state.  
 
+:::note Note
+This documentation uses the word `stage` and `state` interchangeably.
+:::
+
 This is perfectly normal situation and this stage may take longer than most other stages of the join process.
 
 DownloadInProgress is the state (stage) of the Node's joining process where it will download your copy of the blockchain.  This is required to participate on the cluster, and this process can take a long time.
