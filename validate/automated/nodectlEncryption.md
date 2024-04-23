@@ -1,5 +1,5 @@
 ---
-title: nodectl passphrase encryption
+title: Passphrase Encryption
 hide_table_of_contents: false
 ---
 <intro-end />
@@ -16,7 +16,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-Prior to version `v2.13.0` of nodectl, the passphrase responsible to unlocking your p12 key store that contains the private and public keys necessary to access your hot wallet and to digitally sign your validated data, was **unencrypted**.  
+Prior to version `v2.13.0` of nodectl, the passphrase responsible for unlocking your p12 key store that contains the private and public keys necessary to access your hot wallet and to digitally sign your validated data, was **unencrypted**.  
 
 Optionally, nodectl has added the ability to encrypt the p12 passphrase, within the persistent configuration file that nodectl requires to perform its functionality. 
 
@@ -25,9 +25,6 @@ Optionally, nodectl has added the ability to encrypt the p12 passphrase, within 
 During a nodectl [upgrade](./upgrade/nodectlUpgrade), if nodectl identifies that the configuration file contains an unencrypted passphrase, it will offer you the ability to [encrypt during the upgrade](./upgrade/nodectlUpgradeEncryption).
 
 ## Encrypt via the Configurator
-
-## Step by Step
-
 
 ### Start Configurator
 
@@ -158,7 +155,7 @@ From the main edit menu of the configurator, we will choose <kbd>P</kbd> to ente
 
 ### Confirm Encryption
 You will be presented with a couple of important warning messages explaining the following key points:
-- If you need to disable the configuration for any reason, it is simple to re-encrypt the passphrase at a later date.  The old hash will be permanently removed and unusable.  The passphrase will not be decrypted; rather, you will need to reconfigure the p12 elements via both the p12 global section and the individual p12 sections per profile **manually**. If you only have a single global p12 that is used for all profiles on the Node, you will **still** need to configure those sections to refer to the global p12 section.  *This is done for security purposes.*.
+- If you need to disable the configuration for any reason, it is simple to re-encrypt the passphrase at a later date.  The old hash will be permanently removed and unusable.  The passphrase will not be decrypted; rather, you will need to reconfigure the p12 elements via both the p12 global section and the individual p12 sections per profile **manually**. If you only have a single global p12 that is used for all profiles on the Node, you will **still** need to configure those sections to reference the global p12 section.  *This is done for security purposes.*.
 - If you reenable encryption after a previous disablement, the old hashes will be overwritten permanently.  
 
 <MacWindow>
@@ -196,7 +193,14 @@ nodectl will request the p12 you want to encrypt and validate that passphrase be
 Press enter your p12 passphrase for encryption.<br />
 <br />
 p12 passphrase: <br />
+p12 file keyphrase (passphrase) [global] ...... validated!
 </MacWindow>
+
+:::danger Single Attempt
+If you do not enter the correct passphrase, you will receive an error message from nodectl, and will need to restart the process.
+
+Please take care to enter the correct passphrase on the first attempt.
+:::
 
 ### Automated Encryption
 nodectl will begin the encryption and return you to the main menu when the encryption is completed.
@@ -263,6 +267,196 @@ We will choose <kbd>q</kbd> to exit nodectl.
   Configuration manipulation quit by Operator<br />
 nodeadmin@Constellation-Node:~$  
 </MacWindow>
+
+## Decrypt via the Configurator 
+
+### Initial Steps
+
+We first start by starting up the configurator and following the same steps as if we were going to [encrypt](#encrypt-via-the-configurator) our passphrase.
+
+1. [Start Configurator](#start-configurator)
+2. [Advanced Mode](#advanced-mode)
+3. [Main Menu](#main-menu)
+4. [Backup](#backup)
+
+### Disable Encryption
+
+nodectl will detect that our passphrase is set to encrypted, via the configuration file.
+
+<MacWindow>
+========================================<br />
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PASSPHRASE ENCRYPTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DISABLE ENCRYPTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
+========================================<br />
+<br />
+   WARNING  Disabling encryption is permanent.<br />
+<br />
+  Profile specific non-global passphrases will
+  NOT be restored in your Node's configuration file.
+  Each specific p12 configurations will be reset to
+  None<br />
+<br />
+  Please reset specific dedicated profile passphrases
+  via the configurator to resume nodectl's ability to automate
+  processes that require the p12 key store elements to
+  function.<br />
+<br />
+  Alternatively, you can resume using --pass &lt;passphrase&gt;
+  at the command prompt.<br />
+<br />
+  You will be redirected automatically to reset your global p12
+  passphrase.<br />
+</MacWindow>
+
+We can confirm by entering <kbd>y</kbd>+<kbd>Enter</kbd>. 
+
+:::danger Permanent
+This will not be reversible.  The keys associated with the current encrypted passphrase will be destroyed permanently. 
+
+However, you can `encrypt` again at any time by going through the process to create brand new encryption keys. 
+:::
+
+<MacWindow>
+Do you want to remove encryption? [n]: y
+</MacWindow>
+
+### Automated Decryption
+
+nodectl will begin the process of removing decryption.  
+
+First it will warn it is permanent.
+
+<MacWindow>
+This is permanent...
+</MacWindow>
+
+The decryption process will start.
+
+<MacWindow>
+  Removing encryption elements .................. running<br />
+  Configuration changes applied ................. successfully<br />
+  Removing encryption elements .................. completed<br />
+  Resetting [global] configuration...............<br />
+  Existing global p12 details identified ........ success<br />
+</MacWindow>
+
+### Establish plain text passphrase
+
+nodectl will now automatically direct you to the GLOBAL PROFILE P12 ENTRY section of the configurator.  This is important because nodectl removed the hash associated with your passphrase; as well as, the appropriate keys that would decrypt the passphrase for us.  We do not allow nodectl to decrypt the passphrase for us for extra security. 
+
+<MacWindow>
+   ----- * GLOBAL PROFILE P12 ENTRY * -----<br />
+<br />
+  This is the Debian Operating system username used to administer
+  your Node. It was created during Node installation. Avoid the 'root',
+  'admin', or 'ubuntu' user.<br />
+</MacWindow>
+
+You should be able to verify default values between the brackets `[]` and then hit the <kbd>Enter</kbd> key to accept these values.  They should not have changed, so you should be able to use the default for all `3` questions.
+
+#### Confirm or Change p12 details
+
+:::note Default Values
+Your default values may be different from the example output below
+:::
+
+<MacWindow>
+  Enter in the admin username for this Node [nodeadmin]: 
+</MacWindow>
+
+<MacWindow>
+  This is the location on your Debian Operating system where the p12
+  private key file is located.<br />
+<br />
+  Enter in p12 file path [/home/nodeadmin/tessellation/]:<br />
+</MacWindow>
+
+<MacWindow>
+  This is the name of your p12 private key file.  It should have a
+  '.p12' extension.<br />
+<br />
+  Enter in your p12 file name:  [nodeadmin.p12]:<br />
+</MacWindow>
+
+#### Confirm Values
+
+We can press the <kbd>Enter</kbd> key to accept and confirm our p12 values.
+
+<MacWindow>
+========================================<br />
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONFIRM VALUES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
+========================================<br />
+  If you reached this confirmation unexpectedly
+  ,from the input [above] you may have hit &lt;enter&gt;
+  along with your option; therefore, choosing the default.  You can
+  choose n here and reenter the correct value.<br />
+<br />
+  nodeadmin: nodeadmin<br />
+  key location: /home/nodeadmin/tessellation/<br />
+  key name: nodeadmin.p12<br />
+  <br />
+  Please confirm values are as requested: [y]: y<br />
+</MacWindow>
+
+#### Hide Passphrase?
+
+nodectl will ask you if you want to "hide" your passphrase, if you choose `y` here your configuration will not contain a passphrase and you will be required to enter every time it is needed.
+
+:::info Encryption's purpose
+Removing the passphrase creates extra work for the Node Operator when encryption may be a better solution.
+:::
+
+We will press <kbd>Enter</kbd> to accept the default `n`.
+<MacWindow>
+Would you like to hide the global passphrase [n]: 
+</MacWindow>
+
+#### Add Plain Text Passprhase
+
+Enter your current p12 passphrase
+
+<MacWindow>
+  Enter in a passphrase. The passphrase [also called 'keyphrase' or
+  simply 'password'] will not be seen as it is entered. This configurator
+  does NOT create new p12 private key files. The Node Operator should enter
+  in their EXISTING p12 passphrase.  This configurator also does NOT change
+  or alter the p12 file in ANY way. A p12 file should have been created
+  during the original installation of nodectl on this Node. If the Node
+  Operator wants to modify the p12 passphrase, the 'sudo nodectl passwd12'
+  command can be used. To remove the passphrase from the configuration, enter
+  in "None" as the passphrase, and confirm with "None". MAKE SURE TO SAVE
+  YOUR PASSPHRASE IN A SAFE LOCATION! Losing your passphrase is not
+  recoverable!<br />
+<br />
+  Enter in p12 passphrase: <br />
+</MacWindow>
+
+Confirm the passphrase
+
+<MacWindow>
+Confirm this passphrase:<br />
+</MacWindow>
+
+#### Configuration will be applied
+
+<MacWindow>
+Confirm this passphrase: <br />
+Global p12 entries ............................ complete<br />
+<br />
+Configuration changes applied ................. successfully<br />
+</MacWindow>
+
+#### Individual Profile Passphrase Updates
+
+In the event you had `non-global` p12 details entered for your profiles.  The configurator will take you to each profile and request you update the p12 details for each profile, as was completed in the [above](#add-plain-text-passprhase) global update section.
+
+If you already had these profiles set to `global` ( only using the global p12 for all profiles ), you will not be redirected and returned to the main menu.
+
+## Conclusion
+
+Your Node is now updated with an [encrypted](#encrypt-via-the-configurator) or [decrypted](#decrypt-via-the-configurator) passphrase. From the main menu, you can choose <kbd>q</kbd> to return to your Node's command line interface.
+
+
 
 
 

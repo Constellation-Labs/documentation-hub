@@ -1,5 +1,5 @@
 ---
-title: command reference guide
+title: Command Reference Guide
 hide_table_of_contents: false
 ---
 <intro-end />
@@ -1802,7 +1802,7 @@ The **`upgrade`** command is used to upgrade both Tessellation and nodectl backe
 | :---: | :---: | :--- | :----: |
 | -w | None | **watch** mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, nodectl will skip watching for the remaining peers to connect and simply and safely continue the upgrade process, therefore saving time. | **optional** |
 | --pass | `<passphrase>` | If the Node Operator chose to `hide` their passphrase by excluding it from the [`configuration file`](/validate/automated/nodectlConfig), you will need to supply it at the command line using this option. | **optional** |
-| -ni | None | Non-Interactive &rarr If you want to use the `upgrade` command with all the defaults chosen, nodectl will not ask any interactive questions. | **optional** |
+| -ni | None | Non-Interactive. If you want to use the `upgrade` command with all the defaults chosen, nodectl will not ask any interactive questions. | **optional** |
 
 :::note Just in Case
 In the event of the `-ni` is used, if nodectl identifies anything unusual, it still may disengage non-interactive mode and ask any necessary questions, in an attempt to avoid unexpected errors.
@@ -1828,7 +1828,7 @@ Please see the [upgrade_nodectl](/validate/automated/nodectlUpgrade) documentati
 | :---: | :---: | :--- | :----: |
 | -v | &lt;version&gt; | statically set the version you would like to **upgrade** or **downgrade** to. | **optional** |
 
-*If you attempt to downgrade nodectl to a version that is now backwards compatible, you may risk unexpected results.  Please see [upgrade_path](#upgrade_path) for more details on how to determine if a version is not backward compatible.*
+*If you attempt to downgrade nodectl to a version that is not backwards compatible, you may risk unexpected results.  Please see [upgrade_path](#upgrade_path) for more details on how to determine if a version is not backward compatible.*
 
 > #### Examples
 - Help file
@@ -1988,7 +1988,7 @@ sudo nodectl logs -l nodectl
 ### send_logs 
 ---
 
-The **`send_logs`** command is a *debug* command used to help accumulate log files to send to Developers or System Engineering to dissect; to better the code base.
+The **`send_logs`** command is a *debug* command used to help accumulate log files to send to Developers or System Engineering to dissect; to improve the code base.
   
 During the execution you will be offered a menu to upload:
 - current logs  
@@ -1997,7 +1997,7 @@ During the execution you will be offered a menu to upload:
 - date range logs  
 - archived logs  
     
-Once you follow the prompts a tarball gzip file will appear in the uploads directory and the system will offer you the ability to upload the results to the transfer.sh service.
+Once you follow the prompts a tarball gzip file will appear in the uploads directory and the system will offer you the ability to upload the results to the a public (non Constellation Network supported) file transfer service.
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |

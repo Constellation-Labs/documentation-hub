@@ -1,5 +1,5 @@
 ---
-title: auto restart auto upgrade
+title: Auto Restart / Auto Upgrade
 hide_table_of_contents: false
 ---
 <intro-end />

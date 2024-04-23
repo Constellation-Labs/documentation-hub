@@ -1,5 +1,5 @@
 ---
-title: nodectl configuration
+title: Configuration File
 hide_table_of_contents: false
 ---
 <intro-end />
