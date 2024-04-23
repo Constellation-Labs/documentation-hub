@@ -1,5 +1,5 @@
 ---
-title: Verify nodectl
+title: Verify Utility Binary
 hide_table_of_contents: false
 ---
 import Collapsible from '@components/global/Collapsible/Collapsible.jsx';

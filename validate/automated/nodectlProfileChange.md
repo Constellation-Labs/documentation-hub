@@ -1,5 +1,5 @@
 ---
-title: nodectl profile change
+title: Profile Change
 hide_table_of_contents: false
 ---
 <intro-end />

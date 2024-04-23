@@ -1,5 +1,5 @@
 ---
-title: Backup/Restore nodectl configuration
+title: Backup/Restore Configuration
 hide_table_of_contents: false
 ---
 
@@ -143,7 +143,7 @@ nodeadmin@Constellation-Node:$
 
 ### Alternative Restoration
 
-If you do not have a highly customized configuration file in use on your Node, and a restoration does not restore your ability to use nodectl, you have an alternative solution to regain properly usage of nodectl.
+If you do not have a highly customized configuration file in use on your Node, and a restoration does not restore your ability to use nodectl, you have an alternative solution to regain proper usage of nodectl.
 
 Utilizing the `new` feature in the configurator.
 
@@ -153,4 +153,4 @@ You may also be able to restore a corrupted configuration through the use of ove
 nodeadmin@Constellation-Node:~$ sudo nodectl configure -n<br />
 </MacWindow>
 
-Follow the prompts to build a new configurator using `SCENARIO 4`.
+Follow the prompts to build a new configuration using `SCENARIO 4`.

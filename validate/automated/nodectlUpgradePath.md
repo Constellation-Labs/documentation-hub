@@ -1,5 +1,5 @@
 ---
-title: nodectl upgrade path
+title: Upgrade Path
 hide_table_of_contents: false
 ---
 <intro-end />

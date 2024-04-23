@@ -1,5 +1,5 @@
 ---
-title: nodectl v1 to v2
+title: Migrate from v1 to v2
 hide_table_of_contents: false
 ---
 <intro-end />
@@ -24,7 +24,7 @@ Over the course of the original creation of nodectl it has undergone two major v
   - version 0 to version 1
   - version 1 to version 2
 
-The purpose of this documentation is to teach a `Node Operator` running version **1** of nodectl, how to upgrade to verison **2** of nodectl, via a step-by-step tutorial.
+The purpose of this documentation is to teach a `Node Operator` running version **1** of nodectl, how to upgrade to version **2** of nodectl, via a step-by-step tutorial.
 
 A migration module has been added to nodectl to facilitate this effort.
 

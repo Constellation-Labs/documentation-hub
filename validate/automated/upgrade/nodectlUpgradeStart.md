@@ -28,16 +28,7 @@ nodeadmin@Constellation-Node:~# sudo nodectl upgrade
 </MacWindow>
 
 :::note Side Note
-This document will assume that we are running the upgrade in interactive mode.  There a several options that can be entered at the command line, you can review these options [here](/validate/automated/nodectlCommands#upgrade).
+This document will assume that we are running the upgrade in interactive mode.
+
+ There a several options that can be entered at the command line, you can review these options [here](/validate/automated/nodectlCommands#upgrade).
 :::
-
-Our upgrade will commence. 
-
-<MacWindow>
-  ========================================<br />
-  =   CONSTELLATION NETWORK HYPERGRAPH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
-  =            UPGRADE REQUEST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
-  =      TESSELLATION VALIDATOR NODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
-  ========================================<br />
-  Code Name: Princess Warrior<br />
-</MacWindow>

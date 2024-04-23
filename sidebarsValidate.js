@@ -136,6 +136,8 @@ module.exports = {
               items: [
                 'automated/upgrade/nodectlUpgradeIntro',
                 'automated/upgrade/nodectlUpgradeStart',
+                'automated/upgrade/nodectlUpgradeMigrate',
+                'automated/upgrade/nodectlUpgradeStart2',
                 'automated/upgrade/nodectlUpgradeConfirm',
                 'automated/upgrade/nodectlUpgradeSetup',
                 'automated/upgrade/nodectlUpgradeVersion',
@@ -163,6 +165,8 @@ module.exports = {
             'automated/nodectlCommands',
             'automated/nodectlEncryption',
             // 'automated/nodectlAutorestart',
+            'automated/nodectlConfigBackup',
+            'automated/nodectlValidate',
             'automated/nodectlProfileChange',
           ],
         },
@@ -189,10 +193,8 @@ module.exports = {
       collapsed: false,
       items: [
         'resources/password',
-        'resources/validatenodectl',
         'resources/accessMac',
         'resources/accessWin',
-        'resources/configbackup',
         'resources/p12backup-mac',
         'resources/p12backup-win',        
         'resources/sshconfig',
