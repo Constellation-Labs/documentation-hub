@@ -136,6 +136,8 @@ module.exports = {
               items: [
                 'automated/upgrade/nodectlUpgradeIntro',
                 'automated/upgrade/nodectlUpgradeStart',
+                'automated/upgrade/nodectlUpgradeMigrate',
+                'automated/upgrade/nodectlUpgradeStart2',
                 'automated/upgrade/nodectlUpgradeConfirm',
                 'automated/upgrade/nodectlUpgradeSetup',
                 'automated/upgrade/nodectlUpgradeVersion',
