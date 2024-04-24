@@ -36,6 +36,7 @@ module.exports = {
       label: 'VPS Setup Guides',
       collapsed: false,
       items: [
+        'setup-guides/setupGuideGettingStarted',
         {
           type: 'category',
           label: 'Digital Ocean',
@@ -82,6 +83,14 @@ module.exports = {
           type: 'category',
           label: 'Installation',
           items: [
+            {
+              type: 'category',
+              label: 'Quick Install Walk Through',
+              items: [
+                'automated/quickInstall/nodectlQIQuickStart',
+                'automated/quickInstall/nodectlQInstallIntro'
+              ],
+            },
             {
               type: 'category',
               label: 'Installation Walk Through',

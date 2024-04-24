@@ -55,11 +55,11 @@ The command pasted into your VPS 👇 will be a collation of commands in a singl
 ### Execute the download
 
 ```
-sudo nodectl auto_restart disable; sudo wget https://github.com/netmet1/constellation_testnet_nodectl/releases/download/v2.12.7/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v
+sudo nodectl auto_restart disable; sudo wget https://github.com/netmet1/constellation_testnet_nodectl/releases/download/v2.13.0/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v
 ```
 #### Execution and output results
 <MacWindow>
-ubuntu@ip-172-31-90-241:~$ sudo nodectl auto_restart disable; sudo wget https://github.com/netmet1/constellation_testnet_nodectl/releases/download/v2.12.7/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v<br />
+ubuntu@ip-172-31-90-241:~$ sudo nodectl auto_restart disable; sudo wget https://github.com/netmet1/constellation_testnet_nodectl/releases/download/v2.13.0/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v<br />
 sudo: <b>nodectl: command not found</b><br />
 --2023-05-01 20:16:11--  https://github.com/netmet1/constellation_testnet_nodectl/releases/download/v2.7.0/nodectl_x86_64<br />
 Resolving github.com (github.com)... 113.113.113.113<br />
@@ -80,7 +80,7 @@ nodectl                        100%[============================================
 No installation found<br />
 Creating log directory for nodectl<br />
   VERSION        MAJOR          MINOR          PATCH <br />                                                                   
-  v2.12.7        2              12             7<br />           
+  v2.13.0        2              13             0<br />           
 <b>ubuntu</b>@ip-172-31-90-241:~$ <br />
 </MacWindow>
 
