@@ -21,7 +21,6 @@ module.exports = {
         'validator/vpsExplained',
         'validator/trustLabels',
         'validator/p12',
-        'validator/nodectlNotes',
         {
           type: 'category',
           label: 'SSH Keys',
@@ -102,6 +101,8 @@ module.exports = {
                 'automated/quickInstall/nodectlQInstallISections',
                 'automated/quickInstall/nodectlQInstallDeps',
                 'automated/quickInstall/nodectlQInstallBins',
+                'automated/quickInstall/nodectlQInstallISections2',
+                'automated/quickInstall/nodectlQInstallComplete',
               ],
             },
             {
@@ -220,7 +221,8 @@ module.exports = {
         'resources/p12backup-mac',
         'resources/p12backup-win',        
         'resources/sshconfig',
-        'resources/p12v1v2-migrate',      
+        'resources/p12v1v2-migrate',  
+        'resources/nodectlNotes',    
       ],
     },
   ],
