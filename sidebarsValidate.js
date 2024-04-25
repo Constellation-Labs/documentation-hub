@@ -20,6 +20,7 @@ module.exports = {
         'validator/providers',
         'validator/vpsExplained',
         'validator/trustLabels',
+        'validator/p12',
         {
           type: 'category',
           label: 'SSH Keys',
@@ -36,7 +37,7 @@ module.exports = {
       label: 'VPS Setup Guides',
       collapsed: false,
       items: [
-        'setup-guides/setupGuideGettingStarted',
+        'setup-guides/index',
         {
           type: 'category',
           label: 'Digital Ocean',
@@ -83,12 +84,23 @@ module.exports = {
           type: 'category',
           label: 'Installation',
           items: [
+            'automated/nodectlQuickStart',
             {
               type: 'category',
               label: 'Quick Install Walk Through',
               items: [
-                'automated/quickInstall/nodectlQIQuickStart',
-                'automated/quickInstall/nodectlQInstallIntro'
+                'automated/quickInstall/nodectlQInstallIntro',
+                'automated/quickInstall/nodectlQInstallPrep',
+                'automated/quickInstall/nodectlQInstallDownload',                
+                'automated/quickInstall/nodectlQInstallStart',
+                'automated/quickInstall/nodectlQInstallWelcomeBanner',
+                'automated/quickInstall/nodectlQInstallPrepare',
+                'automated/quickInstall/nodectlQInstallConfirm',
+                'automated/quickInstall/nodectlQInstallMigrate',
+                'automated/quickInstall/nodectlQInstallP12',
+                'automated/quickInstall/nodectlQInstallISections',
+                'automated/quickInstall/nodectlQInstallDeps',
+                'automated/quickInstall/nodectlQInstallBins',
               ],
             },
             {
