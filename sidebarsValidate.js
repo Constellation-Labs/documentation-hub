@@ -20,6 +20,7 @@ module.exports = {
         'validator/providers',
         'validator/vpsExplained',
         'validator/trustLabels',
+        'validator/p12',
         {
           type: 'category',
           label: 'SSH Keys',
@@ -36,6 +37,7 @@ module.exports = {
       label: 'VPS Setup Guides',
       collapsed: false,
       items: [
+        'setup-guides/index',
         {
           type: 'category',
           label: 'Digital Ocean',
@@ -82,6 +84,27 @@ module.exports = {
           type: 'category',
           label: 'Installation',
           items: [
+            'automated/nodectlQuickStart',
+            {
+              type: 'category',
+              label: 'Quick Install Walk Through',
+              items: [
+                'automated/quickInstall/nodectlQInstallIntro',
+                'automated/quickInstall/nodectlQInstallPrep',
+                'automated/quickInstall/nodectlQInstallDownload',                
+                'automated/quickInstall/nodectlQInstallStart',
+                'automated/quickInstall/nodectlQInstallWelcomeBanner',
+                'automated/quickInstall/nodectlQInstallPrepare',
+                'automated/quickInstall/nodectlQInstallConfirm',
+                'automated/quickInstall/nodectlQInstallMigrate',
+                'automated/quickInstall/nodectlQInstallP12',
+                'automated/quickInstall/nodectlQInstallISections',
+                'automated/quickInstall/nodectlQInstallDeps',
+                'automated/quickInstall/nodectlQInstallBins',
+                'automated/quickInstall/nodectlQInstallISections2',
+                'automated/quickInstall/nodectlQInstallComplete',
+              ],
+            },
             {
               type: 'category',
               label: 'Installation Walk Through',
@@ -198,7 +221,8 @@ module.exports = {
         'resources/p12backup-mac',
         'resources/p12backup-win',        
         'resources/sshconfig',
-        'resources/p12v1v2-migrate',      
+        'resources/p12v1v2-migrate',  
+        'resources/nodectlNotes',    
       ],
     },
   ],

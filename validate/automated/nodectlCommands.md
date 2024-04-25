@@ -1755,6 +1755,7 @@ The `configure` command will offer a relatively detailed explanation of all conf
 | -a | None | enable advanced mode. | **optional** |
 | -e | None | enter directly into **edit** configuration mode for existing configurations. | **optional** |
 | -ep | None | enter directly into **edit profile** configuration mode for existing configurations. >v2.9.0 | **optional** |
+| -cb | None | automatically c)onfirm that we understand the location of the b)ackup and that it was backed up. *nodectl wants to make sure you know that there is a copy of your configuration on the Node for security purposes.* | **optional** |
 | -n | None | enter directly into **new** configuration mode. | **optional** |
   
 In new configuration mode, nodectl will offer you two (2) options
@@ -1789,8 +1790,62 @@ sudo nodectl configure -e
 ```
 sudo nodectl configure -a -e  
 ```  
+- Enter configurator directly to edit config options in detailed mode while confirming the backup location at the same time.
+```
+sudo nodectl configure -a -e -cb
+```  
 
+### install
+---
 
+The **`install`** command will build a new Node for you from a blank fresh new [VPS](/validate/setup-guides/).
+  
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :--------------------------------------: | :--: | :--- | :----: |
+| --normal | None | If this option is supplied, during the interactive installation process, nodectl will skip the request to utilize the `--quick-install` option and confirm a normal installation only. | **optional** |
+| --quick-install | None | If this option is supplied, during the interactive installation process, nodectl will skip the request to utilize the `--normal` option and confirm a quick-install installation only.  | **optional** |
+| --cluster-config | `mainnet`, `integrationnet`, `testnet`, `dor-metagraph-mainnet` | Setup your new Node to connect with one of the several pre-defined configurations. | **optional** |
+| --confirm | None | Auto confirm default options. | **optional** |
+| --override | None | Install nodectl over itself, do not remove existing files prior to installation. | **optional** |
+| --username | string | Setup your new Node with the supplied username verses the default username of `nodeadmin`. | **optional** |
+| --user-password | string | Setup your new Node with the following VPS username password. You will not be prompted for it during the installation. | **optional** |
+| --p12-name | string | Setup your new Node with the following p12 key store name, verses the default p12 name of `nodeadmin.p12`. | **optional** |
+| --p12-passphrase | string | Setup your new Node with the following p12 key store passphrase. You will not be prompted for it during the installation. | **optional** |
+| --p12-alias | string | Setup your new Node with the following p12 key store alias, verses the default alias of `nodeadmin-alias`. | **optional** |
+| --p12-destination-path | path-to-directory | Setup your new Node to place the newly created p12 key store in the fully qualified path location provided, verses the default location equal to `/home/<username>/tessellation/`.| **optional** |
+| --p12-migration-path | path-to-directory-and-file | Setup your installation to **migrate** in an existing p12 key store file. This should include the full path to the file and the file name | **optional** |
+
+See the [installation guide document(s)](http://localhost:3000/validate/automated/install/nodectlInstallIntro) for more details on this command.
+
+> #### Examples
+- Default installation
+```
+sudo nodectl install  
+```
+- Default normal installation
+```
+sudo nodectl install --normal  
+```
+- Default quick installation
+```
+sudo nodectl install --quick-install
+```
+- Default installation supplying the user password and p12 passphrase on the command line.
+```
+sudo nodectl install --user bob --password mypassword
+```  
+- Default quick install installation supplying the user password and p12 passphrase on the command line.
+```
+sudo nodectl install --quick-install --user bob --password mypassword
+``` 
+- Default quick install installation supplying the user, user password, p12 name, p12 alias, and p12 passphrase on the command line.
+```
+sudo nodectl install --quick-install --user bob --password mypassword --p12-name myp12name.p12 --p12-passphrase myp12passphrase --p12-alias myp12aliasname
+``` 
+- Default quick install installation supplying the user, user password, **existing p12 for migration**, and p12 passphrase on the command line.
+```
+sudo nodectl install --quick-install --user bob --password mypassword  --p12-passphrase myp12passphrase --p12-alias myp12aliasname --p12-migration-path /home/ubuntu/myp12migrationfile.p12
+```
 
 
 ### upgrade  
