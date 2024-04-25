@@ -1,6 +1,6 @@
 ---
-title: New Install - Disable Root Access
-hide_table_of_contents: false
+title: New Install - Updates
+hide_table_of_contents: true
 ---
 <intro-end />
 
@@ -16,9 +16,12 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-The SSH actions will complete.
+nodectl will perform an update.  Because we manually handled an update and upgrade earlier in this guide, this will be a quick step.
 
 <MacWindow>
-Reloading [SSH] daemon......................... complete  <br />
-Username/Password authentication .............. disabled<br />
+  ------- * UPDATE DISTRIBUTION * --------<br />
+<br />
+  Updating the Debian OS system ................. complete<br />
 </MacWindow>
+
+

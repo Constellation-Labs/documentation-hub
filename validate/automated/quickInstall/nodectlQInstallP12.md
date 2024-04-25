@@ -64,7 +64,7 @@ We need to create passphrase for our p12 file.<br />
 We will confirm the passphrase.
 
 <MacWindow>
->> Please confirm p12 passphrase:<br />
+>> Please confirm your p12 private key's passphrase:<br />
 </MacWindow>
 
 

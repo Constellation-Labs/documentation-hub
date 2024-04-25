@@ -20,15 +20,18 @@ Once the service and configuration files have completed, the screen will clear
 and you will receive a successful installation message; as well as, post installation instructions.
 
 <MacWindow>
-  ========================================<br /> 
-  =   CONSTELLATION NETWORK HYPERGRAPH   =<br /> 
-  =         INSTALLATION COMPLETE        =<br /> 
-  ========================================<br /> 
-  @netmet72<br /> 
+========================================<br />
+=&nbsp;&nbsp;&nbsp;CONSTELLATION NETWORK HYPERGRAPH&nbsp;&nbsp;&nbsp;=<br />
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INSTALLATION REQUEST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TESSELLATION VALIDATOR NODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br />
+========================================<br />
+Code Name: Princess Warrior<br /> 
 <br /> 
+  ------ * INSTALLATION COMPLETE * ------- <br />  
 <br /> 
-  CONGRATULATIONS!<br />  
-  Installation is complete<br /> 
+CONGRATULATIONS!<br />
+Below you will find your nodeid which was derived from your p12 file<br />
+Please report this nodeid to administrative staff to gain access to the network via the access list permissions.<br />
 </MacWindow>
 
 :::info p12 Migration

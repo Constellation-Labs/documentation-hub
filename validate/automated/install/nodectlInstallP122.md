@@ -26,7 +26,7 @@ If you are **migrating** an existing **[p12 private key file](/validate/automate
 *MainNet 1.0 Node Operators, this is **not** your MainNet 1.0 Node alias; rather, it is your **wallet's** alias*
 :::
 
-Constellation Network requires that you provide an alias for your `p12 file`.  This alias is important, and should also not be forgotten.  
+Constellation Network requires that you provide an alias for your `p12 file`.  This alias is important, and should be added to your [notes](/validate/resources/nodectlNotes) and not be forgotten.  
 
 <MacWindow>
   Please create a simple name to help you remember your<br />
@@ -41,4 +41,4 @@ Write your alias down in a safe location.
 Generating p12 [nodeadmin-node.p12] ........... completed   
 </MacWindow>
 
-The installation will now move to the final stages of the installation.
+The installation will now move to the next stage of the installation.

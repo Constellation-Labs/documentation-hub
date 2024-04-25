@@ -53,30 +53,28 @@ For the purposes of this tutorial, we will be joining the MainNet environment.
 If you are joining the IntegrationNet environment, you can substitute any references to MainNet with IntegrationNet.
 :::
 
-To accept this choice, you will hit the <kbd>2</kbd> key on your keyboard.  You will **NOT** be required to hit <kbd>enter</kbd> afterwards.
-
-
 <MacWindow>
------- * Installation Starting * -------<br />
+ ------ * INSTALLATION STARTING * ------- <br />
 <br />
-For a new installation, the Node Operator can choose to build this
-Node based on various Metagraph pre-defined configurations.<br />
+  For a new installation, the Node Operator can choose to build this Node based on various network clusters or Metagraph pre-defined configurations.<br />
 <br />
-If the Metagraph this Node is being built to participate on is not
-part of this list, it is advised to choose MainNet as the default to complete the installation.<br />
+  If the network cluster or Metagraph this Node is being built to participate on is not part of this list, it is advised to choose mainnet as the default to complete the installation.<br />
 <br />
-The MainNet configuration template will only be a placeholder to allow this Node to install all required components, to ensure successful implementation of this utility. If a pre-defined Metagraph listed above is not the ultimate role of this future Node, following a successful installation, the next steps should be for you to refer to the Metagraph Administrators of the Metagraph you are expected to finally connect with. The Administrator will offer instructions on how to obtain the required configuration file for said Metagraph.<br />
+  The MainNet configuration template will only be a placeholder to allow this Node to install all required components, to ensure successful implementation of this utility. If a pre-defined network cluster or Metagraph listed above is not the ultimate role of this future Node, following a successful installation, the next steps should be for you to refer to the Metagraph Administrators of the Metagraph you are expected to finally connect with. The Administrator will offer instructions on how to obtain the required configuration file for said Metagraph.<br />
 <br />
-Please key press number of a Metagraph configuration below:<br />
+  Please choose which Hypergraph or Metagraph you would like to install on this server:<br />
 <br />
-Check permissions & versioning ................ running<br />                    
+HYPERGRAPH or METAGRAPH<br />
+predefined choices<br />
+  ------------------------------------------<br />
+  1) mainnet [HyperGraph]<br />
+  2) integrationnet [HyperGraph]<br />
+  3) testnet [HyperGraph]<br />
+  4) dor-metagraph-mainnet [Metagraph]<br />
 <br />
-* PLEASE CHOOSE METAGRAPH TO INSTALL * <br />
+  Q)uit<br /> 
 <br />
-  1) integrationnet <br />
-  2) mainnet <br />
-  3) testnet <br />
-  Q)uit <br />
-<br />
-  KEY PRESS an option<br />
+  KEY PRESS an option
 </MacWindow>
+
+To accept this choice, you will hit the <kbd>1</kbd> key on your keyboard.  You will **NOT** be required to hit <kbd>Enter</kbd> afterwards.

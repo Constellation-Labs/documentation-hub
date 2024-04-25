@@ -24,6 +24,7 @@ Before we continue with the quick install, we should have:
 - Logged into your Node as your default user (varies dependent on cloud provider)
   - [Access via Mac](/validate/resources/accessMac)
   - [Access via Windows](/validate/resources/accessWin) 
+  - You can also refer to the `--normal` installation guide for more details that might transpire while you are connecting to your Node for the first time.  Remember to return this documentation upon completion of review of those [document pages](/validate/automated/install/nodectlInstallAccess) and review the [access guide](/validate/automated/install/nodectlInstallAccess); as well as, read the [apply updates](/validate/automated/install/nodectlInstallUpdate) guide.
 - Have and tested `sudo` access.
   - Test `sudo` access by issuing a simple command with `sudo`:
 

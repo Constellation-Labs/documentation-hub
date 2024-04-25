@@ -58,4 +58,8 @@ Since we are not doing any special customization to our core services on this VP
 *Advanced users can handle this as they wish, as this does not affect how the Node will run.*.
 :::
 
+#### Quick Installer
+
+If you reached this documentation from the quick installation guide, you can return quick install guide by clicking [here](/validate/automated/quickInstall/nodectlQInstallPrep#preparation-assumptions)
+
 

@@ -93,4 +93,8 @@ You may most likely see:
   - admin
   - root
 
-Throughout the rest of this documentation, you should replace the name `ubuntu` with the **user you have identified above**.  
+Throughout the rest of this documentation, you should replace the name `ubuntu` with the **user you have identified above**.
+
+#### Quick Install
+
+If you reached this documentation from the quick installation guide, you should continue to the next section of the normal installation to apply updates.  Alternatively, you can return the quick install guide by clicking [here](/validate/automated/quickInstall/nodectlQInstallPrep#preparation-assumptions)
