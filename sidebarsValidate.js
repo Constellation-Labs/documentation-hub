@@ -21,6 +21,7 @@ module.exports = {
         'validator/vpsExplained',
         'validator/trustLabels',
         'validator/p12',
+        'validator/nodectlNotes',
         {
           type: 'category',
           label: 'SSH Keys',
