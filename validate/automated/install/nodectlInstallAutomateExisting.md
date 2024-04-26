@@ -45,7 +45,17 @@ You can exit here, backup important files and use the uninstall first or continu
 <br />
 continue? [n]:<br />
 </MacWindow>
+<p>
 You can either choose to exit here and perform an uninstall or allow nodectl to continue anyway, at your own risk.
+</p>
+<p>
+nodectl will remove the existing data
+</p>
+<MacWindow>
+------- * HANDLE EXISTING DATA * ------- <br />
+<br />
+Clean up old configuration data ............... complete <br />
+</MacWindow>   
 </Collapsible>
 
 If necessary you can access the nodectl [uninstall guide](/validate/automated/uninstall/index).

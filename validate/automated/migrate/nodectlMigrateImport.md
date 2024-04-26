@@ -55,4 +55,4 @@ Otherwise if we have already uploaded our p12 key store file, we can hit the <kb
 
 The next step is to return to the new installation instructions. Continue to follow the instructions, step by step, until you reach the next *blue box* to return here.
 
-**<kbd>[CONTINUE NODECTL INSTALLATION](/validate/automated/install/nodectlInstallNonInteractive)</kbd>**
+**<kbd>[CONTINUE NODECTL INSTALLATION](/validate/automated/install/nodectlInstallAutomateExisting)</kbd>**
