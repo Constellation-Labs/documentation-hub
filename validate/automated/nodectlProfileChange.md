@@ -114,7 +114,7 @@ Until we are more comfortable with the configurator and all the particular setti
   =                NODECTL               =<br />
   =           CONFIGURATION TOOL         =<br />
   ========================================<br />
-  @netmet72<br />
+   Code Name: Princess Warrior<br />
 <br />
   Welcome to the nodectl configuration tool.<br />
 <br />

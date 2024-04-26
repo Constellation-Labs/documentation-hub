@@ -25,20 +25,17 @@ Do not worry, nodectl will take care of all the technical details for you!
 You can read the informational notice from the installer and press any key to continue.
 
 <MacWindow>
-  - * TESSELLATION DYNAMIC STRUCTURES * --<br />
+IMPORTANT <br />
 <br />
-   IMPORTANT <br />
+nodectl installation will install the new Node with default network variables<br />
 <br />
-  nodectl installation will install the new Node with default Constellation
-  Network DAG Global Layer0 and DAG Layer1 metagraph settings.<br />
+Network Cluster: hypergraph -> mainnet<br />
 <br />
-  After installation is complete, the Node Administrator may alter the nodectl
-  configuration to modify nodectl to connect to the metagraph of
-  choice via the command:<br />
+After installation is complete, the Node Operator may alter the nodectl configuration to allow connection to the network cluster or Metagraph of choice via the command:<br />
 <br />
-  sudo nodectl configure<br />
+sudo nodectl configure<br />
 <br />
-  Press any key to continue<br />
+Press any key to continue<br />
 </MacWindow>
 
 ### Create structures

@@ -142,7 +142,7 @@ We **do** want to migrate so we will say **`y`** here.
   =              VERSION 2.0             =<br />
   =        Configuration Migration       =<br />
   ========================================<br />
-  @netmet72<br />
+   Code Name: Princess Warrior<br />
 <br />
   During program initialization, a configuration file was found
   missing on this server/Node.<br />
@@ -208,7 +208,7 @@ We can confirm we read the statement with a **`y`**.
   =              VERSION 2.0             =<br />
   =        Configuration Migration       =<br />
   ========================================<br />
-  @netmet72<br />
+   Code Name: Princess Warrior<br />
 <br />
   <br />
   nodectl v2 introduces the ability to use different Node wallets (p12 private keys)
@@ -337,7 +337,7 @@ The next step is to upgrade our Node to complete all the backend required detail
   =            UPGRADE REQUEST           =<br />
   =      TESSELLATION VALIDATOR NODE     =<br />
   ========================================<br />
-  @netmet72<br />
+   Code Name: Princess Warrior<br />
 <br />
   Are you sure you want to continue this upgrade? [n]:<br />   
 </MacWindow>

@@ -66,6 +66,24 @@ nodectl attempts to be as smart as possible to identify default accounts from ot
  - Google Cloud Provider (GCP)
 :::
 
+### Disable root
+
+With the successful completion of our connection tests, we are assured we are able to access our Node via our `nodeadmin` users.  We can now safely allow nodectl to disable the root user's remote access.  
+
+We will only use the root user by connecting through `nodeadmin` and then switching to the `root` user as necessary via the `sudo` command.
+
+:::danger Advanced Concerns
+Do not worry if some of this information seems advanced.  At the end of the day, you should not need to access the `root` user to run your Node.  
+
+In the event you have any issues, you can access Constellation Network's Discord channel, to request help and advice.
+
+We are confident you can simply follow the instructions to build your Node as recommended.
+:::
+
+We should say <kbd>y</kbd> at the prompt below.
+
+nodectl will default to <kbd>n</kbd> for the protection of user, as this is an advanced security measure. We will **not** accept the default option.
+
 We will enter say <kbd>y</kbd> (or hit <kbd>enter</kbd> key), for the next question involving special accounts.
 
 <MacWindow>
@@ -94,6 +112,19 @@ nodectl will begin the process of disabling the special account's SSH access, an
 Disabling [SSH] for root, ubuntu and/or admin.. disable<br />
 </MacWindow>
 
-### Test
+### Password Authentication
+
+In most situations, especially on cloud provider VPS systems where SSH access is the main way to access your VPS, you should disable password authentication.  This will help prevent against brut force password attacks and other attack vectors.
+
+Recommendation is to choose `y` here.
+
+<MacWindow>
+Recommended  During the installation SSH was chosen.<br />
+Do you want to disable username/password based authentication on this Node at the Operating System level to improve security?<br />
+<br />
+Disable username/password access? [y]:<br />
+</MacWindow>
+
+### Next up access testing
 
 In the next section, we will pause to verify some access tests before continuing the installation.

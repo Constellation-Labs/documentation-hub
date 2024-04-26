@@ -30,42 +30,47 @@ Install the packages that allow us to use our Node (and nodectl).
 - Constellation core protocol binaries
 
 <MacWindow>
-  ------- * Update Distribution * --------<br />
-<br />
-  Updating the Debian OS system ................. complete<br />             
-  Removing old configuration files .............. complete<br />                  
-<br />                                                                              
-<br />
   ------- * SYSTEM REQUIREMENTS * --------<br />
 <br />
-  Installing dependency [haveged] ............... complete <br />                   
+  Installing dependency [haveged] ............... complete <br />
+  openjdk-11-jdk may take a few minutes to install<br />                     
   Installing dependency [default-jdk] ........... complete<br /> 
   Installing dependency [vim] ................... complete<br />
   Installing dependency [curl] .................. complete<br />
   Installing dependency [wget] .................. complete<br />  
   Installing dependency [tree] .................. complete<br /> 
-  backup files .................................. complete<br />                     
-  Fetch Tessellation binary [cl-keytool.jar] .... complete<br />                     
-  Fetch Tessellation binary [cl-wallet.jar] ..... complete<br />                    
-  Fetch Tessellation binary [cl-node.jar] ....... complete<br />                     
-  Fetch Tessellation binary [cl-dag-l1.jar] ..... complete<br />                     
-  Fetching cluster seed file [mainnet->dag-l0] .. complete<br />                     
-  Fetching cluster seed file [mainnet->dag-l1] .. disabled/skipped<br />             
-  Installing Tessellation binaries .............. complete<br />                     
-  Enabling OS swap .............................. completed<br />                    
-  System Requirements ........................... complete<br /> 
-  Press any key to continue<br />
+  backup files .................................. complete<br />  
 </MacWindow>
 
-The `dag-l1` or `intnet-l1` profile (*or layer1 profile name if not MainNet, IntegrationNet or TestNet*) will not require a seed list download, therefor you will see `disabled/skipped` when the file download attempt it `skipped` because it has been `disabled` in the configuration file.
+### Binaries
 
-Press any key to continue to the next step of the installation.
+We will see our binary java files necessary to run our Constellation Node download.
+
+This will also include the seed list file(s) necessary to access the cluster.
 
 <MacWindow>
-  Press any key to continue<br />
+  ------- * DOWNLOADING BINARIES * -------<br />
+  Downloading version ........................... v2.3.2<br /> 
+<br /> 
+  Fetch [cl-keytool.jar -> global] .............. completed<br /> 
+  Fetch [cl-wallet.jar -> global] ............... completed<br /> 
+  Fetch [cl-node.jar -> dag-l0] ................. completed<br />
+  Fetch [cl-dag-l1.jar -> dag-l1] ............... completed<br /> 
+  Fetch [mainnet-seedlist -> dag-l0] ............ completed<br /> 
+  Installing Tessellation binaries .............. complete<br /> 
 </MacWindow>
 
-### Swap Setup
+### Handle Swap File
+The swap file will be created to help with memory constraints at the OS level.
+
+In the event your Node already has a swap file enabled/created, you may see a `already exists` status instead of a `completed` status.
+
+<MacWindow>
+  Enabling OS swap .............................. completed<br />                    
+  System Requirements ........................... complete<br /> 
+<br />
+  Press any key to continue<br />
+</MacWindow>
 
 Continuing the system requirements, nodectl will create and setup your swap file.  This step sets up your Node to have an extra method to properly manage memory.  The swap will utilize disk usage when memory access is required but not available.  This is a common setup for Apple, Windows or Linux systems.
 
@@ -79,4 +84,12 @@ Continuing the system requirements, nodectl will create and setup your swap file
 
 <MacWindow>
   Enabling OS swap [swappiness].................. complete<br />
+</MacWindow>
+
+### Continue Installation
+
+Press any key to continue to the next step of the installation.
+
+<MacWindow>
+  Press any key to continue<br />
 </MacWindow>

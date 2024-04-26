@@ -117,7 +117,7 @@ sudo nodectl help
 <MacWindow>
   NODECTL INSTALLED: [v2.7.1]<br />
   TESSELLATION INSTALLED: [v2.0.0-alpha.6]<br />
-  @netmet72<br />
+   Code Name: Princess Warrior<br />
   ----------------------<br />
 </MacWindow>
 

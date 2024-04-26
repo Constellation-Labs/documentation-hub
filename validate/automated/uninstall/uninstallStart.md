@@ -1,5 +1,5 @@
 ---
-title: New Install - Disable Root Access
+title: New Install - Uninstall Start
 hide_table_of_contents: false
 ---
 <intro-end />
@@ -12,13 +12,15 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>MainNet 2.0 Automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl uninstall a nodectl installation"
   />
 </head>
 
-The SSH actions will complete.
+We begin the uninstall process by issuing the `uninstall` command.
 
+```
+sudo nodectl uninstall
+```
 <MacWindow>
-Reloading [SSH] daemon......................... complete  <br />
-Username/Password authentication .............. disabled<br />
+nodeadmin@Constellation-Node:~# sudo nodectl uninstall
 </MacWindow>

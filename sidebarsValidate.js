@@ -87,7 +87,7 @@ module.exports = {
             'automated/nodectlQuickStart',
             {
               type: 'category',
-              label: 'Quick Install Walk Through',
+              label: 'Quick Install Guide',
               items: [
                 'automated/quickInstall/nodectlQInstallIntro',
                 'automated/quickInstall/nodectlQInstallPrep',
@@ -107,7 +107,7 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Installation Walk Through',
+              label: 'Installation Guide',
               items: [
                 'automated/install/nodectlInstallIntro',
                 'automated/install/nodectlInstallRequire',
@@ -115,9 +115,13 @@ module.exports = {
                 'automated/install/nodectlInstallAccess',
                 'automated/install/nodectlInstallUpdate',      
                 'automated/install/nodectlInstallDownload',
-                'automated/install/nodectlInstallInstall', 
+                'automated/install/nodectlInstallInstall',
+                'automated/install/nodectlInstallQi',
+                'automated/install/nodectlInstallInstall2', 
                 'automated/install/nodectlInstallEnv',
-                'automated/install/nodectlInstallAskMigrate', 
+                'automated/install/nodectlInstallAskMigrate',
+                'automated/install/nodectlInstallAutomateExisting', 
+                'automated/install/nodectlInstallUpdate2', 
                 'automated/install/nodectlInstallNonInteractive',
                 'automated/install/nodectlInstallUser',   
                 'automated/install/nodectlInstallSsh',       
@@ -126,6 +130,7 @@ module.exports = {
                 'automated/install/nodectlInstallDyn', 
                 'automated/install/nodectlInstallP12',
                 'automated/install/nodectlInstallP122',
+                'automated/install/nodectlInstallEncryption',
                 'automated/install/nodectlInstallServices',
                 'automated/install/nodectlInstallComplete',
                 'automated/install/nodectlInstallCongrats',
@@ -133,7 +138,7 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Installation with p12 Migration Walk Through',
+              label: 'Installation with p12 Migration Guide',
               items: [
                 'automated/migrate/nodectlMigrate',
                 'automated/migrate/nodectlMigrateHowTo',
@@ -143,6 +148,16 @@ module.exports = {
                 'automated/migrate/nodectlMigrateImport',
                 'automated/migrate/nodectlMigrateImport2',
                 'automated/migrate/nodectlMigrateComplete',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Uninstall Guide',
+              items: [
+                'automated/uninstall/index',
+                'automated/uninstall/uninstallStart',
+                'automated/uninstall/uninstallConfirm',
+                'automated/uninstall/uninstallBegin',
               ],
             },
           ],
@@ -155,7 +170,7 @@ module.exports = {
             'automated/upgrade/nodectlUpgradeQS',
             {
               type: 'category',
-              label: 'Upgrade Walk Through',
+              label: 'Upgrade Guide',
               items: [
                 'automated/upgrade/nodectlUpgradeIntro',
                 'automated/upgrade/nodectlUpgradeStart',

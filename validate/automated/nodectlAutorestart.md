@@ -73,7 +73,7 @@ sudo nodectl configure
   =                NODECTL               =<br />
   =           CONFIGURATION TOOL         =<br />
   ========================================<br />
-  @netmet72<br />
+   Code Name: Princess Warrior<br />
 <br />
   Welcome to the nodectl configuration tool.<br />
 <br />

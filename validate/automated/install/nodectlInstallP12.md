@@ -24,9 +24,9 @@ nodectl will now help us through the process of creating our Node's wallet and a
 
 We will start by providing a name of our `p12` file.
 
-#### What is a p12 file?
+### What is a p12 file?
 
-The `p12` file is a specially formatted private key file used by (but not created by) Constellation's Network's protocol.  
+The [p12](/validate/validator/p12) file is a specially formatted private key file used by (but not created by) Constellation's Network's protocol.  
 
 The p12 file is short for `PKCS#12`. It is a secure archive format containing a private key and its associated certificate chain. It is widely used in various applications (including Tessellation).
 
@@ -35,6 +35,8 @@ Simply put, the `p12` file is used store various private keys.
 You can now provide a file name for your `p12` file.  This can be any name that suits your needs.  As an added precaution, do not share this filename with anyone that shouldn't have a need to access the file.
 
 If you would like to keep the default name `nodeadmin-node.p12` **(*not recommended*)**, just hit the <kbd>enter</kbd> key.
+
+### Name our P12 Key Store
 
 <MacWindow>
   ========================================<br />
@@ -69,7 +71,7 @@ When creating your passphrase, **do not use**:
   Your password should contain capital & lowercase letters, numbers, special characters,
   but no single or double quotes.<br />
 <br />
-  This passphrase should be 10 in length.
+  This passphrase should be 10 in length.<br />
    WARNING  nodectl does not work well with section signs
   special characters.<br />
 <br />
@@ -87,7 +89,8 @@ When creating your passphrase, **do not use**:
   access to the Hypergraph."<br />
 </MacWindow>
 
-#### Passphrase entry
+Access your *secure** [notes](/validate/resources/nodectlNotes) and write down your p12 information.
+### Passphrase entry
 
 We can now provide a new unique passphrase for our p12 file.  
 
