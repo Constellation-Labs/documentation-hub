@@ -79,8 +79,8 @@ nodectl                        100%[============================================
 <br />
 No installation found<br />
 Creating log directory for nodectl<br />
-  VERSION        MAJOR          MINOR          PATCH <br />                                                                   
-  v2.13.0        2              13             0<br />           
+  VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAJOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MINOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATCH <br />                                                                   
+  v2.13.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br />           
 <b>ubuntu</b>@ip-172-31-90-241:~$ <br />
 </MacWindow>
 
