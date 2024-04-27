@@ -40,6 +40,34 @@ If the former, you can hit `2` and then enter in the fully qualified location of
   KEY PRESS an option<br />
 </MacWindow>
 
+### Warning Message
+
+In the event that nodectl is unable to locate your [p12](/validate/validator/p12) file, make sure you properly have it uploaded ([Mac](/validate/resources/p12backup-mac) or [Windows](/validate/resources/p12backup-win)).
+
+You may choose option 2 from the menu 👆 above for to `input manual entry`.
+
+<MacWindow>
+ WARNING  Unable to location existing p12 files on this VPS.
+</MacWindow>
+
+If you do not receive a warning, you can skip this section and [continue back to the nodectl installation](/validate/automated/install/nodectlInstallServices), until the end of the installation.
+
+At the request for a manual entry, we can enter the fully qualified path to your p12 key store.
+
+### Manual P12 Entry
+
+<MacWindow>
+  a) to abort<br />
+  Please enter full path including p12 file key:<br />
+</MacWindow>
+
+If you enter in <kbd>a</kbd>+<kbd>Enter</kbd> the p12 migration will be aborted, and nodectl will continue the installation creating a **new** p12.
+
+:::warning CANCEL IMPORT 
+If you choose the <kbd>a</kbd> option, the p12 import will be cancelled and the installation will continue.  nodectl will create a new p12 key store.
+:::
+
+### Continue
 You can now return to the installation documentation and follow the instructions until you reach the end.
 
 **<kbd>[CONTINUE NODECTL INSTALLATION](/validate/automated/install/nodectlInstallServices)</kbd>**

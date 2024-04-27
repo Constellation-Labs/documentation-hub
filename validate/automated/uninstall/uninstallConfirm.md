@@ -28,7 +28,7 @@ This is permanent, please make sure you truly want to uninstall your Node
   WARNING  This will attempt to remove all aspects of this Constellation Network Node.<br />
 <br />
   Including:<br />
-&nbsp;&nbsp;&nbsp;- All p12 files<br />
+&nbsp;&nbsp;&nbsp;- All p12 files*<br />
 &nbsp;&nbsp;&nbsp;- Constellation Binaries<br />
 &nbsp;&nbsp;&nbsp;- Backups<br />
 &nbsp;&nbsp;&nbsp;- Configurations<br />
@@ -50,6 +50,7 @@ This is permanent, please make sure you truly want to uninstall your Node
   nodectl will not remove SSH keys and non-specific Constellation applications, these will
   need to be done manually.<br />
   This execution cannot be undone.<br />
+  *You will be offered the option to backup the p12 files, during uninstallation.<br />
 </MacWindow>
 
 We will need to type in `CONSTELLATION` and then hit <kbd>Enter</kbd> to begin the process. 
