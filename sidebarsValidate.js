@@ -170,7 +170,18 @@ module.exports = {
             'automated/upgrade/nodectlUpgradeQS',
             {
               type: 'category',
-              label: 'Upgrade Guide',
+              label: 'Upgrade nodectl Guide',
+              items: [
+                'automated/upgrade_nodectl/index',
+                'automated/upgrade_nodectl/begin',
+                'automated/upgrade_nodectl/confirm',
+                'automated/upgrade_nodectl/upgrade',
+
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Upgrade Node Guide',
               items: [
                 'automated/upgrade/nodectlUpgradeIntro',
                 'automated/upgrade/nodectlUpgradeStart',
@@ -192,8 +203,6 @@ module.exports = {
                 'automated/upgrade/nodectlUpgradeComplete', 
               ],
             },
-            //'automated/nodectlUpgradePath',
-            //'automated/nodectlMigrateV1',
           ],
         },
         {
