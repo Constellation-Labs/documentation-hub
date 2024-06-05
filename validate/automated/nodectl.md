@@ -42,11 +42,11 @@ The succeeding documentation will describe the features behind nodectl and help 
 ### nodectl operations
 
 <DocsCards>
-  <DocsCard header="Upgrade" href="/validate/automated/nodectlUpgrade" img="/img/home/core-concepts.jpg">
+  <DocsCard header="Upgrade" href="/validate/automated/upgrade/nodectlUpgradeQS" img="/img/home/core-concepts.jpg">
     <p>Upgrade nodectl on an existing Node.</p>
   </DocsCard>
 
-  <DocsCard header="Upgrade Concepts" href="validate/automated/upgrade/nodectlUpgradeConcepts" img="/img/home/community.jpg">
+  <DocsCard header="Upgrade Concepts" href="/validate/automated/upgrade/nodectlUpgradeConcepts" img="/img/home/community.jpg">
     <p>Concepts of different upgrade mechanisms.</p>
   </DocsCard>
 
@@ -76,13 +76,13 @@ The existing Node is in production; however, you would like to use the ephemeral
 
 This will require transferring your Node's wallet ([p12](/validate/automated/nodectlInstall#what-is-a-p12-file) file) from the existing (old) Node to your new Node.
 
-Start [here](/validate/automated/nodectlInstallMigrate).
+Start [here](/validate/automated/migrate/nodectlMigrate).
 
 ### Upgrade nodectl on your Node
 
 When you have nodectl up and running and a new version of nodectl is released.  The following documentation will help the Node Operator navigate with a step-by-step guide on how to upgrade.
 
-Start [here](/validate/automated/nodectlUpgrade).
+Start [here](/validate/automated/upgrade/nodectlUpgradeQS).
 
 ### Upgrade your Node from version 1 to version 2
 
