@@ -25,7 +25,7 @@ The following table defines the specifications required for a Node to work prope
 | --- | --- | --- |
 | vCPUs | 8 | A Node will require 8 virtual central processing units (vCPU) or physical CPUs to run on a bare metal system. |
 | Memory | 16Gb | A Node will need 7Gb for Layer0 and 3Gb or Layer1 |
-| Storage | 160Gb | A Node will be storing SnapShots |
+| Storage | 320Gb | A Node will be storing SnapShots |
 
 ### Software Requirements
 #### Linux Debian Based Operating System
