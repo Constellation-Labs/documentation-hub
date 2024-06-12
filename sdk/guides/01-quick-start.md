@@ -73,20 +73,23 @@ scripts/hydra -h
 USAGE: hydra <COMMAND>
 
 COMMANDS:
-  install           Installs a local framework and detaches project
-  install-template  Installs a project from templates
-  build             Build containers
-  start-genesis     Start containers from the genesis snapshot (erasing history) [aliases: start_genesis]
-  start-rollback    Start containers from the last snapshot (maintaining history) [aliases: start_rollback]
-  stop              Stop containers
-  destroy           Destroy containers
-  purge             Destroy containers and images
-  status            Check the status of the containers
-  remote-deploy     Remotely deploy to cloud instances using Ansible [aliases: remote_deploy]
-  remote-start      Remotely start the metagraph on cloud instances using Ansible [aliases: remote_start]
-  remote-status     Check the status of the remote nodes
-  update            Update Euclid
-  logs              Get the logs from containers
+  install                           Installs a local framework and detaches project
+  install-template                  Installs a project from templates
+  build                             Build containers
+  start-genesis                     Start containers from the genesis snapshot (erasing history) [aliases: start_genesis]
+  start-rollback                    Start containers from the last snapshot (maintaining history) [aliases: start_rollback]
+  stop                              Stop containers
+  destroy                           Destroy containers
+  purge                             Destroy containers and images
+  status                            Check the status of the containers
+  remote-deploy                     Remotely deploy to cloud instances using Ansible [aliases: remote_deploy]
+  remote-start                      Remotely start the metagraph on cloud instances using Ansible [aliases: remote_start]
+  remote-status                     Check the status of the remote nodes
+  update                            Update Euclid
+  logs                              Get the logs from containers
+  install-monitoring-service        Download the metagraph-monitoring-service (https://github.com/Constellation-Labs/metagraph-monitoring-service) [aliases: install_monitoring_service]
+  remote-deploy-monitoring-service  Deploy the metagraph-monitoring-service to remote host [aliases: remote_deploy_monitoring_service]
+  remote-start-monitoring-service   Start the metagraph-monitoring-service on remote host [aliases: remote_start_monitoring_service]
 ```
 
 #### Install Project
