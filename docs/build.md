@@ -19,10 +19,9 @@ import DocsCards from '@components/global/DocsCards';
 <intro-end />
 
 <DocsCards>
-  <DocsCard header="Build a Metagraph" href="/metagraphs" img="/img/home/state-channel.jpg">
-    <p>Explore metagraph development concepts and learn how to build custom applications on the Hypergraph.</p>
+  <DocsCard header="Metagraphs" href="/metagraphs" img="/img/home/state-channel.jpg">
+    <p>Learn about the core principles of metagraphs and their role within the Hypergraph network.</p>
   </DocsCard>
-
   <DocsCard header="Euclid SDK" href="/sdk" img="/img/home/community.jpg">
     <p>Build with Euclid, a powerful toolkit for metagraph development.</p>
   </DocsCard>

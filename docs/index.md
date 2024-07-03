@@ -40,11 +40,9 @@ import ThemedImage from '@theme/ThemedImage';
   <DocsCard header="Constellation Primer" href="/learn" img="/img/home/core-concepts.jpg">
     <p>Your Constellation crib sheet for high-level understanding of the Hypergraph network and its core components.</p>
   </DocsCard>
-
   <DocsCard header="Why Constellation?" href="/learn/basic-concepts/why-constellation" img="/img/home/community.jpg">
     <p>Learn about the benefits of building on Constellation Network.</p>
   </DocsCard>
-
   <DocsCard header="Explore Our Ecosystem" href="/learn/tools-resources/constellation-ecosystem" img="/img/home/community.jpg">
     <p>Discover products and services in Constellation's growing ecosystem.</p>
   </DocsCard>
@@ -52,10 +50,9 @@ import ThemedImage from '@theme/ThemedImage';
 
 ## Developer Guides
 <DocsCards>
-  <DocsCard header="Build a Metagraph" href="/metagraphs" img="/img/home/state-channel.jpg">
-    <p>Explore metagraph development concepts and learn how to build custom applications on the Hypergraph.</p>
+  <DocsCard header="Metagraphs" href="/metagraphs" img="/img/home/state-channel.jpg">
+    <p>Learn about the core principles of metagraphs and their role within the Hypergraph network.</p>
   </DocsCard>
-
   <DocsCard header="Euclid SDK" href="/sdk" img="/img/home/community.jpg">
     <p>Build with Euclid, a powerful toolkit for metagraph development.</p>
   </DocsCard>
