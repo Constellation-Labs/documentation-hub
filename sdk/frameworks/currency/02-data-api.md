@@ -170,4 +170,4 @@ For example, a simple endpoint that returns all "addresses" from state might loo
   }
 ```
 
-A full example can be seen in the [DataAPI example IoT project](https://github.com/Constellation-Labs/metagraph-examples/blob/main/examples/DataApi-Water-And-Energy-Usage/template/modules/data_l1/src/main/scala/com/my/currency/data_l1/Main.scala#L56). 
+A full example can be seen in the [DataAPI example IoT project](https://github.com/Constellation-Labs/metagraph-examples/tree/main/examples/water-and-energy-usage). 
