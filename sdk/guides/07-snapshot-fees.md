@@ -11,23 +11,21 @@ The Hypergraph charges fees for validating and storing metagraph snapshots, ensu
 
 Metagraphs have the autonomy to choose whether to charge their end users directly, impose fees for specific data types, or even operate without user fees. They can also control which data is included in their snapshots, managing costs and determining the privacy level of their network.
 
-Fees are calculated based on the size and computational cost of processing snapshots. Currently, all snapshots have a computational cost of 1, which means that snapshot size is the only active factor in determining snapshot fee cost. 
-
-Fees are deducted from an "owner wallet," designated by a majority of the metagraph's nodes. Staked funds, stored in a unique "staking wallet," can be used to reduce snapshot fees. These wallets must be unique to each metagraph and cannot be shared.
-
-For detailed information on network fees, refer to the [Network Fees Litepaper](/learn/tools-resources/network-fees-litepaper).
+Fees are calculated based on the size and computational cost of processing snapshots. Currently, all snapshots have a computational cost of 1, which means that snapshot size is the only active factor in determining snapshot fee cost. For detailed information on network fees, refer to the [Network Fees Litepaper](/learn/tools-resources/network-fees-litepaper).
 
 ## Owner and Staking Wallets
 
-The owner and staking wallets are designated by signing a message to prove ownership of each wallet and creating what’s known as a Currency Message to send to the metagraph which will include the new wallet designations in its metagraph snapshot before sending to the gL0 for inclusion in the global snapshot. Owner and staking wallets can be changed at any time using the same process. 
+The Global L0 deducts snapshot fees from an "owner wallet," which is designated by a majority of metagraph validators and registered with the gL0. An additional wallet, known as the "staking wallet," can also be designated to reduce fees based on its balance at the time a snapshot is processed. These two wallets can be the same, but the addresses used for either the owner or staking wallets must be globally unique on the Hypergraph.
 
-:::note Assigning the owner wallet is required
+The owner and staking wallets are designated by signing a message to prove ownership of each wallet and creating a "Currency Message" for the metagraph. This Currency Message must be signed by a majority of the L0 nodes of the metagraph, then included in a metagraph snapshot to be sent to the gL0 for registration and inclusion in a global snapshot. Owner and staking wallets can be changed at any time using the same process.
+
+:::note Assigning an owner wallet is required
 Starting in Tessellation v2.7.0, the Hypergraph will reject snapshots sent by metagraphs that do not designate an owner wallet or if the designated wallet does not have sufficient funds to cover the cost of the current snapshot’s fees. For this reason, assigning an owner wallet is required. Assigning a staking wallet is optional. 
 :::
 
 ### Assigning Metagraph Wallets with Euclid
 
-Euclid simplifies the process of assigning both the owner and staking wallets with a few simple commands ([v0.11.0](https://github.com/Constellation-Labs/euclid-development-environment/releases/tag/v0.11.0) or later). 
+Euclid simplifies the process of assigning both the owner and staking wallets with a few simple Hydra commands ([v0.11.0](https://github.com/Constellation-Labs/euclid-development-environment/releases/tag/v0.11.0) or later). 
 
 :::info Local builds
 Snapshot fees are turned off by default for local builds. Owner and staking details only need to be configured when deploying to MainNet or a public testnet (IntegrationNet, etc.).
