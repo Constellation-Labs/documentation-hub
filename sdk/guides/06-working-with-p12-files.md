@@ -39,7 +39,7 @@ This will create a .p12 file in the directory from which the command was execute
 ### Step 4: Repeat the Process
 Repeat steps 2 and 3 two more times to create a total of three custom p12 files. Remember to change the file name each time to avoid overwriting any existing files.
 
-## Finding your Node IDs
+## Finding Your Node IDs
 Your node ID is the public key of your wallet which will be stored as a p12 file. 
 
 :::caution
