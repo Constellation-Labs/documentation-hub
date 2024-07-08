@@ -45,6 +45,6 @@ The `.env` file in the root of the project contains defaults that work with the 
 
 ```tsx
 L0_GLOBAL_URL=http://localhost:9000
-L0_CURRENCY_URL=http://localhost:9100
-L1_CURRENCY_URL=http://localhost:9200
+L0_CURRENCY_URL=http://localhost:9200
+L1_CURRENCY_URL=http://localhost:9300
 ```

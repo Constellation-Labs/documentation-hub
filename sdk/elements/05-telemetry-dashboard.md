@@ -15,9 +15,21 @@ The dashboard provides a visual representation of network health and helps devel
 ## Installation
 
 The Telemetry dashboard is included as part of the Euclid Development Environment. Once the framework is installed, it can be started with Hydra.
-
+To start the dashboard, ensure that the `start_grafana_container` option is enabled in `euclid.json`:
+```json
+...
+  "docker": {
+    "start_grafana_container": true
+  }
+...
+```
+Then, you can initiate the system from genesis with the following command:
 ```bash
-scripts/hydra start --only monitoring
+scripts/hydra start-genesis
+```
+Alternatively, to start from a rollback, execute:
+```bash
+scripts/hydra start-rollback
 ```
 
 By default, Grafana runs on port 3000 and can be accessed at the following url
