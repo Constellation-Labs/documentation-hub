@@ -1,6 +1,6 @@
 ---
 title: Metagraph Monitoring Service
-slug: /elements/telemetry-dashboard
+slug: /elements/monitoring-service
 sidebar_label: Metagraph Monitoring Service
 hide_table_of_contents: false
 ---
