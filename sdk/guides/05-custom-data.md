@@ -10,7 +10,7 @@ hide_table_of_contents: false
 In this guide, we will walk through the Data API and a simple example implementation of an IoT use case. Complete code for this guide can be found in the [metagraph examples repo](https://github.com/Constellation-Labs/metagraph-examples) on Github. See the [Data API - Water and Energy Use](https://github.com/Constellation-Labs/metagraph-examples/tree/main/examples/DataApi-Water-And-Energy-Usage) example. 
 
 :::info Want more detail? 
-Looking for additional detail on the Data API and Data Application development? More information is available in [Data API](/sdk/frameworks/currency/data-api).
+Looking for additional detail on the Data API and Data Application development? More information is available in [Data Application](/sdk/metagraph-framework/data/overview).
 :::
 
 
@@ -100,6 +100,6 @@ You should see a response like this:
 ```
 
 ## Next Steps
-This brief guide demonstrates the ability to update and view on-chain state based on the Currency Framework's Data API. Detailed information about the framework methods used can be found in the [example README file](https://github.com/Constellation-Labs/metagraph-examples/blob/main/examples/DataApi-Water-And-Energy-Usage/README.md) and in comments throughout the code. Also see additional break downs of the application lifecycle methods in the [Data API](/sdk/frameworks/currency/data-api) section. 
+This brief guide demonstrates the ability to update and view on-chain state based on the Currency Framework's Data API. Detailed information about the framework methods used can be found in the [example README file](https://github.com/Constellation-Labs/metagraph-examples/blob/main/examples/DataApi-Water-And-Energy-Usage/README.md) and in comments throughout the code. Also see additional break downs of the application lifecycle methods in the [Data API](/sdk/metagraph-framework/data/overview) section. 
 
 

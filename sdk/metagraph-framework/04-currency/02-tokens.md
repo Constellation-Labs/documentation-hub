@@ -32,7 +32,7 @@ Once the metagraph state has progressed beyond the genesis snapshot (ordinal 1+)
 
 ### Rewards Function
 
-The rewards function is a function of the `CurrencyL0App` called during the [Metagraph Snapshot Lifecycle](./data-api/lifecycle-functions) which has the ability to create Reward transactions. Reward transactions are special minting transactions on the network which increase the circulating supply of the L0 token and distribute it to an address. 
+The rewards function is a function of the `CurrencyL0App` called during the [Metagraph Snapshot Lifecycle](../data/lifecycle-functions) which has the ability to create Reward transactions. Reward transactions are special minting transactions on the network which increase the circulating supply of the L0 token and distribute it to an address. 
 
  
 If we examine the function in `modules→l0→Main.scala`, we can see that the function is provided with the following context: 
@@ -58,8 +58,9 @@ See the [Reward API metagraph example](https://github.com/Constellation-Labs/met
 
 Fees charged by the metagraph fall into two categories: Token transaction fees, and fee transactions charged for custom data updates. These perform similar actions on different kinds of transactions but have unique ways that they need to be configured and managed. 
 
-::Note:: 
+:::note
 All fees collected on a metagraph are denominated in the metagraph’s token as the currency. Fees are not collected or managed in DAG. 
+:::
 
 ### Token Transaction Fees
 
@@ -71,14 +72,15 @@ L0 tokens share these default attributes of DAG but can customize the minimum re
 
 See the [Custom Transaction Validation](https://github.com/Constellation-Labs/metagraph-examples/tree/main/examples/custom-transaction-validation) repo for an example implementation.
 
-::Note::
-
+:::note
 Fees collected by the network are currently removed from circulation (in other words burned). While custom transaction fee behavior and especially destination wallets will likely be added in the future, it is possible to deposit fees into a specific wallet with current feature through a mint/burn mechanism. The `rewards` function can be used to mint the equivalent of the burned fees into a particular wallet by monitoring transactions in each snapshot.  
+:::
 
 ### Data Update Fees
 
-::Note::
+:::warning V2.9.0+
 FeeTransactions and associated functionality are currently set to be included in Tessellation v2.9.0. The description of functionality below applies only to that future version or later.
+:::
 
 Metagraphs have the ability to require custom fees for data payloads submitted through the `/data` endpoint on a DataApplication. These fees allow the application to charge fees for certain actions such as creating or updating resources (minting) or based on the resources required to handle the request. By default, fees are set to zero. 
 
