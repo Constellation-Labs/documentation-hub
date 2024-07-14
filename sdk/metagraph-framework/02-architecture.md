@@ -6,6 +6,8 @@ hide_table_of_contents: false
 
 <intro-end />
 
+[TODO] - Rewrite
+
 Data applications or metagraphs implementing the Data API are built on top of the Currency Framework. In a standard Currency Framework metagraph, the metagraph consists of 3 mL0 (metagraph L0) nodes and 3 cL1 (currency L1) nodes. Data applications build on top of this structure and introduce a 2nd L1 layer that runs in parallel with the currency L1 layer. A data application's minimal structure consists of 3 mL0 (metagraph l0) nodes, 3 dL1 (data L1) nodes, and optionally 3 cL0 (currency l0) nodes. Blocks produced by both the cL1 and dL1 nodes undergo consensus on the L0 layer and their data is grouped together within metagraph snapshots. 
 
 ## The DataApplication Instance

@@ -1,12 +1,12 @@
 ---
-title: Overview
+title: Data Application Overview
 sidebar_label: Overview
 hide_table_of_contents: false
 ---
 
 <intro-end />
 
-The Data API is a module available to Currency Framework developers to ingest and validate custom data types through their metagraphs. It's a set of tools for managing data interactions within the metagraph that is flexible enough to support a wide range of application use cases such as IoT, NFTs, or custom application-specific blockchains. 
+The Data Application (or Data API) is a module available to Currency Framework developers to ingest and validate custom data types through their metagraphs. It's a set of tools for managing data interactions within the metagraph that is flexible enough to support a wide range of application use cases such as IoT, NFTs, or custom application-specific blockchains. 
 
 :::info Example Code
 Want to jump directly to a code example? A number of examples can be found on Github under the [Metagraph Examples](https://github.com/Constellation-Labs/metagraph-examples/tree/main/examples) repo.
