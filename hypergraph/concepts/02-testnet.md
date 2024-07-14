@@ -6,7 +6,12 @@ hide_table_of_contents: false
 ---
 <intro-end />
 
+:::warning
+TestNet is an experimental environment for testing bleeding edge protocol features. As such, instability should be expected and bugs may be present. IntegrationNet should be prefered for testing network integrations as it is significantly more stable than TestNet. 
+:::
+
 Metagraph developers can use TestNet as an experimental environment designed for testing metagraphs against the newest protocol updates before they are rolled out to IntegrationNet. Unlike the more stable IntegrationNet, the TestNet provides a platform for developers to experiment with the latest features, enabling them to validate how their metagraphs will interact with upcoming changes.
+
 
 ## Connecting to TestNet
 The following urls can used to access TestNet: 
