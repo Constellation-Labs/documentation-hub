@@ -35,3 +35,9 @@
   to = "/validate"
   status = 301
   force = false
+
+[[redirects]]
+  from = "/sdk/frameworks/*"
+  to = "/sdk/metagraph-framework"
+  status = 301
+  force = false

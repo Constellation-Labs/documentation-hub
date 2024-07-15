@@ -7,11 +7,11 @@ hide_table_of_contents: false
 The Currency Framework can be installed in several ways:
 
 - **Euclid** (recommended): Install an empty project in Euclid SDK using the `hydra install` command. 
--  **giter8**: The Currency Framework is distributed as a g8 template project that can be customized for your organization. This template can be manually built using [giter8](http://www.foundweekends.org/giter8/). For more details, visit the [project repository](https://github.com/Constellation-Labs/currency.g8).
--  **metagraph-examples**: Explore ready-to-use examples of metagraph codebases in the [metagraph-examples repo](https://github.com/Constellation-Labs/metagraph-examples). These examples can also be installed automatically via `hydra` with the `install-template` command.
+- **metagraph-examples** (recommended): Explore ready-to-use examples of metagraph codebases in the [metagraph-examples repo](https://github.com/Constellation-Labs/metagraph-examples). These examples can also be installed automatically via `hydra` with the `install-template` command.
+- **giter8**: The Currency Framework is distributed as a g8 template project that can be customized for your organization. This template can be manually built using [giter8](http://www.foundweekends.org/giter8/). For more details, visit the [project repository](https://github.com/Constellation-Labs/currency.g8).
 
 :::note
-It is highly recommended to use the [Euclid Development Environment](https://chat.openai.com/sdk/elements/dev-environment) for installation and compilation processes. Euclid simplifies the generation of dependencies and your metagraph JARs. The following steps assume that you are using Euclid.
+It is highly recommended to use the [Euclid Development Environment](/sdk/elements/dev-environment) for installation and compilation processes. Euclid simplifies the generation of dependencies and your metagraph JARs. The following steps assume that you are using Euclid.
 :::
 
 ## Installation Using Giter8
@@ -31,8 +31,8 @@ Ensure Scala and giter8 are installed. Install giter8 with:
 Then, install the template using the specified tag:
 
 ```bash
-# replace v.2.3.3 with the version to install
-g8 Constellation-Labs/currency --tag "v2.3.3" 
+# replace v2.8.0 with the version to install
+g8 Constellation-Labs/currency --tag "v2.8.0" 
 ```
 
 ### Compiling the Project
