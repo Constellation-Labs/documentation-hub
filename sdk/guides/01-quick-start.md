@@ -26,43 +26,21 @@ Many developers can skip this step because these dependencies are already instal
 - [Node JS](https://nodejs.org/en)
 - [Docker](https://docs.docker.com/get-docker/)
 - [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+- [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 - [Scala 2.13](https://www.scala-lang.org/download/)
 - [Jq](https://jqlang.github.io/jq/download/)
 - [Yq](https://github.com/mikefarah/yq)
 
-#### Install build-essential
-```bash
-sudo apt update && sudo apt install build-essential
-```
 
-#### Install Rust & Cargo package manager
-```bash
-curl https://sh.rustup.rs -sSf | sh
-```
 
 #### Install argc
 ```bash
 cargo install argc
 ```
 
-#### Install Ansible
+#### Install Giter
 ```bash
-sudo apt update
-sudo apt install software-properties-common
-sudo add-apt-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible
-```
-
-#### Install jq
-```bash
-sudo apt-get install jq
-```
-
-#### Install yq
-```bash
-sudo add-apt-repository ppa:rmescandon/yq
-sudo apt update
-sudo apt install yq -y
+./cs install giter8
 ```
 
 #### Configure Docker
