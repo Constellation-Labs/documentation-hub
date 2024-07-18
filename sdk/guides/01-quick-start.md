@@ -40,7 +40,7 @@ cargo install argc
 
 #### Install Giter
 ```bash
-./cs install giter8
+cs install giter8
 ```
 
 #### Configure Docker
