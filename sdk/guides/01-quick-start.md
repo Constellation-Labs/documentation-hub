@@ -26,6 +26,7 @@ Many developers can skip this step because these dependencies are already instal
 - [Node JS](https://nodejs.org/en)
 - [Docker](https://docs.docker.com/get-docker/)
 - [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+- [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 - [Scala 2.13](https://www.scala-lang.org/download/)
 - [Jq](https://jqlang.github.io/jq/download/)
 - [Yq](https://github.com/mikefarah/yq)
@@ -39,7 +40,7 @@ cargo install argc
 
 #### Install Giter
 ```bash
-./cs install giter8
+cs install giter8
 ```
 
 #### Configure Docker

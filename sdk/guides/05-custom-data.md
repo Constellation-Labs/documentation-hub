@@ -100,6 +100,10 @@ You should see a response like this:
 ```
 
 ## Next Steps
+<<<<<<< HEAD
 This brief guide demonstrates the ability to update and view on-chain state based on the Metagraph Framework's Data Application layer. Detailed information about the framework methods used can be found in the [example README file](https://github.com/Constellation-Labs/metagraph-examples/blob/main/examples/DataApi-Water-And-Energy-Usage/README.md) and in comments throughout the code. Also see additional break downs of the application lifecycle methods in the [Data API](/sdk/metagraph-framework/data/overview) section. 
+=======
+This brief guide demonstrates the ability to update and view on-chain state based on the Currency Framework's Data API. Detailed information about the framework methods used can be found in the [example README file](https://github.com/Constellation-Labs/metagraph-examples/blob/main/examples/DataApi-Water-And-Energy-Usage/README.md) and in comments throughout the code. Also see additional break downs of the application lifecycle methods in the [Data API](/sdk/metagraph-framework/data/overview) section. 
+>>>>>>> main
 
 
