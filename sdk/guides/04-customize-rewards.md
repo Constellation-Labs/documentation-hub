@@ -13,7 +13,7 @@ In this guide, we will walk through two different methods of customizing rewards
 ## Understanding Rewards
 Rewards are emitted on every timed snapshot of the metagraph and increase the circulating supply of the metagraph token beyond the initial balances defined in genesis.csv. These special transaction types can be used to distribute your currency to fund node operators, or create fixed pools of tokens over time. 
 
-By default, no rewards are distributed by a metagraph using the Currency Framework which results in a static circulating supply. The rewards customizations described below create inflationary currencies - the rate of which can be controlled by the specific logic introduced. Similarly, a maximum token supply can easily be introduced if desired to prevent unlimited inflation.
+By default, no rewards are distributed by a metagraph using the Metagraph Framework which results in a static circulating supply. The rewards customizations described below create inflationary currencies - the rate of which can be controlled by the specific logic introduced. Similarly, a maximum token supply can easily be introduced if desired to prevent unlimited inflation.
 
 ### The Rewards Function
 The rewards function includes contextal information from the prior incremental update, including any data produced. Additionally, this function can include customized code capable of invoking any library function of your choice, allowing you to support truly custom use cases and advanced tokenomics structures. The following examples serve as a foundation for typical use cases, which you can expand upon and tailor to your project's needs.

@@ -13,7 +13,7 @@ The DataAPI encompasses two distinct types of states: `OnChainState` and `Calcul
 * `CalculatedState`: This state exists off-chain and is constructed based on incoming data. It is not stored on the blockchain
 
 ## Creating State Classes
-Each state described above represents functionality from the Data API. To create these states, you need to implement custom `traits` provided by the Data API:
+Each state described above represents functionality from the Data Application. To create these states, you need to implement custom `traits` provided by the Data Application:
 
 * The `OnChainState` must extend the `DataOnChainState` trait.
 * The `CalculatedState` must extend the `DataCalculatedState` trait.
