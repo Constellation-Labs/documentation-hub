@@ -1,5 +1,5 @@
 ---
-title: Currency Framework
+title: Currency Module
 sidebar_label: Overview
 hide_table_of_contents: false
 ---

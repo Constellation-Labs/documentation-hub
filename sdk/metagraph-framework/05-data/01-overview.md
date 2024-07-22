@@ -1,5 +1,5 @@
 ---
-title: Data Application Overview
+title: Data Application Module
 sidebar_label: Overview
 hide_table_of_contents: false
 ---
