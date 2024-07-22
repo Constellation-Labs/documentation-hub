@@ -41,5 +41,7 @@ See [State Management](./state-management) for more details.
 ### Querying Metagraph Data
 Metagraphs support the creation of custom HTTP endpoints on any of the metagraph layers. These endpoints are useful for allowing external access to calculated state or creating views of the chain data for users. 
 
+See [Custom Queries](/sdk/metagraph-framework/custom-endpoints) for more details. 
+
 ### Scheduled Tasks
 Scheduled tasks on a metagraph are possible through the concept of daemons, worker processes that run on a timer. These processes allow the metagraph codebase to react to time-based triggers rather than waiting for an incoming transaction or data update to react to. Daemons are especially useful for syncing behavior, such as fetching data from an external source on a regular schedule or pushing internal data externally on a regular basis. 
