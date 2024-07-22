@@ -10,7 +10,7 @@ import DocsCards from '@components/global/DocsCards';
 
 <intro-end />
 
-This guide will walk you through the process of setting up a minimal development environment using the Euclid Development Environment project, installing the Currency Framework, and launching clusters. The process should take less than an hour, including installing dependencies. 
+This guide will walk you through the process of setting up a minimal development environment using the Euclid Development Environment project, installing the Metagraph Framework, and launching clusters. The process should take less than an hour, including installing dependencies. 
 
 :::info Windows Support
 Primary development focus for this SDK is based on UNIX-based operating systems like macOS or Linux. With that being said, Windows support is available using the Windows Subsystem for Linux (WSL) to emulate a UNIX environment. The following guide has been tested in that environment and works wells. 

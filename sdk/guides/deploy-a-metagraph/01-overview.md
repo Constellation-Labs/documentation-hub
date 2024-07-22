@@ -26,7 +26,7 @@ Additionally, we offer a demonstration video showcasing this functionality, avai
 ## Architecture
 There are many kinds of potential deployment architectures possible for production deployments depending on project scaling needs. Here, we will focus on a deployment strategy that uses a minimal set of infrastructure components to simplify deployment and reduce cloud costs. For most projects, this offers a good starting point that can be expanded on later to meet specific project needs. 
 
-We will be deploying a [Currency Framework](/sdk/frameworks/currency/overview) metagraph using a [Data Application](/sdk/metagraph-framework/data/overview). This type of metagraph consists of 4 layers in total: 
+We will be deploying a [Metagraph Framework](/sdk/frameworks/currency/overview) metagraph using a [Data Application](/sdk/metagraph-framework/data/overview). This type of metagraph consists of 4 layers in total: 
 - **Global L0:** Hypergraph node on IntegrationNet or MainNet
 - **Metagraph L0:** Metagraph consensus layer 
 - **Currency L1:** Metagraph layer for accepting and validating token transactions

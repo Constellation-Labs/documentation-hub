@@ -6,7 +6,7 @@ hide_table_of_contents: false
 
 <intro-end />
 
-To effectively utilize the Data API within a Metagraph, it is essential to implement a variety of lifecycle functions. These functions are critical for the proper functioning of the Metagraph and are located within the `l0` and `data-l1` modules. Specifically, these functions are part of the `DataApplicationL0Service` and `DataApplicationL1Service`, respectively.
+To effectively utilize the Data Application within a Metagraph, it is essential to implement a variety of lifecycle functions. These functions are critical for the proper functioning of the Metagraph and are located within the `l0` and `data-l1` modules. Specifically, these functions are part of the `DataApplicationL0Service` and `DataApplicationL1Service`, respectively.
 
 In the sections below, we will provide a comprehensive overview of each available function. For each function, we will describe its role within the lifecycle of the Metagraph. By implementing these functions correctly, users ensure that the Metagraph operates smoothly
 
