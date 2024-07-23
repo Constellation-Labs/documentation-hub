@@ -8,7 +8,7 @@ The Metagraph Framework can be installed in several ways:
 
 - **Euclid** (recommended): Install an empty project in Euclid SDK using the `hydra install` command. 
 - **Metagraph Examples** (recommended): Explore ready-to-use examples of metagraph codebases in the [metagraph-examples repo](https://github.com/Constellation-Labs/metagraph-examples). These examples can also be installed automatically via the `hydra install-template` command.
-- **giter8**: The Metagraaph Framework is distributed as a g8 template project that can be customized for your organization. This template can be manually built using [giter8](http://www.foundweekends.org/giter8/). For more details, visit the [project repository](https://github.com/Constellation-Labs/currency.g8).
+- **giter8**: The Metagraph Framework is distributed as a g8 template project that can be customized for your organization. This template can be manually built using [giter8](http://www.foundweekends.org/giter8/). For more details, visit the [project repository](https://github.com/Constellation-Labs/currency.g8).
 
 :::note Quick Start
 See the Euclid Quick Start guide for a walkthrough of framework installation within the Euclid Development Environment. This is the recommended development environment and installation method for most users.  
