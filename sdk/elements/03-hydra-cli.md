@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 Hydra CLI is a powerful command line utility designed to manage local development Docker clusters in the Euclid Development Environment. With Hydra CLI, developers can easily create, configure, and manage Constellation Network development clusters for metagraph development.
 
-Hydra CLI is a free and open-source tool that can be easily installed on any operating system that supports bash. Hydra is currently distributed as a part of the [Euclid Development Environment project](/sdk/dev-environment) and can be found in the `scripts` directory. 
+Hydra CLI is a free and open-source tool that can be easily installed on any operating system that supports bash. Hydra is currently distributed as a part of the [Euclid Development Environment project](/sdk/elements/dev-environment) and can be found in the `scripts` directory. 
 
 ## Install Dependencies
 **Argc**
