@@ -4,14 +4,14 @@ sidebar_label: Installation
 hide_table_of_contents: false
 ---
 
-The Currency Framework can be installed in several ways:
+The Metagraph Framework can be installed in several ways:
 
 - **Euclid** (recommended): Install an empty project in Euclid SDK using the `hydra install` command. 
-- **metagraph-examples** (recommended): Explore ready-to-use examples of metagraph codebases in the [metagraph-examples repo](https://github.com/Constellation-Labs/metagraph-examples). These examples can also be installed automatically via `hydra` with the `install-template` command.
-- **giter8**: The Currency Framework is distributed as a g8 template project that can be customized for your organization. This template can be manually built using [giter8](http://www.foundweekends.org/giter8/). For more details, visit the [project repository](https://github.com/Constellation-Labs/currency.g8).
+- **Metagraph Examples** (recommended): Explore ready-to-use examples of metagraph codebases in the [metagraph-examples repo](https://github.com/Constellation-Labs/metagraph-examples). These examples can also be installed automatically via the `hydra install-template` command.
+- **giter8**: The Metagraph Framework is distributed as a g8 template project that can be customized for your organization. This template can be manually built using [giter8](http://www.foundweekends.org/giter8/). For more details, visit the [project repository](https://github.com/Constellation-Labs/currency.g8).
 
-:::note
-It is highly recommended to use the [Euclid Development Environment](/sdk/elements/dev-environment) for installation and compilation processes. Euclid simplifies the generation of dependencies and your metagraph JARs. The following steps assume that you are using Euclid.
+:::note Quick Start
+See the Euclid Quick Start guide for a walkthrough of framework installation within the Euclid Development Environment. This is the recommended development environment and installation method for most users.  
 :::
 
 ## Installation Using Giter8

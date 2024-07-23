@@ -52,11 +52,11 @@ import DocsCards from '@components/global/DocsCards';
       <p>Custom telemetry tooling for monitoring local or deployed metagraph networks.</p>
     </DocsCard>
     <DocsCard
-    header="Currency Framework"
-    href="/sdk/templates/currency"
+    header="Metagraph Framework"
+    href="/sdk"
     icon="/img/sdk/icon.svg"
     hoverIcon="/img/sdk/icon.svg"
     >
-    <p>A micro-framework for Metagraph Token development.</p>
+    <p>A framework for Metagraph development.</p>
     </DocsCard>
 </DocsCards>

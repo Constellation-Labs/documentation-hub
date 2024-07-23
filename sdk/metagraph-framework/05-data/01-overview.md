@@ -1,12 +1,12 @@
 ---
-title: Data Application Overview
+title: Data Application Module
 sidebar_label: Overview
 hide_table_of_contents: false
 ---
 
 <intro-end />
 
-The Data Application (or Data API) is a module available to Currency Framework developers to ingest and validate custom data types through their metagraphs. It's a set of tools for managing data interactions within the metagraph that is flexible enough to support a wide range of application use cases such as IoT, NFTs, or custom application-specific blockchains. 
+The Data Application (or Data API) is a module available to Metagraph Framework developers to ingest and validate custom data types through their metagraphs. It's a set of tools for managing data interactions within the metagraph that is flexible enough to support a wide range of application use cases such as IoT, NFTs, or custom application-specific blockchains. 
 
 :::info Example Code
 Want to jump directly to a code example? A number of examples can be found on Github under the [Metagraph Examples](https://github.com/Constellation-Labs/metagraph-examples/tree/main/examples) repo.
@@ -40,6 +40,8 @@ See [State Management](./state-management) for more details.
 
 ### Querying Metagraph Data
 Metagraphs support the creation of custom HTTP endpoints on any of the metagraph layers. These endpoints are useful for allowing external access to calculated state or creating views of the chain data for users. 
+
+See [Custom Queries](/sdk/metagraph-framework/custom-endpoints) for more details. 
 
 ### Scheduled Tasks
 Scheduled tasks on a metagraph are possible through the concept of daemons, worker processes that run on a timer. These processes allow the metagraph codebase to react to time-based triggers rather than waiting for an incoming transaction or data update to react to. Daemons are especially useful for syncing behavior, such as fetching data from an external source on a regular schedule or pushing internal data externally on a regular basis. 
