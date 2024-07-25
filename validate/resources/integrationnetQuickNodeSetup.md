@@ -1,3 +1,9 @@
+---
+title: Integrationnet Node Quick Install
+slug: integrationnet-node-quick-install
+hide_table_of_contents: false
+---
+
 
 # Setting Up Your Integrationnet Node
 

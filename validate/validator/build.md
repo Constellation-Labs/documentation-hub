@@ -30,6 +30,12 @@ Once you have established where you are going to build your Node or what hardwar
 
 - Begin [here](/validate/automated/nodectl)
 
+#### Integrationnet Quick Node Setup
+Build your Integrationnet Node Quickly with sensible defaults.
+
+- Begin [here](/validate/resources/integrationnet-node-quick-install)
+
+
 #### Manual Installation
 Build your Node manually by handling all then necessary setup requirements step by step.  
 
