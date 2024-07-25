@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 In this guide, we will explore two of the tools that work together with the Euclid Developer Environment, then use them to send and track our first metagraph token transaction. 
 
-We will install the [Developer Dashboard](/sdk/elements/developer-dashboard), send a transaction using an included script, and monitor our clusters using the [Telemetry Dashboard]('/sdk/elements/telemetry-dashboard').
+We will install the [Developer Dashboard](/sdk/elements/developer-dashboard), send a transaction using an included script, and monitor our clusters using the [Telemetry Dashboard](/sdk/elements/telemetry-dashboard).
 
 ## Before You Start
 This guide assumes that you have configured your local environment based on the [Quick Start Guide](/sdk/guides/quick-start) and have at least your `global-l0`, `currency-l0`, `currency-l1`, and `monitoring` clusters running. 
@@ -74,4 +74,4 @@ username: admin
 password: admin
 ```
 
-The Grafana instance includes two dashboards which can be found in the menu on the left. One dashboard monitors the Global L0 and DAG L1 (if you have it running). The other monitors the Currency L0 and Currency L1. More information can be found in the [Telemetry Dashboard]('/sdk/elements/telemetry-dashboard') section. 
+The Grafana instance includes two dashboards which can be found in the menu on the left. One dashboard monitors the Global L0 and DAG L1 (if you have it running). The other monitors the Currency L0 and Currency L1. More information can be found in the [Telemetry Dashboard](/sdk/elements/telemetry-dashboard) section. 
