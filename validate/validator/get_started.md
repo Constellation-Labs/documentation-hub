@@ -5,7 +5,7 @@ hide_table_of_contents: false
 ---
 
 ## Before you begin:
-A Validator Node Operator must have been previously accepted to join the network; and therefore, already be part of the [seed list](/validate/index.md#seed-list).
+A Validator Node Operator must have been previously accepted to join the network; and therefore, already be part of the [seed list](/validate/index#seed-list).
 
 ## Create a Deployment Plan
 

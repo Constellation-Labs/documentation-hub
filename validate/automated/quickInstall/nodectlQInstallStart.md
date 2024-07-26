@@ -21,7 +21,7 @@ Begin the nodectl quick installation installation.
 
 ## Using all default values
 
-The `--quick-install` option will not ask any questions to the Node Operator except for a unique [p12](/validate/validator/p12.md) passphrase and unique password for the user account that will be created during the installation.  The user account will be used to administer your Node after-the-fact.
+The `--quick-install` option will not ask any questions to the Node Operator except for a unique [p12](/validate/validator/p12) passphrase and unique password for the user account that will be created during the installation.  The user account will be used to administer your Node after-the-fact.
 
 <MacWindow>
 ubuntu@ip-172-31-23-246:~$ sudo nodectl install --quick-install
