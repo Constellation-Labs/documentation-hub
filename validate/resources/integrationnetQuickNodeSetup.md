@@ -12,7 +12,13 @@ This guide is specifically for setting up your Integrationnet Node, and is opini
 ## 1. Choose VPS Provider
 Refer to the [Constellation Network Setup Guides](https://docs.constellationnetwork.io/validate/setup-guides/) for choosing a VPS provider.
 
-## 2. Provision Your VPS
+## 2. Setup firewall
+Open inbound TCP ports: 9000, 9001, 9010, 9011, and your ssh port (normally 22).
+Open all outbound ports.
+
+Refer to these guides on [Digital Ocean](https://docs.constellationnetwork.io/validate/setup-guides/do/sgDroplet), [AWS](https://docs.constellationnetwork.io/validate/setup-guides/aws/sg), [Digital Ocean](https://docs.constellationnetwork.io/validate/setup-guides/gcp/sg), and [Hetzner](https://docs.hetzner.com/cloud/firewalls/getting-started/creating-a-firewall/).
+
+## 3. Provision Your VPS
 
 ### Minimum Specs for Your Node
 
@@ -25,26 +31,28 @@ Refer to the [Constellation Network Setup Guides](https://docs.constellationnetw
 
 Suggested OS: **Ubuntu 22.04**
 
-## 3. SSH into Your VPS
-Refer to [this doc](https://docs.constellationnetwork.io/validate/validator/ssh-keys) for SSH instructions. Store your SSH public **and** private key on a USB drive/secure file storage.
+## 4. SSH into Your VPS
+Refer to [this doc](https://docs.constellationnetwork.io/validate/validator/ssh-keys) for SSH instructions. 
+If you like a video explainer, see this [YouTube](https://www.youtube.com/watch?v=FUgO6C9qMfQ) for Windows.
+Store your SSH public **and** private key on a USB drive/secure file storage.
 
-## 4. Update OS
+## 5. Update OS
 ```sh
 sudo apt-get update && sudo apt-get upgrade
 ```
 
-## 5. Reboot
+## 6. Reboot
 ```sh
 sudo reboot now
 ```
 SSH into your VPS again using the user set by your VPS provider (e.g., `root` or `ubuntu`).
 
-## 6. Install nodectl (Node Control Utility Program v2.14.1)
+## 7. Install nodectl (Node Control Utility Program v2.14.1)
 ```sh
 sudo nodectl auto_restart disable; sudo wget -N https://github.com/stardustcollective/nodectl/releases/download/v2.14.1/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v
 ```
 
-## 7. Install Tessellation
+## 8. Install Tessellation
 ```sh
 sudo nodectl install --quick-install
 ```
