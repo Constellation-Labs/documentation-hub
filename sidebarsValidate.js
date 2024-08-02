@@ -247,6 +247,7 @@ module.exports = {
         'resources/sshconfig',
         'resources/p12v1v2-migrate',  
         'resources/nodectlNotes',    
+        'resources/integrationnetQuickNodeSetup',
       ],
     },
   ],
