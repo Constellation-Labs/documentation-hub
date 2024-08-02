@@ -90,7 +90,7 @@ We choose:
   - 64-bit (x86)
   - 22.04 LTS
 
-You may choose whatever distribution (distro) and version of your chosen distro that you are most comfortable with. However, you must use a Debian Linux distro to participate in Constellation Network's MainNet, IntegrationNet, or TestNet.
+You may choose whatever distribution (distro) and version of your chosen distro that you are most comfortable with. However, you must use a Debian Linux distro to participate in Constellation Network's MainNet, IntegrationNet or TestNet.
 
 Most recommended are:
   - Debian  

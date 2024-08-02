@@ -55,8 +55,8 @@ Select the two default rules for SSH and RDP. Click the `DELETE` button to clean
 
 ![](/img/validator_nodes/node-gcp-sg3.png)
 
-:::danger VERY IMPORTANT FOR MAINNET, INTEGRATIONNET, or TESTNET LAUNCH
-These documents reference creating a single layer 0 or Metagraph.  For the launch of MainNet, IntegrationNet, or TestNet, you will installing a DUAL layer - `layer0` and `layer1` - Hybrid Validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  The YouTube Series does not cover these extra rules.
+:::danger VERY IMPORTANT FOR MainNet, IntegrationNet or TestNet LAUNCH
+These documents reference creating a single layer 0 or Metagraph.  For the launch of MainNet, IntegrationNet or TestNet, you will installing a DUAL layer - `layer0` and `layer1` - Hybrid Validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  The YouTube Series does not cover these extra rules.
 :::
 
 #### NEW RULES
@@ -168,7 +168,7 @@ All the other options on this Create Firewall Rule section should be left as is,
 ### MAINNET, INTEGRATIONET, OR TESTNET LAUNCH REQUIREMENT
 It is highly recommended that you use `nodectl` to install and control/admin your Node.
 
-Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet, IntegrationNet, or TestNet Validator Node's Layer1 connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
+Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet, IntegrationNet or TestNet Validator Node's Layer1 connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
 
 #### VERIFY ALL OUR RULES
 

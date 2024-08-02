@@ -67,7 +67,7 @@ list(s) output above, you will need to submit your NodeID for acceptance.<br />
 
 Some final instructions will be presented that inform you that you will need to submit the nodeid and collateralize your Node prior to being able to participate on the network.  
 
-:::danger TESTNET INTEGRATIONNET
+:::danger TESTNET and INTEGRATIONNET
 TestNet and IntegrationNet Node Operators will not use the hot wallet on their Node to obtain rewards.  These Node Operators will need to register with [Lattice](https://lattice.is/dashboard).
 :::
 
