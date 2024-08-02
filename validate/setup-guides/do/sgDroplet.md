@@ -16,8 +16,8 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Setup Digital Ocean Firewall Rules
 
-:::danger VERY IMPORTANT FOR MAINNET 2.0 LAUNCH
-These documents reference creating a single layer 0 or Metagraph.  For the launch of MainNet 2.0, you will installing a dual layer - `layer0` and `layer1` - validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  
+:::danger VERY IMPORTANT FOR HYPERGRAPH OR METAGRAPH LAUNCH
+These documents reference creating a single layer 0 Hypergraph or Metagraph.  You will installing a dual layer - `layer0` and `layer1` - Hybrid Validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  
 **The YouTube Series does not cover these extra rules.** However, the process is the same (you just have to repeat some steps).
 :::
 
@@ -127,10 +127,10 @@ We will **leave** the `All IPv4` and `All IPv6` items.
 Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) **API** access.  Ports 9000 and 9001 are configurable and will be dependent on the access rules for the specific Hypergraph or Metagraph network you connect to.  **99%** of the tim, the ports used here can be any port the Node Operator wants to use.  Most Hypergraph and Metagraphs will not restrict the ports to be used.  However, Node Operators will need to learn what ports are opened for access to the Metagraphs, and update their firewall (change) accordingly.
 :::
 
-## MainNet 2.0 Launch Requirement 
+## MainNet, IntegrationNet, or TestNet Launch Requirement 
 It is highly recommended that you use `nodectl` to install and control/admin your Node.
 
-Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet 2.0 Validator Node's `Layer1` connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.  
+Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet, IntegrationNet, or TestNet Validator Node's `Layer1` connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.  
 
 :::note
 You do not need to use ports `9000-9001` or `9010-9011`, you can use whatever ports best fit your scenario.  If you are not an advanced user, these ports will work well.  Advanced users, please make sure that whatever ports you decide to use are not in conflict with other services or protocols on your VPS, and it is highly recommended to stay within the range of `1024-65536`.

@@ -10,7 +10,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
     content="nodectl installation of new Node"

@@ -9,10 +9,10 @@ import DocsCards from '@components/global/DocsCards';
 import MacWindow from '@site/src/components/global/MacWindow';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="MainNet 2.0 Automation - Upgrade Tessellation with nodectl"
+    content="Constellation Network Automation - Upgrade Tessellation with nodectl"
   />
 </head>
 

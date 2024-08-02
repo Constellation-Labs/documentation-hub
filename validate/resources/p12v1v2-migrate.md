@@ -219,7 +219,7 @@ EC Public Key [ee:ff:aa:bb:cc:dd:ee:ff:11:22:33:44:55:66:77:88:99:aa:bb:cc]<br /
 Your **p12** file should now be migrated from `version 1` to `version 2`.  Place your original `version 1` in a secure location for temporary storage.
 
 You should now test your **new** `version 2` p12 private key file.  You can do this by: 
-- Connecting to your appropriate Constellation Network cluster (hypergraph or metagraph). 
+- Connecting to your appropriate Constellation Network cluster (Hypergraph or Metagraph). 
 - [Exporting your private key](/validate/automated/nodectlCommands#export_private_key).
 - Utilizing your **p12** private key file with whatever process you require. 
 

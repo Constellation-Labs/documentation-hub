@@ -33,8 +33,8 @@ If you are a visual learner, you can access and view a YouTube series dedicated 
 If you choose the YouTube Series, it is highly recommended to watch the entire series, from the beginning.
 :::
 
-:::danger VERY IMPORTANT FOR MAINNET 2.0 LAUNCH
-These documents reference creating a single layer 0 or metagraph.  For the launch of MainNet 2.0, you will installing a DUAL layer - `layer0` and `layer1` - validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  The YouTube Series does not cover these extra rules.
+:::danger VERY IMPORTANT FOR CONSTELLATION NETWORK LAUNCH
+These documents reference creating a single layer 0 or Metagraph.  For the launch of MainNet, IntegrationNet or TestNet, you will installing a DUAL layer - `layer0` and `layer1` - validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  The YouTube Series does not cover these extra rules.
 :::
 
 ### Open Compute EC2 Console 
@@ -144,16 +144,16 @@ Our inbound rules will look something like this 👇
 **[REPEAT](#constellation-sg-rules)** This process for ports `9010-9011`.
 
 :::info
-Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) API access. Ports 9000 and 9001 are configurable and can be independent (to your needs) on the Hypergraph Global Layer0 or metagraph network you connect to. Node Operators will need to learn what ports are opened for access to the Metagraphs, and update their firewall (change) accordingly.
+Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) API access. Ports 9000 and 9001 are configurable and can be independent (to your needs) on the Hypergraph Global Layer0 or Metagraph network you connect to. Node Operators will need to learn what ports are opened for access to the Metagraphs, and update their firewall (change) accordingly.
 
 The port numbers selected should not matter; however, for non-advanced users, using the ports mentioned in the above section is recommended.
 :::
 
-## MainNet 2.0 Launch Requirements
+## MainNet, IntegrationNet or TestNet Launch Requirements
 
 It is highly recommended that you use `nodectl` to install and control/admin your Node.
 
-Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet 2.0 Validator Node's Layer1 connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
+Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet, IntegrationNet or TestNet Validator Node's Layer1 connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
 
 #### Final Firewall Table 
 

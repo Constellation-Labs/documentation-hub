@@ -190,13 +190,13 @@ active
 #### Our node should be ready to join the Hypergraph!
 
 :::success MULTIPLE METAGRAPHS
-In the event that you would like to participate in **multiple** metagraphs, you can start a new java process separately for each metagraph process you have running on the Node.
+In the event that you would like to participate in **multiple** Metagraphs, you can start a new java process separately for each Metagraph process you have running on the Node.
 
 You can also update the `service` file to include multiple commands to run on service start.
 :::
 
 :::danger MULTIPLE METAGRAPHS
-Make sure you VPS (or bare metal server) is properly sized to handle multiple metagraphs
+Make sure you VPS (or bare metal server) is properly sized to handle multiple Metagraphs
 :::
 
 #### SIZING

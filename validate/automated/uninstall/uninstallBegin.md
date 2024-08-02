@@ -9,7 +9,7 @@ import DocsCards from '@components/global/DocsCards';
 import MacWindow from '@site/src/components/global/MacWindow';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation Network Automation with nodectl</title>
   <meta
     name="description"
     content="nodectl uninstall a nodectl installation"

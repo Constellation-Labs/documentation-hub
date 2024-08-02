@@ -51,7 +51,7 @@ For example: Constellation Network has a predefined configuration available for 
 - Global Layer0 Hypergraph (GL0)
 - Constellation Network Currency Layer1 Metagraph (ML1)
 
-As nodectl becomes more adopted by the community, other ecosystem communities, companies developing a metagraph on Constellation Networks protocol, or other entity may submit their desired configuration to this project for addition and adoption.
+As nodectl becomes more adopted by the community, other ecosystem communities, companies developing a Metagraph on Constellation Networks protocol, or other entity may submit their desired configuration to this project for addition and adoption.
 
 As new pre-configured profiles are submitted, they will be able to be appended to the Node's configuration via the [configure command](/validate/automated/nodectlCommands#configure).
 
@@ -138,7 +138,7 @@ nodectl:
 ```
  Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
-| dag-l0 | None | The name that we will identify the first profile defined in our configuration. We will be using dag-l0 mostly with our `-p` (profile) when issuing commands to manipulate our metagraph setup called `dag-l0`. | Yes |
+| dag-l0 | None | The name that we will identify the first profile defined in our configuration. We will be using dag-l0 mostly with our `-p` (profile) when issuing commands to manipulate our Metagraph setup called `dag-l0`. | Yes |
 
 ### profile keys
 ```
@@ -157,8 +157,8 @@ nodectl:
 | --------- | ----- |----- | -------- |
 | enable | `True` \| `False` | If set to True the profile will be loaded into nodectl when the utility it executed. | Yes |
 | layer | `0` \| `1` | The blockchain layer that this profile corresponds with. | Yes |
-| edge_point | None | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. The edge point section holds various details necessary for to connect to this edge point successfully. | Yes |
-| environment | `<string>` | What is the Metagraph environment name.  This string name should be supplied by the administrators of the metagraph this profile correlates with. | Yes |
+| edge_point | None | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (Hypergraph or Metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. The edge point section holds various details necessary for to connect to this edge point successfully. | Yes |
+| environment | `<string>` | What is the Metagraph environment name.  This string name should be supplied by the administrators of the Metagraph this profile correlates with. | Yes |
 
 ### edge point
 ```
@@ -170,7 +170,7 @@ nodectl:
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
 | https | `True` \| `False` | If set to True the uri will be prefixed with https instead of appending 443 to a http uri. | Yes |
-| host |  `<string>` | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. | Yes |
+| host |  `<string>` | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (Hypergraph or Metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. | Yes |
 | host_port | `<integer>` | The TCP port number that the edge point is accepting connection requests. | Yes |
 
 ### ports
@@ -183,7 +183,7 @@ Key | Value | Description | Required |
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
 | ports | None | Title section for the Metagraph and Hypergraph communication access TCP ports. | Yes |
-| public |  `<integer>` | Open access TCP port used for all public access to the hypergraph or metagraph including API requests. | Yes |
+| public |  `<integer>` | Open access TCP port used for all public access to the Hypergraph or Metagraph including API requests. | Yes |
 | p2p | `<integer>` | The peer-to-peer port number used to communicate to the cluster via the gossip protocol. | Yes |
 | cli | `<integer>` | Internal TCP port that is used to access the private internal API of our Node specifically for the Metagraph and Hypergraph in question. | Yes |
 
@@ -256,7 +256,7 @@ Directories definitions.
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
 | dirs | None | Defines the directory location section for the specific profile. | Yes |
-| snapshots | `<full_directory_path>` \| default |  The snapshots directory is where a local copy of your Node's blockchain data is held. This directory can get really large and needs to be maintained. Some administrators will want to move this directory to a network attached (or other) location. This location must be a mounted directory. For inexperienced or non-technical Node Operators, it is advised to enter in the key word 'default' here.  Also note that for some Layer 1 metagraphs (including Constellation's DAG metagraph) the snapshots directory should be set to 'disable' as it is not used. Consult with the metagraph user guides or with their administrators for proper directory locations. The snapshot directory should be set from the onset of the Node setup, it is dangerous to change its location 'after-the-fact'.  THIS DIRECTORY SHOULD BE A FULL PATH ( starting with a / and ending with a / ) eg) /var/snapshots/  Warning: If you use a remotely mounted directory, this directory MUST be accessible; otherwise, nodectl will exit with an inaccessible error. | Yes |
+| snapshots | `<full_directory_path>` \| default |  The snapshots directory is where a local copy of your Node's blockchain data is held. This directory can get really large and needs to be maintained. Some administrators will want to move this directory to a network attached (or other) location. This location must be a mounted directory. For inexperienced or non-technical Node Operators, it is advised to enter in the key word 'default' here.  Also note that for some Layer 1 Metagraphs (including Constellation's DAG Metagraph) the snapshots directory should be set to 'disable' as it is not used. Consult with the Metagraph user guides or with their administrators for proper directory locations. The snapshot directory should be set from the onset of the Node setup, it is dangerous to change its location 'after-the-fact'.  THIS DIRECTORY SHOULD BE A FULL PATH ( starting with a / and ending with a / ) eg) /var/snapshots/  Warning: If you use a remotely mounted directory, this directory MUST be accessible; otherwise, nodectl will exit with an inaccessible error. | Yes |
 | backups | `<full_directory_path>` \| default | The location that you would like to store the backups for this profile.  If set to default the default location will be used. Any file that needs to be backed up (by nodectl) will be placed in this directory. | Yes |
 | uploads |  `<full_directory_path>` \| default | The location that you would like to store the uploads for this profile.  If set to `default`, then the default location will be used. Export requests (csv data) or logs for upload to the Metagraph administrators or developers, will be placed in this directory. | Yes |
 
@@ -486,7 +486,7 @@ nodectl:
 ```
  Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
-| dag-l0 | None | The name that we will identify the first profile defined in our configuration. We will be using dag-l0 mostly with our `-p` (profile) when issuing commands to manipulate our metagraph setup called `dag-l0`. | Yes |
+| dag-l0 | None | The name that we will identify the first profile defined in our configuration. We will be using dag-l0 mostly with our `-p` (profile) when issuing commands to manipulate our Metagraph setup called `dag-l0`. | Yes |
 
 ### profile keys
 ```
@@ -505,8 +505,8 @@ nodectl:
 | --------- | ----- |----- | -------- |
 | enable | `True` \| `False` | If set to True the profile will be loaded into nodectl when the utility it executed. | Yes |
 | layer | `0` \| `1` | The blockchain layer that this profile corresponds with. | Yes |
-| edge_point | None | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. The edge point section holds various details necessary for to connect to this edge point successfully. | Yes |
-| environment | `<string>` | What is the Metagraph environment name.  This string name should be supplied by the administrators of the metagraph this profile correlates with. | Yes |
+| edge_point | None | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (Hypergraph or Metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. The edge point section holds various details necessary for to connect to this edge point successfully. | Yes |
+| environment | `<string>` | What is the Metagraph environment name.  This string name should be supplied by the administrators of the Metagraph this profile correlates with. | Yes |
 
 ### edge point
 ```
@@ -518,7 +518,7 @@ nodectl:
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
 | https | `True` \| `False` | If set to True the uri will be prefixed with https instead of appending 443 to a http uri. | Yes |
-| host |  `<string>` | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. | Yes |
+| host |  `<string>` | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (Hypergraph or Metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. | Yes |
 | host_port | `<integer>` | The TCP port number that the edge point is accepting connection requests. | Yes |
 
 ### ports
@@ -531,7 +531,7 @@ Key | Value | Description | Required |
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
 | ports | None | Title section for the Metagraph and Hypergraph communication access TCP ports. | Yes |
-| public |  `<integer>` | Open access TCP port used for all public access to the hypergraph or metagraph including API requests. | Yes |
+| public |  `<integer>` | Open access TCP port used for all public access to the Hypergraph or Metagraph including API requests. | Yes |
 | p2p | `<integer>` | The peer-to-peer port number used to communicate to the cluster via the gossip protocol. | Yes |
 | cli | `<integer>` | Internal TCP port that is used to access the private internal API of our Node specifically for the Metagraph and Hypergraph in question. | Yes |
 
@@ -604,7 +604,7 @@ Directories definitions.
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
 | dirs | None | Defines the directory location section for the specific profile. | Yes |
-| snapshots | `<full_directory_path>` \| default |  The snapshots directory is where a local copy of your Node's blockchain data is held. This directory can get really large and needs to be maintained. Some administrators will want to move this directory to a network attached (or other) location. This location must be a mounted directory. For inexperienced or non-technical Node Operators, it is advised to enter in the key word 'default' here.  Also note that for some Layer 1 metagraphs (including Constellation's DAG metagraph) the snapshots directory should be set to 'disable' as it is not used. Consult with the metagraph user guides or with their administrators for proper directory locations. The snapshot directory should be set from the onset of the Node setup, it is dangerous to change its location 'after-the-fact'.  THIS DIRECTORY SHOULD BE A FULL PATH ( starting with a / and ending with a / ) eg) /var/snapshots/  Warning: If you use a remotely mounted directory, this directory MUST be accessible; otherwise, nodectl will exit with an inaccessible error. | Yes |
+| snapshots | `<full_directory_path>` \| default |  The snapshots directory is where a local copy of your Node's blockchain data is held. This directory can get really large and needs to be maintained. Some administrators will want to move this directory to a network attached (or other) location. This location must be a mounted directory. For inexperienced or non-technical Node Operators, it is advised to enter in the key word 'default' here.  Also note that for some Layer 1 Metagraphs (including Constellation's DAG Metagraph) the snapshots directory should be set to 'disable' as it is not used. Consult with the Metagraph user guides or with their administrators for proper directory locations. The snapshot directory should be set from the onset of the Node setup, it is dangerous to change its location 'after-the-fact'.  THIS DIRECTORY SHOULD BE A FULL PATH ( starting with a / and ending with a / ) eg) /var/snapshots/  Warning: If you use a remotely mounted directory, this directory MUST be accessible; otherwise, nodectl will exit with an inaccessible error. | Yes |
 | backups | `<full_directory_path>` \| default | The location that you would like to store the backups for this profile.  If set to default the default location will be used. Any file that needs to be backed up (by nodectl) will be placed in this directory. | Yes |
 | uploads |  `<full_directory_path>` \| default | The location that you would like to store the uploads for this profile.  If set to `default`, then the default location will be used. Export requests (csv data) or logs for upload to the Metagraph administrators or developers, will be placed in this directory. | Yes |
 

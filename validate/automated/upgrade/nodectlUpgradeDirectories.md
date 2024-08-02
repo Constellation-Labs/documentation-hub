@@ -9,10 +9,10 @@ import DocsCards from '@components/global/DocsCards';
 import MacWindow from '@site/src/components/global/MacWindow';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation Network Automation with nodectl</title>
   <meta
     name="description"
-    content="MainNet 2.0 Automation - Upgrade Tessellation with nodectl"
+    content="Constellation Network Automation - Upgrade Tessellation with nodectl"
   />
 </head>
 
@@ -81,7 +81,7 @@ In the below example, the `uploads` directory was found to be emtpy, so the step
 
 Similar to the **backups** and **uploads**, the logs directory can become large and take up a lot of space.  These log files can accumulate over time.
 
-In the output example below, some of the log files were omitted with `[...]` representing files that were built up.  You will notice hypergraph *`layer0`* and metagraph *`layer1`* logs being represented.
+In the output example below, some of the log files were omitted with `[...]` representing files that were built up.  You will notice Hypergraph *`layer0`* and Metagraph *`layer1`* logs being represented.
 
 Optionally, we can choose <kbd>enter</kbd> to accept the default value or <kbd>enter</kbd>+<kbd>y</kbd>; otherwise <kbd>n</kbd>+<kbd>enter</kbd>.
 
