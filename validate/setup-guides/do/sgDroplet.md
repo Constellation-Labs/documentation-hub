@@ -16,11 +16,6 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Setup Digital Ocean Firewall Rules
 
-:::danger VERY IMPORTANT FOR HYPERGRAPH OR METAGRAPH LAUNCH
-These documents reference creating a single layer 0 Hypergraph or Metagraph.  You will installing a dual layer - `layer0` and `layer1` - Hybrid Validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  
-**The YouTube Series does not cover these extra rules.** However, the process is the same (you just have to repeat some steps).
-:::
-
 If you launched your Droplet, and it is already deployed, we can begin implementing some necessary access rules; as well as, security measures, by adding Firewall Rules. This will reduce access inbound to our Node from the Internet. Reducing your Node's exposure to nefarious actors.
 
 This will restrict all access except what our Node needs to operate on the Hypergraph.
@@ -124,7 +119,7 @@ We will **leave** the `All IPv4` and `All IPv6` items.
 
 ##
 :::info
-Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) **API** access.  Ports 9000 and 9001 are configurable and will be dependent on the access rules for the specific Hypergraph or Metagraph network you connect to.  **99%** of the tim, the ports used here can be any port the Node Operator wants to use.  Most Hypergraph and Metagraphs will not restrict the ports to be used.  However, Node Operators will need to learn what ports are opened for access to the Metagraphs, and update their firewall (change) accordingly.
+Ports 9000 and 9001 are used for a Public (9000) and Peer-to-Peer (9001) **API** access.  Ports 9000 and 9001 are configurable and will be dependent on the access rules for the specific Hypergraph or metagraph network you connect to.  **99%** of the tim, the ports used here can be any port the Node Operator wants to use.  Most Hypergraph and metagraphs will not restrict the ports to be used.  However, Node Operators will need to learn what ports are opened for access to the metagraphs, and update their firewall (change) accordingly.
 :::
 
 ## MainNet, IntegrationNet or TestNet Launch Requirement 

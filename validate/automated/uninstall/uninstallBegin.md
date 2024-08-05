@@ -70,7 +70,7 @@ location: /var/tmp/nodectl.log<br />
 We will be asked if we want to retain our p12 key store files.
 
 :::danger SECURITY WARNING
-Retaining your p12 files on a Node that is not actively participating as a Constellation Network Validator Node on either the Hypergraph or a Metagraph, may create vulnerability to others being able to access your private keys, therefor exposing you to a wallet hack.  
+Retaining your p12 files on a Node that is not actively participating as a Constellation Network Validator Node on either the Hypergraph or a metagraph, may create vulnerability to others being able to access your private keys, therefor exposing you to a wallet hack.  
 
 If you choose to retain your p12, make sure you retrieve them and remove them from the VPS, if the VPS had no need to retain them.
 :::

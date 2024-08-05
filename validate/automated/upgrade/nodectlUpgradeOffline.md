@@ -23,7 +23,7 @@ All the necessary information needed to upgrade our Node has been obtained. The 
 In most cases, we need to take the Node offline to properly upgrade and restart. nodectl will take the Node off the cluster(s).  In the below example, we have two profiles:
 
 1. `dag-l0` - Hypergraph Global Layer 0
-2. `dag-l1` - Metagraph Currency Layer 1
+2. `dag-l1` - metagraph Currency Layer 1
 
 You will see something similar to the 👇 example (but not exact) as your Node attempts to gracefully leave the Clusters that each profile belongs to.
 

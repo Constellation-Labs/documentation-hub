@@ -15,7 +15,7 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-Currently Constellation Network requires all Nodes run on both the Hypergraph (Global Layer 0) and the Constellation Network DAG Metagraph (Currency Layer 1). 
+Currently Constellation Network requires all Nodes run on both the Hypergraph (Global Layer 0) and the Constellation Network DAG metagraph (Currency Layer 1). 
 
 The following table defines the specifications required for a Node to work properly and efficiently on MainNet, IntegrationNet or TestNet networks.
 

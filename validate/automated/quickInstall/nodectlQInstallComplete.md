@@ -38,7 +38,7 @@ We will be supplied with the final pieces to the puzzle before we can join the c
 Details about our Node will be presented for us to write down in our [notes](/validate/resources/nodectlNotes).
 
 <MacWindow>
- HyperGraph/Metagraph .......................... hypergraph<br />
+ HyperGraph/metagraph .......................... hypergraph<br />
   Environment ................................... mainnet<br />
   P12 Location .................................. /home/nodeadmin/tessellation<br />
   P12 Name ...................................... nodeadmin-node.p12<br />

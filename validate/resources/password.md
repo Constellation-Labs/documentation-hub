@@ -27,4 +27,4 @@ Use your `nodeadmin` password to verify that you have permission to run administ
 
 ## Private Key
 
-Unrelated to your usernames and passwords, the **p12 file** is your private key file allowing you to access the Hypergraph or Metagraph environment. This key passphrase should be **VERY** secure, saved off your computer in MainNet situations (when it is used to create rewards). It is associated with your node's crypto wallet, access to MainNet, etc.
+Unrelated to your usernames and passwords, the **p12 file** is your private key file allowing you to access the Hypergraph or metagraph environment. This key passphrase should be **VERY** secure, saved off your computer in MainNet situations (when it is used to create rewards). It is associated with your node's crypto wallet, access to MainNet, etc.

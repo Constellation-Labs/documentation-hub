@@ -4,14 +4,14 @@ hide_table_of_contents: false
 ---
 
 <head>
-  <title>Join the Hypergraph or Metagraph</title>
+  <title>Join the Hypergraph or metagraph</title>
   <meta
     name="description"
-    content="This document will help to join an existing Hypergraph Network or Metagraph."
+    content="This document will help to join an existing Hypergraph Network or metagraph."
   />
 </head>
 
-We are now ready to join our Metagraph and/or Hypergraph network.
+We are now ready to join our metagraph and/or Hypergraph network.
 
 :::info NOTE
 Our example will join the **testnet** network.
@@ -55,13 +55,13 @@ We have created our **VPS**, installed out **dependencies**, installed out **Tes
 We will send a request to the Source node to join the cluster, through a **`curl POST`** request.
 
 :::tip IMPORTANT
-The current example will help us to join the **Constellation Network Tessellation TestNet** if you are going to join a different Metagraphs or Hypergraph network, you will need to obtain the proper **node id** and **ip** address, and substitute them into the commands below
+The current example will help us to join the **Constellation Network Tessellation TestNet** if you are going to join a different metagraphs or Hypergraph network, you will need to obtain the proper **node id** and **ip** address, and substitute them into the commands below
 :::
 
 ### Supply your P12 passphrase
 
 :::danger IMPORTANT
-We do **not** want to have our p12 **passphrase** added to a static plain text file.  Our **p12** file is our private key file that stores valuable information.  If the passphrase is exposed, you can have access to the MainNet, Metagraph, TestNet, etc. compromised, including access to wallets.  This is a **bad** idea.
+We do **not** want to have our p12 **passphrase** added to a static plain text file.  Our **p12** file is our private key file that stores valuable information.  If the passphrase is exposed, you can have access to the MainNet, metagraph, TestNet, etc. compromised, including access to wallets.  This is a **bad** idea.
 :::
 
 :::note NOTE
@@ -142,5 +142,5 @@ Received state=Ready{ }
 ```
 
 :::success MULTIPLE STATE CHANNELS
-In the event that you would like to participate in **multiple** Metagraphs, you can issue the join separately for each Metagraph process you have running on the Node.
+In the event that you would like to participate in **multiple** metagraphs, you can issue the join separately for each metagraph process you have running on the Node.
 :::

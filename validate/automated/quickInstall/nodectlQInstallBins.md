@@ -39,7 +39,7 @@ Fetch [seedlist for -> dag-l1] ................ disabled<br />
 Description of the files being downloaded here.  
 
 :::note Note
-The file names may change depending on the Metagraph being configured, for this Node.
+The file names may change depending on the metagraph being configured, for this Node.
 :::
 
 | Binary File Name | Profile Type | Description |

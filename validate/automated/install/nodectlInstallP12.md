@@ -20,7 +20,7 @@ Handling the **p12** private key store creation.
 
 ### Build our wallet (p12)
 
-nodectl will now help us through the process of creating our Node's wallet and authentication requirements. This is necessary to join the Hypergraph/Metagraph via authentication, sign validation proofs, and collect rewards for work accomplished on the Hypergraph/Metagraph.
+nodectl will now help us through the process of creating our Node's wallet and authentication requirements. This is necessary to join the Hypergraph/metagraph via authentication, sign validation proofs, and collect rewards for work accomplished on the Hypergraph/metagraph.
 
 We will start by providing a name of our `p12` file.
 
@@ -95,7 +95,7 @@ Access your *secure** [notes](/validate/resources/nodectlNotes) and write down y
 We can now provide a new unique passphrase for our p12 file.  
 
 :::danger IMPORTANT
-Make sure it is very secure, this will be used to access your Node's wallet; as well as, authenticate to the Hypergraph and Metagraph.
+Make sure it is very secure, this will be used to access your Node's wallet; as well as, authenticate to the Hypergraph and metagraph.
 :::
 
 <MacWindow>

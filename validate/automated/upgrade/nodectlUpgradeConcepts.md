@@ -96,7 +96,7 @@ It is very simple to upgrade your Node with new nodectl features.  We simply exe
 ```
 sudo nodectl upgrade --nodectl_only
 ```
-Utilizing the `--nodectl_only` option will only handle upgrades necessary for nodectl to function properly.  The advantage to this command is that it will not take the Node off the the Metagraphs it is connected with.  If only updating nodectl, Tessellation will not be affected.
+Utilizing the `--nodectl_only` option will only handle upgrades necessary for nodectl to function properly.  The advantage to this command is that it will not take the Node off the the metagraphs it is connected with.  If only updating nodectl, Tessellation will not be affected.
 
 You can follow the [quick start](/validate/automated/upgrade/nodectlUpgradeQS#upgrade-nodectl-components-of-your-node) guide.
 

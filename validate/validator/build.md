@@ -23,7 +23,7 @@ Run your Node on your own dedicated "bare metal" server.  This is the most advan
 
 Buying a server or purchasing the necessary hardware to run a Node is out of the scope of this documentation. 
 
-To deploy a Node to run on the Hypergraph and also the DAG Layer1 Metagraph, you should make sure your bare metal server supports the following [specs](/validate/validator/specs).
+To deploy a Node to run on the Hypergraph and also the DAG Layer1 metagraph, you should make sure your bare metal server supports the following [specs](/validate/validator/specs).
 
 #### nodectl Automation
 Once you have established where you are going to build your Node or what hardware you are going to use.  You can decide to turn your server into a Node in minutes using Constellation Network's utility `nodectl`.

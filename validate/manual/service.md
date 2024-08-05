@@ -190,17 +190,17 @@ active
 #### Our node should be ready to join the Hypergraph!
 
 :::success MULTIPLE METAGRAPHS
-In the event that you would like to participate in **multiple** Metagraphs, you can start a new java process separately for each Metagraph process you have running on the Node.
+In the event that you would like to participate in **multiple** metagraphs, you can start a new java process separately for each metagraph process you have running on the Node.
 
 You can also update the `service` file to include multiple commands to run on service start.
 :::
 
 :::danger MULTIPLE METAGRAPHS
-Make sure you VPS (or bare metal server) is properly sized to handle multiple Metagraphs
+Make sure you VPS (or bare metal server) is properly sized to handle multiple metagraphs
 :::
 
 #### SIZING
-The `vCPU`, `Memory`, and `HDD storage allocation` is **dependent** on each specific Metagraph.  Consult with the Metagraph operators/administrators for the specifications that 
-meet the requirements for their individual Metagraph.
+The `vCPU`, `Memory`, and `HDD storage allocation` is **dependent** on each specific metagraph.  Consult with the metagraph operators/administrators for the specifications that 
+meet the requirements for their individual metagraph.
 
-This also pertains to the `TCP` ports each individual Metagraph utilize.  Obtaining the proper `p2p-port` can be dynamically acquired via a `public-port` API call.
+This also pertains to the `TCP` ports each individual metagraph utilize.  Obtaining the proper `p2p-port` can be dynamically acquired via a `public-port` API call.

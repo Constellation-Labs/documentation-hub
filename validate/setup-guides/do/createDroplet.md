@@ -28,7 +28,7 @@ It is important to understand that as Digital Ocean updates their website contin
 
 **IMPORTANT**
 
-In the video NetMet creates a Droplet for **$40/USD** per month.  At the time of the video series creation, this was the recommended Droplet size intended to run your Node on a *single* Hypergraph cluster.  This has been updated to a **$96/USD** droplet, that meets the necessary specifications for running the required Hypergraph and Metagraph on your new Node.  Please take note of this while watching the YouTube series.
+In the video NetMet creates a Droplet for **$40/USD** per month.  At the time of the video series creation, this was the recommended Droplet size intended to run your Node on a *single* Hypergraph cluster.  This has been updated to a **$96/USD** droplet, that meets the necessary specifications for running the required Hypergraph and metagraph on your new Node.  Please take note of this while watching the YouTube series.
 
 If you choose the watch the YouTube Series, it is highly recommended to watch the entire series from the beginning.
 :::
@@ -96,7 +96,7 @@ We are going to use a `shared tenancy` plan, which simply means we will enter in
 We will use the Basic plan, as this will work for us.
 
 :::note Plan Costs
-You can increase the plan to your liking, if you deem it necessary.  The more feature rich plan you decide to invest in, the better your Node may be able to perform on the Hypergraph and Metagraph.
+You can increase the plan to your liking, if you deem it necessary.  The more feature rich plan you decide to invest in, the better your Node may be able to perform on the Hypergraph and metagraph.
 :::
 
 ![](/img/validator_nodes/node-do-sizing1.png)

@@ -34,9 +34,9 @@ The IP address and nodeid presented below are for demonstration purposes only an
 
 ### Node Details
 
-nodectl will now display the details about the Node and the Hypergraph or Metagraph your Node is setup to handle.
+nodectl will now display the details about the Node and the Hypergraph or metagraph your Node is setup to handle.
 <MacWindow>
-  HyperGraph/Metagraph .......................... hypergraph<br />
+  HyperGraph/metagraph .......................... hypergraph<br />
   Environment ................................... mainnet<br />
   P12 Location .................................. /home/nodeadmin/tessellation<br />
   P12 Name ...................................... nodeadmin-node.p12<br />
@@ -47,7 +47,7 @@ Compare these items to your [notes](/validate/resources/nodectlNote) and update 
 
 ### Seed list
 
-The seed list is the access list that determines which Nodes are allowed on MainNet, IntegrationNet, TestNet, or the Metagraph you are attempting to configure this Node for.  This is a secondary authentication mechanism complimenting the PRO score implementation.
+The seed list is the access list that determines which Nodes are allowed on MainNet, IntegrationNet, TestNet, or the metagraph you are attempting to configure this Node for.  This is a secondary authentication mechanism complimenting the PRO score implementation.
 
 If your nodeid is not on the seed list, it will be denied access.
 
@@ -62,7 +62,7 @@ NODE ID FOUND ON SEED LIST<br />
 <b>False</b><br /> 
 </MacWindow>
 
-In this example you will see that this particular Node's `nodeid` is not able to participate on the Hypergraph/Metagraph. This is because it was not found on the current `seed list`. 
+In this example you will see that this particular Node's `nodeid` is not able to participate on the Hypergraph/metagraph. This is because it was not found on the current `seed list`. 
 
 Unless you are migrating an existing authenticated p12 file to your new Node, you will most likely see a `False` here.
 
@@ -96,7 +96,7 @@ Total installation time:  1.229 minutes<br />
 Now that our Node installation is complete; as stated in our final instructions on our Node, we need to make sure we have:
 
 - Communicated our newly created `nodeid` to Constellation Network Admins (most likely method is through the Constellation Network Lattice Support or Discord channels).
-- We will need to collateralize our Node with the necessary amount of **`$DAG`** or the token of your Metagraph, based on their requirements.
+- We will need to collateralize our Node with the necessary amount of **`$DAG`** or the token of your metagraph, based on their requirements.
 
 Once we have completed these two important steps, we will wait for the `seed list` to be updated, obtain a `True` from the [check_seedlist](/validate/automated/nodectlCommands#check_seedlist) command, and then we can [restart](/validate/automated/nodectlCommands#restart) our Node to join the network.
 

@@ -34,7 +34,7 @@ In this tutorial, Node Operators will learn how to build and manage a validator 
 
 ## Before you begin
 
-Constellation Network has three `3` primary Metagraphs[^1]:
+Constellation Network has three `3` primary metagraphs[^1]:
 
 ### Metagraphs
 
@@ -44,26 +44,26 @@ Constellation Network has three `3` primary Metagraphs[^1]:
 
 > ### MainNet
 
-Constellation Network's production Metagraph and consists of the **Hypergraph** Layer0 cluster and its Layer1 **Metagraph**, the currency layer1 cluster.  
+Constellation Network's production metagraph and consists of the **Hypergraph** Layer0 cluster and its Layer1 **metagraph**, the currency layer1 cluster.  
 
 > ### IntegrationNet
 
-Constellation Network's main development **TestNet** to assist with individual Metagraph companies to allow them to create, update, modify and put their Metagraphs through testing.
+Constellation Network's main development **TestNet** to assist with individual metagraph companies to allow them to create, update, modify and put their metagraphs through testing.
 
 > ### TestNet
 
 Constellation Network's TestNet, used to develop our primary protocol.
 
 :::info Are you on the seed list?
-All three Metagraphs, MainNet, IntegrationNet and Testnet currently have a seed list[^2] in place that only allows specific `nodeids` to join the network. 
+All three metagraphs, MainNet, IntegrationNet and Testnet currently have a seed list[^2] in place that only allows specific `nodeids` to join the network. 
 :::
 
 ### Seed List
 
 The seed list functions as an access list, equivalent to an access control feature. It comprises node IDs (public keys) that form part of each Validator Node's key pair, utilized as part of the mechanisms used for network authentication, signing validated data, and managing the Node's wallet rewards.
 
-The seed list adds an additional layer of security and stability as the ecosystem matures, although it is anticipated to be gradually phased out. Once the restrictions on the seed list are lifted, individuals meeting the proper collateral and VPS or hardware requirements will be able to join the Hypergraph or a Metagraph.
+The seed list adds an additional layer of security and stability as the ecosystem matures, although it is anticipated to be gradually phased out. Once the restrictions on the seed list are lifted, individuals meeting the proper collateral and VPS or hardware requirements will be able to join the Hypergraph or a metagraph.
 
-While the seed list is temporarily closed, we welcome applications from other Metagraph developers or integration partners seeking access to develop on the network and/or participate as Validator Node Operators. If you are interested, please complete this [form](https://airtable.com/shroR5bXszQXdh6dn).
+While the seed list is temporarily closed, we welcome applications from other metagraph developers or integration partners seeking access to develop on the network and/or participate as Validator Node Operators. If you are interested, please complete this [form](https://airtable.com/shroR5bXszQXdh6dn).
 
-[^1]: This does not pertain to businesses/companies that are running, deploying or developing Metagraphs of their own.
+[^1]: This does not pertain to businesses/companies that are running, deploying or developing metagraphs of their own.

@@ -27,7 +27,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 Upon the initiation of the VPS creation (for most cloud provisioning) the VPS should have been assigned an IP address linking it to the external Internet for access. 
 
-In a single Node setup environment, this IP address is crucial for accessing your VPS (via  the [SSH keys](#ssh-keys)) and participating on the Constellation Network Metagraphs.
+In a single Node setup environment, this IP address is crucial for accessing your VPS (via  the [SSH keys](#ssh-keys)) and participating on the Constellation Network metagraphs.
 
 ### SSH Keys
 

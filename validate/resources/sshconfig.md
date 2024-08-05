@@ -35,7 +35,7 @@ The custom port is a preventative measure to add more ambiguity to our VPS secur
 :::note Custom port selection
 This guide uses port **2222** as an example, but the node operator must select their own custom port (between **1025—7999** or **10000—65535**) to configure.
 
-Ports **8000-9999** may be reserved for Metagraphs and Global Layer 0, therefore that usage range is discouraged.
+Ports **8000-9999** may be reserved for metagraphs and Global Layer 0, therefore that usage range is discouraged.
 :::
 
 ## Configuration

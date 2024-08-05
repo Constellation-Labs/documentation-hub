@@ -55,10 +55,6 @@ Select the two default rules for SSH and RDP. Click the `DELETE` button to clean
 
 ![](/img/validator_nodes/node-gcp-sg3.png)
 
-:::danger VERY IMPORTANT FOR MainNet, IntegrationNet or TestNet LAUNCH
-These documents reference creating a single layer 0 or Metagraph.  For the launch of MainNet, IntegrationNet or TestNet, you will installing a DUAL layer - `layer0` and `layer1` - Hybrid Validator Node.  You will need to add some extra firewall rules to accommodate this initial requirement.   Please refer to the end of this documentation for these additions.  The YouTube Series does not cover these extra rules.
-:::
-
 #### NEW RULES
 
 - Click on the `CREATE FIREWALL RULE` option.

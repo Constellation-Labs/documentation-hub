@@ -16,7 +16,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-The nodectl utility uses profiles to learn how to connect to various Hypergraph or Metagraph clusters.  Each profile will define all the necessary elements to help your Node connect properly. 
+The nodectl utility uses profiles to learn how to connect to various Hypergraph or metagraph clusters.  Each profile will define all the necessary elements to help your Node connect properly. 
 
 This document will offer a simple guide on how to change from your current profile (generally the default profile used during installation) to a new predefined profile.
 
