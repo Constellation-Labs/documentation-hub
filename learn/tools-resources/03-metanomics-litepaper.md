@@ -80,9 +80,9 @@ By shifting to a flexible supply model, Metanomics ensures that Constellation Ne
 
 ##### Key aspects
 
-* Economic Stability: The flexible supply adjusts to market conditions, maintaining network health.  
-* Incentive Alignment: Ensures continuous incentives for protocol, stardust collective, validators, and delegators.  
-* Transparency: A clear and predictable inflation rate allows all participants to adjust and plan accordingly.
+* **Economic Stability:** The flexible supply adjusts to market conditions, maintaining network health.  
+* **Incentive Alignment:** Ensures continuous incentives for protocol, stardust collective, validators, and delegators.  
+* **Transparency:** A clear and predictable inflation rate allows all participants to adjust and plan accordingly.
 
 ![inflation-formula.png](/img/learn/metanomics-litepaper/inflation-formula.png)
 
@@ -101,7 +101,7 @@ The distribution of inflation emissions among network stakeholders is structured
 
 ###### Fixed emissions
 
-* Delegators receive a fixed 3% on delegated DAG
+* Delegators receive a fixed 3% on delegated DAG.
 
 The protocol starts with an initial rate of 0%, increasing by 6% each quarter until it reaches a maximum of 30%. During this ramp-up period, the foundation receives the remaining funds.
 
