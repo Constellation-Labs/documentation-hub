@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 A metagraph functions similarly to a traditional back-end server, interacting with the external world through HTTP endpoints with specific read (GET) and write (POST) functionalities. While a metagraph is decentralized by default and backed by an on-chain data store, it operates much like any other web server. This section outlines the default endpoints available to developers to interact with their metagraph. 
 
-See also [Custom Queries](./custom-queries) for information on how to create your own metagraph endpoints.
+See also [Custom Queries](./custom-endpoints) for information on how to create your own metagraph endpoints.
 
 ## Framework Endpoints
 Below is a list of available endpoints made available by default through the Metagraph Framework. Each endpoint is hosted by a node running either the Metagraph L0, Currency L1, or Data L1. 
