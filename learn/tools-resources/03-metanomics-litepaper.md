@@ -220,8 +220,3 @@ This new model enhances our ability to not only open the network to more partici
 As metagraphs continue to drive increased activity on the network, the role of snapshot fees becomes increasingly vital. These fees, integrated into the dynamic supply model, help moderate inflation in line with network activity, ensuring overall balance within the ecosystem. Along with a strong network treasury and developer outreach strategy, the proliferation of metagraph projects will form a generative economic landscape that will support the network as a whole. 
 
 By managing supply and demand through a well-structured tokenomic framework, Metanomics positions Constellation Network to thrive in the face of evolving market conditions. This forward-looking approach lays the foundation for sustained success, ensuring that Constellation Network continues to lead in the decentralized technology space for years to come.
-
-## Resources {#resources}
-
-* [Metanomics simulator](https://hypernomics-dag.streamlit.app/)  
-* Placeholder for hacken audit ([https://docs.google.com/document/d/1AOmphCIiDYD-jUwwJjhTKUTs3YcmZ0EMzx\_PytGbGGM/edit](https://docs.google.com/document/d/1AOmphCIiDYD-jUwwJjhTKUTs3YcmZ0EMzx\_PytGbGGM/edit))
