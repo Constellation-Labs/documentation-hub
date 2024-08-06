@@ -6,13 +6,25 @@ hide_table_of_contents: false
 
 <intro-end />
 
-To effectively utilize the Data Application within a Metagraph, it is essential to implement a variety of lifecycle functions. These functions are critical for the proper functioning of the Metagraph and are located within the `l0` and `data-l1` modules. Specifically, these functions are part of the `DataApplicationL0Service` and `DataApplicationL1Service`, respectively.
+Lifecycle functions are essential to the design and operation of a metagraph within the Euclid SDK. These functions enable developers to hook into various stages of the framework's lifecycle, allowing for the customization and extension of the core functionality of their Data Application. By understanding and implementing these functions, developers can influence how data is processed, validated, and persisted, ultimately defining the behavior of their metagraph.
 
-In the sections below, we will provide a comprehensive overview of each available function. For each function, we will describe its role within the lifecycle of the Metagraph. By implementing these functions correctly, users ensure that the Metagraph operates smoothly
+### How Lifecycle Functions Fit into the Framework
+In the Euclid SDK, lifecycle functions are organized within the L0 (DataApplicationL0Service), Currency L1 (CurrencyL1App), and Data L1 (DataApplicationL1Service) modules. These modules represent different layers of the metagraph architecture:
+
+- **L0 Layer:** This is the base layer responsible for core operations like state management, validation, and consensus. Functions in this layer are critical for maintaining the integrity and consistency of the metagraph as they handle operations both before (`validateData`, `combine`) and after consensus (`setCalculatedState`).
+- - **Data L1 Layer:** This layer manages initial validations and data transformations through the /data endpoint. It is responsible for filtering and preparing data before it is sent to the L0 layer for further processing.
+- **Currency L1 Layer:** This layer handles initial validations and transaction processing through the /transactions endpoint before passing data to the L0 layer. It plays a crucial role in ensuring that only valid and well-formed transactions are forwarded for final processing. Note that currency transactions are handled automatically by the framework and so only a small number of lifecycle events are available to customize currency transaction handling (`transactionValidator`, etc.).
+
+By implementing lifecycle functions in these layers, developers can manage everything from the initialization of state in the `genesis` function to the final serialization of data blocks. Each function serves a specific purpose in the metagraph's lifecycle, whether it’s validating incoming data, updating states, or handling custom logic through routes and decoders.
+
+### Lifecycle Overview
+The diagram below illustrates the flow of data within a metagraph, highlighting how transactions and data updates move from the Currency L1 and Data L1 layers into the L0 layer. The graphic also shows the sequence of lifecycle functions that are invoked at each stage of this process. By following this flow, developers can understand how their custom logic integrates with the framework and how data is processed, validated, and persisted as it progresses through the metagraph.
+
+![Euclid SDK](/img/sdk/data-update-lifecycle.png)
 
 ## Functions
 ### genesis
-Data Applications allow developers to define custom state schemas for their metagraph. Initial states are established in the `genesis` function within the `Main.scala` of the `l0` module. Use the `OnChainState` and `CalculatedState` methods to define the initial schema and content of the application `state` for the `genesis snapshot`.
+Data Applications allow developers to define custom state schemas for their metagraph. Initial states are established in the `genesis` function within the `l0` module's `DataApplicationL0Service`. Use the `OnChainState` and `CalculatedState` methods to define the initial schema and content of the application `state` for the `genesis snapshot`.
 
 For example, you can set up your initial states using map types, as illustrated in the Scala code below:
 
@@ -28,7 +40,7 @@ In the code above, we set the initial state to be:
 * `CalculatedState`: Empty Map
  
 ### signedDataEntityDecoder
-This method parses custom requests at the `/data endpoin`t into the `Signed[Update]` type. It should be implemented in both `Main.scala` files for the `l0` and `data-l1` layers.
+This method parses custom requests at the `/data` endpoint into the `Signed[Update]` type. It should be implemented in both `Main.scala` files for the `l0` and `data-l1` layers.
 By default, you can use the `circeEntityDecoder` to parse the JSON:
 
 ```json
@@ -258,46 +270,3 @@ def calculatedStateEncoder: Encoder[CalculatedState] = deriveEncoder
 def calculatedStateDecoder: Decoder[CalculatedState] = deriveDecoder
 ```
 The code above uses the `circe` semiauto deriveEncoder and deriveDecoder
-
-### routes
-Custom GET endpoints can be defined as part of the `routes` overridable method of `BaseDataApplicationL1Service`. These endpoints can be used to provide custom views into snapshot state, or for any custom handling that the developer wishes to include as part of the application. 
-It can be implemented in both `Main.scala` files for the `l0` and `data-l1` layers
-
-For example, a simple endpoint that returns all "addresses" from state might look like this
-```scala
-  override def routes(implicit context: L1NodeContext[IO]): HttpRoutes[IO] = HttpRoutes.of {
-      case GET -> Root / "addresses" =>
-        OptionT(context.getLastCurrencySnapshot)
-          .flatMap(_.data.toOptionT)
-          .flatMapF(deserializeState(_).map(_.toOption))
-          .value
-          .flatMap {
-            case Some(value) =>
-              Ok(value.addresses)
-            case None =>
-              NotFound()
-          }
-  }
-```
-
-A full example can be seen in the [DataAPI example IoT project](https://github.com/Constellation-Labs/metagraph-examples/blob/8f4a77cc51d5ea5d1ab458767766e49fbab52f7e/examples/water-and-energy-usage/modules/l0/src/main/scala/com/my/water_and_energy_usage/l0/Main.scala#L128). 
-
-## Lifecycle Order
-The lifecycle functions in a metagraph are executed in a specific order to ensure proper state management and data processing:
-
-1. `genesis`: Sets up the initial states (l1).
-2. `signedDataEntityDecoder`: Parses incoming requests (l1).
-3. `validateUpdate`: Validates the update (l1).
-4. `serializeUpdate - encoderData`: Serializes the update before sending to l0 (l1).
-5. `deserializeUpdate - decoderData`: Deserializes the update (l0).
-6. `deserializeState - decoderCalculatedState - deserializeCalculatedState`: Deserializes the states (OnChain and CalculatedState) (l0).
-7. `getCalculatedState`: Retrieves the calculated state to validate proof and ordinal.
-8. `validateData`: Validates the update (l0).
-9. `combine`: Updates the states (l0).
-10. `serializeState`: Serializes the OnChain state (l0).
-11. `serializeBlocks`: Serializes the data application blocks (l0).
-12. `hashCalculatedState`: Hashes the calculated state (l0).
-13. `setCalculatedState`: Updates the calculated state after consensus and majority (l0).
-14. `serializeCalculatedState - encoderCalculatedState`: Serializes the calculated state (l0).
-
-This ordered execution ensures that all data transitions and state manipulations are processed systematically and correctly.
