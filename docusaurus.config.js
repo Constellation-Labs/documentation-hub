@@ -303,21 +303,6 @@ module.exports = {
         },
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'apps',
-        path: 'apps',
-        routeBasePath: 'apps',
-        sidebarPath: require.resolve('./sidebarsApps.js'),
-        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-          if (locale != 'en') {
-            return '/';
-          }
-          return `https://github.com/Constellation-Labs/documentation-hub/edit/main/${versionDocsDirPath}/${docPath}`;
-        },
-      },
-    ],
     '@docusaurus/plugin-content-pages',
     '@docusaurus/plugin-debug',
     '@docusaurus/plugin-sitemap',
