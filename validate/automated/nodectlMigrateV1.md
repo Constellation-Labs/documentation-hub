@@ -9,10 +9,10 @@ import DocsCards from '@components/global/DocsCards';
 import MacWindow from '@site/src/components/global/MacWindow';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation Network Automation with nodectl</title>
   <meta
     name="description"
-    content="MainNet 2.0 Automation - nodectl upgrade from version 1 to version 2"
+    content="Constellation Network Automation - nodectl upgrade from version 1 to version 2"
   />
 </head>
 
@@ -190,13 +190,13 @@ We will say **`y`** here (but you can also say **n**).
 
 In version **`1`** of nodectl we only had the ability to use a single **p12** file that contained our **Node's** wallet, which was also used to authenticate against the network cluster.
 
-In version **`2`** we now introduce the ability to use multiple **p12** private key files; therefore, allowing us to use different wallets for each metagraph and/or for joining the hypergraph.
+In version **`2`** we now introduce the ability to use multiple **p12** private key files; therefore, allowing us to use different wallets for each metagraph and/or for joining the Hypergraph.
 
-Version **`2`** introduces **profiles** which allow us to dynamically configure our Node to join as many hypergraphs and metagraphs as necessary.  
+Version **`2`** introduces **profiles** which allow us to dynamically configure our Node to join as many Hypergraphs and metagraphs as necessary.  
 
 We also introduce the **Global p12** section.  If you do not specifically identify a **p12** file for a profile, it will **default** to the **Global p12** configuration.
 
-During the migration from `v1` to `v2`, we will setup **`dag-l0`** as our hypergraph profile, and **`dag-l1`** as our metagraph profile.  Both of these profiles will be setup to use **Global** p12 configuration.
+During the migration from `v1` to `v2`, we will setup **`dag-l0`** as our Hypergraph profile, and **`dag-l1`** as our metagraph profile.  Both of these profiles will be setup to use **Global** p12 configuration.
 
 The statement below explains the concept of p12 differentiation and the global section.
 
@@ -212,7 +212,7 @@ We can confirm we read the statement with a **`y`**.
 <br />
   <br />
   nodectl v2 introduces the ability to use different Node wallets (p12 private keys)
-  per profile (layer0 and/or layer1 Metagraphs).<br /> 
+  per profile (layer0 and/or layer1 metagraphs).<br /> 
 <br />
   A new concept for nodectl v2 includes a GLOBAL section within the configuration that can be used to assign a single p12 to all or some of the profiles, on your Node.<br />
 <br />
@@ -251,14 +251,14 @@ We can say **y** here.
 ### Build new cn-config.yaml
 
 :::info What is the cn-node file?
-The `cn-node` file is a bash script that was used in `v1.x.x` of nodectl to supply the necessary environment variables to Tessellation to properly operate on the Constellation Network Global Layer0 and Layer1 networks (hypergraph and metagraph).
+The `cn-node` file is a bash script that was used in `v1.x.x` of nodectl to supply the necessary environment variables to Tessellation to properly operate on the Constellation Network Global Layer0 and Layer1 networks (Hypergraph and metagraph).
 :::
 
 New to **`v2`** we deprecate the `cn-node` bash script file and replace it with a configurable yaml file.
 
-This allows us to configure our hypergraphs and metagraphs to our needs.
+This allows us to configure our Hypergraphs and metagraphs to our needs.
 
-nodectl will injest the `cn-node` script and back it up.
+nodectl will ingest the `cn-node` script and back it up.
 
 <MacWindow>
   Ingesting [cn-node] file....................... complete<br />

@@ -9,7 +9,7 @@ import DocsCards from '@components/global/DocsCards';
 import MacWindow from '@site/src/components/global/MacWindow';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
     content="nodectl installation of new Node"
@@ -23,7 +23,7 @@ Are we migrating an existing P12 file?
 We have these possibilities:
 1. We do not have a p12 private key store already, and need to create one.
 1. We have a p12 private key store created already, prior to installation.
-1. We need to rebuild their Node from scratch; however, they have a p12 file that is already accepted and allowed access to the HyperGraph or Metagraph, we do not want a new p12 file.
+1. We need to rebuild their Node from scratch; however, they have a p12 file that is already accepted and allowed access to the HyperGraph or metagraph, we do not want a new p12 file.
 
 ### Are we migrating a p12?
 

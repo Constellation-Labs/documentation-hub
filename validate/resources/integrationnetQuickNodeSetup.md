@@ -56,7 +56,7 @@ sudo nodectl auto_restart disable; sudo wget -N https://github.com/stardustcolle
 ```sh
 sudo nodectl install --quick-install
 ```
-`Please choose which Hypergraph or Metagraph you would like to install on this server:`
+`Please choose which Hypergraph or metagraph you would like to install on this server:`
 - Choose 2 (integrationnet [HyperGraph])
 
 `Are you migrating an existing p12 private key to this Node? [n]:`

@@ -9,10 +9,10 @@ import DocsCards from '@components/global/DocsCards';
 import MacWindow from '@site/src/components/global/MacWindow';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation Network Automation with nodectl</title>
   <meta
     name="description"
-    content="MainNet 2.0 Automation - Upgrade Tessellation with nodectl"
+    content="Constellation Network Automation - Upgrade Tessellation with nodectl"
   />
 </head>
 
@@ -20,7 +20,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 This document will show you; through step-by-step instructions, how to upgrade your Node to the latest version of Tessellation or nodectl.
 
-Tessellation is the code name for the protocol that runs on your Node.  It is the guts of how your Node is able to operate on the hypergraph or metagraph.  
+Tessellation is the code name for the protocol that runs on your Node.  It is the guts of how your Node is able to operate on the Hypergraph or metagraph.  
 
 **[nodectl](/validate/automated/nodectl)** is a utility that runs on your Node and helps you automate some of the more complex processes that Tessellation requires to run efficiently. 
 
@@ -336,7 +336,7 @@ Later in the upgrade ( unless the `-ni` [switch](/validate/automated/nodectlComm
 
 We recommend you don't leave it unattended to avoid timeouts, missed possible errors, or user interactive prompts that will require your attention.
 
-nodectl will take the Node off the cluster (HyperGraph and Metagraph) in preparation for upgrade.
+nodectl will take the Node off the cluster (HyperGraph and metagraph) in preparation for upgrade.
 
 In the example below, you will see that nodectl identified `dag-l0` and `dag-l1` profiles configured on your Node.  It will gracefully attempt to remove itself from the clusters configured by these profiles.
 
@@ -456,7 +456,7 @@ In the below example, the `uploads` directory was found to be emtpy, so the step
 
 Similar to the **backups** and **uploads**, the logs directory can become large related to log files that are being built up and not removed.
 
-In the below example, some of the log files were ommitted with `[...]` representing files that were built up.  You will notice hypergraph *`layer0`* and metagraph *`layer1`* logs being represented.
+In the below example, some of the log files were omitted with `[...]` representing files that were built up.  You will notice Hypergraph *`layer0`* and metagraph *`layer1`* logs being represented.
 
 <MacWindow>
   ---------- * Clean up logs * -----------<br />
@@ -520,7 +520,7 @@ cleaning logs from [snapshots] > 30 days ...... complete<br />
 ### Update packages and seed lists
 nodectl will pull down the necessary packages that will upgrade your Node to the latest versions.
 
-We will also update any access permission lists (*seed lists*) that need to match for proper authentication to the hypergraph and metagraphs.
+We will also update any access permission lists (*seed lists*) that need to match for proper authentication to the Hypergraph and metagraphs.
 
 :::note
 If there is not a *seed list* present for a particular profile, the fetch will be disabled and skipped.  You have the ability to configure this within the nodectl configuration file.

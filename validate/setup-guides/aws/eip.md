@@ -24,7 +24,7 @@ Since our local computer accessing this EC2 instance will be configured with a `
 To accomplish this, we will setup an Elastic IP address (EIP) to persist our Internet presence.
 
 :::note
-The Constellation Network Hypergraph and subsequent Metagraphs to not need persistent IP addresses. This step is to eliminate unnecessary steps to administer your Node each time it is restarted.
+The Constellation Network Hypergraph and subsequent metagraphs to not need persistent IP addresses. This step is to eliminate unnecessary steps to administer your Node each time it is restarted.
 
 EIP addresses on AWS to not incur cost unless not in use.
 :::

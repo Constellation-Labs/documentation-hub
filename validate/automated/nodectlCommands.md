@@ -116,7 +116,7 @@ sudo nodectl help
 ```
 <MacWindow>
   NODECTL INSTALLED: [v2.7.1]<br />
-  TESSELLATION INSTALLED: [v2.0.0-alpha.6]<br />
+  TESSELLATION INSTALLED: [v2.8.0]<br />
    Code Name: Princess Warrior<br />
   ----------------------<br />
 </MacWindow>
@@ -246,9 +246,9 @@ After a `restart_only` is executed, the profile should end in an `ReadyToJoin` s
 ---
 The **`leave`** command takes a single [parameter](#what-is-an-option-and-parameter).
 
-**Leave** the hypergraph or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-an-option-and-parameter) supplied.
+**Leave** the Hypergraph or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-an-option-and-parameter) supplied.
 
-Issuing a `leave` against your Node will allow your Node to complete any processes on the hypergraph or metagraph that it may be involved in **before** your Node exits the cluster.
+Issuing a `leave` against your Node will allow your Node to complete any processes on the Hypergraph or metagraph that it may be involved in **before** your Node exits the cluster.
 
 It is appropriate and will improve your Node's **PRO** score to `leave` the cluster before you issue a `stop` command.
   
@@ -274,7 +274,7 @@ sudo nodectl leave -p dag-l0
 
 The **`join`** command takes a single [parameter](#what-is-an-option-and-parameter).
 
-**Join** the hypergraphs or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-an-option-and-parameter) supplied.
+**Join** the Hypergraphs or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-an-option-and-parameter) supplied.
 
 You will need to make sure that the profile related to the cluster your are attempting to join is started; as well as, the status of your Node is in `ReadyToJoin` [status](#status) on the cluster.
   
@@ -306,7 +306,7 @@ The **`auto_restart`** command takes several [parameters](#what-is-an-option-and
 
 This feature is **disabled**, by default. 
 
-**`auto_restart`** is a special feature of nodectl that will continuously monitor your Node to make sure the various profiles are *on the cluster* (hypergraph or metagraphs).
+**`auto_restart`** is a special feature of nodectl that will continuously monitor your Node to make sure the various profiles are *on the cluster* (Hypergraph or metagraphs).
 
 | Monitor to keep |
 | :--- |
@@ -355,13 +355,13 @@ If your Node is currently joined to an older session it will no longer be partic
 An auto_restart may take up to ~18 minutes to complete.  
 :::
 
-These long executions are because the Node will detect one or both profiles down and restart the Global hypergraph first. nodectl will then attempt to bring up any metagraphs.  To avoid timing conflicts with other Node's that may also have `auto_restart` enabled, `auto_restart` has random timers put in place throughout a restart process.  
+These long executions are because the Node will detect one or both profiles down and restart the Global Hypergraph first. nodectl will then attempt to bring up any metagraphs.  To avoid timing conflicts with other Node's that may also have `auto_restart` enabled, `auto_restart` has random timers put in place throughout a restart process.  
 
-nodectl will need to properly link your metagraph to the Global hypergraph. 
+nodectl will need to properly link your metagraph to the Global Hypergraph. 
 
 It is important to understand this is a background and unattended process, the delay is created on **purpose**.
   
-It is recommended by the developers to link a metagraph (*that requires this type of setup*) through your Node's own Global hypergraph connection.
+It is recommended by the developers to link a metagraph (*that requires this type of setup*) through your Node's own Global Hypergraph connection.
   
 :::warning PATIENCE
 If you are using `auto_restart` **please remember** if you are physically monitoring your Node while it is enabled, you need to exercise **patience** to allow it to figure out how to get back online by itself as necessary.  
@@ -436,7 +436,7 @@ sudo nodectl auto_restart status
 ### check_connection
 ---
 
-The **`check_connection`** command will execute a search on the currently connected hypergraph or metagraph cluster. 
+The **`check_connection`** command will execute a search on the currently connected Hypergraph or metagraph cluster. 
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
@@ -527,7 +527,7 @@ The **`check_source_connection`** command takes a profile [parameter](#what-is-a
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which cluster related to the profile name in question do we want to review. | **required** |
     
-When executed the `check_source_connection` command will attempt to find a random Node on the current known hypergraph or metagraph cluster.
+When executed the `check_source_connection` command will attempt to find a random Node on the current known Hypergraph or metagraph cluster.
   
 :::warning 
 The random Node **needs** to be joined into the **consensus of the cluster**, and **must** be on the cluster and in **`Ready`** state.
@@ -594,7 +594,7 @@ The **`check_seedlist`** command takes one [parameter](#what-is-an-option-and-pa
 **`check_seedlist`** will pull your `nodeid` out of your p12 file and compare it to the seedlist downloaded from **Constellation Network's** authorized list.
   
 :::note
-This command is specific to current restrictions placed on the hypergraph for controlled access prior to the **PRO Score** [proof of reputable observation] release.
+This command is specific to current restrictions placed on the Hypergraph for controlled access prior to the **PRO Score** [proof of reputable observation] release.
 :::
 
 | Title | Description |
@@ -736,7 +736,7 @@ sudo nodectl -cs
 
 The **`find`** command takes several parameters.
   
-This command will attempt to find the requested peer on the current connected hypergraph or metagraph.
+This command will attempt to find the requested peer on the current connected Hypergraph or metagraph.
 
 The find command offers insight into the 
 - number of nodes on the cluster
@@ -934,7 +934,7 @@ The **`peers`** command will attempt to list all the peers found on the cluster;
 | --basic | None | show only the ip address and public port. | **optional** |
 | --extended | None | show full nodeid and dag address. | **optional** |
   
-Normal output from the peers command will show all the peers seen on a given metagraph or the hypergraph (profile dependent) this will include:
+Normal output from the peers command will show all the peers seen on a given metagraph or the Hypergraph (profile dependent) this will include:
 - node ip with public port 
   - `10.10.10.10:1000` = `10.10.10.10` with public TCP port of `1000`
 - nodeid (shortened to first 8 hex values, `....`, last 8 hex values)
@@ -1503,7 +1503,7 @@ Optionally, you can use the optional `-id` option to map a `nodeid` to an `ip ad
   
 The `external IP` of your Node is the address that allows your Node to communicate with the rest of the systems on the Internet.  
 
-This is the address that your Node will use to communicate with the rest of the decentralized Nodes that make up the hypergraph and/or metagraphs.  Your Node will attempt to communications with via other Nodes via p2p and public API requests.
+This is the address that your Node will use to communicate with the rest of the decentralized Nodes that make up the Hypergraph and/or metagraphs.  Your Node will attempt to communications with via other Nodes via p2p and public API requests.
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |

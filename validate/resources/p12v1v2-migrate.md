@@ -18,11 +18,11 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-Constellation Network has invoked a new **p12** file standard for accessing the **Constellation Network Hypergraph and Metagraphs**.
+Constellation Network has invoked a new **p12** file standard for accessing the **Constellation Network Hypergraph and metagraphs**.
 
 The original `version 1` **p12** files are no longer in use.  
 
-**Constellation Network Hypergraph and Metagraphs** now use **p12** private key files that utilize `version 2` format.
+**Constellation Network Hypergraph and metagraphs** now use **p12** private key files that utilize `version 2` format.
 
 ## Purpose
 
@@ -219,7 +219,7 @@ EC Public Key [ee:ff:aa:bb:cc:dd:ee:ff:11:22:33:44:55:66:77:88:99:aa:bb:cc]<br /
 Your **p12** file should now be migrated from `version 1` to `version 2`.  Place your original `version 1` in a secure location for temporary storage.
 
 You should now test your **new** `version 2` p12 private key file.  You can do this by: 
-- Connecting to your appropriate Constellation Network cluster (hypergraph or metagraph). 
+- Connecting to your appropriate Constellation Network cluster (Hypergraph or metagraph). 
 - [Exporting your private key](/validate/automated/nodectlCommands#export_private_key).
 - Utilizing your **p12** private key file with whatever process you require. 
 

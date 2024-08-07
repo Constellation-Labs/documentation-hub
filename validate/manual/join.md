@@ -4,17 +4,17 @@ hide_table_of_contents: false
 ---
 
 <head>
-  <title>Join the Hypergraph or Metagraph</title>
+  <title>Join the Hypergraph or metagraph</title>
   <meta
     name="description"
-    content="This document will help to join an existing Hypergraph Network or Metagraph."
+    content="This document will help to join an existing Hypergraph Network or metagraph."
   />
 </head>
 
-We are now ready to join our Metagraph and/or Hypergraph network.
+We are now ready to join our metagraph and/or Hypergraph network.
 
 :::info NOTE
-Our example will join the **testnet 2.0** network.
+Our example will join the **testnet** network.
 :::
 
 ## Instructions

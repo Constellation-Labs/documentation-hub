@@ -9,7 +9,7 @@ import DocsCards from '@components/global/DocsCards';
 import MacWindow from '@site/src/components/global/MacWindow';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
     content="nodectl installation of new Node"
@@ -18,7 +18,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 nodectl will now "warn" you that it will default to the Constellation Network dual layer configuration.
 
-Your Node will be setup to connect to both the Hypergraph (Constellation's Global Layer0); as well as, Constellation's Metagraph (Layer1).  In order to properly participate on Constellation's **MainNet** network, your Node will be required to connect to both.
+Your Node will be setup to connect to both the Hypergraph (Constellation's Global Layer0); as well as, Constellation's metagraph (Layer1).  In order to properly participate on Constellation's **MainNet** network, your Node will be required to connect to both.
 
 Do not worry, nodectl will take care of all the technical details for you!
 
@@ -31,7 +31,7 @@ nodectl installation will install the new Node with default network variables<br
 <br />
 Network Cluster: hypergraph -> mainnet<br />
 <br />
-After installation is complete, the Node Operator may alter the nodectl configuration to allow connection to the network cluster or Metagraph of choice via the command:<br />
+After installation is complete, the Node Operator may alter the nodectl configuration to allow connection to the network cluster or metagraph of choice via the command:<br />
 <br />
 sudo nodectl configure<br />
 <br />

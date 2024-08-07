@@ -25,7 +25,7 @@ nodectl is reliant on being able to read and process a configuration file that h
 > For Example:
 
 - Holds your p12 private key store details that are utilized to authenticate and validate data on the Node.
-- Holds the details necessary to administer the Hypergraph or Metagraph cluster your Node is running on, in defined profiles.
+- Holds the details necessary to administer the Hypergraph or metagraph cluster your Node is running on, in defined profiles.
 - Holds parameters necessary to run various nodectl features.
 
 ## Backing up your configuration

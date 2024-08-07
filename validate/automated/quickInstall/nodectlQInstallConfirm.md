@@ -11,7 +11,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation Network Automation with nodectl</title>
   <meta
     name="description"
     content="nodectl new quick installation"
@@ -21,19 +21,19 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
 What cluster will our Node be participating in?  
 
 :::note Note
-If you are planning on joining a Metagraph that is **not listed**, you should choose `mainnet` as your default.
+If you are planning on joining a metagraph that is **not listed**, you should choose `mainnet` as your default.
 
-You will be able to update your configuration to support the *unlisted* Metagraph of your choosing later using the [configurator](/validate/automated/nodectlCommands#configure).
+You will be able to update your configuration to support the *unlisted* metagraph of your choosing later using the [configurator](/validate/automated/nodectlCommands#configure).
 :::
 
 <MacWindow>
 nodectl installing [ preparing ]<br />
 Obtain install parameters ..................... preparing<br />
 <br />
-Please choose which Hypergraph or Metagraph you would like to install on this server:<br />
+Please choose which Hypergraph or metagraph you would like to install on this server:<br />
 </MacWindow>
 
-*You should choose the Hypergraph or Metagraph you want to join here, following our example, we are installing a Node to join the mainnet Hypergraph.*
+*You should choose the Hypergraph or metagraph you want to join here, following our example, we are installing a Node to join the mainnet Hypergraph.*
 
 We will choose <kbd>1</kbd> for `mainnet`. 
 
@@ -44,7 +44,7 @@ We will choose <kbd>1</kbd> for `mainnet`.
   1) mainnet [HyperGraph] <br />
   2) integrationnet [HyperGraph]<br /> 
   3) testnet [HyperGraph]<br /> 
-  4) dor-metagraph-mainnet [Metagraph]<br /> 
+  4) dor-metagraph-mainnet [metagraph]<br /> 
 <br />
   Q)uit <br />
 <br />

@@ -18,7 +18,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 nodectl offers an special feature called auto restart (*auto_restart*).
 
-This feature will detect if your Node is not properly connected to the Hypergraph and/or Metagraphs, as detected in the [configuration](/validate/automated/nodectlConfig) of nodectl.
+This feature will detect if your Node is not properly connected to the Hypergraph and/or metagraphs, as detected in the [configuration](/validate/automated/nodectlConfig) of nodectl.
 
 Auto Restart command reference can be found [here](/validate/automated/nodectlCommands#auto_restart).
 
@@ -26,7 +26,7 @@ Auto Restart command reference can be found [here](/validate/automated/nodectlCo
 
 The auto upgrade (*auto_upgrade*) command is an extension of the auto_restart feature.  It works in conjunction with the auto restart.
 
-In the event that nodectl detects that your Node is not properly connected to the Hypergraph and/or Metagraphs, as configured in the [configuration](/validate/automated/nodectlConfig), it will not only attempt to get your Node back online; additionally, it will also make sure that the version of Tessellation is also up to date by upgrading your Node automatically.
+In the event that nodectl detects that your Node is not properly connected to the Hypergraph and/or metagraphs, as configured in the [configuration](/validate/automated/nodectlConfig), it will not only attempt to get your Node back online; additionally, it will also make sure that the version of Tessellation is also up to date by upgrading your Node automatically.
 
 :::warning
 `auto_upgrade` requires that `auto_restart` is also enabled.

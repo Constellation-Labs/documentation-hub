@@ -15,9 +15,9 @@ hide_table_of_contents: false
 
 ![](/img/validator_nodes/node-do-options.png)
 
-This is a free option and can come in handy as your Node continues to run on the Hypergraph and Metagraph.
+This is a free option and can come in handy as your Node continues to run on the Hypergraph and metagraph.
 
-A Constellation Network Validator Node is mostly an ephimeral device.
+A Constellation Network Validator Node is mostly an ephemeral device.
 
 If the following scenarios arise:
 

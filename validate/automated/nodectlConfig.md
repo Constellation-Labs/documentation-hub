@@ -24,7 +24,7 @@ nodectl version `2` introduces a dynamic configuration file.
 
 This document will explain the details of nodectl's configuration.  
 
-With version 2, you are able to configure all the various details of each Metagraph and/or Hypergraph your Node needs to connect with.
+With version 2, you are able to configure all the various details of each metagraph and/or Hypergraph your Node needs to connect with.
 
 ### YAML
 
@@ -38,18 +38,18 @@ At the end of the day, yaml was decided upon for use with nodectl because it is 
 
 ## Profiles
 
-Each Hypergraph and Metagraph has independent settings used to connect to their perspective clusters.  nodectl uses the concept of profiles to hold the details for each set of definitions or parameters per Metagraph and Hypergraph.
+Each Hypergraph and metagraph has independent settings used to connect to their perspective clusters.  nodectl uses the concept of profiles to hold the details for each set of definitions or parameters per metagraph and Hypergraph.
 
 ## Configurations 
 
 ### Pre-defined
 
-nodectl holds predefined configurations that are recommended by the developers of the Constellation Network Hypergraph and Metagraph (GL0 and ML1); as well as, the developers of Metagraphs that participate in the ecosystem. 
+nodectl holds predefined configurations that are recommended by the developers of the Constellation Network Hypergraph and metagraph (GL0 and ML1); as well as, the developers of metagraphs that participate in the ecosystem. 
 
 For example: Constellation Network has a predefined configuration available for all three of their public clusters, MainNet, TestNet, IntegrationNet:
 
 - Global Layer0 Hypergraph (GL0)
-- Constellation Network Currency Layer1 Metagraph (ML1)
+- Constellation Network Currency Layer1 metagraph (ML1)
 
 As nodectl becomes more adopted by the community, other ecosystem communities, companies developing a metagraph on Constellation Networks protocol, or other entity may submit their desired configuration to this project for addition and adoption.
 
@@ -57,18 +57,18 @@ As new pre-configured profiles are submitted, they will be able to be appended t
 
 ## >= 2.9.0
 
-The following documentation pertains to version 2.9.0 or greater of nodectl which supports Metagraphs.  If you are running version <2.9.0, you can refer to the [version 2.8.0 or lower](#-v281) section of this document.
+The following documentation pertains to version 2.9.0 or greater of nodectl which supports metagraphs.  If you are running version <2.9.0, you can refer to the [version 2.8.0 or lower](#-v281) section of this document.
 
 ### Custom Configurations
 
-You may encounter situations when the Metagraph you are attempting to connect to does not have a pre-defined profile available.
+You may encounter situations when the metagraph you are attempting to connect to does not have a pre-defined profile available.
 
-You may encounter situations where you need to adjust your Node's Metagraph settings to meet your requirements (advanced users).
+You may encounter situations where you need to adjust your Node's metagraph settings to meet your requirements (advanced users).
 
-In the event that you are attempting to connect to a Metagraph that does not have a pre-defined configuration available directly from nodectl's configurator; you simply need to request a link to download the configuration via a `curl` or `wget` command, directly from the Metagraph owners.
+In the event that you are attempting to connect to a metagraph that does not have a pre-defined configuration available directly from nodectl's configurator; you simply need to request a link to download the configuration via a `curl` or `wget` command, directly from the etagraph owners.
 
 :::note
-If you do not find a Metagraph configuration available via nodectl, you can request your Metagraph administrators submit a pull request to the [nodectl Stardust collective repository](https://github.com/StardustCollective/nodectl/pulls).
+If you do not find a metagraph configuration available via nodectl, you can request your metagraph administrators submit a pull request to the [nodectl Stardust collective repository](https://github.com/StardustCollective/nodectl/pulls).
 :::
 
 Through customization, you can build your own profile or tweak your own settings via the [configure command](/validate/automated/nodectlCommands#configure).
@@ -114,7 +114,7 @@ global_elements:
 ```
  Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
-| metagraph_name | string | The name that the Metagraph administrators will use to identify the Metagraph.| Yes |
+| metagraph_name | string | The name that the metagraph administrators will use to identify the metagraph.| Yes |
 | nodectl_yaml | string (version) | The version of the configuration file.  This value helps nodectl understand (as well as the Node Operator(s)) if any changes may be present in the configuration file between versions.  This value should not be manipulated by the Node Operator. | Yes |
 | log_level | string (level) | This value will determine what type of log messages are written to the nodectl log.  This is related to nodectl and not Tessellation. | Yes |
 
@@ -157,8 +157,8 @@ nodectl:
 | --------- | ----- |----- | -------- |
 | enable | `True` \| `False` | If set to True the profile will be loaded into nodectl when the utility it executed. | Yes |
 | layer | `0` \| `1` | The blockchain layer that this profile corresponds with. | Yes |
-| edge_point | None | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. The edge point section holds various details necessary for to connect to this edge point successfully. | Yes |
-| environment | `<string>` | What is the Metagraph environment name.  This string name should be supplied by the administrators of the metagraph this profile correlates with. | Yes |
+| edge_point | None | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (Hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. The edge point section holds various details necessary for to connect to this edge point successfully. | Yes |
+| environment | `<string>` | What is the metagraph environment name.  This string name should be supplied by the administrators of the metagraph this profile correlates with. | Yes |
 
 ### edge point
 ```
@@ -170,7 +170,7 @@ nodectl:
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
 | https | `True` \| `False` | If set to True the uri will be prefixed with https instead of appending 443 to a http uri. | Yes |
-| host |  `<string>` | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. | Yes |
+| host |  `<string>` | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (Hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. | Yes |
 | host_port | `<integer>` | The TCP port number that the edge point is accepting connection requests. | Yes |
 
 ### ports
@@ -182,10 +182,10 @@ Key | Value | Description | Required |
 ```
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
-| ports | None | Title section for the Metagraph and Hypergraph communication access TCP ports. | Yes |
-| public |  `<integer>` | Open access TCP port used for all public access to the hypergraph or metagraph including API requests. | Yes |
+| ports | None | Title section for the metagraph and Hypergraph communication access TCP ports. | Yes |
+| public |  `<integer>` | Open access TCP port used for all public access to the Hypergraph or metagraph including API requests. | Yes |
 | p2p | `<integer>` | The peer-to-peer port number used to communicate to the cluster via the gossip protocol. | Yes |
-| cli | `<integer>` | Internal TCP port that is used to access the private internal API of our Node specifically for the Metagraph and Hypergraph in question. | Yes |
+| cli | `<integer>` | Internal TCP port that is used to access the private internal API of our Node specifically for the metagraph and Hypergraph in question. | Yes |
 
 ### service
 ```
@@ -193,11 +193,11 @@ Key | Value | Description | Required |
 ```
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
-| service | `<string>` | Behind the scenes, nodectl will create a Debian distribution compatible service that will run to control the Metagraphs and Hypergraphs defined for this section of the configuration. | Yes |
+| service | `<string>` | Behind the scenes, nodectl will create a Debian distribution compatible service that will run to control the metagraphs and Hypergraphs defined for this section of the configuration. | Yes |
 
 ### layer0 link
 
-Metagraphs will require a link be established between itself and the Hypergraph it is peered directly with.  This section creates the definitions to make this connection work properly.
+metagraphs will require a link be established between itself and the Hypergraph it is peered directly with.  This section creates the definitions to make this connection work properly.
 
 Two example sections are shown. 
 1. layer0_link that is disabled because there is no link to be established.
@@ -221,7 +221,7 @@ Key | Value | Description | Required |
 | link_profile | `<string>` \| None | The profile name (if set to self) of the profile that this Node's profile will create a link with. | Yes |
 
 :::info Informational Explanation
-It is recommended practice to establish a dual layer0 and layer1 profile connection on your Node.  This is required to participate on the Constellation Network MainNet which consists of both the Hypergraph and a Metagraph.
+It is recommended practice to establish a dual layer0 and layer1 profile connection on your Node.  This is required to participate on the Constellation Network MainNet which consists of both the Hypergraph and a metagraph.
 
 If following best practices, you will only need to enter **`self`** for the `layer0_key` (private key), `layer0_host`, and `layer0_port`.  At that point it is required to enter in the `link_profile` name.  In this case it will be `dag-l0` which is the profile name mentioned in this example.
 :::
@@ -258,7 +258,7 @@ Key | Value | Description | Required |
 | dirs | None | Defines the directory location section for the specific profile. | Yes |
 | snapshots | `<full_directory_path>` \| default |  The snapshots directory is where a local copy of your Node's blockchain data is held. This directory can get really large and needs to be maintained. Some administrators will want to move this directory to a network attached (or other) location. This location must be a mounted directory. For inexperienced or non-technical Node Operators, it is advised to enter in the key word 'default' here.  Also note that for some Layer 1 metagraphs (including Constellation's DAG metagraph) the snapshots directory should be set to 'disable' as it is not used. Consult with the metagraph user guides or with their administrators for proper directory locations. The snapshot directory should be set from the onset of the Node setup, it is dangerous to change its location 'after-the-fact'.  THIS DIRECTORY SHOULD BE A FULL PATH ( starting with a / and ending with a / ) eg) /var/snapshots/  Warning: If you use a remotely mounted directory, this directory MUST be accessible; otherwise, nodectl will exit with an inaccessible error. | Yes |
 | backups | `<full_directory_path>` \| default | The location that you would like to store the backups for this profile.  If set to default the default location will be used. Any file that needs to be backed up (by nodectl) will be placed in this directory. | Yes |
-| uploads |  `<full_directory_path>` \| default | The location that you would like to store the uploads for this profile.  If set to `default`, then the default location will be used. Export requests (csv data) or logs for upload to the Metagraph administrators or developers, will be placed in this directory. | Yes |
+| uploads |  `<full_directory_path>` \| default | The location that you would like to store the uploads for this profile.  If set to `default`, then the default location will be used. Export requests (csv data) or logs for upload to the metagraph administrators or developers, will be placed in this directory. | Yes |
 
 ### java
 
@@ -342,7 +342,7 @@ Key | Value | Description | Required |
 :::note
 We will set both the seed_location and seed_file to `disable` if the seed list is not required.
 
-Currently the Constellation Network Layer1 Metagraph does not require a seed-list entry.
+Currently the Constellation Network Layer1 metagraph does not require a seed-list entry.
 :::
 
 ### Node type
@@ -380,7 +380,7 @@ nodectl has a *special* feature that includes:
   - auto restart
   - auto upgrade
 
-You can enable the auto restart feature that will restart your Node if it detects that it fell off the Hypergraph or Metagraph. See the [auto restart command](/validate/automated/nodectlCommands#auto_restart).
+You can enable the auto restart feature that will restart your Node if it detects that it fell off the Hypergraph or metagraph. See the [auto restart command](/validate/automated/nodectlCommands#auto_restart).
 
 ```
   auto_restart:
@@ -433,17 +433,17 @@ If the passphrase is not supplied within the `cn-config.yaml`, you will not be a
 
 ## < v2.8.1
 
-The following documentation pertains to version 2.8.1 or lower.  This documentation may be removed and deprecated in the future as Metagraph adoption becomes fully prevalent and versions lower than 2.8.1 that do not support Metagraphs, are deprecated. 
+The following documentation pertains to version 2.8.1 or lower.  This documentation may be removed and deprecated in the future as metagraph adoption becomes fully prevalent and versions lower than 2.8.1 that do not support metagraphs, are deprecated. 
 
 :::note
-Some of the below documentation may be repetative of the documentation pertaining to version > 2.9.0 of nodectl.
+Some of the below documentation may be repetitive of the documentation pertaining to version > 2.9.0 of nodectl.
 :::
 
 ### Custom Configurations
 
-You may encounter situations when the Metagraph you are attempting to connect to does not have a pre-defined profile available.
+You may encounter situations when the metagraph you are attempting to connect to does not have a pre-defined profile available.
 
-You may encounter situations where you need to adjust your Node's Metagraph settings to meet your requirements (advanced users).
+You may encounter situations where you need to adjust your Node's metagraph settings to meet your requirements (advanced users).
 
 Through customization, you can build your own profile or tweak your own settings via the [configure command](/validate/automated/nodectlCommands#configure).   Deprecated in versions > 2.9.0
 
@@ -505,8 +505,8 @@ nodectl:
 | --------- | ----- |----- | -------- |
 | enable | `True` \| `False` | If set to True the profile will be loaded into nodectl when the utility it executed. | Yes |
 | layer | `0` \| `1` | The blockchain layer that this profile corresponds with. | Yes |
-| edge_point | None | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. The edge point section holds various details necessary for to connect to this edge point successfully. | Yes |
-| environment | `<string>` | What is the Metagraph environment name.  This string name should be supplied by the administrators of the metagraph this profile correlates with. | Yes |
+| edge_point | None | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (Hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. The edge point section holds various details necessary for to connect to this edge point successfully. | Yes |
+| environment | `<string>` | What is the metagraph environment name.  This string name should be supplied by the administrators of the metagraph this profile correlates with. | Yes |
 
 ### edge point
 ```
@@ -518,7 +518,7 @@ nodectl:
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
 | https | `True` \| `False` | If set to True the uri will be prefixed with https instead of appending 443 to a http uri. | Yes |
-| host |  `<string>` | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. | Yes |
+| host |  `<string>` | In order for external web2 or web3 edge devices to gain access to the API (or other) within the cluster (Hypergraph or metagraph) there will generally be a special uri that may be controlled (attached or pointed to) by an custom edge device or load balancer. | Yes |
 | host_port | `<integer>` | The TCP port number that the edge point is accepting connection requests. | Yes |
 
 ### ports
@@ -530,10 +530,10 @@ Key | Value | Description | Required |
 ```
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
-| ports | None | Title section for the Metagraph and Hypergraph communication access TCP ports. | Yes |
-| public |  `<integer>` | Open access TCP port used for all public access to the hypergraph or metagraph including API requests. | Yes |
+| ports | None | Title section for the metagraph and Hypergraph communication access TCP ports. | Yes |
+| public |  `<integer>` | Open access TCP port used for all public access to the Hypergraph or metagraph including API requests. | Yes |
 | p2p | `<integer>` | The peer-to-peer port number used to communicate to the cluster via the gossip protocol. | Yes |
-| cli | `<integer>` | Internal TCP port that is used to access the private internal API of our Node specifically for the Metagraph and Hypergraph in question. | Yes |
+| cli | `<integer>` | Internal TCP port that is used to access the private internal API of our Node specifically for the metagraph and Hypergraph in question. | Yes |
 
 ### service
 ```
@@ -541,7 +541,7 @@ Key | Value | Description | Required |
 ```
 Key | Value | Description | Required |
 | --------- | ----- |----- | -------- |
-| service | `<string>` | Behind the scenes, nodectl will create a Debian distribution compatible service that will run to control the Metagraphs and Hypergraphs defined for this section of the configuration. | Yes |
+| service | `<string>` | Behind the scenes, nodectl will create a Debian distribution compatible service that will run to control the metagraphs and Hypergraphs defined for this section of the configuration. | Yes |
 
 ### layer0 link
 
@@ -569,7 +569,7 @@ Key | Value | Description | Required |
 | link_profile | `<string>` \| None | The profile name (if set to self) of the profile that this Node's profile will create a link with. | Yes |
 
 :::info Informational Explanation
-It is recommended practice to establish a dual layer0 and layer1 profile connection on your Node.  This is required to participate on the Constellation Network MainNet which consists of both the Hypergraph and a Metagraph.
+It is recommended practice to establish a dual layer0 and layer1 profile connection on your Node.  This is required to participate on the Constellation Network MainNet which consists of both the Hypergraph and a metagraph.
 
 If following best practices, you will only need to enter **`self`** for the `layer0_key` (private key), `layer0_host`, and `layer0_port`.  At that point it is required to enter in the `link_profile` name.  In this case it will be `dag-l0` which is the profile name mentioned in this example.
 :::
@@ -606,7 +606,7 @@ Key | Value | Description | Required |
 | dirs | None | Defines the directory location section for the specific profile. | Yes |
 | snapshots | `<full_directory_path>` \| default |  The snapshots directory is where a local copy of your Node's blockchain data is held. This directory can get really large and needs to be maintained. Some administrators will want to move this directory to a network attached (or other) location. This location must be a mounted directory. For inexperienced or non-technical Node Operators, it is advised to enter in the key word 'default' here.  Also note that for some Layer 1 metagraphs (including Constellation's DAG metagraph) the snapshots directory should be set to 'disable' as it is not used. Consult with the metagraph user guides or with their administrators for proper directory locations. The snapshot directory should be set from the onset of the Node setup, it is dangerous to change its location 'after-the-fact'.  THIS DIRECTORY SHOULD BE A FULL PATH ( starting with a / and ending with a / ) eg) /var/snapshots/  Warning: If you use a remotely mounted directory, this directory MUST be accessible; otherwise, nodectl will exit with an inaccessible error. | Yes |
 | backups | `<full_directory_path>` \| default | The location that you would like to store the backups for this profile.  If set to default the default location will be used. Any file that needs to be backed up (by nodectl) will be placed in this directory. | Yes |
-| uploads |  `<full_directory_path>` \| default | The location that you would like to store the uploads for this profile.  If set to `default`, then the default location will be used. Export requests (csv data) or logs for upload to the Metagraph administrators or developers, will be placed in this directory. | Yes |
+| uploads |  `<full_directory_path>` \| default | The location that you would like to store the uploads for this profile.  If set to `default`, then the default location will be used. Export requests (csv data) or logs for upload to the metagraph administrators or developers, will be placed in this directory. | Yes |
 
 ### java
 
@@ -690,7 +690,7 @@ Key | Value | Description | Required |
 :::note
 We will set both the seed_location and seed_file to `disable` if the seed list is not required.
 
-Currently the Constellation Network Layer1 Metagraph does not require a seed-list entry.
+Currently the Constellation Network Layer1 metagraph does not require a seed-list entry.
 :::
 
 ### Node type
@@ -728,7 +728,7 @@ nodectl has a *special* feature that includes:
   - auto restart
   - auto upgrade
 
-You can enable the auto restart feature that will restart your Node if it detects that it fell off the Hypergraph or Metagraph. See the [auto restart command](/validate/automated/nodectlCommands#auto_restart).
+You can enable the auto restart feature that will restart your Node if it detects that it fell off the Hypergraph or metagraph. See the [auto restart command](/validate/automated/nodectlCommands#auto_restart).
 
 ```
   auto_restart:

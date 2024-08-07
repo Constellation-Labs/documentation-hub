@@ -200,7 +200,7 @@ Make sure you VPS (or bare metal server) is properly sized to handle multiple me
 :::
 
 #### SIZING
-The `vCPU`, `Memory`, and `HDD storage allocation` is **dependent** on each specific Metagraph.  Consult with the Metagraph operators/administrators for the specifications that 
-meet the requirements for their individual Metagraph.
+The `vCPU`, `Memory`, and `HDD storage allocation` is **dependent** on each specific metagraph.  Consult with the metagraph operators/administrators for the specifications that 
+meet the requirements for their individual metagraph.
 
-This also pertains to the `TCP` ports each individual Metagraph utilize.  Obtaining the proper `p2p-port` can be dynamically acquired via a `public-port` API call.
+This also pertains to the `TCP` ports each individual metagraph utilize.  Obtaining the proper `p2p-port` can be dynamically acquired via a `public-port` API call.

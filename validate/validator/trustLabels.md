@@ -13,7 +13,7 @@ Trust labels constitute integral aspects of the Proof of Reputable Observation (
 They impact several facets, such as determining the nodes from which to obtain snapshots. Trust
 labels are off-chain information concerning the security of nodes and their potential to harm the
 network. These labels are local bias values that you supply to your nodes during the joining process
-to the cluster (metagraph). They are specific to each node. Consequently, different nodes can
+to the cluster (metagraphs). They are specific to each node. Consequently, different nodes can
 exhibit varying degrees of bias.
 
 :::note

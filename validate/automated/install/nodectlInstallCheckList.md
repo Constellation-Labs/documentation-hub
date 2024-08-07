@@ -9,7 +9,7 @@ import DocsCards from '@components/global/DocsCards';
 import MacWindow from '@site/src/components/global/MacWindow';
 
 <head>
-  <title>MainNet 2.0 Automation with nodectl</title>
+  <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
     content="nodectl installation of new Node"
@@ -27,7 +27,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 Upon the initiation of the VPS creation (for most cloud provisioning) the VPS should have been assigned an IP address linking it to the external Internet for access. 
 
-In a single Node setup environment, this IP address is crucial for accessing your VPS (via  the [SSH keys](#ssh-keys)) and participating on the Constellation Network Metagraphs.
+In a single Node setup environment, this IP address is crucial for accessing your VPS (via  the [SSH keys](#ssh-keys)) and participating on the Constellation Network metagraphs.
 
 ### SSH Keys
 
