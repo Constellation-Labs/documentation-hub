@@ -51,8 +51,9 @@ The overall distribution will change as follows:
 
 * **Data pool bounties:** decrease from 55% to 42%  
 * **Stardust tax:** decrease from 10% to 7%  
-* **Mainnet validator incentives:** increase from 17% to 30%  
-* **Integrationnet validator incentives:** increase from 15% to 18%
+* **Mainnet validator incentives:** increase from 17% to 24%  
+* **Integrationnet validator incentives:** increase from 15% to 20%
+* **Testnet validator incentives:** increase from 3% to 7%  
 
 ##### DTM Bounties
 
