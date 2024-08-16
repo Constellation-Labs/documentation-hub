@@ -182,8 +182,8 @@ If the network requires additional support, a governance vote could authorize re
 
 ### Key dates
 
-* Unlock of the original 450M DAG founder’s tokens: August 8th  
-* Data pool changes: Week of August 12th  
+* Unlock of the original 450M DAG founder’s tokens: August 9th, 2024 
+* Data pool changes: August 2024 
 * Go live of Metanomics: End of Q1 2025
 
 ## Model Summary
