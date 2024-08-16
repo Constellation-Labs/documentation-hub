@@ -30,6 +30,10 @@ const metagraphClient = dag4.account.createMetagraphTokenClient({
 await metagraphClient.getBalance();
 // 100000
 ```
+### Finding existing metagraphs
+
+A list of existing metagraphs can be found on the [DAG Explorer](https://mainnet.dagexplorer.io/metagraphs). On each metagraph's page, the L0 and currency L1 endpoints are available, which are necessary for configuring your metagraph client to interact with specific metagraph token networks.
+
 
 ### Send a single transaction
 The metagraph client has all the same methods as `dag4.account` except `transferDag` becomes `transfer` and `transferDagBatch` becomes `transferBatch`.  
