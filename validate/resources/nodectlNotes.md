@@ -19,12 +19,12 @@ import MacWindow from '@site/src/components/global/MacWindow';
 The following is a document that will provide hints for you when you are operating your Node.  
 
 It is suggested that you use a physical piece of paper or a secure document to be placed on a USB stick to store with your other secured backups.
-  - example) a physical safe in the office or house.
+  - example: A physical safe in the office or house.
 
 ### Assumptions for the Note
 
 :::danger DANGER
-Do not use the same passphrases as shown in this example.  These examples are public facing and may be used by a nefarious actor as a first attempt to access your Node and penatrate...
+Do not use the same passphrases as shown in this example.  These examples are public facing and may be used by a nefarious actor as a first attempt to access your Node and penetrate...
 :::
 
 1. Our Node is created

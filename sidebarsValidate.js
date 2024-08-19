@@ -10,6 +10,39 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Quick Starts',
+      collapsed: false,
+      items: [
+        'quick-start/index',
+        {
+          type: 'category',
+          label: 'Individual Guides',
+          items: [
+            {
+              type: 'category',
+              label: 'New Installs',
+              items: [
+                'quick-start/mainnetQuickStart',
+                'quick-start/integrationnetQuickStart',
+                'quick-start/dorQuickStart',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Procedural Quick Starts',
+              items: [
+                'quick-start/bringOnlineQuickStart',
+                'quick-start/intnetToMainnetQuickStart',
+                'quick-start/collateralize',
+              ],
+            },
+          'quick-start/prerequisites',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Node Concepts',
       collapsed: false,
       items: [
@@ -79,17 +112,16 @@ module.exports = {
       label: 'nodectl utility',
       collapsed: false,
       items: [
-        'automated/nodectl',  
+        'automated/getting-started/nodectlGettingStarted',  
         {
           type: 'category',
           label: 'Installation',
           items: [
-            'automated/nodectlQuickStart',
+            'automated/install/nodectlInstallTypes',
             {
               type: 'category',
               label: 'Quick Install Guide',
               items: [
-                'automated/quickInstall/nodectlQInstallIntro',
                 'automated/quickInstall/nodectlQInstallPrep',
                 'automated/quickInstall/nodectlQInstallDownload',                
                 'automated/quickInstall/nodectlQInstallStart',
@@ -109,7 +141,6 @@ module.exports = {
               type: 'category',
               label: 'Installation Guide',
               items: [
-                'automated/install/nodectlInstallIntro',
                 'automated/install/nodectlInstallRequire',
                 'automated/install/nodectlInstallCheckList',
                 'automated/install/nodectlInstallAccess',
@@ -240,6 +271,7 @@ module.exports = {
       collapsed: false,
       items: [
         'resources/password',
+        'resources/firewall-access',
         'resources/accessMac',
         'resources/accessWin',
         'resources/p12backup-mac',
@@ -247,7 +279,6 @@ module.exports = {
         'resources/sshconfig',
         'resources/p12v1v2-migrate',  
         'resources/nodectlNotes',    
-        'resources/integrationnetQuickNodeSetup',
       ],
     },
   ],

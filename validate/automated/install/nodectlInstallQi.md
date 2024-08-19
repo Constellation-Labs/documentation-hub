@@ -18,7 +18,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 Before we begin the installation, nodectl will offer us the option to perform a [quick install](/validate/automated/quickInstall/nodectlQInstallIntro).
 
-If you added the `--normal` option on the previous page, you can skip this page.
+If you added the `--normal` option on the previous page, you can skip this page moving the the [next section](/validate/automated/install/nodectlInstallInstall2).
 
 ### Quick Install Request
 Since this is a `normal` installation guide, we will enter in <kbd>n</kbd>+<kbd>Enter</kbd> here.
