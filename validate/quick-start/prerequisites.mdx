@@ -1,0 +1,38 @@
+---
+title: Quick Start Prerequisites
+hide_table_of_contents: false
+---
+
+## Check List  ✅
+
+- Your Node is built with nodectl installed. 
+  - [Quick Start Guides](/validate/quick-start/index).
+  - [Step by Step Guides](/validate/automated/install/nodectlInstallTypes).
+- Have your Node accessible via [remote SSH](/validate/validator/ssh-keys).
+- Submitted your Node's **nodeid** (public key) to Constellation Network and confirmed it was placed on the authentication seed list. 
+- If your Hypergraph or metagraph requires collateral, your Node's wallet is properly [collateralized](/validate/quick-start/collateralize). 
+- Your [firewall ports](/validate/resources/firewall-access) are properly opened.
+  - Open inbound TCP ports: 9000, 9001, 9010, 9011, and your ssh port (normally 22).
+
+## Assumptions
+This guide will assume that you are attempting to connect to your Node that is on **MainNet**.  The `nodectl` utility uses profiles to group the configurations on a layer by layer basis. 
+
+It is assumed that you are running a **hybrid** Node.  
+
+<span style={{fontWeight:600,fontSize:'.8em'}}>Hybrid Node definition</span>
+<hr />
+A Node that is running on both a <b>layer0</b> cluster and <b>layer1</b> cluster.  If you are not running a hybrid Node ( eg: Dor metagraph Node ) you can ignore the dual layer elements, and make adjustments accordingly.
+
+## Profile Table
+
+| Profile Name | Layer Type | Description |
+| ------------ | ---------- | ----------- | 
+| dag-l0 | 0 | MainNet and TestNet profile for the layer0 global Hypergraph |
+| dag-l1 | 1 | MainNet and TestNet profile for the currency layer1 Hypergraph |
+| intnet-l0 | 0 | IntegrationNet profile for the layer0 global Hypergraph |
+| intnet-l1 | 1 | IntegrationNet profile for the currency layer1 Hypergraph |
+| dor-dl1 | 1 | Dor metagraph profile for the data layer1 metagraph |
+
+:::note Profile Documentation Default
+The documentation will most probably refer to `dag-l0` from the MainNet cluster profile within nodectl's default profile names, throughout the documentation.  You should substitute this for the matching profile of your cluster.
+:::

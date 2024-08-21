@@ -1,0 +1,139 @@
+---
+title: MainNet
+slug: mainnet-node-quick-install
+hide_table_of_contents: false
+---
+
+import MacWindow from '@site/src/components/global/MacWindow';
+
+# MainNet Quick Start
+
+This guide is specifically for setting up your MainNet Node, and is opinionated with sensible defaults.
+
+## ◽ Choose VPS Provider
+Refer to the [Constellation Network Setup Guides](/validate/setup-guides/) for choosing a VPS provider.
+
+## ◽ Setup Firewall
+- Open inbound TCP ports: 9000, 9001, 9010, 9011, and your ssh port (normally 22).
+- Open all outbound ports.
+
+Refer to these guides on [Digital Ocean](/validate/setup-guides/do/sgDroplet), [AWS](/validate/setup-guides/aws/sg), [Digital Ocean](/validate/setup-guides/gcp/sg), and [Hetzner](https://docs.hetzner.com/cloud/firewalls/getting-started/creating-a-firewall/).
+
+## ◽ Provision Your VPS
+
+#### Minimum Specs for Your Node
+
+| Type            | Minimum Required  |
+|-----------------|----------|
+| **CPU**         | 8       |
+| **RAM**         | 16GB RAM |
+| **Disk Space**  | 320GB    |
+| **Traffic Allowance** | 10 TB/month |
+
+Suggested OS: **Ubuntu 22.04**
+
+*Ubuntu 24.04 is currently not supported.*
+
+## ◽ SSH into Your VPS
+Refer to [this doc](/validate/validator/ssh-keys) for **SSH** instructions.<br />
+Refer to [this doc](/validate/resources/accessMac) to access from a **Macintosh**.<br />
+Refer to [this doc](/validate/resources/accessWin) to access form a **Windows System**.<br />
+
+## ◽ Update OS
+```
+sudo apt-get update && sudo apt-get upgrade
+```
+
+## ◽ Reboot
+```
+sudo reboot now
+```
+SSH into your VPS again using the user set by your VPS provider (e.g., `root` or `ubuntu`).
+
+## ◽ Install nodectl 
+**Node Control Utility Program v2.15.0**
+```
+sudo wget -N https://github.com/stardustcollective/nodectl/releases/download/v2.15.0/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v
+```
+
+## ◽ Start Tessellation Installation
+```
+sudo nodectl install --quick-install
+```
+
+## ◽ Select Cluster to Configure/Join
+
+- Choose 1 (`mainnet [HyperGraph]`)
+
+## ◽ Decline P12 Migration Request
+
+- We will choose `n` to decline the migration.
+
+## ◽ Select Node Administration Account Password
+
+Input and confirm the `nodeadmin`'s new strong password that will be used to administer your Node.
+
+:::note Password Entry
+  *You will **not** see the password output or the \* character while entering your password. This is a Linux level security feature.*
+:::
+
+## ◽ Select P12 Key Store Passphrase
+
+Input and confirm a complex passphrase that will be used to unlock your Node's ability to access the network and to handle your Node's wallet.
+
+## ◽ Wait for Installation to Complete
+
+No action required, you can wait for the installation to complete, and the ending/final screen of instructions.
+
+<MacWindow>
+Please follow the instructions below, as indicated<br />
+<br />
+1) Submit your NodeID to Constellation Admins.<br />
+2) Collateralize your Node.<br />
+3) sudo nodectl check_seedlist -p dag-l0<br />
+4) sudo nodectl restart -p all<br />
+5) Log out and log back in with as nodeadmin with your new nodeadmin password.<br />
+</MacWindow>
+
+🚑 <span style={{fontSize:'1.2em',fontWeight:800}}>&nbsp;Leave this screen up and remote terminal window open!</span>
+
+## ◽ Test Access 
+1. Leave your `root` or `ubuntu` user connected to your Node's terminal. 
+1. Open a new local terminal and attempt a second SSH remote connection to your Node using your `nodeadmin` user and passphrase as created in the [SSH into Your VPS](#-ssh-into-your-vps).
+
+After confirming you have access via `nodeadmin` you can move to the next step.
+
+## ◽ Submit your Node Details
+
+1. Connect to the **Constellation Network Official** Discord Support Server.  
+1. Reach out to an Administrator.
+1. Supply and request to have your `nodeid` appended to the MainNet Hypergraph access seed list.
+
+You will see your Node ID, displayed on the [instructional screen](#-wait-for-installation-to-complete) at the end of the installation.
+
+```jsx title="Example 128 length hexadecimal number."
+136f0f756659be91e8af0b6aa9e2a63a94227680aa4d565e055a37db206f69d3bee479e7f37e8c9c9efa40278ddc98eab2b07f0fc0cf17fdf13ca012082ba813
+```
+
+## ◽ Back Up Your Node P12
+Refer to these guides
+- [p12 backup guide Windows](/validate/resources/p12backup-win)
+- [p12 backup guide Mac](/validate/resources/p12backup-mac) 
+
+## ◽ Secure Storage of Passwords
+Ensure that you have recorded all the passphrase(s) and other pertinent information via your notes, to a secured air gapped location.
+
+You may reference our [Node Operator Notes](/validate/resources/nodectlNotes) for an idea on what to record.
+
+## ◽ Close Terminals
+After completing the [access test](#-test-access), you can close out all terminal sessions, leaving only your `nodeadmin` connected terminal session open.
+
+:::danger IMPORTANT 
+Your Node will no longer be accessible via the `root` or default `ubuntu` (AWS) account you originally setup your Node to access.
+:::
+
+## ◽ Congratulations 
+Your Node installation is complete.
+
+## ◽ Next Steps
+Follow the [quick start](/validate/quick-start/online-quick-start) guide to bring your Node on the network for the first time.
