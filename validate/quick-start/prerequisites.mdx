@@ -3,18 +3,24 @@ title: Quick Start Prerequisites
 hide_table_of_contents: false
 ---
 
-## Check List  ✅
+## ◽ Check List  ✅
 
 - Your Node is built with nodectl installed. 
   - [Quick Start Guides](/validate/quick-start/index).
   - [Step by Step Guides](/validate/automated/install/nodectlInstallTypes).
 - Have your Node accessible via [remote SSH](/validate/validator/ssh-keys).
-- Submitted your Node's **nodeid** (public key) to Constellation Network and confirmed it was placed on the authentication seed list. 
+- Submitted your Node's **nodeid** (public key) to Constellation Network and confirmed it was placed on the authentication seed list.
+  - IntegrationNet specific:
+     - Lattice account is setup.
+     - NodeID registered on Lattice account.
+     - Wallet with collateral requirements provided.
+     - Wallet to distribute rewards provided. 
 - If your Hypergraph or metagraph requires collateral, your Node's wallet is properly [collateralized](/validate/quick-start/collateralize). 
+  - IntegrationNet specific:
+     - Wallet with collateral requirements provided.
 - Your [firewall ports](/validate/resources/firewall-access) are properly opened.
-  - Open inbound TCP ports: 9000, 9001, 9010, 9011, and your ssh port (normally 22).
 
-## Assumptions
+## ◽ Assumptions
 This guide will assume that you are attempting to connect to your Node that is on **MainNet**.  The `nodectl` utility uses profiles to group the configurations on a layer by layer basis. 
 
 It is assumed that you are running a **hybrid** Node.  
@@ -23,7 +29,7 @@ It is assumed that you are running a **hybrid** Node.
 <hr />
 A Node that is running on both a <b>layer0</b> cluster and <b>layer1</b> cluster.  If you are not running a hybrid Node ( eg: Dor metagraph Node ) you can ignore the dual layer elements, and make adjustments accordingly.
 
-## Profile Table
+## ◽ Profile Table
 
 | Profile Name | Layer Type | Description |
 | ------------ | ---------- | ----------- | 
