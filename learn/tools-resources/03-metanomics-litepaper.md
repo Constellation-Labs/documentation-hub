@@ -59,7 +59,7 @@ The overall distribution will change as follows:
 
 In line with these changes, the DTM baseline bounty will be discontinued, as the primary focus now shifts to data collection with Dor's metagraph fully operational. To meet the expectations of Foundation DTM buyers, we will remove the caps on commercial and installation bounties. Of the 5,991,186.99 DAG allocated for this purpose, 2,710,298.88 DAG will be distributed monthly, with 35% designated for commercial bounties and 65% for installation bounties until the new tokenomics are implemented.
 
-The remaining DAG will be reserved for distribution after the new tokenomics model is in place. This approach ensures that DTM bounties remain available for up to 18 months after the Data Pool changes are in place. This provides a smooth transition as we move into the Metanomics era.
+The remaining DAG will be reserved for distribution after the new tokenomics model is in place ensuring that DTM bounties remain available for 18 months after the Data Pool changes. This provides a smooth transition as we move into the Metanomics era.
 
 ![data-pool-redistribution.png](/img/learn/metanomics-litepaper/data-pool-redistribution.png)
 
