@@ -26,22 +26,22 @@ const ethProvider = window.stargazer.getProvider("ethereum");
 
 :::
 
-## List available accounts
+## List active account
 
-For listing available accounts in the wallet you can send the following calls to [`dag_accounts`](../APIReference/constellationRPCAPI/dag_accounts.md) RPC method and [`eth_accounts`](../APIReference/ethereumRPCAPI/eth_accounts.md) RPC method.
+For listing the active accounts in the wallet you can send the following calls to [`dag_accounts`](../APIReference/constellationRPCAPI/dag_accounts.md) RPC method and [`eth_accounts`](../APIReference/ethereumRPCAPI/eth_accounts.md) RPC method.
 
 :::info Important
-The account at index 0 will always be the active account in Stargazer. Both for Constellation and Ethereum providers.
+The account returned will always be the active account in Stargazer. Both for Constellation and Ethereum providers.
 :::
 
 ```typescript title="TypeScript"
 const dagAccounts = await dagProvider.request({ method: "dag_accounts" });
 console.log(dagAccounts);
-// ["DAG88C9WDSKH451sisyEP3hAkgCKn5DN72fuwjfX", "DAG5pvyL8wQVEACYjEph9jouKQeH4J71Dn5HS25w"]
+// ["DAG88C9WDSKH451sisyEP3hAkgCKn5DN72fuwjfX"]
 
 const ethAccounts = await ethProvider.request({ method: "eth_accounts" });
 console.log(eth_accounts);
-// ["0x567d0382442c5178105fC03bd52b8Db6Afb4fE40", "0xAab2C30c02016585EB36b7a0d5608Db787c1e44E"]
+// ["0x567d0382442c5178105fC03bd52b8Db6Afb4fE40"]
 ```
 
 _Read more about [`dag_accounts` RPC method](../APIReference/constellationRPCAPI/dag_accounts.md) and [`eth_accounts` RPC method](../APIReference/ethereumRPCAPI/eth_accounts.md)._

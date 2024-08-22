@@ -5,13 +5,13 @@ hide_table_of_contents: true
 <head>
   <meta
     name="description"
-    content="Retrieve available accounts granted by the user."
+    content="Retrieves the active account in the wallet for Constellation's provider."
   />
 </head>
 
 <intro-end />
 
-Retrieve available accounts granted by the user.
+Retrieves the active account in the wallet for Constellation's provider.
 
 ##### Parameters
 
@@ -19,10 +19,10 @@ None
 
 ##### Return Type
 
-`DAGAddress[]` - User accounts available.
+`DAGAddress[]` - User's active account.
 
 :::info Important
-The account at index 0 will always be the active account in Stargazer.
+The account returned will always be the active account in Stargazer. The response will have at most one address.
 :::
 
 ##### Example
