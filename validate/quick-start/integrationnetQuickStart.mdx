@@ -15,11 +15,11 @@ Refer to the [Constellation Network Setup Guides](/validate/setup-guides/) for c
 ## ◽ Setup Firewall
 | direction       | port  | description
 |-----------------|-------| -----------
-| ingress         | 9000  | public api layer0
-| ingress         | 9001  | p2p api layer0
-| ingress         | 9010  | public api layer1
-| ingress         | 9011  | p2p api layer1
-| egress         | all  | Tune to your needs
+| ingress | 9000 | public api layer0
+| ingress | 9001 | p2p api layer0
+| ingress | 9010 | public api layer1
+| ingress | 9011 | p2p api layer1
+| egress  | all | Tune to your needs
 
 Refer to these guides on [Digital Ocean](/validate/setup-guides/do/sgDroplet), [AWS](/validate/setup-guides/aws/sg), [Digital Ocean](/validate/setup-guides/gcp/sg), and [Hetzner](https://docs.hetzner.com/cloud/firewalls/getting-started/creating-a-firewall/).
 
@@ -31,21 +31,20 @@ Setting up your firewall policy prior to building your VPS will save time.
 
 #### Minimum Specs for Your Node
 
-| Type            | Minimum Required  |
-|-----------------|----------|
-| **CPU**         | 8       |
-| **RAM**         | 16GB RAM |
-| **Disk Space**  | 320GB    |
-| **Traffic Allowance** | 10 TB/month |
+Refer to the [specification](/validate/validator/specs#hybrid-node-hardware-requirements) 
+document for validation.
 
+[test](/validate/validator/specs#)
 Suggested OS: **Ubuntu 22.04**
 
 *Ubuntu 24.04 is currently not supported.*
 
 ## ◽ SSH into Your VPS
-Refer to [this doc](/validate/validator/ssh-keys) for **SSH** instructions.<br />
-Refer to [this doc](/validate/resources/accessMac) to access from a **Macintosh**.<br />
-Refer to [this doc](/validate/resources/accessWin) to access form a **Windows System**.<br />
+```
+ssh -i /path/to/ssh/private/key nodeadmin@vps_ip_address
+```
+Refer to [SSH Explanation](/validate/validator/ssh-keys), [Mac SSH Guide](/validate/resources/accessMac), and [Windows SSH Guide](/validate/resources/accessWin)
+for detailed understanding.
 
 ## ◽ Update OS
 ```
@@ -148,24 +147,27 @@ You may reference our [Node Operator Notes](/validate/resources/nodectlNotes) fo
 ## ◽ Close Terminals
 After completing the [access test](#-test-access) **successfully**, you can close out all terminal sessions, leaving only your `nodeadmin` connected terminal session open.
 
-:::danger IMPORTANT 
-Your Node will no longer be accessible via the `root` or default `ubuntu` (AWS) account you originally setup your Node to access.
+:::warning IMPORTANT 
+Your Node will no longer be accessible via the `root` or default `ubuntu` account you originally setup your Node to access.
 :::
 
 ## ◽ Setup Reward Distribution 
 You will need to access your Lattice account and supply Constellation Network's Lattice Team with:
 - Your IntegrationNet `Node ID`.
 - The real `Wallet` that will be used for `$DAG` reward distribution. 
-- A `Wallet` that has `250,000 $DAG` tokens, to satify your collateral requirements. 
+- A `Wallet` (*this can be the same wallet*) that has `250,000 $DAG` tokens, to satify your collateral requirements. 
 
-:::success IMPORTANT
+:::info FOR YOUR UNDERSTANDING
 The IntegrationNet cluster is a **TestNet** and therefore the `$DAG` tokens used on this cluster hold no real world value.  They are test tokens.  
 
-The reward distribution for this network is distributed daily to a wallet address identified by the Validator Node Operator through their Lattice account.
+The reward distribution for this network is distributed daily to a wallet address identified by the validator Node Operator through their Lattice account.
 :::
 
 ## ◽ Congratulations 
 Your Node installation is complete.
 
 ## ◽ Next Steps
-Follow the [quick start](/validate/quick-start/online-quick-start) guide to bring your Node on the network for the first time.
+:::danger IMPORTANT
+You will need to wait for your node's nodeid, that was [submitted here](#-submit-your-node-details), to be added the seed list (access/authorization list) before you can join the cluster.
+:::
+Follow the [first time Connection quick start guide](/validate/quick-start/online-quick-start) to bring your node on the network.
