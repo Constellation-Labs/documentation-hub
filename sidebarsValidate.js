@@ -16,27 +16,21 @@ module.exports = {
         'quick-start/index',
         {
           type: 'category',
-          label: 'Individual Guides',
+          label: 'New Installs',
           items: [
-            {
-              type: 'category',
-              label: 'New Installs',
-              items: [
-                'quick-start/mainnetQuickStart',
-                'quick-start/integrationnetQuickStart',
-                'quick-start/dorQuickStart',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Procedural Quick Starts',
-              items: [
-                'quick-start/bringOnlineQuickStart',
-                'quick-start/intnetToMainnetQuickStart',
-                'quick-start/collateralize',
-              ],
-            },
-          'quick-start/prerequisites',
+            'quick-start/mainnetQuickStart',
+            'quick-start/integrationnetQuickStart',
+            'quick-start/dorQuickStart',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Procedural Quick Starts',
+          items: [
+            'quick-start/prerequisites',
+            'quick-start/bringOnlineQuickStart',
+            'quick-start/intnetToMainnetQuickStart',
+            'quick-start/collateralize',
           ],
         },
       ],

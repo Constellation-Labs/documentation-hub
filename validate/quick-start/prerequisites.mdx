@@ -3,13 +3,17 @@ title: Quick Start Prerequisites
 hide_table_of_contents: false
 ---
 
+This document is intended to outline the steps that should be completed before using any of the validator node quick start guides on this documentation portal.
+
+It does **NOT** include the [New Installation Start Guides](/validate/quick-start/index) or [Step-by-Step Guides](/validate/automated/install/nodectlInstallTypes). If you do not already have a node set up, you may skip this document and proceed directly to the [guide](/validate/quick-start/index) that pertains to your particular setup.
+
 ## ◽ Check List  ✅
 
 - Your Node is built with nodectl installed. 
   - [Quick Start Guides](/validate/quick-start/index).
-  - [Step by Step Guides](/validate/automated/install/nodectlInstallTypes).
+  - [Step-by-Step Guides](/validate/automated/install/nodectlInstallTypes).
 - Have your Node accessible via [remote SSH](/validate/validator/ssh-keys).
-- Submitted your Node's **nodeid** (public key) to Constellation Network and confirmed it was placed on the authentication seed list.
+- Your Node's **nodeid** (public key) has been submitted to Constellation Network and confirmed it was placed on the authentication seed list.
   - IntegrationNet specific:
      - Lattice account is setup.
      - NodeID registered on Lattice account.
@@ -19,15 +23,6 @@ hide_table_of_contents: false
   - IntegrationNet specific:
      - Wallet with collateral requirements provided.
 - Your [firewall ports](/validate/resources/firewall-access) are properly opened.
-
-## ◽ Assumptions
-This guide will assume that you are attempting to connect to your Node that is on **MainNet**.  The `nodectl` utility uses profiles to group the configurations on a layer by layer basis. 
-
-It is assumed that you are running a **hybrid** Node.  
-
-<span style={{fontWeight:600,fontSize:'.8em'}}>Hybrid Node definition</span>
-<hr />
-A Node that is running on both a <b>layer0</b> cluster and <b>layer1</b> cluster.  If you are not running a hybrid Node ( eg: Dor metagraph Node ) you can ignore the dual layer elements, and make adjustments accordingly.
 
 ## ◽ Profile Table
 
