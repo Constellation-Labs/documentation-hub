@@ -40,7 +40,7 @@ fetching digital signature .................... complete<br />
 
 It will then display the contents and instructions on how to be extra secure in verifying that you have a valid copy of nodectl.
 
-Please see the nodectl [validate](/validate/automated/nodectlValidate#understanding-verify_nodectl) documentation for details and then return to this guide.
+Please see the nodectl [validate](/validate/automated/nodectl-validate#understanding-verify_nodectl) documentation for details and then return to this guide.
 
 ### Success
 
@@ -84,8 +84,8 @@ Press Y then [ENTER] to upgrade or N then [ENTER] to cancel:<br />
 
 You can press <kbd>Y</kbd>+<kbd>Enter</kbd> to accept and allow nodectl to enter directly into the upgrade command, or <kbd>N</kbd>+<kbd>Enter</kbd> if we want to wait until later.  
 
-If we choose not to upgrade the Node after the nodectl upgrade, we must return to the upgrade process when ready and issue a [sudo nodectl upgrade](/validate/automated/upgrade/nodectlUpgrade) to allow our Node to finish the upgrade.
+If we choose not to upgrade the Node after the nodectl upgrade, we must return to the upgrade process when ready and issue a [sudo nodectl upgrade](/validate/automated/upgrade/nodectl-upgrade) to allow our Node to finish the upgrade.
 
 ## Upgrade Guide
 
-Once the upgrade begins, we can refer to the [upgrade guide](/validate/automated/upgrade/nodectlUpgrade) to for a detailed step-by-step on the process of upgrading your Node.
+Once the upgrade begins, we can refer to the [upgrade guide](/validate/automated/upgrade/nodectl-upgrade) to for a detailed step-by-step on the process of upgrading your Node.
