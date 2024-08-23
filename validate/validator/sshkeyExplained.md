@@ -22,6 +22,10 @@ In the case of connections to a Cloud instance, the public key is used to encryp
 ## How to create SSH keys
 
 <DocsCards>
+  <DocsCard header="SSH keys Quick Start" href="creationMac" icon="/img/quick-start-icon.png">
+    <p>Quick Start Guide for Mac or Windows.</p>
+  </DocsCard>
+
   <DocsCard header="SSH keys on Mac" href="creationMac" icon="/icons/icon_apple.png">
     <p>How to generate SSH keys on a Mac.</p>
   </DocsCard>
