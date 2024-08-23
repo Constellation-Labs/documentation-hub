@@ -18,6 +18,7 @@ module.exports = {
           type: 'category',
           label: 'New Installs',
           items: [
+            'quick-start/vpsQuickStart',
             'quick-start/mainnetQuickStart',
             'quick-start/integrationnetQuickStart',
             'quick-start/dorQuickStart',

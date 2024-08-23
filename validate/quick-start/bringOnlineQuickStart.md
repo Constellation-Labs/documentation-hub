@@ -11,14 +11,16 @@ This guide is specifically for connecting a Validator Node to a Constellation Ne
 
 ## ◽ Prerequisites 
 
-Please review the [checklist, assumptions, and profile descriptions](/validate/quick-start/prerequisites) for a better understanding of how this document works.
+Please review the [checklist and profile descriptions](/validate/quick-start/prerequisites) for a better understanding of how this document works.
 
 We will use `dag-l0` as our profile name throughout the guide. When necessary, this should be changed to match your Node's profile.
 
-## ◽ Connect to Your Node
-From your local system open a remote connection to your Node to begin.
-- [Windows](/validate/resources/accessWin)
-- [Macintosh](/validate/resources/accessMac)
+## ◽ SSH into Your VPS
+```
+ssh -i /path/to/ssh/private/key nodeadmin@vps_ip_address
+```
+Refer to [SSH Explanation](/validate/validator/ssh-keys), [Mac SSH Guide](/validate/resources/accessMac), and [Windows SSH Guide](/validate/resources/accessWin)
+for detailed understanding.
 
 ## ◽ Verify you are on the seed list
 ```
@@ -29,7 +31,7 @@ NODE ID FOUND ON SEED LIST<br />
 True
 </MacWindow>
 
-If you are not on the seed list, please 🛑 **stop** here and contact a Discord Administrator from the Constellation Network Official Discord server.
+If you are not on the seed list, please 🛑 **stop** here and contact a Discord Administrator from the Constellation Network Official Discord server.  You must wait for the next network cluster restart that includes a seed list update.
 
 ## ◽ Preform an upgrade 
 
@@ -40,15 +42,17 @@ sudo nodectl upgrade -ni
 ```
 The `-ni` will run the `upgrade` in non-interactive mode, using all the default values.
 
-** 🛑 ✋ Layer1 only metagraph validators should skip to [this](#-verify-your-status) step at the time. 🛑 ✋ **
+🛑 ✋ Layer1 **only** metagraph validators **SHOULD** skip to [this](#-verify-your-status) step at the time. 🛑 ✋ **
 
 :::danger HYBRID NODES ONLY
 You will see your Node attempt to connect to the layer1 profile and fail.  **This is expected, and can be ignored**. 
+
+<span style={{fontSize:".7em"}}><b>Hybrid Node:</b> A node that connects to both a layer0 and layer1 cluster.</span>
 :::
 
 A new Node must go through the process of obtaining the entire [snapshot chain](/learn/advanced-concepts/architecture) from the cluster. Layer1 is not allowed on the cluster until the layer0 cluster has its entire chain.
 
-During this stage, your Node will report its state as: `DownloadInProgress`.
+During this stage, your Node will transition into `SessionStarted` and then transition again to `DownloadInProgress` state.
 ```
 sudo nodectl status -p dag-l0
 ```
