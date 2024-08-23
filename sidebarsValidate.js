@@ -29,9 +29,10 @@ module.exports = {
           label: 'Procedural Quick Starts',
           items: [
             'quick-start/prerequisites',
-            'quick-start/bring-online-quick-start',
-            'quick-start/intnet-to-mainnet-quick-start',
-            'quick-start/collateralize',
+            'quick-start/online-quickstart',
+            'quick-start/intnet-to-mainnet-quickstart',
+            'quick-start/ssh-quickstart',
+            'quick-start/collateralize-quickstart',
           ],
         },
       ],
@@ -90,17 +91,17 @@ module.exports = {
             'setup-guides/aws/sg',
           ],
         },
-        {
-          type: 'category',
-          label: 'Google Cloud Platform',
-          items: [
-            'setup-guides/gcp/account',
-            'setup-guides/gcp/project',
-            'setup-guides/gcp/create-instance-1',
-            'setup-guides/gcp/create-instance-2',
-            'setup-guides/gcp/sg',
-          ],
-        },
+        // {
+        //   type: 'category',
+        //   label: 'Google Cloud Platform',
+        //   items: [
+        //     'setup-guides/gcp/account',
+        //     'setup-guides/gcp/project',
+        //     'setup-guides/gcp/create-instance-1',
+        //     'setup-guides/gcp/create-instance-2',
+        //     'setup-guides/gcp/sg',
+        //   ],
+        // },
       ],
     },
     {

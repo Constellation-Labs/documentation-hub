@@ -69,7 +69,7 @@ If you plan to use a [VPS](#vps), please choose a provider of your choice. If yo
 ### Provider Guides 
 - [AWS](/validate/setup-guides/aws/account) (Amazon Web Services)
 - [DO](/validate/setup-guides/do/account) (Digital Ocean)
-- [GCP](/validate/setup-guides/gcp/account) (Google Cloud Platform)
+<!-- - [GCP](/validate/setup-guides/gcp/account) (Google Cloud Platform) -->
 - Hetzner`*`
 
 :::note Other Cloud Services
@@ -80,4 +80,5 @@ There are **many** other cloud provider services available; however, we will lim
 
 ### Provider Evolution
 
-<span style={{fontWeight:500, fontSize:'1em'}}>We request your patience and understanding if the graphics in our guides do not align with any updated elements of the respective provider’s console(s). This is a common occurrence as these platforms evolve. However, the basic concepts should remain unchanged.</span>
+<p style={{fontWeight:500, fontSize:'1em'}}>We request your patience and understanding if the graphics in our guides do not align with any updated elements of the respective provider’s console(s). This is a common occurrence as these platforms evolve. However, the basic concepts should remain unchanged.</p> 
+<p style={{fontWeight:500, fontSize:'1em'}}>Alternatively, you may use the provider specific official guides from their corresponding official documentation.</p>

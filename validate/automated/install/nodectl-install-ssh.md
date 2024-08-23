@@ -64,6 +64,7 @@ nodectl attempts to be as smart as possible to identify default accounts from ot
  
  - Digital Ocean
  - Google Cloud Provider (GCP)
+ - Heztner
 :::
 
 ### Disable root

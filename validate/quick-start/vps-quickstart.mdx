@@ -15,120 +15,118 @@ This guide is specifically for setting up your [VPS](/validate/validator/vps) to
 
 ## ◽ Before We Begin
 
-This guide does not include cloud [provider-specific steps or images](/validate/setup-guides/). 
+This guide does not include cloud provider-specific steps or images, for a more detailed **provider specific** step-by-step guides click [here](/validate/setup-guides/). 
 
-You should used this guide to understand what needs to be accomplished and adapt it to your specific cloud provider’s control panel. The guide offers opinionated advice with sensible defaults.
+You should use this guide to understand what needs to be accomplished and adapt it to your specific cloud provider’s control panel. The guide offers opinionated advice with sensible defaults.
 
 ## ◽ Create SSH Keys
 
-Details can be found [here](/validate/validator/ssh-keys).
+Please access the [Create SSH Key quick start guide](/validate/quick-start/ssh-quickstart) to build your SSH key pair. 
 
-Please choose your platform:
+This is necessary to have in place before continuing this guide.
 
-<Tabs style={{backgroundColor:'red'}}>
+## ◽ Select Project
+Choose or create a new project that will be used to organize your VPS creations inside of.
+
+:::caution Missing Projects
+Not all cloud providers require this step, skip if not found.
+:::
+
+## ◽ Create a Firewall
+
+Create your firewall or security group policy first. 
+
+- [AWS](/validate/setup-guides/aws/sg) should create a security group.
+- [GCP](/validate/setup-guides/gcp/sg) should create a firewall.
+- [Digitial Ocean](/validate/setup-guides/do/sg-droplet) should create a firewall.
+- [Hetnzer](/validate/setup-guides/do/sg-droplet#create-rule-set) should create a firewall (you can follow the DO step-by-step).
+
+## ◽ Choose a Region
+
+Choose a region that is closest to your location.
+
+## ◽ Pick an image
+
+Choose `Ubuntu 22.04`
+
+## ◽ Tenancy
+
+Choose shared CPU or shared Tenancy.
+
+## ◽ Choose Instance type
+
+Pick an instance size that meets or exceeds the [specification requirements](/validate/validator/specs) to run a Constellation Network node.
+
+## ◽ Upload your SSH key
+
+Open your public key SSH key to view its contents.
+
+- replace `myuser` with your username.
+- replace `ConstellationNodeKeyPair.pub` with your public key name.
+
+<Tabs>
+
+<TabItem value="Choose" label="Choose">
+Please choose <b>Windows</b> or <b>Macintosh</b> platform.
+</TabItem>
+
 <TabItem value="Windows" label="Windows">
 
-#### ◽ Open a Command Prompt
-
-From the Microsoft Windows start menu type in `Command Prompt` on the main search bar and select the `Command Prompt` icon.
-
-<WinCommandPrompt>
-<p>C:\></p>
-</WinCommandPrompt>
-
-#### ◽ Create your SSH key pair
-
-Change to the `.ssh` directory to simplify creation and future locating of your SSH key pairs.
 ```
-cd .ssh
-```
-Generatate SSH key.
-```
-ssh-keygen -b 4096 -C ConstellationNetwork
+notepad \Users\myuser\.ssh\ConstellationNodeKeyPair.pub 
 ```
 
 <WinCommandPrompt>
-C:\Users\myuser\.ssh>ssh-keygen -b 4096 -C ConstellationNetwork<br />
-Generating public/private rsa key pair.<br />
-Enter file in which to save the key (C:\Users\myuser/.ssh/id_rsa):<br />
+C:\Users\myuser>notepad \Users\myuser\.ssh\ConstellationNodeKeyPair.pub
 </WinCommandPrompt>
-
-Choose a `name` for your key pair (*use whatever name you would like.*)
-```
-ConstellationNodeKeyPair
-```
-Enter a complex strong passphrase and confirm the passphrase.
-
-<WinCommandPrompt>
-Enter passphrase (emtpy for no passphrase)<br />
-Enter same passphrase again:<br />
-Your identification has been saved in ConstellationNodeKeyPair.pub<br />
-The key fingerprint is:
-SHA256: 13vaB0xApJUD13F+Lg9e1uA13rmXaticP0vQd13LBXNk<br />
-The key's randomart image is:<br />
-+---[RSA 4096]----+<br />
-(image code omitted)<br />
-+---[SHA256]------+<br />
-C:\Users\myuser\.ssh>
-</WinCommandPrompt>
-
-You can leave this Command Prompt open for now.
-
-
 </TabItem>
 
-
-<TabItem value="Mac/Linux" label="Mac/Linux">
-
-#### ◽ Open a Terminal Window
-
-Click on the `Launchpad` icon on the Apple `dock` panel.
-
-In the search bar at the top, enter in `Terminal`
-
-<MacWindow>
-Last login: [time here]<br />
-myuser@myuser-MacBook ~ %<br />
-</MacWindow>
-
-#### ◽ Create your SSH key pair
-
-Change to the `.ssh` directory to simplify creation and future locating of your SSH key pairs.
+<TabItem value="Mac" label="Macintosh">
 
 ```
-cd .ssh
-```
-Generatate SSH key.
-```
-ssh-keygen -b 4096 -C ConstellationNetwork
+open -a TextEdit ./.ssh/ConstellationNodeKeyPairTest.pub
 ```
 
 <MacWindow>
-myuser@myuser-MacBook .ssh % ssh-keygen -b 4096 -C ConstellationNetwork
-Generating public/private ed25519 key pair.
-Enter file in which to save the key (/Users/myuser/.ssh/id_ed25519): 
+myuser@myuser-MacBook ~ % open -a TextEdit ./.ssh/ConstellationNodeKeyPairTest.pub
 </MacWindow>
-
-Choose a `name` for your key pair (*use whatever name you would like.*)
-```
-ConstellationNodeKeyPair
-```
-Enter a complex strong passphrase and confirm the passphrase.
-
-<MacWindow>
-Enter passphrase (emtpy for no passphrase)<br />
-Enter same passphrase again:<br />
-Your identification has been saved in ConstellationNodeKeyPair.pub<br />
-The key fingerprint is:
-SHA256: 13vaB0xApJUD13F+Lg9e1uA13rmXaticP0vQd13LBXNk<br />
-The key's randomart image is:<br />
-+---[RSA 4096]----+<br />
-(image code omitted)<br />
-+---[SHA256]------+<br />
-myuser@myuser-MacBook .ssh %
-</MacWindow>
-
-You can leave this Command Prompt open for now.
-
 </TabItem>
+
 </Tabs>
+
+The 👆 command, will open an editor that will contain the contents of your `public` SSH key.  It should *most likely* **start** with either:
+
+- ssh-rsa
+- ssh-ed25519
+
+It should **end** with your SSH key comment. *If follwing directly with our guides*, it is `ConstellationNetwork`.
+
+##### Digitial Ocean and Hetzner
+1. Click on the upload or new SSH key <kbd>button</kbd> option
+1. Copy the contents of your public key into the modal and add the key.
+
+##### AWS
+1. Use the Actions menu from the Region you are building your VPS (EC2) instance within and select `Import key pair`
+1. Copy the contents of your public key into the modal and add the key.
+
+## ◽ Assign External IP address
+
+Specific to AWS, you will need to assign an EIP (Elastic IP) to allow your future Node to persist on the Internet.
+
+If you are not using AWS, you can skip this step.
+
+1. Choose Elastic IP from the side menu.
+1. Choose your Region.
+1. Allocate an EIP.
+1. Associate your EIP your instance after the instance is created through the action menu.
+
+## ◽ Create your VPS
+
+Click on the create button.
+
+## ◽ Complete
+
+Your VPS should now begin its creation and you should be able to access it shortly via SSH.
+
+You may return to the [Quick Start Guides](/validate/quick-start/index) to choose the cluster you would like to build your node for participation in.
+
