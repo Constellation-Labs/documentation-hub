@@ -1,5 +1,5 @@
 ---
-title: First Time Connection
+title: First Time Connection Quick Start
 slug: online-quick-start
 hide_table_of_contents: false
 ---

@@ -29,7 +29,7 @@ The succeeding documentation will describe the features behind nodectl and help 
 ### Installing with nodectl
 
 <DocsCards>
-  <DocsCard header="Quick Install Guides" href="/validate/automated/getting-started/installationGettingStarted" img="/img/home/apps.jpg">
+  <DocsCard header="Quick Start Guides" href="/validate/quick-start/index" img="/img/home/apps.jpg">
     <p>Access the nodectl quick install guides with the goal of creating a new Validator Node on a brand new server.</p>
   </DocsCard>
 

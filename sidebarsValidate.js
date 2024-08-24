@@ -243,6 +243,7 @@ module.exports = {
             'automated/nodectl-config-backup',
             'automated/nodectl-validate',
             'automated/nodectl-profile-change',
+            'automated/nodectl-quick-install-options',
           ],
         },
         //'automated/nodectl-config',
