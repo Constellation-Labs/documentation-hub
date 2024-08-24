@@ -1,0 +1,64 @@
+---
+title: Upgrade nodectl Quick Start
+hide_table_of_contents: false
+---
+
+import MacWindow from '@site/src/components/global/MacWindow';
+
+<head>
+  <title>Constellation nodectl utility</title>
+  <meta
+    name="description"
+    content="nodectl utility upgrade nodectl"
+  />
+</head>
+
+## ◽ Upgrade nodectl Quick Start Guide
+
+This guide is specifically for upgrading your node to to the latest version of **nodectl** with opinionated with sensible defaults.
+
+## ◽ Begin upgrade process
+```
+sudo nodectl upgrade_nodectl
+```
+
+## ◽ Confirm upgrade request
+Press <kbd>y</kbd>
+
+## ◽ Confirm Authentic Release
+After the newest version of nodectl is downloaded make sure your receive the message.
+
+**`SUCCESS - AUTHENTIC NODECTL`** 
+
+We can continue the process.
+
+:::danger INVALID SIGNATURE - WARNING
+Before using any other nodectl commands, refer to Constellation Network's official Discord channel for assistance. Avoid issuing additional commands to prevent potential interference from nefarious actors impersonating nodectl's functionality.
+:::
+
+## ◽ Upgrade Tessellation Request
+
+### No upgrade required
+If we receive a message that an upgrade is not required, skip to the [congratulations](#congratulations) step.
+
+### Upgrade required
+If we are requested to upgrade our node, we must perform the upgrade in order to update internal components on the node for proper functionality.
+
+Enter <kbd>y</kbd>
+
+## ◽ Migration Request
+### No Migration requested
+Skip to [congratulations](#congratulations) step.
+
+### Migration requested
+If we are prompted to migrate our node's configuration.
+
+Enter <kbd>y</kbd>
+
+### Review new configuration
+This is optional
+Enter <kbd>n</kbd>
+
+# COMPLETED
+## Congratulations!
+Your node should now be upgraded to the latest nodectl version. 

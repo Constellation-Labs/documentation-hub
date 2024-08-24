@@ -1,6 +1,5 @@
 ---
 title: IntegrationNet to MainNet Quick Start
-slug: inttomain-node-quick-install
 hide_table_of_contents: false
 ---
 import MacWindow from '@site/src/components/global/MacWindow';

@@ -61,7 +61,7 @@ sudo nodectl install --quick-install --p12-passphrase hgtpdagadmin --user hgtpda
 ```
 
 :::danger IMPORTANT
-If you supply your passphrases/password on the command line, they will be stored in the bash shell's history cache.
+If you supply your passphrases/passwords on the command line, they will be stored in the bash shell's history cache.
 
 You can clear this history with the `-c` option.
 ```

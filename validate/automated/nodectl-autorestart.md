@@ -14,41 +14,35 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-## What is Auto Restart?
+## ◽ Introduction
 
-nodectl offers an special feature called auto restart (*auto_restart*).
+**Bottom line:** A node that disconnects from the cluster(s) is a node that isn’t earning. As Node Operators, we must remain vigilant to ensure our nodes do not disconnect from the cluster. Auto Restart will assist us with this task.
 
-This feature will detect if your Node is not properly connected to the Hypergraph and/or metagraphs, as detected in the [configuration](/validate/automated/nodectl-config) of nodectl.
+## ◽ What is Auto Restart?
+
+The `auto_restart` feature was designed to detect if your node is not properly connected to the Hypergraph and/or metagraphs.  
 
 Auto Restart command reference can be found [here](/validate/automated/nodectl-commands#auto_restart).
 
-## What is Auto Upgrade?
+If an auto_restart might interfere with another nodectl command issued by the Node Operator, nodectl will automatically stop the auto_restart service and restart it upon completion of the requested task.
 
-The auto upgrade (*auto_upgrade*) command is an extension of the auto_restart feature.  It works in conjunction with the auto restart.
+## ◽ What is Auto Upgrade?
 
-In the event that nodectl detects that your Node is not properly connected to the Hypergraph and/or metagraphs, as configured in the [configuration](/validate/automated/nodectl-config), it will not only attempt to get your Node back online; additionally, it will also make sure that the version of Tessellation is also up to date by upgrading your Node automatically.
+The `auto_upgrade` command is an extension of the auto_restart feature, working in conjunction with it.
 
-:::warning
+If nodectl detects that your Node is not properly connected to the Hypergraph and/or metagraphs, as specified in the configuration, it will not only attempt to bring your node back online but also ensure that the version of Tessellation is up to date by automatically upgrading your Node.
+
+:::caution Note
 `auto_upgrade` requires that `auto_restart` is also enabled.
 :::
 
-## How to enable Auto Restart
+## ◽ How to enable Auto Restart
 
 There are two ways to enable auto_restart and auto_upgrade. 
 
-### Recommend Method 1
+### ◽ Recommend Method
 
-Enable `auto_restart` in the configuration, or enable `auto_restart` and `auto_upgrade` in the configuration.
-
-This method will also add in the capability to automatically re-enable the `auto_restart` feature in the event it was disabled.
-
-:::info Informational
-For some specific commands ([see command reference.](/validate/automated/nodectl-commands#auto_restart)) the `auto_restart` feature must be disabled first.  
-
-If `auto_restart` is enabled in the [configuration](/validate/automated/nodectl-config); once a command that requires `auto_restart` to be disabled is executed, `auto_restart` will automatically disable itself.  
-
-Once the command (*that required auto_restart to be disabled*) completes, nodectl will be restart the `auto_restart` feature again automatically.
-:::
+You may use the [auto_restart quick start](/validate/quick-start/auto-start-quick-start) guide if you do not want to review the details of this step-by-step guide.
 
 #### Steps to configure `auto_restart` in the configuration:
 
@@ -149,13 +143,19 @@ sudo nodectl configure
 Do you want to [enable] auto_restart? [y]:<br />
 </MacWindow>
 
-6. Choose <kbd>y</kbd> to enable auto_upgrade
+6. Choose <kbd>y</kbd> to enable auto_upgrade (optional)
 
 <MacWindow>
 Do you want to [enable] auto_upgrade? [y]:<br />
 </MacWindow>
 
-7. Confirm the choices you made.
+7. Choose <kbd>y</kbd> to enable on_boot (optional)
+
+<MacWindow>
+Do you want to [enable] start on boot up? [y]:<br />
+</MacWindow>
+
+8. Confirm the choices you made.
 
 <MacWindow>
   ========================================<br />
@@ -167,11 +167,12 @@ Do you want to [enable] auto_upgrade? [y]:<br />
 <br />
   enable auto restart: y<br />
   enable auto upgrade: y<br />
+  enable on boot: y<br />
   <br />
   Please confirm values are as requested: [y]: <br />
 </MacWindow>
 
-8. Your configuration file will be properly rebuilt, and you will be offered the ability to review the configuration file.
+9. Your configuration file will be properly rebuilt, and you will be offered the ability to review the configuration file.
 
 <MacWindow>
   Creating configuration file ................... complete <br />
@@ -179,7 +180,7 @@ Do you want to [enable] auto_upgrade? [y]:<br />
   Review the created configuration? [y]:<br />
 </MacWindow>
 
-9. After you review (or skip) the configuration review, your configuration will be validated again, and final instructions will be shown.
+10. After you review (or skip) the configuration review, your configuration will be validated again, and final instructions will be shown.
 
 <MacWindow>
   Configuration file:  VALIDATED! <br />
@@ -196,10 +197,10 @@ Do you want to [enable] auto_upgrade? [y]:<br />
 You can either `enable` or `disable` via the commands referenced.
 
 :::danger Warning
-nodectl is not a program that continuously runs on your Node (not including `auto_restart` which does run as a service.)  On a reboot of your server or VPS, your `auto_restart` service will not enable until a `nodectl` command is executed which will trigger the `auto_restart` service to engage if enabled.
+nodectl is not a program that continuously runs on your Node (not including `auto_restart` which does run as a service.)  On a reboot of your server or VPS, your auto_restart service will not enable until a nodectl command is executed which will trigger the auto_restart service to engage if enabled.
 :::
 
-10. Exit out of the configuration feature by pressing the <kbd>q</kbd> key.
+11. Exit out of the configuration feature by pressing the <kbd>q</kbd> key.
 
 <MacWindow>
   ========================================<br />
@@ -221,7 +222,7 @@ Configuration manipulation quit by Operator<br />
 nodeadmin@Constellation-Node:~# 
 </MacWindow>
 
-### Manual Method 2
+### ◽ Manual Method
 
 :::warning 
 This method should only be used in more specifically cases where using the configuration is not an option.

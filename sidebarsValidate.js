@@ -30,9 +30,12 @@ module.exports = {
           items: [
             'quick-start/prerequisites',
             'quick-start/online-quickstart',
+            'quick-start/upgrade-quickstart',
+            'quick-start/upgrade-nodectl-quickstart',
             'quick-start/intnet-to-mainnet-quickstart',
             'quick-start/ssh-quickstart',
             'quick-start/collateralize-quickstart',
+            'quick-start/autorestart-quickstart',
           ],
         },
       ],
@@ -239,7 +242,7 @@ module.exports = {
           items: [
             'automated/nodectl-commands',
             'automated/nodectl-encryption',
-            // 'automated/nodectl-autorestart',
+            'automated/nodectl-autorestart',
             'automated/nodectl-config-backup',
             'automated/nodectl-validate',
             'automated/nodectl-profile-change',
