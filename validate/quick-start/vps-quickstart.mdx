@@ -66,7 +66,11 @@ Setting up your firewall policy prior to building your VPS will save time.
 - [AWS](/validate/setup-guides/aws/sg) should create a security group.
 - [GCP](/validate/setup-guides/gcp/sg) should create a firewall.
 - [Digitial Ocean](/validate/setup-guides/do/sg-droplet) should create a firewall.
-- [Hetnzer](/validate/setup-guides/do/sg-droplet#create-rule-set) should create a firewall (you can follow the DO step-by-step).
+- [Hetnzer](/validate/setup-guides/do/sg-droplet#access-firewall-section) should create a firewall (you can follow the DO step-by-step).
+
+## ◽ Build Wizward
+
+Click on a new server build.
 
 ## ◽ Choose a Region
 
@@ -145,7 +149,7 @@ The key contents should likely start with either:
 It should **end** with your SSH key comment. If you're following our guides directly, it will end with `ConstellationNetwork`; otherwise, it will end with the comment you chose or your computer's username.
 
 ##### Digitial Ocean and Hetzner
-1. Click on the upload or new SSH key <kbd>button</kbd> option.
+1. Click on the upload our new SSH key <kbd>button</kbd> option.
 1. Copy the contents of your public key into the modal and add the key.
 
 ##### AWS
@@ -154,11 +158,11 @@ It should **end** with your SSH key comment. If you're following our guides dire
 
 You may close the editors upon completetion of this step.
 
-## ◽ Assign External IP address
+## ◽ Assign EIP (AWS only)
 
-Specific to AWS, you will need to assign an EIP (Elastic IP) to allow your future Node to persist on the Internet.
+**If you are not using AWS, you can skip this step.**
 
-If you are not using AWS, you can skip this step.
+You will need to assign an EIP (Elastic IP) to allow your future Node to persist on the Internet.
 
 1. Choose Elastic IP from the side menu.
 1. Choose your Region.
