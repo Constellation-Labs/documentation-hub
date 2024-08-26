@@ -46,16 +46,15 @@ sudo nodectl upgrade -ni
 ```
 The `-ni` will run the upgrade in `non-interactive mode`, using all the default values. 
 
-🛑 ✋ **Layer1 metagraph validators only**! ✋ 🛑 
+## ◽ Single Layer1 Nodes
 
 Layer1 metagraph validators **SHOULD** skip to [this](#-verify-your-status) step at the time. 
 
-✅ ✅ **Hybrid Hypergraph validators only!** ✅ ✅ 
+## ◽ Hybrid Nodes
+[Hybrid nodes](/validate/validator/specs#hybrid-node) must be in `Ready` state on layer0 before completing a full connection cluster join.
 
 :::danger EXPECTED FAILURE
 After your node finishes connection steps to join the layer0 Hypergraph, you will see your Node attempt to connect to the layer1 profile and fail.  **This is expected, and can be ignored**. 
-
-<span style={{fontSize:".7em"}}><b>Hybrid Node:</b> A node that connects to both a layer0 and layer1 cluster.</span>
 :::
 
 A new Node must go through the process of obtaining the entire [snapshot chain](/metagraphs/concepts/snapshots) from the cluster. Layer1 is not allowed on the cluster until the layer0 cluster has its entire chain.
