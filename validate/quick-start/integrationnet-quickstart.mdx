@@ -70,27 +70,32 @@ Input and confirm the `nodeadmin`'s new strong password that will be used to adm
 Input and confirm a complex passphrase that will be used to unlock 
 your Node's ability to access the network and to administer your Node's wallet.
 
+- Must **NOT** have any `spaces`
+- Must **NOT** have a `section sign` **&#167;**
+- Must **NOT** have a `dollar sign` **$**
+
+<hr style={{width:`55%`}}/>
+
+- Must have at least 10 characters
 - Must have at least 1 `uppercase letter`
 - Must have at least 1 `lowercase letter`
 - Must have at least 1 `number`
 - Must have at least 1 `special character`
 
-<hr style={{width:`55%`}}/>
 
-- Must **NOT** have any `spaces`
-- Must **NOT** have a `section sign` **&#167;**
-- Must **NOT** have a `dollar sign` **$**
+
+
 
 ## ◽ Wait for Installation to Complete
 
 No action required, you can wait for the installation to complete.
 
 <MacWindow>
-Please follow the instructions below, as indicated<br />
+Please follow the instructions below, as indicated when the guide is completed.<br />
 <br />
 1) Submit your NodeID to Constellation Admins.<br />
 2) Collateralize your Node.<br />
-3) sudo nodectl check_seedlist -p dag-l0<br />
+3) sudo nodectl check_seedlist -p intnet-l0<br />
 4) sudo nodectl restart -p all<br />
 5) Log out and log back in with as nodeadmin with your new nodeadmin password.<br />
 </MacWindow>
