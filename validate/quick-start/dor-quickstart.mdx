@@ -1,6 +1,5 @@
 ---
 title: Dor Metagraph Quick Start
-slug: dor-node-quick-install
 hide_table_of_contents: false
 ---
 import MacWindow from '@site/src/components/global/MacWindow';
@@ -15,11 +14,11 @@ Refer to the [Constellation Network Setup Guides](/validate/setup-guides/) for c
 ## ◽ Setup Firewall
 | direction       | port  | description
 |-----------------|-------| -----------
-| ingress | 9010 | public api layer1
-| ingress | 9011 | p2p api layer1
-| egress  | all | Tune to your needs
+| inbound | 9010 | public api layer1
+| inbound | 9011 | p2p api layer1
+| outbound  | all | Tune to your needs
 
-Refer to these guides on [Digital Ocean](/validate/setup-guides/do/sg-droplet), [AWS](/validate/setup-guides/aws/sg), [Digital Ocean](/validate/setup-guides/gcp/sg), and [Hetzner](https://docs.hetzner.com/cloud/firewalls/getting-started/creating-a-firewall/).
+Refer to these guides on [Digital Ocean](/validate/setup-guides/do/sg-droplet), [AWS](/validate/setup-guides/aws/sg), and [Hetzner](https://docs.hetzner.com/cloud/firewalls/getting-started/creating-a-firewall/).
 
 :::note
 Setting up your firewall policy prior to building your VPS will save time.

@@ -1,6 +1,5 @@
 ---
 title: VPS Build Quick Start
-slug: vps-build-quick-install
 hide_table_of_contents: false
 ---
 import BrowserWindow from '@site/src/components/global/BrowserWindow';
@@ -9,24 +8,39 @@ import WinCommandPrompt from '@site/src/components/global/WinCommandPrompt/WinCo
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Introduction
+# VPS Build Quick Start
 
-This guide is specifically for setting up your [VPS](/validate/validator/vps) to build a Constellation Network node. It is a general guide.
+This guide is specifically for setting up your [VPS](/validate/validator/vps) to build a Constellation Network node. It is a general guide only. 
 
-## ◽ Before We Begin
+## ◽ Before We Begin (optional)
 
-This guide does not include cloud provider-specific steps or images, for a more detailed **provider specific** step-by-step guides click [here](/validate/setup-guides/). 
+This guide does **not** include cloud provider-specific steps or images.
 
-You should use this guide to understand what needs to be accomplished and adapt it to your specific cloud provider’s control panel. The guide offers opinionated advice with sensible defaults.
+There are many cloud providers to choose from, and unfortunately, we cannot cover them all in these tutorials and guides. We leave it up to you to do your own research. Alternatively, you may ask for opinionated advice in the Constellation Network Official Discord channel.
+
+If you do not want to use the step-by-step guides, continue with this guide [here](#-create-ssh-keys).
+
+#### Use the VPS setup step-by-step.
+
+Constellation Network currently offers [setup guides](/validate/setup-guides/) for:
+- AWS
+- Digital Ocean
+
+<span style={{fontSize:'.8em'}}>
+Hetzner users can follow the DigitalOcean guides and adapt them to Hetzner's setup wizards, as the procedures are very similar.
+</span>
+
 
 ## ◽ Create SSH Keys
 
 Please access the [Create SSH Key quick start guide](/validate/quick-start/ssh-quickstart) to build your SSH key pair. 
 
-This is necessary to have in place before continuing this guide.
+This is necessary to have in place before continuing.  
+
+Return to this guide when completed.
 
 ## ◽ Select Project
-Choose or create a new project that will be used to organize your VPS creations inside of.
+Choose or create a new project that will be used to organize your VPS instances.
 
 :::caution Missing Projects
 Not all cloud providers require this step, skip if not found.
@@ -36,6 +50,19 @@ Not all cloud providers require this step, skip if not found.
 
 Create your firewall or security group policy first. 
 
+#### Firewall Mappings Chart
+| direction       | port  | description
+|-----------------|-------| -----------
+| inbound | 9000 | public api layer0
+| inbound | 9001 | p2p api layer0
+| inbound | 9010 | public api layer1
+| inbound | 9011 | p2p api layer1
+| outbound  | all | Tune to your needs
+
+:::note
+Setting up your firewall policy prior to building your VPS will save time.
+:::
+
 - [AWS](/validate/setup-guides/aws/sg) should create a security group.
 - [GCP](/validate/setup-guides/gcp/sg) should create a firewall.
 - [Digitial Ocean](/validate/setup-guides/do/sg-droplet) should create a firewall.
@@ -43,24 +70,37 @@ Create your firewall or security group policy first.
 
 ## ◽ Choose a Region
 
-Choose a region that is closest to your location.
+Choose a region that is closest to your local location.
 
 ## ◽ Pick an image
 
-Choose `Ubuntu 22.04`
+Choose `Ubuntu` **`22.04`**
+
+:::danger 🛑 STOP
+Do not choose Ubuntu 24.04 or a non-Debian distribution.
+:::
 
 ## ◽ Tenancy
 
-Choose shared CPU or shared Tenancy.
+Choose shared CPU or shared tenancy.
 
-## ◽ Choose Instance type
+## ◽ Provision Your VPS
 
-Pick an instance size that meets or exceeds the [specification requirements](/validate/validator/specs) to run a Constellation Network node.
+**Minimum specification for your [VPS](/validate/validator/vps)**
 
-## ◽ Upload your SSH key
+#### MainNet, IntegrationNet, TestNet Hybrid Node
+Refer to the [specification](/validate/validator/specs#hybrid-node-hardware-requirements) 
+document for validation.
+
+#### Dor and single layer metagraphs
+Refer to the [specification](/validate/validator/specs#dor-metagraph-node-hardware-requirements) 
+document for validation.
+
+## ◽ Prepare your public SSH key
 
 Open your public key SSH key to view its contents.
 
+In the example steps below:
 - replace `myuser` with your username.
 - replace `ConstellationNodeKeyPair.pub` with your public key name.
 
@@ -94,20 +134,25 @@ myuser@myuser-MacBook ~ % open -a TextEdit ./.ssh/ConstellationNodeKeyPairTest.p
 
 </Tabs>
 
-The 👆 command, will open an editor that will contain the contents of your `public` SSH key.  It should *most likely* **start** with either:
+## ◽ Upload your public SSH key
+In the previous step, an editor containing the contents of your public SSH key should have opened. 
 
-- ssh-rsa
-- ssh-ed25519
+The key contents should likely start with either:
 
-It should **end** with your SSH key comment. *If follwing directly with our guides*, it is `ConstellationNetwork`.
+- ssh-rsa  
+- ssh-ed25519  
+
+It should **end** with your SSH key comment. If you're following our guides directly, it will end with `ConstellationNetwork`; otherwise, it will end with the comment you chose or your computer's username.
 
 ##### Digitial Ocean and Hetzner
-1. Click on the upload or new SSH key <kbd>button</kbd> option
+1. Click on the upload or new SSH key <kbd>button</kbd> option.
 1. Copy the contents of your public key into the modal and add the key.
 
 ##### AWS
-1. Use the Actions menu from the Region you are building your VPS (EC2) instance within and select `Import key pair`
+1. Use the Actions menu from the Region you are building your VPS (EC2) instance within and select `Import key pair`.
 1. Copy the contents of your public key into the modal and add the key.
+
+You may close the editors upon completetion of this step.
 
 ## ◽ Assign External IP address
 
@@ -120,13 +165,18 @@ If you are not using AWS, you can skip this step.
 1. Allocate an EIP.
 1. Associate your EIP your instance after the instance is created through the action menu.
 
+## ◽ Optional Services
+
+You may skip all the additional services offered. You can treat your node as an ephemeral device and simply rebuild it in the event of any issues.
+
 ## ◽ Create your VPS
 
-Click on the create button.
+Click on the <kbd>create</kbd> (or related) button.
+
+## ◽ VPS Build Process
+Your VPS should now begin its creation, and you should be able to access it shortly via SSH.
+
+Wait for your provider's quick wizards to complete the build, and then record the external IP address of your newly created VPS for future access.
 
 ## ◽ Complete
-
-Your VPS should now begin its creation and you should be able to access it shortly via SSH.
-
-You may return to the [Quick Start Guides](/validate/quick-start/index) to choose the cluster you would like to build your node for participation in.
-
+You may now return to the [Quick Start Guides](/validate/quick-start/index) to select the cluster in which you would like to continue building your node for participation.

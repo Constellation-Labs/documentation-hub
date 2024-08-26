@@ -1,43 +1,24 @@
 ---
 title: IntegrationNet Quick Start
-slug: integrationnet-node-quick-install
 hide_table_of_contents: false
 ---
 import MacWindow from '@site/src/components/global/MacWindow';
 
 # IntegrationNet Quick Start
 
-This guide is specifically for setting up your IntegrationNet Node, and is opinionated with sensible defaults.
+This guide is specifically for setting up your IntegrationNet Node, and is opinionated with sensible defaults. 
 
-## ◽ Choose VPS Provider
-Refer to the [Constellation Network Setup Guides](/validate/setup-guides/) for choosing a VPS provider.
+This guide will use the Windows command prompt or Macintosh terminal.
 
-## ◽ Setup Firewall
-| direction       | port  | description
-|-----------------|-------| -----------
-| ingress | 9000 | public api layer0
-| ingress | 9001 | p2p api layer0
-| ingress | 9010 | public api layer1
-| ingress | 9011 | p2p api layer1
-| egress  | all | Tune to your needs
+## ◽ Prerequisite
 
-Refer to these guides on [Digital Ocean](/validate/setup-guides/do/sg-droplet), [AWS](/validate/setup-guides/aws/sg), [Digital Ocean](/validate/setup-guides/gcp/sg), and [Hetzner](https://docs.hetzner.com/cloud/firewalls/getting-started/creating-a-firewall/).
+Choose and provision your VPS.
 
-:::note
-Setting up your firewall policy prior to building your VPS will save time.
-:::
+Refer to the [VPS Build Quick Start](/validate/quick-start/vps-quickstart) guide.
 
-## ◽ Provision Your VPS
-
-**Minimum specification for your [VPS](/validate/validator/vps)**
-
-Refer to the [specification](/validate/validator/specs#hybrid-node-hardware-requirements) 
-document for validation.
-
-[test](/validate/validator/specs#)
-Suggested OS: **Ubuntu 22.04**
-
-*Ubuntu 24.04 is currently not supported.*
+## ◽ Prepare for SSH connection
+On Windows, please open a [command prompt](/validate/quick-start/ssh-quickstart#-prepare-to-create-key-pair).<br />
+On Mac, please open a [terminal](/validate/quick-start/ssh-quickstart#-prepare-to-create-key-pair).
 
 ## ◽ SSH into Your VPS
 ```

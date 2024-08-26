@@ -8,13 +8,15 @@ import WinCommandPrompt from '@site/src/components/global/WinCommandPrompt/WinCo
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Introduction
+# Create SSH Key Pair Quick Start
 
 This guide is specifically for creating a [SSH Key Pair](/validate/validator/ssh-keys) to connect remotely to a Constellation Network node. It is a general guide.
 
-## ◽ Create SSH Keys
-
+## ◽ Learn SSH Keys (optional)
 Detailed step-by-step guides can be found [here](/validate/validator/ssh-keys).
+
+## ◽ Prepare to Create Key Pair
+We need to open a command prompt or terminal window.
 
 <Tabs>
 <TabItem value="Choose" label="Choose">
@@ -31,7 +33,32 @@ From the Microsoft Windows start menu type in `Command Prompt` on the main searc
 <p>C:\></p>
 </WinCommandPrompt>
 
-#### ◽ Create your SSH key pair
+</TabItem>
+<TabItem value="Mac/Linux" label="Mac/Linux">
+
+#### ◽ Open a Terminal Window
+
+Click on the `Launchpad` icon on the Apple `dock` panel.
+
+In the search bar at the top, enter in `Terminal`
+
+<MacWindow>
+Last login: [time here]<br />
+myuser@myuser-MacBook ~ %<br />
+</MacWindow>
+
+</TabItem>
+</Tabs>
+
+
+## ◽ Create SSH Key Pair
+
+<Tabs>
+<TabItem value="Choose" label="Choose">
+Please choose <b>Windows</b> or <b>Macintosh</b> platform.
+</TabItem>
+
+<TabItem value="Windows" label="Windows">
 
 Change to the `.ssh` directory to simplify creation and future locating of your SSH key pairs.
 ```
@@ -67,8 +94,10 @@ The key's randomart image is:<br />
 C:\Users\myuser\.ssh>
 </WinCommandPrompt>
 
-Since we are in the `.ssh` directory off the root of the user's home directory.  We can do a directory listing to review our newly created key pair.
-<span style={{fontSize:".5em"}}>Dates, times, and file sizes may/will not match, for example only.</span>
+We are in the `.ssh` directory off the root of the user's home directory.  
+
+We can do a directory listing to review our newly created key pair.
+<span style={{fontSize:".7em"}}>Dates, times, and file sizes may/will not match, for example only.</span>
 <WinCommandPrompt>
 C:\Users\myuser\.ssh>dir<br />
 Volume Serial Number is XXX-XXXX<br />
@@ -84,22 +113,7 @@ C:\Users\myuser\.ssh><br />
 
 
 </TabItem>
-
-
 <TabItem value="Mac/Linux" label="Mac/Linux">
-
-#### ◽ Open a Terminal Window
-
-Click on the `Launchpad` icon on the Apple `dock` panel.
-
-In the search bar at the top, enter in `Terminal`
-
-<MacWindow>
-Last login: [time here]<br />
-myuser@myuser-MacBook ~ %<br />
-</MacWindow>
-
-#### ◽ Create your SSH key pair
 
 Change to the `.ssh` directory to simplify creation and future locating of your SSH key pairs.
 
@@ -108,13 +122,13 @@ cd .ssh
 ```
 Generatate SSH key.
 ```
-ssh-keygen -b 4096 -C ConstellationNetwork
+ssh-keygen -C ConstellationNetwork
 ```
 
 <MacWindow>
-myuser@myuser-MacBook .ssh % ssh-keygen -b 4096 -C ConstellationNetwork
-Generating public/private ed25519 key pair.
-Enter file in which to save the key (/Users/myuser/.ssh/id_ed25519): 
+myuser@myuser-MacBook .ssh % ssh-keygen -C ConstellationNetwork<br />
+Generating public/private ed25519 key pair.<br />
+Enter file in which to save the key (/Users/myuser/.ssh/id_ed25519):<br /> 
 </MacWindow>
 
 Choose a `name` for your key pair (*use whatever name you would like.*)
@@ -130,17 +144,17 @@ Your identification has been saved in ConstellationNodeKeyPair.pub<br />
 The key fingerprint is:
 SHA256: 13vaB0xApJUD13F+Lg9e1uA13rmXaticP0vQd13LBXNk<br />
 The key's randomart image is:<br />
-+---[RSA 4096]----+<br />
++---[ED25519 256]----+<br />
 (image code omitted)<br />
 +---[SHA256]------+<br />
 myuser@myuser-MacBook .ssh %
 </MacWindow>
 
-Since we are in the `.ssh` directory off the root of the user's home directory.  We can do a directory listing to review our newly created key pair.
+We are in the `.ssh` directory off the root of the user's home directory.  We can do a directory listing to review our newly created key pair.
 ```
 ls -l
 ```
-<span style={{fontSize:".5em"}}>lowercase letter L not number 1 - dates, times, and file sizes may/will not match, for example only.</span>
+<span style={{fontSize:".7em"}}>Use lowercase letter L not number 1 - dates, times, and file sizes may/will not match, for example only.</span>
 
 <MacWindow>
 myuser@myuser-MacBook .ssh % ls -l<br />
@@ -155,3 +169,5 @@ myuser@myuser-MacBook .ssh %<br />
 
 ## ◽ Creation Complete!
 You should now have your SSH private and public keys properly created and ready for use in your `.ssh` subdirectory under your local computer's user account.
+
+If you are reached this page from the VPS Build Quick Start guide, you can return to the document [here](/validate/quick-start/vps-quickstart#-create-ssh-keys).

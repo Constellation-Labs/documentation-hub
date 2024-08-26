@@ -40,7 +40,7 @@ Utilizing the [upgrade](/validate/automated/nodectl-commands#upgrade) command, w
 ```
 sudo nodectl upgrade -ni
 ```
-The `-ni` will run the `upgrade` in non-interactive mode, using all the default values.
+The `-ni` will run the `upgrade` in non-interactive mode, using all the default values. 
 
 🛑 ✋ Layer1 **only** metagraph validators **SHOULD** skip to [this](#-verify-your-status) step at the time. 🛑 ✋ **
 
