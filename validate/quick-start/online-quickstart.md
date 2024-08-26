@@ -1,7 +1,7 @@
 ---
 title: First Time Connection Quick Start
-slug: online-quick-start
 hide_table_of_contents: false
+hide_title: true
 ---
 import MacWindow from '@site/src/components/global/MacWindow';
 
@@ -13,9 +13,11 @@ This guide is specifically for connecting a Validator Node to a Constellation Ne
 
 Please review the [checklist and profile descriptions](/validate/quick-start/prerequisites) for a better understanding of how this document works.
 
-We will use `dag-l0` as our profile name throughout the guide. When necessary, this should be changed to match your Node's profile.
+We will use `dag-l0` as our profile name throughout the guide. When necessary, this should be changed to match your Node's [profile](/validate/quick-start/prerequisites#-profile-table).
 
 ## ◽ SSH into Your VPS
+Review your [notes](/validate/resources/nodectl-notes) for the connection string.
+
 ```
 ssh -i /path/to/ssh/private/key nodeadmin@vps_ip_address
 ```
@@ -31,28 +33,41 @@ NODE ID FOUND ON SEED LIST<br />
 True
 </MacWindow>
 
-If you are not on the seed list, please 🛑 **stop** here and contact a Discord Administrator from the Constellation Network Official Discord server.  You must wait for the next network cluster restart that includes a seed list update.
+If you are not on the seed list, please 🛑 **stop** here and contact a Discord Administrator Team Lead from the Constellation Network Official Discord server.  
+
+You must wait for the next network cluster restart that includes a seed list update.
 
 ## ◽ Preform an upgrade 
 
-Utilizing the [upgrade](/validate/automated/nodectl-commands#upgrade) command, we can take care of most of the necessary items to ensure our Node can join the cluster properly.
+Utilizing the [upgrade](/validate/automated/nodectl-commands#upgrade) command, we can take care of most of the necessary items to ensure our node can join the cluster properly.
 
 ```
 sudo nodectl upgrade -ni
 ```
-The `-ni` will run the `upgrade` in non-interactive mode, using all the default values. 
+The `-ni` will run the upgrade in `non-interactive mode`, using all the default values. 
 
-🛑 ✋ Layer1 **only** metagraph validators **SHOULD** skip to [this](#-verify-your-status) step at the time. 🛑 ✋ **
+🛑 ✋ **Layer1 metagraph validators only**! ✋ 🛑 
 
-:::danger HYBRID NODES ONLY
-You will see your Node attempt to connect to the layer1 profile and fail.  **This is expected, and can be ignored**. 
+Layer1 metagraph validators **SHOULD** skip to [this](#-verify-your-status) step at the time. 
+
+✅ ✅ **Hybrid Hypergraph validators only!** ✅ ✅ 
+
+:::danger EXPECTED FAILURE
+After your node finishes connection steps to join the layer0 Hypergraph, you will see your Node attempt to connect to the layer1 profile and fail.  **This is expected, and can be ignored**. 
 
 <span style={{fontSize:".7em"}}><b>Hybrid Node:</b> A node that connects to both a layer0 and layer1 cluster.</span>
 :::
 
-A new Node must go through the process of obtaining the entire [snapshot chain](/learn/advanced-concepts/architecture) from the cluster. Layer1 is not allowed on the cluster until the layer0 cluster has its entire chain.
+A new Node must go through the process of obtaining the entire [snapshot chain](/metagraphs/concepts/snapshots) from the cluster. Layer1 is not allowed on the cluster until the layer0 cluster has its entire chain.
 
 During this stage, your Node will transition into `SessionStarted` and then transition again to `DownloadInProgress` state.
+
+<p style={{fontSize:".7em"}}>There are other states that the node may transition into; however, these two states are the most obvious to see.</p>
+
+## ◽ DownloadInProgress
+
+After the upgrade completes, our goal is to see that our node has reached `DownloadInProgress` state.  We will verify this by issuing this command.
+
 ```
 sudo nodectl status -p dag-l0
 ```
@@ -61,15 +76,30 @@ JOIN STATE<br />
 DownloadInProgress
 </MacWindow>
 
+Repeat the command if you see `SessionStarted` until you reach `DownloadInProgress`.
+
+## ◽ Wait for Ready
+Our node now has to wait several days to complete the process of downloading all [snapshots](/metagraphs/concepts/snapshots) before it transitions itself into `Ready` state.
+
+You may continue to the next optional step to speed this process up or you should bookmark this page and return to continue your first time connection, after you reach `Ready` state.
+
+Our node now needs to wait several days to complete the process of downloading all [snapshots](/metagraphs/concepts/snapshots) before it transitions into the `Ready` state.
+
+You may proceed to the next optional step to speed up this process, or bookmark this page and return once your node reaches the `Ready` state to continue your first-time connection.
+
 ## ◽ Execute Starchiver (optional)
 
 To reduce the time to obtain your entire snapshot chain **considerably**, so you may join the cluster properly, you can utilize the [starchiver](https://github.com/StardustCollective/Starchive-Extractor) utility.
 ```
 sudo nodectl execute_starchiver -p dag-l0 --restart
 ```
-While the Starchiver utility is running, you should keep a diligent eye on your Node to make sure it completes successfully.
+While the Starchiver utility is running, you should keep a diligent eye on your node to make sure it completes successfully.
 
+:::caution 🚧 Caution
 **Starchiver is not a Constellation Network supported Utility.** For troubleshooting or other needs, you can reach out to the owner of the project through the [Github Repository](https://github.com/StardustCollective/Starchive-Extractor).  You may also contact the developers through the Constellation Network Official Discord server.
+
+**Use at your own risk**
+:::
 
 ## ◽ Verify your status
 Once your Node has completed downloading the snapshot chain, it will transition from `DownloadInProgess` to `Ready` by going through several intermediary stages.

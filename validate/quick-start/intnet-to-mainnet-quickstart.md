@@ -1,6 +1,7 @@
 ---
 title: IntegrationNet to MainNet Quick Start
 hide_table_of_contents: false
+hide_title: true
 ---
 import MacWindow from '@site/src/components/global/MacWindow';
 

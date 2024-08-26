@@ -11,7 +11,6 @@ hide_table_of_contents: false
   />
 </head>
 
-
 This process will guide you through changing the default SSH port 22 to a custom port for increased node security.
 
 ## Overview

@@ -1,6 +1,7 @@
 ---
 title: p12 migrate v1 to v2
 hide_table_of_contents: false
+hide_title: true
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -16,7 +17,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-## Introduction
+## Migrate a v1 P12 Key Store
 
 Constellation Network has invoked a new **p12** file standard for accessing the **Constellation Network Hypergraph and metagraphs**.
 

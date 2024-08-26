@@ -1,6 +1,7 @@
 ---
 title: Create SSH Key Pair Quick Start
 hide_table_of_contents: false
+hide_title: true
 ---
 import BrowserWindow from '@site/src/components/global/BrowserWindow';
 import MacWindow from '@site/src/components/global/MacWindow';
@@ -16,7 +17,7 @@ This guide is specifically for creating a [SSH Key Pair](/validate/validator/ssh
 Detailed step-by-step guides can be found [here](/validate/validator/ssh-keys).
 
 ## ◽ Prepare to Create Key Pair
-We need to open a command prompt or terminal window.
+We need to open a **command prompt** or **terminal** window.
 
 <Tabs>
 <TabItem value="Choose" label="Choose">
@@ -30,7 +31,7 @@ Please choose <b>Windows</b> or <b>Macintosh</b> platform.
 From the Microsoft Windows start menu type in `Command Prompt` on the main search bar and select the `Command Prompt` icon.
 
 <WinCommandPrompt>
-<p>C:\></p>
+<p>C:\Users\myuser></p>
 </WinCommandPrompt>
 
 </TabItem>
@@ -171,6 +172,13 @@ myuser@myuser-MacBook .ssh %<br />
 
 </TabItem>
 </Tabs>
+
+## ◽ Update Notes
+Create a [notes](/validate/resources/nodectl-notes) document or update your notes documentation with your new information:
+- public key name
+- private key name
+- local location for your keys
+- SSH key passphrase
 
 ## ◽ Creation Complete!
 You should now have your SSH private and public keys properly created and ready for use in your `.ssh` subdirectory under your local computer's user account.

@@ -1,12 +1,14 @@
 ---
 title: VPS Build Quick Start
 hide_table_of_contents: false
+hide_title: true
 ---
 import BrowserWindow from '@site/src/components/global/BrowserWindow';
 import MacWindow from '@site/src/components/global/MacWindow';
 import WinCommandPrompt from '@site/src/components/global/WinCommandPrompt/WinCommandPrompt';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
 
 # VPS Build Quick Start
 
@@ -16,7 +18,13 @@ This guide is specifically for setting up your [VPS](/validate/validator/vps) to
 
 This guide does **not** include cloud provider-specific steps or images.
 
-There are many cloud providers to choose from, and unfortunately, we cannot cover them all in these tutorials and guides. We leave it up to you to do your own research. Alternatively, you may ask for opinionated advice in the Constellation Network Official Discord channel.
+<Collapsible title="notes:">
+<p>
+There are many cloud providers to choose from, and unfortunately, we cannot cover them all in these tutorials and guides. We leave it up to you to do your own research. 
+</p><p>
+Alternatively, you may ask for opinionated advice in the Constellation Network Official Discord channel.
+</p>
+</Collapsible>
 
 If you do not want to use the step-by-step guides, continue with this guide [here](#-create-ssh-keys).
 
@@ -77,8 +85,8 @@ Click on a new server build.
 Choose a region that is closest to your local location.
 
 ## ◽ Pick an image
-
 Choose `Ubuntu` **`22.04`**
+<p style={{fontSize:".7em"}}>In most cases their will be a dropdown to select the version of Ubuntu <b>or</b> mulitple names for the Ubuntu image that will contain the version `22.04` in the image name.</p>
 
 :::danger 🛑 STOP
 Do not choose Ubuntu 24.04 or a non-Debian distribution.
@@ -105,8 +113,6 @@ document for validation.
 Open your public key SSH key to view its contents.
 
 In the example steps below:
-- replace `myuser` with your username.
-- replace `ConstellationNodeKeyPair.pub` with your public key name.
 
 <Tabs>
 
@@ -115,6 +121,9 @@ Please choose <b>Windows</b> or <b>Macintosh</b> platform.
 </TabItem>
 
 <TabItem value="Windows" label="Windows">
+<li>Copy the command from the section below into a temporary text editor.</li>
+<li>Replace `myuser` with your username.</li>
+<li>Replace `ConstellationNodeKeyPair.pub` with your public key name.</li>
 
 ```
 notepad \Users\myuser\.ssh\ConstellationNodeKeyPair.pub 
@@ -126,6 +135,8 @@ C:\Users\myuser>notepad \Users\myuser\.ssh\ConstellationNodeKeyPair.pub
 </TabItem>
 
 <TabItem value="Mac" label="Macintosh">
+<li>Copy the command from the section below into a temporary text editor.</li>
+<li>Replace `ConstellationNodeKeyPair.pub` with your public key name.</li>
 
 ```
 open -a TextEdit ./.ssh/ConstellationNodeKeyPairTest.pub
@@ -181,6 +192,11 @@ Click on the <kbd>create</kbd> (or related) button.
 Your VPS should now begin its creation, and you should be able to access it shortly via SSH.
 
 Wait for your provider's quick wizards to complete the build, and then record the external IP address of your newly created VPS for future access.
+
+## ◽ Update Notes
+Create a [notes](/validate/resources/nodectl-notes) document or update your notes documentation with your new information:
+- IP address of your new VPS.
+- SSH key pair assigned to your VPS.
 
 ## ◽ Complete
 You may now return to the [Quick Start Guides](/validate/quick-start/index) to select the cluster in which you would like to continue building your node for participation.
