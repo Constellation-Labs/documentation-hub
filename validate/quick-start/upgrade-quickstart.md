@@ -18,6 +18,15 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 This guide is specifically for upgrading your node to to the latest version of **Tessellation** with opinionated with sensible defaults.
 
+## ◽ SSH into Your VPS
+Review your [notes](/validate/resources/nodectl-notes) for the connection string.
+
+```
+ssh -i /path/to/ssh/private/key nodeadmin@vps_ip_address
+```
+Refer to [SSH Explanation](/validate/validator/ssh-keys), [Mac SSH Guide](/validate/resources/accessMac), and [Windows SSH Guide](/validate/resources/accessWin)
+for detailed understanding.
+
 ## ◽ Begin upgrade process
 ```
 sudo nodectl upgrade -ni
@@ -32,26 +41,27 @@ Skip to this step [confirm status step](#-confirm-status).
 In most cases, you will **NOT** be able to immediately connect your layer 1 profile to the cluster.
 
 ### Auto Restart
-If you have the [auto_restart](/validate/automated/nodectl-autorestart) enabled, you can skip to the [confirm status step](#-confirm-status).
+If you have the [auto_restart](/validate/automated/nodectl-autorestart) enabled, your node should connected automatically to layer1 once it detects that layer0 is in `Ready` state, you can skip to the [confirm status](#-confirm-status) step.
 
 ## ◽ Watch For Layer0 Ready State
-Refer to [profile table](/validate/quick-start/prerequisites#-profile-table) to obtain `<profile_name>` parameter.
+Refer to [profile table](/validate/quick-start/prerequisites#-profile-table) to obtain `profile_name` parameter associated with your cluster, adjust the command below as necessary.
+
 ```
-sudo nodectl status -p <profile_name> -w 30
+sudo nodectl status -p dag-l0 -w 120
 ```
-Continue to watch the screen which will update every `30` seconds, until you see the node's profile reaches `ready` state.
+Continue to watch the screen which will update every `120` seconds, until you see the node's profile reaches `ready` state.
 
 ## ◽ Reached Ready State
-press the <kbd>q</kbd> key to exit out of watch mode.
+press the <kbd>q</kbd> key to exit out of watch mode when you node is reporting it is in `Ready` state.
 
 ## ◽ Join Layer1
 ```
-sudo nodectl join -p <profile_name>
+sudo nodectl join -p dag-l0
 ```
 :::danger ERROR JOINING
 If this creates an error because your node's layer1 profile is not properly in `ReadyToJoin` state.
 ```
-sudo nodectl restart -p <profile_name>
+sudo nodectl restart -p dag-l0
 ```
 :::
 
