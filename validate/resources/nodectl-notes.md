@@ -16,46 +16,43 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-The following is a document that will provide hints for you when you are operating your Node.  
+## ◽ Purpose
 
-It is suggested that you use a physical piece of paper or a secure document to be placed on a USB stick to store with your other secured backups.
-  - example: A physical safe in the office or house.
+This document provides a suggested methodology for keeping notes and hints accessible when preparing to or operating your node.
 
-### Assumptions for the Note
+We hope you find that referring back to your notes for reminders on how to manage your node and recall necessary passphrases or passwords is time-saving, useful, and efficient.
 
-:::danger DANGER
-Do not use the same passphrases as shown in this example.  These examples are public facing and may be used by a nefarious actor as a first attempt to access your Node and penetrate...
+## ◽ Suggested Medium
+The following mediums are a good start to where you should record and maintain your notes.
+
+| Medium | Description |
+| :---: | :--- |
+| Secured Software Manager | There are password managers that allow for keeping passwords, passphrases, notes, and documents.  From LastPass, 1Password, Bitwarden, Dashlane, KeePass, to others. *Make sure to create backups that will be stored in a safe location.* |
+| USB Stick | Placing your information on a USB stick that is stored in a secure location such as a safe.
+| Physical Piece of Paper | Writing down your notes and storing in a secure location such as a safe.
+
+## ◽ Warnings
+
+:::danger 🚑 PLEASE DO NOT 🚒
+Do **not** use the same passphrases or other sensitive values/information as shown in this example.  
+
+These examples are public facing and may be used by a nefarious actor as a first attempt to access your Node in a penetration attack.
+
+> The example values in these notes are **ficitious**, please replace usernames, passwords, passphrases, etc. with your own.
 :::
 
-1. Our Node is created
-   - ip address: `113.113.113.113`
-   - SSH port opening for access: `22`
-1. We have a [p12](/validate/validator/p12) file
-   - p12 name: `myConstellationP12File.p12`
-   - p12 passphrase: `abc123abc123!@#`
-1. We have an [SSH](/validate/validator/ssh-keys) key pair created
-   - private SSH key: `myprivatekey.ppk` (`myprivatekey.pem`)
-   - public SSH key: `mypublickey` 
-   - private SSH key passphrase: `efg345efg$%%^`
-   - SSH port opening for access: `22`
-   - Local Machine username: `bob`
-   - Our private key is located in our `/home/bob/.ssh/` folder on our local machine (not on our VPS).
-1. Our Node Administrator username on our VPS is created
-   - username: `nodeadmin`
-   - password: `hij678hij678&*()`
-
-### Our Note File for Mac User
+## ◽ Notes for Macintosh
 
 ```
 Constellation Validator Node Notes:
 
 To access our Node:
     open a terminal and enter:
-    ssh -i /home/bob/.ssh/myprivatekey.pem nodeadmin@113.113.113.113
+    ssh -i /home/myuser/.ssh/myprivatekey nodeadmin@113.113.113.113
     
     This command will attempt to SSH into our VPS/Node 
     We will be challenged for access to supply the passphrase.
-    passphrase: efg345efg$%%^
+    passphrase: efg6abc13efg6
 
     If the command hangs or an error message stating 
     "refused" check to make sure that our firewall 
@@ -67,31 +64,46 @@ To access our Node:
 
 To issue commands using nodectl we use sudo
    We need to use our nodeadmin password here:
-   passphrase: hij678hij678&*()
+   passphrase: efg6abc13efg6
 
 If we need to access our p12 file (hot wallet)
-   passphrase: abc123abc123!@#
+   passphrase: abc13efg6abc13
 
 Reminders:
 ----------
-ssh private key: myprivatekey.pem
-ssh public key: mypublickey
-ssh passphrase: efg345efg$%%^
+ssh private key: myprivatekey
+ssh public key: mypublickey.pub
+ssh passphrase: efg6abc13efg6
 location of keys:
    - on this USB stick
-   - local mac directory: /home/bob/.ssh/
+   - local mac directory: /home/myuser/.ssh/
 
-p12 key store name (hot wallet): myConstellationP12File.p12
-p12 key store passphrase: abc123abc123!@#
+p12 key store name (hot wallet): myp12name.p12
+p12 key store passphrase: abc13efg6abc13
 
 VPS IP: 113.113.113.113
 VPS SSH port: 22
-VPS username: nodeadmin
-VPS sudo password: hij678hij678&*()
+VPS username: mynodeadmin
+VPS sudo password: 
+
+* After typing in: sudo nodectl
+  you can double-tap the tab key for a list
+  of commands.
+  
+Key Commands
+------------
+sudo nodectl status
+sudo nodectl restart -p all
+sudo nodectl upgrade
+sudo nodectl check_versions
+sudo nodectl check_consensus
+sudo nodectl dag -p dag-l0
 ```
 
-### Our Note File for Windows User
-
+## ◽ Notes for Windows
+:::caution Just in Case
+If you are using a Command Prompt verses PuTTy, you may want to copy the Macintosh notes 👆and replace `Terminal` with `Command Prompt` as necessary.
+:::
 ```
 Constellation Validator Node Notes:
 
@@ -103,7 +115,7 @@ To access our Node:
     
     This command will attempt to SSH into our VPS/Node 
     We will be challenged for access to supply the passphrase.
-    passphrase: efg345efg$%%^
+    passphrase: efg6abc13efg6
 
     If the command hangs or an error message stating 
     "refused" check to make sure that our firewall 
@@ -136,4 +148,17 @@ VPS IP: 113.113.113.113
 VPS SSH port: 22
 VPS username: nodeadmin
 VPS sudo password: hij678hij678&*()
+
+* After typing in: sudo nodectl
+  you can double-tap the tab key for a list
+  of commands.
+
+Key Commands
+------------
+sudo nodectl status
+sudo nodectl restart -p all
+sudo nodectl upgrade
+sudo nodectl check_versions
+sudo nodectl check_consensus
+sudo nodectl dag -p dag-l0
 ```
