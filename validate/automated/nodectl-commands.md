@@ -1894,9 +1894,9 @@ sudo nodectl upgrade_nodectl help
 ```
 sudo nodectl upgrade_nodectl
 ```
-- Upgrade nodectl to version `v2.13.0`
+- Upgrade nodectl to version `v2.15.0`
 ```
-sudo nodectl upgrade_nodectl -v v2.13.0
+sudo nodectl upgrade_nodectl -v v2.15.0
 ```
 
 ### upgrade_path

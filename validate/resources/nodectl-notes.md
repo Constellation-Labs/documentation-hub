@@ -18,9 +18,9 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## ◽ Purpose
 
-This document provides a suggested methodology for keeping notes and hints accessible when preparing to or operating your node.
+This document suggests a method for keeping notes and tips accessible when preparing to or operating your node.
 
-We hope you find that referring back to your notes for reminders on how to manage your node and recall necessary passphrases or passwords is time-saving, useful, and efficient.
+We hope that referring back to your notes for reminders on managing your node and recalling necessary passphrases or passwords will be time-saving, useful, and efficient.
 
 ## ◽ Suggested Medium
 The following mediums are a good start to where you should record and maintain your notes.

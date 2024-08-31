@@ -11,23 +11,16 @@ This guide is specifically for migrating your IntegrationNet Node over to MainNe
 
 ## ◽ Validate the Provisioning Your VPS
 
-#### Minimum Specs for Your Node
-
-| Type            | Minimum Required  |
-|-----------------|----------|
-| **CPU**         | 8       |
-| **RAM**         | 16GB RAM |
-| **Disk Space**  | 320GB    |
-| **Traffic Allowance** | 10 TB/month |
-
-Suggested OS: **Ubuntu 22.04**
-
-*Ubuntu 24.04 is currently not supported.*
+An IntegrationNet node should already have the same specifications required to run a MainNet node.  However, this is a good time to make sure your [Hybrid nodes](/validate/validator/specs#hybrid-node) meets [these specifications](/validate/validator/specs#hybrid-node) before continuing.
 
 ## ◽ SSH into Your VPS
-Refer to [this doc](/validate/validator/ssh-keys) for **SSH** instructions.<br />
-Refer to [this doc](/validate/resources/accessMac) to access from a **Macintosh**.<br />
-Refer to [this doc](/validate/resources/accessWin) to access form a **Windows System**.<br />
+Review your [notes](/validate/resources/nodectl-notes) for the connection string.
+
+```
+ssh -i /path/to/ssh/private/key nodeadmin@vps_ip_address
+```
+Refer to [SSH Explanation](/validate/validator/ssh-keys), [Mac SSH Guide](/validate/resources/accessMac), and [Windows SSH Guide](/validate/resources/accessWin)
+for detailed understanding.
 
 ## ◽ Document Current P12 Details
 ```
@@ -35,17 +28,20 @@ sudo nodectl view_config --section global_p12
 ```
 You may need this information moving forward with this Quick Start Guide, please **securely** record these as **temporary** notes before continuing with this guide.
 
-:::success IMPORTANT
+:::caution IMPORTANT
 If your p12 passphrase is encrypted, you will not be able to view it. Please ensure you have your p12 passphrase readily available.
 
 You will be prompted to enter your p12 passphrase later in the migration process.
 :::
 
 ## ◽ Verify `Auto Restart`
+We want to make sure `auto_restart` is disabled.
 ```
 sudo nodectl auto_restart status
 ```
-If you see a **SERVICE PROCESS FOUND (PID)**, continue to the next step.  If you see `disabled`, you may skip the `Disable Auto Restart` step, and continue directly to the [update OS step](#-update-os).
+If you see a **SERVICE PROCESS FOUND (PID)**, continue to the next step.  
+
+If you see `disabled`, you may skip the `Disable Auto Restart` step, and continue directly to the [update OS step](#-update-os).
 
 <MacWindow>
 SERVICE PROCESS FOUND (PID)<br />
@@ -56,7 +52,7 @@ disabled
 ```
 sudo nodectl configure -e -cb -d
 ```
-- Option <kbd>R</kbd>
+- Option <kbd>r</kbd> 
 ```
 Do you want to [disable] auto_resart? [y] y
 ```
@@ -66,24 +62,31 @@ Do you want to [disable] auto_resart? [y] y
   - auto_upgrade
   - on boot
 
+- Option <kbd>q</kbd> 
+
 ## ◽ Update OS
 ```
 sudo nodectl upgrade_vps
 ```
+
+#### ◽ TUI Messages
+If you encounter a purple ascii art GUI (text-based user interface TUI).  You should leave any values chosen (if there are options) for you and use the <kbd>Tab</kbd> key to advance to the <kbd>OK</kbd> or <kbd>Confirm</kbd> options.  Choose <kbd>Enter</kbd> to accept and continue.
+
+#### ◽ Reboot Request
 If you are instructed to `reboot` continue to the next step; otherwise skip to [Validate latest nodectl version](#-validate-latest-nodectl-version).
 
 ## ◽ Reboot
 ```
 sudo nodectl reboot
 ```
-- If asked to leave the cluster(s) first, you will say `y`
+- If asked to leave the cluster(s) first, you will choose <kbd>y</kbd>.
 
 Once nodectl reboots your Node for you, you will lose access to the terminal session.
 - Wait 1 minute to allow your VPS to reboot
-- SSH into your VPS again using the Node's administration account `nodeadmin`.
+- [SSH](#-ssh-into-your-vps) into your VPS again using the Node's administration account `nodeadmin`.
 
 ## ◽ Validate latest nodectl version 
-**Node Control Utility Program v2.15.0**
+**Node Control Utility Program**
 ```
 sudo nodectl check_version
 ```
@@ -98,6 +101,8 @@ True
 ```
 sudo nodectl upgrade_nodectl
 ```
+Optionally, you may refer to the detailed [step-by-step](/validate/automated/upgrade_nodectl/index) guide.
+
 #### ◽ Migrate nodectl
 You may be requested to **migrate** your Node configuration.  
 
@@ -182,7 +187,7 @@ Set ALL profile p12 wallets to Global? [y] <b>y</b>
 
 ## ◽ Preserve P12 details
 We will preserve our p12 key store configuration settings.
-2
+
 <MacWindow>
 Preserve global p12 details? [n] <b>y</b>
 </MacWindow>
@@ -193,6 +198,8 @@ We need to remove the old profiles from our Node.
 <MacWindow>
 Remove old profiles? [y] <b>y</b>
 </MacWindow>
+
+*This may take a few moments, please exercise patience.*
 
 ## ◽ Clean Up Old Services
 We need to remove the old service files from our Node.
@@ -217,6 +224,21 @@ Press any key to continue
 Press <kbd>q</kbd> to quit back to the terminal prompt.
 
 # Join MainNet
+
+At the point, you will no longer be utilizing the old profiles:
+- `intnet-l0` 
+- `intnet-l1` 
+
+The new profiles associated with MainNet are:
+- `dag-l0` 
+- `dag-l1`.  
+
+You can review the profile descriptions [here](/validate/quick-start/prerequisites#-profile-table).
+
+## ◽ Collateralize your Node
+We will be repurposing our p12 wallet that was originally used on IntegrationNet.
+
+Please follow [this](/validate/quick-start/collateralize-quickstart) guide and then return to this document when complete.
 
 ## ◽ Download snapshots (Optional)
 If you would like to organically download the MainNet snapshots, you can skip to [next](#-restart-your-node) step.
@@ -266,7 +288,3 @@ sudo nodectl status
 JOIN STATE<br />
 Ready
 </MacWindow>
-
-
-
-
