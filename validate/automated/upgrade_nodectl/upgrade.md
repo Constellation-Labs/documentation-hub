@@ -53,7 +53,7 @@ SUCCESS - AUTHENTIC NODECTL
 
 In our example, we have downloaded `v2.15.0` of nodectl.  nodectl will execute the new `v2.15.0` binary and display the versioning to help us verify we have downloaded the correct version.
 
-The below example shows us on the major version of `2`, minor version of `13` and `0` patch level.  It also indicates that we are running `v2.1.1` of the nodectl configuration.
+The below example shows us on the major version of `2`, minor version of `15` and `0` patch level.  It also indicates that we are running `v2.1.1` of the nodectl configuration.
 
 <MacWindow>
 nodeadmin@Constellation-Node:~# sudo nodectl version<br />

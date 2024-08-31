@@ -88,7 +88,7 @@ Once nodectl reboots your Node for you, you will lose access to the terminal ses
 ## ◽ Validate latest nodectl version 
 **Node Control Utility Program**
 ```
-sudo nodectl check_version
+sudo nodectl check_versions
 ```
 If you are on the latest **nodectl** version, you may skip the next 2 steps and [continue the migration process](#-leave-integrationnet-cluster).
 
@@ -236,7 +236,9 @@ The new profiles associated with MainNet are:
 You can review the profile descriptions [here](/validate/quick-start/prerequisites#-profile-table).
 
 ## ◽ Collateralize your Node
-We will be repurposing our p12 wallet that was originally used on IntegrationNet.
+Up until now, you have been rewarded for your participation on IntegrationNet through the information provided in your Lattice account via daily distributions.
+
+On MainNet, rewards will be sent directly to your node’s hot wallet.
 
 Please follow [this](/validate/quick-start/collateralize-quickstart) guide and then return to this document when complete.
 
