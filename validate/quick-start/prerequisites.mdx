@@ -1,0 +1,40 @@
+---
+title: Quick Start Prerequisites
+hide_table_of_contents: false
+hide_title: true
+---
+
+This document is intended to outline the steps that should be completed before using any of the validator node quick start guides on this documentation portal.
+
+It does **NOT** include the [New Installation Start Guides](/validate/quick-start/index) or [Step-by-Step Guides](/validate/automated/install/nodectl-install-types). If you do not already have a node set up, you may skip this document and proceed directly to the [guide](/validate/quick-start/index) that pertains to your particular setup.
+
+## ◽ Check List  ✅
+
+- Your Node is built with nodectl installed. 
+  - [Quick Start Guides](/validate/quick-start/index).
+  - [Step-by-Step Guides](/validate/automated/install/nodectl-install-types).
+- Have your Node accessible via [remote SSH](/validate/validator/ssh-keys).
+- Your Node's **nodeid** (public key) has been submitted to Constellation Network and confirmed it was placed on the authentication seed list.
+  - IntegrationNet specific:
+     - Lattice account is setup.
+     - NodeID registered on Lattice account.
+     - Wallet with collateral requirements provided.
+     - Wallet to distribute rewards provided. 
+- If your Hypergraph or metagraph requires collateral, your Node's wallet is properly [collateralized](/validate/quick-start/collateralize). 
+  - IntegrationNet specific:
+     - Wallet with collateral requirements provided.
+- Your [firewall ports](/validate/resources/firewall-access) are properly opened.
+
+## ◽ Profile Table
+
+| Profile Name | Layer Type | Description |
+| ------------ | ---------- | ----------- | 
+| dag-l0 | 0 | MainNet and TestNet profile for the layer0 global Hypergraph |
+| dag-l1 | 1 | MainNet and TestNet profile for the currency layer1 Hypergraph |
+| intnet-l0 | 0 | IntegrationNet profile for the layer0 global Hypergraph |
+| intnet-l1 | 1 | IntegrationNet profile for the currency layer1 Hypergraph |
+| dor-dl1 | 1 | Dor metagraph profile for the data layer1 metagraph |
+
+:::note Profile Documentation Default
+The documentation will most probably refer to `dag-l0` from the MainNet cluster profile within nodectl's default profile names, throughout the documentation.  You should substitute this for the matching profile of your cluster.
+:::

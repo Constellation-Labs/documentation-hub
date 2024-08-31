@@ -1,0 +1,78 @@
+---
+title: Upgrade nodectl Quick Start
+hide_table_of_contents: false
+hide_title: true
+---
+
+import MacWindow from '@site/src/components/global/MacWindow';
+
+<head>
+  <title>Constellation nodectl utility</title>
+  <meta
+    name="description"
+    content="nodectl utility upgrade nodectl"
+  />
+</head>
+
+## ◽ Upgrade nodectl Quick Start Guide
+
+This guide is specifically for upgrading your node to to the latest version of **nodectl** with opinionated sensible defaults.
+
+## ◽ SSH into Your VPS
+Review your [notes](/validate/resources/nodectl-notes) for the connection string.
+
+```
+ssh -i /path/to/ssh/private/key nodeadmin@vps_ip_address
+```
+Refer to [SSH Explanation](/validate/validator/ssh-keys), [Mac SSH Guide](/validate/resources/accessMac), and [Windows SSH Guide](/validate/resources/accessWin)
+for detailed understanding.
+
+
+## ◽ Begin upgrade process
+```
+sudo nodectl upgrade_nodectl
+```
+
+## ◽ Confirm upgrade request
+Press <kbd>y</kbd>
+
+## ◽ Confirm Authentic Release
+After the newest version of nodectl is downloaded make sure your receive the message.
+
+**`SUCCESS - AUTHENTIC NODECTL`** 
+
+We can continue the process.
+
+:::danger INVALID SIGNATURE - WARNING
+Before using any other nodectl commands, refer to Constellation Network's official Discord channel for assistance. Avoid issuing additional commands to prevent potential interference from nefarious actors impersonating nodectl's functionality.
+:::
+
+## ◽ Upgrade Tessellation Request
+
+#### 🛑 No upgrade required
+Skip to the [congratulations](#-congratulations) step.
+
+#### ✅ Upgrade required
+If we are prompted to upgrade our node, we must perform the upgrade.
+
+Enter <kbd>y</kbd> and follow the prompts. 
+
+Optionally, you may follow [upgrade step-by-step](/validate/automated/upgrade/nodectl-upgrade-concepts#upgrade-tessellation) and return back here when complete.
+
+
+## ◽ Migration Request
+#### 🛑 No Migration requested
+Skip to [congratulations](#-congratulations) step.
+
+#### ✅ Migration requested
+If we are prompted to migrate our node's configuration, we must perform the migration.
+
+Enter <kbd>y</kbd>
+
+#### Review new configuration
+This is optional
+Enter <kbd>n</kbd>
+
+# COMPLETED
+## ◽ Congratulations!
+Your node should now be upgraded to the latest nodectl version. 

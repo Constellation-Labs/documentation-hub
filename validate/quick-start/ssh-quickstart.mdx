@@ -1,0 +1,186 @@
+---
+title: Create SSH Key Pair Quick Start
+hide_table_of_contents: false
+hide_title: true
+---
+import BrowserWindow from '@site/src/components/global/BrowserWindow';
+import MacWindow from '@site/src/components/global/MacWindow';
+import WinCommandPrompt from '@site/src/components/global/WinCommandPrompt/WinCommandPrompt';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Create SSH Key Pair Quick Start
+
+This guide is specifically for creating a [SSH Key Pair](/validate/validator/ssh-keys) to connect remotely to a Constellation Network node. It is a general guide.
+
+## ◽ Learn SSH Keys (optional)
+Detailed step-by-step guides can be found [here](/validate/validator/ssh-keys).
+
+## ◽ Prepare to Create Key Pair
+We need to open a **command prompt** or **terminal** window.
+
+<Tabs>
+<TabItem value="Choose" label="Choose">
+Please choose <b>Windows</b> or <b>Macintosh</b> platform.
+</TabItem>
+
+<TabItem value="Windows" label="Windows">
+
+#### ◽ Open a Command Prompt
+
+From the Microsoft Windows start menu type in `Command Prompt` on the main search bar and select the `Command Prompt` icon.
+
+<WinCommandPrompt>
+<p>C:\Users\myuser></p>
+</WinCommandPrompt>
+
+</TabItem>
+<TabItem value="Mac/Linux" label="Mac/Linux">
+
+#### ◽ Open a Terminal Window
+
+Click on the `Launchpad` icon on the Apple `dock` panel.
+
+In the search bar at the top, enter in `Terminal`
+
+<MacWindow>
+Last login: [time here]<br />
+myuser@myuser-MacBook ~ %<br />
+</MacWindow>
+
+</TabItem>
+</Tabs>
+
+
+## ◽ Create SSH Key Pair
+
+<Tabs>
+<TabItem value="Choose" label="Choose">
+Please choose <b>Windows</b> or <b>Macintosh</b> platform.
+</TabItem>
+
+<TabItem value="Windows" label="Windows">
+
+Change to the `.ssh` directory to simplify creation and future locating of your SSH key pairs.
+```
+cd .ssh
+```
+Generatate SSH key.
+```
+ssh-keygen -b 4096 -C ConstellationNetwork
+```
+
+<WinCommandPrompt>
+C:\Users\myuser\.ssh>ssh-keygen -b 4096 -C ConstellationNetwork<br />
+Generating public/private rsa key pair.<br />
+Enter file in which to save the key (C:\Users\myuser/.ssh/id_rsa):<br />
+</WinCommandPrompt>
+
+Choose a `name` for your key pair (*use whatever name you would like.*)
+```
+ConstellationNodeKeyPair
+```
+Enter a complex strong passphrase and confirm the passphrase.
+
+<WinCommandPrompt>
+Enter passphrase (emtpy for no passphrase)<br />
+Enter same passphrase again:<br />
+Your identification has been saved in ConstellationNodeKeyPair.pub<br />
+The key fingerprint is:
+SHA256: 13vaB0xApJUD13F+Lg9e1uA13rmXaticP0vQd13LBXNk<br />
+The key's randomart image is:<br />
++---[RSA 4096]----+<br />
+(image code omitted)<br />
++---[SHA256]------+<br />
+C:\Users\myuser\.ssh>
+</WinCommandPrompt>
+
+We are in the `.ssh` directory off the root of the user's home directory.  
+
+We can do a directory listing to review our newly created key pair.
+<span style={{fontSize:".7em"}}>Dates, times, and file sizes may/will not match, for example only.</span>
+
+```
+dir
+```
+
+<WinCommandPrompt>
+C:\Users\myuser\.ssh>dir<br />
+Volume Serial Number is XXX-XXXX<br />
+<br />
+directory of C:\Users\myuser\.ssh<br />
+<br />
+XX/XX/XXXX 09:00 AM &lt;DIR&gt;<br />
+XX/XX/XXXX 09:00 AM &lt;DIR&gt;<br />
+XX/XX/XXXX 09:00 AM &nbsp;&nbsp;&nbsp;3,434 ConstellationNodeKeyPair<br />
+XX/XX/XXXX 09:00 AM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;734 ConstellationNodeKeyPair.pub<br />
+C:\Users\myuser\.ssh><br />
+</WinCommandPrompt>
+
+
+</TabItem>
+<TabItem value="Mac/Linux" label="Mac/Linux">
+
+Change to the `.ssh` directory to simplify creation and future locating of your SSH key pairs.
+
+```
+cd .ssh
+```
+Generatate SSH key.
+```
+ssh-keygen -C ConstellationNetwork
+```
+
+<MacWindow>
+myuser@myuser-MacBook .ssh % ssh-keygen -C ConstellationNetwork<br />
+Generating public/private ed25519 key pair.<br />
+Enter file in which to save the key (/Users/myuser/.ssh/id_ed25519):<br /> 
+</MacWindow>
+
+Choose a `name` for your key pair (*use whatever name you would like.*)
+```
+ConstellationNodeKeyPair
+```
+Enter a complex strong passphrase and confirm the passphrase.
+
+<MacWindow>
+Enter passphrase (emtpy for no passphrase)<br />
+Enter same passphrase again:<br />
+Your identification has been saved in ConstellationNodeKeyPair.pub<br />
+The key fingerprint is:
+SHA256: 13vaB0xApJUD13F+Lg9e1uA13rmXaticP0vQd13LBXNk<br />
+The key's randomart image is:<br />
++---[ED25519 256]----+<br />
+(image code omitted)<br />
++---[SHA256]------+<br />
+myuser@myuser-MacBook .ssh %
+</MacWindow>
+
+We are in the `.ssh` directory off the root of the user's home directory.  We can do a directory listing to review our newly created key pair.
+```
+ls -l
+```
+<span style={{fontSize:".7em"}}>Use lowercase letter L not number 1 - dates, times, and file sizes may/will not match, for example only.</span>
+
+<MacWindow>
+myuser@myuser-MacBook .ssh % ls -l<br />
+total XXX<br />
+-rw--------- 1 myuser myuser&nbsp;&nbsp;&nbsp;464 Mon XX 09:00 ConstellationNodeKeyPair<br />
+-rw--------- 1 myuser myuser&nbsp;&nbsp;&nbsp;102 Mon XX 09:00 ConstellationNodeKeyPair.pub<br />
+myuser@myuser-MacBook .ssh %<br />
+</MacWindow>
+
+</TabItem>
+</Tabs>
+
+## ◽ Update Notes
+Create a [notes](/validate/resources/nodectl-notes) document or update your notes documentation with your new information:
+- public key name
+- private key name
+- local location for your keys
+- SSH key passphrase
+
+## ◽ Creation Complete!
+You should now have your SSH private and public keys properly created and ready for use in your `.ssh` subdirectory under your local computer's user account.
+
+If you have reached this page from the VPS Build Quick Start guide, you can return to the document [here](/validate/quick-start/vps-quickstart#-create-ssh-keys).

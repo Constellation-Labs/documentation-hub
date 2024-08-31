@@ -1,0 +1,55 @@
+---
+title: Collateralize Quick Start
+hide_table_of_contents: false
+hide_title: true
+---
+import MacWindow from '@site/src/components/global/MacWindow';
+
+# Collateralize Quick Start Guide
+
+This guide is specifically for setting up your Validator Node's wallet with the proper collateral requirements.
+
+## ◽ SSH into Your Node
+```
+ssh -i /path/to/ssh/private/key nodeadmin@vps_ip_address
+```
+Refer to [SSH Explanation](/validate/validator/ssh-keys), [Mac SSH Guide](/validate/resources/accessMac), and [Windows SSH Guide](/validate/resources/accessWin)
+for detailed understanding.
+
+## ◽ Export Private Key
+```
+sudo nodectl export_private_key -p <profile_name>
+```
+
+- Refer [here](/validate/quick-start/prerequisites#-profile-table) to lookup `<profile_name>`. 
+- Copy down the `64B` private key.
+
+:::danger 
+This key should not be shared and should be secured.
+:::
+
+## ◽ Install Stargazer Wallet
+Install on [Chrome](https://www.youtube.com/watch?v=iXEnrxijiqg).
+
+There are [additional videos on YouTube](https://www.google.com/search?q=how+do+i+install+stargazer+wallet&sca_esv=how+do+i+install+stargazer+wallet) that can guide you through the installation of Stargazer.
+
+## ◽ Import Wallet to Stargazer
+Follow [this guide](https://intercom.help/constellation-network/en/articles/5677935-how-do-i-import-an-existing-wallet-using-a-private-key-json-file)
+
+## ◽ Transfer Funds
+
+#### Suggested Steps
+1. Transfer a single $DAG token into your newly imported wallet.
+1. Review the contents of your wallet through the Stargazer wallet application and confirm that the $DAG has appeared in your wallet.
+1. Review the contents of your wallet directly from your node and confirm that the $DAG has appeared in your wallet.
+```
+sudo nodectl dag -p <profile_name>
+```
+
+Once you have confirmed that the transfer was successful, you may proceed to populate your wallet with the full amount of $DAG. You can do this through multiple transfers or a single large transfer, depending on your comfort level.
+
+Once complete, review the contents again on both the Stargazer wallet application and from our node.
+
+## ◽ Complete
+
+Thank you for reading this guide.

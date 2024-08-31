@@ -1,0 +1,74 @@
+.window {
+    background-color: #2f2e2e;
+    border: 1px solid #2d2d2d;
+    border-radius: 6px;
+    width: 800px;
+    margin: 20px auto;
+    font-family: Consolas, 'Courier New', monospace;
+    color: #ffffff;
+    position: relative;
+    line-height: 1em;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .fakeTab {
+    background-color: #0c0c0c; 
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    position: relative;
+    border-bottom: 2px solid #1e1e1e;
+    width: 200px;
+  }
+  
+  .tabTitle {
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: small;
+  }
+  
+  .fakeTab::before {
+    content: "";
+    background: url('/img/command-prompt-icon.png') no-repeat center;
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+  
+  .fakeControls {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .controlButton {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+  }
+  
+  .controlButton.minimize {
+    background-color: #ffcc00;
+  }
+  
+  .controlButton.maximize {
+    background-color: #00cc44;
+  }
+  
+  .controlButton.close {
+    background-color: #ff5f57;
+  }
+
+  .content {
+    padding: 20px;
+    background-color: #0c0c0c;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }

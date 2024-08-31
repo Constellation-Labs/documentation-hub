@@ -1,0 +1,183 @@
+---
+title: IntegrationNet Quick Start
+hide_table_of_contents: false
+hide_title: true
+---
+import MacWindow from '@site/src/components/global/MacWindow';
+import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
+
+# IntegrationNet Quick Start
+
+This guide is specifically for setting up your IntegrationNet Node **for the first time**, and is opinionated with sensible defaults. 
+
+This guide will use the Windows command prompt or Macintosh terminal.
+
+## ◽ Suggestions
+This is a quick start guide, as much detail as possible is excluded.
+
+<Collapsible title="Expand for suggestions?">
+<p>
+To minimize duplication of documentation, the quick start guides may reference other quick start guides. You may need to navigate away from this page and return multiple times.
+</p>
+<p>
+When you receive an option or request to navigate to another page, we recommend right-clicking on the link and selecting the option equivalent to <span style={{backgroundColor:'#F0F0F0'}}>&nbsp;Open link in a new tab&nbsp;</span>. This will help you keep track of your progress on this page and return to it quickly and easily.
+</p>
+<p>
+You may be required to reboot or exit out of your remote sessions (don’t worry, this will be explained as you go through the documentation). Once you have your remote connection string created, copy and paste it into a text editor so you can easily cut and paste it in the future.
+</p>
+</Collapsible>
+
+## ◽ Prerequisite
+
+Choose and provision your VPS.
+
+Refer to the [VPS Build Quick Start](/validate/quick-start/vps-quickstart) guide.
+
+## ◽ Command Prompt or Terminal
+
+Refer to the [Prepare to Create Key Pair](/validate/quick-start/ssh-quickstart#-prepare-to-create-key-pair) section that shows how to open either a Windows Command Prompt or Macintosh Terminal window.
+
+## ◽ SSH into Your VPS
+AWS users will replace `root` with `ubuntu`.
+
+```
+ssh -i /path/to/ssh/private/key root@vps_ip_address
+```
+Refer to [SSH Explanation](/validate/validator/ssh-keys), [Mac SSH Guide](/validate/resources/accessMac), and [Windows SSH Guide](/validate/resources/accessWin)
+for detailed understanding.
+
+## ◽ Update OS
+```
+sudo apt-get update && sudo apt-get upgrade
+```
+<p style={{fontSize:'.7em'}}>
+During this process, if you are presented with a <span style={{backgroundColor:"F0F0F0"}}>purple</span> box requesting interactive questions we answered, you should accept the default options chosen for you by using the <kbd>tab</kbd> key to get the the <kbd>ok</kbd> or <kbd>confirm</kbd> option and then press the <kbd>enter</kbd> key to accept.
+</p>
+
+## ◽ Reboot
+
+```
+sudo reboot now
+```
+- You will lose access to the VPS.
+- Allow between 30 seconds to 1 minute for your new VPS to reboot.
+- SSH into your VPS again using the `default` user set by your VPS provider (e.g., `root` or `ubuntu`).
+
+## ◽ Install nodectl 
+**Node Control Utility Program v2.15.0**
+```
+sudo wget -N https://github.com/stardustcollective/nodectl/releases/download/v2.15.0/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v
+```
+
+## ◽ Start Tessellation Installation
+```
+sudo nodectl install --quick-install
+```
+
+## ◽ Select Cluster to Configure/Join
+
+- Choose <kbd>2</kbd> (`integrationnet [HyperGraph]`)
+
+## ◽ Decline P12 Migration Request
+
+- We will choose <kbd>n</kbd> to decline the migration.
+
+## ◽ Strong Password/Passphrase
+nodectl requires that the following rules be met:
+
+- Must **NOT** have any `spaces`
+- Must **NOT** have a `section sign` **&#167;**
+- Must **NOT** have a `dollar sign` **$**
+
+<hr style={{width:`55%`}}/>
+
+- Must have at least 10 characters
+- Must have at least 1 `uppercase letter`
+- Must have at least 1 `lowercase letter`
+- Must have at least 1 `number`
+- Must have at least 1 `special character`
+
+:::note Password Entry
+  *You will **not** see the password output or the \* character while entering your password. This is a Linux level security feature.*
+:::
+
+## ◽ Node Administration Account Password
+
+Input and confirm the `nodeadmin`'s new [strong password](#-strong-passwordpassphrase) that will be used to administer your Node.
+
+## ◽ P12 Key Store Passphrase
+
+Input and confirm a [strong passphrase](#-strong-passwordpassphrase) that will be used to unlock 
+your Node's ability to access the network and to administer your Node's wallet.
+
+## ◽ Wait for Installation to Complete
+
+No action required, you can wait for the installation to complete.
+
+At the end of the installation, you will receive instructions. We will address these instructions in the following steps, so there is no need to take any action at this time. Simply wait for the installation to complete and the instructions to appear.
+
+🚑 <span style={{fontSize:'1.2em',fontWeight:800}}>&nbsp;Leave this screen up and remote terminal window open!</span>
+
+<MacWindow>
+1) Submit your NodeID to Constellation Admins.<br />
+2) Collateralize your Node.<br />
+3) sudo nodectl check_seedlist -p intnet-l0<br />
+4) sudo nodectl restart -p all<br />
+5) Log out and log back in with as nodeadmin with your new nodeadmin password.<br />
+</MacWindow>
+
+## ◽ Test Access 
+1. Leave your `root` or `ubuntu` user connected to your Node's terminal. 
+1. Open a new local terminal and attempt a second SSH remote connection to your Node using your `nodeadmin` user and the p12 passphrase as created in the [SSH into Your VPS](#-ssh-into-your-vps).
+
+After confirming you have access via `nodeadmin` you can move to the next step.
+
+## ◽ Submit your Node Details
+
+1. Connect to the **Constellation Network Official** Discord Support Server.  
+1. Reach out to an Administrator.
+1. Supply and request to have your `nodeid` appended to the IntegrationNet Hypergraph access seed list.
+
+You will see your Node ID, displayed on the [instructional screen](#-wait-for-installation-to-complete) at the end of the installation.
+
+```jsx title="Example 128 length hexadecimal number."
+136f0f756659be91e8af013aa9e2a63a94227680aa41365e055a37db206f69d313e479e7f37e8c9c13fa40278ddc98eab2b0130fc0cf17fdf13ca012082ba813
+```
+
+## ◽ Back Up Your Node P12
+Refer to these guides
+- [p12 backup guide Windows](/validate/resources/p12-backup-win)
+- [p12 backup guide Mac](/validate/resources/p12-backup-mac) 
+
+## ◽ Update your Nodes
+Ensure that you have recorded all the passphrase(s) and other pertinent information via your notes, to a secured air gapped location.
+
+You may reference our [Node Operator Notes](/validate/resources/nodectl-notes) for an idea on what to record.
+
+## ◽ Close Terminals
+After completing the [access test](#-test-access) **successfully**, you can close out all terminal sessions, leaving only your `nodeadmin` connected terminal session open.
+
+:::warning IMPORTANT 
+Your Node will no longer be accessible via the `root` or default `ubuntu` account you originally setup your Node to access.
+:::
+
+## ◽ Setup Reward Distribution 
+You will need to access your Lattice account and supply Constellation Network's Lattice Team with:
+- Your IntegrationNet `Node ID`.
+- The real `Wallet` that will be used for `$DAG` reward distribution. 
+- A `Wallet` (*this can be the same wallet*) that has `250,000 $DAG` tokens, to satisfying your collateral requirements. 
+
+:::info FOR YOUR UNDERSTANDING
+The IntegrationNet cluster is a **TestNet** and therefore the `$DAG` tokens used on this cluster hold no real world value.  They are test tokens.  
+
+The reward distribution for this network is distributed daily to a wallet address identified by the validator Node Operator through their Lattice account.
+:::
+
+## ◽ Congratulations 
+Your Node installation is complete.
+
+## ◽ Next Steps
+:::danger IMPORTANT
+You will need to wait for your node's nodeid, that was [submitted here](#-submit-your-node-details), to be added the seed list (access/authorization list) before you can join the cluster.
+:::
+Follow the [first time Connection quick start guide](/validate/quick-start/online-quickstart) to bring your node on the network.

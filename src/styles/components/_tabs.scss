@@ -18,13 +18,14 @@ html[data-theme='dark'] {
 }
 
 .tabs {
+  background-color: #f1ebeb;
   .tabs__item {
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 100%;
     letter-spacing: 0;
 
-    border-radius: 1000px;
+    border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0);
 
     padding-block-start: calc(var(--ifm-tabs-padding-vertical) - 1px);

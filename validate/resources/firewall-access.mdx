@@ -1,0 +1,97 @@
+---
+title: Firewall Access
+hide_table_of_contents: false
+hide_title: true
+---
+
+# Understanding Firewalls and Firewall Access
+
+## What is a firewall?
+A firewall can be a stand alone hardware appliance or software running on a server.
+
+The firewall's job is to protect the infrastructure of servers, computers and network attached devices behind it.
+
+The firewall will do this by inspecting traffic that comes inbound (ingress) or goes outbound (egress) from the devices on the external side of the firewall to the devices on the internal side of the firewall.  The firewall will determine if the packets of data that traverse it are valid or not based on a rule set defined by the owners of the infrastructure it is protecting.
+
+Firewalls can be very simple devices that evaluate a rule set and act, or it can be a complex device that support various enhanced features; for example, intrusion detection and prevention systems.
+
+#### Centralized
+In traditional **centralized** infrastructure, a firewall is placed at the edge of the centralized infrastructure to protect all the assets behind the firewall from unauthorized Internet traffic attempting to penetrate inbound.
+
+Larger enterprises may have multiple firewalls protecting various clusters of systems or server farms both at the edge and even to protect one section of the internal network from another.
+
+#### Decentralized
+In the new **Web3** world of **decentralization**, we shift our thinking towards protecting a single edge device that is most likely directly connected to the Internet.
+
+Node Operators will most likely be utilizing a **Cloud Service Provider (CSP)** to house their Virtual Private Server (VPS).  
+
+Most advanced CSPs offer firewall features.  These are setup as **security groups (SGs)** that are rule sets defined by the Node Operator, or they will call them **firewalls** which are setup in the same way.
+
+Less advanced CSPs may not offer SG or firewall features.  In these cases, it is highly recommended to utilize `iptables`, `ufw` or install a third party firewall software packages to secure your Node.
+
+:::danger Software v Hardware
+It is recommended to pick a CSP that offers a firewall feature verses using a software based firewall directly on the operating system.
+
+Advanced Node Operators may choose to do both; however, this may not be necessary.
+:::
+
+##### IP TABLES
+
+<span style={{fontWeight:600,fontSize:'.8em'}}>Gemini AI response</span>
+<hr />
+Iptables is a command-line interface (CLI) that allows system administrators to configure the Linux kernel firewall's IP packet filter rules. It's a standard firewall that comes pre-installed on most Linux distributions and is used to control and manage incoming and outgoing network traffic.
+
+##### UFW
+
+<span style={{fontWeight:600,fontSize:'.8em'}}>Ubuntu Documentation</span>
+<hr />
+The default firewall configuration tool for Ubuntu is ufw. Developed to ease iptables firewall configuration, ufw provides a user friendly way to create an IPv4 or IPv6 host-based firewall. By default UFW is disabled.
+
+## Web3 Firewalls
+In **web3**, the project responsible to offering Node operations to their ecosystem, should provide documentation on how to setup these SGs or firewalls.  
+
+As there is very high probability that a node from a **web3** ecosystem will be directly connected to the Internet, the need to configure a firewall is the most likely case.
+
+## Constellation Network Firewall Requirements
+
+| Type	| Protocol	| Port Range	| Sources |
+| ----  | -----| ----- | ---- |
+| Inbound	| TCP	| 22	| your local ip address /32 |
+| Inbound	| TCP	| 9000-9001	| All IPv4 IPv6
+| Inbound	| TCP	| 9010-9011	| All IPv4 IPv6
+
+| Type	| Protocol	| Port Range	| Sources |
+| ----  | -----| ----- | ---- |
+| Outbound	| ICMP	| All Ports	| All IPv4 IPv6 |
+| Outbound	| All TCP	| All Ports |	All IPv4 IPv6 |
+| Outbound	| All UDP	| All Ports	| All IPv4 IPv6 |
+
+The chart above 👆 shows the default TCP port assignment for the MainNet, IntegrationNet and TestNet Hypergraph clusters.
+- 9000-9001 - Layer0 Hypergraph cluster
+- 9010-9011 - Layer1 Hypergraph cluster
+
+:::note Configurable
+These ports are assigned by default and may be altered by the Node Operator as desired.  
+
+For ease of understanding the documentation and for external support purposes, it is recommended to keep the default port assignments.
+:::
+
+### Port 9000
+
+This port is listening on the **public API** for the **Tessellation** protocol that runs the node.
+
+### Port 9001
+This port is listening on the **peer-to-peer API** for the **Tessellation** protocol that runs the node.
+
+### Port 9010
+This port is listening on the **public API** for the **Tessellation** protocol that runs the node.
+
+### Port 9011
+This port is listening on the **peer-to-peer API** for the **Tessellation** protocol that runs the node.
+
+
+
+
+
+
+
