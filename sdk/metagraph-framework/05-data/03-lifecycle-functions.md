@@ -12,7 +12,7 @@ Lifecycle functions are essential to the design and operation of a metagraph wit
 In the Euclid SDK, lifecycle functions are organized within the L0 (DataApplicationL0Service), Currency L1 (CurrencyL1App), and Data L1 (DataApplicationL1Service) modules. These modules represent different layers of the metagraph architecture:
 
 - **L0 Layer:** This is the base layer responsible for core operations like state management, validation, and consensus. Functions in this layer are critical for maintaining the integrity and consistency of the metagraph as they handle operations both before (`validateData`, `combine`) and after consensus (`setCalculatedState`).
-- - **Data L1 Layer:** This layer manages initial validations and data transformations through the /data endpoint. It is responsible for filtering and preparing data before it is sent to the L0 layer for further processing.
+- **Data L1 Layer:** This layer manages initial validations and data transformations through the /data endpoint. It is responsible for filtering and preparing data before it is sent to the L0 layer for further processing.
 - **Currency L1 Layer:** This layer handles initial validations and transaction processing through the /transactions endpoint before passing data to the L0 layer. It plays a crucial role in ensuring that only valid and well-formed transactions are forwarded for final processing. Note that currency transactions are handled automatically by the framework and so only a small number of lifecycle events are available to customize currency transaction handling (`transactionValidator`, etc.).
 
 By implementing lifecycle functions in these layers, developers can manage everything from the initialization of state in the `genesis` function to the final serialization of data blocks. Each function serves a specific purpose in the metagraph's lifecycle, whether it’s validating incoming data, updating states, or handling custom logic through routes and decoders.
@@ -21,6 +21,10 @@ By implementing lifecycle functions in these layers, developers can manage every
 The diagram below illustrates the flow of data within a metagraph, highlighting how transactions and data updates move from the Currency L1 and Data L1 layers into the L0 layer. The graphic also shows the sequence of lifecycle functions that are invoked at each stage of this process. By following this flow, developers can understand how their custom logic integrates with the framework and how data is processed, validated, and persisted as it progresses through the metagraph.
 
 ![Euclid SDK](/img/sdk/data-update-lifecycle.png)
+
+:::note
+Note that some lifecycle functions are called multiple times and across L1 and L0 layers. It is usually recommended to create a common, shared implementation for these functions. 
+:::
 
 ## Functions
 ### genesis
