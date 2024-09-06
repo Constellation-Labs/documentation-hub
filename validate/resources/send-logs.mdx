@@ -1,0 +1,197 @@
+---
+title: Upload Logs for Analysis
+hide_table_of_contents: false
+hide_title: true
+---
+import MacWindow from '@site/src/components/global/MacWindow';
+
+# Send Logs Guide
+
+This guide is specifically for helping a Node Operator transmit logs from their Node to offer to Administrators, Developers, or other for analysis.
+
+### ◽ SSH into Your Node
+```
+ssh -i /path/to/ssh/private/key nodeadmin@vps_ip_address
+```
+Refer to [SSH Explanation](/validate/validator/ssh-keys), [Mac SSH Guide](/validate/resources/accessMac), and [Windows SSH Guide](/validate/resources/accessWin)
+for detailed understanding.
+
+### Table of Contents - Options
+1. [Using send_log command](#using-send-logs)
+2. [Using prepare_file_download ](#using-prepare-file-download)
+
+## Using Send Logs
+
+
+
+### ◽ Issue send log command
+```
+sudo nodectl send_logs
+```
+You may choose your option based on the command reference [here](/validate/automated/nodectl-commands#send_logs). 
+
+### ◽ What type of logs do you want to transmit?
+
+This guide will choose the <kbd>1</kbd> option to upload the profile app logs from the `dag-l0` profile. *This is for example, and the Node Administrator may choose the option of their choice.*
+
+Refer [here](/validate/quick-start/prerequisites#-profile-table) to look up the appropriate profile name if you need to access a specific Tessellation log instead of the nodectl log files.​
+
+<MacWindow>
+  1) dag-l0 app logs<br />
+  2) dag-l1 app logs<br />
+  3) nodectl logs<br />
+  Q)uit<br />
+</MacWindow>
+
+### ◽ Choose the type of logs to transmit?
+
+This guide will use the <kbd>s</kbd> option.  
+
+This will find, compress, and prepare the current `app.log` from the `dag-l0` profile that holds the log files for the current `Tessellation` process running on your node.
+
+:::note Other Options
+To keep this guide as simple as possible, we will use only one example.
+
+Keep in mind that other options may present different menu selections. Choose the one that best matches your scenario and use your best judgment for each option.
+:::
+
+<MacWindow>
+  S) Current Log (singular)<br />
+  C) Current Logs (all)<br /> 
+  B) Backup Logs<br /> 
+  D) Specific Date<br /> 
+  R) Specific Date Range<br /> 
+  A) Archived Logs<br /> 
+  X) Exit<br />
+<br />
+  KEY PRESS an option<br />
+</MacWindow>
+
+Allow nodectl to gather the logs, compress them, and present you with an upload option for the [tarball](/validate/validator/tarball-explained) that was created.
+
+<MacWindow>
+Current logs process started ..................<br />                                                                       
+Transferring required files ................... complete<br />                                                              
+<br />                                                                 
+Generating the tarball file my take up to 1 minute per Gb.<br />
+Please exercise patience during this waiting process.<br />
+<br />
+Total size of files to be added to tarball: 5 MB<br />
+Generating gzip tarball ....................... complete<br />
+New tarball size: 321K<br />                                                                                       
+<br />
+</MacWindow>
+
+### ◽ Upload the logs
+
+We will choose <kbd>y</kbd> to have the file uploaded to a temporary file sharing service (expiry time limited).
+
+<MacWindow>
+upload? [n]: <b>y</b><br /> 
+</MacWindow>
+
+If you would like to skip the upload, or the file share service is unavailable; you change choose the default **n** option and refer to the [Using Prepare File Download](#using-prepare-file-download) option.
+
+### ◽ Supply Administrators, Devloper, System Engineer
+
+You can now supply the URL to the entiy that is requesting the file.
+
+<MacWindow>
+Depending on the size of the tarball, this may take some time to upload<br />
+please be patient...<br />
+<br />
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br />
+                                 Dload  Upload   Total   Spent    Left  Speed<br />
+100  321k  100   265  100  321k    256   311k  0:00:01  0:00:01 --:--:--  312k<br />
+<br />
+log tarball transferred to developers<br />
+Please provide the following link to the developers for download and analysis.<br />
+http://link.will.be.here<br />
+Log tarball created and also located: /var/tessellation/uploads/<br />
+file: xx-xx-xx-xx_xxxx-xx-xx-xx:xx:xxZ_logs.tar.gz<br />
+<br />
+You can also utilize the prepare_file_download command to setup this file<br /> 
+for download to your local system.<br />
+Command: sudo nodectl prepare_file_download help<br />
+</MacWindow>
+
+- Link to file: **http://link.will.be.here**
+- Location on VPS: **xx-xx-xx-xx_xxxx-xx-xx-xx:xx:xxZ_logs.tar.gz**
+
+
+## Using Prepare File Download
+
+This command simplifies access to files owned by the VPS's root user, which may not have the necessary permissions for download by the non-root node administration account.
+
+- Refer [here](/validate/automated/nodectl-commands#prepare_file_download) for command options. 
+
+### ◽ Locate log files
+We will need to know the exact directory location and name of log file.
+
+If you are an advanced Node Administrator using a custom location to hold your log files (such as a network attached device), please make sure the location of the file is properly connected to your node and accessible.
+
+The default location used by nodectl:
+
+```
+/var/tessellation/<profile_name>/logs/
+```
+<p style={{fontSize:'.8em'}}>&lt;profile_name&gt; should be your node's profile name associated with the logs being requested</p>
+
+For the purpose of this guide, we will assume:
+- The profile name as `dag-l0`.
+- The log file requested as `app.log`.
+
+### ◽ Request log file to be prepared
+```
+sudo nodectl prepare_file_download --type file /var/tessellation/dag-l0/logs/app.log
+```
+
+<MacWindow>
+WARNING<br />
+The following operation should be considered temporary and has the possibility of causing a minor security risk, on your Node.<br />
+<br />
+This command will create a copy of the requested file /var/tessellation/dag-l0/logs/app.log in the root of a non-root user's home directory, and set the permissions for access via a non-root user until removed.<br />
+<br />
+Once you have completed the backup of your file /var/tessellation/dag-l0/logs/app.log it is recommended that you return to your Node and re-run this command with the --cleanup option, to remove and secure your Node's nodeadmin user from accessing root files.<br />
+<br />
+Preparing [app.log] ........................... complete <br />                                                             
+<br />
+Found Files:<br />
+- app.log<br />
+<br />
+p12 preparation ............................... complete <br />                                 
+</MacWindow>
+
+### ◽ Access File
+
+You can now download your file on your own, using the file transfer application or protocol of your choosing.
+
+You need further assistance to access and retreive the file you can refer to the backup/recovery guides.
+
+- For [Macintosh](/validate/resources/p12-backup-mac)
+- for [Windows](/validate/resources/p12-backup-win)
+
+### ◽ Clean Up
+
+It is highly recommended to cleanup your Node Administrator's root directory to keep disk space optimal and to not have superfluous files located where they should not be located.
+
+To handle this we will append the `--cleanup` option to the end of our [previous](#-request-log-file-to-be-prepared) command.
+
+```
+sudo nodectl prepare_file_download --type file /var/tessellation/dag-l0/logs/app.log --cleanup
+```
+
+We can choose <kbd>y</kbd>.
+
+<MacWindow>
+-------- * CLEAN UP P12 FILES * -------- <br />
+<br />
+WARNING<br />
+The following file will be removed!!<br />
+<br />
+Found Files:<br />
+- app.log<br />
+<br />
+clean up file? [n]: <b>y</b><br />
+File Removed<br />
+</MacWindow>
