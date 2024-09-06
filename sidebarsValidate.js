@@ -51,6 +51,7 @@ module.exports = {
         'validator/specs',
         'validator/providers',
         'validator/vps-explained',
+        'validator/tarball-explained',
         'validator/trust-labels',
         'validator/p12',
         {
@@ -279,6 +280,7 @@ module.exports = {
         'resources/p12-backup-win',        
         'resources/ssh-config',
         'resources/p12-v1-to-v2-migrate',  
+        'resources/send-logs',
         'resources/nodectl-notes',    
       ],
     },

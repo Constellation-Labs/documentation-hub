@@ -1452,7 +1452,7 @@ sudo nodectl disable_root_ssh
 The **`enable_root_ssh`** command is a *special* command that works on the Debian distribution level.  It will enable the ability for access to the **root** user, via remote access.
 
 :::success SECURITY
-It is **recommended** to have the **root** user's remote access (inbound/ingress) **disabled**.  The only way the root user should be accessed is through the **nodeadmin** user account.
+It is **recommended** to have the **root** user's remote access (inbound/ingress) **disabled**.  The only way the root user should be accessed is through the **Node Administrator's** user account.
 :::
 
 This command can be used to reverse this security setting configured via nodectl's installation process.
@@ -2040,13 +2040,75 @@ sudo nodectl logs -l nodectl
 
 
 
+### prepare_file_download
+---
+
+This command instructs nodectl to prepare your p12 keystore or another file of your choosing to be downloaded directly by the Node Administrator’s non-root account. This is a useful command for backup procedures.
+
+Your p12 file(s) or the specified file will be located, copied to the root of the Node Administrator’s user directory, and have its permissions changed to allow retrieval directly from the Node Administrator’s account.
+
+Nodes built with recommended security practices cannot retrieve a p12 file or other files created by nodectl using the non-root user. This command provides a solution to this restriction.
+
+| Command |  Version |
+| :---: |  :---: |
+| prepare_file_download | >v2.14.x |
+
+|  [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :------: | :------: | :------ | :------: |
+| --type | p12  | This option will locate all `p12` files associated with your node.  If the optional `-p` parameter is included with the command, **only** the p12 associated with the profile requested will be moved and setup for access.  | **required** |
+|   | file `<path/tofile>` | This option will locate the file on our node identified by the succeeding path, move the file, and setup access. | **required** |
+| -p | `<profile_name>` | Used in conjunction with the `--type p12` option, this will allow you to retrieve the `p12` file associated specifically with the profile requested.  | **optional** |
+| --cleanup | file `<path/tofile>` | The option is recommended to be used after the file has been properly downloaded and can now be removed from the local system administrators account. If used with the `--type p12` this command does not need the `<path_to_file>` and will remove all `p12` files located in the root of the Node Administrator's home directory. | **optional** |
+
+:::caution Recommended
+**`--cleanup`**
+
+It is highly recommended to use the `--cleanup <path_to_file>` command once you have completed downloading the requested file.
+
+This is especially important when handling p12 keystore files, as they should be kept secure.
+
+When `--cleanup` is used with `--type p12`, you do not need to specify the p12 file names; nodectl will automatically remove all p12 files from the local Administrator’s root directory.​
+:::
+
+> #### Examples
+- Show the help screen
+```
+sudo nodectl prepare_file_download help
+```
+- Move all known p12 files to the root of the Node Administrator's user and update permissions for access.
+```
+sudo nodectl prepare_file_download --type p12
+```
+- Move only p12 files associated with the profile `dag-l0` to the root of the Node Administrator's user and update permissions for access.
+```
+sudo nodectl prepare_file_download --type p12 -p dag-l0
+```
+- Migrate a file called `mylogs.tar.gz` that is located in the `/var/tessellation/uploads` for download from the root of the Node Administrator's user directory.
+```
+sudo nodectl prepare_file_download --type file /var/tessellation/uploads/mylogs.tar.gz
+```
+- Remove the p12 files associated with all profiles including global.
+```
+sudo nodectl prepare_file_download --type p12 --cleanup
+```
+- Remove the file named `mylogs.tar.gz` that is located in the Node Administrator's home username's directory.
+```
+sudo nodectl prepare_file_download --type file mylogs.tar.gz --cleanup
+```
+
+
+
 ### send_logs 
 ---
 
-The **`send_logs`** command is a *debug* command used to help accumulate log files to send to Developers or System Engineering to dissect; to improve the code base.
+The **`send_logs`** command is a tool to allow uploading of logs to help *debugging* analysis.  It may be used to help accumulate log files to send to Administrators, Developers or System Engineering to dissect; to improve the code base.
+
+The command will upload to a file share service with an expiry date for download.
   
 During the execution you will be offered a menu to upload:
 - current logs  
+  - singular - will offer a choice of `nodectl` or `app` log.
+  - all - will offer ability to accumulate and upload all logs including rolling and archived logs.
 - backup logs  
 - specific date logs  
 - date range logs  
@@ -2054,13 +2116,15 @@ During the execution you will be offered a menu to upload:
     
 Once you follow the prompts a tarball gzip file will appear in the uploads directory and the system will offer you the ability to upload the results to the a public (non Constellation Network supported) file transfer service.
 
+You may find a usage guide [here](/validate/resources/send-logs).
+
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
 | send_logs  |  -sl | >v2.x.x |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | which profile are you attempting to glean logs from. | **required** |
+| -p | `<profile_name>` | which profile are you attempting to glean logs from. | **optional** |
   
 > #### Examples
 - Help screen
