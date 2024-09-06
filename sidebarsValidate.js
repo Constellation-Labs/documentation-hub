@@ -52,6 +52,7 @@ module.exports = {
         'validator/providers',
         'validator/vps-explained',
         'validator/tarball-explained',
+        'validator/forks-explained',
         'validator/trust-labels',
         'validator/p12',
         {

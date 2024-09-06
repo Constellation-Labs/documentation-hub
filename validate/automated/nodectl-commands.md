@@ -433,6 +433,41 @@ sudo nodectl auto_restart status
 
 
 
+### check_minority_fork
+---
+
+The **`check_minority_fork`** command will execute a check against your node's status on the cluster in an attempt to determine if the node is in a minority fork.
+
+What is [minority fork](/validate/validator/forks-explained#-what-is-a-minority-fork)?
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_minority_fork  | -cmf | >v2.12.0 |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question do we want to review. | **required** |
+
+#### If Node shows MINORITY FORK `True`
+You should restart your node in order to return of the majority fork.  [auto_restart](#auto_restart) has the ability to automatically detect a minority fork and restart your node for you.
+  
+---
+
+> #### Examples
+- Help menu
+```
+sudo nodectl check_minority_fork help 
+sudo nodectl -cmf help 
+```
+- Check the Hypergraph profile `dag-l0` for a minority fork
+```
+sudo nodectl check_minority_fork -p dag-l0
+```
+
+
+
+
+
 ### check_connection
 ---
 
@@ -496,20 +531,78 @@ The Node may be off the network and a restart is required.  You can use the [res
   - The IP of another Node (other) : **`10.4.4.4`**
 - Help menu
 ```
-sudo nodectl check-connection help 
+sudo nodectl check_connection help 
 ```
 - Check random "source" against the local "edge" Node
 ```
-sudo nodectl check-connection -p dag-l0
+sudo nodectl check_connection -p dag-l0
 ```
 - Check random "source" Node against "other" Node
 ```
-sudo nodectl check-connection -p dag-l0 -e 10.3.3.3
+sudo nodectl check_connection -p dag-l0 -e 10.3.3.3
 ```
 - Check "any other Node" against "any other Node"
 ```
-sudo nodectl check-connection -p dag-l0 -s 10.3.3.3 -s 10.4.4.4
+sudo nodectl check_connection -p dag-l0 -s 10.3.3.3 -s 10.4.4.4
 ```            
+
+
+### check_consensus
+---
+
+The **`check_consensus`** command will execute a check against your node's status on the cluster in an attempt to determine if the node participating in consensus rounds.
+
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_consensus | -con | >v2.12.0 |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question do we want to review. | **optional** |
+| -s | `<ip_address>` | nodectl will check the ip address supplied instead of the localhost. | **optional** |
+| -w | `<seconds>` | watch mode: nodectl will continuously check if the node is in consensus every X seconds, until the <kbd>q</kbd> if hit to exit watch mode. | **optional** |
+| --id | `<node_id>` | nodectl will check the node id supplied instead of the localhost. | **optional** |
+| --brief |  | Offer output in a more simplified form. | **optional** |
+| --file | `<path_to_csv_file>` | option is requested the consensus will be checked against the file that contains at least one nodeid public key or multiple nodeids formatted in one line per nodeid public key.  **The `--file` command cannot coincide with the -w option.** | **optional** |
+
+If the `-p` parameter is not supplied, nodectl will offer you a menu of known profiles to choose from.
+
+The `--file` command expects a csv (comma separated values) file that is populated with nodeids.  Each nodeid must be on its own line.
+
+#### If Node shows IN CONSENSUS `False`
+You should restart your node in order to return of the majority fork.  [auto_restart](#auto_restart) has the ability to automatically detect a node that is out of consensus and restart your node for you.
+  
+---
+
+> #### Examples
+- Help menu
+```
+sudo nodectl check_consensus help 
+```
+```
+sudo nodectl -con help 
+```
+- Check if the Hypergraph profile `dag-l0` is in consensus
+```
+sudo nodectl check_consensus -p dag-l0
+```
+Execute consensus check against Node with profile name `dag-l0` and IP address `10.10.10.10`.
+```
+sudo nodectl check_consensus -p dag-l0 -s 10.10.10.10  
+``` 
+Execute consensus check against list of node ids with profile name `dag-l0` and file containing the nodeid list called `test.csv` located in the the '/tmp/' directory on the Node.
+```
+sudo nodectl check_consensus -p dag-l0 --file /tmp/test.csv  
+``` 
+Execute consensus in brief format.
+```
+sudo nodectl check_consensus -p dag-l0 --brief  
+```    
+Execute consensus in brief format refreshing and checking again every `120` seconds.
+```
+sudo nodectl check_consensus -p dag-l0 --brief -w 120  
+```      
 
 
 
@@ -677,11 +770,11 @@ The option will be carried out and the Node Operator will be offered a visual co
 > #### Examples
 - Help file
 ```
-sudo nodectl clear_files help
+sudo nodectl clean_files help
 ```
 - Clean logs of type logs
 ```
-sudo nodectl clear_logs -t logs
+sudo nodectl clean_files  -t logs
 ```   
 - or
 ```
@@ -1029,13 +1122,12 @@ This command is for recreation purposes **only**.
 Constellation Network is not a financial advisor. Information obtained from CoinGecko and does not represent any opinions or financial advise of or from Constellation Network.
 :::
 
-| Title | Description | 
-| ---: | :--- |
-| $DAG | Constellation Network |
-| $LTX | Lattice Exchange |
-| $BTC | Bitcoin |
-| $ETH | Ethereum | 
-| $QNT | Quant Network |
+| Title | Description | Title | Description | 
+| ---: | :--- |  ---: | :--- |
+| $DAG | Constellation Network | $LTX | Lattice Exchange |
+| $DOR | Dor Technologies | $BTC | Bitcoin |
+| $ETH | Ethereum | $QNT | Quant Network | 
+
 
 > #### Examples
 - Help screen
