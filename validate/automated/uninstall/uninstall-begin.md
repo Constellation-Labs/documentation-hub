@@ -67,7 +67,7 @@ location: /var/tmp/nodectl.log<br />
 
 ### P12 retention
 
-We will be asked if we want to retain our p12 key store files.
+We will be asked if we want to retain our p12 keystore files.
 
 :::danger SECURITY WARNING
 Retaining your p12 files on a Node that is not actively participating as a Constellation Network Validator Node on either the Hypergraph or a metagraph, may create vulnerability to others being able to access your private keys, therefor exposing you to a wallet hack.  
@@ -90,7 +90,7 @@ myp12name.p12
 myp12name.p12.1
 ```
 
-If we want to continue retaining our p12 key store files, we can choose <kbd>y</kbd>+<kbd>Enter</kbd> here.
+If we want to continue retaining our p12 keystore files, we can choose <kbd>y</kbd>+<kbd>Enter</kbd> here.
 
 <MacWindow>
   WARNING  Retaining the Node's p12 files can introduce<br />
@@ -113,7 +113,7 @@ nodectl's uninstaller will remove the data related to Tessellation.
 Removing Node related data .................... complete<br />
 Removing Node related services ................ complete<br />
 Removing Node related seed lists .............. complete<br />
-Removing Node related key stores .............. complete<br />
+Removing Node related keystores .............. complete<br />
 </MacWindow>
 
 ### Node Uninstall Complete

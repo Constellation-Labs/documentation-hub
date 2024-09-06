@@ -16,7 +16,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-Handling the **p12** private key store creation.
+Handling the **p12** private keystore creation.
 
 ### Build our wallet (p12)
 
@@ -36,7 +36,7 @@ You can now provide a file name for your `p12` file.  This can be any name that 
 
 If you would like to keep the default name `nodeadmin-node.p12` **(*not recommended*)**, just hit the <kbd>enter</kbd> key.
 
-### Name our P12 Key Store
+### Name our P12 Keystore
 
 <MacWindow>
   ========================================<br />

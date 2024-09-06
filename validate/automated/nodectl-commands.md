@@ -25,7 +25,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-This document compliments the nodectl [help command](#help) reference offered through execution of a Node running the nodectl utility. 
+This document compliments the nodectl [help command](#help) reference offered through execution of a node running the nodectl utility. 
 
 
 
@@ -63,7 +63,7 @@ sudo nodectl status -p dag-l0
 - The `dag-l0` is a **parameter**.
 
 :::note
-This reference guide will explore the [status command](#status) in further detail; however, in the above example, the option `-p` stands for "what profile would you like to explore the status of?" and the parameter `dag-l0` is the profile in question we would like to review.
+This reference guide will explore the [status command](#status) in further detail; however, in the above example, the option `-p` stands for what [profile](/validate/quick-start/prerequisites#-profile-table) would you like to explore the status of?" and the parameter `dag-l0` is the profile in question we would like to review.
 :::
 
 :::note Final Note
@@ -86,7 +86,7 @@ sudo nodectl -option2 -option1 parameter1
 
 ### What is pagination?
 
-The most common method of accessing your Node is through a [remote shell](/validate/validator/ssh-keys).  When we issue a command within our remote shell, the output of a command may extend past the height of the terminal window.  In this case, nodectl will "page" the output by pausing when the output printed to the screen reaches the height of the window, before needing to scroll.
+The most common method of accessing your node is through a [remote shell](/validate/validator/ssh-keys).  When we issue a command within our remote shell, the output of a command may extend past the height of the terminal window.  In this case, nodectl will "page" the output by pausing when the output printed to the screen reaches the height of the window, before needing to scroll.
 
 It will offer you the option to quit or continue.
 
@@ -101,6 +101,22 @@ Commands that create the need for pagination will generally offer a `-np` (*no p
 
 ## Command References
 ---
+
+
+
+### getting_started
+---
+The **`getting_started`** command will display a simple readme file with the most used commands found within the nodectl utility.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| getting_started  | None  | >v2.14.0 |
+
+> #### Examples
+- Show getting started readme.
+```
+sudo nodectl getting-started  
+```
 
 
 
@@ -131,9 +147,6 @@ sudo nodectl status help
 
 ## Service Change Commands
 
-
-
-
 ### start
 ---
 The **`start`** command takes a single [option](#what-is-an-option-and-parameter).
@@ -142,7 +155,7 @@ The **`start`** command takes a single [option](#what-is-an-option-and-parameter
   
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-|  -p | `<profile_name>` | starts the service related to the profile name supplied. | **required** |
+|  -p | `<profile_name>` | starts the service related to the [profile](/validate/quick-start/prerequisites#-profile-table) name supplied. | **required** |
 
 > #### Examples
 - Help screen
@@ -165,7 +178,7 @@ The **`stop`** command takes a single [parameter](#what-is-an-option-and-paramet
   
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | stops the service related to the profile name supplied. | **required** |
+| -p | `<profile_name>` | stops the service related to the [profile](/validate/quick-start/prerequisites#-profile-table) name supplied. | **required** |
 
 > #### Examples
 - Help screen
@@ -195,14 +208,14 @@ This command will take the following actions (**in order**) on the profile it wa
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` \| `all` | restarts the service related to the profile name in question. | **required** |
+| -p | `<profile_name>` \| `all` | restarts the service related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question. | **required** |
 
 > #### Examples
 - Help screen
 ```
 sudo nodectl restart -p dag-l0 help  
 ```
-- Restart **all** the profiles configured on the Node, in proper order of operations.
+- Restart **all** the profiles configured on the node, in proper order of operations.
 ```  
 sudo nodectl restart -p all
 ```
@@ -219,9 +232,9 @@ sudo nodectl restart -p dag-l0
 
 The **`slow_restart`** command is [almost] exactly the same as the [restart](#restart) command; however, if you issue a **slow restart** the process will take **10 minutes** to complete. (*600 seconds*)
 
-The purpose of the `slow_restart` command is to assist a Node that may be **stuck** in an undesirable state or **stuck** in an activity causing it to be unresponsive on the cluster.  The `slow_restart` can also assist in a myriad of other unexpected or undesirable conditions.  
+The purpose of the `slow_restart` command is to assist a node that may be **stuck** in an undesirable state or **stuck** in an activity causing it to be unresponsive on the cluster.  The `slow_restart` can also assist in a myriad of other unexpected or undesirable conditions.  
 
-The `slow_restart` will allow enough time for a Node to be off the network and reset any issues.
+The `slow_restart` will allow enough time for a node to be off the network and reset any issues.
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
@@ -248,13 +261,13 @@ The **`leave`** command takes a single [parameter](#what-is-an-option-and-parame
 
 **Leave** the Hypergraph or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-an-option-and-parameter) supplied.
 
-Issuing a `leave` against your Node will allow your Node to complete any processes on the Hypergraph or metagraph that it may be involved in **before** your Node exits the cluster.
+Issuing a `leave` against your node will allow your node to complete any processes on the Hypergraph or metagraph that it may be involved in **before** your node exits the cluster.
 
-It is appropriate and will improve your Node's **PRO** score to `leave` the cluster before you issue a `stop` command.
+It is appropriate and will improve your node's **PRO** score to `leave` the cluster before you issue a `stop` command.
   
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | leaves the cluster related to the profile [parameter](#what-is-an-option-and-parameter) supplied. | **required** |
+| -p | `<profile_name>` | leaves the cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) [parameter](#what-is-an-option-and-parameter) supplied. | **required** |
 
 > #### Examples 
 - Help screen
@@ -276,11 +289,11 @@ The **`join`** command takes a single [parameter](#what-is-an-option-and-paramet
 
 **Join** the Hypergraphs or metagraphs related to a configured profile name.  This command will not work without the `<profile_name>` [parameter](#what-is-an-option-and-parameter) supplied.
 
-You will need to make sure that the profile related to the cluster your are attempting to join is started; as well as, the status of your Node is in `ReadyToJoin` [status](#status) on the cluster.
+You will need to make sure that the profile related to the cluster your are attempting to join is started; as well as, the status of your node is in `ReadyToJoin` [status](#status) on the cluster.
   
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | join the cluster related to the profile name [parameter](#what-is-an-option-and-parameter) supplied. | **required** |
+| -p | `<profile_name>` | join the cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name [parameter](#what-is-an-option-and-parameter) supplied. | **required** |
 
 > #### Examples
 - Help screen
@@ -306,12 +319,12 @@ The **`auto_restart`** command takes several [parameters](#what-is-an-option-and
 
 This feature is **disabled**, by default. 
 
-**`auto_restart`** is a special feature of nodectl that will continuously monitor your Node to make sure the various profiles are *on the cluster* (Hypergraph or metagraphs).
+**`auto_restart`** is a special feature of nodectl that will continuously monitor your node to make sure the various profiles are *on the cluster* (Hypergraph or metagraphs).
 
 | Monitor to keep |
 | :--- |
 | Each profile's state on the cluster is in `Ready` state. |
-| The Node's `session` is concurrent with the cluster's `session`. |
+| The node's `session` is concurrent with the cluster's `session`. |
   
 :::success IMPORTANT
 The Node Operator/Administrator should use nodectl's configuration profile to enable/disable this feature. Although you can enable **`auto_restart`** (also with the **`auto_upgrade`** feature) from the command line, you should use the [configure command](#configure) to enable the feature.  
@@ -329,47 +342,47 @@ This will allow you to keep `auto_restart` working properly throughout the use o
 | --auto_upgrade | None | enable the `auto_upgrade` feature with the `auto_restart` service. | **optional** |
 
 :::danger IMPORTANT WARNING  
-Do **not** rely on `auto_restart` feature completely. `auto_restart` is **not perfect** and should be used as a tool to help keep your Node up in a consistent fashion; however, it may **not be fool proof**, and you should still monitor your Node manually to make sure it stays online with the proper known cluster session.
+Do **not** rely on `auto_restart` feature completely. `auto_restart` is **not perfect** and should be used as a tool to help keep your node up in a consistent fashion; however, it may **not be fool proof**, and you should still monitor your node manually to make sure it stays online with the proper known cluster session.
 :::  
 
 nodectl will processing each profile in its own thread (`i/o`).  
 
-nodectl will wait a randomly set time (per thread) and check the Node's condition after each successive random sleep timer expires.
+nodectl will wait a randomly set time (per thread) and check the node's condition after each successive random sleep timer expires.
 
 | activate `auto_restart` identifiers |
 | :--- |
 | Its service in an inactive state |
 | Node's cluster state is not `Ready` |
-| The Node's known cluster session does **not** match the cluster's known session. |
+| The node's known cluster session does **not** match the cluster's known session. |
   
-If the **session** of the cluster does **not** match the Node **session** that was established at the cluster's genesis (at the beginning of the cluster's latest initialization), an `auto_restart` will be triggered. 
+If the **session** of the cluster does **not** match the node **session** that was established at the cluster's genesis (at the beginning of the cluster's latest initialization), an `auto_restart` will be triggered. 
 
 The session will change if:
 - cluster is at genesis
 - a cluster restart is executed
 - a roll-back is identified. 
    
-If your Node is currently joined to an older session it will no longer be participating on the proper cluster (what can be considered a "*floating island*"), `auto_restart` will attempt to correct the situation.
+If your node is currently joined to an older session it will no longer be participating on the proper cluster (what can be considered a "*floating island*"), `auto_restart` will attempt to correct the situation.
   
 :::warning IMPORTANT
 An auto_restart may take up to ~18 minutes to complete.  
 :::
 
-These long executions are because the Node will detect one or both profiles down and restart the Global Hypergraph first. nodectl will then attempt to bring up any metagraphs.  To avoid timing conflicts with other Node's that may also have `auto_restart` enabled, `auto_restart` has random timers put in place throughout a restart process.  
+These long executions are because the node will detect one or both profiles down and restart the Global Hypergraph first. nodectl will then attempt to bring up any metagraphs.  To avoid timing conflicts with other node's that may also have `auto_restart` enabled, `auto_restart` has random timers put in place throughout a restart process.  
 
 nodectl will need to properly link your metagraph to the Global Hypergraph. 
 
 It is important to understand this is a background and unattended process, the delay is created on **purpose**.
   
-It is recommended by the developers to link a metagraph (*that requires this type of setup*) through your Node's own Global Hypergraph connection.
+It is recommended by the developers to link a metagraph (*that requires this type of setup*) through your node's own Global Hypergraph connection.
   
 :::warning PATIENCE
-If you are using `auto_restart` **please remember** if you are physically monitoring your Node while it is enabled, you need to exercise **patience** to allow it to figure out how to get back online by itself as necessary.  
+If you are using `auto_restart` **please remember** if you are physically monitoring your node while it is enabled, you need to exercise **patience** to allow it to figure out how to get back online by itself as necessary.  
 :::
 
 Forcing a manual restart (or any service affecting command) will **disable** `auto_restart`.  If enabled in the configuration, nodectl will attempt to re-enable `auto_restart` after any command that requires it to be temporarily disabled.  If the Node Operator does not have `auto_restart` enabled in the configuration, it will not re-enable after-the-fact.
   
-In order to avoid duplicate or unwanted behavior such as your Node restarting when you do not want it started, the auto_restart feature will automatically disable if you attempt to issue any command that manipulates the services.
+In order to avoid duplicate or unwanted behavior such as your node restarting when you do not want it started, the auto_restart feature will automatically disable if you attempt to issue any command that manipulates the services.
 - leave
 - stop
 - start
@@ -385,7 +398,7 @@ You can enable this feature by issuing: `sudo nodectl configure -e` (find detail
   
 Optionally if you are not using the configuration, you can enable auto_upgrade by issuing the optional `--auto_upgrade` [option](#what-is-an-option-and-parameter) when enabling `auto_restart` from the command line.
   
-During a Tessellation upgrade, the session will change.  This will trigger an auto restart.  During the restart, nodectl will identify the version of Tessellation on the Node verses what is running on the cluster. If it does not match, nodectl will attempt to upgrade the Tessellation binaries before  continuing.
+During a Tessellation upgrade, the session will change.  This will trigger an auto restart.  During the restart, nodectl will identify the version of Tessellation on the node verses what is running on the cluster. If it does not match, nodectl will attempt to upgrade the Tessellation binaries before  continuing.
   
 :::danger IMPORTANT
 nodectl will not `auto_upgrade` itself.  
@@ -433,314 +446,6 @@ sudo nodectl auto_restart status
 
 
 
-### check_minority_fork
----
-
-The **`check_minority_fork`** command will execute a check against your node's status on the cluster in an attempt to determine if the node is in a minority fork.
-
-What is [minority fork](/validate/validator/forks-explained#-what-is-a-minority-fork)?
-
-| Command | Shortcut | Version |
-| :---: | :---: | :---: |
-| check_minority_fork  | -cmf | >v2.12.0 |
-
-| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
-| :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | which cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question do we want to review. | **required** |
-
-#### If Node shows MINORITY FORK `True`
-You should restart your node in order to return of the majority fork.  [auto_restart](#auto_restart) has the ability to automatically detect a minority fork and restart your node for you.
-  
----
-
-> #### Examples
-- Help menu
-```
-sudo nodectl check_minority_fork help 
-sudo nodectl -cmf help 
-```
-- Check the Hypergraph profile `dag-l0` for a minority fork
-```
-sudo nodectl check_minority_fork -p dag-l0
-```
-
-
-
-
-
-### check_connection
----
-
-The **`check_connection`** command will execute a search on the currently connected Hypergraph or metagraph cluster. 
-
-| Command | Shortcut | Version |
-| :---: | :---: | :---: |
-| check_connection  | -cc | >v1.x.x |
-
-| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
-| :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | which cluster related to the profile name in question do we want to review. | **required** |
-| -s | `<ip_address or hostname>` | identify a **source** Node to use specifically by the `check_connection` command, to test against the **edge** Node. | **optional** |
-| -e | `<ip_address or hostname>` | identify a **edge** Node to compare against the **source** Node. | **optional** | 
-
-If the `-s` [option](#what-is-an-option-and-parameter) is not specified, nodectl will pick a random Node on the cluster specified by the `-p` profile required parameter.
-  
-It will search against the Node the `check_connection` command was executed upon unless an **`edge device`** to check against the `source` is specified by an optional `-e` [option](#what-is-an-option-and-parameter).
-  
-The command will compare the Nodes found on the source against the Nodes found on the edge.  If the Nodes connected to each do not match, the command will display those Nodes that are missing between the two.
-
-##### Dictionary
-| symbol | description |
-| :--: | :-- |
-|  *   | Indicates the ip searched against was either the edge and source ip
-|  i   | Initial State
-|  rj  | ReadyToJoin State
-|  ss  | StartingSession State
-|  s   | SessionStarted State
-|  rd  | ReadyToDownload State
-|  wd  | WaitingForDownload State
-|  wr  | WaitingForReady State
-|  dp  | DownloadInProgress State
-|  ob  | Observing State
-|      | Ready
-|  l   | Leaving State
-|  o   | Offline State
-|  a   | ApiNotReady State (nodectl only)
-
-#### If Node shows `False`
-There may be circumstances where your Node is showing a False positive.  The network may still be converging or another Node may be causing your Node to show False.
-  
-In some cases you may need to wait a little longer and then check again if:
-- Your Node is showing `False`.
-- If you are seeing many Nodes "missing". 
-  
-The Node may be off the network and a restart is required.  You can use the [restart command](#restart) to attempt to restart and join the network. 
-
-#### Troubleshooting
-- You may review your [log files](#logs) to see if you can find an issue
-- You can contact a System Administrator to review log files which may help to figure out if your issue is correctable. They may request you [send_logs](#send_logs) feature.
-
----
-
-> #### Examples
-- Scenario for help 
-  - `<profile_name>` will be **dag-l0**
-  - Node you joined to originally (source) : **`10.1.1.1`**
-  - The IP of your Node (edge) : **`10.2.2.2`**
-  - The IP of another Node (other) : **`10.3.3.3`**
-  - The IP of another Node (other) : **`10.4.4.4`**
-- Help menu
-```
-sudo nodectl check_connection help 
-```
-- Check random "source" against the local "edge" Node
-```
-sudo nodectl check_connection -p dag-l0
-```
-- Check random "source" Node against "other" Node
-```
-sudo nodectl check_connection -p dag-l0 -e 10.3.3.3
-```
-- Check "any other Node" against "any other Node"
-```
-sudo nodectl check_connection -p dag-l0 -s 10.3.3.3 -s 10.4.4.4
-```            
-
-
-### check_consensus
----
-
-The **`check_consensus`** command will execute a check against your node's status on the cluster in an attempt to determine if the node participating in consensus rounds.
-
-
-| Command | Shortcut | Version |
-| :---: | :---: | :---: |
-| check_consensus | -con | >v2.12.0 |
-
-| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
-| :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | which cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question do we want to review. | **optional** |
-| -s | `<ip_address>` | nodectl will check the ip address supplied instead of the localhost. | **optional** |
-| -w | `<seconds>` | watch mode: nodectl will continuously check if the node is in consensus every X seconds, until the <kbd>q</kbd> if hit to exit watch mode. | **optional** |
-| --id | `<node_id>` | nodectl will check the node id supplied instead of the localhost. | **optional** |
-| --brief |  | Offer output in a more simplified form. | **optional** |
-| --file | `<path_to_csv_file>` | option is requested the consensus will be checked against the file that contains at least one nodeid public key or multiple nodeids formatted in one line per nodeid public key.  **The `--file` command cannot coincide with the -w option.** | **optional** |
-
-If the `-p` parameter is not supplied, nodectl will offer you a menu of known profiles to choose from.
-
-The `--file` command expects a csv (comma separated values) file that is populated with nodeids.  Each nodeid must be on its own line.
-
-#### If Node shows IN CONSENSUS `False`
-You should restart your node in order to return of the majority fork.  [auto_restart](#auto_restart) has the ability to automatically detect a node that is out of consensus and restart your node for you.
-  
----
-
-> #### Examples
-- Help menu
-```
-sudo nodectl check_consensus help 
-```
-```
-sudo nodectl -con help 
-```
-- Check if the Hypergraph profile `dag-l0` is in consensus
-```
-sudo nodectl check_consensus -p dag-l0
-```
-Execute consensus check against Node with profile name `dag-l0` and IP address `10.10.10.10`.
-```
-sudo nodectl check_consensus -p dag-l0 -s 10.10.10.10  
-``` 
-Execute consensus check against list of node ids with profile name `dag-l0` and file containing the nodeid list called `test.csv` located in the the '/tmp/' directory on the Node.
-```
-sudo nodectl check_consensus -p dag-l0 --file /tmp/test.csv  
-``` 
-Execute consensus in brief format.
-```
-sudo nodectl check_consensus -p dag-l0 --brief  
-```    
-Execute consensus in brief format refreshing and checking again every `120` seconds.
-```
-sudo nodectl check_consensus -p dag-l0 --brief -w 120  
-```      
-
-
-
-
-### check_source_connection
----
-
-The **`check_source_connection`** command takes a profile [parameter](#what-is-an-option-and-parameter).
-
-| Command | Shortcut | Version |
-| :---: | :---: | :---: |
-| check_source_connection  | -csc  | >v1.x.x |
-
-| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
-| :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | which cluster related to the profile name in question do we want to review. | **required** |
-    
-When executed the `check_source_connection` command will attempt to find a random Node on the current known Hypergraph or metagraph cluster.
-  
-:::warning 
-The random Node **needs** to be joined into the **consensus of the cluster**, and **must** be on the cluster and in **`Ready`** state.
-
-nodectl should take care of this for us.
-:::
-
-example output
-```
-States: Initial, ReadyToJoin, StartingSession, SessionStarted,                                         
-        ReadyToDownload, WaitingForDownload, DownloadInProgress, Observing, 
-        WaitingForReady, WaitingForObserving, Ready, Leaving, 
-        Offline, ApiNotReady, SessionIgnored, SessionNotFound, 
-          
-Source: Server this Node is joined to
-        Edge: This Node
-
-Note: If the SOURCE is on a different network it will show ApiNotReady
-
-FULL CONNECTION              PROFILE                                                                   
-True                         dag-l0                     
-SOURCE -> STATE              EDGE -> STATE              
-True | Ready                 True | Ready               
-  
-Node restart service does not need to be restarted because pid
-[4157840] was found already. 
-```  
-
-| Title | Description | 
-| ---: | :--- |
-| Full Connection | Both the source Node picked by nodectl and the local **edge** Node that executed the `check_source_connection` command can see each other **`True`** or cannot **`False`**. |
-| Profile | The profile that this command was run against. |
-| Source -> State | Can the **SOURCE** Node see the edge Node **`True `** or **`False`**. The source Node's state is in **`Ready`** state. |
-| Edge -> State | Can the **EDGE** Node see the edge Node **`True`** or **`False`**. The edge Node's state is in **`Ready`** state. |  
-
-> #### Examples
-- Help screen
-```
-sudo nodectl check_source_connection help
-```  
-- Execute the check_source_connection command
-```
-sudo nodectl check_source_connection
-```
-
-
-
-
-
-### check_seedlist
----
-
-The **`check_seedlist`** command takes one [parameter](#what-is-an-option-and-parameter).
-
-| Command | Shortcut | Version |
-| :---: | :---: | :---: |
-| check_seedlist  | -csl | >v2.x.x |
-
-| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
-| :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | related to the profile to verify access permissions. | **required** |
-| -id | `<node_id>` | nodeid of the Node you would like to verify seed list participation (if not local to the Node) | **optional** <br/> *version >`2.9.x`* | 
-
-**`check_seedlist`** will pull your `nodeid` out of your p12 file and compare it to the seedlist downloaded from **Constellation Network's** authorized list.
-  
-:::note
-This command is specific to current restrictions placed on the Hypergraph for controlled access prior to the **PRO Score** [proof of reputable observation] release.
-:::
-
-| Title | Description |
-| -- | :-- |
-| ip address | The `ip address` of the Node in question |
-| p12 filename | The name of the `p12` file on the local Node |
-| p12 location | The location of the `p12` file on the local Node |
-| node id | The `p12` public key ( *nodeid* ). |
-| node id found on seed list | This will be a `True` or `False`.  In the event of a `False` please contact an administrator on the Constellation Network official Discord server. |
- 
-> #### Examples
-- Help screen
-```
-sudo nodectl check_seedlist help
-```  
-- Execute the check_seedlist command
-```
-sudo nodectl check_seedlist
-```
-
-
-
-
-
-### check_seedlist_participation 
----
-
-The **`check_seedlist_participation`** command does not take any [parameters](#what-is-an-option-and-parameter).
-
-| Command | Shortcut | Version |
-| :---: | :---: | :---: | >v2.7.x |
-| check_seedlist_participation | -cslp  |
-
-*This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.  It will be deprecated as soon as no longer necessary.*
-
-| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
-| :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | related to the profile to verify access permissions. | **required** | 
-This command can be used to review seed list access-list participation for any/all given profile(s) in the configuration that has a seed-list setup.
-       
-> #### Examples
-- Help screen
-```
-sudo nodectl check_seedlist_participation help
-```  
-- Execute the check_seedlist_participation command
-```
-sudo nodectl check_seedlist_participation -p <profile_name>
-```  
-
-
-
-
 ### clean_files
 ---
 
@@ -784,40 +489,448 @@ sudo nodectl -cf -t logs
 
 
 
-
-### clean_snapshots
+### check_minority_fork
 ---
 
-:::danger 
-This command should be used sparingly, only as absolutely necessary.
-:::
+The **`check_minority_fork`** command will execute a check against your node's status on the cluster in an attempt to determine if the node is in a minority fork.
 
-The **`clean_snapshots`** command will offers the Node Operator the ability to clear **snapshots**.  
-
-:::warning 
-With the evaluation of the Tessellation protocol, the introduction of **incremental snapshots** may cause this command be deprecated in future releases.
-:::
-
-Once the command is executed the Node Operator will be offered a CLI menu of **snapshot** removal options to choose.
-  
-The option will be carried out and the Node Operator will be offered a visual confirmation of the **snapshots** to be removed, number of snapshots, and size to be freed by their removal.
+What is [minority fork](/validate/validator/forks-explained#-what-is-a-minority-fork)?
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
-| clean_snapshots  |  -cs  | >v2.7.x |
+| check_minority_fork  | -cmf | >v2.12.0 |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question do we want to review. | **required** |
+
+#### If node shows MINORITY FORK `True`
+You should restart your node in order to return of the majority fork.  [auto_restart](#auto_restart) has the ability to automatically detect a minority fork and restart your node for you.
+  
+---
+
+> #### Examples
+- Help menu
+```
+sudo nodectl check_minority_fork help 
+sudo nodectl -cmf help 
+```
+- Check the Hypergraph profile `dag-l0` for a minority fork
+```
+sudo nodectl check_minority_fork -p dag-l0
+```
+
+
+
+
+
+### check_connection
+---
+
+The **`check_connection`** command will execute a search on the currently connected Hypergraph or metagraph cluster. 
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_connection  | -cc | >v1.x.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question do we want to review. | **required** |
+| -s | `<ip_address or hostname>` | identify a **source** node to use specifically by the `check_connection` command, to test against the **edge** node. | **optional** |
+| -e | `<ip_address or hostname>` | identify a **edge** node to compare against the **source** node. | **optional** | 
+
+If the `-s` [option](#what-is-an-option-and-parameter) is not specified, nodectl will pick a random node on the cluster specified by the `-p` profile required parameter.
+  
+It will search against the node the `check_connection` command was executed upon unless an **`edge device`** to check against the `source` is specified by an optional `-e` [option](#what-is-an-option-and-parameter).
+  
+The command will compare the nodes found on the source against the nodes found on the edge.  If the nodes connected to each do not match, the command will display those nodes that are missing between the two.
+
+##### Dictionary
+| symbol | description |
+| :--: | :-- |
+|  *   | Indicates the ip searched against was either the edge and source ip
+|  i   | Initial State
+|  rj  | ReadyToJoin State
+|  ss  | StartingSession State
+|  s   | SessionStarted State
+|  rd  | ReadyToDownload State
+|  wd  | WaitingForDownload State
+|  wr  | WaitingForReady State
+|  dp  | DownloadInProgress State
+|  ob  | Observing State
+|      | Ready
+|  l   | Leaving State
+|  o   | Offline State
+|  a   | ApiNotReady State (nodectl only)
+
+#### If node shows `False`
+There may be circumstances where your node is showing a False positive.  The network may still be converging or another node may be causing your node to show False.
+  
+In some cases you may need to wait a little longer and then check again if:
+- Your node is showing `False`.
+- If you are seeing many nodes "missing". 
+  
+The node may be off the network and a restart is required.  You can use the [restart command](#restart) to attempt to restart and join the network. 
+
+#### Troubleshooting
+- You may review your [log files](#logs) to see if you can find an issue
+- You can contact a System Administrator to review log files which may help to figure out if your issue is correctable. They may request you [send_logs](#send_logs) feature.
+
+---
+
+> #### Examples
+- Scenario for help 
+  - `<profile_name>` will be **dag-l0**
+  - Node you joined to originally (source) : **`10.1.1.1`**
+  - The IP of your node (edge) : **`10.2.2.2`**
+  - The IP of another node (other) : **`10.3.3.3`**
+  - The IP of another node (other) : **`10.4.4.4`**
+- Help menu
+```
+sudo nodectl check_connection help 
+```
+- Check random "source" against the local "edge" node
+```
+sudo nodectl check_connection -p dag-l0
+```
+- Check random "source" node against "other" node
+```
+sudo nodectl check_connection -p dag-l0 -e 10.3.3.3
+```
+- Check "any other node" against "any other node"
+```
+sudo nodectl check_connection -p dag-l0 -s 10.3.3.3 -s 10.4.4.4
+```            
+
+
+### check_consensus
+---
+
+The **`check_consensus`** command will execute a check against your node's status on the cluster in an attempt to determine if the node participating in consensus rounds.
+
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_consensus | -con | >v2.12.0 |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question do we want to review. | **optional** |
+| -s | `<ip_address>` | nodectl will check the ip address supplied instead of the localhost. | **optional** |
+| -w | `<seconds>` | watch mode: nodectl will continuously check if the node is in consensus every X seconds, until the <kbd>q</kbd> if hit to exit watch mode. | **optional** |
+| --id | `<node_id>` | nodectl will check the node id supplied instead of the localhost. | **optional** |
+| --brief |  | Offer output in a more simplified form. | **optional** |
+| --file | `<path_to_csv_file>` | option is requested the consensus will be checked against the file that contains at least one nodeid public key or multiple nodeids formatted in one line per nodeid public key.  **The `--file` command cannot coincide with the -w option.** | **optional** |
+
+If the `-p` parameter is not supplied, nodectl will offer you a menu of known profiles to choose from.
+
+The `--file` command expects a csv (comma separated values) file that is populated with nodeids.  Each nodeid must be on its own line.
+
+#### If node shows IN CONSENSUS `False`
+You should restart your node in order to return of the majority fork.  [auto_restart](#auto_restart) has the ability to automatically detect a node that is out of consensus and restart your node for you.
+  
+---
+
+> #### Examples
+- Help menu
+```
+sudo nodectl check_consensus help 
+```
+```
+sudo nodectl -con help 
+```
+- Check if the Hypergraph profile `dag-l0` is in consensus
+```
+sudo nodectl check_consensus -p dag-l0
+```
+Execute consensus check against node with profile name `dag-l0` and IP address `10.10.10.10`.
+```
+sudo nodectl check_consensus -p dag-l0 -s 10.10.10.10  
+``` 
+Execute consensus check against list of node ids with profile name `dag-l0` and file containing the nodeid list called `test.csv` located in the the '/tmp/' directory on the node.
+```
+sudo nodectl check_consensus -p dag-l0 --file /tmp/test.csv  
+``` 
+Execute consensus in brief format.
+```
+sudo nodectl check_consensus -p dag-l0 --brief  
+```    
+Execute consensus in brief format refreshing and checking again every `120` seconds.
+```
+sudo nodectl check_consensus -p dag-l0 --brief -w 120  
+```      
+
+
+
+
+### check_source_connection
+---
+
+The **`check_source_connection`** command takes a profile [parameter](#what-is-an-option-and-parameter).
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_source_connection  | -csc  | >v1.x.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question do we want to review. | **required** |
+    
+When executed the `check_source_connection` command will attempt to find a random node on the current known Hypergraph or metagraph cluster.
+  
+:::warning 
+The random node **needs** to be joined into the **consensus of the cluster**, and **must** be on the cluster and in **`Ready`** state.
+
+nodectl should take care of this for us.
+:::
+
+example output
+```
+States: Initial, ReadyToJoin, StartingSession, SessionStarted,                                         
+        ReadyToDownload, WaitingForDownload, DownloadInProgress, Observing, 
+        WaitingForReady, WaitingForObserving, Ready, Leaving, 
+        Offline, ApiNotReady, SessionIgnored, SessionNotFound, 
+          
+Source: Server this node is joined to
+        Edge: This node
+
+Note: If the SOURCE is on a different network it will show ApiNotReady
+
+FULL CONNECTION              PROFILE                                                                   
+True                         dag-l0                     
+SOURCE -> STATE              EDGE -> STATE              
+True | Ready                 True | Ready               
+  
+Node restart service does not need to be restarted because pid
+[4157840] was found already. 
+```  
+
+| Title | Description | 
+| ---: | :--- |
+| Full Connection | Both the source node picked by nodectl and the local **edge** node that executed the `check_source_connection` command can see each other **`True`** or cannot **`False`**. |
+| Profile | The profile that this command was run against. |
+| Source -> State | Can the **SOURCE** node see the edge node **`True `** or **`False`**. The source node's state is in **`Ready`** state. |
+| Edge -> State | Can the **EDGE** node see the edge node **`True`** or **`False`**. The edge node's state is in **`Ready`** state. |  
 
 > #### Examples
 - Help screen
 ```
-sudo nodectl clean_snapshots help
+sudo nodectl check_source_connection help
+```  
+- Execute the check_source_connection command
 ```
-- Execute `clean_snapshots` command
+sudo nodectl check_source_connection
 ```
-sudo nodectl clean_snapshots
+
+
+
+
+
+### check_seedlist
+---
+
+The **`check_seedlist`** command takes one [parameter](#what-is-an-option-and-parameter).
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_seedlist  | -csl | >v2.x.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | related to the [profile](/validate/quick-start/prerequisites#-profile-table) to verify access permissions. | **required** |
+| -id | `<node_id>` | nodeid of the node you would like to verify seed list participation (if not local to the node) | **optional** <br/> *version >`2.9.x`* | 
+
+**`check_seedlist`** will pull your `nodeid` out of your p12 file and compare it to the seedlist downloaded from **Constellation Network's** authorized list.
+  
+:::note
+This command is specific to current restrictions placed on the Hypergraph for controlled access prior to the **PRO Score** [proof of reputable observation] release.
+:::
+
+| Title | Description |
+| -- | :-- |
+| ip address | The `ip address` of the node in question |
+| p12 filename | The name of the `p12` file on the local node |
+| p12 location | The location of the `p12` file on the local node |
+| node id | The `p12` public key ( *nodeid* ). |
+| node id found on seed list | This will be a `True` or `False`.  In the event of a `False` please contact an administrator on the Constellation Network official Discord server. |
+ 
+> #### Examples
+- Help screen
 ```
-or
+sudo nodectl check_seedlist help
+```  
+- Execute the check_seedlist command
 ```
-sudo nodectl -cs
+sudo nodectl check_seedlist
+```
+
+
+
+
+
+### check_seedlist_participation 
+---
+
+The **`check_seedlist_participation`** command does not take any [parameters](#what-is-an-option-and-parameter).
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: | >v2.7.x |
+| check_seedlist_participation | -cslp  |
+
+*This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.  It will be deprecated as soon as no longer necessary.*
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | related to the [profile](/validate/quick-start/prerequisites#-profile-table) to verify access permissions. | **required** | 
+This command can be used to review seed list access-list participation for any/all given profile(s) in the configuration that has a seed-list setup.
+       
+> #### Examples
+- Help screen
+```
+sudo nodectl check_seedlist_participation help
+```  
+- Execute the check_seedlist_participation command
+```
+sudo nodectl check_seedlist_participation -p <profile_name>
+```  
+
+
+
+
+
+
+### clean_snapshots
+---
+This command is has been removed from nodectl.
+
+
+
+
+
+### check_tcp_ports
+---
+
+The **`check_tcp_ports`** command will execute a check on your node's external network interface card (NIC) checking for network activity from your node's API TCP ports.  
+
+During troubleshooting this is a way to indicate if you have a possible firewall issue.
+
+nodectl will:
+- glean your public and peer-to-peer API ports off your configuration.
+- sniff the NIC for a period of time and report the results.
+
+<p style={{fontSize:'.8em'}}><b>sniff:</b> Passively watch traffic without interfering with or manipulating any UDP/TCP packets traversing the interface.</p>
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| check_minority_fork  | -cmf | >v2.15.0 |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -t | `<seconds>` | How long would you like to sniff each of the TCP ports found?  default **10** seconds. | **optional** |
+
+
+
+
+
+
+
+
+### download_status
+---
+The **`download_status`** command is **experimental** and may not always be accurate. However, it makes a best-effort attempt to review the node's logs in real time to estimate the progress of the `DownloadInProgress` state and how much time it may take to complete.
+
+During a node's join process, to become part of the cluster for the profile(s) configured, the node undergoes a series of essential initialization tasks to ensure it integrates and functions properly as a peer on the cluster.
+
+Once your node completes the initial phases of authentication and becomes a peer on the cluster, it must synchronize and gain knowledge about the known blockchain before actively participating in consensus and earning rewards.  
+  
+Constellation Network employs an incremental snapshot strategy to minimize the ingress "cost" for downloading blockchain snapshots. When a new node joins the cluster, it will undergo a one time extended period of learning about the entire blockchain. For an existing node rejoining the cluster, it is required to calculate the differences between its previous state and the current blockchain state.
+    
+Following authentication, your node may temporarily remain in the WaitingForDownload state, which is a relatively inactive phase with no notable progress.  Due to this, when you execute the download_status command, it will monitor your node's status, via a timer [verses a progress indicator], continually checking until the node transitions to `DownloadInProgress`.
+  
+When in `DownloadInProgress` state, nodectl will actively oversee your node's activities, presenting a progress indicator on the screen that provides an estimate of the completion percentage for this process.  
+  
+- Part 1: 
+Downloading snapshots: Above the progress indicator, you'll find the snapshots being downloaded to your node, displayed by their corresponding ordinal. This will be represented as a decreasing counter.
+
+- Part 2: 
+BlockAcceptanceManager: The progress indicator will be modified. You will see the "height" of the last snapshot block and the current "height" reached. This will be displayed as an increasing counter.
+  
+To the right of the counters, you will see a differential counter to help ease the calculation of what is left to be processed from either part 1 or part 2.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| download_status | -ds | >v2.10.0 |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | monitor the cluster that relates to the requested [profile](/validate/quick-start/prerequisites#-profile-table). | **optional** |
+| --estimate |  | This is a `develper_mode` option that will attempt to estimate how much time is left before the `DownloadInProgress` stage may complete. | **optional** |
+
+
+
+
+
+
+### execute_starchiver
+---
+
+**[Starchive-Extractor](https://github.com/StardustCollective/Starchive-Extractor)** is a community created and supported tool.  
+
+:::danger IMPORTANT
+Constellation Network does not support this tool.
+:::
+
+This tool is highly useful and has been integrated into nodectl to assist with proper execution with a single command, without any extra steps. It can expedite your node’s ability to join the cluster, potentially reducing download times from days to just hours or less.
+
+The **`execute_starchiver`** command takes several parameters.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| execute_starchiver | | >v2.13.0 |
+
+When executed on a node via nodectl
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -d |  | Delete all snapshots before continuing. | **optional** |
+| -o |  | Override any snapshots as necessary. | **optional** |
+| --datetime | `<datetime_stamp>` | If you do **not** include a parameter after the `--datetime` option, Starchive-Extractor will automatically attempt to determine what date and time is best to begin the archival downloads.  **Omitting a `<datetime_stamp>` is recommended**. | **optional** |
+| --restart |  | Once the Starchiver-Extractor is complete, automatically restart the node's profile. | **optional** |
+
+> #### Examples
+- Help screen
+```
+sudo nodectl execute_starchiver help
+```
+- Execute Starchiver-Extractor using the most recommended command options.
+```
+sudo nodectl execute_starchiver -p <profile_name> --datetime --restart
+```
+
+
+
+
+
+
+
+
+
+
+### execute_tests
+---
+
+The **`execute_tests`** command is used to assist in testing the various commands offered within nodectl, during development.  This command can also be used to learn the various commands that nodecl has to offer.  
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| execute_tests | | >v2.14.0 |
+
+This command will fetch the current user tests executable from the nodectl repository and begin the tests.
+
+> #### Examples
+- Execute the user test script.
+```
+sudo nodectl execute_tests
 ```
 
 
@@ -828,7 +941,11 @@ sudo nodectl -cs
 ---
 
 The **`find`** command takes several parameters.
-  
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| find | | >v1.x.x |
+
 This command will attempt to find the requested peer on the current connected Hypergraph or metagraph.
 
 The find command offers insight into the 
@@ -837,14 +954,14 @@ The find command offers insight into the
 - number of nodes in **`Observing`** state
 - number of nodes in **`WaitingForReady`** state
     
-It will show you the profile searched (required) and offer you confirmation that your Node is seen on the cluster.
+It will show you the profile searched (required) and offer you confirmation that your node is seen on the cluster.
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -s | `<source_node>` | Node on the cluster you want to use to lookup other nodes. | **optional** |
 | -t | `<target_node>` | Node on the cluster (ip address, hostname, or nodeid) you want to look up on the cluster. | **optional** |
 
-You may specify a **`source`** node that will be used as the reference point to lookup the **`target`** node (either your Node *default* or a specified target) on the cluster and return a `True` or `False` depending on whether or not it is found.
+You may specify a **`source`** node that will be used as the reference point to lookup the **`target`** node (either your node *default* or a specified target) on the cluster and return a `True` or `False` depending on whether or not it is found.
   
 You may use the **`self`** keyword for either the `source` ( `-s` ) or `target` ( `-t` ) [parameters](#what-is-an-option-and-parameter).
 
@@ -857,22 +974,22 @@ Choosing a **source node** that is **NOT** on the network may result in an error
 ```
 sudo nodectl find help
 ```
-- Check if your Node is listed/seen on the cluster using a random source Node that is already found on the cluster.
+- Check if your node is listed/seen on the cluster using a random source node that is already found on the cluster.
 ```
 sudo nodectl find -p <profile_name>
 ```
-- Check if your Node is listed/seen on the cluster using a specific source Node.
+- Check if your node is listed/seen on the cluster using a specific source node.
 ```
 sudo nodectl find -p <profile_name> -s <source_ip_host>
 ```
-- Check if your Node is listed/seen on the cluster using a specific source Node and a specific target Node (other then your own.
+- Check if your node is listed/seen on the cluster using a specific source node and a specific target node (other then your own.
 ```
 sudo nodectl find -p <profile_name> -s <source_ip_host> -t <target_ip_host>
 ```
 
 #### other `find` examples
 
-If our node is `10.1.1.1` check if `10.1.1.1` is listed/seen by another random Node on the cluster we are connected to identified by the profile `dag-l0`.
+If our node is `10.1.1.1` check if `10.1.1.1` is listed/seen by another random node on the cluster we are connected to identified by the profile `dag-l0`.
 ```
 sudo nodectl find -p dag-l0 
 ```
@@ -884,7 +1001,7 @@ look for a node by `nodeid`
 ```
 sudo nodectl find -p dag-l0 -t <nodeid>
 ```
-If our node is `10.1.1.1` check if `10.1.1.1` is listed/seen by a Node identified by the `-s` option (`10.2.2.2`) on the cluster we are connected to.
+If our node is `10.1.1.1` check if `10.1.1.1` is listed/seen by a node identified by the `-s` option (`10.2.2.2`) on the cluster we are connected to.
 ```
 sudo nodectl find -p dag-l0 -s 10.2.2.2
 ```
@@ -914,7 +1031,7 @@ sudo nodectl find -p dag-l0 -s 10.2.2.2 -t 10.1.1.2
 
 The **`health`** command does not take any [parameters](#what-is-an-option-and-parameter).
 
-It displays the basic health elements of your Node.
+It displays the basic health elements of your node.
 
 | OUTPUT | Description |
 | :---: | :------- |
@@ -951,7 +1068,7 @@ The **`list`** command does not take any [parameters](#what-is-an-option-and-par
 | Title | Description | 
 | ---: | :--- |
 | Profile Name | Name of the profile on display as defined by the **`cn-config.yaml`**. |
-| Profile Description | Node operator defined description of the profile. |
+| Profile Description | Node Operator defined description of the profile. |
 | Public API TCP | The TCP port configured that is open to the public for API calls. |
 | P2P API TCP | The TCP port configured that is used for gossip peer to peer API communications. |
 | CLI API TCP | The TCP port configured that is used for internal API calls only. |  
@@ -1018,8 +1135,8 @@ The **`peers`** command will attempt to list all the peers found on the cluster;
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | review the cluster that relates to the requested profile. | **required** |
-| -t | `<target_node>` | Node on the cluster (ip or hostname) that you would like to use as your target (The Node to use as reference.) for finding peers. | **optional** |
+| -p | `<profile_name>` | review the cluster that relates to the requested [profile](/validate/quick-start/prerequisites#-profile-table). | **required** |
+| -t | `<target_node>` | Node on the cluster (ip or hostname) that you would like to use as your target (The node to use as reference.) for finding peers. | **optional** |
 | -c | None | count the peers on the network. | **optional** |
 | -np | None | no [pagination](#what-is-pagination). | **optional** |
 | --csv | None | create csv (comma separated values) output file instead of print out to the screen. | **optional** |
@@ -1061,7 +1178,7 @@ sudo nodectl peers help
 ```
 sudo nodectl peers -p <profile_name>
 ```
-- Show YOUR Nodes's peers
+- Show YOUR nodes's peers
 ```
 sudo nodectl peers -p <profile_name> -t self
 ```
@@ -1151,11 +1268,11 @@ The **`refresh_binaries`** command does not take any [parameters](#what-is-an-op
 | :---: | :---: | :---: |
 | check_source_connection  | -rtb  | >v1.x.x
 
-This command will download and overwrite the existing Tessellation binaries files that are required to run your Node.  The result of this command will be to download the binaries from the latest release and is independent of a system upgrade.
+This command will download and overwrite the existing Tessellation binaries files that are required to run your node.  The result of this command will be to download the binaries from the latest release and is independent of a system upgrade.
   
 This command can be used to refresh your binaries in the event that you have a corrupted system.
   
-This command should be accompanied by the restart command in order to allow your Node to utilize the new binary files.
+This command should be accompanied by the restart command in order to allow your node to utilize the new binary files.
   
 This includes a refresh of the latest local `seed-list` access list file.
   
@@ -1176,13 +1293,13 @@ sudo nodectl refresh_binaries
 
 The **`quick_status`** command takes a single **optional** [parameter](#what-is-an-option-and-parameter).
 
-**quick_status** will review the current status of your Node and offer a single output of the found **state** of your Node's known clusters, as quickly as possible.
+**quick_status** will review the current status of your node and offer a single output of the found **state** of your node's known clusters, as quickly as possible.
 
 If the `-p` option is used with the `<profile_name>`, only that profile's status will appear.  If the `quick_status` command is called without the `-p` [option](#what-is-an-option-and-parameter), all profiles will be shown.
 
 The difference between `quick_status` and [status](#status) are two-fold:
-1. `quick_status` will only show the state of the Node's known active profile(s)
-2. `quick_status` will review the state of your Node's known active profile(s) via the local API on the Node.  This should be understood and used with caution, as if your Node is in `Ready` state but not on the proper cluster, you may receive a false positive.  The [status](#status) command; although more time costly (*expensive*), will offer a better outlook on your Node by providing metics such as `sessions`. 
+1. `quick_status` will only show the state of the node's known active profile(s)
+2. `quick_status` will review the state of your node's known active profile(s) via the local API on the node.  This should be understood and used with caution, as if your node is in `Ready` state but not on the proper cluster, you may receive a false positive.  The [status](#status) command; although more time costly (*expensive*), will offer a better outlook on your node by providing metics such as `sessions`. 
   
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
@@ -1190,8 +1307,8 @@ The difference between `quick_status` and [status](#status) are two-fold:
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | supply profile name [parameter](#what-is-an-option-and-parameter) to show quick_status. | **optional** |
-| -w | `<seconds>` | watch command. will continuously check the status of your Node until <kbd>q</kbd> is pressed.  *Note*: You should **not** use the <kbd>ctrl</kbd>-<kbd>c</kbd> to exit as it may cause your keyboard to stop echoing output to your terminal.  If this does happen, you can simply exit the terminal session and log back in to correct the display issues. | **optional** |
+| -p | `<profile_name>` | supply [profile](/validate/quick-start/prerequisites#-profile-table) name [parameter](#what-is-an-option-and-parameter) to show quick_status. | **optional** |
+| -w | `<seconds>` | watch command. will continuously check the status of your node until <kbd>q</kbd> is pressed.  *Note*: You should **not** use the <kbd>ctrl</kbd>-<kbd>c</kbd> to exit as it may cause your keyboard to stop echoing output to your terminal.  If this does happen, you can simply exit the terminal session and log back in to correct the display issues. | **optional** |
 
 > #### Examples
 - Help screen
@@ -1216,14 +1333,14 @@ The **`sec`** command does not take any [parameters](#what-is-an-option-and-para
 
 sec = security 
 
-It displays the basic security elements of your Node.  It displays parsed elements from the `auth.log` file on your Debian operating system.
+It displays the basic security elements of your node.  It displays parsed elements from the `auth.log` file on your Debian operating system.
   
-Following the table formatted output, nodectl will display a list of `date` -> `ip address` of external access requests against your Node.
+Following the table formatted output, nodectl will display a list of `date` -> `ip address` of external access requests against your node.
 
 :::note 
 The results will be based off the current and last "rolled" auth.log file.
 
-This nodectl feature is currently not related to the Tessellation processes on a Node.  It is reviewing distribution level `auth` files.
+This nodectl feature is currently not related to the Tessellation processes on a node.  It is reviewing distribution level `auth` files.
 :::
 
 example output
@@ -1273,8 +1390,8 @@ This does not apply to TestNet rewards.
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | review the cluster related to the profile name in question. | **required** |
-| -w | `<dag_wallet_address>` | DAG wallet on the cluster.  Use this option if you are interested in an alterative Node that is not the local Node. | **optional** |
+| -p | `<profile_name>` | review the cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question. | **required** |
+| -w | `<dag_wallet_address>` | DAG wallet on the cluster.  Use this option if you are interested in an alternative node that is not the local node. | **optional** |
 | -s | `<snapshot_history_size>` | **default**: 50, The amount of snapshots to review. | **optional** |
 | -np | None | no [pagination](#what-is-pagination). | **optional** |
 | --csv | None | create csv (comma separated values) output file instead of printing output to the screen. | **optional** |
@@ -1295,7 +1412,7 @@ If a **-s** `<snapshot_history_size>` is specified:
 Currently this command only searches on the **MainNet Layer0 Global Hypergraph** network.
 ::: 
 
-If the **-w** `<dag_wallet_address>` is used, the **-p** `<profile_name>` will be ignored unless the profile fails to be present on the Node (exist in the configuration).
+If the **-w** `<dag_wallet_address>` is used, the **-p** `<profile_name>` will be ignored unless the profile fails to be present on the node (exist in the configuration).
         
 > #### Examples
 - Help screen
@@ -1329,7 +1446,7 @@ sudo nodectl show_current_rewards --csv --output test.csv
 
 The **`show_node_states`** command does not take any [parameters](#what-is-an-option-and-parameter).
 
-This command displays the list of the known Node States that you may find on the Cluster or that nodectl defines when not on the cluster.
+This command displays the list of the known node States that you may find on the Cluster or that nodectl defines when not on the cluster.
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
@@ -1339,8 +1456,8 @@ This command displays the list of the known Node States that you may find on the
 
 | State | Description |
 | -- | :-- |
-| ApiNotReady | shown if nodectl can not reach the Node's internal API server. |
-| SessionNotFound | shown if nodectl can not read the Node's session via the internal API server. | 
+| ApiNotReady | shown if nodectl can not reach the node's internal API server. |
+| SessionNotFound | shown if nodectl can not read the node's session via the internal API server. | 
 | SessionIgnored | shown if nodectl is not online and there is not a session to display. | 
   
 > #### Examples
@@ -1368,7 +1485,7 @@ sudo nodectl -sns
 
 The **`status`** command takes a single **optional** [parameter](#what-is-an-option-and-parameter).
 
-**Status** will review the current status of your Node.
+**Status** will review the current status of your node.
 
 If the `-p` option is used with the `<profile_name>`, only that profile's status will appear.  If the `status` command is called without the `-p` [option](#what-is-an-option-and-parameter), all profiles will be shown.
   
@@ -1378,8 +1495,8 @@ If the `-p` option is used with the `<profile_name>`, only that profile's status
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | supply profile name [parameter](#what-is-an-option-and-parameter) to show status. | **optional** |
-| -w | `<seconds>` | watch command. will continuously check the status of your Node until <kbd>q</kbd> is pressed.  *Note*: You should **not** use the <kbd>ctrl</kbd>-<kbd>c</kbd> to exit as it may cause your keyboard to stop echoing output to your terminal.  If this does happen, you can simply exit the terminal session and log back in to correct the display issues. Available in version >v2.9.0 | **optional** |
+| -p | `<profile_name>` | supply [profile](/validate/quick-start/prerequisites#-profile-table) name [parameter](#what-is-an-option-and-parameter) to show status. | **optional** |
+| -w | `<seconds>` | watch command. will continuously check the status of your node until <kbd>q</kbd> is pressed.  *Note*: You should **not** use the <kbd>ctrl</kbd>-<kbd>c</kbd> to exit as it may cause your keyboard to stop echoing output to your terminal.  If this does happen, you can simply exit the terminal session and log back in to correct the display issues. Available in version >v2.9.0 | **optional** |
 
 > #### Examples
 - Help screen
@@ -1398,14 +1515,14 @@ sudo nodectl status -p dag-l0
 |  Title  | Description | 
 | ---: | :--- |
 | Service | What is the status of the service that runs this profile. |
-| Join State | The cluster state that the Node is seen by the cluster. |
+| Join State | The cluster state that the node is seen by the cluster. |
 | Profile | Which profile is being reported on. |
 | Public API TCP | The TCP port configured that is open to the public for API calls. |
 | P2P API TCP | The TCP port configured that is used for gossip peer to peer API communications. |
 | CLI API TCP | The TCP port configured that is used for internal API calls only. |
 | Current Session | What is the **session** number being reported on the cluster. |
-| Found Session | What is the **session** number seen by the Node.  If it does not match the Current Session, the Node is not properly connected to the actual cluster. |
-| On Network | Shows `True` or `False` if the Node is found on the cluster.
+| Found Session | What is the **session** number seen by the node.  If it does not match the Current Session, the node is not properly connected to the actual cluster. |
+| On Network | Shows `True` or `False` if the node is found on the cluster.
 
 
 
@@ -1438,12 +1555,12 @@ The **`update_seedlist`** command does not take any [parameters](#what-is-an-opt
 
 | [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
 | :----: | :---: | :--- | :----: |
-| -p | `<profile_name>` | which profile are you seeking the update seed list. | **required** |
+| -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you seeking the update seed list. | **required** |
 
 
-`update_seedlist` will pull down the latest seedlist from the Constellation Network repositories. This command can be used in the event your Node is unable to authenticate (and therefor will not connect) to the network.  
+`update_seedlist` will pull down the latest seedlist from the Constellation Network repositories. This command can be used in the event your node is unable to authenticate (and therefor will not connect) to the network.  
   
-Using the [`check_seedlist`](#check_seedlist) command, a Node Operator  can confirm if the Node is seen on the access lists; if not, issue the `update_seedlist` command to attempt to correct the issue.
+Using the [`check_seedlist`](#check_seedlist) command, a node Operator  can confirm if the node is seen on the access lists; if not, issue the `update_seedlist` command to attempt to correct the issue.
   
 :::note 
 If you update the seedlist and still receive a `False`, you may need to contact a Constellation Network support Administrator for further help. This can be done by accessing the Constellation Network official Discord server.
@@ -1562,10 +1679,10 @@ sudo nodectl enable_root_ssh
 The **`reboot`** command does not take any [parameters](#what-is-an-option-and-parameter) and offers the Node Operator the ability to reboot their physical or VPS (Virtual Private Server in the cloud) via a warm boot.
   
 :::success Recommended
-For Node Operation this command is **preferred/recommended** over normal operating system reboot command. 
+For node Operation this command is **preferred/recommended** over normal operating system reboot command. 
 :::
 
-When issued, the nodectl `reboot` command will gracefully leave the profiles defined in the nodectl configuration file before rebooting the Node.
+When issued, the nodectl `reboot` command will gracefully leave the profiles defined in the nodectl configuration file before rebooting the node.
   
 #### dictionary
 | term | definition |
@@ -1589,17 +1706,17 @@ sudo nodectl reboot
 ### whoami
 ---
 
-The **`whoami`** command displays the external ip address of your Node. 
+The **`whoami`** command displays the external ip address of your node. 
 
 Optionally, you can use the optional `-id` option to map a `nodeid` to an `ip address` on a cluster.
   
-The `external IP` of your Node is the address that allows your Node to communicate with the rest of the systems on the Internet.  
+The `external IP` of your node is the address that allows your node to communicate with the rest of the systems on the Internet.  
 
-This is the address that your Node will use to communicate with the rest of the decentralized Nodes that make up the Hypergraph and/or metagraphs.  Your Node will attempt to communications with via other Nodes via p2p and public API requests.
+This is the address that your node will use to communicate with the rest of the decentralized nodes that make up the Hypergraph and/or metagraphs.  Your node will attempt to communications with via other nodes via p2p and public API requests.
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | In order to use the **`-id`** option, nodectl will need to know which profile to review the `nodeid` from. | **optional** |
+| -p | `<profile_name>` | In order to use the **`-id`** option, nodectl will need to know which [profile](/validate/quick-start/prerequisites#-profile-table) to review the `nodeid` from. | **optional** |
 | -id | `<full_node_id>` | p12 public key `nodeid` to lookup. | **optional** |
 
 :::warning 
@@ -1615,27 +1732,66 @@ sudo nodectl whoami help
 ```
 sudo nodectl whoami
 ```
-- Show ip address of a Node by `nodeid` from a cluster via a profile this Node is connected to
+- Show ip address of a node by `nodeid` from a cluster via a profile this node is connected to
 ```
 sudo nodectl whoami -p <profile> -id <node_id>
 ```
 
+
+
+
+
 ## p12 Operations
+
+### create_p12
+---
+
+The **`create_p12`**  command will create a p12 file and place it on the system in a location of the Operator's choosing.
+  
+If a location is not supplied, the global p12 configured location will be used by default.
+  
+If a username is not supplied, the global p12 username will be used by default.
+  
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| create_p12  |  | >v2.12.0 |
+
+| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| :------------: | :---: | :--- | :----: |
+| --file | `<string>` | What would you like to call the new p12 keystore file? | **optional** |
+| --location | `<file_path>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you seeking the update seed list. | **optional** |
+
+> #### Examples
+show  help screen
+```
+sudo nodectl create_p12 help
+```
+Build a new p12 file using the global configured Node Administrator username:
+```
+sudo nodectl create_p12  
+```
+Build a new p12 file using a keystore named `test.p12` and the file location `/tmp/my_new_p12_files`.
+```
+sudo nodectl create_p12 --file test.p12 --location /tmp/my_new_p12_files/  
+```
+
+
+
 
 
 
 ### dag 
 ---
 
-The **`dag`** command will retrieve your Node's wallet information for your local Node.
+The **`dag`** command will retrieve your node's wallet information for your local node.
 
-You can specify another Node by supplying the `-w` (wallet) option followed by the `dag_wallet` of the Node on the cluster that is targeted.
+You can specify another node by supplying the `-w` (wallet) option followed by the `dag_wallet` of the node on the cluster that is targeted.
 
 Following general output details about your wallet, nodectl will query the DAG explorer API and retrieve details of the last 350 snapshot entries.  This level of detail can be excluded by using the `-b` option.  
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | which profile are you seeking the wallet information from. | **required** |
+| -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you seeking the wallet information from. | **required** |
 | -w | `<dag_wallet>` | retrieve remote by target wallet address. | **optional** |
 | -b | None | if the `brief` [option](#what-is-an-option-and-parameter) is included a detailed view of the wallet transactions will be excluded from the command's output. | **optional** |
 | -np | None | By default, the `dag` command will [paginate](#what-is-pagination) the output, the `-np` flag will force `no pagination` during command output printing. | **optional** |
@@ -1646,7 +1802,7 @@ The `--output` [option](#what-is-an-option-and-parameter) can only be a filename
 
 | Output Header | Description |
 | ---: | :------ |
-| IP ADDRESS    | External IP address of the Node |
+| IP ADDRESS    | External IP address of the node |
 | P12 Filename  | Name of the p12 private key file that details were extracted from |
 | P12 Location  | Directory location of the p12 file that details were extracted from |
 | DAG Address | DAG address extracted from the p12 file requested |
@@ -1670,16 +1826,16 @@ sudo nodectl dag -p dag-l0 help
 ```  
 sudo nodectl dag -p dag-l0
 ```
-- Retrieve dag wallet information of a Node on the cluster with the DAG wallet address of `DAG0911111111111111111111111111111111111` 
+- Retrieve dag wallet information of a node on the cluster with the DAG wallet address of `DAG0911111111111111111111111111111111111` 
 - (*fake address for demonstration purposes only*).
 ```  
 sudo nodectl dag -w DAG0911111111111111111111111111111111111 -p dag-l0
 ```
-- Retrieve dag wallet information of a Node on the cluster without snapshot details.
+- Retrieve dag wallet information of a node on the cluster without snapshot details.
 ```  
 sudo nodectl dag -p dag-l0 -b
 ```
-- Retrieve the Node's dag wallet without [pagination](#what-is-pagination).
+- Retrieve the node's dag wallet without [pagination](#what-is-pagination).
 ```  
 sudo nodectl dag -p dag-l0 -np   
 ```
@@ -1699,12 +1855,12 @@ Do not share this private key with anyone that you do not completely trust with 
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :----: | :---: | :--- | :----: |
-| -p | `<profile_name>` | which profile are you seeking the private key from. | **required** |
+| -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you seeking the private key from. | **required** |
 
 
 nodectl is designed to work with `p12` private key files that support Constellation Network `v2` keys.   If you are running an older node, please refer to the [v1 to v2 migration](/validate/resources/p12-v1-to-v2-migrate) document.
 
-Import the private key produced by this command into your **StarGazer wallet** (or other) in order to control your Node's wallet.
+Import the private key produced by this command into your **StarGazer wallet** (or other) in order to control your node's wallet.
         
 > #### Examples
 - Help screen
@@ -1736,7 +1892,7 @@ The **`id`** command is an alias to the [nodeid](#nodeid) command.
 ### nodeid 
 ---
 
-The **`nodeid`** command will retrieve your Node's public key (nodeid) for either your local Node or another Node by supplying the `-t` (target) [option](#what-is-an-option-and-parameter) followed by the `ip_address` of the node on the cluster that is targeted.
+The **`nodeid`** command will retrieve your node's public key (nodeid) for either your local node or another node by supplying the `-t` (target) [option](#what-is-an-option-and-parameter) followed by the `ip_address` of the node on the cluster that is targeted.
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
@@ -1744,7 +1900,7 @@ The **`nodeid`** command will retrieve your Node's public key (nodeid) for eithe
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :----: | :---: | :--- | :----: |
-| -p | `<profile_name>` | which profile are you seeking the nodeid from. | **required** |
+| -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you seeking the nodeid from. | **required** |
 | -t | `<ip_address` | retrieve remote by target IP address. | **optional** |
 | -l |  | Display the nodeid in long format. | **optional** |
 > #### Examples
@@ -1756,7 +1912,7 @@ sudo nodectl nodeid help
 ```  
 sudo nodectl nodeid
 ```
-- Retrieve nodeid of a Node on the cluster with the IP address of `113.113.113.113`.
+- Retrieve nodeid of a node on the cluster with the IP address of `113.113.113.113`.
 ```  
 sudo nodectl nodeid -t 113.113.113.113
 ```
@@ -1847,7 +2003,7 @@ The `configure` command will offer a relatively detailed explanation of all conf
 | -a | None | enable advanced mode. | **optional** |
 | -e | None | enter directly into **edit** configuration mode for existing configurations. | **optional** |
 | -ep | None | enter directly into **edit profile** configuration mode for existing configurations. >v2.9.0 | **optional** |
-| -cb | None | automatically c)onfirm that we understand the location of the b)ackup and that it was backed up. *nodectl wants to make sure you know that there is a copy of your configuration on the Node for security purposes.* | **optional** |
+| -cb | None | automatically c)onfirm that we understand the location of the b)ackup and that it was backed up. *nodectl wants to make sure you know that there is a copy of your configuration on the node for security purposes.* | **optional** |
 | -n | None | enter directly into **new** configuration mode. | **optional** |
   
 In new configuration mode, nodectl will offer you two (2) options
@@ -1890,22 +2046,22 @@ sudo nodectl configure -a -e -cb
 ### install
 ---
 
-The **`install`** command will build a new Node for you from a blank fresh new [VPS](/validate/setup-guides/).
+The **`install`** command will build a new node for you from a blank fresh new [VPS](/validate/setup-guides/).
   
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :--------------------------------------: | :--: | :--- | :----: |
 | --normal | None | If this option is supplied, during the interactive installation process, nodectl will skip the request to utilize the `--quick-install` option and confirm a normal installation only. | **optional** |
 | --quick-install | None | If this option is supplied, during the interactive installation process, nodectl will skip the request to utilize the `--normal` option and confirm a quick-install installation only.  | **optional** |
-| --cluster-config | `mainnet`, `integrationnet`, `testnet`, `dor-metagraph-mainnet` | Setup your new Node to connect with one of the several pre-defined configurations. | **optional** |
+| --cluster-config | `mainnet`, `integrationnet`, `testnet`, `dor-metagraph-mainnet` | Setup your new node to connect with one of the several pre-defined configurations. | **optional** |
 | --confirm | None | Auto confirm default options. | **optional** |
 | --override | None | Install nodectl over itself, do not remove existing files prior to installation. | **optional** |
-| --username | string | Setup your new Node with the supplied username verses the default username of `nodeadmin`. | **optional** |
-| --user-password | string | Setup your new Node with the following VPS username password. You will not be prompted for it during the installation. | **optional** |
-| --p12-name | string | Setup your new Node with the following p12 key store name, verses the default p12 name of `nodeadmin.p12`. | **optional** |
-| --p12-passphrase | string | Setup your new Node with the following p12 key store passphrase. You will not be prompted for it during the installation. | **optional** |
-| --p12-alias | string | Setup your new Node with the following p12 key store alias, verses the default alias of `nodeadmin-alias`. | **optional** |
-| --p12-destination-path | path-to-directory | Setup your new Node to place the newly created p12 key store in the fully qualified path location provided, verses the default location equal to `/home/<username>/tessellation/`.| **optional** |
-| --p12-migration-path | path-to-directory-and-file | Setup your installation to **migrate** in an existing p12 key store file. This should include the full path to the file and the file name | **optional** |
+| --username | string | Setup your new node with the supplied username verses the default username of `nodeadmin`. | **optional** |
+| --user-password | string | Setup your new node with the following VPS username password. You will not be prompted for it during the installation. | **optional** |
+| --p12-name | string | Setup your new node with the following p12 keystore name, verses the default p12 name of `nodeadmin.p12`. | **optional** |
+| --p12-passphrase | string | Setup your new node with the following p12 keystore passphrase. You will not be prompted for it during the installation. | **optional** |
+| --p12-alias | string | Setup your new node with the following p12 keystore alias, verses the default alias of `nodeadmin-alias`. | **optional** |
+| --p12-destination-path | path-to-directory | Setup your new node to place the newly created p12 keystore in the fully qualified path location provided, verses the default location equal to `/home/<username>/tessellation/`.| **optional** |
+| --p12-migration-path | path-to-directory-and-file | Setup your installation to **migrate** in an existing p12 keystore file. This should include the full path to the file and the file name | **optional** |
 
 See the [installation guide document(s)](http://localhost:3000/validate/automated/install/nodectlInstallIntro) for more details on this command.
 
@@ -1947,7 +2103,7 @@ The **`upgrade`** command is used to upgrade both Tessellation and nodectl backe
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -w | None | **watch** mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, nodectl will skip watching for the remaining peers to connect and simply and safely continue the upgrade process, therefore saving time. | **optional** |
+| -w | None | **watch** mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the node reaches a `state` where it is able to participate on the network, nodectl will skip watching for the remaining peers to connect and simply and safely continue the upgrade process, therefore saving time. | **optional** |
 | --pass | `<passphrase>` | If the Node Operator chose to `hide` their passphrase by excluding it from the [`configuration file`](/validate/automated/nodectl-config), you will need to supply it at the command line using this option. | **optional** |
 | -ni | None | Non-Interactive. If you want to use the `upgrade` command with all the defaults chosen, nodectl will not ask any interactive questions. | **optional** |
 
@@ -1994,9 +2150,9 @@ sudo nodectl upgrade_nodectl -v v2.15.0
 ### upgrade_path
 ---
 
-The **`upgrade_path`** command does not take any [parameters](#what-is-an-option-and-parameter) and offers the Node Operator the ability to check their Node's current nodectl version for upgrade path requirements.
+The **`upgrade_path`** command does not take any [parameters](#what-is-an-option-and-parameter) and offers the Node Operator the ability to check their node's current nodectl version for upgrade path requirements.
   
-If the Node is not at the most current version of nodectl, this command will produce a warning. The warning will let the Node Administrator know what the next necessary upgrade version should be, and will show you upgrade path requirements.
+If the node is not at the most current version of nodectl, this command will produce a warning. The warning will let the Node Administrator know what the next necessary upgrade version should be, and will show you upgrade path requirements.
    
 See the [upgrade path](/validate/automated/nodectl-upgrade-path) document for more details.
 
@@ -2020,7 +2176,7 @@ sudo nodectl upgrade_path
 ### validate_config
 ---
 
-The **`validate_config`** command will attempt to review your [`cn-config.yaml`](/validate/automated/nodectl-config) file for errors that may cause **unexpected** results when attempting to run your Node.
+The **`validate_config`** command will attempt to review your [`cn-config.yaml`](/validate/automated/nodectl-config) file for errors that may cause **unexpected** results when attempting to run your node.
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
@@ -2060,7 +2216,7 @@ The **`view_config`** command will show a [paginated](#what-is-pagination) view 
 
 With the **`check_versions`** command, nodectl will go out and review the latest versions of both Constellation Network Tessellation and nodectl. 
 
-nodectl will review the current github repo and compare it to the versions running on the Node. 
+nodectl will review the current github repo and compare it to the versions running on the node. 
 
 It will report back `True` or `False` based on whether the versions match.
 
@@ -2070,12 +2226,12 @@ It will report back `True` or `False` based on whether the versions match.
 
 | Output Header | Description |
 | ---: | :------ |
-| Tess installed | What version of Tessellation was found on the Node. |
+| Tess installed | What version of Tessellation was found on the node. |
 | Tess latest | What version of Tessellation was found in the current repository. |
-| Tess version match | Does the Node match up to the repository? |
-| nodectl installed  | What version of nodectl was found on the Node. |
+| Tess version match | Does the node match up to the repository? |
+| nodectl installed  | What version of nodectl was found on the node. |
 | nodectl latest | What version of nodectl was found in the current repository. |
-| nodectl version match | Does the Node match up to the repository? |
+| nodectl version match | Does the node match up to the repository? |
 
 > #### Examples
 - Help menu
@@ -2086,6 +2242,21 @@ sudo nodectl check_version help
 ```
 sudo nodectl check_version
 ```
+
+
+### display_snapshot_chain
+---
+
+The **`display_snapshot_chain`** command is an advanced command that will review your node's snapshots and verify that every snapshot hash has an accompanying hard link to the ordinal that it is associated with.  If you have an invalid snapshot chain, your node will not function properly.  
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| display_snapshot_chain  |  | >v2.14.0
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | Identify the appropriate layer0 [profile](/validate/quick-start/prerequisites#-profile-table) to check against.  nodectl will offer a list of known profiles if not supplied. | **optional** |
+| -y | | automatically confirm the request to check the snapshot chain | **optional** |
 
 
 
@@ -2100,7 +2271,7 @@ The **`logs`** command will print out the contents of the logs that have been re
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | The name of the profile. This is important because (for example) the app.log shares the same log name for each profile.  The Node Operator will need to specify which profile to review. | **required** |
+| -p | `<profile_name>` | The name of the [profile](/validate/quick-start/prerequisites#-profile-table). This is important because (for example) the app.log shares the same log name for each profile.  The Node Operator will need to specify which profile to review. | **required** |
 | -l| `<log_name>` | Name of the log that you would like to review.  see [log types](#log-types) | **required** |
 | -g | `<word>` | filter out (*grep*) the word `<word>`. This is case insensitive. | **optional** |
 | -f | None | `follow` the log line by line.  As a new line is added to the log during execution of user or program initiated elements that might print to the log file being monitored. To cancel out of the "-f" command you will simultaneously press and hold the control `ctrl key` on your keyboard and press the `c` key. | **optional** |
@@ -2149,7 +2320,7 @@ Nodes built with recommended security practices cannot retrieve a p12 file or ot
 | :------: | :------: | :------ | :------: |
 | --type | p12  | This option will locate all `p12` files associated with your node.  If the optional `-p` parameter is included with the command, **only** the p12 associated with the profile requested will be moved and setup for access.  | **required** |
 |   | file `<path/tofile>` | This option will locate the file on our node identified by the succeeding path, move the file, and setup access. | **required** |
-| -p | `<profile_name>` | Used in conjunction with the `--type p12` option, this will allow you to retrieve the `p12` file associated specifically with the profile requested.  | **optional** |
+| -p | `<profile_name>` | Used in conjunction with the `--type p12` option, this will allow you to retrieve the `p12` file associated specifically with the [profile](/validate/quick-start/prerequisites#-profile-table) requested.  | **optional** |
 | --cleanup | file `<path/tofile>` | The option is recommended to be used after the file has been properly downloaded and can now be removed from the local system administrators account. If used with the `--type p12` this command does not need the `<path_to_file>` and will remove all `p12` files located in the root of the Node Administrator's home directory. | **optional** |
 
 :::caution Recommended
@@ -2216,7 +2387,7 @@ You may find a usage guide [here](/validate/resources/send-logs).
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | which profile are you attempting to glean logs from. | **optional** |
+| -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you attempting to glean logs from. | **optional** |
   
 > #### Examples
 - Help screen
@@ -2233,7 +2404,3 @@ sudo nodectl send_logs -p <profile_name>
 ```
 sudo nodectl -sl -p <profile_name>  
 ```
-
-
-
-

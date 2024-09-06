@@ -20,7 +20,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ### Bottom Line
 
-This documentation will offer the Node Operator a step-by-step walk through designed to help perform a **new** installation with an **existing** p12 private key store.
+This documentation will offer the Node Operator a step-by-step walk through designed to help perform a **new** installation with an **existing** p12 private keystore.
 
 ### Explained
 

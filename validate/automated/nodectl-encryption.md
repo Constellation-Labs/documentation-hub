@@ -16,7 +16,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-Prior to version `v2.13.0` of nodectl, the passphrase responsible for unlocking your p12 key store that contains the private and public keys necessary to access your hot wallet and to digitally sign your validated data, was **unencrypted**.  
+Prior to version `v2.13.0` of nodectl, the passphrase responsible for unlocking your p12 keystore that contains the private and public keys necessary to access your hot wallet and to digitally sign your validated data, was **unencrypted**.  
 
 Optionally, nodectl has added the ability to encrypt the p12 passphrase, within the persistent configuration file that nodectl requires to perform its functionality. 
 
@@ -298,7 +298,7 @@ nodectl will detect that our passphrase is set to encrypted, via the configurati
 <br />
   Please reset specific dedicated profile passphrases
   via the configurator to resume nodectl's ability to automate
-  processes that require the p12 key store elements to
+  processes that require the p12 keystore elements to
   function.<br />
 <br />
   Alternatively, you can resume using --pass &lt;passphrase&gt;

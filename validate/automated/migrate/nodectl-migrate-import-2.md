@@ -52,7 +52,7 @@ You may choose option 2 from the menu 👆 above for to `input manual entry`.
 
 If you do not receive a warning, you can skip this section and [continue back to the nodectl installation](/validate/automated/install/nodectl-install-services), until the end of the installation.
 
-At the request for a manual entry, we can enter the fully qualified path to your p12 key store.
+At the request for a manual entry, we can enter the fully qualified path to your p12 keystore.
 
 ### Manual P12 Entry
 
@@ -64,7 +64,7 @@ At the request for a manual entry, we can enter the fully qualified path to your
 If you enter in <kbd>a</kbd>+<kbd>Enter</kbd> the p12 migration will be aborted, and nodectl will continue the installation creating a **new** p12.
 
 :::warning CANCEL IMPORT 
-If you choose the <kbd>a</kbd> option, the p12 import will be cancelled and the installation will continue.  nodectl will create a new p12 key store.
+If you choose the <kbd>a</kbd> option, the p12 import will be cancelled and the installation will continue.  nodectl will create a new p12 keystore.
 :::
 
 ### Continue

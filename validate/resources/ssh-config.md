@@ -41,7 +41,7 @@ Ports **8000-9999** may be reserved for metagraphs and Global Layer 0, therefore
 
 ### Before you Begin
 
-Make sure you have your `p12` private key store backed up before you continue this procedure!
+Make sure you have your `p12` private keystore backed up before you continue this procedure!
 
 See documentation to backup your `p12` for [Macintosh](/validate/resources/p12-backup-mac) or [Windows](/validate/resources/p12-backup-win).
 

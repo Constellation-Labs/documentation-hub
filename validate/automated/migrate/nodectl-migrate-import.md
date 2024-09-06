@@ -27,12 +27,12 @@ When asked if we are migrating over an existing p12 private key, we will enter <
 nodectl will warn you that we need to upload your existing **p12** file; however, we should have already done this via the instructions from **how to upload your p12** section of this documentation.
 
 #### Have not uploaded p12
-If you have not uploaded your p12 key store file, enter <kbd>y</kbd> here 👇 to exit the installation. 
+If you have not uploaded your p12 keystore file, enter <kbd>y</kbd> here 👇 to exit the installation. 
 
 [Upload your existing p12](/validate/automated/migrate/nodectl-migrate-upload) to your VPS and repeat the previous steps to return to this point in the documentation.
 
 #### Have uploaded p12
-Otherwise if we have already uploaded our p12 key store file, we can hit the <kbd>n</kbd> key.
+Otherwise if we have already uploaded our p12 keystore file, we can hit the <kbd>n</kbd> key.
 
 <MacWindow>
   BEFORE WE BEGIN <br />

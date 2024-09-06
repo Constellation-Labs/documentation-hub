@@ -17,7 +17,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-## Migrate a v1 P12 Key Store
+## Migrate a v1 P12 Keystore
 
 Constellation Network has invoked a new **p12** file standard for accessing the **Constellation Network Hypergraph and metagraphs**.
 

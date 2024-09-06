@@ -186,7 +186,7 @@ Set ALL profile p12 wallets to Global? [y] <b>y</b>
 </MacWindow>
 
 ## ◽ Preserve P12 details
-We will preserve our p12 key store configuration settings.
+We will preserve our p12 keystore configuration settings.
 
 <MacWindow>
 Preserve global p12 details? [n] <b>y</b>
