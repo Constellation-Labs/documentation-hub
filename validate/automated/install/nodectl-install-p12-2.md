@@ -16,7 +16,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-Handling the **p12** private key store alias creation.phrase.
+Handling the **p12** private keystore alias creation.phrase.
 
 ### Create p12 alias
 

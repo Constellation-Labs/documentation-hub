@@ -78,8 +78,8 @@ location of keys:
    - on this USB stick
    - local mac directory: /home/myuser/.ssh/
 
-p12 key store name (hot wallet): myp12name.p12
-p12 key store passphrase: abc13efg6abc13
+p12 keystore name (hot wallet): myp12name.p12
+p12 keystore passphrase: abc13efg6abc13
 
 VPS IP: 113.113.113.113
 VPS SSH port: 22
@@ -141,8 +141,8 @@ location of keys:
    - on this USB stick
    - <enter saved location here>
 
-p12 key store name (hot wallet): myConstellationP12File.p12
-p12 key store passphrase: abc123abc123!@#
+p12 keystore name (hot wallet): myConstellationP12File.p12
+p12 keystore passphrase: abc123abc123!@#
 
 VPS IP: 113.113.113.113
 VPS SSH port: 22

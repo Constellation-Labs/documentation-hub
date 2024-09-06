@@ -57,4 +57,4 @@ Creating [Node] directories.................... complete<br />
 If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/migrate/nodectl-migrate-import-2); otherwise continue forward.
 :::
 
-The screen will clear, and we will be ready to handle our **p12** key store details.
+The screen will clear, and we will be ready to handle our **p12** keystore details.

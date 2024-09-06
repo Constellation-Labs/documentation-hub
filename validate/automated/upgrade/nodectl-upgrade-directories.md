@@ -35,7 +35,7 @@ Advanced users may want to transfer these files to a secondary backup directory 
 - p12 file
 - SSH private and public key
 
-There should not be a backup of your p12 key store file in the backup directory.
+There should not be a backup of your p12 keystore file in the backup directory.
 :::
 
 #### new encryption feature important note

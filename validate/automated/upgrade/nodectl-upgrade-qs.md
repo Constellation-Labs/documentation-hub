@@ -70,7 +70,7 @@ nodectl will auto populate the current version of Tessellation for you.  You can
 **recommendation**: just hit <kbd>enter</kbd> to accept the default.
 
 ### Do you want to encrypt your passphrase?
-As of `v2.13.0`, nodectl has a new feature that will allow you to encrypt your Node's hot wallet passphrase in the configuration.  This will further increase your security if your configuration file is obtained or viewed by someone other than the owner of the wallet (p12 key store file).
+As of `v2.13.0`, nodectl has a new feature that will allow you to encrypt your Node's hot wallet passphrase in the configuration.  This will further increase your security if your configuration file is obtained or viewed by someone other than the owner of the wallet (p12 keystore file).
 
 **recommendation**: <kbd>y</kbd>
 
@@ -122,7 +122,7 @@ sudo nodectl upgrade -ni
 If you do not have your p12 passphrase in your configuration (advanced users) you can issue the `--pass` option at the command line followed by your passphrase to initiate the upgrade.
 
 :::info SUGGESTION
-You should utilize passphrase encryption over not supplying the passphrase for our p12 key store.  This will prevent the need to supply the passphrase on the command line before every command. 
+You should utilize passphrase encryption over not supplying the passphrase for our p12 keystore.  This will prevent the need to supply the passphrase on the command line before every command. 
 
 *This will eliminate the concern of having bash history cached at the terminal session.*
 :::

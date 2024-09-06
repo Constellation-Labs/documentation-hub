@@ -186,7 +186,7 @@ Set ALL profile p12 wallets to Global? [y] <b>y</b>
 </MacWindow>
 
 ## ◽ Preserve P12 details
-We will preserve our p12 key store configuration settings.
+We will preserve our p12 keystore configuration settings.
 
 <MacWindow>
 Preserve global p12 details? [n] <b>y</b>
@@ -280,6 +280,10 @@ Do you want to [enable] auto_resart? [y] y
   - auto_restart
   - auto_upgrade
   - on boot
+
+## ◽ Handling Old Backups
+After completing this migration, any backups will now be rendered irrelevant. During the next [upgrade](/validate/automated/nodectl-commands#upgrade), it should be a good opportunity to clear your backups when prompted by the upgrade command.
+
 
 ## ◽ Completed
 After the final steps your Node should be successfully on the cluster.  You can validate that your node is online.

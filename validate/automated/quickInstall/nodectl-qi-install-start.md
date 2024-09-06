@@ -29,9 +29,9 @@ ubuntu@ip-172-31-23-246:~$ sudo nodectl install --quick-install
 
 The values your Node will obtain from a default installation:
 - username: `nodeadmin`
-- p12 key store name: `nodeadmin.p12`
-- p12 key store alias: `nodeadmin-alias`
-- p12 key store location: `/home/nodeadmin/tessellation`
+- p12 keystore name: `nodeadmin.p12`
+- p12 keystore alias: `nodeadmin-alias`
+- p12 keystore location: `/home/nodeadmin/tessellation`
 
 ## Using custom values
 
