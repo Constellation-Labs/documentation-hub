@@ -23,13 +23,9 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 # nodectl
 
-## Introduction
+## ◽ Introduction
 
-This document compliments the nodectl [help command](#help) reference offered through execution of a node running the nodectl utility. 
-
-
-
-
+This document complements the nodectl [help command](#help) command reference available when running the nodectl utility on your node.
 
 ### What is an option and parameter?
 
@@ -99,7 +95,7 @@ Commands that create the need for pagination will generally offer a `-np` (*no p
 
 
 
-## Command References
+## ◽ Command References
 ---
 
 
@@ -145,7 +141,7 @@ sudo nodectl status help
 
 
 
-## Service Change Commands
+## ◽ Service Change Commands
 
 ### start
 ---
@@ -179,17 +175,21 @@ The **`stop`** command takes a single [parameter](#what-is-an-option-and-paramet
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | stops the service related to the [profile](/validate/quick-start/prerequisites#-profile-table) name supplied. | **required** |
+| --leave \| -l  | none | You may use `-l` or the long option `--leave` to force a [leave](#leave) against a cluster (recommended) in the event that the [profile's](/validate/quick-start/prerequisites#-profile-table) cluster is in a state where it is recommended to `leave` the cluster first. | **optional** |
 
 > #### Examples
-- Help screen
+- Show the help screen.
 ```
-sudo nodectl stop -p dag-l0 help  
+sudo nodectl stop help 
 ```
-- Stop profile named `dag-l0`
+- Stop profile named `dag-l0`.
 ```  
 sudo nodectl stop -p dag-l0
 ```
-
+- Stop profile named `dag-l0` and force a `leave`.
+```  
+sudo nodectl stop -p dag-l0 --leave
+```
 
 
 
@@ -219,7 +219,7 @@ sudo nodectl restart -p dag-l0 help
 ```  
 sudo nodectl restart -p all
 ```
-- Start profile named `dag-l0`
+- Restart profile named `dag-l0`
 ```  
 sudo nodectl restart -p dag-l0
 ```
@@ -250,7 +250,7 @@ After a `restart_only` is executed, the profile should end in an `ReadyToJoin` s
 
 
 
-## Cluster Change Commands
+## ◽ Cluster Change Commands
 
 
 
@@ -308,7 +308,7 @@ sudo nodectl join -p dag-l0
 
 
 
-## Node Operations
+## ◽ Node Operations
 
 
 
@@ -317,20 +317,15 @@ sudo nodectl join -p dag-l0
 
 The **`auto_restart`** command takes several [parameters](#what-is-an-option-and-parameter).
 
-This feature is **disabled**, by default. 
+This feature is **disabled**, by default. You can enable this feature by issuing: 
+```
+sudo nodectl configure -e
+```
+Option <kbd>r</kbd>
+
+- Find details of the configure command [here](#configure). 
 
 **`auto_restart`** is a special feature of nodectl that will continuously monitor your node to make sure the various profiles are *on the cluster* (Hypergraph or metagraphs).
-
-| Monitor to keep |
-| :--- |
-| Each profile's state on the cluster is in `Ready` state. |
-| The node's `session` is concurrent with the cluster's `session`. |
-  
-:::success IMPORTANT
-The Node Operator/Administrator should use nodectl's configuration profile to enable/disable this feature. Although you can enable **`auto_restart`** (also with the **`auto_upgrade`** feature) from the command line, you should use the [configure command](#configure) to enable the feature.  
-
-This will allow you to keep `auto_restart` working properly throughout the use of nodectl.
-:::
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :----: | :----: | :---- | :----: |
@@ -339,81 +334,18 @@ This will allow you to keep `auto_restart` working properly throughout the use o
 | None | restart | disable and then enable the `auto_restart` feature | **optional** |
 | None | status | display the `auto_restart` and `auto_upgrade` feature status | **optional** |
 | None | check_pid | display the `process id` of the process that is currently running the `auto_restart` feature. | **optional** |
-| --auto_upgrade | None | enable the `auto_upgrade` feature with the `auto_restart` service. | **optional** |
+| --auto_upgrade | None | enable the `auto_upgrade` feature with the `auto_restart` service. *Must be accompanied by the `enable` option.* | **optional** |
 
-:::danger IMPORTANT WARNING  
-Do **not** rely on `auto_restart` feature completely. `auto_restart` is **not perfect** and should be used as a tool to help keep your node up in a consistent fashion; however, it may **not be fool proof**, and you should still monitor your node manually to make sure it stays online with the proper known cluster session.
+- [list of monitoring ](/validate/automated/nodectl-autorestart#-what-does-nodectl-monitor)
+- [timing](/validate/automated/nodectl-autorestart#-what-does-nodectl-monitor)
+- [Manual interoperability](/validate/automated/nodectl-autorestart#-interoperability)
+- [auto_upgrade](/validate/automated/nodectl-autorestart#-what-is-auto-upgrade)
+- [passphrase requirement](/validate/automated/nodectl-autorestart#-passphrase-requirement)
+
+:::danger **RELIANCE**
+Do not rely entirely on the `auto_restart` feature. While auto_restart is a useful tool for keeping your node consistently up, it is not foolproof. You should still manually monitor your node to ensure it stays online and connected to the correct cluster session.
 :::  
-
-nodectl will processing each profile in its own thread (`i/o`).  
-
-nodectl will wait a randomly set time (per thread) and check the node's condition after each successive random sleep timer expires.
-
-| activate `auto_restart` identifiers |
-| :--- |
-| Its service in an inactive state |
-| Node's cluster state is not `Ready` |
-| The node's known cluster session does **not** match the cluster's known session. |
   
-If the **session** of the cluster does **not** match the node **session** that was established at the cluster's genesis (at the beginning of the cluster's latest initialization), an `auto_restart` will be triggered. 
-
-The session will change if:
-- cluster is at genesis
-- a cluster restart is executed
-- a roll-back is identified. 
-   
-If your node is currently joined to an older session it will no longer be participating on the proper cluster (what can be considered a "*floating island*"), `auto_restart` will attempt to correct the situation.
-  
-:::warning IMPORTANT
-An auto_restart may take up to ~18 minutes to complete.  
-:::
-
-These long executions are because the node will detect one or both profiles down and restart the Global Hypergraph first. nodectl will then attempt to bring up any metagraphs.  To avoid timing conflicts with other node's that may also have `auto_restart` enabled, `auto_restart` has random timers put in place throughout a restart process.  
-
-nodectl will need to properly link your metagraph to the Global Hypergraph. 
-
-It is important to understand this is a background and unattended process, the delay is created on **purpose**.
-  
-It is recommended by the developers to link a metagraph (*that requires this type of setup*) through your node's own Global Hypergraph connection.
-  
-:::warning PATIENCE
-If you are using `auto_restart` **please remember** if you are physically monitoring your node while it is enabled, you need to exercise **patience** to allow it to figure out how to get back online by itself as necessary.  
-:::
-
-Forcing a manual restart (or any service affecting command) will **disable** `auto_restart`.  If enabled in the configuration, nodectl will attempt to re-enable `auto_restart` after any command that requires it to be temporarily disabled.  If the Node Operator does not have `auto_restart` enabled in the configuration, it will not re-enable after-the-fact.
-  
-In order to avoid duplicate or unwanted behavior such as your node restarting when you do not want it started, the auto_restart feature will automatically disable if you attempt to issue any command that manipulates the services.
-- leave
-- stop
-- start
-- join
-- restart
-- upgrade
-
-#### AUTO UPGRADE
-
-You can enable this feature by issuing: `sudo nodectl configure -e` (find details of the [configure command here](#configure)). 
-  
-**`auto_upgrade`** can only be enabled with the `auto_restart` feature enabled.
-  
-Optionally if you are not using the configuration, you can enable auto_upgrade by issuing the optional `--auto_upgrade` [option](#what-is-an-option-and-parameter) when enabling `auto_restart` from the command line.
-  
-During a Tessellation upgrade, the session will change.  This will trigger an auto restart.  During the restart, nodectl will identify the version of Tessellation on the node verses what is running on the cluster. If it does not match, nodectl will attempt to upgrade the Tessellation binaries before  continuing.
-  
-:::danger IMPORTANT
-nodectl will not `auto_upgrade` itself.  
-
-Newer versions of nodectl may require a upgrade be executed in order to update any system services or files that may have changed [for any of many reasons].
-:::
-
-#### auto_restart/auto_upgrade passphrase requirement  
-:::warning Hidden passphrase
-nodectl will not work unless the `p12 passphrase` is present in the configuration file.  In order to join the network unattended, nodectl will need to know how to authenticate against the Hypergraph.
-:::
-
-Persist auto_restart in configuration and auto_upgrade *choose Edit --> Auto Restart Section*.
-
-[```sudo nodectl configure```](#configure)
 
 > #### Examples
 - Help screen
@@ -479,7 +411,7 @@ sudo nodectl clean_files help
 ```
 - Clean logs of type logs
 ```
-sudo nodectl clean_files  -t logs
+sudo nodectl clean_files -t logs
 ```   
 - or
 ```
@@ -529,6 +461,8 @@ sudo nodectl check_minority_fork -p dag-l0
 
 The **`check_connection`** command will execute a search on the currently connected Hypergraph or metagraph cluster. 
 
+The command will compare the nodes found on a source peer against the nodes found on an edge peer.  
+
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
 | check_connection  | -cc | >v1.x.x |
@@ -537,13 +471,13 @@ The **`check_connection`** command will execute a search on the currently connec
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question do we want to review. | **required** |
 | -s | `<ip_address or hostname>` | identify a **source** node to use specifically by the `check_connection` command, to test against the **edge** node. | **optional** |
-| -e | `<ip_address or hostname>` | identify a **edge** node to compare against the **source** node. | **optional** | 
+| -e | `<ip_address or hostname>` | identify an **edge** node to compare against the **source** node. | **optional** | 
 
-If the `-s` [option](#what-is-an-option-and-parameter) is not specified, nodectl will pick a random node on the cluster specified by the `-p` profile required parameter.
+- The **`-s`** [option](#what-is-an-option-and-parameter) may be supplied to request a lookup on a specific peer.  If not specified, nodectl will pick a random peer on the cluster; specified by the `-p` profile (required) parameter.
+
+- The **`-e`** [option](#what-is-an-option-and-parameter) may be supplied to request a lookup on a specific peer edge device that is not the local node.  If not specified, nodectl will pick a random peer on the cluster; specified by the `-p` profile (required) parameter.
   
-It will search against the node the `check_connection` command was executed upon unless an **`edge device`** to check against the `source` is specified by an optional `-e` [option](#what-is-an-option-and-parameter).
-  
-The command will compare the nodes found on the source against the nodes found on the edge.  If the nodes connected to each do not match, the command will display those nodes that are missing between the two.
+If the nodes connected to each do not match, the command will display those nodes that are missing between the two.
 
 ##### Dictionary
 | symbol | description |
@@ -1128,6 +1062,31 @@ sudo nodectl market
 
 
 
+### node_last_snapshot
+---
+The **`node_last_snapshot`** command takes a single [option](#what-is-an-option-and-parameter).
+
+This command reviews the Tessellation `app.log` to find the last instance of a downloaded snapshot for the specified `<profile_name>`.
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+|  -p | `<profile_name>` | The [profile](/validate/quick-start/prerequisites#-profile-table) name to review in order to locate the latest downloaded snapshot.| **required** |
+
+> #### Examples
+- Help screen
+```
+sudo nodectl node_last_snapshot -p dag-l0 help  
+```
+- Review snapshots for profile named `dag-l0`
+```  
+sudo nodectl node_last_snapshot -p dag-l0
+```
+
+
+
+
+
+
 ### peers
 ---
 
@@ -1368,6 +1327,42 @@ ssudo nodectl sec help
 sudo nodectl sec
 ```
 
+### show_cpu_memory
+---
+
+The **`show_cpu_memory`** command does not take any parameters.
+  
+nodectl will assess the CPU and memory to determine the percentage of usage detected.
+
+To provide more reliable results, nodectl will perform 10 iterations of checking CPU and memory usage before averaging the results and displaying them.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_cpu_memory  |  -scm  | >v2.13.x |
+
+| Output Header |  Description | 
+| :---: | :--- |
+| CURRENT CPU | The averaged results of all iterations. |
+| CURRENT MEMORY | The averaged results of all iterations. |
+| CPU | Is there a `PROBLEM` with the CPU utilization or is the utilization `OK` |
+| MEMORY | Is there a `PROBLEM` with the memory utilization or is the utilization `OK` |
+| THRESHOLD | The current percentage that may be utilized on the system before changing the value of the `CPU` or `MEMORY` header from `OK` to `PROBLEM`. |
+| Individual Iterations Results | Static values found before averaging the results |
+        
+> #### Examples
+- Help screen
+```
+sudo nodectl show_cpu_memory help
+sudo nodectl -scm help
+```
+- Execute the `show_cpu_memory` command.
+```
+sudo nodectl show_cpu_memory
+```
+
+
+
+
 
 ### show_current_rewards
 ---
@@ -1409,7 +1404,7 @@ If a **-s** `<snapshot_history_size>` is specified:
 - The default value is `50`.
   
 :::note 
-Currently this command only searches on the **MainNet Layer0 Global Hypergraph** network.
+Currently this command only searches on the **MainNet Layer0 global Hypergraph** network.
 ::: 
 
 If the **-w** `<dag_wallet_address>` is used, the **-p** `<profile_name>` will be ignored unless the profile fails to be present on the node (exist in the configuration).
@@ -1438,6 +1433,40 @@ sudo nodectl show_current_rewards --csv
 ```
 sudo nodectl show_current_rewards --csv --output test.csv
 ```
+
+
+### show_node_proofs 
+---
+
+The `show_node_proofs` command will display the current known snapshot proofs that this node is working on.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_dip_error  |  -snp | >v2.10.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you attempting to display the current node proofs from. | **required** |
+| -ni | none | By default, the `dag` command will [paginate](#what-is-pagination) the output, the `-np` flag will force `no pagination` during command output printing. | **optional** | 
+| --ni | none | By default, the `dag` command will [paginate](#what-is-pagination) the output, the `--np` flag will force `no pagination` during command output printing. | **optional** |   
+> #### Examples
+- Help screen
+```
+sudo nodectl show_node_proofs help
+sudo nodectl -snp help
+```  
+- Execute `show_node_proofs`.
+```
+sudo nodectl show_node_proofs -p <profile_name>  
+sudo nodectl -snp -p <profile_name>  
+```
+- Execute `show_node_proofs` without pagination.
+```
+sudo nodectl show_node_proofs -p <profile_name> --ni 
+sudo nodectl -snp -p <profile_name> --ni 
+```
+
+
 
 
 
@@ -1600,7 +1629,7 @@ sudo nodectl update_seedlist
 
 
 
-## Distribution Operations
+## ◽ Distribution Operations
 
 
 
@@ -1741,7 +1770,7 @@ sudo nodectl whoami -p <profile> -id <node_id>
 
 
 
-## p12 Operations
+## ◽ p12 Operations
 
 ### create_p12
 ---
@@ -1982,7 +2011,38 @@ sudo nodectl passwd12
 
 
 
-## Configuration
+
+### show_p12_details  
+---
+
+The **`show_p12_details`** command will show the nodes p12 keystore details.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_p12_details  |  -spd  | >v2.12.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :----: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you seeking the private keystore details from. | **required** |
+  
+:::caution NOTE
+This command will not show the [private key](#export_private_key) of our p12's primary Constellation Network wallet.
+:::
+
+> #### Examples
+- Help File
+```
+sudo nodectl show_p12_details help
+```
+- View p12 details for the profile `dag-l0`.
+```
+sudo nodectl show_p12_details -p dag-l0
+sudo nodectl -spd -p dag-l0
+```
+
+
+
+## ◽ Configuration
 
 
 
@@ -2096,6 +2156,38 @@ sudo nodectl install --quick-install --user bob --password mypassword  --p12-pas
 ```
 
 
+
+
+
+### restore_config
+---
+The **`restore_config`** command does not accept any options or parameters.
+
+When executed, `restore_config` provides a list of previously backed-up configuration files, allowing you to select and restore the desired configuration.
+
+
+:::caution
+Please be diligent and exercise caution when restoring a configuration, as an invalid or incompatible configuration could corrupt your node or cause issues with nodectl's functionality.
+:::
+
+nodectl will display the contents of your backup directory, identify any configuration files, and provide a list of available configurations for you to choose from.
+
+> #### Examples
+- Help screen
+```
+sudo nodectl restore_config help  
+```
+- Stop profile named `dag-l0`
+```  
+sudo nodectl restore_config
+```
+
+
+
+
+
+
+
 ### upgrade  
 ---
 
@@ -2207,7 +2299,7 @@ The **`view_config`** command will show a [paginated](#what-is-pagination) view 
 
 
 
-## Troubleshooting
+## ◽ Troubleshooting
 
 
 
@@ -2216,7 +2308,7 @@ The **`view_config`** command will show a [paginated](#what-is-pagination) view 
 
 With the **`check_versions`** command, nodectl will go out and review the latest versions of both Constellation Network Tessellation and nodectl. 
 
-nodectl will review the current github repo and compare it to the versions running on the node. 
+nodectl will review the current GitHub repo and compare it to the versions running on the node. 
 
 It will report back `True` or `False` based on whether the versions match.
 
@@ -2403,4 +2495,30 @@ sudo nodectl send_logs -p <profile_name>
 ```
 ```
 sudo nodectl -sl -p <profile_name>  
+```
+
+
+### show_dip_error 
+---
+
+The `show_dip_error` command is designed to help identify the root cause error that was logged prior to the node being placed in a state where it is stuck in `WaitingForDownload`.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_dip_error  |  -sde | >v2.10.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you attempting to glean logs from. | **required** |
+  
+> #### Examples
+- Help screen
+```
+sudo nodectl show_dip_error help
+sudo nodectl -sde help
+```  
+- Execute `show_dip_error`.
+```
+sudo nodectl show_dip_error -p <profile_name>  
+sudo nodectl -sde -p <profile_name>  
 ```
