@@ -23,7 +23,7 @@ In this tutorial, Node Operators will learn how to build and manage a validator 
     <p>Setup a Virtual Private Server (VPS) in the cloud including SSH keys; to install your Constellation Node.</p>
   </DocsCard>
 
-  <DocsCard header="NODECTL User Guide" href="/validate/automated/nodectl" img="/img/validator_nodes/nodes_logo.jpg">
+  <DocsCard header="NODECTL User Guide" href="/validate/automated/getting-started/nodectl-getting-started" img="/img/validator_nodes/nodes_logo.jpg">
     <p>Turn your VPS into a Constellation Node using Constellation Network's <b>nodectl</b> utility.</p>
   </DocsCard>
 
