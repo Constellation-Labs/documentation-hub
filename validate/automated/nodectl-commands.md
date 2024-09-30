@@ -644,7 +644,7 @@ Node restart service does not need to be restarted because pid
 | Full Connection | Both the source node picked by nodectl and the local **edge** node that executed the `check_source_connection` command can see each other **`True`** or cannot **`False`**. |
 | Profile | The profile that this command was run against. |
 | Source -> State | Can the **SOURCE** node see the edge node **`True `** or **`False`**. The source node's state is in **`Ready`** state. |
-| Edge -> State | Can the **EDGE** node see the edge node **`True`** or **`False`**. The edge node's state is in **`Ready`** state. |  
+| Edge -> State | Can the **EDGE** node see itself **`True`** or **`False`**. The edge node's state is in **`Ready`** state. |  
 
 > #### Examples
 - Help screen
@@ -711,8 +711,6 @@ The **`check_seedlist_participation`** command does not take any [parameters](#w
 | :---: | :---: | :---: | >v2.7.x |
 | check_seedlist_participation | -cslp  |
 
-*This command is a temporary feature of nodectl designed for pre-PRO analysis and setup only.  It will be deprecated as soon as no longer necessary.*
-
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | related to the [profile](/validate/quick-start/prerequisites#-profile-table) to verify access permissions. | **required** | 
@@ -764,30 +762,50 @@ nodectl will:
 
 
 
+### console
+---
 
+The **`console`** command does not take any parameters.
 
+This is a special utility command that allows you to use a `menu driven` methodology towards issuing the most common commands on your node.  There are three (*opinionated*) menus of commands.
 
+- **Main Menu**: Hold the most common commands.
+- **General Menu**: Holds commands that are commonly useful.
+- **Troubleshooting Menu**:  Holds common commands used for troubleshooting purposes.
+
+Simply issue the `console` command, select the letter corresponding to the predefined commands, and that command will execute.  After completion, nodectl will terminate the process and return the Node Operator to the terminal prompt.  
+
+:::note mobile
+The [mobile](#mobile) command is synonymous with the `console` command; however, it will return to the main menu and allow the Node Operator to issue "the next" command, as needed, in an iterative fashion.
+:::
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| console  | | >v2.15.0 |
 
 
 ### download_status
 ---
-The **`download_status`** command is **experimental** and may not always be accurate. However, it makes a best-effort attempt to review the node's logs in real time to estimate the progress of the `DownloadInProgress` state and how much time it may take to complete.
 
-During a node's join process, to become part of the cluster for the profile(s) configured, the node undergoes a series of essential initialization tasks to ensure it integrates and functions properly as a peer on the cluster.
+The **`download_status`** command is **experimental** and may not always be accurate.
 
-Once your node completes the initial phases of authentication and becomes a peer on the cluster, it must synchronize and gain knowledge about the known blockchain before actively participating in consensus and earning rewards.  
-  
-Constellation Network employs an incremental snapshot strategy to minimize the ingress "cost" for downloading blockchain snapshots. When a new node joins the cluster, it will undergo a one time extended period of learning about the entire blockchain. For an existing node rejoining the cluster, it is required to calculate the differences between its previous state and the current blockchain state.
-    
-Following authentication, your node may temporarily remain in the WaitingForDownload state, which is a relatively inactive phase with no notable progress.  Due to this, when you execute the download_status command, it will monitor your node's status, via a timer [verses a progress indicator], continually checking until the node transitions to `DownloadInProgress`.
-  
-When in `DownloadInProgress` state, nodectl will actively oversee your node's activities, presenting a progress indicator on the screen that provides an estimate of the completion percentage for this process.  
-  
+It makes a best-effort attempt to review the node's logs in real time to estimate the progress of the DownloadInProgress state and how long it may take to complete.
+
+When a node begins the process of joining the cluster for the configured profile(s), it undergoes a series of essential initialization tasks to ensure proper integration and functionality as a peer in the cluster.
+
+After your node completes the initial phases of authentication and becomes a peer on the cluster, it must synchronize and gather knowledge of the existing blockchain before it can actively participate in consensus and earn rewards.
+
+Constellation Network uses an incremental snapshot strategy to minimize the "cost" of downloading blockchain snapshots. When a new node joins the cluster, it undergoes an extended one-time process of learning the entire blockchain. For an existing node rejoining the cluster, the node calculates the differences between its previous state and the current blockchain state.
+
+Following authentication, your node may temporarily enter the `WaitingForDownload` state, a relatively inactive phase where little to no progress occurs. Due to this, when you execute the `download_status` command, it monitors your node's status using a timer (as opposed to a progress indicator), continually checking until the node transitions to DownloadInProgress.
+
+Once in the `DownloadInProgress` state, nodectl will actively monitor your node's activities, providing a progress indicator on the screen that estimates the completion percentage of this process.
+
 - Part 1: 
-Downloading snapshots: Above the progress indicator, you'll find the snapshots being downloaded to your node, displayed by their corresponding ordinal. This will be represented as a decreasing counter.
+When downloading snapshots, above the progress indicator, you'll see the snapshots being downloaded to your node, displayed by their corresponding ordinal number. This will be shown as a decreasing counter, indicating the progress of the downloads.
 
 - Part 2: 
-BlockAcceptanceManager: The progress indicator will be modified. You will see the "height" of the last snapshot block and the current "height" reached. This will be displayed as an increasing counter.
+BlockAcceptanceManager: The progress indicator will be adjusted. You will see the "height" of the last snapshot block and the current "height" being reached. This will be displayed as an increasing counter, reflecting the ongoing progress.
   
 To the right of the counters, you will see a differential counter to help ease the calculation of what is left to be processed from either part 1 or part 2.
 
@@ -853,7 +871,7 @@ sudo nodectl execute_starchiver -p <profile_name> --datetime --restart
 ### execute_tests
 ---
 
-The **`execute_tests`** command is used to assist in testing the various commands offered within nodectl, during development.  This command can also be used to learn the various commands that nodecl has to offer.  
+The **`execute_tests`** command is designed to assist in testing the various commands available within nodectl during development. It can also be used to familiarize yourself with the different commands that nodectl offers.
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
@@ -884,10 +902,12 @@ This command will attempt to find the requested peer on the current connected Hy
 
 The find command offers insight into the 
 - number of nodes on the cluster
-- number of nodes in **`Ready`** state
 - number of nodes in **`Observing`** state
+- number of nodes in **`WaitingForObserving`** state
+- number of nodes in **`DownloadInProgress`** state
 - number of nodes in **`WaitingForReady`** state
-    
+- number of nodes in **`Ready`** state
+
 It will show you the profile searched (required) and offer you confirmation that your node is seen on the cluster.
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
@@ -946,7 +966,7 @@ sudo nodectl find -p dag-l0 -s 10.2.2.2 -t 10.1.1.1
   
 #### Examples using `self` keyword
 ```
-sudo nodectl find -p dag-l0 -s self -t 10.1.1.1
+sudo nodectl find -p dag-l0 -s self -t 10.2.2.2
 ```
 ```
 sudo nodectl find -p dag-l0 -s 10.2.2.2 -t self
@@ -1035,7 +1055,7 @@ The command will list the Top 10 Crypto markets at the current moment in time. I
 :::warning
 This command is for recreation purposes **only**.  
 
-Constellation Network is not a financial advisor. Information obtained from CoinGecko and does not represent any opinions or financial advise of or from Constellation Network.
+Constellation Network is not a financial advisor. Information is sourced from CoinGecko and does not represent the opinions or financial advice of Constellation Network.
 :::
 
 | Title | Description | 
@@ -1046,7 +1066,7 @@ Constellation Network is not a financial advisor. Information obtained from Coin
 | Price| Current price at time of execution. | 
 | Market Cap | Market Capitalization |
 | Total Supply | Total supply of tokens |
-| ATH | **A**8ll **T**ime **H**igh price of the token |
+| ATH | **A**ll **T**ime **H**igh price of the token |
 
 > #### Examples
 - Help screen
@@ -1058,6 +1078,27 @@ sudo nodectl market help
 sudo nodectl market
 ```
 
+
+### mobile
+---
+
+The **`mobile`** command does not take any parameters.
+
+This is a special utility command that allows you to use a `menu driven` methodology towards issuing the most common commands on your node.  There are three (*opinionated*) menus of commands.
+
+- **Main Menu**: Hold the most common commands.
+- **General Menu**: Holds commands that are commonly useful.
+- **Troubleshooting Menu**:  Holds common commands used for troubleshooting purposes.
+
+Simply issue the `mobile` command, select the letter corresponding to the predefined commands, and that command will execute.  After completion, nodectl will return the Node Operator to the main menu.  
+
+:::note console
+The [console](#console) command is synonymous with the `mobile` command; however, the `console` command will terminate nodectl upon completion and return the Node Operator to the terminal prompt.
+:::
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| mobile | | >v2.15.0 |
 
 
 
@@ -1120,7 +1161,7 @@ If you do not use the `--basic` or `--extended` [options](#what-is-an-option-and
 #### Dictionary
 | abbrv | Description |
 | :--:  | :-- |
-| *  | Indicates the ip searched against was either the `edge` and `source` ip. |
+| *  | Indicates the ip found was either the `edge` and `source` ip as indicated by the `-t` option or the node that was randomly selected when the command was executed. |
 | i  | Initial State |
 | rj | ReadyToJoin State |
 | ss | StartingSession State |
@@ -1195,7 +1236,7 @@ This command performs a quick lookup for crypto prices via **CoinGecko's** publi
 :::warning
 This command is for recreation purposes **only**.  
 
-Constellation Network is not a financial advisor. Information obtained from CoinGecko and does not represent any opinions or financial advise of or from Constellation Network.
+Constellation Network is not a financial advisor. Information is sourced from CoinGecko and does not represent the opinions or financial advice of Constellation Network.
 :::
 
 | Title | Description | Title | Description | 
@@ -1208,7 +1249,7 @@ Constellation Network is not a financial advisor. Information obtained from Coin
 > #### Examples
 - Help screen
 ```
-ssudo nodectl price help
+sudo nodectl price help
 ```  
 - Execute the price command
 ```
@@ -1229,7 +1270,7 @@ The **`refresh_binaries`** command does not take any [parameters](#what-is-an-op
 
 This command will download and overwrite the existing Tessellation binaries files that are required to run your node.  The result of this command will be to download the binaries from the latest release and is independent of a system upgrade.
   
-This command can be used to refresh your binaries in the event that you have a corrupted system.
+This command can be used to refresh your binaries in the event that you have a corrupted or missing binary files.
   
 This command should be accompanied by the restart command in order to allow your node to utilize the new binary files.
   
@@ -1320,7 +1361,7 @@ example output
 > #### Examples
 - Help screen
 ```
-ssudo nodectl sec help
+sudo nodectl sec help
 ```  
 - Execute the sec command
 ```
@@ -1442,13 +1483,16 @@ The `show_node_proofs` command will display the current known snapshot proofs th
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
-| show_dip_error  |  -snp | >v2.10.x |
+| show_node_proofs  |  -snp | >v2.10.x |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you attempting to display the current node proofs from. | **required** |
 | -ni | none | By default, the `dag` command will [paginate](#what-is-pagination) the output, the `-np` flag will force `no pagination` during command output printing. | **optional** | 
-| --ni | none | By default, the `dag` command will [paginate](#what-is-pagination) the output, the `--np` flag will force `no pagination` during command output printing. | **optional** |   
+| --ni | none | By default, the `dag` command will [paginate](#what-is-pagination) the output, the `--np` flag will force `no pagination` during command output printing. | **optional** | 
+
+The command will display the `SnapShot Transaction ID` and `SnapShot Transaction Signature` for all proofs in the current consensus round that the node is participating in.
+
 > #### Examples
 - Help screen
 ```
@@ -1544,7 +1588,7 @@ sudo nodectl status -p dag-l0
 |  Title  | Description | 
 | ---: | :--- |
 | Service | What is the status of the service that runs this profile. |
-| Join State | The cluster state that the node is seen by the cluster. |
+| Join State | The state that the node is seen by the cluster when online. |
 | Profile | Which profile is being reported on. |
 | Public API TCP | The TCP port configured that is open to the public for API calls. |
 | P2P API TCP | The TCP port configured that is used for gossip peer to peer API communications. |
@@ -1587,12 +1631,12 @@ The **`update_seedlist`** command does not take any [parameters](#what-is-an-opt
 | -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you seeking the update seed list. | **required** |
 
 
-`update_seedlist` will pull down the latest seedlist from the Constellation Network repositories. This command can be used in the event your node is unable to authenticate (and therefor will not connect) to the network.  
+The **`update_seedlist`** command retrieves the latest seed list from the Constellation Network repositories. This command can be used if your node is unable to authenticate and, therefore, cannot connect to the network.
+
+Using the [`check_seedlist`](#check_seedlist) command, a node Operator can confirm if the node is seen on the access lists; if not, issue the `update_seedlist` command to attempt to correct the issue.
   
-Using the [`check_seedlist`](#check_seedlist) command, a node Operator  can confirm if the node is seen on the access lists; if not, issue the `update_seedlist` command to attempt to correct the issue.
-  
-:::note 
-If you update the seedlist and still receive a `False`, you may need to contact a Constellation Network support Administrator for further help. This can be done by accessing the Constellation Network official Discord server.
+:::caution 
+If you update the seed list and still receive a `False`, you may need to contact a Constellation Network support Administrator for further help. This can be done by accessing the Constellation Network official Discord server.
 :::    
 
 *This command is specific to current restrictions placed on the Hypergraph for controlled access prior to the PRO Score [proof of reputable observation] release.*
@@ -1741,7 +1785,7 @@ Optionally, you can use the optional `-id` option to map a `nodeid` to an `ip ad
   
 The `external IP` of your node is the address that allows your node to communicate with the rest of the systems on the Internet.  
 
-This is the address that your node will use to communicate with the rest of the decentralized nodes that make up the Hypergraph and/or metagraphs.  Your node will attempt to communications with via other nodes via p2p and public API requests.
+This is the address your node will use to communicate with the other decentralized nodes that make up the Hypergraph and/or metagraphs. Your node will attempt to establish communications with other nodes through peer-to-peer (p2p) connections and public API requests.
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -1876,7 +1920,7 @@ sudo nodectl dag -p dag-l0 -np
 
 The **`export_private_key`** command does not take any [parameters](#what-is-an-option-and-parameter).
   
-`export_private_key` will pull your private out of your p12 file and print it to the screen.
+`export_private_key` will expose your private key from your p12 file and print it to the screen.
   
 :::danger
 Do not share this private key with anyone that you do not completely trust with your financial assets.
@@ -2328,11 +2372,11 @@ It will report back `True` or `False` based on whether the versions match.
 > #### Examples
 - Help menu
 ```
-sudo nodectl check_version help
+sudo nodectl check_versions help
 ```
-- Execute the check_version command
+- Execute the check_versions command
 ```
-sudo nodectl check_version
+sudo nodectl check_versions
 ```
 
 
@@ -2400,7 +2444,7 @@ sudo nodectl logs -l nodectl
 
 This command instructs nodectl to prepare your p12 keystore or another file of your choosing to be downloaded directly by the Node Administrator’s non-root account. This is a useful command for backup procedures.
 
-Your p12 file(s) or the specified file will be located, copied to the root of the Node Administrator’s user directory, and have its permissions changed to allow retrieval directly from the Node Administrator’s account.
+Your p12 file(s) or the specified file will be located, copied to the root (beginning) of the Node Administrator’s user directory, and have its permissions changed to allow retrieval directly from the Node Administrator’s account.
 
 Nodes built with recommended security practices cannot retrieve a p12 file or other files created by nodectl using the non-root user. This command provides a solution to this restriction.
 
@@ -2521,4 +2565,42 @@ sudo nodectl -sde help
 ```
 sudo nodectl show_dip_error -p <profile_name>  
 sudo nodectl -sde -p <profile_name>  
+```
+
+
+
+
+
+
+
+### show_profile_issues 
+---
+
+The `show_profile_issues` command is designed to help identify possible causes for connection errors.  It will review the node's log file and attempt to categorize the resulting errors in the order of importance. 
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_profile_issues  | None | >v2.14.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | Which [profile](/validate/quick-start/prerequisites#-profile-table) are you attempting review for issues. | **required** |
+
+##### Result Header Descriptions
+| Result Header | Description |
+| :---: | :--- |
+| Profile | [profile](/validate/quick-start/prerequisites#-profile-table) used to lookup error(s). |
+| Error | What error was found? |
+| Possible Cause | What is the most common or likely reason for this error? |
+| Result | Possible result of this error message. |
+| Time | Timestamp of the error in question. |
+
+> #### Examples
+- Help screen
+```
+sudo nodectl show_profile_issues help
+```  
+- Execute `show_profile_issues`.
+```
+sudo nodectl show_profile_issues -p <profile_name>  
 ```
