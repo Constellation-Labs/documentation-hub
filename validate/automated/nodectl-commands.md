@@ -1603,10 +1603,35 @@ sudo nodectl status -p dag-l0
 
 
 
+### sync_node_time 
+---
 
+The **`sync_node_time`** command will update the Node's underlining Linux Debian distribution's datetime clock.  It will use the NTP service installed during nodectl installation to force an update of the Node's clock.
 
+This command displays the list of the known node States that you may find on the Cluster or that nodectl defines when not on the cluster.
 
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| sync_node_time  |  | >2.14.x |
 
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -v | none | Sync the node's time in verbose mode. | **optional** |
+
+  
+> #### Examples
+- Help screen
+```
+sudo nodectl sync_node_time help
+```
+- Execute the sync_node_time command
+```
+sudo nodectl sync_node_time
+```  
+- Execute using verbose mode
+```
+sudo nodectl sync_node_time -v
+```
 
 
 
@@ -1660,14 +1685,77 @@ sudo nodectl update_seedlist
 
 
 
+### update_version_object 
+---
+Due to long execution times and the importance of the node recognizing the versions of Tessellation and nodectl, the node maintains a version object file in the background, running as a service and updating every 2 minutes.
+ 
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| update_version_object  |  | v2.x.x |
+
+| [switch](#what-is-a-switch-and-parameter) | parameters | Description | Is [Switch](#what-is-a-switch-and-parameter) Required or Optional |
+| :----: | :---: | :--- | :----: |
+| -v |  |   This option can be used to verify that the contents of the versioning object is valid and contains the proper key pair values.. | **optional** |
+| --force |  | The version object will not be updated if it has already been updated within the last 2 minutes from when the command was issued.  If the `--force` option is utilized, the version object file will be forced to update regardless of timing. | **optional** |
+| --print |  | This option will print the contents of the version object to the console. | **optional** |
+
+The **`update_seedlist`** command retrieves the latest seed list from the Constellation Network repositories. This command can be used if your node is unable to authenticate and, therefore, cannot connect to the network.
+
+Using the [`check_seedlist`](#check_seedlist) command, a node Operator can confirm if the node is seen on the access lists; if not, issue the `update_seedlist` command to attempt to correct the issue.
+  
+:::caution 
+If you update the seed list and still receive a `False`, you may need to contact a Constellation Network support Administrator for further help. This can be done by accessing the Constellation Network official Discord server.
+:::    
+
+*This command is specific to current restrictions placed on the Hypergraph for controlled access prior to the PRO Score [proof of reputable observation] release.*
+        
+> #### Examples
+- Help screen
+```
+sudo nodectl update_version_oject help
+```  
+- Force an update to the versioning object.
+```
+sudo nodectl update_version_object --force  
+```  
+- Verify the versioning object.
+```
+sudo nodectl update_version_object -v  
+```
+- Print the versioning object.
+```
+sudo nodectl update_version_object --print
+```
 
 
 
+### verify_nodectl
+---
 
+The **`verify_nodectl`** command is a *special* command that attempts to authenticate the nodectl binary with a signature file located on the official GitHub repository of nodectl.
 
+This command will fetch the public key, digital signature file, and digital signature hash from the official Github repository.  It will then use those files to hash the `nodectl` binary and produce a `binary hash` file to compare with that found on the Github respository.
 
+If the hashes match, we are rest assured our nodectl is authentic.
 
+:::caution
+A man-in-the-middle (MITM) attack occurs when a hacker secretly intercepts communication between two parties or systems. The hacker, acting as a "middleman," can intercept the information and potentially impersonate files from nodectl's GitHub repository.
 
+To avoid a MITM attack, it is crucial to manually access the GitHub repository and review the public key and digital signature files for verification.
+:::
+
+| HEADERS | Description |
+| :---: | :----- |
+| PULBIC KEY | The publicly available key used to decrypt the signature file that was created by a `private key`.  The private key is owned by Constellation Network and not available or accessible. |
+| BINARY HASH | The hash created by using the public key to hash the `nodectl` binary. |
+| DIGITAL SIGNATRE | A copy of the hash that should be identical to the BINARY HASH if the nodectl binary is valid. |
+| VERIFICATION RESULT | This will either be a `green` success or `red` failure. |
+
+> #### Examples
+- Verify the nodectl binary
+```
+sudo nodectl verify_nodectl
+```
 
 
 
@@ -1773,6 +1861,91 @@ sudo nodectl reboot help
 sudo nodectl reboot
 ```
 
+
+
+
+
+
+### upgrade_vps
+---
+
+The `upgrade_vps` command provides a more user-friendly, non-technical way to ensure your VPS (or bare metal server) is up-to-date with the latest packages, utilities, security patches, and core distribution elements (such as kernels, services, etc.).
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| upgrade_vps  |  | v2.14.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| --ni |  | Issue an upgrade in non-interactive mode. nodectl will not ask any questions and will automatically select the default recommended options. *This does not apply to options marked in purple boxes*. | **optional** |
+| --reboot|  | Force nodectl to reboot the node (if required) without interaction from the Node Operator. | **optional** |
+
+The feature will offer you instructions on how to handle any interactive requirements, including handling `purple boxes`.
+
+:::caution
+During an upgrade, the Debian distribution may require the Node Operator to handle certain service configurations interactively.
+
+If this occurs, a purple box will appear with options and default settings already selected for you. Since we do not modify any default Debian distribution settings to run our node, you can accept the defaults. To do this, use the <kbd>Tab</kbd> key to navigate to the `OK` or `Confirm` boxes and then press <kbd>Enter</kbd> to accept.
+:::
+
+This feature updates the package lists to ensure the VPS's Linux distribution is aware of the latest available packages, followed by upgrading and installing any necessary elements.
+
+The `apt update` and `apt upgrade` commands will be executed through nodectl, eliminating the need for the user to run them directly from the Linux distribution.
+   
+> #### Examples
+- Help screen
+```
+sudo nodectl upgrade_vps help
+```  
+- Execute an update and upgrade.
+```
+sudo nodectl upgrade_vps
+```
+- Execute an update and upgrade in non-interactive mode.
+```
+sudo nodectl upgrade_vps --ni
+```
+- Execute an update and upgrade with a reboot.
+```
+sudo nodectl upgrade_vps --reboot
+```
+
+
+
+
+
+### uptime
+---
+
+The `uptime` command provides the amount of time the cluster, the Node itself, and the system supporting the node has been up and running.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| uptime  |  | v2.14.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | The [profile](/validate/quick-start/prerequisites#-profile-table) to review the `uptime` parameters from. | **optional** |
+
+| HEADERS | Description |
+| :---: | :----- |
+| Cluster | How long the cluster the profile(s) are connected to has been up. |
+| Node | How long has the node been on the cluster for the given profile(s). |
+| System | How long has the VPS been up and running. |
+   
+> #### Examples
+- Help screen
+```
+sudo nodectl uptime help
+```  
+- Execute an uptime request
+```
+sudo nodectl uptime
+```
+- Execute an uptime request against the profile named `dag-l0`.
+```
+sudo nodectl uptime -p dag-l0
+```
 
 
 
@@ -2202,6 +2375,50 @@ sudo nodectl install --quick-install --user bob --password mypassword  --p12-pas
 
 
 
+### ipv6
+---
+The **`ipv6`** command handles enablement, disablement, and the ability to review the status of the IPv6 network configuration stack on the VPS that your node is running on.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| ipv6 |   | >v2.15.x |
+
+There are three optional parameters; however, one of the three options is required.
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :----: | :---: | :--- | :----: |
+| status | none | Show the status of the IPv6 network stack on the VPS. | **required** |
+| enable | none | Enable IPv6 on the VPS. | **required** |
+| disable | none | Disable IPv6 on the VPS. | **required** |
+| --ni | none | When used in conjunction with a required option, this will force the feature into `non-interactive` mode by-passing any questions and instead using the default options/answers | **optional** |
+
+When the `enable` or `disable` options are used, the `GRUB` and `sysctl` IPv6 configuration files will be altered.
+
+:::danger DANGER
+This command will manipulate non-Tessellation Constellation Network files on your VPS.
+:::
+
+If the VPS was built without IPv6 during instantiation, this command will have no effect.
+
+> #### Examples
+- Help screen
+```
+sudo nodectl ipv6 help  
+```
+- View the status of the IPv6 stack on the VPS. 
+```  
+sudo nodectl ipv6 status
+```
+- Enable IPv6.
+```  
+sudo nodectl ipv6 enable
+```
+- Disable IPv6.
+```  
+sudo nodectl ipv6 disable
+```
+
+
 
 ### restore_config
 ---
@@ -2229,6 +2446,30 @@ sudo nodectl restore_config
 
 
 
+### uninstall
+---
+The **`uninstall`** command does not accept any options or parameters.
+
+When executed, `uninstall` will remove all elements required to make your VPS into a Constellation Network node.
+
+You will be provided the option to retain your `p12` keystore file.  If this option is taken, the p12 keystore file(s) will be moved to a temporary directory for the Node Operator to use or backup as necessary, after the uninstallation is completed.
+
+:::caution
+This command will not remove non-Tessellation dependencies as they may be utilized by other programs or features on the VPS.  
+
+If you would like to remove these dependencies they will have to be removed manually.
+:::
+
+
+> #### Examples
+- Help screen
+```
+sudo nodectl uninstall help  
+```
+- uninstall the node.
+```  
+sudo nodectl uninstall
+```
 
 
 
@@ -2603,4 +2844,80 @@ sudo nodectl show_profile_issues help
 - Execute `show_profile_issues`.
 ```
 sudo nodectl show_profile_issues -p <profile_name>  
+```
+
+
+
+
+
+
+
+### show_service_log
+---
+
+The `show_service_log` command is designed to help identify possible causes for service errors.  It will review the node's service file log file of a given profile. 
+
+This command will search the Debian distribution based journal specifically for the service logs associated with the requested profile which launches to allow the profile to connect to its configured cluster.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_service_log  | None | >v2.14.x |
+
+| [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
+| :---: | :---: | :--- | :----: |
+| -p | `<profile_name>` | Which [profile](/validate/quick-start/prerequisites#-profile-table) are you attempting review service issues. | **required** |
+
+> #### Examples
+- Help screen
+```
+sudo nodectl show_service_log help
+```  
+- Execute `show_service_log` of a profile by the name of `dag-l0`.
+```
+sudo nodectl show_service_log -p dag-l0
+```
+
+
+
+
+### show_service_status 
+---
+
+The `show_service_status` command will review the processes running on the node, and display their current known state.
+
+| Command | Shortcut | Version |
+| :---: | :---: | :---: |
+| show_profile_status  | None | >v2.14.x |
+
+This command does not accept any options.
+
+##### Result Header Descriptions
+| Result Header | Description |
+| :---: | :--- |
+| Owner | What profile on the Node owns the process being displayed. |
+| PID | Process ID of the service as assigned by the Debian systemd system manager, used to handle the logging and various utilities for the assigned process. |
+| Status Code | The code returned by the systemd manager. These codes can be standard codes or custom codes for a particular process in use. |
+| Status | Human friendly translation of the status code. |
+
+##### Status Code Descriptions
+| Result Header | Description |
+| :---: | :--- |
+| 0 | What profile on the Node owns the process being displayed. |
+| 256 | Process exited with error. |
+| 768 | Process not running. |
+
+##### Status Descriptions
+| Result Header | Description |
+| :---: | :--- |
+| active | running. |
+| inactive | not running (`dead`). |
+
+> #### Examples
+- Help screen
+```
+sudo nodectl show_service_status help
+```  
+- Execute `show_service_status`.
+```
+sudo nodectl show_service_status
 ```
