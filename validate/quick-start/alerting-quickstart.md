@@ -14,7 +14,6 @@ import TabItem from '@theme/TabItem';
 This guide is specifically for setting up basic alerting and reporting on your node using nodectl.
 
 This feature will report if the node falls off the cluster for any reason other than a network outage directly related to the node.
-This feature will report if the node falls off the cluster for any reason other than a network outage directly related to the node.
 
 :::caution
 It is important to understand that nodectl's alerting feature can only alert when the node is available on the network.  If the node falls off the network and is no longer accessible, any alerts that are created will not be able to egress from the node and therefor will not be received by the receiving party or service.
