@@ -36,6 +36,7 @@ module.exports = {
             'quick-start/ssh-quickstart',
             'quick-start/collateralize-quickstart',
             'quick-start/autorestart-quickstart',
+            'quick-start/alerting-quickstart',
           ],
         },
       ],
