@@ -19,7 +19,7 @@ This feature will report if the node falls off the cluster for any reason other 
 It is important to understand that nodectl's alerting feature can only alert when the node is available on the network.  If the node falls off the network and is no longer accessible, any alerts that are created will not be able to egress from the node and therefor will not be received by the receiving party or service.
 :::
 
-## ◽ Prerequisities 
+## ◽ Prerequisites 
 nodectl's alerting feature utilizes [gmail](https://www.gmail.com) to send out alerts to/from.  You will be required to setup a gmail account with 2-Step Verification and create an access token (app password) for nodectl to use to send alerts and reports to.
 
 These steps are covered in this quick start guide.
@@ -100,97 +100,41 @@ ssh -i /path/to/ssh/private/key nodeadmin@vps_ip_address
 Refer to [SSH Explanation](/validate/validator/ssh-keys), [Mac SSH Guide](/validate/resources/accessMac), and [Windows SSH Guide](/validate/resources/accessWin)
 for detailed understanding.
 
-## ◽ Prepare to create configuration
-
-- Navigate to the nodectl's `includes` directory.
+## ◽ Start Configurator
+We will enter into the configurator using the `-e` (edit), `-cb` (confirm backups), and `-d` (detailed mode) options.
 ```
-cd /var/tessellation/nodectl/includes
-```
-:::danger Possible Error
-If we receive this error:
-<MacWindow>
--bash: cd: /var/tessellation/nodectl/includes: No such file or directory<br />
-nodeadmin@Constellation-Node:~$
-</MacWindow>
-
-Create the directory:
-```
-sudo mkdir /var/tessellation/nodectl/includes
-```
-Navigate to the directory again.
-```
-cd /var/tessellation/nodectl/includes
-```
-:::
-We should now be in our `includes` directory.
-<MacWindow>
-nodeadmin@Constellation-Node:/var/tessellation/nodectl/includes#
-</MacWindow>
-
-## ◽ Build Your Alerting configuration
-We should be in our `/var/tessellation/nodectl/includes` directory.
-```
-sudo nano alerting.yaml
-```
-Copy and Paste the following into the `nano` editor.  Remember, this is a terminal editor application, you cannot use your mouse, instead use the arrow keys. 
-
-***Make sure the file starts with `---` on its own line at the top of the file.***
-
-```
----
-alerting:
-  enable: True
-  gmail: '<myemail>@gmail.com'
-  token: 'password'
-  send_method: 'multi' # 'multi' or 'single'
-  recipients:
-    - 'cellphone@mms.att.net'
-    - '<an_email>@gmail.com'
-  begin_alert_utc: 0  # 0-23 or 'disable'
-  end_alert_utc: 0   # 0-23 or 'disable'
-  report_hour_utc: 18  # 0-23 or 'disable'
-  local_time_zone: '<my_timezone>'
-  ```
-
-All values should be surrounded by `'` (single quotes).
-
-- Arrow up to the `gmail:` line and replace with your gmail account where you created the [App password](#-create-an-app-password).
-- Arrow to the `token:` line and replace the token (App password) with your App password.
-- Arrow to the `send_method` line. Keep the `multi` (*recommended*) if you should like a multiple emails sent per email address. Otherwise, you can change it to `single` if you would like the emails to be sent out in a single email, where all email addresses are in the `to` field of the email.  
-- Arrow to the `recipients:` and replace the list of emails with the list of emails where you would like your alerts to be sent.  *If you only have one email address you will be sending alerts to you can remove the extra line.*
-  ```
-  receipients:
-    - '<an_email>@gmail.com'
-  begin_alert_utc: 0
-  ```
-- Arrow to the `begin_alert_utc` and place the hour that you would like to have your alerting active.  If you would like to have alerting 24/7, you can keep both values at `0`.
-- Arrow to the `end_alert_utc` and place the hour that you would like to have your alerting stop. *Keep at `0` for 24/7.*
-- Arrow to the `report_hour_utc` and place an hour for when a daily report will be sent out.  Reports are only sent once a day at the hour specified.
-- Arrow to the `local_time_zone:` and place the timezone your discovered [here](#-determine-timezone).
-
-## ◽ Save the Configuration
-
-Press <kbd>Ctrl</kbd>+<kbd>o</kbd> to write it out.
-
-Press <kbd>Enter</kbd> to accept the `File Name to Write:`.
-
-Press <kbd>Ctrl</kbd>+<kbd>x</kbd> to exit the `nano` editor.
-
-## ◽ Verify the Config
-```
-cat /var/tessellation/nodectl/includes/alerting.yaml
-```
-You should see the contents as you edited it.  If not, return to the [build](#-build-your-alerting-configuration) step, to repeat the step.
-
-## ◽ Return to Home Directory
-```
-cd ~
+sudo nodectl configure -e -cb -d
 ```
 
-## ◽ Restart Auto Restart
-Since the `alerting` sub-feature is part of the `auto_restart` feature, we need to restart the `auto_restart` to implement our changes.
+## ◽ Enter Alerting Setup
 ```
-sudo nodectl auto_restart restart
+N) Setup Alerting
+```
+
+## ◽ Configure Alerting
+We will be greeted with a `New Configuration Detected` message.
+
+Press any key to continue and start entering the required input as prompted. Each option will include a detailed explanation of what is being requested from you. 
+
+You can **also** use the reference table below.
+
+| option to enter | description | recommended |
+| :---: | :--- |
+| gmail account | This is the gmail account that you setup with the App password and created for your App password token through. | - |
+| token | This is the App password token you created during the initial gmail account setup. | - |
+| send method | 'multi' (recommended) send strategy will send a single email per email address.  The 'single' send strategy | multi |
+| recipient emails | What email addresses do you want the alerts and daily report sent to?  If you have multiple emails that will receiving messages from the alerting module such as a mobile provider email and a local email, you must separate each email by a comma. eg) `email1@gmail.com,email2@yahoo.com`. | - |
+| time zone | In order to make your alerts more read friendly, nodectl will convert the default UTC time utilized by the node into your local time zone for you. You should have retrieved this string value from the quick start guide on Constellation Network's documentation hub: [here](#-determine-timezone). | - |
+| begin alerting hour | What hour in UTC 24 hour format, do you want alerting to start.  Enter 0 for always. | 0 |
+| end alerting hour | What hour in UTC 24 hour format, do you want alerting to start.  Enter 0 for always. | 0 |
+| send report hour |  What hour in UTC 24 hour format, do you want the daily report to be sent.  Each day, nodectl will send the report only once, as soon as the configured UTC hour is reached. Only a single report will be sent each day. | - |
+
+- Confirm the values you entered.
+
+## ◽ Quit Configurator
+Once you complete the process, you will be returned to the main menu.
+```
+Q)uit
 ```
 
 ## ◽ Test an Alert
