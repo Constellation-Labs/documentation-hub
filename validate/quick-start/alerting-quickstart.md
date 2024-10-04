@@ -16,7 +16,7 @@ This guide is specifically for setting up basic alerting and reporting on your n
 This feature will report if the node falls off the cluster for any reason other than a network outage directly related to the node.
 
 :::caution
-It is important to understand that nodectl's alerting feature can only alert when the node is available on the network.  If the node falls off the network and is no longer accessible, any alerts that are created will not be able to egress from the node and therefor will not be received by the receiving party or service.
+It is important to understand that nodectl's alerting feature can only alert when the node is available on the network.  If the node falls off the network and is no longer accessible, any alerts that are created will not be able to egress from the node and therefore will not be received by the receiving party or service.
 :::
 
 ## ◽ Prerequisites 
@@ -36,7 +36,7 @@ If you already have 2-step verification enabled you can skip this step.
 Follow the following [procedure](https://support.google.com/mail/answer/185839?hl=en&co=GENIE.Platform%3DDesktop&sjid=12848508336786962715-NA) to enable 2-factor authentication.
 
 :::danger Important
-This is required in order to obtain a email access token for nodectl to use!
+This is required in order to obtain an email access token for nodectl to use!
 :::
 
 ## ◽ Open Gmail Account Management
@@ -123,8 +123,8 @@ You can **also** use the reference table below.
 | gmail account | This is the gmail account that you setup with the App password and created for your App password token through. | - |
 | token | This is the App password token you created during the initial gmail account setup. | - |
 | send method | 'multi' (recommended) send strategy will send a single email per email address.  The 'single' send strategy | multi |
-| recipient emails | What email addresses do you want the alerts and daily report sent to?  If you have multiple emails that will receiving messages from the alerting module such as a mobile provider email and a local email, you must separate each email by a comma. eg) `email1@gmail.com,email2@yahoo.com`. | - |
-| time zone | In order to make your alerts more read friendly, nodectl will convert the default UTC time utilized by the node into your local time zone for you. You should have retrieved this string value from the quick start guide on Constellation Network's documentation hub: [here](#-determine-timezone). | - |
+| recipient emails | What email addresses do you want the alerts and daily report sent to?  If you have multiple emails that will be receiving messages from the alerting module such as a mobile provider email and a local email, you must separate each email by a comma. example) `email1@gmail.com,email2@yahoo.com`. | - |
+| time zone | In order to make your alerts more reader friendly, nodectl will convert the default UTC time utilized by the node into your local time zone for you. You should have retrieved this string value from the quick start guide on Constellation Network's documentation hub: [here](#-determine-timezone). | - |
 | begin alerting hour | What hour in UTC 24 hour format, do you want alerting to start.  Enter 0 for always. | 0 |
 | end alerting hour | What hour in UTC 24 hour format, do you want alerting to start.  Enter 0 for always. | 0 |
 | send report hour |  What hour in UTC 24 hour format, do you want the daily report to be sent.  Each day, nodectl will send the report only once, as soon as the configured UTC hour is reached. Only a single report will be sent each day. | - |
@@ -148,7 +148,7 @@ Please remember to adhere to the normal spam protocols by marking any incoming e
 :::
 
 :::caution MOBILE PROVIDER EMAIL
-In some cases, you may need to contact your cell phone provider and make sure they are aware that you email is not phishing, so that they do not "black hole" it.  If you are sending to your mobile phone number and do not receive it.  Add another valid email to make sure the email is being received before other troubleshooting.
+In some cases, you may need to contact your cell phone provider and make sure they are aware that your email is not phishing, so that they do not "black hole" it.  If you are sending to your mobile phone number and do not receive it.  Add another valid email to make sure the email is being received before other troubleshooting.
 :::
 
 ## ◽ Test a Report
