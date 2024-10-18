@@ -1748,7 +1748,7 @@ To avoid a MITM attack, it is crucial to manually access the GitHub repository a
 | :---: | :----- |
 | PULBIC KEY | The publicly available key used to decrypt the signature file that was created by a `private key`.  The private key is owned by Constellation Network and not available or accessible. |
 | BINARY HASH | The hash created by using the public key to hash the `nodectl` binary. |
-| DIGITAL SIGNATRE | A copy of the hash that should be identical to the BINARY HASH if the nodectl binary is valid. |
+| DIGITAL SIGNATURE | A copy of the hash value that should be identical to the BINARY HASH if the nodectl binary is valid. |
 | VERIFICATION RESULT | This will either be a `green` success or `red` failure. |
 
 > #### Examples
@@ -1756,6 +1756,7 @@ To avoid a MITM attack, it is crucial to manually access the GitHub repository a
 ```
 sudo nodectl verify_nodectl
 ```
+
 
 
 
