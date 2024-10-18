@@ -156,9 +156,5 @@ In some cases, you may need to contact your cell phone provider and make sure th
 sudo nodectl auto_restart send_report
 ```
 
-# WARNING
-:::danger
-This is not a support feature of nodectl, so use at your own risk.
-
-We can not provide extensive troubleshooting support for this feature.
-:::
+## ◽ Troubleshooting
+You may troubleshoot your alerting module [here](/validate/troubleshooting/alerting-troubleshoot).

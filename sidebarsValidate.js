@@ -30,6 +30,7 @@ module.exports = {
           items: [
             'quick-start/prerequisites',
             'quick-start/online-quickstart',
+            'quick-start/restart-node-after-upgrade-quickstart',
             'quick-start/upgrade-quickstart',
             'quick-start/upgrade-nodectl-quickstart',
             'quick-start/intnet-to-mainnet-quickstart',
@@ -286,6 +287,14 @@ module.exports = {
         'resources/nodectl-notes',    
       ],
     },
+    {
+      type: 'category',
+      label: 'Troubleshooting',
+      collapsed: false,
+      items: [
+        'troubleshooting/ssh-connection-troubleshoot',
+        'troubleshooting/alerting-troubleshoot',
+      ],
+    },
   ],
-
 };
