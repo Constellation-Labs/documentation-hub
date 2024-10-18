@@ -55,7 +55,7 @@ These specifications should also apply to any layer 1 metagraph running Constell
 | --- | --- | --- |
 | vCPUs | 4 | A node will require 4 virtual central processing units (vCPU) or physical CPUs to run on a bare metal system. |
 | Memory | 8Gb | A node will need 3Gb or Layer 1. |
-| Storage | 120Gb | Basic storage. |
+| Storage | 80Gb | Basic storage. |
 | Traffic Allowance | default | The **default** traffic allowance should suffice. |
 
 ## Software Specification Requirements

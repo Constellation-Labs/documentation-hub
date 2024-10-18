@@ -14,7 +14,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-## ◽ Auto Restart Quick Start Guide
+# Auto Restart Quick Start Guide
 
 This guide is specifically for setting up your node to automatically restart, automatically upgrade and automatically start on boot up.  It is opinionated with sensible defaults.
 

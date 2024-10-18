@@ -44,7 +44,7 @@ for detailed understanding.
 
 ## ◽ Update OS
 ```
-sudo apt-get update && sudo apt-get upgrade
+sudo apt -y update && sudo apt -y upgrade
 ```
 
 ## ◽ Reboot
@@ -103,11 +103,14 @@ No action required, you can wait for the installation to complete.
 <MacWindow>
 Please follow the instructions below, as indicated<br />
 <br />
-1) Submit your NodeID to Constellation Admins.<br />
-2) Collateralize your Node.<br />
-3) sudo nodectl check_seedlist -p dag-l0<br />
-4) sudo nodectl restart -p all<br />
-5) Log out and log back in with as nodeadmin with your new nodeadmin password.<br />
+1) Submit your NodeID to Constellation Discord Admins.<br />
+2) Collateralize your Node's wallet.<br />
+3) Log out of the VPS<br />
+4) Log in as nodeadmin<br />
+5) Wait for next cluster restart<br />
+6) Confirm your node's status<br />
+&nbsp;&nbsp;- sudo nodectl check_seedlist -p dag-l0<br />
+&nbsp;&nbsp;- sudo nodectl restart -p all<br />
 </MacWindow>
 
 🚑 <span style={{fontSize:'1.2em',fontWeight:800}}>&nbsp;Leave this screen up and remote terminal window open!</span>

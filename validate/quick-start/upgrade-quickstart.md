@@ -14,7 +14,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-## ◽ Upgrade Quick Start Guide
+# Upgrade Quick Start Guide
 
 This guide is specifically for upgrading your node to to the latest version of **Tessellation** with opinionated with sensible defaults.
 
