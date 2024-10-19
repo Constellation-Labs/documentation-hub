@@ -2040,6 +2040,7 @@ Following general output details about your wallet, nodectl will query the DAG e
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you seeking the wallet information from. | **required** |
 | -w | `<dag_wallet>` | retrieve remote by target wallet address. | **optional** |
+| --balance | None | show balance of DAG wallet only | **optional** |
 | -b | None | if the `brief` [option](#what-is-an-option-and-parameter) is included a detailed view of the wallet transactions will be excluded from the command's output. | **optional** |
 | -np | None | By default, the `dag` command will [paginate](#what-is-pagination) the output, the `-np` flag will force `no pagination` during command output printing. | **optional** |
 | --csv | None | Export the file to default dated file name to the default uploads (see [configuration file](#configure)) or based on the `--output` [option](#what-is-an-option-and-parameter) (below). | **optional** |
