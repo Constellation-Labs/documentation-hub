@@ -755,7 +755,7 @@ nodectl will:
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
-| check_minority_fork  | -cmf | >v2.15.0 |
+| check_minority_fork  | -cmf | >v2.15.1 |
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
@@ -2524,9 +2524,9 @@ sudo nodectl upgrade_nodectl help
 ```
 sudo nodectl upgrade_nodectl
 ```
-- Upgrade nodectl to version `v2.15.0`
+- Upgrade nodectl to version `v2.15.1`
 ```
-sudo nodectl upgrade_nodectl -v v2.15.0
+sudo nodectl upgrade_nodectl -v v2.15.1
 ```
 
 ### upgrade_path

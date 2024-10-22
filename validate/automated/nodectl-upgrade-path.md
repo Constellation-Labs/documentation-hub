@@ -49,7 +49,7 @@ An alternative method is to build a new Node and simply start at the latest vers
 | v2.8.1 | v2.11.3 |
 | v2.11.3 | v2.12.7 |
 | v2.12.7 | v2.13.0 |
-
+| v2.13.0 | v2.15.1 |
 
 ### Example
 

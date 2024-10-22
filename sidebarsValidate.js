@@ -293,6 +293,7 @@ module.exports = {
       collapsed: false,
       items: [
         'troubleshooting/ssh-connection-troubleshoot',
+        'troubleshooting/nodectl-upgrade-troubleshoot',
         'troubleshooting/alerting-troubleshoot',
       ],
     },
