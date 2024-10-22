@@ -1,0 +1,71 @@
+---
+title: Upgrading nodectl Troubleshooter
+hide_table_of_contents: false
+hide_title: false
+---
+
+import MacWindow from '@site/src/components/global/MacWindow';
+
+<head>
+  <title>Constellation nodectl utility</title>
+  <meta
+    name="description"
+    content="nodectl utility upgrade nodectl troubleshooting"
+  />
+</head>
+
+This guide is specifically for troubleshooting your node if you are experiencing issues with the [upgrade_nodectl](/validate/automated/nodectl-commands#upgrade_nodectl) command.
+
+## ◽ Introduction
+As nodectl has evolved, so has its upgrade mechanism.
+
+The [upgrade nodectl quick start](/validate/quick-start/upgrade-nodectl-quickstart) guide was written to support the latest version of nodectl, which may not fully address older versions that are no longer supported.
+
+We hope this guide assists you in upgrading a node running an older version of nodectl to the most recent and recommended version.
+
+## ◽ Version
+To identify the version of nodectl you are running, execute the following command:
+```
+sudo nodectl version
+```
+
+## ◽ Upgrade Path
+Please identify the next version in the upgrade path that is greater than the version running on your node, using the chart provided [here](/validate/automated/nodectl-upgrade-path#current-upgrade-path-table). 
+
+Select the appropriate version to ensure your node is upgraded in the correct sequence.
+
+## ◽ Upgrade nodectl utility
+### Method 1
+<p style={{fontSize:'.8em'}}>Replace &lt;version_you_found_here&gt; with the version you identified in the previous step.</p>
+
+```
+sudo nodectl upgrade_nodectl -v <version_you_found_here>
+```
+
+:::caution Command not found
+Please proceed to **Method 2** if your version does not support the dedicated `-v` version option.
+:::
+
+### Method 2
+- Open a web browser and navigate to the [nodectl release page](https://github.com/StardustCollective/nodectl/releases).
+- Find your desired version by browsing the releases.
+- Copy the `wget` link from the releases page and paste it into your node’s terminal to download the specific version.
+
+## ◽ Upgrade your node
+```
+sudo nodectl upgrade
+```
+Follow the instruction prompts during the upgrade.  You may follow along using the [upgrade quick start guide](/validate/quick-start/upgrade-quickstart).
+
+## ◽ Migration
+If the version you are upgrading to requires a migration, nodectl will notify you with a warning during the upgrade process.
+
+If the upgrade process does not require a migration, you will not receive a notification, and you can safely proceed to the next step.
+
+##### If migration needed:
+Press <kbd>y</kbd> to continue
+
+*Optional*: <kbd>y</kbd> or <kbd>n</kbd> to review the new migrated configuration file.
+
+## ◽ Repeat as necessary
+If during the upgrade path determination [step](#-upgrade-path) you identified multiple versions ahead of your current version, you should return to the beginning of this guide and repeat the steps until you reach the desired version of nodectl.
