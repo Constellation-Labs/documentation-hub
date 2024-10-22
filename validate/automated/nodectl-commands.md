@@ -484,18 +484,19 @@ If the nodes connected to each do not match, the command will display those node
 | :--: | :-- |
 |  *   | Indicates the ip searched against was either the edge and source ip
 |  i   | Initial State
-|  rj  | ReadyToJoin State
+|  rtj | ReadyToJoin State
 |  ss  | StartingSession State
 |  s   | SessionStarted State
-|  rd  | ReadyToDownload State
-|  wd  | WaitingForDownload State
-|  wr  | WaitingForReady State
-|  dp  | DownloadInProgress State
+|  rtd | ReadyToDownload State
+|  wfd | WaitingForDownload State
+|  wfr | WaitingForReady State
+|  dip | DownloadInProgress State
 |  ob  | Observing State
 |      | Ready
 |  l   | Leaving State
 |  o   | Offline State
-|  a   | ApiNotReady State (nodectl only)
+|  ar  | ApiNotReady State (nodectl only)
+| anr  | ApiNotResponding State (nodectl only)
 
 #### If node shows `False`
 There may be circumstances where your node is showing a False positive.  The network may still be converging or another node may be causing your node to show False.
@@ -1137,6 +1138,7 @@ The **`peers`** command will attempt to list all the peers found on the cluster;
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | review the cluster that relates to the requested [profile](/validate/quick-start/prerequisites#-profile-table). | **required** |
 | -t | `<target_node>` | Node on the cluster (ip or hostname) that you would like to use as your target (The node to use as reference.) for finding peers. | **optional** |
+| --state | `<dip, ob, wfd, wfr, wfo, wfd>` | filter the peers output to only nodes that are in the requested cluster state: `dip`: DownloadInProgress, `ob`: Observing, `wfr`: WaitingForReady, `wfo`: WaitingForObserving, `wfd`: WaitingForDownload | **optional** |
 | -c | None | count the peers on the network. | **optional** |
 | -np | None | no [pagination](#what-is-pagination). | **optional** |
 | --csv | None | create csv (comma separated values) output file instead of print out to the screen. | **optional** |
@@ -1163,7 +1165,7 @@ If you do not use the `--basic` or `--extended` [options](#what-is-an-option-and
 | :--:  | :-- |
 | *  | Indicates the ip found was either the `edge` and `source` ip as indicated by the `-t` option or the node that was randomly selected when the command was executed. |
 | i  | Initial State |
-| rj | ReadyToJoin State |
+| rtj | ReadyToJoin State |
 | ss | StartingSession State |
 | l  | Leaving State |
 | s  | SessionStarted State |
@@ -1527,11 +1529,12 @@ This command displays the list of the known node States that you may find on the
 
 ##### nodectl only states
 
-| State | Description |
-| -- | :-- |
-| ApiNotReady | shown if nodectl can not reach the node's internal API server. |
-| SessionNotFound | shown if nodectl can not read the node's session via the internal API server. | 
-| SessionIgnored | shown if nodectl is not online and there is not a session to display. | 
+| State | Abv | Description |
+| -- | :--: | :-- |
+| ApiNotReady | ar | shown if nodectl can not reach the node's internal API server. |
+| ApiNotResponding | anr | show if the node running Tessellation is unable to send or receive API requests. |
+| SessionNotFound | snf | shown if nodectl can not read the node's session via the internal API server. | 
+| SessionIgnored | si | shown if nodectl is not online and there is not a session to display. | 
   
 > #### Examples
 - Help screen
