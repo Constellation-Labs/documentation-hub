@@ -27,7 +27,7 @@ This guide is specifically for troubleshoot **an existing** node that you are un
 
 One of the leading causes of connection problems occurs when the system used to establish the remote connection to your node—whether it’s a Macintosh, Windows, or Linux machine—**has undergone changes**.
 
-Many internet service providers (ISPs) lease IP addresses to their customers for extended but temporary periods. However, due to factors like inactivity, lease expiration, equipment updates, or network reconfiguration, your local IP address may change. 
+Many internet service providers (ISPs) lease IP addresses to their customers for extended but temporary periods. In addition, due to factors like inactivity, lease expiration, equipment updates, or network reconfiguration, your local IP address may change. 
 
 ISPs implement this process to “recycle” IP addresses from a limited pool, ensuring availability for all customers, especially when the number of customers exceeds the available IP addresses assigned to that provider.
 
@@ -110,7 +110,10 @@ Change the ownership to `nodeadmin`
 ```
 sudo chown nodeadmin:nodeadmin /home/nodeadmin/.ssh/mypublickey.pub
 ```
-
+Once you have regained access to your `nodeadmin` account, it is a good idea to disable the root access again to help mitigate nefarious access attempts against your `root` user. 
+```
+sudo nodectl disable_root_ssh
+```
 ## ◽ Cloud Service Outages
 #### Cloud Provider Outage
 

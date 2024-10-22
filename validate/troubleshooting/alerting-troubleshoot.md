@@ -46,7 +46,7 @@ sudo nodectl logs -l nodectl
 ```
 
 ## ◽ Handle possible spam 
-If you are sending your alerts to a standard email address, you will want to make sure that you email provider is not marking the incoming alerts as **spam**.  Setup rules within your email provider's settings or application settings to avoid the spam filter from marking the incoming messages as spam or black listing the gmail address you [configured](/validate/quick-start/alerting-quickstart) during installation.
+If you are sending your alerts to a standard email address, you will want to make sure that your email provider is not marking the incoming alerts as **spam**.  Setup rules within your email provider's settings or application settings to avoid the spam filter from marking the incoming messages as spam or black listing the gmail address you [configured](/validate/quick-start/alerting-quickstart) during installation.
 
 ## ◽ Mobile providers
 If you setup your alerts to be received as a text message via your mobile provider, you can run into issues with getting blocked.

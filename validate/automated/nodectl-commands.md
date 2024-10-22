@@ -1085,11 +1085,11 @@ sudo nodectl market
 
 The **`mobile`** command does not take any parameters.
 
-This is a special utility command that allows you to use a `menu driven` methodology towards issuing the most common commands on your node.  There are three (*opinionated*) menus of commands.
+This is a special utility command that allows you to use `menu driven` methodology towards issuing the most common commands on your node.  There are three (*opinionated*) menus of commands.
 
-- **Main Menu**: Hold the most common commands.
-- **General Menu**: Holds commands that are commonly useful.
-- **Troubleshooting Menu**:  Holds common commands used for troubleshooting purposes.
+- **Main Menu**: Most common commands.
+- **General Menu**: Commands that are commonly useful.
+- **Troubleshooting Menu**:  Common commands used for troubleshooting purposes.
 
 Simply issue the `mobile` command, select the letter corresponding to the predefined commands, and that command will execute.  After completion, nodectl will return the Node Operator to the main menu.  
 
