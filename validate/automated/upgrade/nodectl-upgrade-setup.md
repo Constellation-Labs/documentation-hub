@@ -23,7 +23,7 @@ Please be aware that the following items are fictitious and are only used as an 
 Throughout this guide, please be aware of these fictitious values:
 - Our external IP address will be a fictitious `113.113.113.113`. 
 - Our nodeid equal to all `1`s.
-- Our nodectl version will be `v2.15.1`
+- Our nodectl version will be `v2.15.2`
 - Our Tessellation version will be `v2.2.3`
 - Our Environment is `mainnet`
 
