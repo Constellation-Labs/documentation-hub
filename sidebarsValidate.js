@@ -294,6 +294,7 @@ module.exports = {
       items: [
         'troubleshooting/ssh-connection-troubleshoot',
         'troubleshooting/nodectl-upgrade-troubleshoot',
+        'troubleshooting/edgepointdown-troubleshoot',
         'troubleshooting/alerting-troubleshoot',
       ],
     },
