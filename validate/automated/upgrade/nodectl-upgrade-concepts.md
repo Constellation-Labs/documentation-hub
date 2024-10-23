@@ -60,11 +60,11 @@ When a command is issued, nodectl will review the versioning on your Node and if
 
 <MacWindow>
 nodeadmin@Constellation-Node:~# sudo nodectl list<br />
-  A new version of nodectl was detected: v2.15.1<br />
+  A new version of nodectl was detected: v2.15.2<br />
   To upgrade issue: sudo nodectl upgrade_nodectl<br />            
 </MacWindow>
 
-In the above output, it shows us that our Node is not up-to-date and the latest version available is `v2.15.1`.
+In the above output, it shows us that our Node is not up-to-date and the latest version available is `v2.15.2`.
 
 ### Upgrade nodectl via nodectl
 If nodectl is already [installed](/validate/automated/nodectl) on your system, we can issue the `upgrade_nodectl` command to attempt to upgrade.

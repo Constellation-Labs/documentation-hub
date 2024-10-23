@@ -2524,9 +2524,9 @@ sudo nodectl upgrade_nodectl help
 ```
 sudo nodectl upgrade_nodectl
 ```
-- Upgrade nodectl to version `v2.15.1`
+- Upgrade nodectl to version `v2.15.2`
 ```
-sudo nodectl upgrade_nodectl -v v2.15.1
+sudo nodectl upgrade_nodectl -v v2.15.2
 ```
 
 ### upgrade_path

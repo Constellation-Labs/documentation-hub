@@ -29,7 +29,7 @@ sudo nodectl upgrade_nodectl -v <version_number>
 If you don't use the `-v`` option with nodectl, it will automatically check the current version of nodectl on your Node and show you if there are any updates available. You can then choose which version to upgrade to from the list provided.
 
 <MacWindow>
-nodeadmin@Constellation-Node:~# sudo nodectl upgrade_nodectl -v v2.15.1       
+nodeadmin@Constellation-Node:~# sudo nodectl upgrade_nodectl -v v2.15.2      
 </MacWindow>
 
 ### Upgrade nodectl components of your Node

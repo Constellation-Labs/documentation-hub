@@ -28,13 +28,13 @@ Instead we can reach out to the `nodectl` GitHub repo and copy the command used 
 [Download nodectl](https://github.com/StardustCollective/nodectl/releases) from the **StardustCollective** GitHub repository.
 
 > Example Only
-From our assumptions we will pull down `v2.15.1` with the following command, but please make sure you only download a version with the `Latest` tag.
+From our assumptions we will pull down `v2.15.2` with the following command, but please make sure you only download a version with the `Latest` tag.
 
 ```
-sudo wget -N https://github.com/stardustcollective/nodectl/releases/download/v2.15.1/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v
+sudo wget -N https://github.com/stardustcollective/nodectl/releases/download/v2.15.2/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v
 ```
 <MacWindow>
-ubuntu@ip-172-31-23-246:~$ sudo wget -N https://github.com/stardustcollective/nodectl/releases/download/v2.15.1/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v
+ubuntu@ip-172-31-23-246:~$ sudo wget -N https://github.com/stardustcollective/nodectl/releases/download/v2.15.2/nodectl_x86_64 -P /usr/local/bin -O /usr/local/bin/nodectl; sudo chmod +x /usr/local/bin/nodectl; sudo nodectl -v
 </MacWindow>
 
 ### Output
@@ -42,7 +42,7 @@ ubuntu@ip-172-31-23-246:~$ sudo wget -N https://github.com/stardustcollective/no
 nodectl will be downloaded and you should see the `version information` at the end of the command results.  This will confirm that `nodectl` is downloaded, placed in the proper location, and executable. 
 
 <MacWindow>
---2024-04-25 12:47:51--  https://github.com/stardustcollective/nodectl/releases/download/v2.15.1/nodectl_x86_64<br />
+--2024-04-25 12:47:51--  https://github.com/stardustcollective/nodectl/releases/download/v2.15.2/nodectl_x86_64<br />
 Resolving github.com (github.com)... 113.113.113.113<br />
 Connecting to github.com (github.com)|113.113.113.113|:443... connected.<br />
 HTTP request sent, awaiting response... 302 Found<br />
@@ -59,6 +59,6 @@ nodectl         100%[=====>]   9.68M  --.-KB/s    in 0.06s<br />
 2024-04-25 12:47:51 (153 MB/s) - ‘/usr/local/bin/nodectl’ saved [10151936/10151936]<br />
 <br />
   VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAJOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MINOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATCH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONFIG<br /> 
-  v2.15.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v2.1.1<br />
+  v2.15.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v2.1.1<br />
   ubuntu@ip-172-31-23-246:~$<br />
 </MacWindow>

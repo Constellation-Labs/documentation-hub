@@ -51,14 +51,14 @@ VERIFICATION RESULT<br />
 SUCCESS - AUTHENTIC NODECTL 
 </MacWindow>
 
-In our example, we have downloaded `v2.15.1` of nodectl.  nodectl will execute the new `v2.15.1` binary and display the versioning to help us verify we have downloaded the correct version.
+In our example, we have downloaded `v2.15.2` of nodectl.  nodectl will execute the new `v2.15.2` binary and display the versioning to help us verify we have downloaded the correct version.
 
 The below example shows us on the major version of `2`, minor version of `15` and `0` patch level.  It also indicates that we are running `v2.1.1` of the nodectl configuration.
 
 <MacWindow>
 nodeadmin@Constellation-Node:~# sudo nodectl version<br />
   VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAJOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MINOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATCH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONFIG<br />
-  v2.15.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v2.1.1<br />            
+  v2.15.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v2.1.1<br />            
 nodeadmin@Constellation-Node:~# 
 </MacWindow> 
 

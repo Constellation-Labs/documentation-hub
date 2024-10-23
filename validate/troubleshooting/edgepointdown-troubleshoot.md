@@ -29,7 +29,7 @@ This issue may occur in scenarios such as:
 This guide will assist you in disabling IPv6 on the node directly.
 
 :::info Note
-As other possible issues that may cause the same `EdgePointDown` condition emerge, this document will be updated accordingly.  At this time, only `IPv6` resolution issue is being addressed.
+As other possible issues that may cause the same `EdgePointDown` condition emerge, this document will be updated accordingly.  At this time, only the `IPv6` resolution issue is being addressed.
 :::
 
 ## ◽ Backup P12 
@@ -41,7 +41,7 @@ We need to **backup** our p12 keystore prior to working on this issue.
 Currently, nodes run on ephemeral VPS systems, allowing quick rebuilds in case of issues with minimal downtime. In the worst case, we can create a new node and migrate your p12 keystore. 
 :::
 
-Before we begin, please confirm or **backup** your p12 keystore.
+Before we begin, please confirm the existence of a p12 keystore backup or **backup** your p12 keystore.
 - [Macintosh](/validate/resources/p12-backup-mac)
 - [Windows](/validate/resources/p12-backup-win)
 
@@ -67,12 +67,16 @@ IPv6 sysctl Status&nbsp;&nbsp;&nbsp;IPv6 GRUB Status<br />
 enabled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enabled<br />
 </MacWindow>
 
-:::caution
-If one or both IPv6 status types show as **`disabled`**, the `EdgePointDown` issue you are facing is not related to IPv6. You can stop here and reach out to a Team Lead or Administrator on Constellation Network’s Official Discord server for further assistance.
+:::caution Caution 
+If one or both IPv6 status types show as **`disabled`**, the `EdgePointDown` issue you are facing is not related to IPv6. 
+
+You can stop here and reach out to a Team Lead or Administrator on Constellation Network’s Official Discord server for further assistance.
 :::
 
 ## ◽ Disable IPv6 (sysctl)
 We will restrict outbound IP resolution to IPv4 only by modifying the Debian `sysctl` configuration, via nodectl's `ipv6` feature.
+
+We will use the `sysctl` option.
 
 - Issuing the `--ni` for non-interactive mode (*optional*)
 - Issuing the `--sysctl` option to instruct nodectl on what method to use to disable IPv6 (*Optional if not using `--ni`.*)
@@ -85,15 +89,12 @@ sudo nodectl ipv6 disable --ni --sysctl
 Our `sysctl` status should change to `disabled`.
 
 <MacWindow>
---------- * IPV6 STATUS * ---------<br />
-Interface found ................... eth0<br />
-<br />
 IPv6 sysctl Status&nbsp;&nbsp;&nbsp;IPv6 GRUB Status<br />
 disabled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enabled<br />
 </MacWindow>
 
 ## ◽ Restart Profiles
-Restart the profiles associated with your nodectl configuration. 
+Restart the profile(s) associated with your nodectl configuration. 
 
 ```
 sudo nodectl restart -p all
@@ -102,7 +103,7 @@ sudo nodectl restart -p all
 ## ◽ Auto Restart (optional)
 Optionally, you can allow [auto_restart](/validate/automated/nodectl-autorestart) to bring your node back online.
 
-You may also restart the `auto_restart` service to ensure everything is functioning optimally.
+It may be a good idea to restart the `auto_restart` service to ensure everything is functioning optimally.
 
 ```
 sudo nodectl auto_restart restart
