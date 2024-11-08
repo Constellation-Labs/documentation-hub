@@ -5,34 +5,50 @@ slug: /metagraph-tokens
 hide_table_of_contents: false
 ---
 
-Metagraph tokens work in much the same way as DAG. In order to interact with a metagraph token you will need to first create a metagraph client. 
+<intro-end />
+
+Metagraph tokens work in much the same way as DAG. They share a common transaction format and API interface. Both DAG and metagraph tokens use DAG addresses for their balance maps so a single public/private keypair can control DAG and metagraph token accounts. 
+
+
 
 :::info Minimum Version
 You will need version 2.1.1 or higher in order to interact with metagraph token networks. 
 :::
 
+## Connecting to a metagraph
+
+In order to interact with a metagraph token you will need to first need to create a connection to the Hypergraph, then create a metagraph client instance to connect to the metagraph and send transactions. 
+
+The example below connects to **IntegrationNet**. Fill in `:metagraph-l0-endpoint`, `:metagraph-currency-l1-endpoint`, and `:metagraph-id` in the code below with the correct details for the metagraph you are connecting to. 
+
 ```js
 const { dag4 } = require('@stardust-collective/dag4');
 
+// Connect to Hypergraph on IntegrationNet or MainNet
 dag4.account.connect({
   networkVersion: '2.0',
-  testnet: true
+  beUrl: "https://be-integrationnet.constellationnetwork.io",
+  l0Url: "https://l0-lb-integrationnet.constellationnetwork.io",
+  l1Url: "https://l1-lb-integrationnet.constellationnetwork.io",
 });
 
 dag4.account.loginPrivateKey('MY-PRIVATE-KEY');
 
+// Create a metagraphClient instance to connect to a specific metagraph
 const metagraphClient = dag4.account.createMetagraphTokenClient({
-  l0Url: 'http://metagraph-l0.example.com',
-  l1Url: 'http://metagraph-l1.example.com'
+  beUrl: "https://be-integrationnet.constellationnetwork.io",
+  l0Url: ':metagraph-l0-endpoint',
+  l1Url: ':metagraph-currency-l1-endpoint',
+  metagraphId: ':metagraph-id'
 });
 
-
+// Make calls directly to the metagraph (check balance, send transactions, etc.)
 await metagraphClient.getBalance();
 // 100000
 ```
-### Finding existing metagraphs
+### Metagraph connection details
 
-A list of existing metagraphs can be found on the [DAG Explorer](https://mainnet.dagexplorer.io/metagraphs). On each metagraph's page, the L0 and currency L1 endpoints are available, which are necessary for configuring your metagraph client to interact with specific metagraph token networks.
+A list of existing metagraphs can be found on the [DAG Explorer](https://mainnet.dagexplorer.io/metagraphs). On each metagraph's page you'll find the Metagraph ID, as well as L0 and currency L1 endpoints, which are necessary for configuring your metagraph client to connect to a specific metagraph network.
 
 
 ### Send a single transaction
