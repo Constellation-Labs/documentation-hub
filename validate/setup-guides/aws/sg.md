@@ -155,7 +155,7 @@ Please add to your firewall configuration ports `9010-9011` to allow access to y
 
 | Type	| Protocol	| Port Range	| Sources |
 | ----  | -----| ----- | ---- |
-| Outbound	| ICMP	| All Ports	| All IPv4 IPv6 |
+| Outbound	| ICMP	| 	| All IPv4 IPv6 |
 | Outbound	| All TCP	| All Ports |	All IPv4 IPv6 |
 | Outbound	| All UDP	| All Ports	| All IPv4 IPv6 |
 

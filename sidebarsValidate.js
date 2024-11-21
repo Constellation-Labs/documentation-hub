@@ -57,6 +57,7 @@ module.exports = {
         'validator/forks-explained',
         'validator/trust-labels',
         'validator/p12',
+        'validator/become-dor-operator',  
         {
           type: 'category',
           label: 'SSH Keys',
@@ -284,7 +285,7 @@ module.exports = {
         'resources/ssh-config',
         'resources/p12-v1-to-v2-migrate',  
         'resources/send-logs',
-        'resources/nodectl-notes',    
+        'resources/nodectl-notes',  
       ],
     },
     {

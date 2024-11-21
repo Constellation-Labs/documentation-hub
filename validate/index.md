@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-In this tutorial, Node Operators will learn how to build and manage a validator node.
+In these tutorials, Node Operators will learn how to build and manage a validator node.
 
 <DocsCards>
   <DocsCard header="Build a VPS" href="/validate/validator/getting-started" img="/img/validator_nodes/cloud.png">

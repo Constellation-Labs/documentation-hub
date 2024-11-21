@@ -138,7 +138,7 @@ You do not need to use ports `9000-9001` or `9010-9011`, you can use whatever po
 
 | Type	| Protocol	| Port Range	| Sources |
 | ----  | -----| ----- | ---- |
-| Outbound	| ICMP	| All Ports	| All IPv4 IPv6 |
+| Outbound	| ICMP	| 	| All IPv4 IPv6 |
 | Outbound	| All TCP	| All Ports |	All IPv4 IPv6 |
 | Outbound	| All UDP	| All Ports	| All IPv4 IPv6 |
 
