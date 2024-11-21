@@ -28,12 +28,12 @@ To deploy a Node to run on the Hypergraph and also the DAG Layer1 metagraph, you
 #### nodectl Automation
 Once you have established where you are going to build your Node or what hardware you are going to use.  You can decide to turn your server into a Node in minutes using Constellation Network's utility `nodectl`.
 
-- Begin [here](/validate/automated/nodectl)
+- Begin [here](/validate/automated/getting-started/nodectl-getting-started)
 
-#### Integrationnet Quick Node Setup
-Build your Integrationnet Node Quickly with sensible defaults.
+#### Quick Start Guides
+Build your MainNet, IntegrationNet, TestNet or **metagraph** Node Quickly with sensible defaults.
 
-- Begin [here](/validate/resources/integrationnet-node-quick-install)
+- Begin [here](/validate/quick-start/index)
 
 
 #### Manual Installation

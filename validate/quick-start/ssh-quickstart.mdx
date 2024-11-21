@@ -65,6 +65,21 @@ Change to the `.ssh` directory to simplify creation and future locating of your 
 ```
 cd .ssh
 ```
+:::caution Error found
+If you receive an error.
+
+<WinCommandPrompt>
+C:\Users\myuser\.ssh>cd .ssh<br />
+The system cannot find the path specified.<br />
+</WinCommandPrompt>
+
+Please create the directory.
+
+```
+mkdir .ssh
+```
+:::
+
 Generatate SSH key.
 ```
 ssh-keygen -b 4096 -C ConstellationNetwork
@@ -126,6 +141,17 @@ Change to the `.ssh` directory to simplify creation and future locating of your 
 ```
 cd .ssh
 ```
+:::caution Error found
+If you receive an error.
+<MacWindow>
+cd: no such file or directory: .ssh
+</MacWindow>
+Please make sure you are in the root of your home directory and create the `.ssh` directory.
+
+```
+mkdir .ssh
+```
+:::
 Generatate SSH key.
 ```
 ssh-keygen -C ConstellationNetwork

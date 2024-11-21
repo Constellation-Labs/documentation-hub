@@ -9,21 +9,16 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 This guide is specifically for setting up your Dor Node, and is opinionated with sensible defaults.
 
+## ◽ Qualifications
+
+In order to qualify to become a Dor Validator Node Operator you will need to handle a few administive tasks.
+
+Please refer to the following document to learn [how to become a Dor Validator Node Operator](/validate/validator/become-dor-operator).
+
 ## ◽ Choose VPS Provider
-Refer to the [Constellation Network Setup Guides](/validate/setup-guides/) for choosing a VPS provider.
+Refer to the [Constellation Network Setup Guides](/validate/setup-guides/) for choosing a VPS provider.  
 
-## ◽ Setup Firewall
-| direction       | port  | description
-|-----------------|-------| -----------
-| inbound | 9010 | public api layer1
-| inbound | 9011 | p2p api layer1
-| outbound  | all | Tune to your needs
-
-Refer to these guides on [Digital Ocean](/validate/setup-guides/do/sg-droplet), [AWS](/validate/setup-guides/aws/sg), and [Hetzner](https://docs.hetzner.com/cloud/firewalls/getting-started/creating-a-firewall/).
-
-:::note
-Setting up your firewall policy prior to building your VPS will save time.
-:::
+You may follow along in the setup guides for step-by-step; otherwise, return here after you decided on a VPS service provider to continue with the quick start guide.
 
 ## ◽ Provision Your VPS
 
@@ -34,6 +29,29 @@ Refer to the [specification](/validate/validator/specs#dor-metagraph-node-hardwa
 Suggested OS: **Ubuntu 22.04**
 
 *Ubuntu 24.04 is currently not supported.*
+
+You may return to this quick start guide once you have your VPS built.
+
+## ◽ Verify Firewall Setup
+If you are returning from the VPS build documentation, you should already have a firewall configuration in place.  Please verify the following configuration for your firewall is properly setup.
+
+| direction       | port  | description
+|-----------------|-------| -----------
+| inbound | 9010 | public api layer1
+| inbound | 9011 | p2p api layer1
+| outbound  | all | Tune to your needs
+
+:::caution
+A Dor validator node is a single layer1 configuration.  
+
+You should not have ports 9000-9001 open.
+:::
+
+Refer to these guides on [Digital Ocean](/validate/setup-guides/do/sg-droplet), [AWS](/validate/setup-guides/aws/sg), and [Hetzner](https://docs.hetzner.com/cloud/firewalls/getting-started/creating-a-firewall/).
+
+:::note
+Setting up your firewall policy prior to building your VPS will save time.
+:::
 
 ## ◽ SSH into Your VPS
 ```
