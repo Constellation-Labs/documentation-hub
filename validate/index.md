@@ -16,19 +16,23 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-In these tutorials, Node Operators will learn how to build and manage a validator node.
+In these tutorials, node Operators will learn how to build and manage a validator node.
 
 <DocsCards>
-  <DocsCard header="Build a VPS" href="/validate/validator/getting-started" img="/img/validator_nodes/cloud.png">
-    <p>Setup a Virtual Private Server (VPS) in the cloud including SSH keys; to install your Constellation Node.</p>
+  <DocsCard header="Quick Start Guides" href="/validate/quick" img="/img/home/apps.jpg">
+    <p>Review the various installation and procedural quick start guides.</p>
   </DocsCard>
 
-  <DocsCard header="NODECTL User Guide" href="/validate/automated/getting-started/nodectl-getting-started" img="/img/validator_nodes/nodes_logo.jpg">
-    <p>Turn your VPS into a Constellation Node using Constellation Network's <b>nodectl</b> utility.</p>
+  <DocsCard header="Build a VPS" href="/validate/validator/getting-started" img="/img/home/apps.jpg">
+    <p>Setup a Virtual Private Server (VPS) in the cloud including SSH keys; to install your Constellation node.</p>
   </DocsCard>
 
-  <DocsCard header="Manual Installation" href="/validate/manual/manual-install-getting-started" img="/img/validator_nodes/hard_hat.png">
-    <p>ADVANCED: <b>Manually</b> setup a Node from a clean Debian installation.</p>
+  <DocsCard header="NODECTL User Guide" href="/validate/automated/getting-started/nodectl-getting-started" img="/img/home/apps.jpg">
+    <p>Turn your VPS into a Constellation node using Constellation Network's <b>nodectl</b> utility.</p>
+  </DocsCard>
+
+  <DocsCard header="Manual Installation" href="/validate/manual/manual-install-getting-started" img="/img/home/apps.jpg">
+    <p>ADVANCED: <b>Manually</b> setup a node from a clean Debian installation.</p>
   </DocsCard>
 </DocsCards>
 
@@ -55,12 +59,12 @@ Constellation Network's main development **TestNet** to assist with individual m
 Constellation Network's TestNet, used to develop our primary protocol.
 
 :::info Are you on the seed list?
-All three metagraphs, MainNet, IntegrationNet and Testnet currently have a seed list[^2] in place that only allows specific `nodeids` to join the network. 
+All three metagraphs, MainNet, IntegrationNet and Testnet currently have a seed list[^2] in place that only allows specific `node ids` to join the network. 
 :::
 
 ### Seed List
 
-The seed list functions as an access list, equivalent to an access control feature. It comprises node IDs (public keys) that form part of each Validator Node's key pair, utilized as part of the mechanisms used for network authentication, signing validated data, and managing the Node's wallet rewards.
+The seed list functions as an access list, equivalent to an access control feature. It comprises node IDs (public keys) that form part of each Validator node's key pair, utilized as part of the mechanisms used for network authentication, signing validated data, and managing the node's wallet rewards.
 
 The seed list adds an additional layer of security and stability as the ecosystem matures, although it is anticipated to be gradually phased out. Once the restrictions on the seed list are lifted, individuals meeting the proper collateral and VPS or hardware requirements will be able to join the Hypergraph or a metagraph.
 

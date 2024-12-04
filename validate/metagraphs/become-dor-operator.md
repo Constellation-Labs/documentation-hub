@@ -20,7 +20,7 @@ The following are the basic requirements to become a Dor Metagraph operator.
 - Discord account.
 - [Collateral requirement](#-collateral-preparation).
 
-Post approve to the program:
+Post acceptance into the program:
 
 - Dor validator node that is up, running, and properly connected to the metagraph. 
 
@@ -65,17 +65,22 @@ Connect your [Stargazer](/learn/tools-resources/wallets) through the Lattice Gat
 Your application to join the program will be processed through the Lattice Gateway. Upon approval, you will receive an email containing detailed instructions for the next steps.
 
 ## ◽ Post Acceptance
-Once your application is approved, you can begin the technical steps to build and activate your Dor Validator Node.
+Once your application is approved, you can begin the technical steps to build and activate your Dor validator node.
 
 *You may decide to bookmark this location and return to continue reading upon acceptance.*
 
 #### 1. Reception
 You will receive your acceptance and be ready to continue.
 
-#### 2. Build your Dor Validator Node.
+#### 2. Build your Dor validator node.
 Follow the [quick start guide](/validate/quick-start/dor-quickstart) to create and configure your node.
 #### 3. Supply your node id to Lattice.
 Once your Dor validator node is created, you will be required to log back into your [Lattice Gateway](https://lattice.is) account and input your node's `node id`.
+
+```
+sudo nodectl nodeid -p <profile_name>
+```
+<p style={{fontSize:'.8em'}}>Replace the &lt;profile_name&gt; with the profile defined on your node. eg) dag-l0, intnet-l0, or dor-dl1.</p> 
 
 When you enter this node id, the Lattice Gateway will automatically link your Dor validator node to your account and your validator node will be eligible to receive both [reward types](#-understanding-rewards).  
 
@@ -84,11 +89,13 @@ When you enter this node id, the Lattice Gateway will automatically link your Do
 - The original wallet that you connected to your Lattice account to prove your collateral requirement will **not** receive any rewards **unless** it the same Stargazer wallet that is present on the node.  
 
 :::info Wallet Export Considerations
-In most cases, you will not be able to directly export your existing wallet for use on your Dor Validator Node.
+In most cases, you will not be able to directly export your existing wallet for use on your Dor validator node.
 
 Although not recommended, if you are an advanced user with experience managing wallets, you may choose to export the private key from your current wallet and import it into the p12 keystore configured on the node.
 
 This process requires a solid understanding of key management and security practices. Proceed with caution to ensure the integrity of your wallet and private keys. 
+
+**Unauthorized access to your P12 keystore can be potentially crippling to the operations of your node; as well as, may have financial consequences because your node will hold a `hot wallet`.**
 
 If you’re unfamiliar with this process, it is recommended to use the new wallet created during the node build, and transfer the tokens from the original wallet to the new wallet, practicing normal transfer protocol to ensure you do not run into any issues (lost funds) during transfer.
 :::

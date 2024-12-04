@@ -21,13 +21,13 @@ Begin the nodectl quick installation installation.
 
 ## Using all default values
 
-The `--quick-install` option will not ask any questions to the Node Operator except for a unique [p12](/validate/validator/p12) passphrase and unique password for the user account that will be created during the installation.  The user account will be used to administer your Node after-the-fact.
+The `--quick-install` option will not ask any questions to the Node Operator except for a unique [p12](/validate/validator/p12) passphrase and unique password for the user account that will be created during the installation.  The user account will be used to administer your node after-the-fact.
 
 <MacWindow>
 ubuntu@ip-172-31-23-246:~$ sudo nodectl install --quick-install
 </MacWindow>
 
-The values your Node will obtain from a default installation:
+The values your node will obtain from a default installation:
 - username: `nodeadmin`
 - p12 keystore name: `nodeadmin.p12`
 - p12 keystore alias: `nodeadmin-alias`
@@ -48,7 +48,7 @@ sudo nodectl install --quick-install --username bob --user-password abc123!@#abc
 ubuntu@ip-172-31-23-246:~$ sudo nodectl install --quick-install --username bob --user-password abc123!@#abc123 --p12-name acme-industries.12 --p12-passphrase efg345$%^efg345 --p12-alias acme-industries-alias 
 </MacWindow>
 
-Once we hit enter, the command 👆 will tell nodectl to ingest the options for us and setup our Node replacing the default values with the provided values.
+Once we hit enter, the command 👆 will tell nodectl to ingest the options for us and setup our node replacing the default values with the provided values.
 
 
 

@@ -16,21 +16,21 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Setup Digital Ocean Firewall Rules
 
-If you launched your Droplet, and it is already deployed, we can begin implementing some necessary access rules; as well as, security measures, by adding Firewall Rules. This will reduce access inbound to our Node from the Internet. Reducing your Node's exposure to nefarious actors.
+If you launched your Droplet, and it is already deployed, we can begin implementing some necessary access rules; as well as, security measures, by adding Firewall Rules. This will reduce access inbound to our node from the Internet. Reducing your node's exposure to nefarious actors.
 
-This will restrict all access except what our Node needs to operate on the Hypergraph.
+This will restrict all access except what our node needs to operate on the Hypergraph.
 
-Now, let's access the GUI dashboard of our Node via the Digital Ocean Web Console. 
+Now, let's access the GUI dashboard of our node via the Digital Ocean Web Console. 
 
 ### Obtain IP address for records
 
-Go ahead and mark down your external IP Address.  The IP address will be pivotal information necessary to help us connect into our Node later in the process.
+Go ahead and mark down your external IP Address.  The IP address will be pivotal information necessary to help us connect into our node later in the process.
 
 ![](/img/validator_nodes/do-sg1.png)
 
 ### Access firewall section
 
-Click on the **Node**.
+Click on the **node**.
 
 ![](/img/validator_nodes/do-sg2.png)
 
@@ -71,10 +71,10 @@ Click [here](https://www.whatismyip.com) to get redirected to a website ([whatis
 You will use this IP address as your Source for `TCP port 22` (ssh).
 
 :::note FOR YOUR INFORMATION
-This is going to restrict access to your Node from this location only (your `local` location with the computer you are working on at this very moment). If you want access into your node from other locations (like roaming on your mobile device), you will need to create a more complex rule here (out of scope of this document).
+This is going to restrict access to your node from this location only (your `local` location with the computer you are working on at this very moment). If you want access into your node from other locations (like roaming on your mobile device), you will need to create a more complex rule here (out of scope of this document).
 :::
 :::danger
-The less restrictive your access, the more vulnerable your Node becomes.
+The less restrictive your access, the more vulnerable your node becomes.
 :::
 
 ### Add Secure Shell rules
@@ -91,7 +91,7 @@ Add to that box in its place (replacing the (now removed) `All IPv4` and `All IP
 Example) If `113.113.113.113` was our IP address then we would add in `113.113.113.113/32`
 
 :::note
-If you want to access your Node from other locations, you will have to add the IP addresses from those locations in `one-by-one`. If you are more advanced, you can add `subnets` by updating the `CIDR` block (subnet mask). 
+If you want to access your node from other locations, you will have to add the IP addresses from those locations in `one-by-one`. If you are more advanced, you can add `subnets` by updating the `CIDR` block (subnet mask). 
 :::
 
 :::info
@@ -105,7 +105,7 @@ Centralized Corporations (and businesses) generally never open SSH access to the
 
 ### Add Constellation Network rules 
 
-Now we will add a custom rule necessary for our future `Node` to operate properly.
+Now we will add a custom rule necessary for our future `node` to operate properly.
 
 Click the dropdown box and choose **custom**
 
@@ -118,9 +118,9 @@ In the Ports column, we will add in the Start port, then the End port, with a `d
 We will **leave** the `All IPv4` and `All IPv6` items.
 
 ## MainNet, IntegrationNet or TestNet Launch Requirement 
-It is highly recommended that you use `nodectl` to install and control/admin your Node.
+It is highly recommended that you use `nodectl` to install and control/admin your node.
 
-Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet, IntegrationNet or TestNet Validator Node's `Layer1` connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.  
+Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet, IntegrationNet or TestNet validator node's `Layer1` connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.  
 
 :::note
 You do not need to use ports `9000-9001` or `9010-9011`, you can use whatever ports best fit your scenario.  If you are not an advanced user, these ports will work well.  Advanced users, please make sure that whatever ports you decide to use are not in conflict with other services or protocols on your VPS, and it is highly recommended to stay within the range of `1024-65536`.
@@ -145,7 +145,7 @@ You do not need to use ports `9000-9001` or `9010-9011`, you can use whatever po
 
 Match the rest of the rules, following the same pattern. 
 
-In the Apply to Droplet section, start typing the name of your Node, and it should auto-populate. 
+In the Apply to Droplet section, start typing the name of your node, and it should auto-populate. 
 
 Lastly, click on the **Create Firewall**.
 
@@ -155,4 +155,4 @@ Lastly, click on the **Create Firewall**.
 
 The creation of your Digital Ocean Droplet is complete!
 
-Our Droplet is now ready to be turning into a Constellation Node running Tessellation!
+Our Droplet is now ready to be turning into a Constellation Network node running Tessellation!

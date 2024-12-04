@@ -50,7 +50,7 @@ Please see the [command reference guide](/validate/automated/nodectl-commands#in
 
 ## ◽ Example Usage
 
-Quick install that creates a p12 wallet with the name `mywallet.p12` with a passphrase of `mywalletpassphrase`, a Node admin user called `hgtpdagadmin` with a password of `myuserpassword` and a p12 alias of `myp12alias`.
+Quick install that creates a p12 wallet with the name `mywallet.p12` with a passphrase of `mywalletpassphrase`, a node admin user called `hgtpdagadmin` with a password of `myuserpassword` and a p12 alias of `myp12alias`.
 
 <MacWindow>
 nodeadmin@Constellation-Node:~$ sudo nodectl install --quick-install --p12-passphrase hgtpdagadmin --user hgtpdagadmin --user-password myuserpassword --p12-alias myp12alias

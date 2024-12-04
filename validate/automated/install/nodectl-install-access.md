@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -83,7 +83,7 @@ ubuntu@ip-172-31-90-241:~$<br />
 
 1. We issued the connection request with the `ssh` command.
 1. Because this was our initial attempt to access this VPS, a warning message was presented, cautioning us about connecting to what the local computer system deemed an "unknown" connection, potentially of a malicious nature. However, since we are aware that this request was intentionally initiated by us, we can proceed with the connection.
-1. We type `yes` to proceed with accessing the new VPS (and future Node). This action informs the local computer system not to prompt us again, indicating our trust in this system. The local computer will now remember that it can trust this system for future connection requests, enabling access to this new VPS system.  We will not be challenged with this warning again.
+1. We type `yes` to proceed with accessing the new VPS (and future node). This action informs the local computer system not to prompt us again, indicating our trust in this system. The local computer will now remember that it can trust this system for future connection requests, enabling access to this new VPS system.  We will not be challenged with this warning again.
 1. The `MOTD` (Message of the Day) banner displays basic system related details of the VPS we connected into; along with, security patch information. We can review this information, but no action is required for now (until later in the documentation).
 1. Finally we see `ubuntu@ip-172-31-90-241:~$`, on the last line.  The `ubuntu` before the `@` indicates that the username we logged into as; is called: `ubuntu`.  
 

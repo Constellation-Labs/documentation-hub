@@ -17,14 +17,14 @@ import DocsCards from '@components/global/DocsCards';
 
 ## EIP Control Panel
 
-The EC2 Instance (future Constellation Network Node) will need to be `stopped` and `started`. With the current configuration, AWS will `disassociate` or `external IP` automatically, and assign us a new one, on every restart. We do not want our IP Address to change. 
+The EC2 Instance (future Constellation Network node) will need to be `stopped` and `started`. With the current configuration, AWS will `disassociate` or `external IP` automatically, and assign us a new one, on every restart. We do not want our IP Address to change. 
 
 Since our local computer accessing this EC2 instance will be configured with a `static` configuration, it is more efficient to assign an EIP to our EC2 instance. 
 
 To accomplish this, we will setup an Elastic IP address (EIP) to persist our Internet presence.
 
 :::note
-The Constellation Network Hypergraph and subsequent metagraphs to not need persistent IP addresses. This step is to eliminate unnecessary steps to administer your Node each time it is restarted.
+The Constellation Network Hypergraph and subsequent metagraphs to not need persistent IP addresses. This step is to eliminate unnecessary steps to administer your node each time it is restarted.
 
 EIP addresses on AWS to not incur cost unless not in use.
 :::

@@ -7,7 +7,7 @@ hide_table_of_contents: false
   <title>Install Node Dependencies</title>
   <meta
     name="description"
-    content="This document will help to install the necessary programs and binaries to properly run a Validator Node."
+    content="This document will help to install the necessary programs and binaries to properly run a Validator node."
   />
 </head>
 
@@ -40,7 +40,7 @@ Tessellation requires version 11 of Java to be installed. Normally you can insta
 ```
 sudo apt -y install default-jdk haveged
 ```
-However, depending on the Debian distribution you are using, you may need to install Java manually via the **required** version.  Distributions such as `Ubuntu 23.04` will install a higher version of Java; preventing Tessellation from properly running on your Node.
+However, depending on the Debian distribution you are using, you may need to install Java manually via the **required** version.  Distributions such as `Ubuntu 22.04` will install a higher version of Java; preventing Tessellation from properly running on your node.
 :::
 
 ```
@@ -76,5 +76,5 @@ Please select the city or region corresponding to your time zone.
 That is all we need. If you are an advanced user, you can install any other programs or packages of your choosing.
 
 :::tip
-Your Node will perform better if it has access to more resources. It is discouraged to install other unnecessary programs that will create processes that may consume these resources. This could negatively affect the Node.
+Your node will perform better if it has access to more resources. It is discouraged to install other unnecessary programs that will create processes that may consume these resources. This could negatively affect the node.
 :::

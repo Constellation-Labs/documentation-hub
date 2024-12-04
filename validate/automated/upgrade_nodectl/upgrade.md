@@ -21,7 +21,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 In the background, nodectl will download the latest version of nodectl.
 
 :::caution POSSIBLE ERROR
-We may encounter an error `cfg-199` depending on the version of nodectl you are utilizing.  This is an error message that lets us know that we need to upgrade our Node after the utility (nodectl) upgrade is completed.  
+We may encounter an error `cfg-199` depending on the version of nodectl you are utilizing.  This is an error message that lets us know that we need to upgrade our node after the utility (nodectl) upgrade is completed.  
 
 We can safely ignore this message and continue.
 
@@ -63,7 +63,7 @@ nodeadmin@Constellation-Node:~#
 </MacWindow> 
 
 :::danger IMPORTANT
-Even if you see a SUCCESS message when validating your copy of nodectl via a digital signature, you should still compare the public key and hash value between the output displayed on your Node during the upgrade and the values in the offical repository.
+Even if you see a SUCCESS message when validating your copy of nodectl via a digital signature, you should still compare the public key and hash value between the output displayed on your node during the upgrade and the values in the official repository.
 
 Links are provided in the output. Access these links, ensure you are on the correct repository (not a phishing site), and compare the hashes and keys for verification.
 :::
@@ -72,19 +72,19 @@ Links are provided in the output. Access these links, ensure you are on the corr
 
 In some cases, nodectl will recognize that an upgrade is required.  
 
-In this example, an upgrade of the `Node` is required.  This will help nodectl to run properly on your Node whether it is an upgrade needed for nodectl, or changes to the Tessellation protocol that may require some updates.
+In this example, an upgrade of the `node` is required.  This will help nodectl to run properly on your node whether it is an upgrade needed for nodectl, or changes to the Tessellation protocol that may require some updates.
 
 <MacWindow>
-This version of nodectl requires an upgrade be performed on your Node.<br />
+This version of nodectl requires an upgrade be performed on your node.<br />
 <br />
 Press Y then [ENTER] to upgrade or N then [ENTER] to cancel:<br />
 </MacWindow>
 
-## Upgrading Node after nodectl
+## Upgrading node after nodectl
 
 You can press <kbd>Y</kbd>+<kbd>Enter</kbd> to accept and allow nodectl to enter directly into the upgrade command, or <kbd>N</kbd>+<kbd>Enter</kbd> if we want to wait until later.  
 
-If we choose not to upgrade the Node after the nodectl upgrade, we must return to the upgrade process when ready and issue a [sudo nodectl upgrade](/validate/automated/upgrade/nodectl-upgrade) to allow our Node to finish the upgrade.
+If we choose not to upgrade the node after the nodectl upgrade, we must return to the upgrade process when ready and issue a [sudo nodectl upgrade](/validate/automated/upgrade/nodectl-upgrade) to allow our node to finish the upgrade.
 
 ## Upgrade Not Required
 
@@ -92,4 +92,4 @@ Congratulations, you have completed this step-by-step guide!
 
 ## Upgrade Required
 
-Once the upgrade begins, we can refer to the [upgrade guide](/validate/automated/upgrade/nodectl-upgrade) to for a detailed step-by-step on the process of upgrading your Node.
+Once the upgrade begins, we can refer to the [upgrade guide](/validate/automated/upgrade/nodectl-upgrade) to for a detailed step-by-step on the process of upgrading your node.

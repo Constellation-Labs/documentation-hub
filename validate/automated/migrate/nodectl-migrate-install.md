@@ -12,11 +12,11 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network Automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
-To ensure your VPS is properly configured to function as a Constellation Node, we'll need to verify system requirements and complete some setup tasks.  To do so, we will follow the normal installation setup documentation.
+To ensure your VPS is properly configured to function as a Constellation Network node, we'll need to verify system requirements and complete some setup tasks.  To do so, we will follow the normal installation setup documentation.
 
 ### Begin Normal Installation
 Follow the following step-by-step until you reach the **blue box** which will navigate you back to this page to continue "p12 migration specific" steps.

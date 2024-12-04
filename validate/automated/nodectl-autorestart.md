@@ -32,7 +32,7 @@ If an auto_restart might interfere with another nodectl command issued by the No
 
 The `auto_upgrade` command is an extension of the auto_restart feature, working in conjunction with it.
 
-If nodectl detects that your Node is not properly connected to the Hypergraph and/or metagraphs, as specified in the configuration, it will not only attempt to bring your node back online but also ensure that the version of Tessellation is up to date by automatically upgrading your Node.
+If nodectl detects that your node is not properly connected to the Hypergraph and/or metagraphs, as specified in the configuration, it will not only attempt to bring your node back online but also ensure that the version of Tessellation is up to date by automatically upgrading your node.
 
 :::caution Note
 `auto_upgrade` requires that `auto_restart` is also enabled.
@@ -51,7 +51,7 @@ You may use the [auto_restart quick start](/validate/quick-start/auto-start-quic
 
 #### Steps to configure `auto_restart` in the configuration:
 
-1. Connect to your Node
+1. Connect to your node
    - Connect to a [mac](/validate/resources/accessMac).
    - Connect to [windows](/validate/resources/accessWin).
 

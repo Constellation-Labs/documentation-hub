@@ -27,7 +27,7 @@ The original `version 1` **p12** files are no longer in use.
 
 ## Purpose
 
-The purpose of this document is to help any **Node Operators** that are still running their Nodes using `version 1` **p12** private key files to convert them to `version 2`.
+The purpose of this document is to help any **Node Operators** that are still running their nodes using `version 1` **p12** private key files to convert them to `version 2`.
 
 ## Setup
 
@@ -36,7 +36,7 @@ The purpose of this document is to help any **Node Operators** that are still ru
 We need to verify that we have the proper software packages installed on our system in order to push forward with a migration.
 
 The **easiest** way to do this:
-- To utilize an existing **Constellation Network Validator Node** with nodectl installed.
+- To utilize an existing **Constellation Network validator node** with nodectl installed.
 - To install nodectl on a fresh Linux Debian distribution.
 
 Alternatively, you can install the proper components on your own and follow the instructions after complete.
@@ -49,7 +49,7 @@ If you already have nodectl running on your VPS, you only need upload your `vers
 - [restore p12 from windows](/validate/resources/p12-backup-win#restoring-your-p12)
 
 :::danger
-If utilizing an existing ( *or running* ) **Validator Node**, please make sure you do not overwrite your existing **p12** private key file or settings.
+If utilizing an existing ( *or running* ) **validator node**, please make sure you do not overwrite your existing **p12** private key file or settings.
 :::
 
 #### If you do not have nodectl installed...
@@ -60,11 +60,11 @@ Simply:
   - Follow the instructions to [install nodectl](/validate/automated/nodectlInstall) 
   
   :::info Side Note
-  We will not be using this VPS as a **Validator Node**.  The purpose of installing nodectl is just a simply way to add all the necessary components/tools necessary to convert our **p12** `version 1` to `version 2`. 
+  We will not be using this VPS as a **validator node**.  The purpose of installing nodectl is just a simply way to add all the necessary components/tools necessary to convert our **p12** `version 1` to `version 2`. 
   :::
 
 :::note
-If you are planning to build a dedicated VPS that will **not** ultimately be used as a validator Node, you do not need to adhere to the advised VPS sizing requirements.
+If you are planning to build a dedicated VPS that will **not** ultimately be used as a validator node, you do not need to adhere to the advised VPS sizing requirements.
 
 You only need to verify that you have at least `30Gb` of hard drive space (disk) to make sure there is enough room for nodectl's automation process to install the necessary components. 
 :::
@@ -76,7 +76,7 @@ You only need to verify that you have at least `30Gb` of hard drive space (disk)
 Please follow the [manual](/validate/manual/manual-install-getting-started) instructions. 
 
 :::note
-If not planning on using the VPS as a **Validator Node**; rather, just to convert your p12 file from `version 1` to `version 2`, you only need to use a simple VPS instance and allow for at least `30Gb` of hard drive space (disk)
+If not planning on using the VPS as a **validator node**; rather, just to convert your p12 file from `version 1` to `version 2`, you only need to use a simple VPS instance and allow for at least `30Gb` of hard drive space (disk)
 :::
 
 ## Conversion Process
@@ -111,7 +111,7 @@ Before we continue, it is important to have all our information in place to avoi
   - `keypass` passphrase &rarr; `CL_KEYPASS`
   - Our wallet's `alias` &rarr; `CL_KEYALIAS`
     :::warning Important
-    This is **not** the MainNet 1.0 Validator Node alias.
+    This is **not** the MainNet 1.0 Validator node alias.
     :::
   - `name` of our p12 file
 
@@ -236,4 +236,4 @@ After completing the connection tests, exporting your [private key](/validate/au
 
 If you did **not** rename your `v2` **p12** back to the original **p12** filename used before the migration ( and do not intend to ), you should make sure nodectl is aware of the p12 file name change.
 
-You can update the [configuration](/validate/automated/nodectl-config) by issuing a [`sudo nodectl configure`](/validate/automated/nodectl-commands#configure) on your Node with nodectl installed.
+You can update the [configuration](/validate/automated/nodectl-config) by issuing a [`sudo nodectl configure`](/validate/automated/nodectl-commands#configure) on your node with nodectl installed.

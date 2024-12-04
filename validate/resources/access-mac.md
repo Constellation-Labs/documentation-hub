@@ -4,7 +4,7 @@ hide_table_of_contents: false
 ---
 
 <head>
-  <title>Access your VPS to create your Node - Macintosh</title>
+  <title>Access your VPS to create your node - Macintosh</title>
   <meta
     name="description"
     content="Documentation on how to access a newly created VPS (Virtual Private Server) in the Cloud from your local Macintosh system."
@@ -107,7 +107,7 @@ Processes: 157
 
 
 Last login: Thu [...]
-root@nodegarage:~#
+root@mynode:~#
 ```
 
 :::note
@@ -115,11 +115,11 @@ Certain information was redacted from the output above.
 :::
 
 :::note
-From the instance output above above.  `root@nodegarage` : the `nodegarage` would show as the `hostname` that you supplied during the build process, in the previous steps. You may also see a `$` instead of a `#`, this does not matter.
+From the instance output above above.  `root@mynode` : the `mynode` would show as the `hostname` that you supplied during the build process, in the previous steps. You may also see a `$` instead of a `#`, this does not matter.
 :::
 
 :::info 
-You should **not** use `NodeGarage` as your `hostname`. However, it should not make a difference in performance or functionality.
+You may use `mynode` as your `hostname` but, it is better to use a hostname that meets your situation a little better. However, it should not make a difference in performance or functionality.
 :::
 
 ##### Excellent!

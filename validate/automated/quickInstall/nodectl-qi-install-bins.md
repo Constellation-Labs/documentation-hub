@@ -18,7 +18,7 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
   />
 </head>
 
-nodectl can now begin the installation of the java binary files that allow our Node to run the Tessellation protocol.
+nodectl can now begin the installation of the java binary files that allow our node to run the Tessellation protocol.
 
 nodectl will do this for us automatically, so no action is required.
 
@@ -39,7 +39,7 @@ Fetch [seedlist for -> dag-l1] ................ disabled<br />
 Description of the files being downloaded here.  
 
 :::note Note
-The file names may change depending on the metagraph being configured, for this Node.
+The file names may change depending on the metagraph being configured, for this node.
 :::
 
 | Binary File Name | Profile Type | Description |

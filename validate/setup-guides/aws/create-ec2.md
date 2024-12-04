@@ -11,7 +11,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>Amazon Web Services (AWS)</title>
   <meta
     name="description"
-    content="Begin the process of building an EC2 instance to turn into a Constellation Node."
+    content="Begin the process of building an EC2 instance to turn into a Constellation node."
   />
 </head>
 
@@ -112,5 +112,5 @@ We will need to return to this section and repeat the above steps again...
 
 Before we do this, we must upload our SSH keys to this AWS Region.  
 
-In the next section, we continue by preparing our SSH keys, and then return to continue building your EC2 instance (and future Constellation Network Node).
+In the next section, we continue by preparing our SSH keys, and then return to continue building your EC2 instance (and future Constellation Network node).
 :::

@@ -12,13 +12,13 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
-If you followed the recommended [setup](/validate/) instructions to build your VPS to run your Node on, you should have gone through the process of creating [ssh keys](/validate/validator/ssh-keys).
+If you followed the recommended [setup](/validate/) instructions to build your VPS to run your node on, you should have gone through the process of creating [ssh keys](/validate/validator/ssh-keys).
 
-Unless you are running your Node in a specialized way (advanced users) that require the use a username/password method of accessing your future Node, we recommend the use of SSH keys.  
+Unless you are running your node in a specialized way (advanced users) that require the use a username/password method of accessing your future node, we recommend the use of SSH keys.  
 
 ### Choose authentication method
 
@@ -51,14 +51,14 @@ Transferring SSH key to [nodeadmin] ........... completed    <br />
 
 ### Disable common accounts
 
-To add more security to our future Node, we will now be offered the chance to disable remote access via the user accounts that we will no longer be using.
+To add more security to our future node, we will now be offered the chance to disable remote access via the user accounts that we will no longer be using.
 
-Also, we will disable the root user account's ability to remotely access our Node.  The root user should only be used sparingly for full access necessities.  We will access the root user; as needed, via the `nodeadmin` account.
+Also, we will disable the root user account's ability to remotely access our node.  The root user should only be used sparingly for full access necessities.  We will access the root user; as needed, via the `nodeadmin` account.
 
-Once completed, we will only access our Node from the `nodadmin` account.  This is a good security measure.
+Once completed, we will only access our node from the `nodadmin` account.  This is a good security measure.
 
 :::note 
-The Node in this tutorial is being created using an AWS instance in the cloud.  AWS uses a commonly known `ubuntu` user for initial access. 
+The node in this tutorial is being created using an AWS instance in the cloud.  AWS uses a commonly known `ubuntu` user for initial access. 
 
 nodectl attempts to be as smart as possible to identify default accounts from other cloud providers; such as:
  
@@ -69,16 +69,16 @@ nodectl attempts to be as smart as possible to identify default accounts from ot
 
 ### Disable root
 
-With the successful completion of our connection tests, we are assured we are able to access our Node via our `nodeadmin` users.  We can now safely allow nodectl to disable the root user's remote access.  
+With the successful completion of our connection tests, we are assured we are able to access our node via our `nodeadmin` users.  We can now safely allow nodectl to disable the root user's remote access.  
 
 We will only use the root user by connecting through `nodeadmin` and then switching to the `root` user as necessary via the `sudo` command.
 
 :::danger Advanced Concerns
-Do not worry if some of this information seems advanced.  At the end of the day, you should not need to access the `root` user to run your Node.  
+Do not worry if some of this information seems advanced.  At the end of the day, you should not need to access the `root` user to run your node.  
 
 In the event you have any issues, you can access Constellation Network's Discord channel, to request help and advice.
 
-We are confident you can simply follow the instructions to build your Node as recommended.
+We are confident you can simply follow the instructions to build your node as recommended.
 :::
 
 We should say <kbd>y</kbd> at the prompt below.
@@ -92,7 +92,7 @@ We will enter say <kbd>y</kbd> (or hit <kbd>enter</kbd> key), for the next quest
   The root user should not have access via SSH nor should AWS's default
   ubuntu user or other provider's admin users.<br />  
 <br />  
-  Access should be disabled so that only the Node
+  Access should be disabled so that only the node
   Administrator has access to this VPS with the nodeadmin user.<br />  
 <br /> 
   This is recommended.<br /> 
@@ -121,7 +121,7 @@ Recommendation is to choose `y` here.
 
 <MacWindow>
 Recommended  During the installation SSH was chosen.<br />
-Do you want to disable username/password based authentication on this Node at the Operating System level to improve security?<br />
+Do you want to disable username/password based authentication on this node at the Operating System level to improve security?<br />
 <br />
 Disable username/password access? [y]:<br />
 </MacWindow>

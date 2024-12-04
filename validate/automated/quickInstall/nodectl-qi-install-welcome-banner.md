@@ -18,7 +18,7 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
   />
 </head>
 
-As the installation starts, we will be received by a welcome banner with minor "warnings" about what we are about to create.  A new Node!
+As the installation starts, we will be received by a welcome banner with minor "warnings" about what we are about to create.  A new node!
 
 <MacWindow>
  ========================================<br />

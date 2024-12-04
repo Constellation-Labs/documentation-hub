@@ -12,13 +12,13 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network Automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
 ### Upload existing p12
 
-In order to properly migrate our existing **p12** private key file to our new Node, we will need to upload the **p12** file manually.
+In order to properly migrate our existing **p12** private key file to our new node, we will need to upload the **p12** file manually.
 
 By default, when we log into a new instance in the cloud, we will be using the default user account that was created by your provider.  (Exception: If you built your server yourself via a bare metal installation.)
 

@@ -22,7 +22,7 @@ nodectl will now attempt to join the `dag-l1`.
 
 For the purpose of this [upgrade](/validate/automated/nodectl-commands#upgrade) (document/manual) example, we did **not** choose the `-w` ([watch](/validate/automated/nodectl-commands#upgrade)) mode.  nodectl will not wait for all peers to connect, as it is not necessary to complete the upgrade.
 
-### Check seed list again and prepare the Node
+### Check seed list again and prepare the node
 
 <MacWindow>
 Start request initiated [node_l1] ............. running <br />
@@ -30,7 +30,7 @@ Start request initiated [node_l1] ............. running <br />
 ----- * CHECK SEED LIST REQUEST * ------<br />
 <br />
 Node found on Seed List ....................... True<br />
-building environment .......................... complete <br />
+Building environment .......................... complete <br />
 Updating services file ........................ complete <br />
 Start request initiated [node_l1] ............. complete  <br />  
 Fetching Status [dag-l1] ...................... <br />                         
@@ -74,7 +74,7 @@ Reviewing [dag-l1] ............................ ReadyToJoin<br />
 </MacWindow>
 
 ### DownloadInProgress blocker
-Because our Node's layer0 process was found in the `DownloadInProgress` state.  We are not able to join `layer1`.
+Because our node's layer0 process was found in the `DownloadInProgress` state.  We are not able to join `layer1`.
 
 nodectl will offer you the following options:
 
@@ -88,7 +88,7 @@ We do **not** need to hit the <kbd>enter</kbd> key, only key press the desired o
 
 <MacWindow>
 Waiting on profile dag-l0 state to be Ready before initiating cluster join.<br />
-ML0 Link Node in [DownloadInProgress] state | not Ready<br /> 
+ML0 Link node in [DownloadInProgress] state | not Ready<br /> 
 Press w to wait 30 seconds<br />
 Press s to skip join<br />
 Press q to quit<br />
@@ -118,15 +118,15 @@ You can skip directly to [show status](#show-status-again); to continue with the
 
 ### Verify layer0
 
-The Node will make sure the `dag-l0` or layer0 is in `Ready` state.  If not in `Ready` state, the process will not continue.
+The node will make sure the `dag-l0` or layer0 is in `Ready` state.  If not in `Ready` state, the process will not continue.
 
 <MacWindow>
-ML0 Link Node in [Ready] state................. Ready<br />
+ML0 Link node in [Ready] state................. Ready<br />
 </MacWindow>
 
 ### Begin the join
 
-The Node will initiate the join to layer1.
+The node will initiate the join to layer1.
 
 <MacWindow>
 Joining with peer [ed6ef751...cf21fc37] ....... 1.1.1.2<br />
@@ -140,7 +140,7 @@ IMPORTANT  It is ok that the peer count &gt; cluster peer count because watch mo
 
 ### Show Status Again
 
-nodectl will check the `status` of your Node.
+nodectl will check the `status` of your node.
 
 <MacWindow>
 PROFILE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SERVICE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOIN STATE<br />

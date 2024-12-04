@@ -24,11 +24,11 @@ In this [upgrade](/validate/automated/nodectl-commands#upgrade) documentation, w
 
 Unless needed, the watch mode is not recommended because it will slow down our upgrade. 
 
-Without the `-w` we create an upgrade that is less verbose. We save time by not forcing the Node Operator to wait for all peer to peer connections to be established.  Instead, once the Node reaches a `state` where it is able to participate on the network, nodectl will stop watching the peer connections.  While the remaining peers connect in the background, we can safely continue the upgrade process.
+Without the `-w` we create an upgrade that is less verbose. We save time by not forcing the node Operator to wait for all peer to peer connections to be established.  Instead, once the node reaches a `state` where it is able to participate on the network, nodectl will stop watching the peer connections.  While the remaining peers connect in the background, we can safely continue the upgrade process.
 
 ### DownloadInProgress
 
-Most likely, your Node will reach the `DownloadInProgress` state, and we may want to continue the upgrade prior to moving out of this state.  
+Most likely, your node will reach the `DownloadInProgress` state, and we may want to continue the upgrade prior to moving out of this state.  
 
 :::note Note
 This documentation uses the word `stage` and `state` interchangeably.
@@ -36,23 +36,23 @@ This documentation uses the word `stage` and `state` interchangeably.
 
 This is perfectly normal situation and this stage may take longer than most other stages of the join process.
 
-DownloadInProgress is the state (stage) of the Node's joining process where it will download your copy of the blockchain.  This is required to participate on the cluster, and this process can take a long time.
+DownloadInProgress is the state (stage) of the node's joining process where it will download your copy of the blockchain.  This is required to participate on the cluster, and this process can take a long time.
 
 #### First time connections
 
-Upon the initial join process to the cluster, since this is the first time your Node is joining the cluster, it may take a few hours to complete the `DownloadInProgress` stage.  Please practice patience during this time.
+Upon the initial join process to the cluster, since this is the first time your node is joining the cluster, it may take a few hours to complete the `DownloadInProgress` stage.  Please practice patience during this time.
 
-You may not reach the next stage shown below, the Node may not properly connect to the layer1.  This is because layer1 must wait for layer0 to complete its join process before joining the layer1 cluster.
+You may not reach the next stage shown below, the node may not properly connect to the layer1.  This is because layer1 must wait for layer0 to complete its join process before joining the layer1 cluster.
 
-You will be required to come back to your Node after a few hours to complete the join process and bring your layer1 online.  
+You will be required to come back to your node after a few hours to complete the join process and bring your layer1 online.  
 
-Alternatively, you can engage the [auto_restart](/validate/automated/nodectl-commands#auto_restart) feature.  When engaged, nodectl will wait for layer0 to move into `Ready` state and automatically join your Node to the layer1 cluster for you.
+Alternatively, you can engage the [auto_restart](/validate/automated/nodectl-commands#auto_restart) feature.  When engaged, nodectl will wait for layer0 to move into `Ready` state and automatically join your node to the layer1 cluster for you.
 
 ### Continuing the upgrade
 
-Below we will see that our Node reached `DownloadInProgress` while it was connected to `36` out of `240` known Nodes on the network.  
+Below we will see that our node reached `DownloadInProgress` while it was connected to `36` out of `240` known nodes on the network.  
 
-At ~`49`( the Node reached a timer threshold ~40 ) and nodectl continued on with the upgrade process...
+At ~`49`( the node reached a timer threshold ~40 ) and nodectl continued on with the upgrade process...
 
 <MacWindow>
 ---------- * Joining dag-l0 * ----------<br />
@@ -65,7 +65,7 @@ Peers: 240 Connected: 36 State: DownloadInProgress Timer: 49<br />
 <br />
 nodectl has detected DownloadInProgress state.<br />
 <br />
-This is not an issue; however, Nodes may take longer than expected time to complete this process.  nodectl will terminate the watching for peers process during this join in order to avoid undesirable wait times.<br />
+This is not an issue; however, nodes may take longer than expected time to complete this process.  nodectl will terminate the watching for peers process during this join in order to avoid undesirable wait times.<br />
 <br />
 Join process complete ......................... done<br />
 &nbsp;&nbsp;IMPORTANT&nbsp;&nbsp;It is ok that the peer count &lt; cluster peer count because watch mode was not chosen by upgrade.<br />
@@ -94,4 +94,4 @@ NODE ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 
 Once nodectl reaches `Ready` on the primary layer0, it will then attempt to join `layer1`.
 
-In our example, the Node has continued to remain in `DownloadInProgress` while it was in the process of completing this stage of joining the network.  
+In our example, the node has continued to remain in `DownloadInProgress` while it was in the process of completing this stage of joining the network.  

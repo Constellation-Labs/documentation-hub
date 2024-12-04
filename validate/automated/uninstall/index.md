@@ -18,17 +18,17 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-This guide will help you through the process of uninstalling your Constellation Node completely by removing all data associated with running a Constellation Node.
+This guide will help you through the process of uninstalling your Constellation Network node completely by removing all data associated with running a Constellation Network node.
 
 ## Simplest Method
 
-If you are running on a cloud provider, simply destroying the VPS running the Constellation Node will suffice to remove all traces of data and eliminate the need to perform an uninstall. 
+If you are running on a cloud provider, simply destroying the VPS running the Constellation Network node will suffice to remove all traces of data and eliminate the need to perform an uninstall. 
 
 ## Alternatively
 
-If we have a bare metal server that may be performing other tasks, etc. You can attempt to perform an uninstall of our Node.  
+If we have a bare metal server that may be performing other tasks, etc. You can attempt to perform an uninstall of our node.  
 
-An Uninstall will not remove the dependencies that were installed during the initial installation.  This is done to avoid breaking other programs or processes not associated with a Constellation Node, that may be using those dependencies.
+An Uninstall will not remove the dependencies that were installed during the initial installation.  This is done to avoid breaking other programs or processes not associated with a Constellation Network node, that may be using those dependencies.
 
 Exclusions:
 - Java Installation

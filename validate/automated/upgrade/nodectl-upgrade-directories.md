@@ -18,7 +18,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Node directory cleanup
 
-It important to keep our **Node** hard drive space clean of unnecessary files.
+It important to keep our **node** hard drive space clean of unnecessary files.
 
 ### Clean up backups
 
@@ -30,7 +30,7 @@ You should review your backups to make sure you do **NOT** delete files you may 
 
 Advanced users may want to transfer these files to a secondary backup directory to keep them safe.
 
-**You should have a backup of the following files in a secure location that is not on your Node.**
+**You should have a backup of the following files in a secure location that is not on your node.**
 
 - p12 file
 - SSH private and public key
@@ -45,8 +45,8 @@ As of `v2.13.0` and later, nodectl has the ability to encrypt the p12 passphrase
 In the event you are offered and choose to encrypt (*which is recommended*):
 
 **Two things are advised**:
-1. Do **not** remove the backups until you have confirmed that your Node is in full operating order.  When requested by the upgrade process, say <kbd>n</kbd>. This will save the current backup with the unencrypted passphrase and proper configuration necessary to run unencrypted, which will ease your ability to restore, in the unlikely event of an issue.
-2. Once you have confirmed your Node is properly working, the `backup` files will still contain your passphrase in clear text.  It is advised to **delete** the backups, once proper operation of the Node is confirmed.  This can be done via the nodectl [clean files](../nodectl-commands#clean_files) command, manually, or during the next upgrade request.
+1. Do **not** remove the backups until you have confirmed that your node is in full operating order.  When requested by the upgrade process, say <kbd>n</kbd>. This will save the current backup with the unencrypted passphrase and proper configuration necessary to run unencrypted, which will ease your ability to restore, in the unlikely event of an issue.
+2. Once you have confirmed your node is properly working, the `backup` files will still contain your passphrase in clear text.  It is advised to **delete** the backups, once proper operation of the node is confirmed.  This can be done via the nodectl [clean files](../nodectl-commands#clean_files) command, manually, or during the next upgrade request.
 :::
 
 The answer to this question, is **up to you**, in the example we said <kbd>y</kbd>, but please read the important note 👆.
@@ -66,9 +66,9 @@ The answer to this question, is **up to you**, in the example we said <kbd>y</kb
 
 Similar to the **backups** you may have some files that were created in order to upload for diagnostics, logging, accounting, etc.   We can clean up these files as well.
 
-In the event that your Node has files located in this special directory, you will be given a list of the files that will be removed and a confirmation prompt.
+In the event that your node has files located in this special directory, you will be given a list of the files that will be removed and a confirmation prompt.
 
-In the below example, the `uploads` directory was found to be emtpy, so the step was skipped
+In the below example, the `uploads` directory was found to be empty, so the step was skipped
 
 <MacWindow>
   --------- * CLEAN UP UPLOADS * ---------<br />

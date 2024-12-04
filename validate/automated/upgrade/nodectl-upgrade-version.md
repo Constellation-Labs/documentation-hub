@@ -17,9 +17,9 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
   />
 </head>
 
-nodectl will attempt to identify the current version of Tessellation running on Node, and it will identify the latest version running on the cluster.
+nodectl will attempt to identify the current version of Tessellation running on node, and it will identify the latest version running on the cluster.
 
-In our example we are currently running `v2.2.0` on our Node and want to upgrade to `v2.2.3`.
+In our example we are currently running `v2.2.0` on our node and want to upgrade to `v2.2.3`.
 
 <MacWindow>
 ------ * HANDLE NODE VERSIONING * ------<br />
@@ -40,7 +40,7 @@ We can hit <kbd>enter</kbd> to accept the default version because in this exampl
 If you are upgrading Tessellation "over itself" by upgrading to the same version already installed ( upgrade from v2.2.3 to v2.2.3 ) you may receive a warning message.
 <MacWindow>
 WARNING  Tessellation is already on the latest known version.<br />
-If you are only upgrading the Node's internal components because your Node is exhibiting undesirable or unexpected behavior, you should accept the default and upgrade your Node's version to the same version level by simply hitting &lt;enter&gt; here.<br />
+If you are only upgrading the node's internal components because your node is exhibiting undesirable or unexpected behavior, you should accept the default and upgrade your node's version to the same version level by simply hitting &lt;enter&gt; here.<br />
 </MacWindow>
 </Collapsible>
 
@@ -62,7 +62,7 @@ Please enter version to upgrade to.........[v2.2.3] : v2.2.2
 If nodectl sees multiple profiles (such as a layer0 and layer1 configuration) the other profile will be identified and elements displayed.
 
 :::note Environment Dependencies
-nodectl will only allow one environment to be upgraded at a time.  In the event you have multiple environments running on your Node, you will need to upgrade each independently.
+nodectl will only allow one environment to be upgraded at a time.  In the event you have multiple environments running on your node, you will need to upgrade each independently.
 :::
 
 In this example, nodectl found the profile `dag-l1` running **in the same environment** and will post details about that profile; however, nodectl will use the same version as selected by the first profile found.

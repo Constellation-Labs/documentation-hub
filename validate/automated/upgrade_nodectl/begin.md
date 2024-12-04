@@ -18,7 +18,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Execute the upgrade command
 
-From our Node that is already running **nodectl** we can enter in the special command to upgrade the utility itself.
+From our node that is already running **nodectl** we can enter in the special command to upgrade the utility itself.
 
 ```
 sudo nodectl upgrade_nodectl

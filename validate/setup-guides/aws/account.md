@@ -11,7 +11,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>Amazon Web Services</title>
   <meta
     name="description"
-    content="Building a Validator Node on AWS's platform."
+    content="Building a Validator node on AWS's platform."
   />
 </head>
 
@@ -21,7 +21,7 @@ Creating your account on AWS is a simple process similar to all other SaaS model
 
 ![](/img/validator_nodes/node-aws-account.png)
 
-In order to run our Constellation Node, you will need to make your *first* financial and *weat-equity investments.
+In order to run our Constellation node, you will need to make your *first* financial and *sweat-equity* investments.
 
 ## Sign Up
 

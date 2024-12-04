@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -22,13 +22,13 @@ At this point in the installation progress, your screen should have cleared and 
 
 nodectl will detect the current user logged in. In our example using the Ubuntu distribution on AWS, the user called `ubuntu`.  
 
-Avoid using commonly known usernames on your future Node. Hackers often target these first for potential access vulnerabilities. A simple name change adds a small but effective layer of security for your Node, that directly faces the Internet.  
+Avoid using commonly known usernames on your future node. Hackers often target these first for potential access vulnerabilities. A simple name change adds a small but effective layer of security for your node, that directly faces the Internet.  
 
-If you are an advanced user and want to keep the default usernames, it is advised to password protect the userid before you move your Node onto the cluster(s).
+If you are an advanced user and want to keep the default usernames, it is advised to password protect the userid before you move your node onto the cluster(s).
 
 We will create a non-commonly known user now; however, we will continue the installation with the `ubuntu` user.  
 
-At the end of the install, we will switch over to our new Node administrator account; however, we will continue to use our `ubuntu` user until instructed otherwise.
+At the end of the install, we will switch over to our new node administrator account; however, we will continue to use our `ubuntu` user until instructed otherwise.
 
 :::danger Reminder 
 Your default user will depend on your service provider and/or your Linux distribution of choice. 
@@ -42,7 +42,7 @@ Most Commonly:
 nodectl will recommend that you use `nodeadmin` as your default Node Administrator.  This will force us away from a commonly known usernames such as `ubuntu` or `admin`.
 
 ### Commonly known username
-Since this documentation is publicly available and nodectl is open sourced, the use of `nodeadmin` can also be deemed a commonly used username; however, properly securing down your Node as recommended by this documentation, should provide proper security to make the use of `nodeadmin` a very minimal security risk.  
+Since this documentation is publicly available and nodectl is open sourced, the use of `nodeadmin` can also be deemed a commonly used username; however, properly securing down your node as recommended by this documentation, should provide proper security to make the use of `nodeadmin` a very minimal security risk.  
 
 Recommendation: use `nodeadmin`.
 
@@ -58,7 +58,7 @@ We can hit the <kbd>enter</kbd> key to accept `nodeadmin` as our default, or inp
 <br />
   This ubuntu user is dangerous.<br />
   <br />
-  You should create a non-commonly known user to administer your Node.<br />
+  You should create a non-commonly known user to administer your node.<br />
 <br />
   It is recommended to use nodeadmin as the Node Administrator.<br />
 <br />
@@ -82,14 +82,14 @@ Since nodectl has the power to alter your VPS's operating system, we must use `s
 
 The installation will now ask you to enter a new password.
 
-The nodectl installer will offer you some information (similar to these comments) about the various password, keyphrase, or passphrases `[passphrases]` that will be required to run your Node. 
+The nodectl installer will offer you some information (similar to these comments) about the various password, keyphrase, or passphrases `[passphrases]` that will be required to run your node. 
 
 :::danger Important
 You must secure this password/passphrase in a safe secure location and/or remember them.  
 
-Your passphrase will offer access to your Node and the VPS your Node runs on.  
+Your passphrase will offer access to your node and the VPS your node runs on.  
 
-**Unauthorized access can be potentially crippling to the operations of your Node; as well as, may have financial consequences because your Node will hold a hot wallet.**
+**Unauthorized access can be potentially crippling to the operations of your node; as well as, may have financial consequences because your node will hold a hot wallet.**
 
 *This particular passphrase/password does not offer access to your `p12` wallet, which will be discussed later in this documentation.*
 :::
@@ -134,7 +134,7 @@ We enter our newly formulated password.
 <br /> 
   It is recommended to save this password to a secure location and do NOT<br /> 
   forget it! If choosing to write it down, label in your notes:<br /> 
-  "nodeadmin user password to access sudo (administrator) rights on the Node."<br /> 
+  "nodeadmin user password to access sudo (administrator) rights on the node."<br /> 
 <br /> 
 >> Please enter a 10 character minimum<br /> 
 >> password for nodeadmin: <br /> 
@@ -146,7 +146,7 @@ Confirm your password.
 >> Please confirm nodeadmin's password: 
 </MacWindow>
 
-Your user will be created and added to the necessary groups for use on your future Node.
+Your user will be created and added to the necessary groups for use on your future node.
 
 <MacWindow>
 Adding new user [nodeadmin].................... complete<br />

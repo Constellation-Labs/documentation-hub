@@ -12,11 +12,11 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
-We will apply any known updates to the **VPS** before we continue to install nodeclt and turn our VPS into a Constellation Node.
+We will apply any known updates to the **VPS** before we continue to install nodectl and turn our VPS into a Constellation Network node.
 
 :::danger IMPORTANT
 You will not be using the mouse during the rest of this documentation process, you will need to rely on the keyboard only.
@@ -55,7 +55,7 @@ Hit the <kbd>tab</kbd> key until the <kbd>ok</kbd> is highlighted, then hit the 
 
 Since we are not doing any special customization to our core services on this VPS, accepting the default recommendations it best practice.  
 
-*Advanced users can handle this as they wish, as this does not affect how the Node will run.*.
+*Advanced users can handle this as they wish, as this does not affect how the node will run.*.
 :::
 
 #### Quick Installer

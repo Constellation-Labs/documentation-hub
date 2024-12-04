@@ -19,7 +19,7 @@ Decide on how you will run your validator.
 
 ### Management
 
-Decide if you want to automate the creation of your Node or handle it manually.
+Decide if you want to automate the creation of your node or handle it manually.
 
 - nodectl
 - manual installation

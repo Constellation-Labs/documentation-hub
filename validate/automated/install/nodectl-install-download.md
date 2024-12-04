@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -20,7 +20,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 Download the latest version of nodectl.   
 
 :::warning
-Make sure you download the latest version of nodectl.  Even though the documentation may reflect the current latest version, it is recommended to verify the version is the latest, to ensure your Node will have the latest features and capabilities.
+Make sure you download the latest version of nodectl.  Even though the documentation may reflect the current latest version, it is recommended to verify the version is the latest, to ensure your node will have the latest features and capabilities.
 
 Documentation can become outdated; however, the basic methods and actions will remain the same; as well as, Constellation will update the documentation on a need-to basis.
 :::
@@ -87,14 +87,14 @@ Creating log directory for nodectl<br />
 In the example output 👆, an expected error is shown in **bold** (see [explained](#explained)).
 
 :::info p12 Migration
-If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/migrate/nodectl-migrate-upload); otherwise continue forward.
+If you are coming from the ***New Node Installation with p12 Migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/migrate/nodectl-migrate-upload); otherwise continue forward.
 :::
 
 ## Explained 
 
 Following the command above will execute 3 commands synchronously (in order).
 
-1. It will attempt to disable the `auto_restart` feature of nodectl and fail.  This is excepted behavior because we have not turned our VPS into a Node yet.  The combination of commands executed is intended for both new installations and upgrades, where the auto_restart feature may be engaged. The auto_restart feature cannot be running during an upgrade.
+1. It will attempt to disable the `auto_restart` feature of nodectl and fail.  This is excepted behavior because we have not turned our VPS into a node yet.  The combination of commands executed is intended for both new installations and upgrades, where the auto_restart feature may be engaged. The auto_restart feature cannot be running during an upgrade.
 1. It will utilize the `wget` utility; that comes preinstalled on most Debian based distributions, to download the nodectl binary from GitHub and place it in the correct location on your VPS for properly future use.
 1. It will then execute the `version` command.
 1. Prior to displaying the version for our review, since this is the first run of the nodectl utility, nodectl will automagically setup the logging mechanism.  These log files can be useful when troubleshooting nodectl related issues, later on during normal operation.

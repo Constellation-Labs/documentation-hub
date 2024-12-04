@@ -56,7 +56,7 @@ Please make sure to follow the [upgrade path](/validate/automated/nodectl-upgrad
 
 ### Download v2 binary
 
-Now that we have confirmed that we are on `v1.12.0` of nodectl, we use the [upgrade_nodectl command](/validate/automated/nodectl-commands#upgrade_nodectl) to initiate the download of the **nodectl binary** from the GitHub repository to our Node.
+Now that we have confirmed that we are on `v1.12.0` of nodectl, we use the [upgrade_nodectl command](/validate/automated/nodectl-commands#upgrade_nodectl) to initiate the download of the **nodectl binary** from the GitHub repository to our node.
 
 ```
 sudo nodectl upgrade_nodectl
@@ -109,7 +109,7 @@ root@Constellation-Node:~#
 
 ### Upgrade VPS backend with nodectl
 
-We now have the `v2.7.1` **binary** of nodectl downloaded and confirmed to be installed on our VPS/Node.
+We now have the `v2.7.1` **binary** of nodectl downloaded and confirmed to be installed on our VPS/node.
 
 The next step will be to run the `sudo nodectl upgrade` command, to complete the:
 1. migration from v1 to v2
@@ -124,12 +124,12 @@ root@Constellation-Node:~# sudo nodectl upgrade
 
 ### Migration confirmation
 
-The screen will clear and nodectl will review the current **Node**, identify that it is running `v1` and begin by asking us to confirm that we want to migrate.
+The screen will clear and nodectl will review the current **node**, identify that it is running `v1` and begin by asking us to confirm that we want to migrate.
 
-It is necessary for us to **MIGRATE** our Node from `version 1` to `version 2`, as there are significant changes that need to be handled.  
+It is necessary for us to **MIGRATE** our node from `version 1` to `version 2`, as there are significant changes that need to be handled.  
 
 Most significantly:
-  - Migration and deprecation of the `cn-node` bash script file that used to run some of our Node operations for us.
+  - Migration and deprecation of the `cn-node` bash script file that used to run some of our node operations for us.
   - Addition of the [`cn-config.yaml`](/validate/automated/nodectl-config) file.
   - Removal of old directory structures.
   - Addition of new services.
@@ -145,9 +145,9 @@ We **do** want to migrate so we will say **`y`** here.
    Code Name: Princess Warrior<br />
 <br />
   During program initialization, a configuration file was found
-  missing on this server/Node.<br />
+  missing on this server/node.<br />
 <br />
-  nodectl found an existing file cn-node file on your existing server/Node. nodectl
+  nodectl found an existing file cn-node file on your existing server/node. nodectl
   can backup this file and attempt to migrate to the new required format.<br />
 <br />
   Attempt cn-node file migration? [y]: <b>y</b><br />
@@ -155,10 +155,10 @@ We **do** want to migrate so we will say **`y`** here.
 
 ### Passphrase Removal
 
-A new **feature** of nodectl is the ability to **hide** the passphrase in the configuration.  Hiding your passphrase will add *a little* more security to keeping the **hot wallet** on your Node more protected.
+A new **feature** of nodectl is the ability to **hide** the passphrase in the configuration.  Hiding your passphrase will add *a little* more security to keeping the **hot wallet** on your node more protected.
 
 :::danger IMPORTANT
-This feature was added per request from the community; however, because the hot wallet is on your Node, this only adds a small layer of obscurity to attempting to retrieve your passphrase if the Node is compromised.
+This feature was added per request from the community; however, because the hot wallet is on your node, this only adds a small layer of obscurity to attempting to retrieve your passphrase if the node is compromised.
 
 This will disable your ability to use the **[auto restart](/validate/automated/nodectl-commands#auto_restart)** feature including the `auto_upgrade` feature.
 :::
@@ -173,13 +173,13 @@ We will say **`y`** here (but you can also say **n**).
 
 <MacWindow>
   nodectl v2 allows removal of the passphrase from your configuration. It is up to the
-  Node Operator administering this Node to decide on the best course of action.<br />
+  node Operator administering this node to decide on the best course of action.<br />
 <br />
   PROS: - One less location with an exposed clear-text passphrase.<br />
-        - Adds small layer of security to force a possible attacker to work harder to gain access to the Node's wallet.<br />
+        - Adds small layer of security to force a possible attacker to work harder to gain access to the node's wallet.<br />
 <br />
   CONS: - Your passphrase will be requested whenever required by nodectl.<br />
-        - In the event your Node is compromised, your passphrase will still be exposed because any nefarious actor able to penetrate your system authentication practices will know how to expose any passphrases in use by the processes running on the VPS/Node.<br />
+        - In the event your node is compromised, your passphrase will still be exposed because any nefarious actor able to penetrate your system authentication practices will know how to expose any passphrases in use by the processes running on the VPS/node.<br />
 <br />
   Recommended: Keep passphrases<br />
 <br />
@@ -188,11 +188,11 @@ We will say **`y`** here (but you can also say **n**).
 
 ### Global passphrase statement
 
-In version **`1`** of nodectl we only had the ability to use a single **p12** file that contained our **Node's** wallet, which was also used to authenticate against the network cluster.
+In version **`1`** of nodectl we only had the ability to use a single **p12** file that contained our **node's** wallet, which was also used to authenticate against the network cluster.
 
 In version **`2`** we now introduce the ability to use multiple **p12** private key files; therefore, allowing us to use different wallets for each metagraph and/or for joining the Hypergraph.
 
-Version **`2`** introduces **profiles** which allow us to dynamically configure our Node to join as many Hypergraphs and metagraphs as necessary.  
+Version **`2`** introduces **profiles** which allow us to dynamically configure our node to join as many Hypergraphs and metagraphs as necessary.  
 
 We also introduce the **Global p12** section.  If you do not specifically identify a **p12** file for a profile, it will **default** to the **Global p12** configuration.
 
@@ -211,12 +211,12 @@ We can confirm we read the statement with a **`y`**.
    Code Name: Princess Warrior<br />
 <br />
   <br />
-  nodectl v2 introduces the ability to use different Node wallets (p12 private keys)
+  nodectl v2 introduces the ability to use different node wallets (p12 private keys)
   per profile (layer0 and/or layer1 metagraphs).<br /> 
 <br />
-  A new concept for nodectl v2 includes a GLOBAL section within the configuration that can be used to assign a single p12 to all or some of the profiles, on your Node.<br />
+  A new concept for nodectl v2 includes a GLOBAL section within the configuration that can be used to assign a single p12 to all or some of the profiles, on your node.<br />
 <br />
-  The p12 content details from the Node's global p12 cn-node  file
+  The p12 content details from the node's global p12 cn-node  file
   including credentials will be added to the global p12 section of the new configuration file.<br />
 <br />
   You can setup the global p12 wallet configuration to handle all or only selected profiles of your choosing.<br />
@@ -233,7 +233,7 @@ We can say **`y`**.
 <MacWindow>
   Ingesting [cn-node] file....................... running<br />
 <br />
-  nodectl found [ nodeadmin ] as your Node's admin user.
+  nodectl found [ nodeadmin ] as your node's admin user.
   Is this correct? [y]: <b>y</b><br />
 </MacWindow>
 
@@ -244,7 +244,7 @@ Confirm that our **p12** file name is correct.  In this example we show that we 
 We can say **y** here.
 
 <MacWindow>
-  nodectl found [ my-node.p12 ] as your Node's p12 filename.<br />
+  nodectl found [ my-node.p12 ] as your node's p12 filename.<br />
   Is this correct? [y]: <b>y</b><br />
 </MacWindow>
 
@@ -265,7 +265,7 @@ nodectl will ingest the `cn-node` script and back it up.
   Backing up cn-node file ....................... complete<br />
 </MacWindow>
 
-nodectl will warn us that our backed up `cn-node` will still contain the passphrase for our p12 private key file; and therefore, our Node's wallet access.  
+nodectl will warn us that our backed up `cn-node` will still contain the passphrase for our p12 private key file; and therefore, our node's wallet access.  
 
 Once we have confirmed that we properly upgraded (at the end of this process), it may be a good idea to remove this backup file.  
 
@@ -316,7 +316,7 @@ Please see the [view config command](/validate/automated/nodectl-commands#view_c
 
 nodectl will now flash up some messages showing you that it is setting up some configuration parameters for us.  We can allow nodectl to complete the `self` updates on its own.
 
-This will include replacing default elements of the configuration with your Node's specific details; as well as, confirm the validity of the configuration file.
+This will include replacing default elements of the configuration with your node's specific details; as well as, confirm the validity of the configuration file.
 
 <MacWindow>
 Replacing configuration self items: link host ip
@@ -329,7 +329,7 @@ Replacing configuration self items: link host public key
 
 Now that our migration is complete, in the background we should have **nodectl's** new configuration yaml in place and validated.
 
-The next step is to upgrade our Node to complete all the backend required details.
+The next step is to upgrade our node to complete all the backend required details.
 
 <MacWindow>
   ========================================<br />
@@ -353,5 +353,5 @@ During the next upgrade, you can choose **`y`** when requested to remove your **
 
 **or** 
 
-Once your Node is online and working as desired, you can manually remove this file.
+Once your node is online and working as desired, you can manually remove this file.
 :::

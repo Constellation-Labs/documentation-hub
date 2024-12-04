@@ -333,7 +333,7 @@ Option <kbd>r</kbd>
 | None | disable | disable the `auto_restart` feature. | **optional** |
 | None | restart | disable and then enable the `auto_restart` feature | **optional** |
 | None | status | display the `auto_restart` and `auto_upgrade` feature status | **optional** |
-| None | check_pid | display the `process id` of the process that is currently running the `auto_restart` feature. | **optional** |
+| None | check_pid | display the `process ID` of the process that is currently running the `auto_restart` feature. | **optional** |
 | --auto_upgrade | None | enable the `auto_upgrade` feature with the `auto_restart` service. *Must be accompanied by the `enable` option.* | **optional** |
 
 - [list of monitoring ](/validate/automated/nodectl-autorestart#-what-does-nodectl-monitor)
@@ -369,7 +369,7 @@ sudo nodectl auto_restart disable
 ```
 sudo nodectl auto_restart restart
 ```
-- Check if auto_restart is running by searching for the process id (pid) of the auto_restart service. The command will also show status of auto features set in the configuration.
+- Check if auto_restart is running by searching for the process ID (pid) of the auto_restart service. The command will also show status of auto features set in the configuration.
 ```
 sudo nodectl auto_restart check_pid
 sudo nodectl auto_restart status
@@ -553,13 +553,13 @@ The **`check_consensus`** command will execute a check against your node's statu
 | -p | `<profile_name>` | which cluster related to the [profile](/validate/quick-start/prerequisites#-profile-table) name in question do we want to review. | **optional** |
 | -s | `<ip_address>` | nodectl will check the ip address supplied instead of the localhost. | **optional** |
 | -w | `<seconds>` | watch mode: nodectl will continuously check if the node is in consensus every X seconds, until the <kbd>q</kbd> if hit to exit watch mode. | **optional** |
-| --id | `<node_id>` | nodectl will check the node id supplied instead of the localhost. | **optional** |
+| --id | `<node_id>` | nodectl will check the node ID supplied instead of the localhost. | **optional** |
 | --brief |  | Offer output in a more simplified form. | **optional** |
-| --file | `<path_to_csv_file>` | option is requested the consensus will be checked against the file that contains at least one nodeid public key or multiple nodeids formatted in one line per nodeid public key.  **The `--file` command cannot coincide with the -w option.** | **optional** |
+| --file | `<path_to_csv_file>` | option is requested the consensus will be checked against the file that contains at least one node ID public key or multiple node IDs formatted in one line per node ID public key.  **The `--file` command cannot coincide with the -w option.** | **optional** |
 
 If the `-p` parameter is not supplied, nodectl will offer you a menu of known profiles to choose from.
 
-The `--file` command expects a csv (comma separated values) file that is populated with nodeids.  Each nodeid must be on its own line.
+The `--file` command expects a csv (comma separated values) file that is populated with node IDs.  Each node ID must be on its own line.
 
 #### If node shows IN CONSENSUS `False`
 You should restart your node in order to return of the majority fork.  [auto_restart](#auto_restart) has the ability to automatically detect a node that is out of consensus and restart your node for you.
@@ -582,7 +582,7 @@ Execute consensus check against node with profile name `dag-l0` and IP address `
 ```
 sudo nodectl check_consensus -p dag-l0 -s 10.10.10.10  
 ``` 
-Execute consensus check against list of node ids with profile name `dag-l0` and file containing the nodeid list called `test.csv` located in the the '/tmp/' directory on the node.
+Execute consensus check against list of node IDs with profile name `dag-l0` and file containing the node ID list called `test.csv` located in the the '/tmp/' directory on the node.
 ```
 sudo nodectl check_consensus -p dag-l0 --file /tmp/test.csv  
 ``` 
@@ -673,9 +673,9 @@ The **`check_seedlist`** command takes one [parameter](#what-is-an-option-and-pa
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -p | `<profile_name>` | related to the [profile](/validate/quick-start/prerequisites#-profile-table) to verify access permissions. | **required** |
-| -id | `<node_id>` | nodeid of the node you would like to verify seed list participation (if not local to the node) | **optional** <br/> *version >`2.9.x`* | 
+| -id | `<node_id>` | node ID of the node you would like to verify seed list participation (if not local to the node) | **optional** <br/> *version >`2.9.x`* | 
 
-**`check_seedlist`** will pull your `nodeid` out of your p12 file and compare it to the seedlist downloaded from **Constellation Network's** authorized list.
+**`check_seedlist`** will pull your `node ID` out of your p12 file and compare it to the seedlist downloaded from **Constellation Network's** authorized list.
   
 :::note
 This command is specific to current restrictions placed on the Hypergraph for controlled access prior to the **PRO Score** [proof of reputable observation] release.
@@ -686,8 +686,8 @@ This command is specific to current restrictions placed on the Hypergraph for co
 | ip address | The `ip address` of the node in question |
 | p12 filename | The name of the `p12` file on the local node |
 | p12 location | The location of the `p12` file on the local node |
-| node id | The `p12` public key ( *nodeid* ). |
-| node id found on seed list | This will be a `True` or `False`.  In the event of a `False` please contact an administrator on the Constellation Network official Discord server. |
+| node ID | The `p12` public key ( *node ID* ). |
+| node ID found on seed list | This will be a `True` or `False`.  In the event of a `False` please contact an administrator on the Constellation Network official Discord server. |
  
 > #### Examples
 - Help screen
@@ -914,7 +914,7 @@ It will show you the profile searched (required) and offer you confirmation that
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
 | -s | `<source_node>` | Node on the cluster you want to use to lookup other nodes. | **optional** |
-| -t | `<target_node>` | Node on the cluster (ip address, hostname, or nodeid) you want to look up on the cluster. | **optional** |
+| -t | `<target_node>` | Node on the cluster (ip address, hostname, or node ID) you want to look up on the cluster. | **optional** |
 
 You may specify a **`source`** node that will be used as the reference point to lookup the **`target`** node (either your node *default* or a specified target) on the cluster and return a `True` or `False` depending on whether or not it is found.
   
@@ -952,9 +952,9 @@ or
 ```
 sudo nodectl find -p dag-l0 -t 10.1.1.1
 ```
-look for a node by `nodeid`
+look for a node by `node ID`
 ```
-sudo nodectl find -p dag-l0 -t <nodeid>
+sudo nodectl find -p dag-l0 -t <node ID>
 ```
 If our node is `10.1.1.1` check if `10.1.1.1` is listed/seen by a node identified by the `-s` option (`10.2.2.2`) on the cluster we are connected to.
 ```
@@ -1144,12 +1144,12 @@ The **`peers`** command will attempt to list all the peers found on the cluster;
 | --csv | None | create csv (comma separated values) output file instead of print out to the screen. | **optional** |
 | --output | `<file_name>` | **requires** `--csv` --> this can only be a filename. If you would like to have your output saved to an alternate location, you can update the configuration file's `upload` location, via the [configure command](#configure). | **optional** |
 | --basic | None | show only the ip address and public port. | **optional** |
-| --extended | None | show full nodeid and dag address. | **optional** |
+| --extended | None | show full node ID and dag address. | **optional** |
   
 Normal output from the peers command will show all the peers seen on a given metagraph or the Hypergraph (profile dependent) this will include:
-- node ip with public port 
+- node IP with public port 
   - `10.10.10.10:1000` = `10.10.10.10` with public TCP port of `1000`
-- nodeid (shortened to first 8 hex values, `....`, last 8 hex values)
+- node ID (shortened to first 8 hex values, `....`, last 8 hex values)
    - `abcd1234....efgh4567`
 - DAG wallet (shortened)
    - `DAG12345...78910111`
@@ -1158,7 +1158,7 @@ You can utilize the **`--basic`** [option](#what-is-an-option-and-parameter) to 
     
 You can utilize the **`--extended`** [option](#what-is-an-option-and-parameter) to force nodectl to only show all fields in long format.
 
-If you do not use the `--basic` or `--extended` [options](#what-is-an-option-and-parameter), the output will be in shorten form for all elements (ip:port, dag address, nodeid).
+If you do not use the `--basic` or `--extended` [options](#what-is-an-option-and-parameter), the output will be in shorten form for all elements (ip:port, dag address, node ID).
 
 #### Dictionary
 | abbrv | Description |
@@ -1609,7 +1609,7 @@ sudo nodectl status -p dag-l0
 ### sync_node_time 
 ---
 
-The **`sync_node_time`** command will update the Node's underlining Linux Debian distribution's datetime clock.  It will use the NTP service installed during nodectl installation to force an update of the Node's clock.
+The **`sync_node_time`** command will update the node's underlining Linux Debian distribution's datetime clock.  It will use the NTP service installed during nodectl installation to force an update of the node's clock.
 
 This command displays the list of the known node States that you may find on the Cluster or that nodectl defines when not on the cluster.
 
@@ -1921,7 +1921,7 @@ sudo nodectl upgrade_vps --reboot
 ### uptime
 ---
 
-The `uptime` command provides the amount of time the cluster, the Node itself, and the system supporting the node has been up and running.
+The `uptime` command provides the amount of time the cluster, the node itself, and the system supporting the node has been up and running.
 
 | Command | Shortcut | Version |
 | :---: | :---: | :---: |
@@ -1958,7 +1958,7 @@ sudo nodectl uptime -p dag-l0
 
 The **`whoami`** command displays the external ip address of your node. 
 
-Optionally, you can use the optional `-id` option to map a `nodeid` to an `ip address` on a cluster.
+Optionally, you can use the optional `-id` option to map a `node ID` to an `IP address` on a cluster.
   
 The `external IP` of your node is the address that allows your node to communicate with the rest of the systems on the Internet.  
 
@@ -1966,11 +1966,11 @@ This is the address your node will use to communicate with the other decentraliz
 
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| -p | `<profile_name>` | In order to use the **`-id`** option, nodectl will need to know which [profile](/validate/quick-start/prerequisites#-profile-table) to review the `nodeid` from. | **optional** |
-| -id | `<full_node_id>` | p12 public key `nodeid` to lookup. | **optional** |
+| -p | `<profile_name>` | In order to use the **`-id`** option, nodectl will need to know which [profile](/validate/quick-start/prerequisites#-profile-table) to review the `node ID` from. | **optional** |
+| -id | `<full_node_id>` | p12 public key `node ID` to lookup. | **optional** |
 
 :::warning 
-The -id [option](#what-is-an-option-and-parameter) followed by the full nodeid requested, will lookup the node id and return its IP address.  This command will require the `-p` with the profile name of the network you are searching.
+The -id [option](#what-is-an-option-and-parameter) followed by the full node ID requested, will lookup the node ID and return its IP address.  This command will require the `-p` with the profile name of the network you are searching.
 :::
 
 > #### Examples
@@ -1982,7 +1982,7 @@ sudo nodectl whoami help
 ```
 sudo nodectl whoami
 ```
-- Show ip address of a node by `nodeid` from a cluster via a profile this node is connected to
+- Show ip address of a node by `node ID` from a cluster via a profile this node is connected to
 ```
 sudo nodectl whoami -p <profile> -id <node_id>
 ```
@@ -2153,17 +2153,17 @@ The **`nodeid`** command will retrieve your node's public key (nodeid) for eithe
 | :----: | :---: | :--- | :----: |
 | -p | `<profile_name>` | which [profile](/validate/quick-start/prerequisites#-profile-table) are you seeking the nodeid from. | **required** |
 | -t | `<ip_address` | retrieve remote by target IP address. | **optional** |
-| -l |  | Display the nodeid in long format. | **optional** |
+| -l |  | Display the node ID in long format. | **optional** |
 > #### Examples
 - Help Screen
 ```
 sudo nodectl nodeid help  
 ```
-- Retrieve local nodeid
+- Retrieve local node ID
 ```  
 sudo nodectl nodeid
 ```
-- Retrieve nodeid of a node on the cluster with the IP address of `113.113.113.113`.
+- Retrieve node ID of a node on the cluster with the IP address of `113.113.113.113`.
 ```  
 sudo nodectl nodeid -t 113.113.113.113
 ```
@@ -2181,7 +2181,7 @@ The **`nodeid2dag`** command will take in a required public node id or public ke
   
 | [option](#what-is-an-option-and-parameter) | parameters | Description | Is [Option](#what-is-an-option-and-parameter) Required or Optional |
 | :---: | :---: | :--- | :----: |
-| None | `<node_id>` | 128 byte node id (public key) to derive DAG wallet from. | **required** |
+| None | `<node_id>` | 128 byte node ID (public key) to derive DAG wallet from. | **required** |
 
 :::warning
 The `<node_id>` is required and does not have a related [option](#what-is-an-option-and-parameter).
@@ -2192,13 +2192,13 @@ The `<node_id>` is required and does not have a related [option](#what-is-an-opt
 ```
 sudo nodectl nodeid2dag help
 ```
-- Convert nodeid to dag wallet
+- Convert node ID to DAG wallet
 ```
 sudo nodectl nodeid2dag <node_id>
 ```
 
 :::note
-Due to the cryptographic nature of a DAG wallet, you can only 1-way hash a nodeid to the DAG wallet, and not visa-versa.    
+Due to the cryptographic nature of a DAG wallet, you can only 1-way hash a node ID to the DAG wallet, and not visa-versa.    
 :::
 
 
@@ -2899,7 +2899,7 @@ This command does not accept any options.
 ##### Result Header Descriptions
 | Result Header | Description |
 | :---: | :--- |
-| Owner | What profile on the Node owns the process being displayed. |
+| Owner | What profile on the node owns the process being displayed. |
 | PID | Process ID of the service as assigned by the Debian systemd system manager, used to handle the logging and various utilities for the assigned process. |
 | Status Code | The code returned by the systemd manager. These codes can be standard codes or custom codes for a particular process in use. |
 | Status | Human friendly translation of the status code. |
@@ -2907,7 +2907,7 @@ This command does not accept any options.
 ##### Status Code Descriptions
 | Result Header | Description |
 | :---: | :--- |
-| 0 | What profile on the Node owns the process being displayed. |
+| 0 | What profile on the node owns the process being displayed. |
 | 256 | Process exited with error. |
 | 768 | Process not running. |
 

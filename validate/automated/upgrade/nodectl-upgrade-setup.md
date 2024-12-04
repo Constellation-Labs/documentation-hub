@@ -30,7 +30,7 @@ Throughout this guide, please be aware of these fictitious values:
 :::danger BE AWARE
 As Constellation Network's protocol and/or nodectl improves, the versions presented in the documentation may become out dated.  
 
-The documentation will be updated as any CLI-GUI elements or results from those inputs change, otherwise the versions may not match your Node's presentation or outputs.
+The documentation will be updated as any CLI-GUI elements or results from those inputs change, otherwise the versions may not match your node's presentation or outputs.
 
 *In some cases, the versions and environment may coincide with real values; however, this may be different for your current upgrade depending on multiple factors.*
 :::
@@ -79,7 +79,7 @@ Recommended to:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Issue: sudo nodectl upgrade_nodectl<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Restart this upgrade of Tessellation.<br />
 WARNING  non-interactive mode was detected, developer mode, or extra parameters were supplied to this upgrade.<br />
-It will continue at the Node Operator's own risk and decision.<br />
+It will continue at the node Operator's own risk and decision.<br />
 </MacWindow>         
 As long as you are aware you are using a pre-release or known non-stable version of nodectl, you can safely continue.
 </Collapsible>
@@ -96,7 +96,7 @@ As long as you are aware you are using a pre-release or known non-stable version
   p12 validated [dag-l0] ........................ using global<br /> 
   p12 validated [dag-l1] ........................ using global<br />  
   Global p12 validated .......................... True<br /> 
-  Obtaining Node ID from p12 [global] ........... 11111....11111<br />
+  Obtaining node ID from p12 [global] ........... 11111....11111<br />
   Node IP address ............................... 113.113.113.113<br /> 
 </MacWindow>    
 

@@ -18,7 +18,7 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
   />
 </head>
 
-The installation will start by cleaning up the future Node, removing any existing configurations or data from a possible past installation, or installation attempt.
+The installation will start by cleaning up the future node, removing any existing configurations or data from a possible past installation, or installation attempt.
 
 <MacWindow>
 nodectl installing [ preparing ]<br />

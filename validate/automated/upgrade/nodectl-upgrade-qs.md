@@ -16,7 +16,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-The process of upgrading your Node is quite simple.
+The process of upgrading your node is quite simple.
 
 ### Upgrade nodectl
 ```
@@ -26,21 +26,21 @@ with the `-v` option.
 ```
 sudo nodectl upgrade_nodectl -v <version_number>
 ```
-If you don't use the `-v`` option with nodectl, it will automatically check the current version of nodectl on your Node and show you if there are any updates available. You can then choose which version to upgrade to from the list provided.
+If you don't use the `-v`` option with nodectl, it will automatically check the current version of nodectl on your node and show you if there are any updates available. You can then choose which version to upgrade to from the list provided.
 
 <MacWindow>
 nodeadmin@Constellation-Node:~# sudo nodectl upgrade_nodectl -v v2.15.2      
 </MacWindow>
 
-### Upgrade nodectl components of your Node
+### Upgrade nodectl components of your node
 
-After a successful [upgrade](#upgrade-nodectl) of nodectl to the latest version.  You can supply the `--nodectl_only` option.  This will instruct the `upgrade` feature to upgrade only components of your VPS (Node) that nodectl requires, related to the new version of nodectl.  
+After a successful [upgrade](#upgrade-nodectl) of nodectl to the latest version.  You can supply the `--nodectl_only` option.  This will instruct the `upgrade` feature to upgrade only components of your VPS (node) that nodectl requires, related to the new version of nodectl.  
 
 ```
 sudo nodectl upgrade --nodectl_only
 ```
 
-The advantage to this option is that the Node will not handle any Tessellation related features, and therefor, will not take your Node off the cluster, saving you time and not affecting the Node's uptime.
+The advantage to this option is that the node will not handle any Tessellation related features, and therefor, will not take your node off the cluster, saving you time and not affecting the node's uptime.
 <MacWindow>
 nodeadmin@Constellation-Node:~# sudo nodectl upgrade --nodectl_only       
 </MacWindow>
@@ -49,7 +49,7 @@ nodeadmin@Constellation-Node:~# sudo nodectl upgrade --nodectl_only
 ```
 sudo nodectl upgrade
 ```
-This option will handle both Tessellation and nodectl related features.  It will take your Node off the cluster to perform the upgrade, and return it to the cluster afterwards.
+This option will handle both Tessellation and nodectl related features.  It will take your node off the cluster to perform the upgrade, and return it to the cluster afterwards.
 <MacWindow>
 nodeadmin@Constellation-Node:~# sudo nodectl upgrade
 </MacWindow>
@@ -70,7 +70,7 @@ nodectl will auto populate the current version of Tessellation for you.  You can
 **recommendation**: just hit <kbd>enter</kbd> to accept the default.
 
 ### Do you want to encrypt your passphrase?
-As of `v2.13.0`, nodectl has a new feature that will allow you to encrypt your Node's hot wallet passphrase in the configuration.  This will further increase your security if your configuration file is obtained or viewed by someone other than the owner of the wallet (p12 keystore file).
+As of `v2.13.0`, nodectl has a new feature that will allow you to encrypt your node's hot wallet passphrase in the configuration.  This will further increase your security if your configuration file is obtained or viewed by someone other than the owner of the wallet (p12 keystore file).
 
 **recommendation**: <kbd>y</kbd>
 
@@ -82,11 +82,11 @@ nodectl will offer the ability to clean out your backup folder that may be holdi
 :::warning CONSIDERATION
 As of `v2.13.0` and later, nodectl has the ability to encrypt the p12 passphrase present in the `cn-config.yaml` configuration file that allows nodectl to operate properly.
 
-If you choose to encrypt your passphrase during the upgrade, you should not clear your backups until after you have confirmed your Node is in full working order.  This will allow you to access your backups to restore your configuration, in the unlikely event it is required.
+If you choose to encrypt your passphrase during the upgrade, you should not clear your backups until after you have confirmed your node is in full working order.  This will allow you to access your backups to restore your configuration, in the unlikely event it is required.
 
 In this situation, **recommendation**: <kbd>n</kbd>
 
-It is recommended to keep the backups in place until it is confirmed that your Node is working properly.  Once confirmed, you can clean up the files using the [clean files](../nodectl-commands#clean_files) command. This ensures that your system remains stable and secure before making any changes.
+It is recommended to keep the backups in place until it is confirmed that your node is working properly.  Once confirmed, you can clean up the files using the [clean files](../nodectl-commands#clean_files) command. This ensures that your system remains stable and secure before making any changes.
 :::
 
 ### Do you want to clear your uploads?
@@ -100,7 +100,7 @@ nodectl will offer the ability to clean out your log folder that may be holding 
 **recommendation**: <kbd>y</kbd>
 
 ### During the join process
-You may be asked if you want to continue watching, skip, or cancel the upgrade procedure as your Node attempts to rejoin the network cluster.  You can refer to the [DownloadInProgress blocker](./nodectl-upgrade-rejoin-2#downloadinprogress-blocker) section of the [upgrade walk through](./nodectl-upgrade-intro) section for further details.
+You may be asked if you want to continue watching, skip, or cancel the upgrade procedure as your node attempts to rejoin the network cluster.  You can refer to the [DownloadInProgress blocker](./nodectl-upgrade-rejoin-2#downloadinprogress-blocker) section of the [upgrade walk through](./nodectl-upgrade-intro) section for further details.
 
 **recommendation**: <kbd>s</kbd>
 
@@ -144,7 +144,7 @@ nodeadmin@Constellation-Node:~# sudo nodectl upgrade -ni --pass mypassphrase
 
 ## Dedicated Version
 
-If you would like to upgrade your Node to a specific version of Tessellation you can use the `-p <profile>` and `-v <version>` options.  
+If you would like to upgrade your node to a specific version of Tessellation you can use the `-p <profile>` and `-v <version>` options.  
 
 :::info Ordering
 The order of the flags for this particular command are important.  The profile must come before the version. You can enter multiple profiles that run different versions this way from the command line.

@@ -6,7 +6,7 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
 import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Quick Start
-Execute the verify nodectl command after logging into your Node.
+Execute the verify nodectl command after logging into your node.
 
 <MacWindow>
 sudo nodectl verify_nodectl
@@ -32,7 +32,7 @@ sudo nodectl verify_nodectl -s
 
 ## Understanding `verify_nodectl`
 
-After issuing the command `sudo nodectl verify_nodectl` on your Node you should respond with validation output, as described in this section of the documentation.
+After issuing the command `sudo nodectl verify_nodectl` on your node you should respond with validation output, as described in this section of the documentation.
 
 After we initiate the `verify_nodectl` command, nodectl will reach out to the GitHub repository and download:
 - Public Key
@@ -61,7 +61,7 @@ fetching digital signature .................... complete  <br />
 nodectl will display the public key that was found for this particular version of nodectl.  For added security you can access the GitHub repository and compare the key located within the repository against what is displayed by nodectl.  This will help to guard against "man-in-the-middle" attacks.
 
 <Collapsible title="man-in-the-middle attack?">
-A man-in-the-middle (MITM) attack happens when someone secretly inserts themselves between two parties communicating over the internet, without either party realizing it. In this scenario, we are sending sensitive digital signature hashes and locations from the GitHub website.  In a MITM attack, the attacker intercepts this communication, and can return their information, alter the messages, or impersonate the website to send malicious or invalid responses back to your Node.  You may then believe you have an authentic nodectl, but in fact you have the attackers version.  If run via the attacker's version, they may be able to steal sensitive information including your private p12 keystore (hot wallet).
+A man-in-the-middle (MITM) attack happens when someone secretly inserts themselves between two parties communicating over the internet, without either party realizing it. In this scenario, we are sending sensitive digital signature hashes and locations from the GitHub website.  In a MITM attack, the attacker intercepts this communication, and can return their information, alter the messages, or impersonate the website to send malicious or invalid responses back to your node.  You may then believe you have an authentic nodectl, but in fact you have the attackers version.  If run via the attacker's version, they may be able to steal sensitive information including your private p12 keystore (hot wallet).
 </Collapsible>
 
 :::danger IMPORTANT
@@ -132,7 +132,7 @@ sudo nodectl logs -l nodectl
 In order to increase the security measures, the Constellation Network supported binary version of nodectl has been digitally signed.
 
 <Collapsible title="What do you mean by digitally signed?">
-nodectl is put into a single file that only computers can read. We do this so it's easy for you to download, set up, and run on your server (which we call a Node). After making this file, we use a special method to generate a unique code, called a hash. This code is made with a secret key (which is called a private key) that only Constellation Network has. But, you can check this code with a public key, which anyone can use. This is like a digital signature that helps prove the file is safe and hasn't been tampered with.
+nodectl is put into a single file that only computers can read. We do this so it's easy for you to download, set up, and run on your server (which we call a node). After making this file, we use a special method to generate a unique code, called a hash. This code is made with a secret key (which is called a private key) that only Constellation Network has. But, you can check this code with a public key, which anyone can use. This is like a digital signature that helps prove the file is safe and hasn't been tampered with.
 </Collapsible>
 
 nodectl will automatically handle all aspects of the validation for you, you do not need to to do anything other than execute the `validate_nodectl` command.

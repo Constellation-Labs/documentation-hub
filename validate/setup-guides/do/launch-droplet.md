@@ -20,15 +20,15 @@ import DocsCards from '@components/global/DocsCards';
 We only need only **one** droplet for this process, so we can leave this set to `1 Droplet`.
 
 
-You may want to change the hostname of your node to something that makes a little more sense to you. However, if you want to keep some anonymity as to the purpose of your Node, that is up to you.
+You may want to change the hostname of your node to something that makes a little more sense to you. However, if you want to keep some anonymity as to the purpose of your node, that is up to you.
 
 :::note
-If you choose to install your Node using `nodectl`, your hostname will be changed for you.  If you are manually building your Node, this hostname will be behind the scenes and only you will have access to this information, so a more familiar name, may be in order?
+If you choose to install your node using `nodectl`, your hostname will be changed for you.  If you are manually building your node, this hostname will be behind the scenes and only you will have access to this information, so a more familiar name, may be in order?
 :::
 
 ![](/img/validator_nodes/node-do-launch1.png)
 
-You can add **tags** to your Node, which helps in situations where you have other resources that you might be using in conjunction with your Node, for your business needs.
+You can add **tags** to your node, which helps in situations where you have other resources that you might be using in conjunction with your node, for your business needs.
 
 :::info
 Bottom Line: You **do not** need `tags` for our objectives, but if you find that you may want to includes `tags` for some purpose in the future, you can add them later. Go ahead and enter any `tags` here, or you can leave this blank.
@@ -38,7 +38,7 @@ Bottom Line: You **do not** need `tags` for our objectives, but if you find that
 
 ### Project
 
-If you created a Project name for your Node(s), you can select it here; otherwise, you can keep the default project name.
+If you created a Project name for your node(s), you can select it here; otherwise, you can keep the default project name.
 
 ![](/img/validator_nodes/node-do-project.png)
 
@@ -49,4 +49,4 @@ On the Digital Ocean Site, click the `Create Droplet` button to launch your Drop
 
 ![](/img/validator_nodes/node-do-launch3.png)
 
-Wait for your Droplet to complete its creation. Upon completion, we will be ready to add our security to lock down our Node properly and allow Constellation the proper access to our Node, allowing your Node to join the Hypergraph network and begin work.
+Wait for your Droplet to complete its creation. Upon completion, we will be ready to add our security to lock down our node properly and allow Constellation the proper access to our node, allowing your node to join the Hypergraph network and begin work.

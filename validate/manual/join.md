@@ -28,7 +28,7 @@ You can remind yourself how to access your VPS here for [Macintosh](/validate/re
 :::
 
 ### Update your node
-Bring our Node up to date
+Bring our node up to date
 
 ```
 sudo apt -y update && sudo apt -y upgrade
@@ -81,7 +81,7 @@ We are using 9000,9001, and 9002 for layer0 in this example; as well as, 9010,90
 :::
 
 :::danger IMPORTANT
-The IP ADDRESS and NODE ID used below are examples only.  You will need to use an actual Node IP and NodeId alive and in `Ready` state on the network.
+The IP ADDRESS and NODE ID used below are examples only.  You will need to use an actual node IP and nodeId alive and in `Ready` state on the network.
  Next our command to **join** is:
 
 Layer0
@@ -142,5 +142,5 @@ Received state=Ready{ }
 ```
 
 :::success MULTIPLE STATE CHANNELS
-In the event that you would like to participate in **multiple** metagraphs, you can issue the join separately for each metagraph process you have running on the Node.
+In the event that you would like to participate in **multiple** metagraphs, you can issue the join separately for each metagraph process you have running on the node.
 :::

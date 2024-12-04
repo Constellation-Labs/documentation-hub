@@ -18,15 +18,15 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ### Description
 
-This document will show you; through step-by-step instructions, how to upgrade your Node to the latest version of Tessellation or nodectl.
+This document will show you; through step-by-step instructions, how to upgrade your node to the latest version of Tessellation or nodectl.
 
-Tessellation is the code name for the protocol that runs on your Node.  It is the guts of how your Node is able to operate on the Hypergraph or metagraph.  
+Tessellation is the code name for the protocol that runs on your node.  It is the guts of how your node is able to operate on the Hypergraph or metagraph.  
 
-**[nodectl](/validate/automated/nodectl)** is a utility that runs on your Node and helps you automate some of the more complex processes that Tessellation requires to run efficiently. 
+**[nodectl](/validate/automated/nodectl)** is a utility that runs on your node and helps you automate some of the more complex processes that Tessellation requires to run efficiently. 
 
 ## Quick Start
 
-In order to upgrade your Node.
+In order to upgrade your node.
 1. Issue the command: `sudo nodectl upgrade`
 2. Follow the prompts.
 
@@ -39,7 +39,7 @@ In order to upgrade **[nodectl](/validate/automated/nodectl)**.
 ## Prerequisite
 ### Installation
 
-This document assumes that you have nodectl with Tessellation already running on your Node.  
+This document assumes that you have nodectl with Tessellation already running on your node.  
 
 If this is not the case, please review the [installation guide](/validate/automated/nodectl) `Getting Started`: to determine the type of installation required.
 
@@ -59,17 +59,17 @@ If this is not the case, please review the [installation guide](/validate/automa
 
 There are `3` upgrade mechanisms regarding `nodectl`.
 1. Upgrade the nodectl utility to a new version. (binary)
-2. Upgrade your Node to handle new features of nodectl, or modify some elements to make your Node more efficient when working with the nodectl utility.
+2. Upgrade your node to handle new features of nodectl, or modify some elements to make your node more efficient when working with the nodectl utility.
 3. Upgrade Tessellation and any elements of the VPS that may require modification to work with the Tessellation protocol.
 
-Mechanisms `2` and `3` may include updating features of the VPS to facilitate functionality of your Node.
+Mechanisms `2` and `3` may include updating features of the VPS to facilitate functionality of your node.
 
 Using **nodectl's** built-in [upgrade command](/validate/automated/nodectl-commands#upgrade_nodectl), you do not have to worry about the differences mentioned when upgrading nodectl.  nodectl is smart enough to guide you through the upgrade process.  It will know if you need any extra steps to complete. 
 
 These steps include:
-  - Is it safe to upgrade from the current version of nodectl your Node is running to the latest version?  
-    - There is an [upgrade path](/validate/automated/nodectl-upgrade-path) that might need to be taken; dependent on, how long you have waited to upgrade your Node.
-  - Does your Node require any extra upgrade steps to complete the nodectl upgrade for effective operation.
+  - Is it safe to upgrade from the current version of nodectl your node is running to the latest version?  
+    - There is an [upgrade path](/validate/automated/nodectl-upgrade-path) that might need to be taken; dependent on, how long you have waited to upgrade your node.
+  - Does your node require any extra upgrade steps to complete the nodectl upgrade for effective operation.
 
 ### Upgrade to new version of nodectl
 
@@ -97,7 +97,7 @@ nodeadmin@Constellation-Node:~# sudo nodectl list<br />
   To upgrade issue: sudo nodectl upgrade_nodectl<br />            
 </MacWindow>
 
-In the above output, it shows us that our Node is not up-to-date and the latest version available is `v2.7.1`.
+In the above output, it shows us that our node is not up-to-date and the latest version available is `v2.7.1`.
 
 #### Upgrade nodectl via nodectl
 If nodectl is already [installed](/validate/automated/nodectl) on your system, we can issue the `upgrade_nodectl` command to attempt to upgrade.
@@ -126,9 +126,9 @@ nodeadmin@Constellation-Node:~# sudo nodectl upgrade_nodectl<br />
 
 nodectl will begin the upgrade of nodectl.  In the background through automation nodectl will:
 1. Download the necessary binary perspective GitHub repository.
-2. Place the binary in the correct location on your VPS/Node.
+2. Place the binary in the correct location on your VPS/node.
 3. Update the permissions of the nodectl binary as required.
-4. Determine if a Node upgrade is necessary.
+4. Determine if a node upgrade is necessary.
 
 #### Architecture
 
@@ -143,7 +143,7 @@ Because nodectl cannot upgrade while it is running, nodectl will:
 - Re-enable `auto_restart` if enabled.
 
 In this example:
-- We do not need to upgrade our Node.  
+- We do not need to upgrade our node.  
 - We have `auto_restart` enabled in the [configuration](/validate/automated/nodectl-config).
 
 nodectl will let us know, and request we press <kbd>enter</kbd> to continue without an upgrade and then restart the `auto_restart` feature.
@@ -173,7 +173,7 @@ The [auto_restart](/validate/automated/nodectl-commands#auto_restart) service wi
   node restart service started...<br /> 
 </MacWindow>
 
-In the event our Node requires an internal upgrade of the `Node` components, for various reasons including:
+In the event our node requires an internal upgrade of the `node` components, for various reasons including:
   - Tessellation changes
   - VPS changes
   - nodectl changes
@@ -193,11 +193,11 @@ The output will look different, as shown below
   v2.7.1         2              7              1<br />            
 <br />
   This version of nodectl requires an upgrade be performed<br />
-  on your Node.<br />
+  on your node.<br />
   Press Y then [ENTER] to upgrade or N then [ENTER] to cancel:<br />
 </MacWindow>
 
-It is **highly** recommended to **upgrade** your Node when requested.  Failure to do so may result in undesirable results or failures.
+It is **highly** recommended to **upgrade** your node when requested.  Failure to do so may result in undesirable results or failures.
 
 ### Manual Installation
 Follow the release notes instructions for the release you desire to install
@@ -205,7 +205,7 @@ Follow the release notes instructions for the release you desire to install
 
 ### Upgrade Node to work with new nodectl features
 
-It is very simple to upgrade your Node with new nodectl features.  We simply execute the upgrade command and follow the prompts.
+It is very simple to upgrade your node with new nodectl features.  We simply execute the upgrade command and follow the prompts.
 ```
 sudo nodectl upgrade
 ```
@@ -217,7 +217,7 @@ If you are upgrading nodectl via the `sudo nodectl upgrade` command and not Tess
 <br />
 The following version is the latest ........... v1.11.0<br />
 The following version is running currently .... v1.11.0<br />
-  Please enter version to upgrade to.........[v1.11.0] :<br />
+Please enter version to upgrade to.........[v1.11.0] :<br />
 </MacWindow>
 :::
 
@@ -235,7 +235,7 @@ nodectl's `upgrade` command serves `2` purposes simultaneously.
   2. Upgrade the **VPS** (bare metal or container) background adds, changes, or enhancements that may or may not relate to Tessellation ( *may be related to the distribution or nodectl instead* ). 
 
 ### Start Upgrade
-From the remote login on our **Node**.  We can issue the `upgrade` command.
+From the remote login on our **node**.  We can issue the `upgrade` command.
 ```
 sudo nodectl upgrade
 ```
@@ -303,22 +303,22 @@ No user intervention is required.
 <MacWindow>
 ------- * Verify Node Upgrade * -------- <br />  
  <br />  
-  Obtaining Node ID from p12 [global] ........... f1322....1fc84 <br />
+  Obtaining node ID from p12 [global] ........... f1322....1fc84 <br />
 </MacWindow>
 
 ### Handle Node Versioning
-nodectl will check the difference in versioning between what is currently running on your Node and what version is known as the latest available version of Tessellation.
+nodectl will check the difference in versioning between what is currently running on your node and what version is known as the latest available version of Tessellation.
 
 :::caution
 In the event that you are only upgrading nodectl and **not** Tessellation, you will keep the same version by simply hitting <kbd>enter</kbd> to accept the default.
 :::
 
-In the below example, nodectl identified that we are running version `v1.10.0` on our Node; however, `v1.11.0` is the latest.
+In the below example, nodectl identified that we are running version `v1.10.0` on our node; however, `v1.11.0` is the latest.
 
 nodectl will auto-magically select the latest version for us, so we can just hit the <kbd>enter</kbd> key here.
 
 :::danger
-Entering an invalid version may result in an inoperable Node.  In the event this happens, you can restart the upgrade in an attempt to correct the issue.
+Entering an invalid version may result in an inoperable node.  In the event this happens, you can restart the upgrade in an attempt to correct the issue.
 :::
 
 <MacWindow>
@@ -336,20 +336,20 @@ Later in the upgrade ( unless the `-ni` [switch](/validate/automated/nodectl-com
 
 We recommend you don't leave it unattended to avoid timeouts, missed possible errors, or user interactive prompts that will require your attention.
 
-nodectl will take the Node off the cluster (HyperGraph and metagraph) in preparation for upgrade.
+nodectl will take the node off the cluster (HyperGraph and metagraph) in preparation for upgrade.
 
-In the example below, you will see that nodectl identified `dag-l0` and `dag-l1` profiles configured on your Node.  It will gracefully attempt to remove itself from the clusters configured by these profiles.
+In the example below, you will see that nodectl identified `dag-l0` and `dag-l1` profiles configured on your node.  It will gracefully attempt to remove itself from the clusters configured by these profiles.
 
 <MacWindow>
  -------- * Take Node Offline * ---------<br />
 <br />
   Leaving the cluster for profile ............... dag-l1<br />
   Leaving the cluster for profile ............... dag-l0<br />
-  Pausing: 6 of 30 seconds to allow Node to gracefully leave <br />     
+  Pausing: 6 of 30 seconds to allow node to gracefully leave <br />     
 </MacWindow>
 
 ##### Out of Cluster
-nodectl confirms our Node is off the clusters
+nodectl confirms our node is off the clusters
 
 It will also identify the service name (Debian OS level) `node_l0` and `node_l1` that are running our profiles and stop them for us.
 
@@ -362,7 +362,7 @@ It will also identify the service name (Debian OS level) `node_l0` and `node_l1`
   Stop request initiated [node_l0] .............. complete <br />  
 </MacWindow>
 
-nodectl will issue a [`status command`](/validate/automated/nodectl-commands#status) against the Node to confirm the results of the stoppage.
+nodectl will issue a [`status command`](/validate/automated/nodectl-commands#status) against the node to confirm the results of the stoppage.
 
 :::info
 Formatting of the window example is misrepresented due to formatting.  The display on your node will be better represented.
@@ -386,13 +386,13 @@ Formatting of the window example is misrepresented due to formatting.  The displ
 
 ### Node Internal Configuration
 
-nodectl will begin working on your your VPS elements and your Node's elements, as necessary.
+nodectl will begin working on your your VPS elements and your node's elements, as necessary.
 
 :::note Note
-The elements of the Node that are setup here may change from version to version to adhere to necessities of proper and efficient Node operation.
+The elements of the node that are setup here may change from version to version to adhere to necessities of proper and efficient node operation.
 :::
 
-In the below example, nodectl is reviewing version **`1`** settings to confirm they are not enabled, this may be removed in future versions or keep in place to make sure all proper Node operation is completed.  These elements may have been already completed in a previous version or not applicable for your version; moreover, we should not be concerned.
+In the below example, nodectl is reviewing version **`1`** settings to confirm they are not enabled, this may be removed in future versions or keep in place to make sure all proper node operation is completed.  These elements may have been already completed in a previous version or not applicable for your version; moreover, we should not be concerned.
 
 <MacWindow>
   --- * Node Internal Configuration * ----<br /> 
@@ -411,14 +411,14 @@ In the below example, nodectl is reviewing version **`1`** settings to confirm t
 
 ### Clean up backups
 
-It important to keep our **Node** hard drive space clean of unnecessary files. nodectl will now offer you the opportunity to clean out your backups.
+It important to keep our **node** hard drive space clean of unnecessary files. nodectl will now offer you the opportunity to clean out your backups.
 
 :::caution
 You should review your backups to make sure you do **NOT** delete files you may have as a **backup** but do **NOT** want to delete.
 
 Advanced users may want to transfer these files to a secondary backup directory to keep them safe.
 
-**You should have a backup of the following files in a secure location off of you Node.  These files contain passphrases and critical wallet contents which contain your passphrase.**
+**You should have a backup of the following files in a secure location off of you node.  These files contain passphrases and critical wallet contents which contain your passphrase.**
 
 - p12 file
 - cn-config.yaml
@@ -441,9 +441,9 @@ The answer to this question, is **up to you**, in the example we said **y**.
 
 Similar to the **backups** you may have some files that were created in order to upload for diagnostics, logging, taxes, etc.   We can clean up these files as well.
 
-In the event that your Node has files located in this special directory, you will be given a list of the files that will be removed and a confirmation prompt.
+In the event that your node has files located in this special directory, you will be given a list of the files that will be removed and a confirmation prompt.
 
-In the below example, the `uploads` directory was found to be emtpy, so the step was skipped
+In the below example, the `uploads` directory was found to be empty, so the step was skipped
 
 <MacWindow>
   --------- * Clean up uploads * ---------<br />
@@ -484,7 +484,7 @@ In the below example, some of the log files were omitted with `[...]` representi
 Due to the addition of incremental snapshots, this process may soon be deprecated.
 :::
 
-Older snapshots are safe to remove from the Node to clear up disk space.  The **snapshots** data will over time cause your `/var` partition on your Debian system to fill up.  If this happens, you will be faced with unknown or undesirable results both with your Node's operations and nodectl's ability to load and run.
+Older snapshots are safe to remove from the node to clear up disk space.  The **snapshots** data will over time cause your `/var` partition on your Debian system to fill up.  If this happens, you will be faced with unknown or undesirable results both with your node's operations and nodectl's ability to load and run.
 
 Here we can safely clear out our older snapshots.
 
@@ -518,7 +518,7 @@ cleaning logs from [snapshots] > 30 days ...... complete<br />
 </MacWindow>
 
 ### Update packages and seed lists
-nodectl will pull down the necessary packages that will upgrade your Node to the latest versions.
+nodectl will pull down the necessary packages that will upgrade your node to the latest versions.
 
 We will also update any access permission lists (*seed lists*) that need to match for proper authentication to the Hypergraph and metagraphs.
 
@@ -528,7 +528,7 @@ If there is not a *seed list* present for a particular profile, the fetch will b
 [`sudo nodectl configure`](/validate/automated/nodectl-commands#configure)
 :::
 
-You can sit back and relax as nodectl continues to upgrade your Node for you.
+You can sit back and relax as nodectl continues to upgrade your node for you.
 
 <MacWindow>
  --------- * Handle Packages * ----------<br />
@@ -549,7 +549,7 @@ nodectl will bring your service back online for you.
 <MacWindow>
   ------ * Bring Node Back Online * ------<br />
 <br />
-  Reload the Node's services .................... complete<br />
+  Reload the node's services .................... complete<br />
   Start request initiated [node_l0] ............. running<br />
   building environment .......................... complete<br />
   Updating services file ........................ complete<br />
@@ -569,15 +569,15 @@ Then it will verify the status and display for you.
 
 It is **important** to note here that we **only** brought back up our **layer0** service.  In this example the profile called `dag-l0` is started.
 
-A special **recommended** feature of nodectl is coordination to allow your Node to proper join:
+A special **recommended** feature of nodectl is coordination to allow your node to proper join:
 - The `layer0` network cluster joins first.  
 - Join consensus for that layer.
 - Wait for `Ready` state (properly joined).
-- Allow the required `layer1` connection to be created by **linking through your Node's `layer0`** network. 
+- Allow the required `layer1` connection to be created by **linking through your node's `layer0`** network. 
 
-This is recommended because it provides a consistent and reliable layer0 to layer1 link for your Node to function as efficiently as possible between clusters.
+This is recommended because it provides a consistent and reliable layer0 to layer1 link for your node to function as efficiently as possible between clusters.
 
-We will find our Node is `ReadytoJoin`.
+We will find our node is `ReadytoJoin`.
 
 <MacWindow>
   Checking for [ReadyToJoin] state............... ReadyToJoin<br />
@@ -588,11 +588,11 @@ We will find our Node is `ReadytoJoin`.
 
 The configured `layer0` profile will rejoin the network.  In this case the profile `dag-l0` is configured as the layer0 and will attempt to join.
 
-In this [upgrade](/validate/automated/nodectl-commands#upgrade) (document/manual) we did **not** choose the `-w` ([watch](/validate/automated/nodectl-commands#upgrade)) mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the Node reaches a `state` where it is able to participate on the network, nodectl will skip watching for the remaining peers to connect and simply and safely continue the upgrade process.
+In this [upgrade](/validate/automated/nodectl-commands#upgrade) (document/manual) we did **not** choose the `-w` ([watch](/validate/automated/nodectl-commands#upgrade)) mode.  This creates an upgrade that is less verbose, and saves time by not forcing the Node Operator to wait for all peer to peer connections to be established, instead once the node reaches a `state` where it is able to participate on the network, nodectl will skip watching for the remaining peers to connect and simply and safely continue the upgrade process.
 
 It is necessary that all peers on the network learn about all other peers on the network via the gossip mechanisms in the **Constellation Network's** DAG protocol setup.  However, it is not important to wait for all connections to be established, to complete the upgrade.
 
-Below we will see that our Node reached `WaitingForReady` while it was connected to `36` out of `48` known Nodes on the network.  nodectl continued the upgrade process...
+Below we will see that our node reached `WaitingForReady` while it was connected to `36` out of `48` known nodes on the network.  nodectl continued the upgrade process...
 
 <MacWindow>
 ---------- * Joining dag-l0 * ----------<br />
@@ -651,7 +651,7 @@ We are in the `ReadyToJoin` state. Will have to now wait for `dag-l0` profile, t
 
 Since the `layer0` was already in `Ready` state (meaning that it is properly and effectively participating on the HyperGraph).  We can now link our Layer1 through our Layer0 to transfer data securely and properly between layers.
 
-If our Node is not properly in `Ready` state on `layer0`, nodectl will patiently wait for this condition to be met, updating the Node Operator through the command prompts, as it continues to check.
+If our node is not properly in `Ready` state on `layer0`, nodectl will patiently wait for this condition to be met, updating the Node Operator through the command prompts, as it continues to check.
 
 ### Joining next layer
 
@@ -674,7 +674,7 @@ As mentioned above, in this [upgrade](/validate/automated/nodectl-commands#upgra
   watch mode was not chosen by upgrade.<br />
 </MacWindow>
 
-nodectl will check the `status` of your Node.
+nodectl will check the `status` of your node.
 
 <MacWindow>
  Checking status [dag-l1] ......................<br /> 

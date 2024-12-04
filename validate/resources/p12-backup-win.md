@@ -19,7 +19,7 @@ Log into your **local system** and open an [Explorer session](/validate/resource
 
 ### Create directory
 
-Create a `temporary` directory to store the `p12` file that you will backup from your **Node**.  
+Create a `temporary` directory to store the `p12` file that you will backup from your **node**.  
 
 In this example 👇  we created a folder called `constellation-backup` off the root of the user's home directory.  You can place your backup directory anywhere that is most comfortable to your preferences.
 
@@ -46,7 +46,7 @@ Click on the `Edit` button.
 Click on the `Advanced` button.
 ![](/img/validator_nodes/back_restore_win3.png)
 
-Select `Authentication` from the `left` side panel and then browse to the `SSH key File` that you use to connect to your Node.
+Select `Authentication` from the `left` side panel and then browse to the `SSH key File` that you use to connect to your node.
 ![](/img/validator_nodes/back_restore_win4.png)
 
 ### Connect to node

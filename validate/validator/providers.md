@@ -49,7 +49,7 @@ A hosting provider is similar to a cloud provider because they are both web-base
 
 Conversely, a hosting provider can offer you a full dedicated physical machine to administer.
 
-Hosting providers generally offer more simple methodologies to running e-commerce or other types of web sites.  They most probably will not support running a Validator Node outside of providing a dedicated physical machine for you to manage remotely.
+Hosting providers generally offer more simple methodologies to running e-commerce or other types of web sites.  They most probably will not support running a validator node outside of providing a dedicated physical machine for you to manage remotely.
 
 ## Bare Metal {#bare-metal}
 A bare metal server is a physical computer designed to run dedicated services by a single tenant. You can run this dedicated server in its own data center, colocation center, an office, or even out of your own home. Because you have full control over everything from hardware to software, this option should be reserved for advanced operators requiring even more customization and resources.

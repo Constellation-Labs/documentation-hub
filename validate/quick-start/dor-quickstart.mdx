@@ -7,13 +7,13 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 # Dor Quick Start
 
-This guide is specifically for setting up your Dor Node, and is opinionated with sensible defaults.
+This guide is specifically for setting up your Dor node, and is opinionated with sensible defaults.
 
 ## ◽ Qualifications
 
-In order to qualify to become a Dor Validator Node Operator you will need to handle a few administive tasks.
+In order to qualify to become a Dor Validator node Operator you will need to handle a few administive tasks.
 
-Please refer to the following document to learn [how to become a Dor Validator Node Operator](/validate/validator/become-dor-operator).
+Please refer to the following document to learn [how to become a Dor validator node Operator](/validate/validator/become-dor-operator).
 
 ## ◽ Choose VPS Provider
 Refer to the [Constellation Network Setup Guides](/validate/setup-guides/) for choosing a VPS provider.  
@@ -92,7 +92,7 @@ sudo nodectl install --quick-install
 
 ## ◽ Node Administration Account Password
 
-Input and confirm the `nodeadmin`'s new strong password that will be used to administer your Node.
+Input and confirm the `nodeadmin`'s new strong password that will be used to administer your node.
 
 :::note Password Entry
   *You will **not** see the password output or the \* character while entering your password. This is a Linux level security feature.*
@@ -101,7 +101,7 @@ Input and confirm the `nodeadmin`'s new strong password that will be used to adm
 ## ◽ P12 Keystore Passphrase
 
 Input and confirm a complex passphrase that will be used to unlock 
-your Node's ability to access the network and to administer your Node's wallet.
+your node's ability to access the network and to administer your node's wallet.
 
 - Must have at least 1 `uppercase letter`
 - Must have at least 1 `lowercase letter`
@@ -121,8 +121,8 @@ No action required, you can wait for the installation to complete.
 <MacWindow>
 Please follow the instructions below, as indicated<br />
 <br />
-1) Submit your NodeID to Constellation Discord Admins.<br />
-2) Collateralize your Node's wallet.<br />
+1) Submit your node ID to Constellation Discord Admins.<br />
+2) Collateralize your node's wallet.<br />
 3) Stay logged in to this VPS terminal session.
 4) Open new terminal.
 5) Confrim ability to log in as: nodeadmin
@@ -136,8 +136,8 @@ Please follow the instructions below, as indicated<br />
 🚑 <span style={{fontSize:'1.2em',fontWeight:800}}>&nbsp;Leave this screen up and remote terminal window open!</span>
 
 ## ◽ Test Access 
-1. Leave your `root` or `ubuntu` user connected to your Node's terminal. 
-1. Open a new local terminal and attempt a second SSH remote connection to your Node using your `nodeadmin` user and passphrase as created in the [SSH into Your VPS](#-ssh-into-your-vps).
+1. Leave your `root` or `ubuntu` user connected to your node's terminal. 
+1. Open a new local terminal and attempt a second SSH remote connection to your node using your `nodeadmin` user and passphrase as created in the [SSH into Your VPS](#-ssh-into-your-vps).
 
 After confirming you have access via `nodeadmin` you can move to the next step.
 
@@ -145,15 +145,15 @@ After confirming you have access via `nodeadmin` you can move to the next step.
 
 1. Connect to the **Constellation Network Official** Discord Support Server.  
 1. Reach out to an Administrator.
-1. Supply and request to have your `nodeid` appended to the Dor metagraph access seed list.
+1. Supply and request to have your `node ID` appended to the Dor metagraph access seed list.
 
-You will see your Node ID, displayed on the [instructional screen](#-wait-for-installation-to-complete) at the end of the installation.
+You will see your node ID, displayed on the [instructional screen](#-wait-for-installation-to-complete) at the end of the installation.
 
 ```jsx title="Example 128 length hexadecimal number."
 136f0f756659be91e8af013aa9e2a63a94227680aa41365e055a37db206f69d313e479e7f37e8c9c13fa40278ddc98eab2b0130fc0cf17fdf13ca012082ba813
 ```
 
-## ◽ Back Up Your Node P12
+## ◽ Back Up Your node P12
 Refer to these guides
 - [p12 backup guide Windows](/validate/resources/p12-backup-win)
 - [p12 backup guide Mac](/validate/resources/p12-backup-mac) 
@@ -167,17 +167,17 @@ You may reference our [Node Operator Notes](/validate/resources/nodectl-notes) f
 After completing the [access test](#-test-access) **successfully**, you can close out all terminal sessions, leaving only your `nodeadmin` connected terminal session open.
 
 :::warning IMPORTANT 
-Your Node will no longer be accessible via the `root` or default `ubuntu` account you originally setup your Node to access.
+Your node will no longer be accessible via the `root` or default `ubuntu` account you originally setup your node to access.
 :::
 
 ## ◽ Collateralize your Node
 Refer to the [collateralize your node start guide](/validate/quick-start/collateralize-quickstart).
 
 ## ◽ Congratulations 
-Your Node installation is complete.
+Your node installation is complete.
 
 ## ◽ Next Steps
 :::danger IMPORTANT
-You will need to wait for your node's nodeid, that was [submitted here](#-submit-your-node-details), to be added the seed list (access/authorization list) before you can join the cluster.
+You will need to wait for your node's node ID, that was [submitted here](#-submit-your-node-details), to be added the seed list (access/authorization list) before you can join the cluster.
 :::
 Follow the [first time Connection quick start guide](/validate/quick-start/online-quick-start) to bring your node on the network.

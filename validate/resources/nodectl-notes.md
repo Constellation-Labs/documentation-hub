@@ -36,9 +36,9 @@ The following mediums are a good start to where you should record and maintain y
 :::danger 🚑 PLEASE DO NOT 🚒
 Do **not** use the same passphrases or other sensitive values/information as shown in this example.  
 
-These examples are public facing and may be used by a nefarious actor as a first attempt to access your Node in a penetration attack.
+These examples are public facing and may be used by a nefarious actor as a first attempt to access your node in a penetration attack.
 
-> The example values in these notes are **ficitious**, please replace usernames, passwords, passphrases, etc. with your own.
+> The example values in these notes are **fictitious**, please replace usernames, passwords, passphrases, etc. with your own.
 :::
 
 ## ◽ Notes for Macintosh
@@ -46,11 +46,11 @@ These examples are public facing and may be used by a nefarious actor as a first
 ```
 Constellation Validator Node Notes:
 
-To access our Node:
+To access our node:
     open a terminal and enter:
     ssh -i /home/myuser/.ssh/myprivatekey nodeadmin@113.113.113.113
     
-    This command will attempt to SSH into our VPS/Node 
+    This command will attempt to SSH into our VPS/node 
     We will be challenged for access to supply the passphrase.
     passphrase: efg6abc13efg6
 
@@ -107,13 +107,13 @@ If you are using a Command Prompt verses PuTTy, you may want to copy the Macinto
 ```
 Constellation Validator Node Notes:
 
-To access our Node:
+To access our node:
     open PuTTy
     select our saved session from the 
     PuTTy main menu, load, and then open
     (or double click)
     
-    This command will attempt to SSH into our VPS/Node 
+    This command will attempt to SSH into our VPS/node 
     We will be challenged for access to supply the passphrase.
     passphrase: efg6abc13efg6
 

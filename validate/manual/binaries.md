@@ -7,7 +7,7 @@ hide_table_of_contents: false
   <title>Install Tessellation Binaries</title>
   <meta
     name="description"
-    content="This document will help to install the necessary Tessellation binaries necessary to turn a VPS into a Node."
+    content="This document will help to install the necessary Tessellation binaries necessary to turn a VPS into a node."
   />
 </head>
 
@@ -24,7 +24,7 @@ You can remind yourself how to access your VPS here for [Macintosh](/validate/re
 
 ### Update node
 
-Bring our Node up to date
+Bring our node up to date
 
 ```
 sudo apt -y update && sudo apt -y upgrade
@@ -42,7 +42,7 @@ Your screen will not react and your password will not show as you type.
 
 ### Download packages
 
-We are ready to download the Tessellation packages that will be executed on your VPS to turn it into a **Node**. We can now pull down the latest release from Constellation Network's repository.
+We are ready to download the Tessellation packages that will be executed on your VPS to turn it into a **node**. We can now pull down the latest release from Constellation Network's repository.
 
 :::danger VERY IMPORTANT
 When downloading Tessellation...
@@ -67,7 +67,7 @@ Download the **cl-wallet.jar** JAR file.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v1.0.1/cl-wallet.jar -P /var/tessellation; sudo chmod +x /var/tessellation/cl-wallet.jar
 ```
-Download the **seed list file** that contains the Node IDs with permissions to JOIN the network.
+Download the **seed list file** that contains the node IDs with permissions to JOIN the network.
 ```
 sudo wget https://github.com/Constellation-Labs/tessellation/releases/download/v1.0.1/mainnet-seedlist -P /var/tessellation; sudo chmod +x /var/tessellation/cl-wallet.jar -O /var/tessellation/seed-list -o /dev/null
 ```

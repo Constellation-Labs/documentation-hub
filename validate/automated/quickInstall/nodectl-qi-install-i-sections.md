@@ -18,7 +18,7 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
   />
 </head>
 
-Now that nodectl has all the information it needs to begin the installation.  You can sit back and relax while the Node is installed.  
+Now that nodectl has all the information it needs to begin the installation.  You can sit back and relax while the node is installed.  
 
 You can watch the progress through the progress bar indicator as each component is installed.
 

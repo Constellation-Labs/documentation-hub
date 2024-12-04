@@ -20,17 +20,17 @@ In the event that your configuration becomes corrupt, restoring from a recent ba
 
 ## What is your configuration?
 
-nodectl is reliant on being able to read and process a configuration file that holds persistent configuration elements that allow nodectl to properly assist in administrating your Node.
+nodectl is reliant on being able to read and process a configuration file that holds persistent configuration elements that allow nodectl to properly assist in administrating your node.
 
 > For Example:
 
-- Holds your p12 private keystore details that are utilized to authenticate and validate data on the Node.
-- Holds the details necessary to administer the Hypergraph or metagraph cluster your Node is running on, in defined profiles.
+- Holds your p12 private keystore details that are utilized to authenticate and validate data on the node.
+- Holds the details necessary to administer the Hypergraph or metagraph cluster your node is running on, in defined profiles.
 - Holds parameters necessary to run various nodectl features.
 
 ## Backing up your configuration
 
-Execute the `backup_config` command on your Node.
+Execute the `backup_config` command on your node.
 
 ### Backup Step One
 
@@ -50,7 +50,7 @@ Backing up configuration ...................... complete<br />
 We will presented with detailed information explaining when, where, and what was backed up.
 
 - The file was backed up on `2024-04-17`.
-- The file is located in the `/var/tessellation/backups` directory on the Node.
+- The file is located in the `/var/tessellation/backups` directory on the node.
 - The name of the backup is called `backup_cn-config_2024-04-17-11:56:13Z`.
 - Time Stamps are in UTC
 
@@ -72,13 +72,13 @@ nodeadmin@Constellation-Node:~$
 
 ## Restoring your configuration
 
-In the event our Node started to issue an error on startup, some unknown event took place that may have corrupted the configuration, or any other reason that may require you restore you configuration, you can use nodectl's built in restore feature.
+In the event our node started to issue an error on startup, some unknown event took place that may have corrupted the configuration, or any other reason that may require you restore you configuration, you can use nodectl's built in restore feature.
 
 <MacWindow>
 nodeadmin@Constellation-Node:~$ sudo nodectl restore_config<br />
 </MacWindow>
 
-nodectl will access the backup directory on your Node, identify the backup files, and display a list of backup files available for restoration.
+nodectl will access the backup directory on your node, identify the backup files, and display a list of backup files available for restoration.
 
 :::note Note
 The only files that will be displayed are those files that are named in a particular format that nodectl can understand.  
@@ -131,7 +131,7 @@ Are you SURE you want to restore? [n]: y<br />
 
 ### Restore
 
-The restoration will commence, and we will be returned to the Node's prompt upon completion. 
+The restoration will commence, and we will be returned to the node's prompt upon completion. 
 
 <MacWindow>
 backing up current config ..................... complete<br />
@@ -143,7 +143,7 @@ nodeadmin@Constellation-Node:$
 
 ### Alternative Restoration
 
-If you do not have a highly customized configuration file in use on your Node, and a restoration does not restore your ability to use nodectl, you have an alternative solution to regain proper usage of nodectl.
+If you do not have a highly customized configuration file in use on your node, and a restoration does not restore your ability to use nodectl, you have an alternative solution to regain proper usage of nodectl.
 
 Utilizing the `new` feature in the configurator.
 

@@ -44,6 +44,15 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Metagraphs',
+      collapsed: false,
+      items: [
+        'metagraphs/become-dor-operator',  
+        'quick-start/dor-quickstart',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Node Concepts',
       collapsed: false,
       items: [
@@ -56,8 +65,7 @@ module.exports = {
         'validator/tarball-explained',
         'validator/forks-explained',
         'validator/trust-labels',
-        'validator/p12',
-        'validator/become-dor-operator',  
+        'validator/p12', 
         {
           type: 'category',
           label: 'SSH Keys',

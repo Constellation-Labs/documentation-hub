@@ -15,9 +15,9 @@ hide_table_of_contents: false
 
 ![](/img/validator_nodes/node-do-options.png)
 
-This is a free option and can come in handy as your Node continues to run on the Hypergraph and metagraph.
+This is a free option and can come in handy as your node continues to run on the Hypergraph and metagraph.
 
-A Constellation Network Validator Node is mostly an ephemeral device.
+A Constellation Network validator node is mostly an ephemeral device.
 
 If the following scenarios arise:
 
@@ -25,7 +25,7 @@ If the following scenarios arise:
    - Node is considered compromised in any way
    - New OS upgrade is required*
 
-Simply creating a new Node is a better option than recovering from a backup.
+Simply creating a new node is a better option than recovering from a backup.
 
 * *In order to make sure your Linux Distribution is optimal, it is recommended to build a new VPS from a Cloud Provider approved image; instead of, attempting to do a distribution upgrade via the operating system's package manager.*
 
