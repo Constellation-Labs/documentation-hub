@@ -15,7 +15,7 @@ When data traverses the Internet, it is vulnerable to getting intercepted by nef
 
 To protect against such vulnerability, we encrypt our data before it leaves the local or remote system, traverses the connection between the local and remote system, and finally reaches its intended destination where it gets decrypted.  This is called an encrypted tunnel between devices.
 
-SSH (Secure Shell) keys are a pair of public and private keys (i.e. a key pair) that are used to authenticate and establish an encrypted connection between your local computer and remote machine (a Node). Depending on the situation, the public key may be in charge of decrypting data while the private key is in charge of encrypting data, or visa-versa.  
+SSH (Secure Shell) keys are a pair of public and private keys (i.e. a key pair) that are used to authenticate and establish an encrypted connection between your local computer and remote machine (a node). Depending on the situation, the public key may be in charge of decrypting data while the private key is in charge of encrypting data, or visa-versa.  
 
 In the case of connections to a Cloud instance, the public key is used to encrypt data and a private key is used to decrypt it.
 

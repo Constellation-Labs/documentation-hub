@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network Automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -31,7 +31,7 @@ If you do **not** see your p12 file, this means either you placed it in a locati
 If the former, you can hit `2` and then enter in the fully qualified location of your p12 file.
 
 <MacWindow>
-  nodectl has detected an existing p12 migration to this new Node has been requested; and now
+  nodectl has detected an existing p12 migration to this new node has been requested; and now
   needs to find and migrate this private key file. Please select an option.<br />
 <br />
   1) /home/ubuntu/nodeadmin-node.p12<br />

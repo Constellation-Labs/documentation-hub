@@ -11,7 +11,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>Google Cloud Platform GCP</title>
   <meta
     name="description"
-    content="Building a Validator Node on Google Cloud Platform (GCP)."
+    content="Building a Validator node on Google Cloud Platform (GCP)."
   />
 </head>
 
@@ -23,7 +23,7 @@ Creating your account on GCP is a simple process similar to all other SaaS model
 
 ![](/img/validator_nodes/node-gcp-acct2.png)
 
-In order to run our Constellation Node, you will need to make your *first* financial and sweat-equity investments.
+In order to run our Constellation Network node, you will need to make your *first* financial and sweat-equity investments.
 
 ## Sign Up
 

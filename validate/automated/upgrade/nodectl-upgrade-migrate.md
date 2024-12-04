@@ -35,7 +35,7 @@ If you do not receive the `migration` message, you can skip this step and move t
 
 ### Migrate Configuration
 
-We received the following banner, so we can continue to migrate our Node.
+We received the following banner, so we can continue to migrate our node.
 
 <MacWindow>
   ========================================<br />
@@ -46,7 +46,7 @@ We received the following banner, so we can continue to migrate our Node.
   Code Name: Princess Warrior<br />
   <br />
   During program initialization, an outdated and/or improperly formatted configuration file
-  was found on this server/Node.  <br />
+  was found on this server/node.  <br />
   <br />
   nodectl will backup your original configuration file and attempt to migrate to the new required
   format.  
@@ -77,7 +77,7 @@ DANGER  The backup configuration YAML file MAY CONTAIN A P12 PASSPHRASE, FOR SEC
 </MacWindow>
 
 :::success Good Practice 
-It is good practice to keep the backups when asked to clear them (say `n`), test your Node's functionality to ensure you maintain full access to your Node's features, and then remove.
+It is good practice to keep the backups when asked to clear them (say `n`), test your node's functionality to ensure you maintain full access to your node's features, and then remove.
 
 Later in the upgrade process, after the migrator is completed, you will receive another warning from the upgrader asking you if you want to remove your backups.  
 

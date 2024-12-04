@@ -20,25 +20,32 @@ nodectl pronounced node "c" "t" "l", node-cuttle, or node control.
 
 The purpose of this utility is to make things easier on you.  
 
-It obviates all of the technical aspects of running a Validator Node, so that anyone can do it!  
+It obviates all of the technical aspects of running a Validator node, so that anyone can do it!  
 
-It comes packed with features designed to navigate the "complexities" of Constellation Network's validation Node on the Hypergraph and/or metagraphs. 
+It comes packed with features designed to navigate the "complexities" of Constellation Network's validation node on the Hypergraph and/or metagraphs. 
 
 The succeeding documentation will describe the features behind nodectl and help to provide an easy to use guide for a utility that was designed with ease in mind.
+
+:::danger ⚠️ ⚠️ ⚠️
+## IMPORTANT NOTICE 
+#### FOR IMMEDIATE REVIEW 
+
+**[Constellation Network Deprecation Announcement](/validate/automated/getting-started/deprecation-notice)**
+:::
 
 ### Installing with nodectl
 
 <DocsCards>
   <DocsCard header="Quick Start Guides" href="/validate/quick-start/index" img="/img/home/apps.jpg">
-    <p>Access the nodectl quick install guides with the goal of creating a new Validator Node on a brand new server.</p>
+    <p>Access the nodectl quick install guides with the goal of creating a new Validator node on a brand new server.</p>
   </DocsCard>
 
   <DocsCard header="Build New Node | Step-by-Step" href="/validate/automated/install/nodectl-install-types" img="/img/home/state-channel.jpg">
-    <p>Create a new Validator Node on a brand new server using the step-by-step instructions.</p>
+    <p>Create a new Validator node on a brand new server using the step-by-step instructions.</p>
   </DocsCard>
 
   <DocsCard header="Migrate Node" href="/validate/automated/migrate/nodectl-migrate" img="/img/home/community.jpg">
-    <p>Migrate existing Node to new container, instance, or hardware using nodectl.</p>
+    <p>Migrate existing node to new container, instance, or hardware using nodectl.</p>
   </DocsCard>
 </DocsCards>
 
@@ -46,7 +53,7 @@ The succeeding documentation will describe the features behind nodectl and help 
 
 <DocsCards>
   <DocsCard header="Upgrade" href="/validate/automated/upgrade/nodectl-upgrade-qs" img="/img/home/core-concepts.jpg">
-    <p>Upgrade nodectl on an existing Node.</p>
+    <p>Upgrade nodectl on an existing node.</p>
   </DocsCard>
 
   <DocsCard header="Upgrade Concepts" href="/validate/automated/upgrade/nodectl-upgrade-concepts" img="/img/home/community.jpg">
@@ -67,17 +74,17 @@ The succeeding documentation will describe the features behind nodectl and help 
 ## Explained
 ### Brand New Node
 
-This documentation will help, through step-by-step instructions, to create a **new** Node from scratch.  Your new Node will include a new wallet ([p12](/validate/automated/install/nodectl-install-p12) file).
+This documentation will help, through step-by-step instructions, to create a **new** node from scratch.  Your new node will include a new wallet ([p12](/validate/automated/install/nodectl-install-p12) file).
 
 Start [here](/validate/automated/getting-started/installationGettingStarted).
 
 ### Rebuild/Migrate Node
 
-These documents will help, through step-by-step instructions, with replacing an existing Node by transferring it to a new container, VPS or hardware.
+These documents will help, through step-by-step instructions, with replacing an existing node by transferring it to a new container, VPS or hardware.
 
-The existing Node is in production; however, you would like to use the ephemeral nature of Constellation's Validator Node to start fresh on a new build of its underlining Linux distribution.  
+The existing node is in production; however, you would like to use the ephemeral nature of Constellation's Validator node to start fresh on a new build of its underlining Linux distribution.  
 
-This will require transferring your Node's wallet ([p12](/validate/automated/nodectlInstall#what-is-a-p12-file) file) from the existing (old) Node to your new Node.
+This will require transferring your node's wallet ([p12](/validate/automated/nodectlInstall#what-is-a-p12-file) file) from the existing (old) node to your new node.
 
 Start [here](/validate/automated/migrate/nodectl-migrate).
 
@@ -95,4 +102,4 @@ Start [here](/validate/automated/nodectl-migrate-v1).
 
 ### Command Reference Guide
 
-After installation is complete, the [command reference guide](/validate/automated/nodectl-commands) can help you navigate the features of nodectl, beyond standard Node management commands.
+After installation is complete, the [command reference guide](/validate/automated/nodectl-commands) can help you navigate the features of nodectl, beyond standard node management commands.

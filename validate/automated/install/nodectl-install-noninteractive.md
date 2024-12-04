@@ -12,20 +12,20 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
-nodectl will begin some automated installations of various dependency packages required to run your Node.  This is a non-interactive process, we can just watch and wait for the process steps to complete.
+nodectl will begin some automated installations of various dependency packages required to run your node.  This is a non-interactive process, we can just watch and wait for the process steps to complete.
 
 ## System Requirements
-nodectl will begin to install the necessary dependencies that will allow your future Node to run properly.  This will include several packages such as the Java development kit package.  
+nodectl will begin to install the necessary dependencies that will allow your future node to run properly.  This will include several packages such as the Java development kit package.  
 
 We can sit back and relax during these steps of the installation.  Some installations may take longer than others, so please be patient.
 
 ### Dependencies
 
-Install the packages that allow us to use our Node (and nodectl).
+Install the packages that allow us to use our node (and nodectl).
 - non-Constellation packages
 - Constellation core protocol binaries
 
@@ -44,7 +44,7 @@ Install the packages that allow us to use our Node (and nodectl).
 
 ### Binaries
 
-We will see our binary java files necessary to run our Constellation Node download.
+We will see our binary java files necessary to run our Constellation node download.
 
 This will also include the seed list file(s) necessary to access the cluster.
 
@@ -63,7 +63,7 @@ This will also include the seed list file(s) necessary to access the cluster.
 ### Handle Swap File
 The swap file will be created to help with memory constraints at the OS level.
 
-In the event your Node already has a swap file enabled/created, you may see a `already exists` status instead of a `completed` status.
+In the event your node already has a swap file enabled/created, you may see a `already exists` status instead of a `completed` status.
 
 <MacWindow>
   Enabling OS swap .............................. completed<br />                    
@@ -72,7 +72,7 @@ In the event your Node already has a swap file enabled/created, you may see a `a
   Press any key to continue<br />
 </MacWindow>
 
-Continuing the system requirements, nodectl will create and setup your swap file.  This step sets up your Node to have an extra method to properly manage memory.  The swap will utilize disk usage when memory access is required but not available.  This is a common setup for Apple, Windows or Linux systems.
+Continuing the system requirements, nodectl will create and setup your swap file.  This step sets up your node to have an extra method to properly manage memory.  The swap will utilize disk usage when memory access is required but not available.  This is a common setup for Apple, Windows or Linux systems.
 
 <MacWindow>
   Enabling OS swap [creating].................... running<br />

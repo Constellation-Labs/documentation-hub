@@ -28,14 +28,14 @@ It is important to understand that as Digital Ocean updates their website contin
 
 **IMPORTANT**
 
-In the video NetMet creates a Droplet for **$40/USD** per month.  At the time of the video series creation, this was the recommended Droplet size intended to run your Node on a *single* Hypergraph cluster.  This has been updated to a **$96/USD** droplet, that meets the necessary specifications for running the required Hypergraph and metagraph on your new Node.  Please take note of this while watching the YouTube series.
+In the video NetMet creates a Droplet for **$40/USD** per month.  At the time of the video series creation, this was the recommended Droplet size intended to run your node on a *single* Hypergraph cluster.  This has been updated to a **$96/USD** droplet, that meets the necessary specifications for running the required Hypergraph and metagraph on your new node.  Please take note of this while watching the YouTube series.
 
 If you choose the watch the YouTube Series, it is highly recommended to watch the entire series from the beginning.
 :::
 
 ## SSH Key Generation Series - **Video 4a** by NetMet.
 
-Video 4a describes building a VPS on Digital Ocean.  You should have your [SSH keys created](/validate/validator/ssh-keys) prior to initialing the creation and deployment of your Constellation Network Validator Node on Digital Ocean.
+Video 4a describes building a VPS on Digital Ocean.  You should have your [SSH keys created](/validate/validator/ssh-keys) prior to initialing the creation and deployment of your Constellation Network Validator node on Digital Ocean.
 
 Please **like** and **subscribe** to support NetMet's work, and be alerted to new content specifically applied to Constellation Network in the future.
 
@@ -44,7 +44,7 @@ Please **like** and **subscribe** to support NetMet's work, and be alerted to ne
 ---
 
 ## Build Droplet
-Now that we are all [signed up on Digital Ocean](/validate/setup-guides/do/account), we can begin creating our Droplet to run our Node. After successfully logging in to Digital Ocean, you should find yourself on their main Web console page.
+Now that we are all [signed up on Digital Ocean](/validate/setup-guides/do/account), we can begin creating our Droplet to run our node. After successfully logging in to Digital Ocean, you should find yourself on their main Web console page.
 
 The `Create` dropdown list selector is located in the top right corner of the page.
 
@@ -66,16 +66,16 @@ Selecting this option will start the Droplet Build Wizard.
 
 ### Select Region 
 
-We now need to pick a region (location) where our Node will live (or be creating within). 
+We now need to pick a region (location) where our node will live (or be creating within). 
 
-Generally, you will want the location of your Node to be closest to your customer. This isn't really known, so we can choose criteria that best fits *you*:
+Generally, you will want the location of your node to be closest to your customer. This isn't really known, so we can choose criteria that best fits *you*:
 
   - Closest to you.
   - Most reliable up time
   - Fastest transmission rate
 
 :::info
-Location of your future Node (VPS) is part of the whole concept of *decentralization*.
+Location of your future node (VPS) is part of the whole concept of *decentralization*.
 :::
 
 ![](/img/validator_nodes/node-do-region.png)
@@ -86,7 +86,7 @@ Location of your future Node (VPS) is part of the whole concept of *decentraliza
 ![](/img/validator_nodes/node-do-os.png)
 
 :::info Information
-Throughout the Validator Node documentation, we will be referring to the Ubuntu Distribution.  This is a Debian based operating system.  We chose this distribution because it comes standard with many features that make running a linux VPS more simple.
+Throughout the validator node documentation, we will be referring to the Ubuntu Distribution.  This is a Debian based operating system.  We chose this distribution because it comes standard with many features that make running a linux VPS more simple.
 
 We are going to use a `shared tenancy` plan, which simply means we will enter into a *trustless* environment utilizing a system that other people, companies (company), or organizations may also be using.
 ::::
@@ -96,7 +96,7 @@ We are going to use a `shared tenancy` plan, which simply means we will enter in
 We will use the Basic plan, as this will work for us.
 
 :::note Plan Costs
-You can increase the plan to your liking, if you deem it necessary.  The more feature rich plan you decide to invest in, the better your Node may be able to perform on the Hypergraph and metagraph.
+You can increase the plan to your liking, if you deem it necessary.  The more feature rich plan you decide to invest in, the better your node may be able to perform on the Hypergraph and metagraph.
 :::
 
 ![](/img/validator_nodes/node-do-sizing1.png)

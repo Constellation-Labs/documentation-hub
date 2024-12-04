@@ -17,7 +17,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Securing our EC2 Instance
 
-We need to restrict the access to our EC2 Instance down to just the essentials necessary for our future Node to operate properly. We do not want our EC2 instance wide open and vulnerable to malicious actors out on the Internet.
+We need to restrict the access to our EC2 Instance down to just the essentials necessary for our future node to operate properly. We do not want our EC2 instance wide open and vulnerable to malicious actors out on the Internet.
 
 Your instances Firewall rules are called SGs for "security groups".  This is similar to software firewall rule sets.
 
@@ -99,10 +99,10 @@ What you want to do is first, click on [www.whatismyip.com](https://www.whatismy
 You will use this IP address as your Source for port `22`.
 
 :::info IMPORTANT 
-This is going to restrict access to your Node to your Local Location only.  If you want access into your node from other locations (like roaming on your mobile device), you will need to create a more complex rule set here (out of scope of this document). 
+This is going to restrict access to your node to your Local Location only.  If you want access into your node from other locations (like roaming on your mobile device), you will need to create a more complex rule set here (out of scope of this document). 
 :::
 :::danger DANGER
-The less restrictive your access, the more vulnerable your Node becomes.
+The less restrictive your access, the more vulnerable your node becomes.
 :::
 
 Let's add 2 Inbound Rules.
@@ -141,9 +141,9 @@ Our inbound rules will look something like this 👇
 
 ## MainNet, IntegrationNet or TestNet Launch Requirements
 
-It is highly recommended that you use `nodectl` to install and control/admin your Node.
+It is highly recommended that you use `nodectl` to install and control/admin your node.
 
-Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet, IntegrationNet or TestNet Validator Node's Layer1 connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
+Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet, IntegrationNet or TestNet validator node's Layer1 connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
 
 #### Final Firewall Table 
 
@@ -162,4 +162,4 @@ Please add to your firewall configuration ports `9010-9011` to allow access to y
 ---
 
 #### WAY TO GO! You are done.
-We can now move on to access our Node!
+We can now move on to access our node!

@@ -18,7 +18,7 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
   />
 </head>
 
-We will reach the point in the installation where nodectl is ready to download the dependency packages needed to run our Node's Tessellation protocol; as well as, other utilities that may or may not already exist on your system.
+We will reach the point in the installation where nodectl is ready to download the dependency packages needed to run our node's Tessellation protocol; as well as, other utilities that may or may not already exist on your system.
 
 nodectl will do this for us automatically, so no action is required.
 

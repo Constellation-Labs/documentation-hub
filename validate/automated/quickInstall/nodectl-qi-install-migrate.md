@@ -20,12 +20,12 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
 
 Are we importing an existing [p12](/validate/validator/p12) to use with this installation?  If you do not know, there is a high probability you are not migrating in an existing p12 file and you will say `n` here.
 
-Since we did not supply a `--user` option, nodectl will assume `nodeadmin` as our administrative user on the Node.
+Since we did not supply a `--user` option, nodectl will assume `nodeadmin` as our administrative user on the node.
 
 <MacWindow>
 Chosen hypergraph/metagraph ................... mainnet<br />
   Generated Admin user .......................... nodeadmin<br />
-  Are you migrating an existing p12 private key to this Node? [n]:<br />
+  Are you migrating an existing p12 private key to this node? [n]:<br />
 </MacWindow>
 
 ### Are we migrating a P12? 
@@ -35,7 +35,7 @@ If you are **not** migrating a p12 and said `n` 👆 you can skip to the next se
 ### Migrate a P12
 If you chose `y` to the question 👆 above.
 
-We should have uploaded a p12 file to our Node prior to starting the installation.  
+We should have uploaded a p12 file to our node prior to starting the installation.  
 
 :::info
 To upload your existing p12, you can follow:

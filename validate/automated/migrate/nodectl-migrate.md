@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network Automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -24,4 +24,4 @@ This documentation will offer the Node Operator a step-by-step walk through desi
 
 ### Explained
 
-This document complements, but doesn't replace, the main Installation guide. While geared towards new Node installations, it is a designated guide specifically for migrating existing private keys (p12 files). We opted for a single document to avoid redundancy and potential conflicts. The Node Operator is responsible for navigating this comprehensive guide.
+This document complements, but doesn't replace, the main Installation guide. While geared towards new node installations, it is a designated guide specifically for migrating existing private keys (p12 files). We opted for a single document to avoid redundancy and potential conflicts. The Node Operator is responsible for navigating this comprehensive guide.

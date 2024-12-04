@@ -1,0 +1,96 @@
+---
+title: Deprecation Notice - nodectl
+hide_table_of_contents: false
+---
+
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
+
+<head>
+  <title>Constellation nodectl utility</title>
+  <meta
+    name="description"
+    content="Constellation nodectl utility"
+  />
+</head>
+
+## ◽ FOR IMMEDIATE REVIEW 
+
+### Deprecation of support for OLDER Ubuntu and Debian versions.
+
+## ◽ ANNOUCEMENT DETAILS
+
+### Important Updates to nodectl Support and Compatibility.
+
+Constellation Network would like to announce a significant update to the support and compatibility of our flagship **validator node** software management utility, **[nodectl](/validate/automated/getting-started/nodectl-getting-started)**.
+
+These changes are part of our ongoing commitment to provide the most secure, efficient, and up-to-date solutions for our users.
+
+<span style={{fontSize:".85em"}}>
+  <b style={{color:"red"}}>Deprecation</b>: 
+  The process of marking a feature, functionality, or practice as obsolete or discouraged, signaling it may be removed or unsupported in the future.
+</span>
+
+
+## ◽ EFFECTIVE IMMEDIATELY
+Constellation Network is **deprecating** support for nodectl for the following operating systems:
+
+| Distribution | Version | End of Support |
+| :---: | :--- | :--- |
+| **Ubuntu** | 20.04 and older | April 2025 |
+| **Debian** | 11 and older | August 2024 |
+
+This decision aligns with our goal to enhance security and performance by focusing on more recent, robust platforms.
+
+- *Canonical has announced EOS for `22.04` in April 2027* 
+
+## ◽ ADDITIONAL ADDED SUPPORT
+Constellation Network will be introducing of support for newer operating systems.
+
+We are excited to announce that starting with `v2.16.0` of **nodectl** we will now support the latest operating systems:
+
+| Distribution | Version | nodectl version |
+| :---: | :---: | :--- |
+| **Ubuntu** | 24.04 | >v2.16.0 |
+| **Debian** | 12 | >v2.16.0 |
+| *Ubuntu* | *22.04* | currently supported |
+
+Node Operators will benefit from improved features, enhanced security protocols, and better overall performance on these updated platforms.
+
+## ◽ ACTION REQUIRED
+#### Plan Your Upgrade
+For Node Operators currently running nodectl on deprecated operating systems, it is crucial to start planning your upgrade. Continuing to operate on outdated platforms may expose you to security vulnerabilities, and the inability to execute the nodectl utility.
+
+#### The steps are simple: 
+- Backup your p12.  **important**
+  - [Windows](/validate/resources/p12-backup-win)
+  - [Mac](/validate/resources/p12-backup-mac)
+- [Build a new VPS](/validate/quick-start/vps-quickstart) with your desired supported distribution
+- [Migrate in your p12](/validate/automated/migrate/nodectl-migrate) during installation
+- [Bring node online](/validate/quick-start/online-quickstart) to obtain your snapshot chain and continue normal operations.
+
+## ◽ EARLY UPGRADE ADOPTION
+
+If you decide to upgrade early, you have two options:
+
+| Option | Notes |
+| :--- | :--- |
+| Upgrade to the stable release of **`v2.15.x`**. | This will require an upgrade to **Ubuntu 22.04**, a version of Canonical’s Ubuntu that will [remain supported](#-effective-immediately) until April 2027. |
+| Wait for the **`pre-release`** of nodectl **`v2.16.0`** and upgrade using `Ubuntu 24.04` or `Debian 12` | Please note that pre-release versions are undergoing additional user testing on **`TestNet`** and may contain bugs. You will need to stay diligent and up-to-date with a pre-release, as the version number may not change to facilitate fast deployments during developmental testing. |
+
+## ◽ WHAT HAPPENS AFTER
+### What happens after nodectl `v2.16.0` is released?
+
+With the release of `v2.16.0` of nodectl, support for the [following](#-effective-immediately) distribution releases will no longer be included.
+
+The binaries and executables created for nodectl will be compiled with development libraries that are not backward compatible with older releases.
+
+If you wish to continue running your validator node on a distribution version that is unsupported, nearing the end of support, or no longer supported by Constellation Network’s nodectl, you can maintain your node on `v2.15.x`.
+
+## ◽ SUPPORT TIMELINE DETAILS
+
+:::info Release Date
+The release date for v2.16.0 will be announced in 2025.
+:::
+
+**Thank you for your Understanding**

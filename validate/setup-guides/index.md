@@ -19,7 +19,7 @@ slug: ./
 
 In the world of `decentralization` and `edge computing`, it’s important to understand that building a server to run your node involves significant decision-making.
 
-You may run a Constellation Node on different mediums. 
+You may run a Constellation Network node on different mediums. 
 
 Some examples include:
 - VPS
@@ -32,7 +32,7 @@ Some examples include:
 
 ### VPS
 
-Virtual Private Servers (VPS) are instances in provided by a Cloud provider.  The Cloud provider takes care of all the "hard" work of maintaining, housing, securing, and offering many other services.  This allows you to simply request a server for use and remotely access this server.  The VPS will eventually become your Node. 
+Virtual Private Servers (VPS) are instances in provided by a Cloud provider.  The Cloud provider takes care of all the "hard" work of maintaining, housing, securing, and offering many other services.  This allows you to simply request a server for use and remotely access this server.  The VPS will eventually become your node. 
 
 The advantage of a Cloud provider's VPS is that you do not have to worry about all the requirements of a [bare metal](#bare-metal) server.
 

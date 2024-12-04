@@ -7,13 +7,13 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 # First Time Connection Quick Start Guide
 
-This guide is specifically for connecting a Validator Node to a Constellation Network Hypergraph or metagraph cluster for the first time.
+This guide is specifically for connecting a validator node to a Constellation Network Hypergraph or metagraph cluster for the first time.
 
 ## ◽ Prerequisites 
 
 Please review the [checklist and profile descriptions](/validate/quick-start/prerequisites) for a better understanding of how this document works.
 
-We will use `dag-l0` as our profile name throughout the guide. When necessary, this should be changed to match your Node's [profile](/validate/quick-start/prerequisites#-profile-table).
+We will use `dag-l0` as our profile name throughout the guide. When necessary, this should be changed to match your node's [profile](/validate/quick-start/prerequisites#-profile-table).
 
 ## ◽ SSH into Your VPS
 Review your [notes](/validate/resources/nodectl-notes) for the connection string.
@@ -57,9 +57,9 @@ Layer1 metagraph validators **SHOULD** skip to [this](#-verify-your-status) step
 After your node finishes connection steps to join the layer0 Hypergraph, you will see your Node attempt to connect to the layer1 profile and fail.  **This is expected, and can be ignored**. 
 :::
 
-A new Node must go through the process of obtaining the entire [snapshot chain](/metagraphs/concepts/snapshots) from the cluster. Layer1 is not allowed on the cluster until the layer0 cluster has its entire chain.
+A new node must go through the process of obtaining the entire [snapshot chain](/metagraphs/concepts/snapshots) from the cluster. Layer1 is not allowed on the cluster until the layer0 cluster has its entire chain.
 
-During this stage, your Node will transition into `SessionStarted` and then transition again to `DownloadInProgress` state.
+During this stage, your node will transition into `SessionStarted` and then transition again to `DownloadInProgress` state.
 
 <p style={{fontSize:".7em"}}>There are other states that the node may transition into; however, these two states are the most obvious to see.</p>
 
@@ -101,9 +101,9 @@ While the Starchiver utility is running, you should keep a diligent eye on your 
 :::
 
 ## ◽ Verify your status
-Once your Node has completed downloading the snapshot chain, it will transition from `DownloadInProgess` to `Ready` by going through several intermediary stages.
+Once your node has completed downloading the snapshot chain, it will transition from `DownloadInProgess` to `Ready` by going through several intermediary stages.
 
-You can review your Node's status by issuing the [status](/validate/automated/nodectl-commands#status) command.  We are looking for two main status output values:
+You can review your node's status by issuing the [status](/validate/automated/nodectl-commands#status) command.  We are looking for two main status output values:
 1. JOIN STATE
 1. IN CONSENSUS
 
@@ -129,7 +129,7 @@ JOIN STATE<br />
 ReadyToJoin
 </MacWindow>
 
-If your Node has not reached the `Ready` stage, you can continuously watch the Node's status by utilizing the `-w` (watch) option.  
+If your node has not reached the `Ready` stage, you can continuously watch the node's status by utilizing the `-w` (watch) option.  
 
 Make sure when you are done watching, you use the <kbd>q</kbd> to gracefully exit the `status` command.
 
@@ -139,11 +139,11 @@ sudo nodectl status -p dag-l0 -w 120
 
 ## ◽ Join layer1
 
-If your Node is in `ReadyToJoin`:
+If your node is in `ReadyToJoin`:
 ```
 sudo nodectl join -p dag-l1
 ```
-If your Node is in any state other than `Ready`:
+If your node is in any state other than `Ready`:
 ```
 sudo nodectl restart -p dag-l1
 ```

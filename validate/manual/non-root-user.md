@@ -7,7 +7,7 @@ hide_table_of_contents: false
   <title>Setup Node Non-Root User</title>
   <meta
     name="description"
-    content="This document will help to create a non-root user to access our Node with instead of the default user."
+    content="This document will help to create a non-root user to access our node with instead of the default user."
   />
 </head>
 
@@ -32,7 +32,7 @@ Our goal is to create a user that does not have **root** access. This will add a
 From your local system, log into (**create an SSH session**) your cloud instance's terminal, as **root**. 
 
 :::tip 
-You can review the **[Accessing your Node YouTube video](https://www.youtube.com/embed/7lhiuFtrOzU)** to remind yourself how to gain access to your node; alternatively, you may return to the previous section [mac](/validate/resources/accessMac) or [windows](/validate/resources/accessWin) for details.
+You can review the **[Accessing your node YouTube video](https://www.youtube.com/embed/7lhiuFtrOzU)** to remind yourself how to gain access to your node; alternatively, you may return to the previous section [mac](/validate/resources/accessMac) or [windows](/validate/resources/accessWin) for details.
 :::
 
 Use your **Apple terminal**, **Window's PuTTY**, or your terminal application of choice.
@@ -166,7 +166,7 @@ We will exit out of our instance.
 exit
 ```
 
-We should now be completely out of our Node. 
+We should now be completely out of our node. 
 
 Your Terminal should return to your local system's prompt (Apple/Linux) or, if you are using an application like PuTTy, you will see the window *completely exit* and *disappear*. **This is expected behavior**.
 
@@ -197,5 +197,5 @@ Our user is setup!
 Moving forward connect as **nodeadmin** to work on our instance. The **root** user should **no longer** be used.
 
 :::note
-It is recommended to disable the root user's SSH access; however, we will take care of this during the installation of our Node on our instance.
+It is recommended to disable the root user's SSH access; however, we will take care of this during the installation of our node on our instance.
 :::

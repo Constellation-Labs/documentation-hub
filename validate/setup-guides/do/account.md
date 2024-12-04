@@ -11,7 +11,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>Digital Ocean</title>
   <meta
     name="description"
-    content="Building a Validator Node on Digital Ocean's platform."
+    content="Building a Validator node on Digital Ocean's platform."
   />
 </head>
 
@@ -21,7 +21,7 @@ Creating your account on Digital Ocean is a simple process similar to all other 
 
 ![](/img/validator_nodes/node-do-account.png)
 
-In order to run our Constellation Node, you will need to make your *first* financial and sweat-equity investments.
+In order to run our Constellation Network node, you will need to make your *first* financial and sweat-equity investments.
 
 ## Sign Up
 

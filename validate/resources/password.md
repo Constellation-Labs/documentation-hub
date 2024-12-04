@@ -9,7 +9,7 @@ A **password** is a string of characters while a **passphrase** is a sentence-li
 
 ### root
 
-Root access will be handled automatically by the SSH key. However you do not want to access your Node or allow access to your Node via the root user. If someone gets into your node as root, they have full administrative access.
+Root access will be handled automatically by the SSH key. However you do not want to access your node or allow access to your node via the root user. If someone gets into your node as root, they have full administrative access.
 
 ### nodeadmin
 You should access your node via the `nodeadmin` user which does not allow root level permissions. In order to administer your node, you will need to use your `nodeadmin` password.
@@ -17,7 +17,7 @@ You should access your node via the `nodeadmin` user which does not allow root l
 ## Security Layers
 
 ### First layer
-Having the SSH Keys (your local system has the private key and your Node has the public key). Access your Node with the `nodeadmin` password and the same SSH key as the root user.
+Having the SSH Keys (your local system has the private key and your node has the public key). Access your node with the `nodeadmin` password and the same SSH key as the root user.
 
 ### Second layer
 Use your SSH key's passphrase to access your `nodeadmin` account which is shared with the root user.

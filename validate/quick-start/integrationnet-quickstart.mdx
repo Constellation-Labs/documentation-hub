@@ -8,7 +8,7 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
 
 # IntegrationNet Quick Start
 
-This guide is specifically for setting up your IntegrationNet Node **for the first time**, and is opinionated with sensible defaults. 
+This guide is specifically for setting up your IntegrationNet node **for the first time**, and is opinionated with sensible defaults. 
 
 This guide will use the Windows command prompt or Macintosh terminal.
 
@@ -113,12 +113,12 @@ nodectl requires that the following rules be met:
 
 ## ◽ Node Administration Account Password
 
-Input and confirm the `nodeadmin`'s new [strong password](#-strong-passwordpassphrase) that will be used to administer your Node.
+Input and confirm the `nodeadmin`'s new [strong password](#-strong-passwordpassphrase) that will be used to administer your node.
 
 ## ◽ P12 Keystore Passphrase
 
 Input and confirm a [strong passphrase](#-strong-passwordpassphrase) that will be used to unlock 
-your Node's ability to access the network and to administer your Node's wallet.
+your node's ability to access the network and to administer your node's wallet.
 
 ## ◽ Wait for Installation to Complete
 
@@ -146,8 +146,8 @@ Please follow the instructions below, as indicated<br />
 </MacWindow>
 
 ## ◽ Test Access 
-1. Leave your `root` or `ubuntu` user connected to your Node's terminal. 
-1. Open a new local terminal and attempt a second SSH remote connection to your Node using your `nodeadmin` user and the p12 passphrase as created in the [SSH into Your VPS](#-ssh-into-your-vps).
+1. Leave your `root` or `ubuntu` user connected to your node's terminal. 
+1. Open a new local terminal and attempt a second SSH remote connection to your node using your `nodeadmin` user and the p12 passphrase as created in the [SSH into Your VPS](#-ssh-into-your-vps).
 
 After confirming you have access via `nodeadmin` you can move to the next step.
 
@@ -157,7 +157,7 @@ After confirming you have access via `nodeadmin` you can move to the next step.
 1. Reach out to an Administrator.
 1. Supply and request to have your `nodeid` appended to the IntegrationNet Hypergraph access seed list.
 
-You will see your Node ID, displayed on the [instructional screen](#-wait-for-installation-to-complete) at the end of the installation.
+You will see your node ID, displayed on the [instructional screen](#-wait-for-installation-to-complete) at the end of the installation.
 
 ```jsx title="Example 128 length hexadecimal number."
 136f0f756659be91e8af013aa9e2a63a94227680aa41365e055a37db206f69d313e479e7f37e8c9c13fa40278ddc98eab2b0130fc0cf17fdf13ca012082ba813
@@ -177,12 +177,12 @@ You may reference our [Node Operator Notes](/validate/resources/nodectl-notes) f
 After completing the [access test](#-test-access) **successfully**, you can close out all terminal sessions, leaving only your `nodeadmin` connected terminal session open.
 
 :::warning IMPORTANT 
-Your Node will no longer be accessible via the `root` or default `ubuntu` account you originally setup your Node to access.
+Your node will no longer be accessible via the `root` or default `ubuntu` account you originally setup your node to access.
 :::
 
 ## ◽ Setup Reward Distribution 
 You will need to access your Lattice account and supply Constellation Network's Lattice Team with:
-- Your IntegrationNet `Node ID`.
+- Your IntegrationNet `node ID`.
 - The real `Wallet` that will be used for `$DAG` reward distribution. 
 - A `Wallet` (*this can be the same wallet*) that has `250,000 $DAG` tokens, to satisfying your collateral requirements. 
 
@@ -193,7 +193,7 @@ The reward distribution for this network is distributed daily to a wallet addres
 :::
 
 ## ◽ Congratulations 
-Your Node installation is complete.
+Your node installation is complete.
 
 ## ◽ Next Steps
 :::danger IMPORTANT

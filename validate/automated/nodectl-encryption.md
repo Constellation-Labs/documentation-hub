@@ -77,7 +77,7 @@ Until we are more comfortable with the configurator and all the particular setti
   existing configuration file.<br />
 <br />
   nodectl will attempt to migrate/integrate your configurations changes in order
-  to ensure a smooth transition and operations of your Node via
+  to ensure a smooth transition and operations of your node via
   nodectl. <br />
 <br />
   Detailed Mode: will walk you through all steps/questions; with detailed
@@ -292,7 +292,7 @@ nodectl will detect that our passphrase is set to encrypted, via the configurati
    WARNING  Disabling encryption is permanent.<br />
 <br />
   Profile specific non-global passphrases will
-  NOT be restored in your Node's configuration file.
+  NOT be restored in your node's configuration file.
   Each specific p12 configurations will be reset to
   None<br />
 <br />
@@ -348,7 +348,7 @@ nodectl will now automatically direct you to the GLOBAL PROFILE P12 ENTRY sectio
    ----- * GLOBAL PROFILE P12 ENTRY * -----<br />
 <br />
   This is the Debian Operating system username used to administer
-  your Node. It was created during Node installation. Avoid the 'root',
+  your node. It was created during node installation. Avoid the 'root',
   'admin', or 'ubuntu' user.<br />
 </MacWindow>
 
@@ -361,7 +361,7 @@ Your default values may be different from the example output below
 :::
 
 <MacWindow>
-  Enter in the admin username for this Node [nodeadmin]: 
+  Enter in the admin username for this node [nodeadmin]: 
 </MacWindow>
 
 <MacWindow>
@@ -421,7 +421,7 @@ Enter your current p12 passphrase
   does NOT create new p12 private key files. The Node Operator should enter
   in their EXISTING p12 passphrase.  This configurator also does NOT change
   or alter the p12 file in ANY way. A p12 file should have been created
-  during the original installation of nodectl on this Node. If the Node
+  during the original installation of nodectl on this node. If the node
   Operator wants to modify the p12 passphrase, the 'sudo nodectl passwd12'
   command can be used. To remove the passphrase from the configuration, enter
   in "None" as the passphrase, and confirm with "None". MAKE SURE TO SAVE
@@ -454,7 +454,7 @@ If you already had these profiles set to `global` ( only using the global p12 fo
 
 ## Conclusion
 
-Your Node is now updated with an [encrypted](#encrypt-via-the-configurator) or [decrypted](#decrypt-via-the-configurator) passphrase. From the main menu, you can choose <kbd>q</kbd> to return to your Node's command line interface.
+Your node is now updated with an [encrypted](#encrypt-via-the-configurator) or [decrypted](#decrypt-via-the-configurator) passphrase. From the main menu, you can choose <kbd>q</kbd> to return to your node's command line interface.
 
 
 

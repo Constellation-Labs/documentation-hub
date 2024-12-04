@@ -12,11 +12,11 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
-You now have the option to encrypt your p12 passphrase that will be stored in your `cn-config.yaml` file which is used by nodectl to understand the configuration of your Node.
+You now have the option to encrypt your p12 passphrase that will be stored in your `cn-config.yaml` file which is used by nodectl to understand the configuration of your node.
 
 If you do not encrypt, the passphrase will be stored in plain text format in the file.  It is up to you if you want to enable encryption, however it is **recommended**.
 

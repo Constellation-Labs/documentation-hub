@@ -11,13 +11,13 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of on a new Node - Introduction"
+    content="nodectl installation of on a new node - Introduction"
   />
 </head>
 
 ## Introduction
 
-The following documentation will help guide a new Node Operator understand the differences between turning a newly created VPS into a Constellation Network Validator Node with the use of `nodectl`.
+The following documentation will help guide a new Node Operator understand the differences between turning a newly created VPS into a Constellation Network validator node with the use of `nodectl`.
 
 There are three options:
 1. [normal](#normal-install) (nodectl)

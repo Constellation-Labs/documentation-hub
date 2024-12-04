@@ -39,7 +39,7 @@ We need a way to access our EC2 Instance (VPS). Please refer to the [SSH](/valid
 :::danger Warning Not Recommended
 You also have the ability to create a less secure SSH key pair directly from AWS's EC2 creation wizard.  This is not recommended because it does not offer the ability to supply a passphrase with your SSH key.  
 
-This alone is an X!  Your Node will be supplying a hot wallet. If you do not have a passphrase to access your Node (therefore only needing the private key file), is a bad idea.
+This alone is an X!  Your node will be supplying a hot wallet. If you do not have a passphrase to access your node (therefore only needing the private key file), is a bad idea.
 
 ![](/img/validator_nodes/node-aws-autosshkey-a.png)
 
@@ -47,7 +47,7 @@ If you are on Windows choose `.ppk` as your format.
 
 If you are on a Mac or Linux system choose `.pem` as your format.
 
-This method has been shown in the documentation even though not recommended, because it could be used to speed up processes in development environments where Nodes might be built and terminated rapidly during testing, etc.
+This method has been shown in the documentation even though not recommended, because it could be used to speed up processes in development environments where nodes might be built and terminated rapidly during testing, etc.
 :::
 
 ## Upload SSH Key to AWS
@@ -81,7 +81,7 @@ Failure to have the correct Region chosen will cause you to repeat this section 
 :::
 
 ![](/img/validator_nodes/node-aws-ec2-3.png)
-Once you have your SSH Key Pair created and uploaded to AWS; you can continue to the next section to launch your future Node EC2 instance via the AWS Web Console. 
+Once you have your SSH Key Pair created and uploaded to AWS; you can continue to the next section to launch your future node EC2 instance via the AWS Web Console. 
 
 ### Select Key Pairs
 

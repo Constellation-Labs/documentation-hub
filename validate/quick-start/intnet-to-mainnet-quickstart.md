@@ -7,7 +7,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 # Migrate an IntegrationNet Node to MainNet Quick Start Guide
 
-This guide is specifically for migrating your IntegrationNet Node over to MainNet.
+This guide is specifically for migrating your IntegrationNet node over to MainNet.
 
 ## ◽ Validate the Provisioning Your VPS
 
@@ -81,9 +81,9 @@ sudo nodectl reboot
 ```
 - If asked to leave the cluster(s) first, you will choose <kbd>y</kbd>.
 
-Once nodectl reboots your Node for you, you will lose access to the terminal session.
+Once nodectl reboots your node for you, you will lose access to the terminal session.
 - Wait 1 minute to allow your VPS to reboot
-- [SSH](#-ssh-into-your-vps) into your VPS again using the Node's administration account `nodeadmin`.
+- [SSH](#-ssh-into-your-vps) into your VPS again using the node's administration account `nodeadmin`.
 
 ## ◽ Validate latest nodectl version 
 **Node Control Utility Program**
@@ -104,7 +104,7 @@ sudo nodectl upgrade_nodectl
 Optionally, you may refer to the detailed [step-by-step](/validate/automated/upgrade_nodectl/index) guide.
 
 #### ◽ Migrate nodectl
-You may be requested to **migrate** your Node configuration.  
+You may be requested to **migrate** your node configuration.  
 
 :::danger **IMPORTANT** 
 The migration **must** be completed.
@@ -126,7 +126,7 @@ sudo nodectl upgrade --nodectl_only --ni
 ```
 sudo nodectl quick_status
 ```
-If your Node is in **any other** status other than (not equal to):
+If your node is in **any other** status other than (not equal to):
 - `Ready`
 - `DownloadInProgress`
 
@@ -171,7 +171,7 @@ We will be using **Scenario Three**.
 Read the `warning` and press any key to continue.
 
 ## ◽ Handle Stop Request
-We **already** removed our Node from the previous Constellation Network `IntegrationNet` clusters during [this step](#-leave-and-stop-integrationnet-cluster).  Choose <kbd>n</kbd>.
+We **already** removed our node from the previous Constellation Network `IntegrationNet` clusters during [this step](#-leave-and-stop-integrationnet-cluster).  Choose <kbd>n</kbd>.
 <MacWindow>
 Exit new configuration build to stop profiles? [y] <b>n</b>
 </MacWindow>
@@ -193,7 +193,7 @@ Preserve global p12 details? [n] <b>y</b>
 </MacWindow>
 
 ## ◽ Clean Up Old Profiles
-We need to remove the old profiles from our Node.
+We need to remove the old profiles from our node.
 
 <MacWindow>
 Remove old profiles? [y] <b>y</b>
@@ -202,7 +202,7 @@ Remove old profiles? [y] <b>y</b>
 *This may take a few moments, please exercise patience.*
 
 ## ◽ Clean Up Old Services
-We need to remove the old service files from our Node.
+We need to remove the old service files from our node.
 
 <MacWindow>
 Remove old service files? [y] <b>y</b>
@@ -255,7 +255,7 @@ sudo nodectl execute_starchiver -p dag-l0 --restart
 ```
 
 ## ◽ Restart your Node
-If you preformed the [download snapshots](#-download-snapshots-optional) step, your Node should have restarted and you can skip this final step.
+If you preformed the [download snapshots](#-download-snapshots-optional) step, your node should have restarted and you can skip this final step.
 
 We will join the new network by using the nodectl `restart` feature.  
 ```
@@ -286,7 +286,7 @@ After completing this migration, any backups will now be rendered irrelevant. Du
 
 
 ## ◽ Completed
-After the final steps your Node should be successfully on the cluster.  You can validate that your node is online.
+After the final steps your node should be successfully on the cluster.  You can validate that your node is online.
 ```
 sudo nodectl status
 ```

@@ -18,14 +18,14 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
   />
 </head>
 
-nodectl will continue the quick installation.  You can continue to sit back and relax while the Node is installed.  
+nodectl will continue the quick installation.  You can continue to sit back and relax while the node is installed.  
 
 You can watch the progress through the progress bar indicator as each component is installed.
 
 *percentage completion will vary.*
 
 ### Swapping
-Handle setting up the Node's swap file
+Handle setting up the node's swap file
 
 <MacWindow>
 nodectl installing [ mainnet ]<br />
@@ -34,11 +34,11 @@ Setting up swap file..................... preparing<br />
 </MacWindow>
 
 ### Administration
-Handle the Node's user setup
+Handle the node's user setup
 
 <MacWindow>
 nodectl installing [ mainnet ]<br />
-Setting up Node administration........... preparing<br />
+Setting up node administration........... preparing<br />
 [ ########################### 56% ..................... ]
 </MacWindow>
 
@@ -79,7 +79,7 @@ Finalizing configuration................. preparing<br />
 </MacWindow>
 
 ### Service Creation
-nodectl will create all the services that it will use to help administer your Node.
+nodectl will create all the services that it will use to help administer your node.
 
 <MacWindow>
 nodectl installing [ mainnet ]<br />
@@ -88,7 +88,7 @@ Building services........................ preparing<br />
 </MacWindow>
 
 ### SSH Configuration
-nodectl will update the SSH configuration to lock down the Node and disable some security vulnerabilities.
+nodectl will update the SSH configuration to lock down the node and disable some security vulnerabilities.
 
 <MacWindow>
 nodectl installing [ mainnet ]<br />

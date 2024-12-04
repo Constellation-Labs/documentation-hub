@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -27,11 +27,11 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 Upon the initiation of the VPS creation (for most cloud provisioning) the VPS should have been assigned an IP address linking it to the external Internet for access. 
 
-In a single Node setup environment, this IP address is crucial for accessing your VPS (via  the [SSH keys](#ssh-keys)) and participating on the Constellation Network metagraphs.
+In a single node setup environment, this IP address is crucial for accessing your VPS (via  the [SSH keys](#ssh-keys)) and participating on the Constellation Network metagraphs.
 
 ### SSH Keys
 
-The [SSH keys](/validate/validator/ssh-keys) were created in previous steps of this documentation.  This key pair is used to authenticate to your VPS, by accessing the [IP address](#ip-address) in order to gain entry to the future Node.
+The [SSH keys](/validate/validator/ssh-keys) were created in previous steps of this documentation.  This key pair is used to authenticate to your VPS, by accessing the [IP address](#ip-address) in order to gain entry to the future node.
 
 ### Arm64 Notice
 

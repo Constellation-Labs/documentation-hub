@@ -22,7 +22,7 @@ Starting from version v2.13.0, you now have the option to encrypt your p12 passp
 
 ### Understanding the Encryption Services
 
-Depending on the encryption state of your Node, the upgrader *may* offer you the ability to `encrypt` your p12 passphrase in the configuration.  *This will be skipped if the configurator module detects the passphrase is already encrypted.*
+Depending on the encryption state of your node, the upgrader *may* offer you the ability to `encrypt` your p12 passphrase in the configuration.  *This will be skipped if the configurator module detects the passphrase is already encrypted.*
 
 :::note
 You can encrypt the passphrase at any time using the nodectl configurator.

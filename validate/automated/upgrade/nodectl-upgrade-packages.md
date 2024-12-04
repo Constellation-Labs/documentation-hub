@@ -16,13 +16,13 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-Your Node should now be clean.  nodectl is ready to add and update the packages that run the Tessellation Protocol.
+Your node should now be clean.  nodectl is ready to add and update the packages that run the Tessellation Protocol.
 
 ### Update packages
 
-nodectl will download the necessary packages that will upgrade your Node to the latest version.
+nodectl will download the necessary packages that will upgrade your node to the latest version.
 
-You can sit back and relax as nodectl continues to upgrade your Node for you.
+You can sit back and relax as nodectl continues to upgrade your node for you.
 
 <MacWindow>
  --------- * HANDLE PACKAGES * ----------<br />

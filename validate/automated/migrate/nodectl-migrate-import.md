@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network Automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -37,7 +37,7 @@ Otherwise if we have already uploaded our p12 keystore file, we can hit the <kbd
 <MacWindow>
   BEFORE WE BEGIN <br />
 <br />
-  If this Node will be using an existing p12 private
+  If this node will be using an existing p12 private
   key, the installation should be exited and the existing p12 private key
   uploaded to a known secure local directory on this server. Alternatively, you can simply pause
   here and upload the p12 private key file, and then continue.<br />

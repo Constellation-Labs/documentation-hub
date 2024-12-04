@@ -18,7 +18,7 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
   />
 </head>
 
-Now that our Node is completed and built.  The installation was successful... 
+Now that our node is completed and built.  The installation was successful... 
 
 **A congratulations is in order**!
 
@@ -35,7 +35,7 @@ We will be supplied with the final pieces to the puzzle before we can join the c
  Please report this nodeid to administrative staff to gain access to the network via the access list permissions.<br />
 </MacWindow>
 
-Details about our Node will be presented for us to write down in our [notes](/validate/resources/nodectl-notes).
+Details about our node will be presented for us to write down in our [notes](/validate/resources/nodectl-notes).
 
 <MacWindow>
  HyperGraph/metagraph .......................... hypergraph<br />
@@ -45,7 +45,7 @@ Details about our Node will be presented for us to write down in our [notes](/va
   P12 Alias ..................................... nodeadmin-alias<br />
 </MacWindow>
 
-nodectl will then present you with your nodeid, this is your `public key` and is required to join the `seed list` that will allow us to access the cluster from our Node and bring our participation on the network cluster!
+nodectl will then present you with your nodeid, this is your `public key` and is required to join the `seed list` that will allow us to access the cluster from our node and bring our participation on the network cluster!
 
 Depending on whether or not you supplied a p12 for migration that was already on the seed list, you will most likely show a red `False` for the `NODE ID FOUND ON SEED LIST` value.
 
@@ -61,14 +61,14 @@ False  <br />
 <br />
 Please review the next Steps in order to gain access to the hypergraph -> mainnet environment.<br />
 <br />
-If your Node is found as False on the check seed
+If your node is found as False on the check seed
 list(s) output above, you will need to submit your NodeID for acceptance.<br />
 </MacWindow>
 
-Some final instructions will be presented that inform you that you will need to submit the nodeid and collateralize your Node prior to being able to participate on the network.  
+Some final instructions will be presented that inform you that you will need to submit the nodeid and collateralize your node prior to being able to participate on the network.  
 
 :::danger TESTNET and INTEGRATIONNET
-TestNet and IntegrationNet Node Operators will not use the hot wallet on their Node to obtain rewards.  These Node Operators will need to register with [Lattice](https://lattice.is/dashboard).
+TestNet and IntegrationNet Node Operators will not use the hot wallet on their node to obtain rewards.  These Node Operators will need to register with [Lattice](https://lattice.is/dashboard).
 :::
 
 <MacWindow>
@@ -86,4 +86,4 @@ Total installation time:  1.823 minutes<br />
 </MacWindow> 
 
 # CONGRATULATIONS
-Your Node installation is complete!
+Your node installation is complete!

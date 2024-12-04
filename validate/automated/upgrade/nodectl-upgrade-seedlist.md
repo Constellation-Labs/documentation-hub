@@ -16,7 +16,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   />
 </head>
 
-It is paramount that our Node's seed list matches the latest seed list known on the cluster.  If this is not an exact match the Node will fail to access the network.
+It is paramount that our node's seed list matches the latest seed list known on the cluster.  If this is not an exact match the node will fail to access the network.
 
 ### Update seed list
 
@@ -31,4 +31,4 @@ No action is required on our part.
 
 You may notice that `dag-l1` shows `disabled/skipped`.  
 
-This is correct output from the Node because in the configuration [currently] the seed list for `dag-l1` is `disabled` and therefore the attempt to download an update is `skipped`.
+This is correct output from the node because in the configuration [currently] the seed list for `dag-l1` is `disabled` and therefore the attempt to download an update is `skipped`.

@@ -7,7 +7,7 @@ hide_table_of_contents: false
   <title>Setup Node Service(s)</title>
   <meta
     name="description"
-    content="This document will help to setup our Node's service file."
+    content="This document will help to setup our node's service file."
   />
 </head>
 
@@ -27,7 +27,7 @@ You can remind yourself how to access your VPS here for [Macintosh](/validate/re
 
 ### Update node
 
-Bring our Node up to date
+Bring our node up to date
 
 ```
 sudo apt -y update && sudo apt -y upgrade
@@ -87,7 +87,7 @@ Add the commands to read your `cn-node` file and start the layer0 or layer1 serv
 
 ##### The above commands will:
 - Add our environment variables
-- Execute the command to startup our Constellation process on the Node.
+- Execute the command to startup our Constellation process on the node.
 - Run in the background
 
 :::note OPTIONAL
@@ -114,7 +114,7 @@ You will be adding the following lines into our new **service file**.
 
 ```
 [Unit]
-Description=Constellation Node service Layer0
+Description=Constellation node service Layer0
 StartLimitBurst=50
 StartLimitIntervalSec=0
 [Service]
@@ -133,7 +133,7 @@ You will be adding the following lines into our new **service file**.
 
 ```
 [Unit]
-Description=Constellation Node service Layer1
+Description=Constellation node service Layer1
 StartLimitBurst=50
 StartLimitIntervalSec=0
 [Service]
@@ -152,7 +152,7 @@ Normally, we would want to `enable` the `node_l0.service` and `node_l1.service` 
 sudo systemctl enable node_l0
 suod systemctl enable node_l1
 ```
-**HOWEVER** this introduces a security vulnerability concerning our `Validator Node`.
+**HOWEVER** this introduces a security vulnerability concerning our `validator node`.
 
 In order to start the `service` properly, you will need to supply your `p12` passphrase.  Unless you have an automated process in place to fetch the passphrase securely via security focused external tool sets (out of scope of this document), your other alternative is to supply the `passphrase` in clear text.  This is **HIGHLY** undesirable method.  Your `p12` passphrase is a gateway into our Crypto wallets, finances, your `PRO Score`, etc.
 
@@ -167,7 +167,7 @@ We will create a *temporary* environment variable prior to joining the network. 
 ```
 export CL_PASSWORD="place_your_passphrase_here"
 ```
-We can now **`start`** our **Node** service.
+We can now **`start`** our **node** service.
 ```
 sudo systemctl start node_l0
 sudo systemctl start node_l1
@@ -185,12 +185,12 @@ sudo systemctl is-active node_l1
 active
 ```
 
-## Our Node should be started.
+## Our node should be started.
 
 #### Our node should be ready to join the Hypergraph!
 
 :::success MULTIPLE METAGRAPHS
-In the event that you would like to participate in **multiple** metagraphs, you can start a new java process separately for each metagraph process you have running on the Node.
+In the event that you would like to participate in **multiple** metagraphs, you can start a new java process separately for each metagraph process you have running on the node.
 
 You can also update the `service` file to include multiple commands to run on service start.
 :::

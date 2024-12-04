@@ -7,7 +7,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 # Send Logs Guide
 
-This guide is specifically for helping a Node Operator transmit logs from their Node to offer to Administrators, Developers, or other for analysis.
+This guide is specifically for helping a Node Operator transmit logs from their node to offer to Administrators, Developers, or other for analysis.
 
 ### ◽ SSH into Your Node
 ```
@@ -148,11 +148,11 @@ sudo nodectl prepare_file_download --type file /var/tessellation/dag-l0/logs/app
 
 <MacWindow>
 WARNING<br />
-The following operation should be considered temporary and has the possibility of causing a minor security risk, on your Node.<br />
+The following operation should be considered temporary and has the possibility of causing a minor security risk, on your node.<br />
 <br />
 This command will create a copy of the requested file /var/tessellation/dag-l0/logs/app.log in the root of a non-root user's home directory, and set the permissions for access via a non-root user until removed.<br />
 <br />
-Once you have completed the backup of your file /var/tessellation/dag-l0/logs/app.log it is recommended that you return to your Node and re-run this command with the --cleanup option, to remove and secure your Node's nodeadmin user from accessing root files.<br />
+Once you have completed the backup of your file /var/tessellation/dag-l0/logs/app.log it is recommended that you return to your node and re-run this command with the --cleanup option, to remove and secure your node's nodeadmin user from accessing root files.<br />
 <br />
 Preparing [app.log] ........................... complete <br />                                                             
 <br />

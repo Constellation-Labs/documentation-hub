@@ -31,7 +31,7 @@ nodectl will bring your service back online for you.
 
 nodectl will make sure we are able to join the cluster (permissions) before it continues.
 
-- Show the Node's nodeid.
+- Show the node's node ID.
 - Are we found on the seed list?
 - Prepare environment.
 - Prepare the service files.
@@ -50,7 +50,7 @@ Updating services file ........................ complete<br />
 
 nodectl will start the service that is called: `node_l0`.
 
-We will bring our Node back on the layer0 cluster.  
+We will bring our node back on the layer0 cluster.  
 
 <MacWindow>
 Start request initiated [node_l0] ............. complete<br />
@@ -80,17 +80,17 @@ NODE ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 
 It is **important** to note here that we only brought back up our layer0 service.  In this example the profile called `dag-l0` is started.
 
-A special **required** feature of nodectl is administrating the coordination of re-joining the various clusters configured on your Node in proper order.
+A special **required** feature of nodectl is administrating the coordination of re-joining the various clusters configured on your node in proper order.
 
 - The `layer0` network cluster joins first.  
 - Wait for `Ready` state (properly joined).
-- Allow the required `layer1` connection to be created by **linking through your Node's `layer0`** network. 
+- Allow the required `layer1` connection to be created by **linking through your node's `layer0`** network. 
 
-This is recommended because it provides a consistent and reliable layer0 to layer1 link for your Node to function as efficiently as possible between clusters.
+This is recommended because it provides a consistent and reliable layer0 to layer1 link for your node to function as efficiently as possible between clusters.
 
 ### Ready To Join
 
-We will find our Node is `ReadytoJoin`.
+We will find our node is `ReadytoJoin`.
 
 <MacWindow>
   Checking for [ReadyToJoin] state............... ReadyToJoin<br />

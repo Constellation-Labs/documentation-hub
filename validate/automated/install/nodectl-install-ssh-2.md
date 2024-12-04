@@ -12,19 +12,19 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
 ### Test `nodeadmin` access
 
-At this point in the installation process, we want to make sure our VPS access is properly setup before continuing. We will quickly access our Node using our newly created `nodeadmin` account.
+At this point in the installation process, we want to make sure our VPS access is properly setup before continuing. We will quickly access our node using our newly created `nodeadmin` account.
 
 #### DO NOT CLOSE THE INSTALLER TERMINAL WINDOW
 
 You should now copy the same configuration you used to access your instance initially (which opened our installation shell); however, using our `nodeadmin` user instead.
 
-*We are simply testing that we have access to our Node via the new `nodeadmin` account, before we continue to lock down our Node for better security.*
+*We are simply testing that we have access to our node via the new `nodeadmin` account, before we continue to lock down our node for better security.*
 
 ### Windows Test
 For Windows we will update our PuTTy configuration to use `nodeadmin` instead of the `ubuntu` user we initially setup, as our login user. 
@@ -38,6 +38,6 @@ Reminder how to do this for **<kbd>[mac](/validate/resources/accessMac)</kbd>**.
 
 ### Continue
 
-Now that we are comfortable that we have access to our Node via the **`nodeadmin`** user account.  We can close the **test** `nodeadmin` terminal window (that we opened in this step). 
+Now that we are comfortable that we have access to our node via the **`nodeadmin`** user account.  We can close the **test** `nodeadmin` terminal window (that we opened in this step). 
 
 Return to our original terminal which has the installer running, as the `ubuntu` user.  Since we already started the installation as the `ubuntu` user, we need to continue with this user.

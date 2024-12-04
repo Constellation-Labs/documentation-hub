@@ -215,5 +215,5 @@ exit
 ```
 
 :::info p12 Migration - Blue Box
-If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/migrate/nodectl-migrate-upload); otherwise continue forward.
+If you are coming from the ***New Node Installation with p12 Migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/migrate/nodectl-migrate-upload); otherwise continue forward.
 :::

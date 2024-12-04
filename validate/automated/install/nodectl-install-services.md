@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -27,6 +27,6 @@ This is an automated process, and no Node Operator intervention is required.
 
 ### Explained
 
-nodectl specifically utilizes `systemctl` services to run various processes that help your Node join the clusters, handle versioning, handle special features, etc.  These services are created during the installation and updated (as necessary) during upgrades.
+nodectl specifically utilizes `systemctl` services to run various processes that help your node join the clusters, handle versioning, handle special features, etc.  These services are created during the installation and updated (as necessary) during upgrades.
 
 The installation will be finalized after the service files are successfully created.

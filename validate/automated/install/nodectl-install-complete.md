@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -30,12 +30,12 @@ Code Name: Princess Warrior<br />
   ------ * INSTALLATION COMPLETE * ------- <br />  
 <br /> 
 CONGRATULATIONS!<br />
-Below you will find your nodeid which was derived from your p12 file<br />
-Please report this nodeid to administrative staff to gain access to the network via the access list permissions.<br />
+Below you will find your node ID which was derived from your p12 file<br />
+Please report this node ID to administrative staff to gain access to the network via the access list permissions.<br />
 </MacWindow>
 
 :::info p12 Migration
-If you are coming from the ***New Node Installation with p12 migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/migrate/nodectl-migrate-complete); otherwise continue forward.
+If you are coming from the ***New Node Installation with p12 Migration*** document (which shares elements of this document), you can return to that document now by clicking [here](/validate/automated/migrate/nodectl-migrate-complete); otherwise continue forward.
 :::
 
 We have some final tasks to complete in the next section.

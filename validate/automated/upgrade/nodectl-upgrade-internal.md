@@ -18,7 +18,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ### Node Internal Configuration
 
-- Review and cleanup any unnecessary elements on the Node.
+- Review and cleanup any unnecessary elements on the node.
 - Update system components as necessary.
 - Update service files.
 - Remove nodectl specific system files that may be abandoned.
@@ -27,7 +27,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 <MacWindow>
 --- * NODE INTERNAL CONFIGURATION * ----<br />
 <br />
-Verifying Node directory setup ................ complete<br /> 
+Verifying node directory setup ................ complete<br /> 
 Updating swapfile settings .................... skipped<br /> 
 NOTE: For partial or skipped elements, see the logs for details.<br />
 Removing old default seed files ................ complete<br />
@@ -42,4 +42,4 @@ Removing old tmp files ........................ complete<br />
 Applying auto_complete updates ................ complete<br />       
 </MacWindow>
 
-Next step is to clean up some directory files to clear space and tidy up the Node.
+Next step is to clean up some directory files to clear space and tidy up the node.

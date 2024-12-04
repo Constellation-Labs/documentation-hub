@@ -18,7 +18,7 @@ import Collapsible from '@components/global/Collapsible/Collapsible.jsx';
   />
 </head>
 
-What cluster will our Node be participating in?  
+What cluster will our node be participating in?  
 
 :::note Note
 If you are planning on joining a metagraph that is **not listed**, you should choose `mainnet` as your default.
@@ -33,7 +33,7 @@ Obtain install parameters ..................... preparing<br />
 Please choose which Hypergraph or metagraph you would like to install on this server:<br />
 </MacWindow>
 
-*You should choose the Hypergraph or metagraph you want to join here, following our example, we are installing a Node to join the mainnet Hypergraph.*
+*You should choose the Hypergraph or metagraph you want to join here, following our example, we are installing a node to join the mainnet Hypergraph.*
 
 We will choose <kbd>1</kbd> for `mainnet`. 
 

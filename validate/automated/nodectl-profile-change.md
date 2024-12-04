@@ -16,7 +16,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 ## Introduction
 
-The nodectl utility uses profiles to learn how to connect to various Hypergraph or metagraph clusters.  Each profile will define all the necessary elements to help your Node connect properly. 
+The nodectl utility uses profiles to learn how to connect to various Hypergraph or metagraph clusters.  Each profile will define all the necessary elements to help your node connect properly. 
 
 This document will offer a simple guide on how to change from your current profile (generally the default profile used during installation) to a new predefined profile.
 
@@ -34,11 +34,11 @@ This procedure will change your profile configuration settings, replacing the ex
 
 ### Assumptions
 
-You have a Node up and running with an existing configuration.
+You have a node up and running with an existing configuration.
 
 ### Before we begin
 
-The ip address and pem file are fictitious, use your own Node IP and credentials.
+The ip address and .pem file are fictitious, use your own node IP and credentials.
 
 :::warning Important
 During the process of building a new profile, the configuration validator will run against your new configuration several times prior to completing the build.  You may see a **`CONFIGURATION DID NOT VALIDATE`** message; however, you can **safely** ignore this because nodectl will correct the validation error before the build process is completed.  
@@ -51,11 +51,11 @@ Issue found can safely be ignored for new configurations.
 
 ### Access Your Node
 
-Log into your Node via a remote session:
+Log into your node via a remote session:
 - Remote access via [Mac](/validate/resources/accessMac)
 - Remote access via [Windows](/validate/resources/accessWin)
 
-In our example, we connect from a Mac into our Node.  This is done by requesting a `ssh` session (secure shell) into your Node that is located at the Internet Address (IP) of `113.113.113.113` using our SSH private key called `my-ssh-pem-file`.  
+In our example, we connect from a Mac into our node.  This is done by requesting a `ssh` session (secure shell) into your node that is located at the Internet Address (IP) of `113.113.113.113` using our SSH private key called `my-ssh-pem-file`.  
 
 *Use your own ip address and ssh key pair here.*
 
@@ -122,7 +122,7 @@ Until we are more comfortable with the configurator and all the particular setti
   existing configuration file.<br />
 <br />
   nodectl will attempt to migrate/integrate your configurations changes in order
-  to ensure a smooth transition and operations of your Node via
+  to ensure a smooth transition and operations of your node via
   nodectl. <br />
 <br />
   Detailed Mode: will walk you through all steps/questions; with detailed
@@ -219,7 +219,7 @@ We can now choose the predefined configuration of our choice.  In this example w
 
 ### Security Details
 
-Since version 2 of nodectl, you are now able to define a [p12](/validate/resources/password#private-key) per profile.  This will allow you to use a different p12 file independent of the profile on a single Node.
+Since version 2 of nodectl, you are now able to define a [p12](/validate/resources/password#private-key) per profile.  This will allow you to use a different p12 file independent of the profile on a single node.
 
 In most situations you will want to use the same p12 file for all profiles.  
 
@@ -289,7 +289,7 @@ If presented to us, we can say <kbd>y</kbd> and <kbd>enter</kbd> here.
   Abandoned [dag-l1] profile.................. found<br />                      
   It is recommended to clean up old profiles to:<br />  
     - Avoid conflicts<br />  
-    - Avoid undesired Node behavior<br />  
+    - Avoid undesired node behavior<br />  
     - Free up disk<br />  
 <br />  
   Remove old profiles? [y]: y<br />  

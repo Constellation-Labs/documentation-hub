@@ -20,4 +20,4 @@ import MacWindow from '@site/src/components/global/MacWindow';
 
 The following guide will walk through the process of upgrading **nodectl**.  
 
-This is different from upgrading the Node via nodectl.  The guide will help you upgrade the nodectl utility itself.
+This is different from upgrading the node via nodectl.  The guide will help you upgrade the nodectl utility itself.

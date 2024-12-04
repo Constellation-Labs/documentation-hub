@@ -17,7 +17,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
 </head>
 
 ### Let's Start The Upgrade
-Log into your Node via a remote session.
+Log into your node via a remote session.
 
 We can issue the `upgrade` command.
 ```

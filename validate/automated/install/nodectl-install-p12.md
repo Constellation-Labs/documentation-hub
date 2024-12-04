@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -20,7 +20,7 @@ Handling the **p12** private keystore creation.
 
 ### Build our wallet (p12)
 
-nodectl will now help us through the process of creating our Node's wallet and authentication requirements. This is necessary to join the Hypergraph/metagraph via authentication, sign validation proofs, and collect rewards for work accomplished on the Hypergraph/metagraph.
+nodectl will now help us through the process of creating our node's wallet and authentication requirements. This is necessary to join the Hypergraph/metagraph via authentication, sign validation proofs, and collect rewards for work accomplished on the Hypergraph/metagraph.
 
 We will start by providing a name of our `p12` file.
 
@@ -77,7 +77,7 @@ When creating your passphrase, **do not use**:
 <br />
   This passphrase will allow you to authenticate to the
   Hypergrpah.<br />
-  This passphrase will allow you to authenticate to your Node's
+  This passphrase will allow you to authenticate to your node's
   Wallet.<br />
   You should create a unique passphrase and write it down!<br />
 <br />
@@ -85,7 +85,7 @@ When creating your passphrase, **do not use**:
   forget the passphrase!<br />
 <br />
   In your notes:<br />
-  "This is the passphrase to access my Node's hot wallet and gain
+  "This is the passphrase to access my node's hot wallet and gain
   access to the Hypergraph."<br />
 </MacWindow>
 
@@ -95,7 +95,7 @@ Access your *secure** [notes](/validate/resources/nodectl-notes) and write down 
 We can now provide a new unique passphrase for our p12 file.  
 
 :::danger IMPORTANT
-Make sure it is very secure, this will be used to access your Node's wallet; as well as, authenticate to the Hypergraph and metagraph.
+Make sure it is very secure, this will be used to access your node's wallet; as well as, authenticate to the Hypergraph and metagraph.
 :::
 
 <MacWindow>
@@ -109,6 +109,6 @@ Confirm your passphrase
 >> Please confirm your p12 private key's passphrase:<br />
 </MacWindow>
 
-Write your passphrase down in a very secure location, and never share it out to anyone that should **not** have direct access to your Node or Node's wallet.
+Write your passphrase down in a very secure location, and never share it out to anyone that should **not** have direct access to your node or node's wallet.
 
 Time to create our alias.

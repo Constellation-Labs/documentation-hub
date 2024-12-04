@@ -4,7 +4,7 @@ hide_table_of_contents: false
 ---
 
 <head>
-  <title>Access your VPS to create your Node - Windows</title>
+  <title>Access your VPS to create your node - Windows</title>
   <meta
     name="description"
     content="Documentation on how to access a newly created VPS (Virtual Private Server) in the Cloud from your local Windows system."

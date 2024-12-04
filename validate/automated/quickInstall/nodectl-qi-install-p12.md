@@ -31,9 +31,9 @@ Since we did not supply a [p12](/validate/validator/p12) file for import/migrati
 
 Next we will be request to enter our `user` password.  
 
-This is the password that we will use to access the user account on the Node that will administer the Node.  
+This is the password that we will use to access the user account on the node that will administer the node.  
 
-You should write this password down in a safe place with a [note](/validate/resources/nodectl-notes) that states that we will use this password any time we issue a `nodectl` command, preceded by the `sudo` command (super user do). The `sudo` command will challenge us for our password before allowing the `nodeadmin` user to access `root` (administrative) privileges on your Node.
+You should write this password down in a safe place with a [note](/validate/resources/nodectl-notes) that states that we will use this password any time we issue a `nodectl` command, preceded by the `sudo` command (super user do). The `sudo` command will challenge us for our password before allowing the `nodeadmin` user to access `root` (administrative) privileges on your node.
 
 You will **not** see the password or `*` while entering your password.  This is a Linux level security feature.
 
@@ -53,7 +53,7 @@ We will confirm the password.
 
 Next, we will be requested to enter in the passphrase for our **p12** file.  Again, you should write this down in a [secure place](/validate/resources/nodectl-notes).  
 
-This is the most important passphrase you will save.  In your [notes](/validate/resources/nodectl-notes), state that this is the passphrase that nodectl will use to join the cluster, sign validation proofs, and access the hot wallet associated with the Node.
+This is the most important passphrase you will save.  In your [notes](/validate/resources/nodectl-notes), state that this is the passphrase that nodectl will use to join the cluster, sign validation proofs, and access the hot wallet associated with the node.
 
 <MacWindow>
 We need to create passphrase for our p12 file.<br />

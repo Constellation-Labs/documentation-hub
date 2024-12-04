@@ -12,7 +12,7 @@ import MacWindow from '@site/src/components/global/MacWindow';
   <title>Constellation Network automation with nodectl</title>
   <meta
     name="description"
-    content="nodectl installation of new Node"
+    content="nodectl installation of new node"
   />
 </head>
 
@@ -23,7 +23,7 @@ Handling the **p12** private keystore alias creation.phrase.
 :::danger IMPORTANT
 If you are **migrating** an existing **[p12 private key file](/validate/automated/nodectlInstallMigrate)**, you must use the same alias as you did when you originally created the file.  Failure to do so will lead to errors.
 
-*MainNet 1.0 Node Operators, this is **not** your MainNet 1.0 Node alias; rather, it is your **wallet's** alias*
+*MainNet 1.0 Node Operators, this is **not** your MainNet 1.0 node alias; rather, it is your **wallet's** alias*
 :::
 
 Constellation Network requires that you provide an alias for your `p12 file`.  This alias is important, and should be added to your [notes](/validate/resources/nodectl-notes) and not be forgotten.  

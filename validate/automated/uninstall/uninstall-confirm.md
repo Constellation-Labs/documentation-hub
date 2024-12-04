@@ -19,13 +19,13 @@ import MacWindow from '@site/src/components/global/MacWindow';
 After execution of the `uninstall` command nodectl will want to warn us about the actions we are taking and ask us to confirm that this is really what we want to do.
 
 :::danger DANGER
-This is permanent, please make sure you truly want to uninstall your Node
+This is permanent, please make sure you truly want to uninstall your node
 :::
 
 <MacWindow>
   -------- * NODECTL UNINSTALL * --------- <br />
 <br />
-  WARNING  This will attempt to remove all aspects of this Constellation Network Node.<br />
+  WARNING  This will attempt to remove all aspects of this Constellation Network node.<br />
 <br />
   Including:<br />
 &nbsp;&nbsp;&nbsp;- All p12 files*<br />
@@ -59,5 +59,5 @@ Otherwise we can press <kbd>Enter</kbd> to accept the default `n` or <kbd>n</kbd
 
 <MacWindow>
   Must type CONSTELLATION exactly to confirm or n to cancel this uninstall execution.<br />
-  Uninstall this Constellation Network Node? [n]: CONSTELLATION<br />
+  Uninstall this Constellation Network node? [n]: CONSTELLATION<br />
 </MacWindow>

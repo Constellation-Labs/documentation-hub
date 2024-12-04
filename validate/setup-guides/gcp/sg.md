@@ -19,7 +19,7 @@ import DocsCards from '@components/global/DocsCards';
 
 We now will go through the steps required to lock down our new Google Cloud Platform instance.
 
-We will setup the instance's firewall SG to only allow inbound connections necessary for our Node to operate properly.
+We will setup the instance's firewall SG to only allow inbound connections necessary for our node to operate properly.
 
 Our outbound rules will be setup to only allow connections that were initiated from the instance.
 
@@ -48,7 +48,7 @@ You are dealing with crypto, so you want to have some tight security. You are in
 :::
 
 :::info 
-This will affect your ability to access your Node from anywhere, but security needs to be taken into consideration when dealing with finances.
+This will affect your ability to access your node from anywhere, but security needs to be taken into consideration when dealing with finances.
 :::
 
 Select the two default rules for SSH and RDP. Click the `DELETE` button to clean up these unwanted open rules.
@@ -68,11 +68,11 @@ Click [here](https://www.whatismyip.com) to get redirected to a website (`https:
 You will use this IP address (your local IP address) as your `Source` for the both ports **`22`**.
 
 :::note UNDERSTAND
-This is going to restrict access to your Node from this location only. If you want access into your node from other locations (like roaming on your mobile device), you will need to create a more complex rule here (out of scope of this document). 
+This is going to restrict access to your node from this location only. If you want access into your node from other locations (like roaming on your mobile device), you will need to create a more complex rule here (out of scope of this document). 
 :::
 
 :::danger IMPORTANT
-The less restrictive your access, the more vulnerable your Node becomes.
+The less restrictive your access, the more vulnerable your node becomes.
 :::
 
 
@@ -162,9 +162,9 @@ All the other options on this Create Firewall Rule section should be left as is,
 ![](/img/validator_nodes/node-gcp-sg18.png)
 
 ### MAINNET, INTEGRATIONET, OR TESTNET LAUNCH REQUIREMENT
-It is highly recommended that you use `nodectl` to install and control/admin your Node.
+It is highly recommended that you use `nodectl` to install and control/admin your node.
 
-Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet, IntegrationNet or TestNet Validator Node's Layer1 connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
+Please add to your firewall configuration ports `9010-9011` to allow access to your MainNet, IntegrationNet or TestNet validator node's Layer1 connection.  To accomplish this, repeat the exact same steps you used to open up ports `9000-9001`.
 
 #### VERIFY ALL OUR RULES
 
@@ -172,4 +172,4 @@ Please add to your firewall configuration ports `9010-9011` to allow access to y
 
 ---
 
-Our firewall security group is now properly setup to work with your future Node. Congrats!
+Our firewall security group is now properly setup to work with your future node. Congrats!

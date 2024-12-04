@@ -11,7 +11,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>Amazon Web Services (AWS)</title>
   <meta
     name="description"
-    content="Begin the process of building an EC2 instance to turn into a Constellation Node."
+    content="Begin the process of building an EC2 instance to turn into a Constellation Network node."
   />
 </head>
 
@@ -107,13 +107,13 @@ Click on the drop down box under the `Key pair (login)` section and choose the k
 
 In this section, you will need to make sure that the network and network security settings are properly setup.  We will modifying this more in later sections of this tutorial.
 
-For now, you can leave everything as default.  If you would like to take an extra step to update your SSH access, AWS has identified your local system public IP address for you.  You can select it as the only IP address allowed to access this EC2 instance (VPS, future Node).  Again, we will return to this subject later, so this is optional.
+For now, you can leave everything as default.  If you would like to take an extra step to update your SSH access, AWS has identified your local system public IP address for you.  You can select it as the only IP address allowed to access this EC2 instance (VPS, future node).  Again, we will return to this subject later, so this is optional.
 
 ![](/img/validator_nodes/node-aws-network.png)
 
 ### Storage
 
-We will need at least `160 GiB` and up to `320 Gib` (Gigabytes) of storage for our Node to function properly.  This storage will be used to handle Global snapshots.
+We will need at least `160 GiB` and up to `320 Gib` (Gigabytes) of storage for our node to function properly.  This storage will be used to handle Global snapshots.
 
 We can leave the root volume as `gp3` and we do not need to alter any other elements of the storage section.
 
@@ -157,4 +157,4 @@ Along with all the other necessary details for this EC2 instance.  You can click
 
 ---
 
-In the next section we will assign an EIP address to our future Constellation Network Validator Node!
+In the next section we will assign an EIP address to our future Constellation Network validator node!
