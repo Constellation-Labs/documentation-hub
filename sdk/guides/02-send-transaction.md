@@ -39,11 +39,11 @@ yarn dev
 ```
 
 ## View the Developer Dashboard
-Open a brower window to `http://localhost:8080`.
+Open a browser window to `http://localhost:8080`.
 
 Here, you can see both your currency and global clusters at work. You should see the snapshot ordinals for the Global L0 and the Currency L0 increment on your dashboard. Also notice that you can inspect each snapshot to see its contents. Any transactions sent on the network will appear in the tables below - there are separate tables for DAG and Metagraph Token transactions. 
 
-The dashboard is designed to work with the Euclid Development Environment default settings out-of-the-box but if you need to change network settings, they can be found in the `.env` file at the root of the project. 
+The dashboard is designed to work with the Euclid Development Environment default settings out-of-the-box, but if you need to change network settings, they can be found in the `.env` file at the root of the project. 
 
 ## Send a Transaction
 The Developer Dashboard comes pre-installed with scripts to send transactions to your running metagraph. The scripts use [dag4.js](https://github.com/StardustCollective/dag4.js) to interact with the network based on the settings in your `.env` file. 
