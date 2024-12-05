@@ -17,26 +17,40 @@ This guide assumes that you have configured your local environment based on the 
 ## Install the SDK Developer Dashboard
 The Developer Dashboard is a frontend dashboard built with NextJS and Tailwind CSS. It comes with default configuration to work with the Development Environment on install. 
 
-#### Clone the repository
-```
-git clone https://github.com/Constellation-Labs/sdk-developer-dashboard.git
-cd sdk-developer-dashboard
-```
 
-#### Install dependencies
-*Node 16 recommended
-```yarn
-yarn install
-```
-```npm
-npm install
-```
+## Setup Guide
 
-#### Start the app
-```
-yarn dev
-(or npm run dev)
-```
+### Prerequisites
+
+- Node.js (`v16` recommended)
+- `npm` or `yarn` package manager
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Constellation-Labs/sdk-developer-dashboard.git
+   cd sdk-developer-dashboard
+   ```
+
+2. Install dependencies
+   ```bash
+   # Using yarn (recommended)
+   yarn install
+
+   # Or using npm
+   npm install
+   ```
+
+3. Start the development server
+   ```bash
+   # Using yarn
+   yarn dev
+
+   # Or using npm
+   npm run dev
+   ```
+
 
 ## View the Developer Dashboard
 Open a browser window to `http://localhost:8080`.
