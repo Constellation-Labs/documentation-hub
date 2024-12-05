@@ -24,6 +24,7 @@ See [Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install) for mor
 Many developers can skip this step because these dependencies are already installed.
 
 - [Node JS](https://nodejs.org/en)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install)
 - [Docker](https://docs.docker.com/get-docker/)
 - [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
