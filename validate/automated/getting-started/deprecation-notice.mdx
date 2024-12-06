@@ -61,13 +61,24 @@ Node Operators will benefit from improved features, enhanced security protocols,
 #### Plan Your Upgrade
 For Node Operators currently running nodectl on deprecated operating systems, it is crucial to start planning your upgrade. Continuing to operate on outdated platforms may expose you to security vulnerabilities, and the inability to execute the nodectl utility.
 
+:::important Recommendation
+Constellation Network recommmends a new node is built verses doing an in-place upgrade of your distribution.
+:::
+
 #### The steps are simple: 
+- Take your node offline
+  - `leave` and `stop` your current profiles.
+    - ```sudo nodectl leave -p <profile_name>```
+    - ```sudo nodectl stop -p <profile_name>```
+      - *If you attempt to stop before doing a graceful leave, nodectl will request you leave first and offer you the option.*
+  - Keep your original VPS in place (Do not destroy.).
 - Backup your p12.  ***important**
-  - [Windows](/validate/resources/p12-backup-win)
-  - [Mac](/validate/resources/p12-backup-mac)
-- [Build a new VPS](/validate/quick-start/vps-quickstart) with your desired supported distribution
-- [Migrate in your p12](/validate/automated/migrate/nodectl-migrate) during installation
+  - [Windows](/validate/resources/p12-backup-win).
+  - [Mac](/validate/resources/p12-backup-mac).
+- [Build a new VPS](/validate/quick-start/vps-quickstart) with your desired supported distribution.
+- [Migrate in your p12](/validate/automated/migrate/nodectl-migrate) during installation.
 - [Bring node online](/validate/quick-start/online-quickstart) to obtain your snapshot chain and continue normal operations.
+- Destroy your original outdated VPS to stop incurring charges.
 
 ## ◽ EARLY UPGRADE ADOPTION
 
