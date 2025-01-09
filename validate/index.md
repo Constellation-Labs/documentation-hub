@@ -19,7 +19,7 @@ import DocsCards from '@components/global/DocsCards';
 In these tutorials, node Operators will learn how to build and manage a validator node.
 
 <DocsCards>
-  <DocsCard header="Quick Start Guides" href="/validate/quick" img="/img/home/apps.jpg">
+  <DocsCard header="Quick Start Guides" href="/validate/quick-start/index" img="/img/home/apps.jpg">
     <p>Review the various installation and procedural quick start guides.</p>
   </DocsCard>
 
