@@ -6,34 +6,48 @@ hide_table_of_contents: false
 
 <intro-end />
 
-The DataAPI encompasses two distinct types of states: `OnChainState` and `CalculatedState`, each serving unique purposes.
+A Data Application manages two distinct types of state: **OnChainState** and **CalculatedState**, each serving unique purposes in the metagraph architecture.
 
-* `OnChainState`: As the name implies, this state contains all the information intended to be permanently stored on the blockchain. This state
+### OnChain State
 
-* `CalculatedState`: This state exists off-chain and is constructed based on incoming data. It is not stored on the blockchain
+OnChainState contains all the information intended to be permanently stored on the blockchain. This state represents the immutable record of all updates that have been validated and accepted by the network. 
+
+It typically includes:
+- A history of all data updates
+- Transaction records
+- Any data that requires blockchain-level immutability and auditability
+
+OnChainState is replicated across all nodes in the network and becomes part of the chain's immutable record via inclusion in a snapshot. It should be designed to be compact and contain only essential information as it contributes to storage requirements and snapshot fees.
+
+### Calculated State
+
+CalculatedState can be thought of as a metagraph's working memory, containing essential aggregated information derived from the complete chain of OnChainState. It is not stored on chain itself, but can be reconstructed by traversing the network's chain of snapshots and applying the `combine` function to them. 
+
+CalculatedState typically:
+- Provides optimized data structures for querying
+- Contains aggregated or processed information
+- Stores derived data that can be reconstructed from OnChainState if needed
+
+CalculatedState is maintained by each node independently and can be regenerated from the OnChainState if necessary. This makes it ideal for storing derived data, indexes, or sensitive information.
 
 ## Creating State Classes
-Each state described above represents functionality from the Data Application. To create these states, you need to implement custom `traits` provided by the Data Application:
 
-* The `OnChainState` must extend the `DataOnChainState` trait.
-* The `CalculatedState` must extend the `DataCalculatedState` trait.
+Each state described above represents functionality from the Data Application. To create these states, you need to implement custom traits provided by the Data Application:
 
-Both traits, `DataOnChainState` and `DataCalculatedState`, can be found in the [tessellation repository](https://github.com/Constellation-Labs/tessellation/blob/541c389f1194a3233b3357e78d5ba601d2139c68/modules/shared/src/main/scala/org/tessellation/currency/dataApplication/package.scala).
+- The OnChainState must extend the `DataOnChainState` trait
+- The CalculatedState must extend the `DataCalculatedState` trait
 
-You can create your state classes within the `shared_data` module of your metagraph. To see examples of how these states are implemented, refer to the metagraph examples.
+Both traits, `DataOnChainState` and `DataCalculatedState`, can be found in the tessellation repository.
 
-States are typically placed in the directory path: `modules -> shared_data -> types -> Types.scala`, but you are encouraged to organize your directories and files as suits your project's needs.
+Here's a simple example of state definitions:
 
-## OnChainState x CalculatedState
-As previously described, both `OnChainState` and `CalculatedState` serve distinct purposes. The `OnChainState` is designed to persist information that users want recorded on the blockchain, whereas the `CalculatedState` is intended to hold data that should remain off the blockchain.
+```scala
+@derive(decoder, encoder)
+case class VoteStateOnChain(updates: List[PollUpdate]) extends DataOnChainState
 
-Consider the example from the [water and energy usage](https://github.com/Constellation-Labs/metagraph-examples/blob/main/examples/water-and-energy-usage). project. 
-
-In this scenario, every update to water and energy usage is recorded. For instance, if we receive a request to update the water usage by 10 units, this information should be persisted on the blockchain using `OnChainState` to track the update accurately.
-
-Shifting focus slightly, let's say there is a need to provide an encrypted private key for making requests to an external API, which only your metagraph can decrypt and execute. Suppose we need to check the energy expenditure from two months prior using this key. In this case, your metagraph decrypts the key, performs the external call, and retrieves the data. However, since this data is sensitive, it should not be stored on the blockchain. This is a perfect use case for `CalculatedState`, which conceals sensitive information from the blockchain while still allowing access to it.
-
-The above example illustrates a basic application of these states. Further details on how to update these states will be provided in the subsequent sections.
+@derive(decoder, encoder)
+case class VoteCalculatedState(polls: Map[String, Poll]) extends DataCalculatedState
+```
 
 ## Updating State
 The DataAPI includes several lifecycle functions crucial for the proper functioning of the metagraph. 
