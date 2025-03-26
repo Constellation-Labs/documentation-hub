@@ -30,7 +30,7 @@ module.exports = {
         alt: 'Site Logo',
         src: `/logos/constellation-docs-dark.svg`,
         srcDark: `/logos/constellation-docs-light.svg`,
-        href: '/',
+        href: 'https://docs.constellationnetwork.io',
         target: '_self',
         width: 220,
         height: 29,
@@ -42,21 +42,9 @@ module.exports = {
           icon: {
             alt: 'Constellation Docs',
             src: `/logos/constellation-icon.svg`,
-            href: '/',
+            href: 'https://docs.constellationnetwork.io',
             target: '_self',
           },
-        },
-        {
-          type: 'doc',
-          docId: 'learn',
-          label: 'Learn',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'build',
-          label: 'Build',
-          position: 'left',
         },
         {
           type: 'doc',
@@ -68,7 +56,7 @@ module.exports = {
           type: 'cta',
           position: 'left',
           text: 'Euclid SDK',
-          href: `/sdk`,
+          href: `https://docs.constellationnetwork.io/metagraph-development`,
         },
         {
           type: 'search',
