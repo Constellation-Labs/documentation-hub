@@ -55,6 +55,10 @@ From the `left` side menu click on `Security`.
 - Scroll down to `App passwords` section.
 - Expand the `App passwords` section by clicking on the arrow to the `right` of the section.
 
+:::info
+You can also access the app password via this link: https://myaccount.google.com/apppasswords
+:::
+
 Enter in an `App name` such as `constellation_alerts` (*example only, you can use this name or choose a name to your liking*).
 
 Click on the <kbd>Create</kbd> button.

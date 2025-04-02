@@ -38,6 +38,7 @@ module.exports = {
             'quick-start/collateralize-quickstart',
             'quick-start/autorestart-quickstart',
             'quick-start/alerting-quickstart',
+            'quick-start/delegated-staking',
           ],
         },
       ],
